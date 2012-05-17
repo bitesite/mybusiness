@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-    @title = "Nibble Sites"
+    @title = "bitesyte | websites made easy"
   end
 
   def whoareyou

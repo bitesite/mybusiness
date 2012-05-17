@@ -104,3 +104,42 @@ a.bar-link:hover {
 	color: #fff;
 	font-size: 0.8em;
 }
+
+/* Modal Dialogs */
+
+table.dialog tr td {
+	vertical-align: top;
+	font-size: 0.8em;
+}
+
+.modal-dialog {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width:100%;
+    height:4000px;
+    z-index: 1000;
+    background-image: url("/background-trans.png");
+}
+
+.modal-dialog-body{
+	position:fixed;
+	width:500px;
+	left: 50%;
+    margin: 200px -265px;
+    background-color: #EEEEEE;
+    border:3px solid #330000;
+    padding:15px;
+    border-radius: 10px;
+    color: #111;
+
+	h1 {
+		font-size: 1.5em;
+	}
+	
+	h2 {
+		font-size: 1.2em;
+		padding: 0px;
+		margin: 5px 0 0 0;
+	}
+}
