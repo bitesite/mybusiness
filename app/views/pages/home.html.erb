@@ -43,110 +43,155 @@
 	</table>
 </div>
 
-<div id='whoareyou_dialog' class='modal-dialog' style="display:none;">
+<div id='info_dialog' class='modal-dialog' style="display:none">
 	<div class='modal-dialog-body'>
-		<table class='dialog'>
-			<tr>
-				<td>
-					<%= image_tag 'fastdelivery.png' %>
-				</td>
-				<td>
-					<h1>WHO ARE YOU?</h1>
-					<p>
-					<h2>A Business</h2>
-					...just starting out and you want to get a web presence with a simple website.
-					<h2>An Event Organizer</h2>
-					...like a fundraiser
-					<h2>A Couple</h2>
-					...looking to launch an engagement or wedding website full or photos and information about your special day.
-					Perhaps you even want a RSVP system implemented.
-					<h2>An Individual</h2>
-					...who just wants a web presence.
-					</p>
-					<div class>
-						<a class='close-dialog-link' dialog_to_close="#whoareyou_dialog" href="#">Close</a>
-					</div>
-				</td>
-			</tr>
-		</table>
+		<div id='info_header_image'></div>
+		<div id='info_body'></div>
+		<div>
+			<a class='close-dialog-link' href="#">Close</a>
+			<a id='next_dialog_link' class='next-dialog-link' data-next="" href="#">Next</a>
+		</div>
 	</div>
 </div>
 
-<div id='whoarewe_dialog' class='modal-dialog' style="display:none;">
-	<div class='modal-dialog-body'>
-		<table class='dialog'>
-			<tr>
-				<td>
-					<%= image_tag 'fastdelivery.png' %>
-				</td>
-				<td>
-					<h1>WHO ARE WE?</h1>
-					<p>
-					<h2>A Web Design Company</h2>
-					...that can build elegant websites for all occasions and needs.
-					<h2>Media Production Company</h2>
-					...that can supplement your website with professional photos and videos.
-					<h2>A Simpler Company</h2>
-					...that's passionate about customer relations, friendly service, and delivering quality
-					with simplicity.
-					</p>
-					<div class>
-						<a class='close-dialog-link' dialog_to_close="#whoarewe_dialog" href="#">Close</a>
-					</div>
-				</td>
-			</tr>
-		</table>
-	</div>
-</div>
-
-<div id='getstarted_dialog' class='modal-dialog' style="display:none;">
-	<div class='modal-dialog-body'>
-		<table class='dialog'>
-			<tr>
-				<td>
-					<%= image_tag 'fastdelivery.png' %>
-				</td>
-				<td>
-					<h1>GET STARTED</h1>
-					<p>
-					The Capo Open Mic Community App is by far the Rails project I'm most proud of to date.
-					After doing my initial learning of Rails and getting some full-time experience, I decided
-					to get to work on my own project and Capo was the result. It is a Social Network for Open Mic/Open Stage
-					performers and audience members alike. It allows users to browse, submit, and attend open mics.
-					It also features a full-blown JQTouch iPhone-optimized UI. This app taught me a lot about dealing with
-					real users as well as overall product development in Rails.
-					</p>
-					<div class>
-						<a class='close-dialog-link' dialog_to_close="#getstarted_dialog" href="#">Close</a>
-					</div>
-				</td>
-			</tr>
-		</table>
-	</div>
-</div>
 
 <script type="text/javascript">
+
+    /*
+     * EVENT HANDLERS -----------------------
+     */
 	$("#whoareyou").click(function(){
-		toggleDialog("#whoareyou_dialog");
+		populateDialog("whoareyou");
+		toggleDialog();
 		return false;
 	});
 	
 	$("#whoarewe").click(function(){
-		toggleDialog("#whoarewe_dialog");
+		populateDialog("whoarewe");
+		toggleDialog();
 		return false;
 	});
 	
 	$("#getstarted").click(function(){
-		toggleDialog("#getstarted_dialog");
+		populateDialog("getstarted");
+		toggleDialog();
 		return false;
 	});
 	
+	$("#next_dialog_link").click(function(){
+		populateDialog($(this).data("next"));
+	});
+	
 	$(".close-dialog-link").click(function(e){
-		toggleDialog($(e.target).attr("dialog_to_close"));
+		toggleDialog();
 		return false;
 	});
 
-	function toggleDialog(dialog_id){	
-		$(dialog_id).fadeToggle(400);
+
+    /*
+     * populateDialog - populate body and header image
+     */
+	function populateDialog(title) {
+		var header_image = getHeaderImage(title);
+		if(header_image != "") {
+			$("#info_header_image").html("<img src='/" + header_image  +"' />");
+		}
+		else {
+			$("#info_header_image").html("");
+		}
+		$("#info_body").html(getBody(title));
+		$("#next_dialog_link").data("next", getNext(title));
+		
+		if(title == "getstarted") {
+			$("#next_dialog_link").hide();
+		}
+		else {
+			$("#next_dialog_link").show();
+		}
+	}
+	
+	/*
+	 * toggleDialog - show/hide dialog
+	 */
+	function toggleDialog(){	
+		$("#info_dialog").fadeToggle(400);
+	}
+	
+	/*
+	 * getNext - retrieve the next title based on current title
+	 */
+	function getNext(title) {
+		var next_title ="";
+		if(title == "whoareyou") {
+			next_title = "whoarewe";
+		}
+		else if(title == "whoarewe") {
+			next_title = "getstarted";
+		}
+		else if(title == "getstarted") {
+			next_title = "getstarted";
+		}
+		else {
+			next_title = "";
+		}
+		return next_title;
+	}
+	
+	/*
+	 * getHeaderImage - retrieve header image based on title
+	 */
+	function getHeaderImage(title) {
+		var image ="";
+		if(title == "whoareyou") {
+			image = "whoareyouheader.png";
+		}
+		else if(title == "whoarewe") {
+			image = "whoareweheader.png";
+		}
+		else if(title == "getstarted") {
+			image = "getstartedheader.png";
+		}
+		else {
+			image = "";
+		}
+		return image;
+	}
+	
+	/*
+	 * getBody - retrieve body text based on title
+	 */
+	function getBody(title) {
+		var body = "";
+		if(title == "whoareyou") {
+			body = "<p>Maybe you're a <b>small business</b> just starting out and are looking to promote your business " +
+					   "online. Or maybe you're a <b>couple getting married</b> and you want to create a wedding website " +
+					   "where all your guests can get the latest info about your special day. Or maybe you're hosting a <b>fundraiser</b> " +
+					   "or <b>special event</b> and want a web promotion." +
+					   "Or maybe you're just <b>an individual</b> " +
+					   "who wants a website to act as your resume or a simple web presence. " +
+					   "</p><p>Whether you're technical or have never touched a computer before in your life and whatever your need " +
+					   "is, BiteSite could be a just what you're looking for.</p>";
+		}
+		else if(title == "whoarewe") {
+			body = "<p>BiteSite is small Web Design company that believes in <b>simplicity</b>. Everything from our design " +
+					   	"aesthetic to our delivery process is centered around this philosophy. We focus on building simple yet " +
+						"elegant Web Sites and Web Applications for all types of customers.</p>" +
+						"<p>We also offer a full range " +
+						"of media services from <b>photography</b> to <b>video production</b> to <b>graphic design</b> and <b>motion graphics</b> to make your web " +
+						"presence truly one that stands out. " +
+						"</p>";
+		}
+		else if(title == "getstarted") {
+			body = "<p>Does BiteSite sound like exactly what you're looking for? Then you can get started today by looking " +
+						"at our <b>flexible packages</b>. We have packages designed for customer who want something up and running quick " +
+						"to full blown web applications. Our <b>add-ons</b> allow you to create the package that suits your perfectly.</p>" + 
+						"<p>Don't see what you're looking for? Then be sure to contact us " +
+						"and we'll be able to put something together that's right for you. " +
+						"</p>";
+		}
+		else {
+			body = "We're sorry, there was an error loading this page.";
+		}
+		return body;
 	}
 </script>

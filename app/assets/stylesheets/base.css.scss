@@ -117,7 +117,7 @@ table.dialog tr td {
     left: 0px;
     top: 0px;
     width:100%;
-    height:4000px;
+	height: 100%;
     z-index: 1000;
     background-image: url("/background-trans.png");
 }
@@ -126,7 +126,7 @@ table.dialog tr td {
 	position:fixed;
 	width:500px;
 	left: 50%;
-    margin: 200px -265px;
+    margin: 100px -265px;
     background-color: #EEEEEE;
     border:3px solid #330000;
     padding:15px;
