@@ -1,47 +1,45 @@
-<div id="home-panel">
-	<%= image_tag "splash1.png" %>
 
-	<div class="bar-links">
-		<%= link_to "WHO ARE YOU?", "#", :id => "whoareyou", :class => "bar-link" %>
-		<%= link_to "WHO ARE WE?", "#", :id => "whoarewe", :class => "bar-link" %>
-		<%= link_to "GET STARTED", "#", :id => "getstarted", :class => "bar-link" %>
-	</div>
+<%= image_tag "splash1.png" %>
 
-	<div class="text-line" />
-
-	<table class="features-table">
-		<tr>
-			<td>
-				<div class="center-block">
-					<%= image_tag "simpledesign.png", :class => "icon-image" %>				
-				</div>
-				<h3>Elegant Design</h3>
-				All BiteSites feature a gorgeous, yet simple design tailored to your personality, your business, or your event. We
-				believe in a less is more design aesthetic that has brought so many companies success.
-			</td>
-			<td>
-				<div class="center-block"><%= image_tag "fastdelivery.png", :class => "icon-image" %></div>
-				<h3>Simple and Fast Delivery</h3>
-				Hate dealing with a lot of overhead and complication? BiteSite focuses on what matters most - the end product.
-				BiteSite has a strong belief in that things can be done in a simpler fashion that still brings high-quality
-				results. That's why we offer easy one-time-payment packages to satisfy the needs of our customers.
-			</td>
-			<td>
-				<div class="center-block"><%= image_tag "multimedia.png", :class => "icon-image" %></div>
-				<h3>Multimedia Packages</h3>
-				As an added bonus, BiteSite also does photography and video shoots. Want to personalize your site with genuine, professional
-				media of your business or event? No more dealing with generic stock photos. Most Photo shoots can be done in as little as
-				an afternoon so you can get back to what's important.
-			</td>
-			<td class="right-edge-cell">
-				<div class="center-block"><%= image_tag "updates.png", :class => "icon-image" %></div>
-				<h3>Flexible Updates</h3>
-				Concerned that you're paying to much in monthly fees? On-demand update packages are available. Concerned that you'll need
-				regular updates all the time? We've got that covered too with cheap monthly and annual costs.
-			</td>
-		</tr>
-	</table>
+<div class="bar-links">
+	<%= link_to "WHO ARE YOU?", "#", :id => "whoareyou", :class => "bar-link" %>
+	<%= link_to "WHO ARE WE?", "#", :id => "whoarewe", :class => "bar-link" %>
+	<%= link_to "GET STARTED", "#", :id => "getstarted", :class => "bar-link" %>
 </div>
+
+<table class="features-table">
+	<tr>
+		<td>
+			<div class="center-block">
+				<%= image_tag "simpledesign.png", :class => "icon-image" %>				
+			</div>
+			<h3>Elegant Design</h3>
+			All BiteSites feature a gorgeous, yet simple design tailored to your personality, your business, or your event. We
+			believe in a less is more design aesthetic that has brought so many companies success.
+		</td>
+		<td>
+			<div class="center-block"><%= image_tag "fastdelivery.png", :class => "icon-image" %></div>
+			<h3>Simple and Fast Delivery</h3>
+			Hate dealing with a lot of overhead and complication? BiteSite focuses on what matters most - the end product.
+			BiteSite has a strong belief in that things can be done in a simpler fashion that still brings high-quality
+			results. That's why we offer easy one-time-payment packages to satisfy the needs of our customers.
+		</td>
+		<td>
+			<div class="center-block"><%= image_tag "multimedia.png", :class => "icon-image" %></div>
+			<h3>Multimedia Packages</h3>
+			As an added bonus, BiteSite also does photography and video shoots. Want to personalize your site with genuine, professional
+			media of your business or event? No more dealing with generic stock photos. Most Photo shoots can be done in as little as
+			an afternoon so you can get back to what's important.
+		</td>
+		<td class="right-edge-cell">
+			<div class="center-block"><%= image_tag "updates.png", :class => "icon-image" %></div>
+			<h3>Flexible Updates</h3>
+			Concerned that you're paying to much in monthly fees? On-demand update packages are available. Concerned that you'll need
+			regular updates all the time? We've got that covered too with cheap monthly and annual costs.
+		</td>
+	</tr>
+</table>
+
 
 <div id='info_dialog' class='modal-dialog' style="display:none">
 	<div class='modal-dialog-body'>
@@ -80,6 +78,7 @@
 	
 	$("#next_dialog_link").click(function(){
 		populateDialog($(this).data("next"));
+		return false;
 	});
 	
 	$(".close-dialog-link").click(function(e){

@@ -5,6 +5,7 @@ body {
 	margin: 0px;
 	font-family: "Helvetica", "Arial";
 	height: 100%;
+	background: #000;
 }
 
 a {
@@ -91,18 +92,42 @@ a.bar-link:hover {
 
 /* Main Body */
 .main-body {
-	padding-bottom: 100px /* Footer spacing */
+	background: #fff;
 }
 
 /* Footer */
 .footer {
 	background: #000;
 	height: 100px;
-	position:absolute;
+
 	bottom:0;
 	width: 100%;
 	color: #fff;
 	font-size: 0.8em;
+}
+
+/* Pages */
+.page-header {
+	height: 100px;
+}
+
+.page-table {
+	tr td.main-column {
+		width: 75%;
+	}
+	
+	tr td.sidebar-column {
+		background: #eee;
+		vertical-align: top;
+		padding: 10px;
+		
+		font-size: 1em;
+		
+		h1 {
+			margin: 0px 0px 2px 0px;
+			font-size: 1.3em;
+		}
+	}
 }
 
 /* Modal Dialogs */

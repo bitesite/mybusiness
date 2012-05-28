@@ -6,6 +6,10 @@ Mybusiness::Application.routes.draw do
   get "pages/addons"
   get "pages/contact"
   
+  match "/packages" => "pages#packages"
+  match "/addons" => "pages#addons"
+  match "/portfolio" => "pages#portfolio"
+  
   root :to => "pages#home"
 
   # The priority is based upon order of creation:

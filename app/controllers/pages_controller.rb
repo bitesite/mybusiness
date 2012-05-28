@@ -1,18 +1,18 @@
 class PagesController < ApplicationController
   def home
-    @title = "bitesyte | websites made easy"
+    @title = "bitesite.ca | websites made easy"
   end
-
-  def whoareyou
-  end
-
-  def whoarewe
-  end
-
+  
   def packages
+    @title = "bitesite.ca | packages"
   end
 
   def addons
+    @title = "bitesite.ca | addons"
+  end
+  
+  def portfolio
+    @title = "bitesite.ca | portfolio"
   end
 
   def contact
