@@ -9,12 +9,26 @@
 					<td class="package-price">W</td>
 				</tr>
 			</table>
-			
-			
+			<table class="portfolio-items">
+				<tr>
+					<td><a class='portfolio-item capo-button' href="#" data-title='capo'></a></td>
+					<td><a class='portfolio-item md-button' href="#" data-title='md'></a></td>
+					<td><a class='portfolio-item wwwp-button' href="#" data-title='wwwp'></a></td>
+					<td><a class='portfolio-item caseyli-button' href="#" data-title='caseyli'></a></td>
+				</tr>
+			</table>
+
 			<table class="package-table">
 				<tr>
 					<td class="package-title">Photography</td>
 					<td class="package-price">P</td>
+				</tr>
+			</table>
+			<table class="portfolio-items">
+				<tr>
+					<td><a class='portfolio-item corporatephotos-button' href="#"></a></td>
+					<td><a class='portfolio-item weddingphotos-button' href="#"></a></td>
+					<td><a class='portfolio-item eventphotos-button' href="#"></a></td>
 				</tr>
 			</table>
 		
@@ -25,6 +39,13 @@
 					<td class="package-price">V</td>
 				</tr>
 			</table>
+			<table class="portfolio-items">
+				<tr>
+					<td><a class='portfolio-item teldio-video-button' href="#"></a></td>
+					<td><a class='portfolio-item northstar-video-button' href="#"></a></td>
+					<td><a class='portfolio-item spy-am-i-video-button' href="#"></a></td>
+				</tr>
+			</table>
 		
 			
 			<table class="package-table">
@@ -33,7 +54,141 @@
 					<td class="package-price">G</td>
 				</tr>
 			</table>
+			<table class="portfolio-items">
+				<tr>
+					<td><a class='portfolio-item promos-button' href="#"></a></td>
+					<td><a class='portfolio-item branding-button' href="#"></a></td>
+				</tr>
+			</table>
 			
 		</td>
 	</tr>
 </table>
+
+<div id='info_dialog' class='modal-dialog' style="display:none">
+	<div class='modal-dialog-body'>
+		<div id='info_header_image'></div>
+		<div id='info_body'></div>
+		<div>
+			<a class='close-dialog-link' href="#">Close</a>
+			<a id='next_dialog_link' class='next-dialog-link' data-next="" href="#">Next</a>
+		</div>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+
+    /*
+     * EVENT HANDLERS -----------------------
+     */
+	$(".portfolio-item").click(function(){
+		populateDialog($(this).data("title"));
+		toggleDialog();
+		return false;
+	});
+		
+	$(".close-dialog-link").click(function(e){
+		toggleDialog();
+		return false;
+	});
+	
+	/*
+     * populateDialog - populate body and header image
+     */
+	function populateDialog(title) {
+		var header_image = getHeaderImage(title);
+		if(header_image != "") {
+			$("#info_header_image").html("<img src='/" + header_image  +"' />");
+		}
+		else {
+			$("#info_header_image").html("");
+		}
+		$("#info_body").html(getBody(title));
+		$("#next_dialog_link").data("next", getNext(title));
+		
+		if(title == "getstarted") {
+			$("#next_dialog_link").hide();
+		}
+		else {
+			$("#next_dialog_link").show();
+		}
+	}
+	
+	/*
+	 * toggleDialog - show/hide dialog
+	 */
+	function toggleDialog(){	
+		$("#info_dialog").fadeToggle(400);
+	}
+	
+	/*
+	 * getNext - retrieve the next title based on current title
+	 */
+	function getNext(title) {
+		var next_title ="";
+		if(title == "whoareyou") {
+			next_title = "whoarewe";
+		}
+		else if(title == "whoarewe") {
+			next_title = "getstarted";
+		}
+		else if(title == "getstarted") {
+			next_title = "getstarted";
+		}
+		else {
+			next_title = "";
+		}
+		return next_title;
+	}
+	
+	/*
+	 * getHeaderImage - retrieve header image based on title
+	 */
+	function getHeaderImage(title) {
+		var image ="";
+		if(title == "whoareyou") {
+			image = "whoareyouheader.png";
+		}
+		else if(title == "whoarewe") {
+			image = "whoareweheader.png";
+		}
+		else if(title == "getstarted") {
+			image = "getstartedheader.png";
+		}
+		else {
+			image = "";
+		}
+		return image;
+	}
+	
+	/*
+	 * getBody - retrieve body text based on title
+	 */
+	function getBody(title) {
+		var body = "";
+		if(title == "capo") {
+			body = "<p>Capo was one of our biggest projects. It was built as a Open Mic Community Web App that allowed playeres and audience</p>";
+		}
+		else if(title == "wwwp") {
+			body = "<p>BiteSite is small Web Design company that believes in <b>simplicity</b>. Everything from our design " +
+					   	"aesthetic to our delivery process is centered around this philosophy. We focus on building simple yet " +
+						"elegant Web Sites and Web Applications for all types of customers.</p>" +
+						"<p>We also offer a full range " +
+						"of media services from <b>photography</b> to <b>video production</b> to <b>graphic design</b> and <b>motion graphics</b> to make your web " +
+						"presence truly one that stands out. " +
+						"</p>";
+		}
+		else if(title == "md") {
+			body = "<p>m&d was our first Wedding Web Site project. It started out as a simple 'Save the Date' site that became a fully interactive " +
+						"web application. It featured a RSVP system with e-mail notifications and a iPhone optimized version of the site. " +
+						"</p>";
+		}
+		else {
+			body = "We're sorry, there was an error loading this page.";
+		}
+		return body;
+	}
+    
+
+</script>

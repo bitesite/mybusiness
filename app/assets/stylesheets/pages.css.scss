@@ -73,3 +73,68 @@
 .icon-image {
 	padding-bottom: 10px;
 }
+
+/* PORTFOLIO *******************************************************/
+
+.portfolio-items {
+	padding: 10px;
+}
+
+.portfolio-item {
+	display: block;
+	width: 163px;
+	height: 149px;
+	margin: 10px;
+}
+
+.portfolio-item:hover {
+	background-position: 0 0;
+}
+
+.capo-button {
+	background: url('/images/portfolio/Capo.png') bottom;	
+}
+
+.md-button {
+	background: url('/images/portfolio/MarilynAndDouglas.png') bottom;	
+}
+
+.wwwp-button {
+	background: url('/images/portfolio/wwwp.png') bottom;	
+}
+
+.caseyli-button {
+	background: url('/images/portfolio/caseylicom.png') bottom;	
+}
+
+.teldio-video-button {
+	background: url('/images/portfolio/TeldioVideo.png') bottom;
+}
+
+.northstar-video-button {
+	background: url('/images/portfolio/NorthstarVideo.png') bottom;
+}
+
+.spy-am-i-video-button {
+	background: url('/images/portfolio/SpyamiVideo.png') bottom;
+}
+
+.promos-button {
+	background: url('/images/portfolio/promos.png') bottom;
+}
+
+.branding-button {
+	background: url('/images/portfolio/branding.png') bottom;
+}
+
+.corporatephotos-button {
+	background: url('/images/portfolio/corporatephotos.png') bottom;
+}
+
+.weddingphotos-button {
+	background: url('/images/portfolio/weddingphotos.png') bottom;
+}
+
+.eventphotos-button {
+	background: url('/images/portfolio/eventphotos.png') bottom;
+}
