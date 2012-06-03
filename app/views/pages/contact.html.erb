@@ -1,2 +1,47 @@
-<h1>Pages#contact</h1>
-<p>Find me in app/views/pages/contact.html.erb</p>
+<%= image_tag "contactheader.png", :class => "page-header" %>
+
+<p>
+<% if !@success %>
+		<table class="contact-table">
+			<tr>
+				<td class="left-col">
+
+						<%= form_tag "/contact" do %>
+							<div class="field">
+								<%= label_tag :first_name, "Your First Name" %><br/>
+								<%= text_field_tag :first_name, nil, :size => "30", :class => "contact-field" %><br/>
+							</div>
+							<div class="field">
+								<%= label_tag :last_name, "Your Last Name" %><br/>
+								<%= text_field_tag :last_name, nil, :size => "30", :class => "contact-field" %><br/>
+							</div>
+							<div class="field">
+								<%= label_tag :email_address, "Your E-Mail Address" %><br/>
+								<%= text_field_tag :email_address, nil, :size => "30", :class => "contact-field" %><br/>
+							</div>
+							<div class="field">
+								<%= label_tag :message, "Message" %><br/>
+								<%= text_area_tag :message, nil, :cols => 95, :rows => 10, :class => "contact-field" %><br/>
+							</div>
+							<div class="actions">
+								<%= submit_tag "Submit", :class => "standard-button" %>
+							</div>
+						<% end %>
+		
+				</td>
+				<td>
+					<h3>Contact us for anything!</h3> 
+					<p>Know exactly what you want? Have no idea at all? Want to just open a conversation about your options? 
+					Have some technical questions? Whatever it may be, please drop us a line and we'll do
+					our best to answer any questions you may have.</p>
+			
+					<p>BiteSite believes strongly in finding a good fit company for a good
+					fit customer. So if we find out we're not right for you, we won't pressure you. If we do, we'll
+					be happy to build something you'll truly be excited about.</p>
+				</td>
+			</tr>
+		</table>
+	<% else %>
+		<%= label_tag :success_message, "Thank you! Your message has been sent." %>
+	<% end %>
+</p>

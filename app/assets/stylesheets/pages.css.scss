@@ -138,3 +138,22 @@
 .eventphotos-button {
 	background: url('/images/portfolio/eventphotos.png') bottom;
 }
+
+
+/* CONTACT **********************************/
+
+.contact-table  {
+	tr td {
+		vertical-align: top;
+		padding: 20px;
+		
+		h3 {
+			margin-top: 0px;
+		}
+		
+	}
+	tr td.left-col {
+		border-right: 1px solid;
+		border-color: #BBB;
+	}
+}

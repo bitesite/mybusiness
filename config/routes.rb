@@ -9,6 +9,7 @@ Mybusiness::Application.routes.draw do
   match "/packages" => "pages#packages"
   match "/addons" => "pages#addons"
   match "/portfolio" => "pages#portfolio"
+  match "/contact" => "pages#contact"
   
   root :to => "pages#home"
 

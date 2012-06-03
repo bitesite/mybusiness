@@ -1,0 +1,23 @@
+<%= image_tag attachments['emailheader.png'].url %>
+<p>
+	Thank you for contacting BiteSite.ca. We appreciate your interest in our services.
+	This is just a confirmation e-mail to let you know that we have received your message
+	and our staff will get back to you as soon as we can.
+</p>
+
+<p>
+	Should you have any further questions, feel free to drop us another message at http://www.bitesite.ca/contact or e-mail us directly at info@bitesite.ca.
+</p>
+
+<p>
+	Thanks again, and have a great day!
+</p>
+
+<p>
+	The message we received:
+	<ul>
+		<li>First Name: <%= @first_name %></li>
+		<li>Last Name: <%= @last_name %></li>
+		<li>Message: <%= @message %></li>
+	</ul>
+</p>

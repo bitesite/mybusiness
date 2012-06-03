@@ -168,3 +168,29 @@ table.dialog tr td {
 		margin: 5px 0 0 0;
 	}
 }
+
+/* Forms */
+
+.field {
+	padding-bottom: 10px;
+}
+
+.contact-field  {
+	width: 400px;
+	font-size: 1.0em;
+	border-radius: 8px;
+}
+
+.standard-button {
+	border: 1px solid;
+	border-color: #333;
+	padding: 10px;
+	font-size: 1em;
+	border-radius: 8px;
+	background-color: white;
+}
+
+.standard-button:hover {
+	background-color: black;
+	color: white;
+}
