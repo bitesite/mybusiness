@@ -16,6 +16,7 @@ class PagesController < ApplicationController
   end
 
   def contact
+    @title = "bitesite.ca | contact"
     @success = false
     
     if request.post?
@@ -31,6 +32,10 @@ class PagesController < ApplicationController
         @success = true
       end
     end
+  end
+  
+  def about
+    @title = "bitesite.ca | about"
   end
   
 end

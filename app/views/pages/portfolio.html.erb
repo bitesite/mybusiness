@@ -1,4 +1,4 @@
-<%= image_tag "portfolioheader.png", :class => "page-header" %>
+<%= image_tag "portfolioheader_inshad.png", :class => "page-header" %>
 
 <table class="page-table">
 	<tr>
@@ -26,9 +26,9 @@
 			</table>
 			<table class="portfolio-items">
 				<tr>
-					<td><a class='portfolio-item corporatephotos-button' href="#"></a></td>
-					<td><a class='portfolio-item weddingphotos-button' href="#"></a></td>
-					<td><a class='portfolio-item eventphotos-button' href="#"></a></td>
+					<td><a class='portfolio-item corporatephotos-button' href="#" data-title='corporatephotos'></a></td>
+					<td><a class='portfolio-item weddingphotos-button' href="#" data-title='weddingphotos'></a></td>
+					<td><a class='portfolio-item eventphotos-button' href="#" data-title='eventphotos'></a></td>
 				</tr>
 			</table>
 		
@@ -41,9 +41,9 @@
 			</table>
 			<table class="portfolio-items">
 				<tr>
-					<td><a class='portfolio-item teldio-video-button' href="#"></a></td>
-					<td><a class='portfolio-item northstar-video-button' href="#"></a></td>
-					<td><a class='portfolio-item spy-am-i-video-button' href="#"></a></td>
+					<td><a class='portfolio-item teldio-video-button' href="#" data-title='teldio-video'></a></td>
+					<td><a class='portfolio-item northstar-video-button' href="#" data-title='northstar-video'></a></td>
+					<td><a class='portfolio-item spy-am-i-video-button' href="#" data-title='spy-am-i-video'></a></td>
 				</tr>
 			</table>
 		
@@ -56,8 +56,8 @@
 			</table>
 			<table class="portfolio-items">
 				<tr>
-					<td><a class='portfolio-item promos-button' href="#"></a></td>
-					<td><a class='portfolio-item branding-button' href="#"></a></td>
+					<td><a class='portfolio-item promos-button' href="#" data-title='promos'></a></td>
+					<td><a class='portfolio-item branding-button' href="#" data-title='branding'></a></td>
 				</tr>
 			</table>
 			
@@ -67,11 +67,9 @@
 
 <div id='info_dialog' class='modal-dialog' style="display:none">
 	<div class='modal-dialog-body'>
-		<div id='info_header_image'></div>
 		<div id='info_body'></div>
 		<div>
 			<a class='close-dialog-link' href="#">Close</a>
-			<a id='next_dialog_link' class='next-dialog-link' data-next="" href="#">Next</a>
 		</div>
 	</div>
 </div>
@@ -97,22 +95,7 @@
      * populateDialog - populate body and header image
      */
 	function populateDialog(title) {
-		var header_image = getHeaderImage(title);
-		if(header_image != "") {
-			$("#info_header_image").html("<img src='/" + header_image  +"' />");
-		}
-		else {
-			$("#info_header_image").html("");
-		}
 		$("#info_body").html(getBody(title));
-		$("#next_dialog_link").data("next", getNext(title));
-		
-		if(title == "getstarted") {
-			$("#next_dialog_link").hide();
-		}
-		else {
-			$("#next_dialog_link").show();
-		}
 	}
 	
 	/*
@@ -123,52 +106,12 @@
 	}
 	
 	/*
-	 * getNext - retrieve the next title based on current title
-	 */
-	function getNext(title) {
-		var next_title ="";
-		if(title == "whoareyou") {
-			next_title = "whoarewe";
-		}
-		else if(title == "whoarewe") {
-			next_title = "getstarted";
-		}
-		else if(title == "getstarted") {
-			next_title = "getstarted";
-		}
-		else {
-			next_title = "";
-		}
-		return next_title;
-	}
-	
-	/*
-	 * getHeaderImage - retrieve header image based on title
-	 */
-	function getHeaderImage(title) {
-		var image ="";
-		if(title == "whoareyou") {
-			image = "whoareyouheader.png";
-		}
-		else if(title == "whoarewe") {
-			image = "whoareweheader.png";
-		}
-		else if(title == "getstarted") {
-			image = "getstartedheader.png";
-		}
-		else {
-			image = "";
-		}
-		return image;
-	}
-	
-	/*
 	 * getBody - retrieve body text based on title
 	 */
 	function getBody(title) {
 		var body = "";
 		if(title == "capo") {
-			body = "<p>Capo was one of our biggest projects. It was built as a Open Mic Community Web App that allowed playeres and audience</p>";
+			body = "<p>Capo was one of our biggest projects. It was built as a Open Mic Community Web App that allowed players and audience</p>";
 		}
 		else if(title == "wwwp") {
 			body = "<p>BiteSite is small Web Design company that believes in <b>simplicity</b>. Everything from our design " +
@@ -184,6 +127,15 @@
 						"web application. It featured a RSVP system with e-mail notifications and a iPhone optimized version of the site. " +
 						"</p>";
 		}
+		else if(title == "caseyli") {
+			body = "<p>caseyli.com was our first project. It was a resume website with content management to manage resume entries such as " +
+					"Work Experience, Education, Skills, Hobbies and more." +
+					"</p>";
+		}
+		else if(title == "teldio-video") {
+			body = "";
+		}
+		
 		else {
 			body = "We're sorry, there was an error loading this page.";
 		}

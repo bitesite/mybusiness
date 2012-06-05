@@ -157,3 +157,22 @@
 		border-color: #BBB;
 	}
 }
+
+/* ABOUT *****************************************/
+.about-table {
+	tr {
+		td {
+			vertical-align: top;
+		}
+		td.left-col {
+			padding-right: 20px;
+		}
+	}
+}
+.about-pics {
+	width: 175px;
+}
+
+.triptych {
+	width: 170px;
+}

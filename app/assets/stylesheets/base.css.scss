@@ -73,6 +73,14 @@ a.bar-link:hover {
 	text-align: center;
 }
 
+.article-highlight {
+	float: left;
+	font-weight:bold;
+	width:300px;
+	font-size: 1.2em;
+	padding: 0px 15px 15px 0px;
+}
+
 /* Layout */
 
 .container {
@@ -130,6 +138,11 @@ a.bar-link:hover {
 			font-size: 1.3em;
 		}
 	}
+}
+
+.picture-caption {
+	font-size: 0.8em;
+	font-style: italic;
 }
 
 /* Modal Dialogs */

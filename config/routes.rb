@@ -1,15 +1,15 @@
 Mybusiness::Application.routes.draw do
   get "pages/home"
-  get "pages/whoareyou"
-  get "pages/whoarewe"
   get "pages/packages"
   get "pages/addons"
   get "pages/contact"
+  get "pages/about"
   
   match "/packages" => "pages#packages"
   match "/addons" => "pages#addons"
   match "/portfolio" => "pages#portfolio"
   match "/contact" => "pages#contact"
+  match "/about" => "pages#about"
   
   root :to => "pages#home"
 
