@@ -93,7 +93,7 @@
 	function populateDialog(title) {
 		var header_image = getHeaderImage(title);
 		if(header_image != "") {
-			$("#info_header_image").html("<img src='/" + header_image  +"' />");
+			$("#info_header_image").html("<img src='" + header_image  +"' />");
 		}
 		else {
 			$("#info_header_image").html("");
@@ -142,13 +142,13 @@
 	function getHeaderImage(title) {
 		var image ="";
 		if(title == "whoareyou") {
-			image = "whoareyouheader.png";
+			image = "/assets/whoareyouheader.png";
 		}
 		else if(title == "whoarewe") {
-			image = "whoareweheader.png";
+			image = "/assets/whoareweheader.png";
 		}
 		else if(title == "getstarted") {
-			image = "getstartedheader.png";
+			image = "/assets/getstartedheader.png";
 		}
 		else {
 			image = "";
