@@ -9,7 +9,12 @@ body {
 }
 
 a {
-	color: #999;
+	color: #444;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
 }
 
 .text-line
@@ -168,7 +173,7 @@ table.dialog tr td {
 	left: 50%;
     margin: 100px -265px;
     background-color: #EEEEEE;
-    border:3px solid #330000;
+    border:10px solid #FFF;
     padding:15px;
     border-radius: 10px;
     color: #111;
@@ -184,6 +189,34 @@ table.dialog tr td {
 	}
 }
 
+.modal-dialog-actions {
+	text-align: right;
+	padding: 10px 0 10px 0;
+}
+
+/* Links and Buttons */
+.standard-button {
+	padding: 10px;
+	font-size: 1em;
+	border-radius: 8px;
+	background-color: #333;
+	color: #888;
+	text-decoration: none;
+
+}
+
+a.standard-button {
+	line-height: 40px;
+	font-size: 12px;
+	padding: 10px 20px 10px 20px;
+}
+
+.standard-button:hover {
+	background-color: black;
+	color: white;
+}
+
+
 /* Forms */
 
 .field {
@@ -196,16 +229,3 @@ table.dialog tr td {
 	border-radius: 8px;
 }
 
-.standard-button {
-	border: 1px solid;
-	border-color: #333;
-	padding: 10px;
-	font-size: 1em;
-	border-radius: 8px;
-	background-color: white;
-}
-
-.standard-button:hover {
-	background-color: black;
-	color: white;
-}

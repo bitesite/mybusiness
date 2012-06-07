@@ -45,9 +45,10 @@
 	<div class='modal-dialog-body'>
 		<div id='info_header_image'></div>
 		<div id='info_body'></div>
-		<div>
-			<a class='close-dialog-link' href="#">Close</a>
-			<a id='next_dialog_link' class='next-dialog-link' data-next="" href="#">Next</a>
+		<div class='modal-dialog-actions'>
+			<hr>
+			<a class='close-dialog-link standard-button' href="#">Close</a>
+			<a id='next_dialog_link' class='next-dialog-link standard-button' data-next="" href="#">Next</a>
 		</div>
 	</div>
 </div>
@@ -176,15 +177,17 @@
 					   	"aesthetic to our delivery process is centered around this philosophy. We focus on building simple yet " +
 						"elegant Web Sites and Web Applications for all types of customers.</p>" +
 						"<p>We also offer a full range " +
-						"of media services from <b>photography</b> to <b>video production</b> to <b>graphic design</b> and <b>motion graphics</b> to make your web " +
+						"of media services from <b><a href='/addons'>photography</a></b> to <b><a href='/addons'>video production</a></b> " +
+						"to <b><a href='/addons'>graphic design</a></b> and <b>motion graphics</b> to make your web " +
 						"presence truly one that stands out. " +
 						"</p>";
 		}
 		else if(title == "getstarted") {
 			body = "<p>Does BiteSite sound like exactly what you're looking for? Then you can get started today by looking " +
-						"at our <b>flexible packages</b>. We have packages designed for customer who want something up and running quick " +
-						"to full blown web applications. Our <b>add-ons</b> allow you to create the package that suits your perfectly.</p>" + 
-						"<p>Don't see what you're looking for? Then be sure to contact us " +
+						"at our <b><a href='/packages'>flexible packages</a></b>. We have packages designed " +
+						"for customer who want something up and running quick " +
+						"to full blown web applications. Our <b><a href='/addons'>add-ons</a></b> allow you to create the package that suits your perfectly.</p>" + 
+						"<p>Don't see what you're looking for? Then be sure to <b><a href='/contact'>contact us</a></b> " +
 						"and we'll be able to put something together that's right for you. " +
 						"</p>";
 		}
