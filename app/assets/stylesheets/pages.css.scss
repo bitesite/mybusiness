@@ -80,15 +80,15 @@
 	padding: 10px;
 }
 
-.portfolio-item {
+.portfolio-item, .portfolio-item-photos {
 	display: block;
 	width: 163px;
 	height: 149px;
 	margin: 10px;
-}
-
-.portfolio-item:hover {
-	background-position: 0 0;
+	
+	&:hover {
+		background-position: 0 0;
+	}
 }
 
 .capo-button {
@@ -155,6 +155,18 @@
 	width: 775px;
 	left: 50%;
 	margin: 100px -403px;	
+}
+
+.photos-modal-dialog-body {
+	width: 800px;
+	left: 50%;
+	margin: 100px -425px;
+	position:relative;
+	text-align:center;
+}
+
+.portfolio-photo {
+	height: 520px;
 }
 
 /* CONTACT **********************************/

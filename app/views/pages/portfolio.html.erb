@@ -26,9 +26,9 @@
 			</table>
 			<table class="portfolio-items">
 				<tr>
-					<td><a class='portfolio-item corporatephotos-button' href="#" data-title='corporatephotos'></a></td>
-					<td><a class='portfolio-item weddingphotos-button' href="#" data-title='weddingphotos'></a></td>
-					<td><a class='portfolio-item eventphotos-button' href="#" data-title='eventphotos'></a></td>
+					<td><a class='portfolio-item-photos corporatephotos-button' href="#" data-title='corporatephotos'></a></td>
+					<td><a class='portfolio-item-photos weddingphotos-button' href="#" data-title='weddingphotos'></a></td>
+					<td><a class='portfolio-item-photos eventphotos-button' href="#" data-title='eventphotos'></a></td>
 				</tr>
 			</table>
 		
@@ -56,8 +56,8 @@
 			</table>
 			<table class="portfolio-items">
 				<tr>
-					<td><a class='portfolio-item promos-button' href="#" data-title='promos'></a></td>
-					<td><a class='portfolio-item branding-button' href="#" data-title='branding'></a></td>
+					<td><a class='portfolio-item-photos promos-button' href="#" data-title='promos'></a></td>
+					<td><a class='portfolio-item-photos branding-button' href="#" data-title='branding'></a></td>
 				</tr>
 			</table>
 			
@@ -65,168 +65,7 @@
 	</tr>
 </table>
 
-<div id='capo' class='modal-dialog' style="display:none">
-	<div class='modal-dialog-body'>
-		<div id='info_body'>
-			<%= image_tag 'portfolio/capoheader.png' %>
-			<p>
-			Capo was one of our biggest projects yet. Capo is a Open Mic Community Web Application where players
-			and audience members alike can find great live music. Users can find Open Stages, Filter by City,
-			Submit Open Mics, Attend and See Who's Attending. Capo also featured a iPhone Optimized View.
-			</p>
-		</div>
-		<div class='modal-dialog-actions'>
-			<hr>
-			<%= link_to 'Launch', 'http://www.capoapp.ca', :target => '_blank', :class => "standard-button" %>
-			<a class='close-dialog-link standard-button' href="#" data-title='capo'>Close</a>
-		</div>
-	</div>
-</div>
-
-<div id='md' class='modal-dialog' style="display:none">
-	<div class='modal-dialog-body'>
-		<div id='info_body'>
-			<%= image_tag 'portfolio/mdheader.png' %>
-			<p>
-			m&d was our first wedding website. It started out as a 'save the date' website, that eventually grew
-			into a full blown web application with news updates, and a RSVP system that not only allowed guests
-			to RSVP online, but also allowed the couple to view a summary of all the responses. m&d also featured
-			a iPhone Optimized view to make it even easier for iPhone users.
-			</p>
-			
-		</div>
-		<div class='modal-dialog-actions'>
-			<hr>
-			<%= link_to 'Launch', 'http://demomarilynanddouglas.heroku.com', :target => '_blank', :class => "standard-button" %>
-			<a class='close-dialog-link standard-button' href="#" data-title='md'>Close</a>
-		</div>
-	</div>
-</div>
-
-<div id='wwwp' class='modal-dialog' style="display:none">
-	<div class='modal-dialog-body'>
-		<div id='info_body'>
-			<%= image_tag 'portfolio/wwwpheader.png' %>
-			<p>
-			WWWP is currently a work in progress. It features our most minimalist design. It is a training website intended
-			to change the way the world thinks about presentations. Aside from a simple elegant design, it features a solid
-			back end with Content Management features, and Open ID Authentication (with Google IDs, Yahoo IDs and more). As mentioned,
-			this is a work in progress that will have videos and other tutorials.
-			</p>
-			
-		</div>
-		<div class='modal-dialog-actions'>
-			<hr>
-			<%= link_to 'Launch', 'http://www.whatswrongwithpresentations.com', :target => '_blank', :class => "standard-button" %>
-			<a class='close-dialog-link standard-button' href="#" data-title='wwwp'>Close</a>
-		</div>
-	</div>
-</div>
-
-<div id='caseyli' class='modal-dialog' style="display:none">
-	<div class='modal-dialog-body'>
-		<div id='info_body'>
-			<%= image_tag 'portfolio/caseyliheader.png' %>
-			<p>
-			caseyli.com was the very first Ruby on Rails website that founder of bitesite.ca, Casey Li, built. Ruby on Rails is
-			a strong new web framework that Casey has learned and applies to the majority of BiteSites. caseyli.com was a resume
-			website that allowed for Content Management to add and manage resume entires. It has now grown to host training videos
-			and Casey's photography services as well.
-			</p>
-			
-		</div>
-		<div class='modal-dialog-actions'>
-			<hr>
-			<%= link_to 'Launch', 'http://www.caseyli.com', :target => '_blank', :class => "standard-button" %>
-			<a class='close-dialog-link standard-button' href="#" data-title='caseyli'>Close</a>
-		</div>
-	</div>
-</div>
-
-<div id='teldio-video' class='modal-dialog' style="display:none;">
-	<div class='modal-dialog-body youtube-video-modal-dialog-body'>
-		<table class='dialog'>
-			<tr>
-				<td>
-					<%= image_tag 'portfolio/TeldioLogo.png' %>
-				</td>
-				<td>
-					<div id='youtube_teldio'>				
-					</div>
-					<h1>Film: Teldio Video</h1>
-					<p>
-						Like Graphic Design, Film was another big hobby turned into career. It began in University where I filmed a couple
-						of amateur films and documentaries that led me to attending the Vancouver Film School. The skills I acquired
-						proved useful as I began to use them in my professional career. Everything from filming/editing/producing Promotional Videos, to
-						Wedding Videos, to Corporate Training - Film remained a big part of my life. This Teldio Corporate Video
-						is one example.
-					</p>
-					<div class="modal-dialog-actions">
-						<hr>
-						<a class='close-dialog-link standard-button' href="#" data-title='teldio-video'>Close</a>
-					</div>
-				</td>
-			</tr>
-		</table>
-	</div>
-</div>
-
-<div id='northstar-video' class='modal-dialog' style="display:none;">
-	<div class='modal-dialog-body vimeo-video-modal-dialog-body'>
-		<table class='dialog'>
-			<tr>
-				<td>
-					<%= image_tag 'portfolio/NorthstarLogo.png' %>
-				</td>
-				<td>
-					<div id='vimeo_northstar'>
-					</div>
-					<h1>Film: NorthStar Utilities Solutions Video</h1>
-					<p>
-						Like Graphic Design, Film was another big hobby turned into career. It began in University where I filmed a couple
-						of amateur films and documentaries that led me to attending the Vancouver Film School. The skills I acquired
-						proved useful as I began to use them in my professional career. Everything from filming/editing/producing Promotional Videos, to
-						Wedding Videos, to Corporate Training - Film remained a big part of my life. This NorthStar Utilities Solution
-						video is something I made to show at a Leadership Conference.
-					</p>
-					<div class="modal-dialog-actions">
-						<hr>
-						<a class='close-dialog-link standard-button' href="#" data-title='northstar-video'>Close</a>
-					</div>
-				</td>
-			</tr>
-		</table>
-	</div>
-</div>
-
-<div id='spy-am-i-video' class='modal-dialog' style="display:none;">
-	<div class='modal-dialog-body vimeo-wide-video-modal-dialog-body'>
-		<table class='dialog'>
-			<tr>
-				<td>
-					<%= image_tag 'portfolio/spyami.png' %>
-				</td>
-				<td>
-					<div id='vimeo_spyami'>
-					</div>
-					<h1>Film: Spy Am I Promo Video</h1>
-					<p>
-						Like Graphic Design, Film was another big hobby turned into career. It began in University where I filmed a couple
-						of amateur films and documentaries that led me to attending the Vancouver Film School. The skills I acquired
-						proved useful as I began to use them in my professional career. Everything from filming/editing/producing Promotional Videos, to
-						Wedding Videos, to Corporate Training - Film remained a big part of my life. This NorthStar Utilities Solution
-						video is something I made to show at a Leadership Conference.
-					</p>
-					<div class="modal-dialog-actions">
-						<hr>
-						<a class='close-dialog-link standard-button' href="#" data-title='spy-am-i-video'>Close</a>
-					</div>
-				</td>
-			</tr>
-		</table>
-	</div>
-</div>
-
+<%= render "portfolio_dialogs" %>
 
 <script type="text/javascript">
 
@@ -237,18 +76,26 @@
 		toggleDialog($(this).data("title"));
 		return false;
 	});
+	
+	$(".portfolio-item-photos").click(function(){
+		togglePhotosDialog($(this).data("title"));
+		return false;
+	});
 		
 	$(".close-dialog-link").click(function(e){
 		toggleDialog($(this).data("title"));
 		return false;
 	});
 	
-	/*
-     * populateDialog - populate body and header image
-     */
-	function populateDialog(title) {
-		$("#info_body").html(getBody(title));
-	}
+	$(".next-photo-link").click(function(){
+		loadNextPhoto($(this).data("category"));
+		return false;
+	});
+	
+	$(".prev-photo-link").click(function(){
+		loadPrevPhoto($(this).data("category"));
+		return false;
+	});
 	
 	/*
 	 * toggleDialog - show/hide dialog
@@ -296,41 +143,51 @@
 		$("#" + title).fadeToggle(400);
 	}
 	
-	/*
-	 * getBody - retrieve body text based on title
-	 */
-	function getBody(title) {
-		var body = "";
-		if(title == "capo") {
-			body = "<p>Capo was one of our biggest projects. It was built as a Open Mic Community Web App that allowed players and audience</p>";
-		}
-		else if(title == "wwwp") {
-			body = "<p>BiteSite is small Web Design company that believes in <b>simplicity</b>. Everything from our design " +
-					   	"aesthetic to our delivery process is centered around this philosophy. We focus on building simple yet " +
-						"elegant Web Sites and Web Applications for all types of customers.</p>" +
-						"<p>We also offer a full range " +
-						"of media services from <b>photography</b> to <b>video production</b> to <b>graphic design</b> and <b>motion graphics</b> to make your web " +
-						"presence truly one that stands out. " +
-						"</p>";
-		}
-		else if(title == "md") {
-			body = "<p>m&d was our first Wedding Web Site project. It started out as a simple 'Save the Date' site that became a fully interactive " +
-						"web application. It featured a RSVP system with e-mail notifications and a iPhone optimized version of the site. " +
-						"</p>";
-		}
-		else if(title == "caseyli") {
-			body = "<p>caseyli.com was our first project. It was a resume website with content management to manage resume entries such as " +
-					"Work Experience, Education, Skills, Hobbies and more." +
-					"</p>";
-		}
-		else if(title == "teldio-video") {
-			body = "";
+	function togglePhotosDialog(title) {
+		var startImage = "";
+		if(title == "weddingphotos") {
+			startImage = "wd1.png";
 		}
 		
-		else {
-			body = "We're sorry, there was an error loading this page.";
+		$(".prev-photo-link").data("category", title);
+		$(".next-photo-link").data("category", title);
+		
+		$("#photos-dialog-body").data("photonumber", 1);
+		$("#photos-counter").html("1 / " + getMaxPhotoNumber(title));
+		$("#photos-dialog-body").html("<img class='portfolio-photo' src='assets/portfolio/" + startImage + "' />");
+		$("#photos-dialog").fadeToggle(400);
+	}
+	
+	function loadNextPhoto(category){
+		var photonumber = $("#photos-dialog-body").data("photonumber");
+		if(photonumber != getMaxPhotoNumber(category)) {
+			photonumber = photonumber + 1;
 		}
-		return body;
+		loadPhoto(category, photonumber);
+	}
+	
+	function loadPrevPhoto(category){
+		var photonumber = $("#photos-dialog-body").data("photonumber");
+		if(photonumber != 1) {
+			photonumber = photonumber - 1;
+		}
+		loadPhoto(category, photonumber);
+	}
+	
+	function loadPhoto(category, photonumber) {
+		var nextImage = "";
+		if(category == "weddingphotos") {
+			nextImage = "wd" + photonumber + ".png";
+		}
+		$("#photos-dialog-body").data("photonumber", photonumber);
+		$("#photos-counter").html(photonumber + " / " + getMaxPhotoNumber(category));
+		$("#photos-dialog-body").html("<img class='portfolio-photo' src='assets/portfolio/" + nextImage + "' />");
+	}
+	
+	function getMaxPhotoNumber(category) {
+		if(category == "weddingphotos") {
+			return 14;
+		}
 	}
     
 
