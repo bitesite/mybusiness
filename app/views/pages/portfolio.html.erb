@@ -26,9 +26,9 @@
 			</table>
 			<table class="portfolio-items">
 				<tr>
-					<td><a class='portfolio-item-photos corporatephotos-button' href="#" data-title='corporatephotos'></a></td>
 					<td><a class='portfolio-item-photos weddingphotos-button' href="#" data-title='weddingphotos'></a></td>
 					<td><a class='portfolio-item-photos eventphotos-button' href="#" data-title='eventphotos'></a></td>
+					<td><a class='portfolio-item-photos corporatephotos-button' href="#" data-title='corporatephotos'></a></td>
 				</tr>
 			</table>
 		
@@ -144,10 +144,7 @@
 	}
 	
 	function togglePhotosDialog(title) {
-		var startImage = "";
-		if(title == "weddingphotos") {
-			startImage = "wd1.png";
-		}
+		var startImage = getFilename(title) + "1.png";
 		
 		$(".prev-photo-link").data("category", title);
 		$(".next-photo-link").data("category", title);
@@ -175,19 +172,54 @@
 	}
 	
 	function loadPhoto(category, photonumber) {
-		var nextImage = "";
-		if(category == "weddingphotos") {
-			nextImage = "wd" + photonumber + ".png";
-		}
+		var nextImage = getFilename(category) + photonumber + ".png";
 		$("#photos-dialog-body").data("photonumber", photonumber);
 		$("#photos-counter").html(photonumber + " / " + getMaxPhotoNumber(category));
 		$("#photos-dialog-body").html("<img class='portfolio-photo' src='assets/portfolio/" + nextImage + "' />");
 	}
 	
 	function getMaxPhotoNumber(category) {
-		if(category == "weddingphotos") {
-			return 14;
+		var maxnumber = 1;
+		switch(category) {
+			case "weddingphotos":
+				maxnumber = 14;
+				break;
+			case "eventphotos":
+				maxnumber = 14;
+				break;
+			case "corporatephotos":
+				maxnumber = 6;
+				break;
+			case "promos":
+				maxnumber = 12;
+				break;
+			case "branding":
+				maxnumber = 5;
+				break;
 		}
+		return maxnumber;
+	}
+	
+	function getFilename(category) {
+		var filename = "";
+		switch(category) {
+			case "weddingphotos":
+				filename = "wd";
+				break;
+			case "eventphotos":
+				filename = "ev";
+				break;
+			case "corporatephotos":
+				filename = "cp";
+				break;
+			case "promos":
+				filename = "pr";
+				break;
+			case "branding":
+				filename = "br";
+				break;
+		}
+		return filename;
 	}
     
 
