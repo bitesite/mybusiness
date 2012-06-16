@@ -7,7 +7,7 @@ class ContactMailer < ActionMailer::Base
     @first_name = first_name
     @last_name = last_name
     
-    mail(:to => "info@bitesite.ca",
+    mail(:to => "info@bitesite.ca, casey.li@gmail.com",
          :from => "info@bitesite.ca",
          :subject => "BiteSite.ca: Message from #{customer_email}")
   end
