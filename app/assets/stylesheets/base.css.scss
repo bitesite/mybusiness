@@ -11,6 +11,7 @@ body {
 a {
 	color: #444;
 	text-decoration: none;
+	border:none;
 }
 
 a:hover {
@@ -78,7 +79,7 @@ a.bar-link:hover {
 	text-align: center;
 }
 
-.article-highlight {
+.article-highlight-left {
 	float: left;
 	font-weight:bold;
 	width:300px;
@@ -188,11 +189,13 @@ a.standard-button {
 	line-height: 40px;
 	font-size: 12px;
 	padding: 10px 20px 10px 20px;
-}
 
-.standard-button:hover {
-	background-color: black;
-	color: white;
+
+	&:hover {
+		background-color: black;
+		color: white;
+		text-decoration: none;
+	}
 }
 
 
