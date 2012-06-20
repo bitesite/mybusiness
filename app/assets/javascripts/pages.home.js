@@ -116,7 +116,7 @@ function getBody(title) {
 				   "where all your guests can get the latest info about your special day. Or maybe you're hosting a <b>fundraiser</b> " +
 				   "or <b>big event</b> and want to launch a web promotion." +
 				   "</p><p>Whether you're technical or have never touched a computer before in your life and whatever your need " +
-				   "is, BiteSite could be a just what you're looking for.</p>";
+				   "is, BiteSite could be just what you're looking for.</p>";
 	}
 	else if(title == "whoarewe") {
 		body = "<p>BiteSite is small Web Design and Web App company that believes in <b>simplicity</b>. Everything from our design " +
