@@ -1,22 +1,22 @@
 class PagesController < ApplicationController
   def home
-    @title = "bitesite.ca | websites made easy"
+    @title = "Home"
   end
   
   def packages
-    @title = "bitesite.ca | packages"
+    @title = "Packages"
   end
 
   def addons
-    @title = "bitesite.ca | addons"
+    @title = "Addons"
   end
   
   def portfolio
-    @title = "bitesite.ca | portfolio"
+    @title = "Portfolio"
   end
 
   def contact
-    @title = "bitesite.ca | contact"
+    @title = "Contact"
     @success = false
     
     if request.post?
@@ -35,7 +35,7 @@ class PagesController < ApplicationController
   end
   
   def about
-    @title = "bitesite.ca | about"
+    @title = "About"
   end
   
 end
