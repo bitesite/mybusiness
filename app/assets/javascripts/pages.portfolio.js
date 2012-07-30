@@ -7,11 +7,13 @@
 
 $(function(){	
 	$(".portfolio-item").click(function(){
+		positionDialog();
 		togglePortfolioDialog($(this).data("title"));
 		return false;
 	});
 
 	$(".portfolio-item-photos").click(function(){
+		positionDialog();
 		togglePhotosDialog($(this).data("title"));
 		return false;
 	});
@@ -31,6 +33,15 @@ $(function(){
 		return false;
 	});
 });
+
+/* 
+ * positionAndSizePortfolioDialog - position dialog and size it
+ */
+function positionDialog() {
+	var _top = $("body").scrollTop() + 100 + "px";
+	$('.modal-dialog-body').css('margin-top', _top);
+}
+
 
 /*
  * togglePortfolioDialog - show/hide dialog
