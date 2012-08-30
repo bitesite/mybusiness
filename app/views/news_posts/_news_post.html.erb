@@ -2,5 +2,6 @@
 	<%= news_post.title %>
 </div>
 <div class="news-post-body">
+	<%= image_tag( news_post.image_url(:thumb).to_s ) %>
 	<%= news_post.body %>
 </div>
