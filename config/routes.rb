@@ -9,6 +9,7 @@ Mybusiness::Application.routes.draw do
   get "pages/contact"
   get "pages/about"
   
+  match "/news" => "news_posts#index"
   match "/packages" => "pages#packages"
   match "/addons" => "pages#addons"
   match "/portfolio" => "pages#portfolio"
