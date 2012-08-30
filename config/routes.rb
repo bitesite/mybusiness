@@ -1,4 +1,8 @@
 Mybusiness::Application.routes.draw do
+  devise_for :users, :path_names => { :sign_in => 'signin', :sign_out => 'signout', :sign_up => 'signup' }
+
+  resources :news_posts
+
   get "pages/home"
   get "pages/packages"
   get "pages/addons"
@@ -10,6 +14,8 @@ Mybusiness::Application.routes.draw do
   match "/portfolio" => "pages#portfolio"
   match "/contact" => "pages#contact"
   match "/about" => "pages#about"
+  
+  match "/signin" => redirect("/users/signin")
   
   root :to => "pages#home"
 

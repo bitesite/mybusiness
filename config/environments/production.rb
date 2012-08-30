@@ -74,4 +74,7 @@ Mybusiness::Application.configure do
     :password             => ENV['SMTP_PASSWORD'],
     :authentication       => 'plain',
     :enable_starttls_auto => true  }
+    
+  # Devise
+  config.action_mailer.default_url_options = { :host => 'www.bitesite.ca' }
 end

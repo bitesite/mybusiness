@@ -5,4 +5,8 @@
 	<%= link_to "portfolio", "/portfolio" %>
 	<%= link_to "contact", "/contact" %>
 	<%= link_to "about", "/about" %>
+	
+	<% if user_signed_in? %>
+		<%= link_to "logout", destroy_user_session_path, :method => :delete %>
+	<% end %>
 </div>
