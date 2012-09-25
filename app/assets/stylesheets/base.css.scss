@@ -129,6 +129,26 @@ a.bar-link:hover {
 	
 }
 
+.footer-table {
+	tr {
+		td {
+			vertical-align:top;
+			padding: 0 20px;
+			&.footer-info {
+				width:110px;
+				border-right:1px solid #444444;
+			}
+			
+			&.footer-news {
+				h2 {
+					margin: 0;
+					padding: 0;
+				}
+			}
+		}
+	}
+}
+
 
 /* Modal Dialogs */
 

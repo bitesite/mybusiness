@@ -1,7 +1,8 @@
 class PagesController < ApplicationController
+
   def home
     @title = "Home"
-    @news_posts = NewsPost.limit(5)
+
   end
   
   def packages
@@ -38,5 +39,7 @@ class PagesController < ApplicationController
   def about
     @title = "About"
   end
+  
+
   
 end
