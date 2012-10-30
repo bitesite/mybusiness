@@ -1,5 +1,5 @@
 class NotificationsMailer < ActionMailer::Base
-  default :from => "info@bitesite.ca"
+  default :from => "no-reply@bitesite.ca"
   
   def contact_confirmation(first_name, last_name, customer_email, message)
     
@@ -8,7 +8,7 @@ class NotificationsMailer < ActionMailer::Base
     @first_name, @last_name, @message = first_name, last_name, message
     
     mail(:to => customer_email,
-         :from => "info@bitesite.ca",
+         :from => "no-reply@bitesite.ca",
          :subject => "Thanks for contacting BiteSite.ca!")
   end
 end
