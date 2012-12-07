@@ -4,151 +4,31 @@ body {
 	padding: 0px;
 	margin: 0px;
 	font-family: "Helvetica", "Arial";
-	height: 100%;
-	background: #000;
 }
 
-a {
-	color: #444;
-	text-decoration: none;
-	border:none;
-}
-
-a:hover {
-	text-decoration: underline;
-}
-
-.text-line
-{
+.clear-floats {
 	clear:both;
-}
-
-a:hover {
-	color: #000;
-}
-
-a.bar-link {
-	display: block;
-	float:left;
-	padding: 10px;
-	border: 1px solid;
-	border-color: #999;
-	border-radius: 10px;
-	background: #38425e;
-	text-decoration: none;
-	width: 200px;
-	height: 60px;
-	margin: 0 10px 0 10px;
-	color: #eee;
-
-	text-align: center;
-}
-
-a.bar-link:hover {
-	text-decoration: none;
-	background: #eee;
-	color: #222;
-}
-
-.bar-links {
-	margin: 10px auto;
-	width: 726px;
-	display:block;
-	float:none;
-}
-
-/* Navigation */
-
-.navigation {
-	display:block;
-	float: right;
-}
-
-.navigation a{
-	padding: 10px;
-	color: #ccc;
-	text-decoration: none;
-}
-
-.navigation a:hover {
-	color: #fff;
-}
-
-.center-block {
-	display:block;
-	text-align: center;
-}
-
-.article-highlight-left {
-	float: left;
-	font-weight:bold;
-	width:300px;
-	font-size: 1.2em;
-	padding: 0px 15px 15px 0px;
 }
 
 /* Layout */
 
 .container {
 	margin: 0 auto;
-	width: 900px;
-	padding: 20px 0 20px 0;
+	width: 960px;
+	height:100%;
+	position:relative;
+	border-right: 1px solid #333;
+	border-left: 1px solid #333;
 }
 
-
-/* Header */
-
-.header {
-	height: 50px;
-	background: #555;
-	padding: 10px 0;
+/* Text */
+h1 {
+	padding:0px;
+	margin:0px;
+	display:block;
+	text-align:center;
+	width:100%;
 }
-
-/* Main Body */
-.main-body {
-	background: #fff;
-}
-
-/* Footer */
-.footer {
-	background: #000;
-	height: 100px;
-
-	bottom:0;
-	width: 100%;
-	color: #fff;
-	font-size: 0.8em;
-	
-	.footer-link {
-		&:hover {
-			color:#868BA9;
-		}
-		
-		color: #fff;
-	}
-	
-}
-
-.footer-table {
-	tr {
-		td {
-			vertical-align:top;
-			padding: 0 20px;
-			&.footer-info {
-				width:110px;
-				border-right:1px solid #444444;
-			}
-			
-			&.footer-news {
-				h2 {
-					margin: 0;
-					padding: 0;
-				}
-			}
-		}
-	}
-}
-
 
 /* Modal Dialogs */
 

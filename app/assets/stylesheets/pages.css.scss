@@ -4,117 +4,91 @@
 
 /* GENERAL ***************************************************/
 
-.page-header {
-	height: 100px;
-}
-
-.page-table {
-	font-size: 0.9em;
-	
-	tr td.main-column {
-		width: 75%;
-	}
-	
-	tr td.sidebar-column {
-		background: #eee;
-		
-		background-image: -webkit-gradient(
-			linear,
-			left bottom,
-			left top,
-			color-stop(0.16, #FFF),
-			color-stop(0.93, #EEE)
-		);
-		
-		/* Firefox */
-		background: -moz-linear-gradient(top,  #eeeeee,  #ffffff);
-
-		 /* for IE */
-		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#ffffff');
-
-		vertical-align: top;
-		padding: 20px;
-		
-		font-size: 1em;
-		
-		h1 {
-			padding: 0px 0px;
-			margin: 0px 0px 10px 0px;
-			font-size: 1.3em;
-		}
-		
-		p {
-			margin: 0px 0px 0px 0px;
-			padding: 0px 0px 20px 0px;
-		}
-	}
-}
-
-.picture-caption {
-	font-size: 0.8em;
-	font-style: italic;
-}
-
 
 /* HOME ******************************************************/
 
-.features-table {
-	padding-top: 20px;
-	width: 100%;
-	
-	td {
-		border-right: 1px solid;
-		border-color: #000;
-		
-		vertical-align: top;
-		width: 25%;
-		font-size: 0.8em;
-		padding: 10px;
-		color: #eee;
-		background: #444;
-		
-		background-image: -webkit-gradient(
-			linear,
-			left bottom,
-			left top,
-			color-stop(0.16, #111),
-			color-stop(0.93, #555)
-		);
-		
-		/* Firefox */
-		background: -moz-linear-gradient(top,  #555555,  #111111);
-
-		 /* for IE */
-		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#555555', endColorstr='#111111');
-		
-		h3 {
-			margin: 2px 0 10px 0px;
-		}
-		
-	}
-	
-	td.right-edge-cell {
-		border-right: none;
-	}
-	
+.logo {
+	position:absolute;
+	top:180px;
+	right:60px;
 }
 
-.home-news {
-	padding: 10px;
-	margin: 10px 0;
-	color:#FFF;
-	border-radius: 10px;
-	font-size:12px;
+.business-card {
+	position:absolute;
+	bottom:0px;
+	left:60px;
+}
+
+.hero {
+	height:500px;
+	border-bottom:1px solid #999;
+}
+
+.hero-description {
+	text-align:right;
+	position:absolute;
+	font-size:14px;
+	right:60px;
+	top:300px;
+	display:block;
+	width: 400px;
+	color: #5d5d5d;
+}
+
+.navigation-bar {
+	background:black;
+}
+
+.nav-links {
+	text-align:center;
+	width: 600px;
+	margin:0 auto;
 	a {
-		color:#FFF;
+		float:left;
+		display:block;
+		width: 90px;
+		padding:15px 30px;
+		margin:0px;
+		color:white;
+		text-decoration:none;
+		
+		&:hover {
+			background:white;
+			color:black;
+		};
 	}
 }
 
-.home-news-listing {
-	list-style:none;
-	padding-left:0;
+.page-section {
+	padding: 20px 0px;
+	background:#ddd;
+	border-bottom:1px solid #999;
+	border-top:1px solid #FFF;
 }
 
+.caption-left, .screenshot-left {
+	float:left;
+}
+
+.caption-right, .screenshot-right {
+	float:right;
+}
+
+.caption {
+	width: 45%;
+	font-size:20px;
+	line-height:1.5;
+	color:#555;
+}
+
+
+.screenshot {
+	width: 50%;
+	vertical-align:middle;
+	border: 5px solid #ccc;
+	border-radius: 5px;
+	box-shadow: 2px 2px 2px black;		
+}
 
 /* PACAKGES ******************************************************/
 
