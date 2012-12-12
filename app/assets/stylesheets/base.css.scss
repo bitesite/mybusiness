@@ -6,6 +6,10 @@ body {
 	font-family: "Helvetica", "Arial";
 }
 
+body.fixed-nav {
+	padding-top:48px;
+}
+
 .clear-floats {
 	clear:both;
 }
@@ -17,8 +21,9 @@ body {
 	width: 960px;
 	height:100%;
 	position:relative;
-	border-right: 1px solid #333;
-	border-left: 1px solid #333;
+	overflow:hidden;
+	/*border-right: 1px solid #333;
+	border-left: 1px solid #333;*/
 }
 
 /* Text */
@@ -28,6 +33,9 @@ h1 {
 	display:block;
 	text-align:center;
 	width:100%;
+	font:"Raleway";
+	font-weight:100;
+	font-size:50px;
 }
 
 h2 {

@@ -32,8 +32,55 @@ $(function(){
 		toggleHomeDialog();
 		return false;
 	});
+	
+	$(window).scroll(windowScroll);
 
 });
+
+/*
+ * Fix navigation bar to top
+ */
+function windowScroll() {
+	
+	var pixelsDown = $(window).scrollTop();
+	
+	if(pixelsDown > 500) {
+		$(".navigation-bar").addClass("navigation-bar-fixed");
+		$("body").addClass("fixed-nav");
+	}
+	else {
+		$(".navigation-bar").removeClass("navigation-bar-fixed");
+		$("body").removeClass("fixed-nav");
+	}
+	
+	var webDesignShift = -100 + pixelsDown;
+	var mobileDevelopmentShift = 800 - pixelsDown;
+	var photographyShift = -1000 + pixelsDown;
+	var videoProductionShift = 1400 - pixelsDown;
+	var graphicDesignShift = -1700 + pixelsDown;
+	
+	if(webDesignShift > 10) {
+		webDesignShift = 10;
+	}
+	if(mobileDevelopmentShift < 0) {
+		mobileDevelopmentShift = 0;
+	}
+	if(photographyShift > 10) {
+		photographyShift = 10;
+	}
+	if(videoProductionShift < 0) {
+		videoProductionShift = 10;
+	}
+	if(graphicDesignShift > 10) {
+		graphicDesignShift = 10;
+	}
+		
+	$(".mobiledevelopment").css("left", mobileDevelopmentShift);
+	$(".photography").css("left", photographyShift);
+	$(".videoproduction").css("left", videoProductionShift);
+	$(".graphicdesign").css("left", graphicDesignShift);
+	
+}
 
 
 /*
