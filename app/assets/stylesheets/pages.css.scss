@@ -60,35 +60,38 @@
 }
 
 .page-section {
-	padding: 20px 0px;
 	background:#ddd;
 	border-bottom:1px solid #999;
 	border-top:1px solid #FFF;
 }
 
-.caption-left, .screenshot-left {
-	float:left;
+.feature {
+	
+	margin: 50px 0px;
+	
+	.caption-left, .screenshot-left {
+		float:left;
+	}
+
+	.caption-right, .screenshot-right {
+		float:right;
+	}
+
+	.caption {
+		width: 45%;
+		font-size:16px;
+		line-height:1.5;
+		color:#555;
+	}
+
+
+	.screenshot {
+		width: 50%;
+		vertical-align:middle;
+	}
+	
 }
 
-.caption-right, .screenshot-right {
-	float:right;
-}
-
-.caption {
-	width: 45%;
-	font-size:20px;
-	line-height:1.5;
-	color:#555;
-}
-
-
-.screenshot {
-	width: 50%;
-	vertical-align:middle;
-	border: 5px solid #ccc;
-	border-radius: 5px;
-	box-shadow: 2px 2px 2px black;		
-}
 
 /* PACAKGES ******************************************************/
 
