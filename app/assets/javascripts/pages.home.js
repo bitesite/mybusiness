@@ -40,10 +40,16 @@ $(function(){
 /*
  * Fix navigation bar to top
  */
+var mobileDevelopmentAnimateStop = false;
+var photographyAnimateStop = false;
+var videoProductionAnimateStop = false;
+var graphicDesignAnimateStop = false;
+
 function windowScroll() {
 	
 	var pixelsDown = $(window).scrollTop();
 	
+	/* Navigation Bar */
 	if(pixelsDown > 500) {
 		$(".navigation-bar").addClass("navigation-bar-fixed");
 		$("body").addClass("fixed-nav");
@@ -52,34 +58,40 @@ function windowScroll() {
 		$(".navigation-bar").removeClass("navigation-bar-fixed");
 		$("body").removeClass("fixed-nav");
 	}
-	
-	var webDesignShift = -100 + pixelsDown;
-	var mobileDevelopmentShift = 800 - pixelsDown;
-	var photographyShift = -1000 + pixelsDown;
-	var videoProductionShift = 1400 - pixelsDown;
-	var graphicDesignShift = -1700 + pixelsDown;
-	
-	if(webDesignShift > 10) {
-		webDesignShift = 10;
-	}
-	if(mobileDevelopmentShift < 0) {
-		mobileDevelopmentShift = 0;
-	}
-	if(photographyShift > 10) {
-		photographyShift = 10;
-	}
-	if(videoProductionShift < 0) {
-		videoProductionShift = 10;
-	}
-	if(graphicDesignShift > 10) {
-		graphicDesignShift = 10;
-	}
 		
-	$(".mobiledevelopment").css("left", mobileDevelopmentShift);
-	$(".photography").css("left", photographyShift);
-	$(".videoproduction").css("left", videoProductionShift);
-	$(".graphicdesign").css("left", graphicDesignShift);
 	
+	/* Feature Images */
+	if(pixelsDown > 500 && !mobileDevelopmentAnimateStop) {
+		$('.mobiledevelopment').animate({
+	    	left: '-=500'
+	  	}, 1000, function() {
+	  	});			
+		mobileDevelopmentAnimateStop = true;
+	}
+	
+	if(pixelsDown > 700 && !photographyAnimateStop) {
+		$('.photography').animate({
+			left: '+=500'
+		}, 1000, function(){}
+		);
+		photographyAnimateStop = true;
+	}
+	
+	if(pixelsDown > 1100 && !videoProductionAnimateStop) {
+		$('.videoproduction').animate({
+			left: '-=500'
+		}, 1000, function(){}
+		);
+		videoProductionAnimateStop = true;
+	}
+	
+	if(pixelsDown > 1500 && !graphicDesignAnimateStop) {
+		$('.graphicdesign').animate({
+			left: '+=500'
+		}, 1000, function(){}
+		);
+		graphicDesignAnimateStop = true;
+	}
 }
 
 
