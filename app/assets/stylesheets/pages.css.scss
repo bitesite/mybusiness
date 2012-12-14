@@ -77,11 +77,33 @@
 	background:#ddd;
 	border-bottom:1px solid #999;
 	border-top:1px solid #FFF;
+	padding-bottom:30px;
+	position:relative;
+}
+
+.services-section {
+	padding-bottom:0px;
+}
+
+.news-section {
+	background:#efefef;
+}
+
+.about-section {
+	background:#dedede;
+}
+
+.contact-section {
+	background:#cfcfcf;
+}
+
+.footer {
+	background:black;
 }
 
 .feature {
 	
-	margin: 50px 0px;
+	margin: 50px 0px 20px 0px;
 	
 	.caption-left, .screenshot-left {
 		float:left;
@@ -123,10 +145,96 @@
 	.mobiledevelopment, .videoproduction {
 		position:relative;
 		left:500px;
-	}
+	}	
+}
+
+.recent-news-posts {
 	
 }
 
+.recent-news-post {
+	width:280px;
+	padding:0px 20px;
+	float:left;
+	text-align:center;
+	margin-bottom:40px;
+}
+
+.recent-news-post-image {
+	width: 150px;
+	height:150px;
+	margin:0px auto;
+	border:5px solid #ccc;
+}
+
+.recent-news-post-body {
+	text-align:left;
+	font-size:12px;
+	padding:0px 10px;
+}
+
+.more-news {
+
+	background: #545454; /* Old browsers */
+	background: -moz-linear-gradient(top,  #545454 0%, #e5e5e5 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#545454), color-stop(100%,#e5e5e5)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #545454 0%,#e5e5e5 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #545454 0%,#e5e5e5 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #545454 0%,#e5e5e5 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #545454 0%,#e5e5e5 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#545454', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
+
+	text-decoration:none;
+	color:black;
+	display:block;
+	width:200px;
+	padding:10px;
+	border:1px solid #222;
+	border-radius: 5px;
+	margin: 0 auto 20px auto;
+	text-align:center;
+	box-shadow:inset 1px 1px 1px white;
+	border-color:white;
+	
+	&:hover {
+		background:black;
+		color:white;
+	};
+}
+
+.about-picture {
+	box-shadow:5px 5px 5px black;
+}
+
+.about-text {
+	font-size:12px;
+}
+
+.about-picture-caption {
+	position:absolute;
+	top:200px;
+	left:130px;
+	color:white;
+	font-size:20px;
+}
+
+.contact-form {
+	width: 60%;
+	float:left;
+}
+
+.contact-caption {
+	width: 35%;
+	float:right;
+}
+
+.footer-info {
+	margin: 30px 0;
+	width:100%;
+	text-align:center;
+	color:#999;
+	font-size:20px;
+}
 
 /* PACAKGES ******************************************************/
 
@@ -255,42 +363,4 @@
 
 .portfolio-photo {
 	height: 520px;
-}
-
-/* CONTACT **********************************/
-
-.contact-table  {
-	tr td {
-		vertical-align: top;
-		padding: 20px;
-		
-		h3 {
-			margin-top: 0px;
-		}
-		
-	}
-	tr td.left-col {
-		border-right: 1px solid;
-		border-color: #BBB;
-		padding-left: 0px;
-	}
-}
-
-/* ABOUT *****************************************/
-.about-table {
-	tr {
-		td {
-			vertical-align: top;
-		}
-		td.left-col {
-			padding-right: 20px;
-		}
-	}
-}
-.about-pics {
-	width: 175px;
-}
-
-.triptych {
-	width: 170px;
 }

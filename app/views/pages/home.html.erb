@@ -14,16 +14,16 @@
 <div class="navigation-bar">
 	<div class="container">
 		<div class="nav-links">
-			<%= link_to "SERVICES", "#" %>
-			<%= link_to "NEWS", "#" %>
-			<%= link_to "ABOUT", "#" %>
-			<%= link_to "CONTACT", "#" %>
+			<%= link_to "SERVICES", "#", :id => "services-link" %>
+			<%= link_to "NEWS", "#", :id => "news-link" %>
+			<%= link_to "ABOUT", "#", :id => "about-link" %>
+			<%= link_to "CONTACT", "#", :id => "contact-link" %>
 		</div>
 		<div class="clear-floats"></div>
 	</div>
 </div>
 
-<div class="page-section">
+<div class="page-section services-section">
 	<div class="container">
 
 		<h1>Services</h1>
@@ -126,23 +126,125 @@
 	</div>
 </div>
 
-<div class="page-section">
+<div class="page-section news-section">
 	<div class="container">
 		<h1>News</h1>
-		<div class="clear-floats"></div>
+		<div class="recent-news-posts">
+			<% @recent_news_posts[0..2].each do |news_post| %>
+				<div class="recent-news-post">
+					<% if news_post.image_url.nil? %>
+						<%= image_tag "defaultnews.png", :class => "recent-news-post-image" %>
+					<% else %>
+						<%= image_tag news_post.image_url.to_s, :class => "recent-news-post-image" %>
+					<% end %>
+					<div class="recent-news-post-body"><%= raw news_post.body %></div>
+				</div>
+			<% end %>
+		</div>
+		<div class="clear-floats"></div>		
+		<%= link_to "MORE NEWS", "/news", :class => "more-news" %>
+		
+
 	</div>
 </div>
 
-<div class="page-section">
+<div class="page-section about-section">
 	<div class="container">
 		<h1>About</h1>
+		
+		<%= image_tag "me.png", :class => "about-picture" %>
+		<div class="about-picture-caption">
+			CASEY LI . FOUNDER
+		</div>
+		<div class="about-text">
+		<p>
+			BiteSite is a web design and development company based out of Ottawa, Canada. We have a strong philosophy in making things simple for our customers.
+			We're less focused on things like business development, and more focused on delivering tangible products to our customers. Although we have great respect
+			for the big boys like Google, Facebook, Shopify and the way they do things, we have no visions of taking over the world or being the next big thing. 
+		</p>
+		<p>
+			We get way more satisfaction in developing something for somebody and having them say "Wow, that's really cool!" than landing a huge deal attached to a
+			lot of dollars.
+		</p>
+		<p>
+			We also have a philosophy in finding a good fit between customer and company. We think that if a project is not right for us, it will be bad news
+			for both parties involved. However, if we find a good fit, then we know we can deliver something both parties will be excited about.
+			That's why we really have a no
+			pressure sales model. We want to work on projects we know that we'll have fun implementing and be truly proud of. If the customer is not happy
+			or we can't deliver - then what's the point in taking on the project in the first place. Just for dollars? Just to expand our portfolio? 
+			BiteSite doesn't think so.
+		</p>
+		<p>
+			When it comes to dealing with customers - we like to deal with all sorts of customers. We get great satisfaction in dealing with customers who
+			have no idea what they want and have never touched a computer in their life. We love educating others on the Web and what it's all about. On the other hand,
+			we love dealing with highly technical people who we can learn from as well. In our past lives, we discovered that collaboration is truly the only
+			way to success.
+		</p>
+		<p>
+			Design? Just like our delivery process - BiteSite is big on the "less is more" philosophy. There's a certain timelessness to simple elegant
+			designs. However, that being said - BiteSite also highly respects full, lush designs.
+		</p>
+		<p>
+			When it comes down to it - BiteSite was started with the intention of working on great things and having fun while doing it. And that's not
+			just for our staff. We believe it should be fun for our customers as well. When both parties involved have fun and let their creative juices flow,
+			truly amazing sites and applications are born.
+		</p>
+		<p>
+			BiteSite believes in culture above all else. If we sound like a fit, be sure to contact us <%= link_to "here", "/contact" %>.
+		</p>
+		</div>
+		
 		<div class="clear-floats"></div>
 	</div>
 </div>
 
-<div class="page-section">
+<div class="page-section contact-section">
 	<div class="container">
 		<h1>Contact</h1>
+
+		<div class="contact-form">
+			<%= form_tag "/contact" do %>
+				<div class="field">
+					<%= label_tag :first_name, "Your First Name" %><br/>
+					<%= text_field_tag :first_name, nil, :size => "30", :class => "contact-field" %><br/>
+				</div>
+				<div class="field">
+					<%= label_tag :last_name, "Your Last Name" %><br/>
+					<%= text_field_tag :last_name, nil, :size => "30", :class => "contact-field" %><br/>
+				</div>
+				<div class="field">
+					<%= label_tag :email_address, "Your E-Mail Address" %><br/>
+					<%= text_field_tag :email_address, nil, :size => "30", :class => "contact-field" %><br/>
+				</div>
+				<div class="field">
+					<%= label_tag :message, "Message" %><br/>
+					<%= text_area_tag :message, nil, :cols => 95, :rows => 10, :class => "contact-field" %><br/>
+				</div>
+				<div class="actions">
+					<%= submit_tag "Submit", :id => "contact-submit", :class => "standard-button" %>
+				</div>
+			<% end %>
+		</div>
+		<div class="contact-caption">
+
+			<h3>Contact us for anything!</h3> 
+			<p>Know exactly what you want? Have no idea at all? Want to just open up a conversation about your options? 
+			Have some technical questions? Whatever it may be, please drop us a line and we'll do
+			our best to answer any questions you may have.</p>
+
+			<p><b>BiteSite believes strongly in finding a good fit company for a good
+			fit customer</b>. So if we find out we're not right for you, we won't pressure you. If we do, we'll
+			be happy to build something you'll truly be excited about.</p>
+
+		</div>
 		<div class="clear-floats"></div>
+	</div>
+</div>
+
+<div class="page-section footer">
+	<div class="container">
+		<div class="footer-info">
+			BITESITE.CA . OTTAWA . ONTARIO . CANADA
+		</div>
 	</div>
 </div>

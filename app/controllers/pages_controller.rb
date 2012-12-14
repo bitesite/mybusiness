@@ -2,7 +2,7 @@ class PagesController < ApplicationController
 
   def home
     @title = "Home"
-
+    @recent_news_posts = NewsPost.all(:limit => 3)
   end
   
   def packages
