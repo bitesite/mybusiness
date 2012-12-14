@@ -221,7 +221,9 @@
 					<%= text_area_tag :message, nil, :cols => 95, :rows => 10, :class => "contact-field" %><br/>
 				</div>
 				<div class="actions">
-					<%= submit_tag "Submit", :id => "contact-submit", :class => "standard-button" %>
+					<%= link_to "SUBMIT", "#", :id => "contact-submit", :class => "contact-submit" %>
+					
+					<div class="contact-submit-info" id="contact-submit-info"></div>
 				</div>
 			<% end %>
 		</div>

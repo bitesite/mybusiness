@@ -34,6 +34,12 @@ class PagesController < ApplicationController
         @success = true
       end
     end
+    
+    respond_to do |format|
+      format.html
+      format.json { render :json => { :success => @success }.to_json }
+    end
+    
   end
   
   def about

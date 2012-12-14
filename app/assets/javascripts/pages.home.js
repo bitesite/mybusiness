@@ -21,7 +21,15 @@ $(function(){
 		navigateTo(".contact-section"); 
 		return false;
 	});
+	
+	$("#contact-submit").click(function(){
+		submitContactForm();
+		return false;
+	});
+	
 	$(window).scroll(windowScroll);
+	
+
 
 });
 
@@ -84,4 +92,35 @@ function windowScroll() {
 		);
 		graphicDesignAnimateStop = true;
 	}
+}
+
+function submitContactForm() {
+	var first_name = $("#first_name").val();
+	var last_name = $("#last_name").val();;
+	var email_address = $("#email_address").val();;
+	var message = $("#message").val();;
+
+	$("#contact-submit").html("<img src='/assets/ajax-loader.gif' class='ajax-loader' />");
+	$("#contact-submit").attr('disabled', 'disabled');
+	$("#contact-submit-info").html("");
+	
+	$.ajax({
+		url:"/contact",
+		type: "POST",
+		data: { first_name : first_name, last_name : last_name, email_address : email_address, message : message },
+		dataType: "json",
+		success:function(data, textStatus, jqXHR){
+			if(data.success) {
+				$("#contact-submit").removeAttr('disabled');
+				$("#contact-submit").html("SUBMIT");
+				$("#contact-submit-info").html("Success! Thanks for contacting us!");
+			}
+		},
+		error:function(jqXHR, textStatus, errorThrown){
+			$("#contact-submit").removeAttr('disabled');
+			$("#contact-submit").html("SUBMIT");
+			$("#contact-submit-info").html("Sorry, there was an error trying to submit. If you continue to have trouble, please e-mail us at info@bitesite.ca");
+		}
+		
+	});
 }
