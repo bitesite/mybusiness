@@ -6,19 +6,19 @@
 $(function(){
 
 	$("#services-link").click(function(){ 
-		navigateTo(".services-section") 
+		navigateTo(".services-section");
 		return false;
 	});
 	$("#news-link").click(
-		function(){ navigateTo(".news-section") 
+		function(){ navigateTo(".news-section");
 		return false;
 	});
 	$("#about-link").click(function(){ 
-		navigateTo(".about-section") 
+		navigateTo(".about-section");
 		return false;
 	});
 	$("#contact-link").click(function(){ 
-		navigateTo(".contact-section") 
+		navigateTo(".contact-section"); 
 		return false;
 	});
 	$(window).scroll(windowScroll);
@@ -27,7 +27,6 @@ $(function(){
 
 function navigateTo(destination) {
 	$('html,body').animate({scrollTop: $(destination).offset().top - 48},'slow');
-	return false;
 }
 
 /*
