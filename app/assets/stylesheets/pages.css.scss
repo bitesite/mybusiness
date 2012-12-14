@@ -260,6 +260,15 @@
 .contact-submit-info {
 	display:block;
 	width:100%;
+	font-weight:bold;
+}
+
+.contact-submit-success {
+	color:green;
+}
+
+.contact-submit-error {
+	color:red;
 }
 
 .contact-field  {
