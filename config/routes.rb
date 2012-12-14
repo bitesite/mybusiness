@@ -4,17 +4,8 @@ Mybusiness::Application.routes.draw do
   resources :news_posts
 
   get "pages/home"
-  get "pages/packages"
-  get "pages/addons"
-  get "pages/contact"
-  get "pages/about"
-  
+
   match "/news" => "news_posts#index"
-  match "/packages" => "pages#packages"
-  match "/addons" => "pages#addons"
-  match "/portfolio" => "pages#portfolio"
-  match "/contact" => "pages#contact"
-  match "/about" => "pages#about"
   
   match "/signin" => redirect("/users/signin")
   
