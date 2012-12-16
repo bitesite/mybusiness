@@ -4,9 +4,9 @@ Mybusiness::Application.routes.draw do
   resources :news_posts
 
   get "pages/home"
-
-  match "/news" => "news_posts#index"
   
+  match "/news" => "news_posts#index"
+  match "/contact" => "pages#contact"
   match "/signin" => redirect("/users/signin")
   
   root :to => "pages#home"

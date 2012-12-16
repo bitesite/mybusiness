@@ -142,7 +142,7 @@
 			<% end %>
 		</div>
 		<div class="clear-floats"></div>		
-		<%= link_to "MORE NEWS", "/news", :class => "more-news" %>
+		<%= link_to "MORE NEWS", "/news", :class => "btn more-news" %>
 		
 
 	</div>
@@ -154,7 +154,8 @@
 		
 		<%= image_tag "me.png", :class => "about-picture" %>
 		<div class="about-picture-caption">
-			CASEY LI . FOUNDER
+			<div class="name">CASEY LI</div>
+			<div class="title">FOUNDER</div>
 		</div>
 		<div class="about-text">
 		<p>
@@ -205,15 +206,15 @@
 		<div class="contact-form">
 			<%= form_tag "/contact" do %>
 				<div class="field">
-					<%= label_tag :first_name, "Your First Name" %><br/>
+					<%= label_tag :first_name, "First Name" %><br/>
 					<%= text_field_tag :first_name, nil, :size => "30", :class => "contact-field" %><br/>
 				</div>
 				<div class="field">
-					<%= label_tag :last_name, "Your Last Name" %><br/>
+					<%= label_tag :last_name, "Last Name" %><br/>
 					<%= text_field_tag :last_name, nil, :size => "30", :class => "contact-field" %><br/>
 				</div>
 				<div class="field">
-					<%= label_tag :email_address, "Your E-Mail Address" %><br/>
+					<%= label_tag :email_address, "E-Mail Address" %><br/>
 					<%= text_field_tag :email_address, nil, :size => "30", :class => "contact-field" %><br/>
 				</div>
 				<div class="field">
@@ -221,7 +222,7 @@
 					<%= text_area_tag :message, nil, :cols => 95, :rows => 10, :class => "contact-field" %><br/>
 				</div>
 				<div class="actions">
-					<%= link_to "SUBMIT", "#", :id => "contact-submit", :class => "contact-submit" %>
+					<%= link_to "SUBMIT", "#", :id => "contact-submit", :class => "btn contact-submit" %>
 					
 					<div class="contact-submit-info" id="contact-submit-info"></div>
 				</div>
@@ -246,7 +247,7 @@
 <div class="page-section footer">
 	<div class="container">
 		<div class="footer-info">
-			BITESITE.CA . OTTAWA . ONTARIO . CANADA
+			BITESITE.CA   OTTAWA   ONTARIO   CANADA
 		</div>
 	</div>
 </div>

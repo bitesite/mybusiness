@@ -3,15 +3,50 @@
 body {
 	padding: 0px;
 	margin: 0px;
-	font-family: "Helvetica", "Arial";
+	font-family: "Raleway";
 }
 
 body.fixed-nav {
-	padding-top:48px;
+	padding-top:60px;
 }
 
 .clear-floats {
 	clear:both;
+}
+
+p {
+	color:#555;
+}
+
+a {
+	border:none;
+}
+
+.btn {
+	background: #e8edfc; /* Old browsers */
+	background: -moz-linear-gradient(top,  #e8edfc 0%, #ffffff 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e8edfc), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #e8edfc 0%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #e8edfc 0%,#ffffff 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #e8edfc 0%,#ffffff 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #e8edfc 0%,#ffffff 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8edfc', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+
+	
+	display:block;
+	padding:10px 20px;
+	
+	box-shadow:inset 1px 1px 1px white, 1px 1px 1px black;
+	border-radius:5px;
+	text-align:center;
+	text-decoration:none;
+	color:black;
+	margin-bottom:10px;
+	font-family: "Oswald";
+	&:hover {
+		background:#ccc;
+		color:white;
+	};
 }
 
 /* Layout */
@@ -34,13 +69,17 @@ h1 {
 	text-align:center;
 	width:100%;
 	font:"Raleway";
-	font-weight:100;
+	font-weight:200;
 	font-size:50px;
 }
 
 h2 {
 	padding:0px;
 	margin: 0px;
+}
+
+h3 {
+	color:#555;
 }
 
 /* Modal Dialogs */
