@@ -65,11 +65,13 @@
 		display:block;
 		width: 90px;
 		padding:10px 30px;
-		margin:5px 0px;
+		margin:10px 0px;
 		color:#666;
 		text-decoration:none;
-		font-family: "Oswald", "Arial";
+		font-family: "Raleway", "Arial";
+
 		font-size:20px;
+		font-weight:400;
 		
 		&:hover {
 			background:white;
@@ -81,8 +83,6 @@
 
 .page-section {
 	background:#fff;
-	/*border-bottom:1px solid #999;
-	border-top:1px solid #FFF;*/
 	padding-bottom:30px;
 	position:relative;
 }

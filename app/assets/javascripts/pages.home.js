@@ -34,7 +34,7 @@ $(function(){
 });
 
 function navigateTo(destination) {
-	$('html,body').animate({scrollTop: $(destination).offset().top - 60},'slow');
+	$('html,body').animate({scrollTop: $(destination).offset().top - 64},'slow');
 }
 
 /*
