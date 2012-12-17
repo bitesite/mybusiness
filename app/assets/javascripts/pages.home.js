@@ -61,7 +61,7 @@ function windowScroll() {
 		
 	
 	/* Feature Images */
-	if(pixelsDown > 500 && !mobileDevelopmentAnimateStop) {
+	if(pixelsDown > 499 && !mobileDevelopmentAnimateStop) {
 		$('.mobiledevelopment').animate({
 	    	left: '-=500'
 	  	}, 1000, function() {
@@ -93,6 +93,7 @@ function windowScroll() {
 		graphicDesignAnimateStop = true;
 	}
 }
+
 
 function submitContactForm() {
 	var first_name = $("#first_name").val();

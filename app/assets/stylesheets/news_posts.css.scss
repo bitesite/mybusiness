@@ -2,15 +2,55 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.news-index {
+	padding-top:64px;
+}
+
+.news-navigation-bar {
+	background:#ddd;
+	width:100%;
+	z-index:1000;
+	position:fixed;
+}
+
+.news-nav-links {
+	text-align:center;
+	width: 300px;
+	margin: 0 auto;
+	
+	a {
+		float:left;
+		display:block;
+		width: 240px;
+		padding:10px 30px;
+		margin:10px 0px;
+		color:#666;
+		text-decoration:none;
+		font-family: "Raleway", "Arial";
+		font-size:20px;
+		font-weight:400;
+
+		
+		&:hover {
+			background:white;
+			color:black;
+			border-radius:30px;
+		};
+	}
+}
+
 .news-post {
+	border-top:1px solid #eee;
+	border-bottom:1px solid #ccc;
 }
 
 .news-post-header {
 	font-size: 20px;
 	color:white;
 	padding: 10px;
-	background:#eee;
+	background:#fff;
 	color:#555;
+	font-weight:400;
 }
 
 .news-post-actions {
@@ -34,9 +74,10 @@
 .news-post-body {
 	display:block;
 	padding: 10px 0;
-	background:#ddd;
+	background:#fff;
 	min-height: 110px;
 	color:#555;
+	font-size:14px;
 	a {
 		font-weight:bold;
 		text-decoration:underline;
@@ -52,3 +93,4 @@
 	margin: 0px 10px 10px 10px;
 	float:left;
 }
+

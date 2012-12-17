@@ -1,0 +1,44 @@
+<div class="page-section contact-section">
+	<div class="container">
+		<h1>Contact</h1>
+
+		<div class="contact-form">
+			<%= form_tag "/contact" do %>
+				<div class="field">
+					<%= label_tag :first_name, "First Name" %><br/>
+					<%= text_field_tag :first_name, nil, :size => "30", :class => "contact-field" %><br/>
+				</div>
+				<div class="field">
+					<%= label_tag :last_name, "Last Name" %><br/>
+					<%= text_field_tag :last_name, nil, :size => "30", :class => "contact-field" %><br/>
+				</div>
+				<div class="field">
+					<%= label_tag :email_address, "E-Mail Address" %><br/>
+					<%= text_field_tag :email_address, nil, :size => "30", :class => "contact-field" %><br/>
+				</div>
+				<div class="field">
+					<%= label_tag :message, "Message" %><br/>
+					<%= text_area_tag :message, nil, :cols => 95, :rows => 10, :class => "contact-field" %><br/>
+				</div>
+				<div class="actions">
+					<%= link_to "SUBMIT", "#", :id => "contact-submit", :class => "btn contact-submit" %>
+					
+					<div class="contact-submit-info" id="contact-submit-info"></div>
+				</div>
+			<% end %>
+		</div>
+		<div class="contact-caption">
+
+			<h3>Contact us for anything!</h3> 
+			<p>Know exactly what you want? Have no idea at all? Want to just open up a conversation about your options? 
+			Have some technical questions? Whatever it may be, please drop us a line and we'll do
+			our best to answer any questions you may have.</p>
+
+			<p><b>BiteSite believes strongly in finding a good fit company for a good
+			fit customer</b>. So if we find out we're not right for you, we won't pressure you. If we do, we'll
+			be happy to build something you'll truly be excited about.</p>
+
+		</div>
+		<div class="clear-floats"></div>
+	</div>
+</div>

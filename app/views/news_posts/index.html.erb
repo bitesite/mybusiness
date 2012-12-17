@@ -1,12 +1,18 @@
-<div class="container">
-	<% if admin? %>
-		<%= link_to 'New News post', new_news_post_path %>
-	<% end %>
-	<%= image_tag "newsheader_inshad.png", :class => "page-header" %>
-
-	<%= render @news_posts %>
-
-	<br />
-	
+<div class="news-navigation-bar">
+	<div class="container">
+		<div class="news-nav-links">
+			<%= link_to "BACK TO BITESITE.CA", "/" %>
+		</div>
+		<div class="clear-floats"></div>
+	</div>
 </div>
 
+<div class="news-index">
+	<h1>News</h1>
+
+	<% if admin? %>
+		<%= link_to 'New News post', new_news_post_path %>
+	<% end %><br>
+	
+	<%= render @news_posts %>
+</div>

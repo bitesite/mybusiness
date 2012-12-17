@@ -1,0 +1,21 @@
+<div class="page-section news-section">
+	<div class="container">
+		<h1>News</h1>
+		<div class="recent-news-posts">
+			<% @recent_news_posts[0..2].each do |news_post| %>
+				<div class="recent-news-post">
+					<% if news_post.image_url.nil? %>
+						<%= image_tag "defaultnews.png", :class => "recent-news-post-image" %>
+					<% else %>
+						<%= image_tag news_post.image_url.to_s, :class => "recent-news-post-image" %>
+					<% end %>
+					<div class="recent-news-post-body"><%= raw news_post.body %></div>
+				</div>
+			<% end %>
+		</div>
+		<div class="clear-floats"></div>		
+		<%= link_to "MORE NEWS", "/news", :class => "btn more-news" %>
+		
+
+	</div>
+</div>

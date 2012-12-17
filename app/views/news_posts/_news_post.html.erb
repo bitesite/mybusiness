@@ -1,26 +1,29 @@
 <div class="news-post">
 	<div class="news-post-header">
-		<%= news_post.title %>
-		<% if admin? %>
-			<div class="news-post-actions">
-				<%= link_to "edit", edit_news_post_path(news_post) %>
-				<%= link_to "delete", news_post, 
-									:method => "delete", 
-									:confirm => "Are you sure you want to delete this news post", 
-									:delete => "Delete News Post?" %>
-			</div>
-		<% end %>
-		<div class="news-post-date"><%= convert_time_string news_post.updated_at %></div>
-		
-	
+		<div class="container">
+			<%= news_post.title %>
+			<% if admin? %>
+				<div class="news-post-actions">
+					<%= link_to "edit", edit_news_post_path(news_post) %>
+					<%= link_to "delete", news_post, 
+										:method => "delete", 
+										:confirm => "Are you sure you want to delete this news post", 
+										:delete => "Delete News Post?" %>
+				</div>
+			<% end %>
+			<div class="news-post-date"><%= convert_time_string news_post.updated_at %></div>			
+		</div>
 	</div>
 	<div class="news-post-body">
-		<% if news_post.image_url.nil? %>
-			<%= image_tag "defaultnews.png", :class => "news-post-image" %>
-		<% else %>
-			<%= image_tag news_post.image_url.to_s, :class => "news-post-image" %>
-		<% end %>
-		<%= raw news_post.body %><br>
+		<div class="container">
+			<% if news_post.image_url.nil? %>
+				<%= image_tag "defaultnews.png", :class => "news-post-image" %>
+			<% else %>
+				<%= image_tag news_post.image_url.to_s, :class => "news-post-image" %>
+			<% end %>
+			<%= raw news_post.body %><br>			
+		</div>
+
 		
 	</div>
 	<div class="clear-floats"></div>
