@@ -128,7 +128,7 @@ function getMaxPhotoNumber(category) {
 	var maxnumber = 1;
 	switch(category) {
 		case "weddingphotos":
-			maxnumber = 14;
+			maxnumber = 34;
 			break;
 		case "eventphotos":
 			maxnumber = 14;
