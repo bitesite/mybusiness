@@ -4,21 +4,44 @@
   <title>bitesite.ca | The page you were looking for doesn't exist (422)</title>
   <style type="text/css">
     body { background-color: #fff; color: #666; text-align: center; font-family: arial, sans-serif; }
-    h1 { font-size: 100%; color: #f00; line-height: 1.5em; }
+    h1 { 
+		font-size: 100%; 
+		color: #222; 
+		line-height: 1.5em;
+		margin: 40px auto; 
+		width: 500px; 
+		padding: 40px; 
+		border-radius:20px; 
+		border: 5px solid #ddd; 
+		background:#eee; 
+		display:block;
+	}
+	
+	a {
+		color:#333;
+	}
+	a:visited {
+		color:#333;
+	}
+	a:hover {
+		color:#000;
+	}
+	
+	.logo {
+		margin: 60px 0px 10px 0px;
+	}
   </style>
 </head>
 
 <body>
   <!-- This file lives in public/404.html -->
   <div>
+	<img src="/assets/logo.png" class="logo" />
 	<h1>
-		<img src="/assets/error.png" />
+		THERE WAS AN ERROR PROCESSING YOUR REQUEST
 	</h1>
 	<p>
-		Let us know about the issue <a href="/contact">here</a>.
-	</p>
-	<p>
-		Or just head back <a href="/">here</a>.
+		If the problem persists, please contact us at <a href="mailto:info@bitesite.ca">info@bitesite.ca</a>.
 	</p>
   </div>
 </body>
