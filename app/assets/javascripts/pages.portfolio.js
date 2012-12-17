@@ -137,7 +137,7 @@ function getMaxPhotoNumber(category) {
 			maxnumber = 6;
 			break;
 		case "promos":
-			maxnumber = 12;
+			maxnumber = 17;
 			break;
 		case "branding":
 			maxnumber = 5;
