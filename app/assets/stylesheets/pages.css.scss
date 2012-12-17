@@ -142,6 +142,11 @@
 		left:10px;
 	}
 	
+	.photography:hover, .graphicdesign:hover, .videoproduction:hover {
+		background:#ddd;
+		border-radius:5px;
+	}
+
 	.photography, .graphicdesign {
 		position:relative;
 		left:0px;
@@ -272,61 +277,6 @@
 
 
 /* PORTFOLIO *******************************************************/
-
-.portfolio-items {
-	padding: 10px;
-}
-
-.portfolio-item, .portfolio-item-photos {
-}
-
-.capo-button {
-	background: url('/assets/portfolio/Capo.png') bottom;	
-}
-
-.md-button {
-	background: url('/assets/portfolio/MarilynAndDouglas.png') bottom;	
-}
-
-.wwwp-button {
-	background: url('/assets/portfolio/wwwp.png') bottom;	
-}
-
-.caseyli-button {
-	background: url('/assets/portfolio/caseylicom.png') bottom;	
-}
-
-.teldio-video-button {
-	background: url('/assets/portfolio/TeldioVideo.png') bottom;
-}
-
-.northstar-video-button {
-	background: url('/assets/portfolio/NorthstarVideo.png') bottom;
-}
-
-.spy-am-i-video-button {
-	background: url('/assets/portfolio/SpyamiVideo.png') bottom;
-}
-
-.promos-button {
-	background: url('/assets/portfolio/promos.png') bottom;
-}
-
-.branding-button {
-	background: url('/assets/portfolio/branding.png') bottom;
-}
-
-.corporatephotos-button {
-	background: url('/assets/portfolio/corporatephotos.png') bottom;
-}
-
-.weddingphotos-button {
-	background: url('/assets/portfolio/weddingphotos.png') bottom;
-}
-
-.eventphotos-button {
-	background: url('/assets/portfolio/eventphotos.png') bottom;
-}
 
 .vimeo-video-modal-dialog-body {
 	width: 640px;

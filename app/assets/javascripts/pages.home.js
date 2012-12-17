@@ -103,7 +103,7 @@ function submitContactForm() {
 
 	$("#contact-submit").html("<img src='/assets/ajax-loader.gif' class='ajax-loader' />");
 	$("#contact-submit").attr('disabled', 'disabled');
-	$("#contact-submit-info").html("");
+	$("#contact-submit-info").html("Submitting...");
 	
 	$.ajax({
 		url:"/contact",
