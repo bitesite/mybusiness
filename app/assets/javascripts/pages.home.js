@@ -29,7 +29,9 @@ $(function(){
 	
 	$(window).scroll(windowScroll);
 	
-
+	/* Pre-load ajax-loader.gif image */
+	$("#contact-submit").html("<img src='/assets/ajax-loader.gif' class='ajax-loader' />");
+	$("#contact-submit").html("SUBMIT");
 
 });
 
