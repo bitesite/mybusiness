@@ -104,9 +104,9 @@ function submitContactForm() {
 	var email_address = $("#email_address").val();
 	var message = $("#message").val();
 
-	$("#contact-submit").html("<img src='/assets/ajax-loader.gif' class='ajax-loader' />");
+	$("#contact-submit").html("Submitting...<img src='/assets/ajax-loader.gif' class='ajax-loader' />");
 	$("#contact-submit").attr('disabled', 'disabled');
-	$("#contact-submit-info").html("Submitting...");
+	$("#contact-submit-info").html("");
 	
 	$.ajax({
 		url:"/contact",
