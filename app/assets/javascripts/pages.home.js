@@ -29,9 +29,10 @@ $(function(){
 	
 	$(window).scroll(windowScroll);
 	
-	/* Pre-load ajax-loader.gif image */
-	$("#contact-submit").html("<img src='/assets/ajax-loader.gif' class='ajax-loader' />");
-	$("#contact-submit").html("SUBMIT");
+	/* Pre-load Ajax loader */
+	preload([
+	    '/assets/ajax-loader.gif'
+	]);
 
 });
 
@@ -136,3 +137,10 @@ function submitContactForm() {
 		
 	});
 }
+
+function preload(arrayOfImages) {
+    $(arrayOfImages).each(function(){
+        $('<img/>')[0].src = this;
+    });
+}
+
