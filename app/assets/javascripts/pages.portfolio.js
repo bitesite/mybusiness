@@ -38,7 +38,16 @@ $(function(){
  * positionAndSizePortfolioDialog - position dialog and size it
  */
 function positionDialog() {
-	var _top = $("body").scrollTop() + 100 + "px";
+	var _top = $("body").scrollTop();
+	
+	/* IE Fix */
+	if(_top == 0) {
+		_top = (document.documentElement && document.documentElement.scrollTop) || 
+		              document.body.scrollTop;
+	}
+	
+	_top = _top + 100;
+	_top = _top.toString() + "px";
 	$('.modal-dialog-body').css('margin-top', _top);
 }
 
