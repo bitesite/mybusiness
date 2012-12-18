@@ -8,6 +8,12 @@ Mybusiness::Application.routes.draw do
   match "/news" => "news_posts#index"
   match "/contact" => "pages#contact"
   match "/signin" => redirect("/users/signin")
+
+  # Legacy Routes
+  match "/packages" => redirect("/")
+  match "/addons" => redirect("/")
+  match "/about" => redirect("/")
+  match "/portfolio" => redirect("/")
   
   root :to => "pages#home"
 
