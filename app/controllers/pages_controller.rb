@@ -4,21 +4,9 @@ class PagesController < ApplicationController
     @title = "Home"
     @recent_news_posts = NewsPost.all(:limit => 3)
   end
-  
-  def packages
-    @title = "Packages"
-  end
-
-  def addons
-    @title = "Addons"
-  end
-  
-  def portfolio
-    @title = "Portfolio"
-  end
 
   def contact
-    @title = "Contact"
+    @title = "Home"
     @success = false
     
     if request.post?
@@ -36,16 +24,10 @@ class PagesController < ApplicationController
     end
     
     respond_to do |format|
-      format.html
+      format.html { redirect_to "/"}
       format.json { render :json => { :success => @success }.to_json }
     end
     
   end
-  
-  def about
-    @title = "About"
-  end
-  
 
-  
 end
