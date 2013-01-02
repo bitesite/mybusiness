@@ -1,5 +1,5 @@
 class ContactMailer < ActionMailer::Base
-  default from: "no-reply@bitesite.ca"
+  default from: "info@bitesite.ca"
   
   def customer_contact(first_name, last_name, customer_email, message)
     @message = message
@@ -8,7 +8,7 @@ class ContactMailer < ActionMailer::Base
     @last_name = last_name
     
     mail(:to => "info@bitesite.ca",
-         :from => "no-reply@bitesite.ca",
+         :from => @customer_email,
          :subject => "BiteSite.ca: Message from #{customer_email}")
   end
 end
