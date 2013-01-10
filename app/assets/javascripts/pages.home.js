@@ -61,6 +61,23 @@ function windowScroll() {
 		$(".navigation-bar").removeClass("navigation-bar-fixed");
 		$("body").removeClass("fixed-nav");
 	}
+	
+	/* Highlighted Nav */
+	if($(window).scrollTop() + $(window).height() == $(document).height()) {
+	    highlightNavLink("#contact-link");
+	}
+	else if (pixelsDown > 3036) {
+		highlightNavLink("#about-link");
+	}
+	else if (pixelsDown > 2480) {
+		highlightNavLink("#news-link");
+	}
+	else if(pixelsDown > 499) {
+		highlightNavLink("#services-link");
+	}
+	else {
+		highlightNavLink("#");
+	}
 		
 	
 	/* Feature Images */
@@ -97,6 +114,10 @@ function windowScroll() {
 	}
 }
 
+function highlightNavLink(id) {
+	$(".nav-links a").removeClass("nav-selected");
+	$(id).addClass("nav-selected");
+}
 
 function submitContactForm() {
 	var first_name = $("#first_name").val();
