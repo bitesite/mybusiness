@@ -63,7 +63,7 @@ function togglePortfolioDialog(title){
 			$("#wistia_demo").html("");
 		}
 		else {
-			ihtml = '<iframe src="http://fast.wistia.net/embed/iframe/c6ax7b28py?controlsVisibleOnLoad=true&version=v1&videoHeight=360&videoWidth=640&volumeControl=true" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" width="640" height="360"></iframe>';
+			ihtml = '<iframe src="http://fast.wistia.net/embed/iframe/c6ax7b28py?controlsVisibleOnLoad=true&plugin%5BpostRoll-v1%5D=%7B%22text%22%3A%22for%20more%20information%20visit%3Cbr%2F%3Ewww.bitesite.ca%22%2C%22link%22%3A%22http%3A%2F%2Fwistia.com%3Fdefault_cta%3Dtrue%22%2C%22style%22%3A%7B%22backgroundColor%22%3A%22%23262626%22%2C%22color%22%3A%22%23ffffff%22%2C%22fontSize%22%3A%2222px%22%2C%22fontFamily%22%3A%22Gill%20Sans%2C%20Helvetica%2C%20Arial%2C%20sans-serif%22%7D%7D&version=v1&videoHeight=360&videoWidth=640&volumeControl=true" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" width="640" height="360"></iframe>';
 			$("#wistia_demo").html(ihtml);
 		}
 	}
