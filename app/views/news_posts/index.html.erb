@@ -11,7 +11,9 @@
 	<h1>News</h1>
 
 	<% if admin? %>
-		<%= link_to 'New News post', new_news_post_path %>
+		<div class="container">
+			<%= link_to 'New News post', new_news_post_path %> <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
+		</div>
 	<% end %><br>
 	
 	<%= render @news_posts %>
