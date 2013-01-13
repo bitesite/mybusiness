@@ -58,6 +58,16 @@ function positionDialog() {
 function togglePortfolioDialog(title){	
 	
 	/* When Closing the Video Dialogs, in case the user doesn't press stop, remove the video tag */
+	if (title == "demo-reel-video") {
+		if($("#" + title).is(':visible')) {
+			$("#wistia_demo").html("");
+		}
+		else {
+			ihtml = '<iframe src="http://fast.wistia.net/embed/iframe/c6ax7b28py?controlsVisibleOnLoad=true&version=v1&videoHeight=360&videoWidth=640&volumeControl=true" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" width="640" height="360"></iframe>';
+			$("#wistia_demo").html(ihtml);
+		}
+	}
+	
 	if (title == "northstar-video") {
 		if ($("#" + title).is(':visible')) {
 			$("#vimeo_northstar").html("");

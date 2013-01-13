@@ -1,77 +1,17 @@
-
-<div id='capo' class='modal-dialog' style="display:none">
-	<div class='modal-dialog-body'>
-		<div id='info_body'>
-			<%= image_tag 'portfolio/capoheader.png' %>
-			<p>
-			Capo was one of our biggest projects yet. Capo is a Open Mic Community Web Application where players
-			and audience members alike can find great live music. Users can find Open Stages, Filter by City,
-			Submit Open Mics, Attend and See Who's Attending. Capo also featured a iPhone-Optimized View.
-			</p>
+<div id='demo-reel-video' class='modal-dialog' style="display:none;">
+	<div class='modal-dialog-body wistia-video-modal-dialog-body'>
+		<div id='wistia_demo'>				
 		</div>
-		<div class='modal-dialog-actions'>
+		<h1>BiteSite Demo Reel</h1>
+		<p>
+			The above demo reel is a showcase of the various shoots that BiteSite has done.<br>
+			(Certain clips are the property of 
+			<%= link_to "NorthStar Utilities Solutions", "http://www.northstarutilities.com", :target => "_blank" %> and 
+			<%= link_to "Teldio Corporation", "http://www.teldio.com", :target => "_blank" %>.)
+		</p>
+		<div class="modal-dialog-actions">
 			<hr>
-			<%= link_to 'Launch', 'http://www.capoapp.ca', :target => '_blank', :class => "standard-button" %>
-			<a class='close-dialog-link standard-button' href="#" data-title='capo'>Close</a>
-		</div>
-	</div>
-</div>
-
-<div id='md' class='modal-dialog' style="display:none">
-	<div class='modal-dialog-body'>
-		<div id='info_body'>
-			<%= image_tag 'portfolio/mdheader.png' %>
-			<p>
-			m&d was our first wedding website. It started out as a 'save the date' website, that eventually grew
-			into a full-blown web application with news updates, and a RSVP system that not only allowed guests
-			to RSVP online, but also allowed the couple to view a summary of all the responses. m&d also featured
-			a iPhone-Optimized view to make it even easier for iPhone users.
-			</p>
-			
-		</div>
-		<div class='modal-dialog-actions'>
-			<hr>
-			<%= link_to 'Launch', 'http://www.marilynanddouglas.com', :target => '_blank', :class => "standard-button" %>
-			<a class='close-dialog-link standard-button' href="#" data-title='md'>Close</a>
-		</div>
-	</div>
-</div>
-
-<div id='wwwp' class='modal-dialog' style="display:none">
-	<div class='modal-dialog-body'>
-		<div id='info_body'>
-			<%= image_tag 'portfolio/wwwpheader.png' %>
-			<p>
-			WWWP is currently a work in progress. It features our most minimalist design. It is a training website intended
-			to change the way the world thinks about presentations. Aside from a simple elegant design, it features a solid
-			back end with Content Management features, and Open ID Authentication (with Google IDs, Yahoo IDs and more). Future
-			plans include videos and other tutorials.
-			</p>
-		</div>
-		<div class='modal-dialog-actions'>
-			<hr>
-			<%= link_to 'Launch', 'http://www.whatswrongwithpresentations.com', :target => '_blank', :class => "standard-button" %>
-			<a class='close-dialog-link standard-button' href="#" data-title='wwwp'>Close</a>
-		</div>
-	</div>
-</div>
-
-<div id='caseyli' class='modal-dialog' style="display:none">
-	<div class='modal-dialog-body'>
-		<div id='info_body'>
-			<%= image_tag 'portfolio/caseyliheader.png' %>
-			<p>
-			caseyli.com was the very first Ruby on Rails website that founder of BiteSite, Casey Li, built. Ruby on Rails is
-			a strong new web framework that Casey has learned and applies to the majority of BiteSites. caseyli.com was a resume
-			website that allowed for Content Management to add and manage resume entires. It has now grown to host training videos
-			and Casey's photography services as well.
-			</p>
-			
-		</div>
-		<div class='modal-dialog-actions'>
-			<hr>
-			<%= link_to 'Launch', 'http://www.caseyli.com', :target => '_blank', :class => "standard-button" %>
-			<a class='close-dialog-link standard-button' href="#" data-title='caseyli'>Close</a>
+			<a class='close-dialog-link standard-button' href="#" data-title='demo-reel-video'>Close</a>
 		</div>
 	</div>
 </div>
@@ -96,60 +36,6 @@
 					<div class="modal-dialog-actions">
 						<hr>
 						<a class='close-dialog-link standard-button' href="#" data-title='teldio-video'>Close</a>
-					</div>
-				</td>
-			</tr>
-		</table>
-	</div>
-</div>
-
-<div id='northstar-video' class='modal-dialog' style="display:none;">
-	<div class='modal-dialog-body vimeo-video-modal-dialog-body'>
-		<table class='dialog'>
-			<tr>
-				<td>
-					<%= image_tag 'portfolio/NorthstarLogo.png' %>
-				</td>
-				<td>
-					<div id='vimeo_northstar'>
-					</div>
-					<h1>Film: NorthStar Utilities Solutions Video</h1>
-					<p>
-						While working at NorthStar Utilities Solutions, founder of BiteSite, Casey Li, produced this motivational video
-						for a Leadership Conference competition. It went on to be featured at a Customer Conference. In all, over 300
-						customers and employees viewed this video.<br>
-						(This video is the property of <%= link_to "NorthStar Utilities Solutions", "http://www.northstarutilities.com", :target => "_blank" %>).
-					</p>
-					<div class="modal-dialog-actions">
-						<hr>
-						<a class='close-dialog-link standard-button' href="#" data-title='northstar-video'>Close</a>
-					</div>
-				</td>
-			</tr>
-		</table>
-	</div>
-</div>
-
-<div id='spy-am-i-video' class='modal-dialog' style="display:none;">
-	<div class='modal-dialog-body vimeo-wide-video-modal-dialog-body'>
-		<table class='dialog'>
-			<tr>
-				<td>
-					<%= image_tag 'portfolio/spyami.png' %>
-				</td>
-				<td>
-					<div id='vimeo_spyami'>
-					</div>
-					<h1>Film: Spy Am I Promo Video</h1>
-					<p>
-						Spy Am I is an iOS Game developed by <%= link_to "Going AFK", "http://www.goingafk.com", :target => "_blank" %> released in 2011.
-						Going AFK wanted a sleek, short video for a conference to showcase their new game. They also wanted a short turn-around time.
-						Working with screencasts provided by Going AFK, the following video was produced in 1 day.<br>
-						(This video is the property of <%= link_to "Going AFK", "http://www.goingafk.com", :target => "_blank" %>.)
-					</p>
-					<div class="modal-dialog-actions">
-						<hr>
-						<a class='close-dialog-link standard-button' href="#" data-title='spy-am-i-video'>Close</a>
 					</div>
 				</td>
 			</tr>
