@@ -143,6 +143,11 @@
 	.screenshot {
 		width: 46%;
 		vertical-align:middle;
+		padding:5px;
+		&:hover {
+			background:#BBB;
+			border-radius:5px;
+		};
 	}
 	
 	.price-tag {
@@ -153,11 +158,6 @@
 	.webdesign {
 		position:relative;
 		left:10px;
-	}
-	
-	.photography:hover, .graphicdesign:hover, .videoproduction:hover {
-		background:#ddd;
-		border-radius:5px;
 	}
 
 	.photography, .graphicdesign {
@@ -171,6 +171,51 @@
 		left:500px;
 	}	
 }
+
+
+/* SERVICES */
+
+.folder-portfolio {
+	
+	.folder-portfolio-header {
+		font-size:25px;
+		font-weight:bold;
+	}
+	
+	width:100%;
+	background:#777;
+	box-shadow:inset 0px 5px 20px black;
+	display:none;
+	padding:20px;
+	
+	ul {
+		list-style:none;
+		padding-left:0px;
+		margin-bottom:50px;
+		
+		li {
+			margin-right: 20px;
+			float:left;
+			
+			a {
+				color:#ccc;
+				text-decoration:none;
+				
+				&:visited {
+					color:#ccc;
+				};
+				
+				&:hover {
+					color:black;
+				}
+			}
+
+		}
+	}
+}
+
+
+/* NEWS */
 
 .recent-news-posts {
 	
@@ -204,6 +249,9 @@
 	margin:5px auto;
 }
 
+
+/* ABOUT */
+
 .about-picture {
 	box-shadow:5px 5px 5px black;
 	width:98%;
@@ -234,6 +282,8 @@
 		color:#ccc;
 	}
 }
+
+/* CONTACT */
 
 .contact-form {
 	width: 60%;

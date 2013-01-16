@@ -6,6 +6,24 @@
  */
 
 $(function(){	
+	$(".webdesign").click(function(){
+		$(".webdesign-portfolio").slideDown(400);
+	});
+	
+	$(".webdesign-portfolio-close").click(function(){
+		$(".webdesign-portfolio").slideUp(400);
+		return false;
+	});
+	
+	$(".mobiledevelopment").click(function(){
+		$(".mobiledevelopment-portfolio").slideDown(400);
+	});
+	
+	$(".mobiledevelopment-portfolio-close").click(function(){
+		$(".mobiledevelopment-portfolio").slideUp(400);
+		return false;
+	});
+	
 	$(".portfolio-item").click(function(){
 		positionDialog();
 		togglePortfolioDialog($(this).data("title"));
