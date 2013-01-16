@@ -77,4 +77,7 @@ Mybusiness::Application.configure do
     
   # Devise
   config.action_mailer.default_url_options = { :host => 'www.bitesite.ca' }
+  
+  # For Heroku
+  config.assets.initialize_on_precompile = false
 end
