@@ -6,18 +6,16 @@
  */
 
 $(function(){	
-	$(".webdesign").click(function(){
-		$(".webdesign-portfolio").slideDown(400);
-	});
+	$(".webdesign").click(openWebPortfolioFolder);
+	$("#web-portfolio-text-link").click(openWebPortfolioFolder);
 	
 	$(".webdesign-portfolio-close").click(function(){
 		$(".webdesign-portfolio").slideUp(400);
 		return false;
 	});
 	
-	$(".mobiledevelopment").click(function(){
-		$(".mobiledevelopment-portfolio").slideDown(400);
-	});
+	$(".mobiledevelopment").click(openMobilePortfolioFolder);
+	$("#mobile-portfolio-text-link").click(openMobilePortfolioFolder);
 	
 	$(".mobiledevelopment-portfolio-close").click(function(){
 		$(".mobiledevelopment-portfolio").slideUp(400);
@@ -51,6 +49,25 @@ $(function(){
 		return false;
 	});
 });
+
+function openWebPortfolioFolder() {
+	$(".webdesign-portfolio").slideDown(400);
+	
+	/* Need to figure this out - scroll enough to reveal the work if its hidden
+	var _bottom = $(window).scrollTop() + $(window).height();
+	if(_bottom < 1130) {
+		$('html,body').animate({scrollTop: 400},'slow');
+	}
+	*/
+	
+	return false;
+}
+
+function openMobilePortfolioFolder() {
+	$(".mobiledevelopment-portfolio").slideDown(400);
+	return false;
+}
+
 
 /* 
  * positionAndSizePortfolioDialog - position dialog and size it
