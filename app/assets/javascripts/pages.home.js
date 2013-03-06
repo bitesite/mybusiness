@@ -55,11 +55,11 @@ function windowScroll() {
 	/* Navigation Bar */
 	if(pixelsDown > 500) {
 		$(".navigation-bar").addClass("navigation-bar-fixed");
-		$("body").addClass("fixed-nav");
+		$("#home").addClass("fixed-nav");
 	}
 	else {
 		$(".navigation-bar").removeClass("navigation-bar-fixed");
-		$("body").removeClass("fixed-nav");
+		$("#home").removeClass("fixed-nav");
 	}
 	
 	/* Highlighted Nav */
