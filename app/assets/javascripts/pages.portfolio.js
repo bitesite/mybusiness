@@ -103,6 +103,16 @@ function togglePortfolioDialog(title){
 		}
 	}
 	
+	if (title == "hana-and-chris-video") {
+		if($("#" + title).is(':visible')) {
+			$("#hana-and-chris").html("");
+		}
+		else {
+			ihtml = '<iframe src="http://fast.wistia.net/embed/iframe/1o3t31nsmm?autoPlay=true&controlsVisibleOnLoad=true&plugin%5BpostRoll-v1%5D%5Blink%5D=http%3A%2F%2Fwww.bitesite.ca&plugin%5BpostRoll-v1%5D%5Bstyle%5D%5BbackgroundColor%5D=%23262626&plugin%5BpostRoll-v1%5D%5Bstyle%5D%5Bcolor%5D=%23ffffff&plugin%5BpostRoll-v1%5D%5Bstyle%5D%5BfontFamily%5D=Gill%20Sans%2C%20Helvetica%2C%20Arial%2C%20sans-serif&plugin%5BpostRoll-v1%5D%5Bstyle%5D%5BfontSize%5D=22px&plugin%5BpostRoll-v1%5D%5Btext%5D=for%20more%20information%20visit%3Cbr%2F%3Ewww.bitesite.ca&plugin%5Bsocialbar-v1%5D%5Bbuttons%5D=embed-email-twitter-linkedIn-googlePlus-facebook&plugin%5Bsocialbar-v1%5D%5BpageUrl%5D=http%3A%2F%2Fwww.bitesite.ca&version=v1&videoHeight=360&videoWidth=640&volumeControl=true" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" width="640" height="388"></iframe>';
+			$("#hana-and-chris").html(ihtml);
+		}
+	}
+	
 	if (title == "northstar-video") {
 		if ($("#" + title).is(':visible')) {
 			$("#vimeo_northstar").html("");
