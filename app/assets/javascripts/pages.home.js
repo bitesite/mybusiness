@@ -66,10 +66,10 @@ function windowScroll() {
 	if($(window).scrollTop() + $(window).height() == $(document).height()) {
 	    highlightNavLink("#contact-link");
 	}
-	else if (pixelsDown > 3036) {
+	else if (pixelsDown > 3156) {
 		highlightNavLink("#about-link");
 	}
-	else if (pixelsDown > 2480) {
+	else if (pixelsDown > 2586) {
 		highlightNavLink("#news-link");
 	}
 	else if(pixelsDown > 499) {
