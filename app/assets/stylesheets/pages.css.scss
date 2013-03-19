@@ -419,6 +419,8 @@
 	};
 }
 
+
+
 .video-hero-description {
 	text-align:right;
 	position:absolute;
@@ -428,14 +430,26 @@
 	display:block;
 	width: 400px;
 	color: #fff;
+}
 
+.video-description {
+	text-align:center;
+	width:760px;
+	margin:0 auto 30px auto;
+}
+
+.video-price-tag {
+	margin: 20px 0;
+	width:200px;
 }
 
 .video-listing {
 	float:left;
 	padding:11px;
-	
+	width: 170px;
 	.video-listing-caption {
 		text-align:center;
+		height:40px;
+		font-size:13px;
 	}
 }

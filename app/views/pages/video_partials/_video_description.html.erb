@@ -1,16 +1,19 @@
 <div class="page-section">
 <div class="container">
 	<h1>Video Production</h1>
-	<p class="center">
+	<div class="video-description">
 		BiteSite provides professional video production for all types of events. Whether it be promotional, recruitment, instructional, or wedding, BiteSite
-		can produce top-level live video and motion graphics that will really blow your mind. <b>Pricing starts at $500</b>. Contact us today for more details or
-		browse our video portfolio below. 
-	</p>
-	<p class="center italic">	
-		If you're interested in BiteSite's other services including Web Design and Development, Mobile Development, Photography,
-		and Graphic Design, please visit our main page <%= link_to "here", "/" %>.
-	</p>	
-	
+		can produce amazing live video and motion graphics that will really blow your mind. <%= link_to "Contact Us", "#", :class => "contact-link" %> today for more details or
+		browse our video portfolio below.<br>
+		<%= image_tag "price500.png", :class => "video-price-tag" %>
+		
+		<div class="italic">
+			If you're interested in BiteSite's other services including Web Design and Development, Mobile Development, Photography,
+			and Graphic Design, please visit our main page <%= link_to "here", "/" %>.
+		</div>
+		
+	</div>
+
 	<h2 class="center">Portfolio</h2>
 	<% if admin? %>
 		<%= link_to 'New Video', new_video_listing_path %> <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
