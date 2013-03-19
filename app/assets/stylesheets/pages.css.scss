@@ -387,3 +387,55 @@
 .portfolio-photo {
 	height: 520px;
 }
+
+/* VIDEO ***************************/
+
+.video-hero {
+	height:500px;
+	width:100%;
+	background:#000;
+	background-image:url("/assets/videohero.jpg");
+	background-repeat:no-repeat;
+	background-position:center;
+	position:relative;
+}
+
+.contact-us-hero {
+	background:#759AB0;
+	display:block;
+	width: 120px;
+	padding: 10px 15px;
+	text-align:center;
+	text-decoration:none;
+	border-radius:40px;
+	position:relative;
+	right:-750px;
+	top:380px;
+	font-size:12px;
+	color:black;
+	
+	&:hover {
+		color:white
+	};
+}
+
+.video-hero-description {
+	text-align:right;
+	position:absolute;
+	font-size:14px;
+	right:60px;
+	top:300px;
+	display:block;
+	width: 400px;
+	color: #fff;
+
+}
+
+.video-listing {
+	float:left;
+	padding:11px;
+	
+	.video-listing-caption {
+		text-align:center;
+	}
+}

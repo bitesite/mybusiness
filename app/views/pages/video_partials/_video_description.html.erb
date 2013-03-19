@@ -1,0 +1,48 @@
+<div class="page-section">
+<div class="container">
+	<h1>Video Production</h1>
+	<p class="center">
+		BiteSite provides professional video production for all types of events. Whether it be promotional, recruitment, instructional, or wedding, BiteSite
+		can produce top-level live video and motion graphics that will really blow your mind. <b>Pricing starts at $500</b>. Contact us today for more details or
+		browse our video portfolio below. 
+	</p>
+	<p class="center italic">	
+		If you're interested in BiteSite's other services including Web Design and Development, Mobile Development, Photography,
+		and Graphic Design, please visit our main page <%= link_to "here", "/" %>.
+	</p>	
+	
+	<h2 class="center">Portfolio</h2>
+	<% if admin? %>
+		<%= link_to 'New Video', new_video_listing_path %> <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
+	<% end %>
+	<div class="videos-listing">
+		<% @videos.each do |video| %>
+		<div class="video-listing">
+			<% if video.image_url.nil? %>
+				<%= link_to image_tag("defaultnews.png", :class => "video-image"), video.link, :target => "_blank" %>
+			<% else %>
+				<%= link_to image_tag(video.image_url.to_s, :class => "video-image"), video.link, :target => "_blank"  %>
+			<% end %>
+			<div class="video-listing-caption">
+				<%= link_to video.name, video.link, :target => "_blank" %>
+				
+				<% if admin? %>
+					/
+					<%= link_to "e", edit_video_listing_path(video) %>
+					<%= link_to "d", video, 
+											:method => "delete", 
+											:confirm => "Are you sure you want to delete this video listing", 
+											:delete => "Delete Video Listing?" %>
+				<% end %>
+			</div>
+		</div>
+		<% end %>
+		
+		<div class="clear-floats">
+			
+		</div>
+	</div>
+	
+	
+</div>
+</div>

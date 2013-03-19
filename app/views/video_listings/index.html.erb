@@ -1,0 +1,27 @@
+<h1>Listing video_listings</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Link</th>
+    <th>Image</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @video_listings.each do |video_listing| %>
+  <tr>
+    <td><%= video_listing.name %></td>
+    <td><%= video_listing.link %></td>
+    <td><%= video_listing.image %></td>
+    <td><%= link_to 'Show', video_listing %></td>
+    <td><%= link_to 'Edit', edit_video_listing_path(video_listing) %></td>
+    <td><%= link_to 'Destroy', video_listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Video listing', new_video_listing_path %>

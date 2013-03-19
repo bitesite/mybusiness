@@ -22,6 +22,11 @@ $(function(){
 		return false;
 	});
 	
+	$(".contact-link").click(function(){ 
+		navigateTo(".contact-section"); 
+		return false;
+	});
+	
 	$("#contact-submit").click(function(){
 		submitContactForm();
 		return false;

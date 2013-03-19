@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @video_listing.name %>
+</p>
+
+<p>
+  <b>Link:</b>
+  <%= @video_listing.link %>
+</p>
+
+<p>
+  <b>Image:</b>
+  <%= @video_listing.image %>
+</p>
+
+
+<%= link_to 'Edit', edit_video_listing_path(@video_listing) %> |
+<%= link_to 'Back', video_listings_path %>

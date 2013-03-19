@@ -4,6 +4,15 @@ class PagesController < ApplicationController
     @title = "Home"
     @recent_news_posts = NewsPost.all(:limit => 3)
   end
+  
+  def video
+    @videos = VideoListing.all
+    render :layout => "video"
+  end
+  
+  def wedding
+    
+  end
 
   def contact
     @title = "Home"
