@@ -11,7 +11,7 @@ class PagesController < ApplicationController
   end
   
   def wedding
-    
+    render :layout => "wedding"
   end
 
   def contact

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <title>BiteSite - Ottawa Wedding Services</title>
+	 <meta name="description" content="BiteSite is an Ottawa, Canada based company dedicated to Web, Mobile, and Media. One of our specialties is providing
+	 services for Wedding couples. Everything from Photography, to Video, to custom Websites, BiteSite will do everything it can to make your special day
+	 truly unique. Whether it be for your engagement or for your big day, BiteSite has something for everybody. Check out BiteSite's Wedding Services today.">
+	 <%= stylesheet_link_tag    "application", :media => "all" %>
+	 <%= javascript_include_tag "application" %>
+	 <%= csrf_meta_tags %>	
+    <%= favicon_link_tag 'favicon.png', :type => 'image/png' %>
+
+</head>
+<body>
+	<!-- Google Fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Raleway:400,200,100,600,700' rel='stylesheet' type='text/css'>
+	<%= render "layouts/header_links" %>
+	<%= yield %>
+</body>
+</html>

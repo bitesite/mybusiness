@@ -181,4 +181,22 @@ a.standard-button {
 	vertical-align:middle;
 }
 
-
+/* Header Links */
+.header-links {
+	text-align:right;
+	position:absolute;
+	width:100%;
+	z-index:10;
+	
+	.header-link {
+		background:#777;
+		color:white;
+		text-decoration:none;
+		padding:5px 20px;
+		display:inline-block;
+		font-size:10px;
+		&:hover {
+			background:#222;
+		};
+	}
+}

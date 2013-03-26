@@ -9,6 +9,7 @@ Mybusiness::Application.routes.draw do
   get "pages/home"
   
   match "/video" => "pages#video"
+  match "/wedding" => "pages#wedding"
   match "/news" => "news_posts#index"
   match "/contact" => "pages#contact"
   match "/signin" => redirect("/users/signin")

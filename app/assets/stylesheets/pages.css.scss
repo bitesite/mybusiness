@@ -13,6 +13,8 @@
 	right:60px;
 }
 
+
+
 .business-card {
 	position:absolute;
 	bottom:0px;
@@ -452,4 +454,47 @@
 		height:40px;
 		font-size:13px;
 	}
+}
+
+/** WEDDING ********************************************/
+
+.wedding-hero {
+	height:500px;
+	width:100%;
+	background:#FFF;
+	background-image:url("/assets/weddinghero.jpg");
+	background-repeat:no-repeat;
+	background-position:center;
+	position:relative;
+}
+
+.wedding-logo {
+	position:absolute;
+	top:160px;
+	left:0px;
+}
+
+.wedding-hero-description {
+	text-align:left;
+	position:absolute;
+	font-size:14px;
+	left:5px;
+	top:280px;
+	display:block;
+	width: 400px;
+	color: #2b2b2b;
+}
+
+.wedding-contact-us-hero {
+	left:5px;
+}
+
+.wedding-description {
+	width:580px;
+	margin:0 auto 20px auto;
+}
+
+.wedding-services-section {
+	background:#1A1A1A;
+	color:white;
 }
