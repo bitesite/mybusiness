@@ -106,6 +106,7 @@
 .news-section {
 	background:#efefef;
 	border-top:1px solid #ccc;
+	text-align:center;
 }
 
 .about-section {
@@ -247,7 +248,6 @@
 }
 
 .more-news {
-	width:150px;
 	margin:5px auto;
 }
 
@@ -295,10 +295,6 @@
 .contact-caption {
 	width: 35%;
 	float:right;
-}
-
-.contact-submit {
-	width:140px;
 }
 
 .contact-submit-info {
@@ -497,4 +493,33 @@
 .wedding-services-section {
 	background:#1A1A1A;
 	color:white;
+}
+
+.wedding-contest-section {
+	background:#efefef;
+}
+
+.wedding-contest-form {
+	background:#fff;
+	padding:20px;
+	margin:20px auto;
+	width:500px;
+	border-radius:30px;
+	border:1px solid #bbb;
+	
+	label {
+		display:block;
+	}
+	
+	input {
+		padding:5px;
+		width:480px;
+	}
+}
+
+.wedding-contest-rules {
+	margin:10px 0px;
+	padding:10px;
+	border:1px solid #222;
+	font-size:12px;
 }

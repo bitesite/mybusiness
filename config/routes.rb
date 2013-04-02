@@ -1,4 +1,12 @@
 Mybusiness::Application.routes.draw do
+  
+
+
+  resources :contests do
+    resources :contestants
+  end
+
+
   resources :video_listings
 
 
@@ -10,6 +18,7 @@ Mybusiness::Application.routes.draw do
   
   match "/video" => "pages#video"
   match "/wedding" => "pages#wedding"
+  match "/wedding_contest_submit" => "pages#wedding_contest_submit"
   match "/news" => "news_posts#index"
   match "/contact" => "pages#contact"
   match "/signin" => redirect("/users/signin")

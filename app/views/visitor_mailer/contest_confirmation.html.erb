@@ -1,0 +1,22 @@
+<%= image_tag attachments['emailheader.png'].url %>
+<p>
+	Thank you for entering our <%= @contestant.contest.name %> contest! This is just a confirmation e-mail to let you know that we've received your entry.
+	All entrants will be notified when the winner is selected and the contest closes. Thanks again and good luck! 
+</p>
+
+<p>
+	Should you have any further questions about the contest or our services, feel free to drop us another message at http://www.bitesite.ca or e-mail us directly at info@bitesite.ca.
+</p>
+
+<p>
+	Thanks again, and have a great day!
+</p>
+
+<p>
+	Entry Information
+	<ul>
+		<li>First Name: <%= @contestant.first_name %></li>
+		<li>Last Name: <%= @contestant.last_name %></li>
+		<li>Info: <%= @contestant.notes %></li>
+	</ul>
+</p>

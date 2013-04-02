@@ -1,0 +1,74 @@
+<div class="page-section wedding-contest-section">		
+	<div class="container">
+		<div class="wedding-contest">
+			<h1>Wedding Video Contest 2013</h1>
+			<div class="description">
+				To celebrate the launch of BiteSite's wedding services, we are giving away a wedding video package for <strong>free</strong> to one
+				lucky wedding couple. The prize is valued at <strong>$2000</strong> and includes
+				<ul>
+					<li>1 Consultation Visit</li>
+					<li>Full Day (12-hour) Professional Shoot</li>
+					<li>Fully Edited Video</li>
+				</ul>
+				To enter, simply fill out the form below and click "Enter Contest". Good luck!
+				<div class="wedding-contest-rules">
+					<strong>Rules & Regulations</strong>
+					<p>					
+						Eligibility: To enter, please fill out the form below and click "Enter Contest". Only one entry per wedding
+						will be considered. The wedding must be within 150 kms of the Ottawa, Ontario area. The wedding must take place between May 1st, 2013
+						and December 31st, 2013. The contest closes December 31st, 2013 unless a winner has been chosen earlier. 
+					</p>
+
+					<p>					
+						Winner: The winners will be notified at least one month prior to their wedding date.
+						The winner has the right to refuse the prize for whatever reason in which case
+						another winner will be selected. Once a winner has been selected, they will be announced on this website and the contest will close.
+					
+
+					<p>					
+						Prize: The prize includes a minimum of 1 consultation visit (and more if BiteSite deems necessary), a 12-hour
+						contiguous shoot within the window of 9am and Midnight on the wedding day.
+						If the selected winner is already engaged in a wedding video contract with BiteSite, the prize will be a $2000 BiteSite credit
+						towards their video. This credit cannot be used for any of BiteSite's other services.
+					</p>
+					<p>
+						BiteSite reserves the right at anytime to close this contest.
+					</p>
+				</div>
+				<div class="wedding-contest-form">
+					<%= form_for [@contest, @contestant] do |f| %>
+						<div class="field">
+							<%= f.label :first_name %>
+							<%= f.text_field :first_name %>						
+						</div>
+						<div class="field">
+							<%= f.label :last_name %>
+							<%= f.text_field :last_name %>						
+						</div>
+						<div class="field">
+							<%= f.label :email %>
+							<%= f.text_field :email %>						
+						</div>
+						<div class="field">
+							<%= label_tag :contestant_wedding_date, "Wedding Date" %>
+							<%= text_field_tag :contestant_wedding_date %>
+						</div>
+						<div class="field">
+							<%= label_tag :contestant_wedding_location, "Wedding Location" %>
+							<%= text_field_tag :contestant_wedding_location %>
+						</div>
+						<div class="field">
+							<%= label_tag :contestant_message, "A little something about the lucky couple" %>
+							<%= text_field_tag :contestant_message %>
+						</div>
+						<div class="field">
+							<%= link_to "Enter Contest", "#", :class => "btn", :id => "wedding-contest-submit" %>
+							<div class="wedding-contest-submit-info" id="wedding-contest-submit-info"></div>
+						</div>
+					<% end %>					
+				</div>
+			</div>
+		</div>
+		
+	</div>	
+</div>
