@@ -10,7 +10,7 @@ function submitWeddingContestForm() {
 	var wedding_location = $("#contestant_wedding_location").val();
 	var message = $("#contestant_message").val();
 	var newsletter = false;
-	if($("#contestant_newsletter").prop('checked') == 'checked'){
+	if($("#contestant_newsletter").prop('checked') == true){
 		newsletter = true;
 	}
 	
