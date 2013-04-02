@@ -62,7 +62,8 @@ class PagesController < ApplicationController
   private
   
   def build_contestant_hash
-    notes = "#{params[:wedding_date]} / #{params[:wedding_location]} / #{params[:message]}"
+    newsletter_text = params[:newsletter] == "true" ? "Interested in BiteSite Newsletter" : "Not Interested in BiteSite Newsletter"
+    notes = "#{params[:wedding_date]} / #{params[:wedding_location]} / #{params[:message]} / #{newsletter_text}"
     @contestant_hash = { first_name: params[:first_name], last_name: params[:last_name], email: params[:email], notes: notes }    
   end
 

@@ -1,6 +1,6 @@
 class ContestsController < ApplicationController
   
-  before_filter :deny_access_for_non_admins, :except => [:show, :index]
+  before_filter :deny_access_for_non_admins
   
   # GET /contests
   # GET /contests.json

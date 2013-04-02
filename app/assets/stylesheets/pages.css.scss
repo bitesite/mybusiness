@@ -508,10 +508,9 @@
 	border:1px solid #bbb;
 	
 	label {
-		display:block;
 	}
 	
-	input {
+	input[type="text"] {
 		padding:5px;
 		width:480px;
 	}

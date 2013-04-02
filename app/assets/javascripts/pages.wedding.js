@@ -9,6 +9,10 @@ function submitWeddingContestForm() {
 	var wedding_date = $("#contestant_wedding_date").val();
 	var wedding_location = $("#contestant_wedding_location").val();
 	var message = $("#contestant_message").val();
+	var newsletter = false;
+	if($("#contestant_newsletter").prop('checked') == 'checked'){
+		newsletter = true;
+	}
 	
 	$("#wedding-contest-submit").html("Submitting...<img src='/assets/ajax-loader.gif' class='ajax-loader' />");
 	$("#wedding-contest-submit").attr('disabled', 'disabled');
@@ -22,7 +26,8 @@ function submitWeddingContestForm() {
 					email : email, 
 					wedding_date : wedding_date, 
 					wedding_location : wedding_location, 
-					message : message },
+					message : message,
+					newsletter : newsletter },
 		success : function(data, textStatus, jqXHR) {
 			if(data.success) {
 				showSuccessfulWeddingContestSubmit();

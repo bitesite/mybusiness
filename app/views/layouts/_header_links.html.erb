@@ -3,6 +3,9 @@
 		<%= link_to "B", "/", :class => "header-link", :title => "BiteSite Main" %>
 		<%= link_to "V", "/video", :class => "header-link", :title => "Video Production" %>
 		<%= link_to "W", "/wedding", :class => "header-link", :title => "Wedding Services" %>
-		<%= link_to "T", "http://www.twitter.com/bitesite", :class => "header-link", :target => "_blank", :title => "Twitter" %>		
+		<%= link_to "T", "http://www.twitter.com/bitesite", :class => "header-link", :target => "_blank", :title => "Twitter" %>
+		<% if admin? %>
+			<%= link_to "L", destroy_user_session_path, :method => :delete , :class => "header-link" %>
+		<% end %>		
 	</div>
 </div>

@@ -2,15 +2,24 @@
 	<div class="container">
 		<div class="wedding-contest">
 			<h1>Wedding Video Contest 2013</h1>
+			<% if admin? %>
+				<%= link_to "View Contestants", "/contests" %>
+			<% end %>
 			<div class="description">
-				To celebrate the launch of BiteSite's wedding services, we are giving away a wedding video package for <strong>free</strong> to one
-				lucky wedding couple. The prize is valued at <strong>$2000</strong> and includes
+				<p>
+					To celebrate the launch of BiteSite's wedding services, we are giving away a wedding video package for <strong>free</strong> to one
+					lucky wedding couple. The prize is valued at <strong>$2000</strong> and includes
+				</p>
 				<ul>
 					<li>1 Consultation Visit</li>
 					<li>Full Day (12-hour) Professional Shoot</li>
 					<li>Fully Edited Video</li>
 				</ul>
-				To enter, simply fill out the form below and click "Enter Contest". Good luck!
+				<p>
+				To get an idea of exactly what you can expect, view our video portfolio <%= link_to "here", "/video" %>!
+				</p>
+				
+				<p>To enter, simply fill out the form below and click "Enter Contest". Good luck!</p>
 				<div class="wedding-contest-rules">
 					<strong>Rules & Regulations</strong>
 					<p>					
@@ -60,6 +69,10 @@
 						<div class="field">
 							<%= label_tag :contestant_message, "A little something about the lucky couple" %>
 							<%= text_field_tag :contestant_message %>
+						</div>
+						<div class="field">
+							<%= check_box_tag :contestant_newsletter, "", "" %>
+							<%= label_tag :contestant_newsletter, "Subscribe to BiteSite's Newsletter" %>
 						</div>
 						<div class="field">
 							<%= link_to "Enter Contest", "#", :class => "btn", :id => "wedding-contest-submit" %>
