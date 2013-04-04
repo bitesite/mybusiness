@@ -5,11 +5,32 @@
 	
 	<% if admin? %>
 	<h2>Contestants</h2>
-	<ul>
+	<table class="admin-table">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Notes</th>
+				<th>Date</th>
+				<th></th>
+				<th></th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
 		<% @contest.contestants.each do |c| %>
-			<li><%= "#{c.first_name} #{c.last_name} / #{c.email} / #{c.notes}" %></li>
+			<tr>
+				<td><%= "#{c.first_name} #{c.last_name}" %></td>
+				<td><%= c.email %></td>
+				<td><%= c.notes %></td>
+				<td><%= c.created_at %></td>
+				<td><%= link_to 'Show', [@contest, c] %></td>
+			    <td><%= link_to 'Edit', edit_contest_contestant_path(@contest, c) %></td>
+			    <td><%= link_to 'Destroy', [@contest, c], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+			</tr>
 		<% end %>
-	</ul>
+		</tbody>
+	</table>
 
 
 	<%= link_to 'Edit', edit_contest_path(@contest) %> |
