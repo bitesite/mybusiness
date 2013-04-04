@@ -1,5 +1,20 @@
 $(function(){
 	$("#wedding-contest-submit").click(submitWeddingContestForm);
+	
+	$(document).ready(function(){   
+	  $('#contestant_message').maxlength({  
+	    events: [], // Array of events to be triggerd   
+	    maxCharacters: 1500, // Characters limit  
+	    status: true, // True to show status indicator bewlow the element   
+	    statusClass: "contestant_message_status", // The class on the status div 
+	    statusText: "characters left", // The status text 
+	    notificationClass: "contestant_message_notification",  // Will be added when maxlength is reached 
+	    showAlert: false, // True to show a regular alert message   
+	    alertText: "You have typed too many characters.", // Text in alert message  
+	    slider: false // True Use counter slider   
+	  });
+	});
+	
 });
 
 function submitWeddingContestForm() {

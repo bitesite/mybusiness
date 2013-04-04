@@ -69,8 +69,8 @@
 							<%= text_field_tag :contestant_wedding_location %>
 						</div>
 						<div class="field">
-							<%= label_tag :contestant_message, "A little something about the lucky couple" %>
-							<%= text_field_tag :contestant_message %>
+							<%= label_tag :contestant_message, "A little something about the lucky couple (max. 1500 characters)" %>
+							<%= text_area_tag :contestant_message, "", :rows => "10" %>
 						</div>
 						<div class="field">
 							<%= check_box_tag :contestant_newsletter, "", "" %>
