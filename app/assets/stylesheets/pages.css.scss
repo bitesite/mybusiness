@@ -509,6 +509,7 @@
 .wedding-services-section {
 	background:#1A1A1A;
 	color:white;
+	padding:20px 0px;
 }
 
 .wedding-contest-section {
@@ -544,4 +545,27 @@
 	padding:10px;
 	border:1px solid #222;
 	font-size:12px;
+}
+
+.wedding-services {
+	margin-bottom:15px;
+}
+
+.wedding-service {
+	float:left;
+	width:278px;
+	padding:10px;
+	border:1px solid #eee;
+	margin:10px;
+	border-radius:10px;
+	
+	.wedding-service-logo {
+		color:#eee;
+		font-size:60px;
+		font-weight:bold;
+	}
+	
+	.wedding-service-logo-subheader {
+		color:#eee;
+	}
 }
