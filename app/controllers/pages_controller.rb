@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
 
   before_filter :build_contestant_hash, :only => [:wedding_contest_submit]
+  before_filter :deny_access_for_non_admins, :only => [:admin]
 
   def home
     @title = "Home"
@@ -56,6 +57,10 @@ class PagesController < ApplicationController
       format.html { redirect_to "/"}
       format.json { render :json => { :success => @success }.to_json }
     end
+    
+  end
+  
+  def admin
     
   end
   

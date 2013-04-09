@@ -22,6 +22,7 @@ Mybusiness::Application.routes.draw do
   match "/news" => "news_posts#index"
   match "/contact" => "pages#contact"
   match "/signin" => redirect("/users/signin")
+  match "/admin" => "pages#admin"
 
   # Legacy Routes
   match "/packages" => redirect("/")
