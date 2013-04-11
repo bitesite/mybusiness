@@ -5,28 +5,11 @@
  */
 $(function(){
 
-	$("#services-link").click(function(){ 
-		navigateTo(".services-section");
+	$(".nav-link").click(function(){ 
+		navigateTo($(this).attr("destination"));
 		return false;
 	});
-	$("#news-link").click(
-		function(){ navigateTo(".news-section");
-		return false;
-	});
-	$("#about-link").click(function(){ 
-		navigateTo(".about-section");
-		return false;
-	});
-	$("#contact-link").click(function(){ 
-		navigateTo(".contact-section"); 
-		return false;
-	});
-	
-	$(".contact-link").click(function(){ 
-		navigateTo(".contact-section"); 
-		return false;
-	});
-	
+		
 	$("#contact-submit").click(function(){
 		submitContactForm();
 		return false;
