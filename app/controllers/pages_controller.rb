@@ -4,21 +4,32 @@ class PagesController < ApplicationController
   before_filter :deny_access_for_non_admins, :only => [:admin]
 
   def home
-    @title = "Home"
+    @title = "Ottawa Web Design and Development"
+    @meta_description = "BiteSite is an Ottawa, Canada based company dedicated to building stylish, elegant, and robust Websites and Web Applications and producing
+                        eye-catching media. It targets small to medium size businesses as well as individuals such as event organizers, teachers, and wedding couples.
+                        Our media services include photography, video production, and graphic design. BiteSite believes strongly in finding the right-fit customer for
+                        the right-fit company to bring success to all who are invovled."
+                        
     @recent_news_posts = NewsPost.all(:limit => 3)
   end
   
   def video
+    @title = "Ottawa Video Production"
+    @meta_description = "BiteSite is an Ottawa, Canada based company dedicated to Web, Mobile, and Media. It believes strongly in the video format and has produced
+                         Wedding Videos, Corporate Videos, and more. Whether it be professionally produced live video or stylish motion graphics, BiteSite will work
+                         closely with you to make something that will truly blow your mind. Check out BiteSite's Video Production services today."
+                         
     @videos = VideoListing.all
-    render :layout => "video"
   end
   
   def wedding
+    @title = "Ottawa Wedding Services"
+    @meta_description = "BiteSite is an Ottawa, Canada based company dedicated to Web, Mobile, and Media. One of our specialties is providing services for Wedding
+                         couples. Everything from Photography, to Video, to custom Websites, BiteSite will do everything it can to make your special day truly unique.
+                         Whether it be for your engagement or for your big day, BiteSite has something for everybody. Check out BiteSite's Wedding Services today."
     
-   @contest = Contest.find_by_name("Wedding Video 2013")
-   @contestant = @contest.contestants.build
-    
-   render :layout => "wedding"
+    @contest = Contest.find_by_name("Wedding Video 2013")
+    @contestant = @contest.contestants.build
   end
   
   def wedding_contest_submit
@@ -61,7 +72,7 @@ class PagesController < ApplicationController
   end
   
   def admin
-    
+    @title = "Admin Menu"
   end
   
   private
