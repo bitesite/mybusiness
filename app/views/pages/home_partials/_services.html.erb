@@ -50,46 +50,30 @@
 	</div>
 	
 	<div class="container">
-
-		
 		<div class="feature">
-			<%= image_tag "mobiledevelopment.png", :class => "screenshot screenshot-right mobiledevelopment" %>
+			<%= image_tag "videoproduction.png", 
+					:class => "screenshot screenshot-right videoproduction portfolio-item",
+					 "data-title" => 'demo-reel-video' %>
 
 			<div class="caption-left caption">
-				<h2>Mobile Development</h2>
-				Today’s mobile market is growing at an incredible rate
-				and companies are realizing that a mobile presence is
-				key to their success. Whether it be Mobile-Optimized
-				sites, or native iOS Apps, BiteSite has a lot to offer.
-				BiteSite will help you design and deliver a compelling
-				experience for your customers. 
+				<h2>Video Production</h2>
+				From Live Video to Motion Graphics, BiteSite has a
+				passion for the video format. Promotional Material,
+				Training Videos, and Weddings are just a few of the
+				projects BiteSite has taken on . A video can be an
+				extremely effective mode of communication. You can
+				expect a professional quality video with a strong artistic
+				direction. <%= link_to "Visit our Video Portal", "/video" %><br>
+				<%= link_to "View our demo reel", "#", :class => "portfolio-text-link portfolio-item", "data-title" => 'demo-reel-video' %> / 
+				<%= link_to "View one of our Wedding Videos", "#", :class => "portfolio-text-link portfolio-item", "data-title" => 'hana-and-chris-video' %>
 				<br>
-				<%= link_to "View some of our mobile work", "#", :class => "portfolio-text-link", :id => "mobile-portfolio-text-link" %>
-				<br>
-				<%= image_tag "price750.png", :class => "price-tag" %>
+				<%= image_tag "price500.png", :class => "price-tag" %>
 				
 			</div>
 			<div class="clear-floats"></div>
 		</div>
 	</div>
-	
-	<div class="mobiledevelopment-portfolio folder-portfolio">
-		<div class="container">
-			<div class="folder-portfolio-header">SOME OF OUR MOBILE WORK</div>
-			<ul>
-				<li><%= link_to "CNTDWN", "https://itunes.apple.com/app/cntdwn/id555898837?mt=8", :target => "_blank" %></li>
-				<li>/</li>
-				<li>AIDFIRST (work in progress)</li>
-				<li>/</li>
-				<li><%= link_to "CAPO (web-optimized site)", "http://www.capoapp.ca", :target => "_blank" %></li>
-			</ul>
-			<div class="clear-floats">
-				
-			</div>
-			<%= link_to "CLOSE", "#", :class => "mobiledevelopment-portfolio-close standard-button" %>			
-		</div>
 
-	</div>
 	
 	<div class="container">
 		
@@ -115,29 +99,56 @@
 			<div class="clear-floats"></div>
 		</div>
 		
+
+		
+
+		
+	</div>
+	
+	<div class="container">
+
+		
 		<div class="feature">
-			<%= image_tag "videoproduction.png", 
-					:class => "screenshot screenshot-right videoproduction portfolio-item",
-					 "data-title" => 'demo-reel-video' %>
+			<%= image_tag "mobiledevelopment.png", :class => "screenshot screenshot-right mobiledevelopment" %>
 
 			<div class="caption-left caption">
-				<h2>Video Production</h2>
-				From Live Video to Motion Graphics, BiteSite has a
-				passion for the video format. Promotional Material,
-				Training Videos, and Weddings are just a few of the
-				projects BiteSite has taken on . A video can be an
-				extremely effective mode of communication. You can
-				expect a professional quality video with a strong artistic
-				direction. <%= link_to "Visit our Video Portal", "/video" %><br>
-				<%= link_to "View our demo reel", "#", :class => "portfolio-text-link portfolio-item", "data-title" => 'demo-reel-video' %> / 
-				<%= link_to "View one of our Wedding Videos", "#", :class => "portfolio-text-link portfolio-item", "data-title" => 'hana-and-chris-video' %>
+				<h2>Mobile Development</h2>
+				Today’s mobile market is growing at an incredible rate
+				and companies are realizing that a mobile presence is
+				key to their success. Whether it be Mobile-Optimized
+				sites, or native iOS Apps, BiteSite has a lot to offer.
+				BiteSite will help you design and deliver a compelling
+				experience for your customers. 
 				<br>
-				<%= image_tag "price500.png", :class => "price-tag" %>
+				<%= link_to "View some of our mobile work", "#", :class => "portfolio-text-link", :id => "mobile-portfolio-text-link" %>
+				<br>
+				<%= image_tag "price750.png", :class => "price-tag" %>
 				
 			</div>
 			<div class="clear-floats"></div>
 		</div>
-		
+	</div>
+	
+	
+	<div class="mobiledevelopment-portfolio folder-portfolio">
+		<div class="container">
+			<div class="folder-portfolio-header">SOME OF OUR MOBILE WORK</div>
+			<ul>
+				<li><%= link_to "CNTDWN", "https://itunes.apple.com/app/cntdwn/id555898837?mt=8", :target => "_blank" %></li>
+				<li>/</li>
+				<li>AIDFIRST (work in progress)</li>
+				<li>/</li>
+				<li><%= link_to "CAPO (web-optimized site)", "http://www.capoapp.ca", :target => "_blank" %></li>
+			</ul>
+			<div class="clear-floats">
+				
+			</div>
+			<%= link_to "CLOSE", "#", :class => "mobiledevelopment-portfolio-close standard-button" %>			
+		</div>
+
+	</div>
+	
+	<div class="container">
 		<div class="feature">
 			<%= image_tag "graphicdesign.png", :class => "screenshot screenshot-left graphicdesign portfolio-item-photos", "data-title" => "promos" %>
 
@@ -156,6 +167,5 @@
 			</div>
 			<div class="clear-floats"></div>
 		</div>
-		
 	</div>
 </div>
