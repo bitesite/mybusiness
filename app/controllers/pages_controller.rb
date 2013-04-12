@@ -17,7 +17,7 @@ class PagesController < ApplicationController
     @title = "Ottawa Video Production"
     @meta_description = "BiteSite is an Ottawa, Canada based company dedicated to Web, Mobile, and Media. It believes strongly in the video format and has produced
                          Wedding Videos, Corporate Videos, and more. Whether it be professionally produced live video or stylish motion graphics, BiteSite will work
-                         closely with you to make something that will truly blow your mind. Check out BiteSite's Video Production services today."
+                         closely with you to make something that will truly blow your mind. Check out BiteSite's Video Production services today. Ottawa Videographer."
                          
     @videos = VideoListing.all
   end
@@ -26,7 +26,8 @@ class PagesController < ApplicationController
     @title = "Ottawa Wedding Services"
     @meta_description = "BiteSite is an Ottawa, Canada based company dedicated to Web, Mobile, and Media. One of our specialties is providing services for Wedding
                          couples. Everything from Photography, to Video, to custom Websites, BiteSite will do everything it can to make your special day truly unique.
-                         Whether it be for your engagement or for your big day, BiteSite has something for everybody. Check out BiteSite's Wedding Services today."
+                         Whether it be for your engagement or for your big day, BiteSite has something for everybody. Check out BiteSite's Wedding Services today.
+                         Ottawa Wedding Videographer. Ottawa Wedding Photographer. Ottawa Wedding Websites."
     
     @contest = Contest.find_by_name("Wedding Video 2013")
     @contestant = @contest.contestants.build
