@@ -5,6 +5,11 @@
 			<% if admin? %>
 				<%= link_to "View Contestants", "/contests" %>
 			<% end %>
+			
+			<div class="center contest-closed">
+				<h2>The Contest is Now Closed! Thanks to all who entered!</h2>
+				Stay tuned for the winner and for those getting married in 2014 be sure to check back often for our 2014 contest!
+			</div>
 			<div class="description">
 				<p>
 					To celebrate the launch of BiteSite's wedding services, we are giving away a wedding video package for <strong>free</strong> to one
@@ -53,42 +58,47 @@
 						<%= link_to "info@bitesite.ca", "mailto:info@bitesite.ca" %>.
 					</p>
 				</div>
-				<div class="wedding-contest-form">
-					<%= form_for [@contest, @contestant] do |f| %>
-						<div class="field">
-							<%= f.label :first_name %>
-							<%= f.text_field :first_name %>						
-						</div>
-						<div class="field">
-							<%= f.label :last_name %>
-							<%= f.text_field :last_name %>						
-						</div>
-						<div class="field">
-							<%= f.label :email %>
-							<%= f.text_field :email %>						
-						</div>
-						<div class="field">
-							<%= label_tag :contestant_wedding_date, "Wedding Date" %>
-							<%= text_field_tag :contestant_wedding_date %>
-						</div>
-						<div class="field">
-							<%= label_tag :contestant_wedding_location, "Wedding Location" %>
-							<%= text_field_tag :contestant_wedding_location %>
-						</div>
-						<div class="field">
-							<%= label_tag :contestant_message, "A little something about the lucky couple (max. 1500 characters)" %>
-							<%= text_area_tag :contestant_message, "", :rows => "10" %>
-						</div>
-						<div class="field">
-							<%= check_box_tag :contestant_newsletter, "", "" %>
-							<%= label_tag :contestant_newsletter, "Subscribe to BiteSite's Newsletter" %>
-						</div>
-						<div class="field">
-							<%= link_to "Enter Contest", "#", :class => "btn", :id => "wedding-contest-submit" %>
-							<div class="wedding-contest-submit-info" id="wedding-contest-submit-info"></div>
-						</div>
-					<% end %>					
+				
+				<div class="center contest-closed">
+					<h2>The Contest is Now Closed! Thanks to all who entered!</h2>
 				</div>
+				
+				<!-- <div class="wedding-contest-form">
+								<%= form_for [@contest, @contestant] do |f| %>
+									<div class="field">
+										<%= f.label :first_name %>
+										<%= f.text_field :first_name %>						
+									</div>
+									<div class="field">
+										<%= f.label :last_name %>
+										<%= f.text_field :last_name %>						
+									</div>
+									<div class="field">
+										<%= f.label :email %>
+										<%= f.text_field :email %>						
+									</div>
+									<div class="field">
+										<%= label_tag :contestant_wedding_date, "Wedding Date" %>
+										<%= text_field_tag :contestant_wedding_date %>
+									</div>
+									<div class="field">
+										<%= label_tag :contestant_wedding_location, "Wedding Location" %>
+										<%= text_field_tag :contestant_wedding_location %>
+									</div>
+									<div class="field">
+										<%= label_tag :contestant_message, "A little something about the lucky couple (max. 1500 characters)" %>
+										<%= text_area_tag :contestant_message, "", :rows => "10" %>
+									</div>
+									<div class="field">
+										<%= check_box_tag :contestant_newsletter, "", "" %>
+										<%= label_tag :contestant_newsletter, "Subscribe to BiteSite's Newsletter" %>
+									</div>
+									<div class="field">
+										<%= link_to "Enter Contest", "#", :class => "btn", :id => "wedding-contest-submit" %>
+										<div class="wedding-contest-submit-info" id="wedding-contest-submit-info"></div>
+									</div>
+								<% end %>					
+							</div> -->
 			</div>
 		</div>
 		
