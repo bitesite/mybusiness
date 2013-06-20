@@ -54,7 +54,7 @@ class PagesController < ApplicationController
 
     if request.post?
       if !params[:email_address].blank? && !params[:message].blank?
-        if verify_recaptcha
+        #if verify_recaptcha
           first_name = params[:first_name]
           last_name = params[:last_name]
           customer_email = params[:email_address]
@@ -63,9 +63,9 @@ class PagesController < ApplicationController
           AdminMailer.customer_contact(first_name, last_name, customer_email, message).deliver
           VisitorMailer.contact_confirmation(first_name, last_name, customer_email, message).deliver
           @success = true
-        else
-          @message = "We're sorry but the Captcha did not match. Please try again."
-        end
+        #else
+        #  @message = "We're sorry but the Captcha did not match. Please try again."
+        #end
       end
     end
     

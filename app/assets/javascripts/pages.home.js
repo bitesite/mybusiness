@@ -21,7 +21,7 @@ function submitContactForm() {
 	var last_name = $("#last_name").val();
 	var email_address = $("#email_address").val();
 	var message = $("#message").val();
-	
+	var recaptcha_response_field = $("#recaptcha_response_field").val();
 
 	$("#contact-submit").html("Submitting...<img src='/assets/ajax-loader.gif' class='ajax-loader' />");
 	$("#contact-submit").attr('disabled', 'disabled');
@@ -30,7 +30,7 @@ function submitContactForm() {
 	$.ajax({
 		url:"/contact",
 		type: "POST",
-		data: { first_name : first_name, last_name : last_name, email_address : email_address, message : message },
+		data: { first_name : first_name, last_name : last_name, email_address : email_address, message : message, recaptcha_response_field : recaptcha_response_field },
 		dataType: "json",
 		success:function(data, textStatus, jqXHR){
 			if(data.success) {
