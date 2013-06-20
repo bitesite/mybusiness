@@ -21,6 +21,7 @@ function submitContactForm() {
 	var last_name = $("#last_name").val();
 	var email_address = $("#email_address").val();
 	var message = $("#message").val();
+	
 
 	$("#contact-submit").html("Submitting...<img src='/assets/ajax-loader.gif' class='ajax-loader' />");
 	$("#contact-submit").attr('disabled', 'disabled');
@@ -44,16 +45,30 @@ function submitContactForm() {
 				$("#contact-submit-info").addClass("contact-submit-success");
 				$("#contact-submit-info").html("Success! Thanks for contacting us!");
 			}
+			else {
+				showContactSubmitError(data.message);
+			}
 		},
 		error:function(jqXHR, textStatus, errorThrown){
-			$("#contact-submit").removeAttr('disabled');
-			$("#contact-submit").html("SUBMIT");
-			$("#contact-submit-info").removeClass("contact-submit-success");
-			$("#contact-submit-info").addClass("contact-submit-error");
-			$("#contact-submit-info").html("Sorry, there was an error trying to submit. If you continue to have trouble, please e-mail us at info@bitesite.ca");
+			showContactSubmitError("");
 		}
 		
 	});
+}
+
+function showContactSubmitError(message) {
+	$("#contact-submit").removeAttr('disabled');
+	$("#contact-submit").html("SUBMIT");
+	$("#contact-submit-info").removeClass("contact-submit-success");
+	$("#contact-submit-info").addClass("contact-submit-error");
+	var general_error_message = "Sorry, there was an error trying to submit. If you continue to have trouble, please e-mail us at info@bitesite.ca";
+	
+	if(message != "") {
+		$("#contact-submit-info").html(message);
+	}
+	else {
+		$("#contact-submit-info").html(general_error_message);
+	}
 }
 
 function preload(arrayOfImages) {

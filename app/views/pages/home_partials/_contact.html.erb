@@ -20,6 +20,9 @@
 					<%= label_tag :message, "Message" %><br/>
 					<%= text_area_tag :message, nil, :cols => 95, :rows => 10, :class => "contact-field" %><br/>
 				</div>
+				<div class="field">
+					<%= recaptcha_tags :display => {:theme => "clean" } %>
+				</div>
 				<div class="actions">
 					<%= link_to "SUBMIT", "#", :id => "contact-submit", :class => "btn contact-submit" %>
 					

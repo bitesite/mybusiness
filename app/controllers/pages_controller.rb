@@ -50,24 +50,28 @@ class PagesController < ApplicationController
   def contact
     @title = "Home"
     @success = false
-    
+    @message = ""
+
     if request.post?
       if !params[:email_address].blank? && !params[:message].blank?
+        if verify_recaptcha
+          first_name = params[:first_name]
+          last_name = params[:last_name]
+          customer_email = params[:email_address]
+          message = params[:message]
         
-        first_name = params[:first_name]
-        last_name = params[:last_name]
-        customer_email = params[:email_address]
-        message = params[:message]
-        
-        AdminMailer.customer_contact(first_name, last_name, customer_email, message).deliver
-        VisitorMailer.contact_confirmation(first_name, last_name, customer_email, message).deliver
-        @success = true
+          AdminMailer.customer_contact(first_name, last_name, customer_email, message).deliver
+          VisitorMailer.contact_confirmation(first_name, last_name, customer_email, message).deliver
+          @success = true
+        else
+          @message = "We're sorry but the Captcha did not match. Please try again."
+        end
       end
     end
     
     respond_to do |format|
       format.html { redirect_to "/"}
-      format.json { render :json => { :success => @success }.to_json }
+      format.json { render :json => { :success => @success, :message => @message }.to_json }
     end
     
   end
