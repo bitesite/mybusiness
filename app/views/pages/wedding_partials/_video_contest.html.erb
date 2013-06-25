@@ -6,100 +6,26 @@
 				<%= link_to "View Contestants", "/contests" %>
 			<% end %>
 			
-			<div class="center contest-closed">
-				<h2>The Contest is Now Closed! Thanks to all who entered!</h2>
-				Stay tuned for the winner and for those getting married in 2014 be sure to check back often for our 2014 contest!
-			</div>
-			<div class="description">
-				<p>
-					To celebrate the launch of BiteSite's wedding services, we are giving away a wedding video package for <strong>free</strong> to one
-					lucky wedding couple. The prize is valued at <strong>$2000</strong> and includes
-				</p>
-				<ul>
-					<li>1 Consultation Visit</li>
-					<li>Full Day (10-hour) Professional Shoot</li>
-					<li>Fully Edited Video</li>
-				</ul>
-				<p>
-				To get an idea of exactly what you can expect, view our video portfolio <%= link_to "here", "/video" %>!
-				</p>
-				
-				<p>To enter, simply fill out the form below and click "Enter Contest". Good luck!</p>
-				<div class="wedding-contest-rules">
-					<strong>Rules & Regulations</strong>
-					<p>
-						<strong>Contest Closes May 31st, 2013</strong>
-					</p>
-					<p>					
-						Eligibility: No purchase necessary. To enter, please fill out the form below and click "Enter Contest". Only one entry per wedding
-						will be considered. The wedding must be within Canada and within 150 kms of the Ottawa, Ontario area. The wedding must take place
-						between May 1st, 2013
-						and December 31st, 2013. The contest closes May 31st, 2013 unless a winner has been chosen earlier.  Unfortunately, any entries
-						not received because of e-mails not received or the form not submitting
-						will not be considered valid entries. Any entry deemed fraudulent will also not be considered a valid entry.
-					</p>
-					<p>
-						Odds: The odds of winning will depend on the number of entries received. Picking of the winner is also subject to the availability of our staff on the entrant's Wedding day.
-					</p>
-					<p>					
-						Winner: The winners will be notified at least one month prior to their wedding date.
-						The winner has the right to refuse the prize for whatever reason but cannot redeem it for cash or other services. In the case
-						that the winner refuses the prize another winner will be selected. Once a winner has been selected,
-						they will be announced on this website and the contest will close.
-					</p>
-					<p>					
-						Prize: The prize includes a minimum of 1 consultation visit (and more if BiteSite deems necessary), a 10-hour
-						contiguous shoot within the window of 9:00 am and 12:00 midnight on the wedding day.
-						If the selected winner is already engaged in a wedding video contract with BiteSite, the prize will be a $2000 BiteSite credit
-						towards their video. This credit cannot be used for any of BiteSite's other services.
-					</p>
-					<p>
-						BiteSite reserves the right at anytime to close or cancel this contest. If you have any questions or comments, please e-mail 
-						<%= link_to "info@bitesite.ca", "mailto:info@bitesite.ca" %>.
-					</p>
+			
+			<div class="video-contest-winners">
+				<div class="center">
+					<%= image_tag "tharieandandrew.jpg", :class => "winners-pic" %>										
 				</div>
-				
+				<div class="congratulations center">
+					Congratulations to the Winners of our<br> Wedding Video Contest 2013!					
+				</div>
+				<div class="winners center">
+					Tharie Vong and Andrew Ouellette
+				</div>
+
 				<div class="center contest-closed">
-					<h2>The Contest is Now Closed! Thanks to all who entered!</h2>
+					The Contest is Now Closed! Thanks to all who entered!<br>
+					For those getting married in 2014, be sure to check back often for our 2014 contest!
 				</div>
-				
-				<!-- <div class="wedding-contest-form">
-								<%= form_for [@contest, @contestant] do |f| %>
-									<div class="field">
-										<%= f.label :first_name %>
-										<%= f.text_field :first_name %>						
-									</div>
-									<div class="field">
-										<%= f.label :last_name %>
-										<%= f.text_field :last_name %>						
-									</div>
-									<div class="field">
-										<%= f.label :email %>
-										<%= f.text_field :email %>						
-									</div>
-									<div class="field">
-										<%= label_tag :contestant_wedding_date, "Wedding Date" %>
-										<%= text_field_tag :contestant_wedding_date %>
-									</div>
-									<div class="field">
-										<%= label_tag :contestant_wedding_location, "Wedding Location" %>
-										<%= text_field_tag :contestant_wedding_location %>
-									</div>
-									<div class="field">
-										<%= label_tag :contestant_message, "A little something about the lucky couple (max. 1500 characters)" %>
-										<%= text_area_tag :contestant_message, "", :rows => "10" %>
-									</div>
-									<div class="field">
-										<%= check_box_tag :contestant_newsletter, "", "" %>
-										<%= label_tag :contestant_newsletter, "Subscribe to BiteSite's Newsletter" %>
-									</div>
-									<div class="field">
-										<%= link_to "Enter Contest", "#", :class => "btn", :id => "wedding-contest-submit" %>
-										<div class="wedding-contest-submit-info" id="wedding-contest-submit-info"></div>
-									</div>
-								<% end %>					
-							</div> -->
 			</div>
+			
+
+			
 		</div>
 		
 	</div>	

@@ -529,6 +529,26 @@
 
 .wedding-contest-section {
 	background:#efefef;
+	
+	.video-contest-winners {
+		width:80%;
+		margin:0 auto;
+	}
+	
+	.congratulations {
+		font-size:16px;
+	}
+	
+	.winners {
+		font-size:30px;
+		font-weight:bold;
+	}
+	
+	.winners-pic {
+		margin:0 20px 0 0;
+		width:250px;
+		float:left;
+	}
 }
 
 .wedding-contest-form {
@@ -556,10 +576,8 @@
 }
 
 .contest-closed {
-	border:1px solid #998D00;
-	padding:30px 10px;
-	border-radius:10px;
-	background:#FFF6CF;
+	padding:20px 10px;
+	font-size:13px;
 }
 
 .wedding-contest-rules {
