@@ -18,6 +18,11 @@ gem 'mailchimp'
 
 gem "recaptcha", :require => "recaptcha/rails"
 
+
+group :production do
+	gem 'rails_12factor'
+end
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -47,3 +52,6 @@ gem 'thin'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
+
+ruby '1.9.3'
+#ruby-gemset=mybusiness
