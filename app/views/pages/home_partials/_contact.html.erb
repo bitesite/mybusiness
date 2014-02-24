@@ -22,7 +22,7 @@
 				</div>
 				<div class="field">
 					<%= label_tag :recaptcha, "Captcha: Please Type the words you see below" %>
-					<%= recaptcha_tags :display => {:theme => "clean" } %>
+					<%= recaptcha_tags :display => {:theme => "clean" } if !Rails.env.development? %>
 				</div>
 				<div class="actions">
 					<%= link_to "SUBMIT", "#", :id => "contact-submit", :class => "btn contact-submit" %>

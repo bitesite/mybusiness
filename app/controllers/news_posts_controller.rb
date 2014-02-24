@@ -5,6 +5,7 @@ class NewsPostsController < ApplicationController
   # GET /news_posts
   # GET /news_posts.json
   def index
+    @title = "News"
     @news_posts = NewsPost.all
 
     respond_to do |format|

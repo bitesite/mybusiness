@@ -23,6 +23,7 @@ Mybusiness::Application.routes.draw do
   match "/contact" => "pages#contact"
   match "/signin" => redirect("/users/signin")
   match "/admin" => "pages#admin"
+  match "/terms_and_conditions" => "pages#terms_and_conditions"
 
   # Legacy Routes
   match "/packages" => redirect("/")

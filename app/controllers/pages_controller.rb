@@ -79,6 +79,10 @@ class PagesController < ApplicationController
   def admin
     @title = "Admin Menu"
   end
+
+  def terms_and_conditions
+    @title = "Terms and Conditions"
+  end
   
   private
   
