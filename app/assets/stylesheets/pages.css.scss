@@ -365,6 +365,13 @@
 	text-align:center;
 	color:#999;
 	font-size:20px;
+
+	.terms-and-conditions-link {
+		font-size:0.8em;
+		a {
+			text-decoration:none;
+		}
+	}
 }
 
 .footer-ads {

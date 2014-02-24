@@ -1,0 +1,32 @@
+
+.container {
+	margin: 0 auto;
+	width: 960px;
+	height:100%;
+	position:relative;
+	overflow:hidden;
+	/*border-right: 1px solid #333;
+	border-left: 1px solid #333;*/
+}
+
+
+
+/* Header Links */
+.header-links {
+	text-align:right;
+	position:absolute;
+	width:100%;
+	z-index:10;
+	
+	.header-link {
+		background:#777;
+		color:white;
+		text-decoration:none;
+		padding:5px 20px;
+		display:inline-block;
+		font-size:10px;
+		&:hover {
+			background:#222;
+		};
+	}
+}
