@@ -1,0 +1,38 @@
+.devise-form {
+	width:50%;
+	margin:100px auto;
+
+	padding: 30px 20px;
+
+	background:#eee;
+	border: 1px solid #ddd;
+	box-shadow:2px 2px 1px #555;
+
+	h2 {
+		margin-bottom:10px;
+	}
+
+	.field {
+		margin-bottom: 10px;
+	}
+
+	input[type="text"], input[type="email"], input[type="password"] {
+		font-size:1.2em;
+		padding:2%;
+		width:96%;
+	}
+
+	input[type="submit"] {
+		width:100%;
+		border:1px solid #333;
+		background:#333;
+		color:white;
+		padding:10px 2px;
+		font-size:1.2em;
+
+		&:hover {
+			background:#555;
+		}
+	}
+
+}
