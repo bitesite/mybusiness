@@ -10,6 +10,7 @@ gem "devise"
 gem 'mailchimp'
 gem "recaptcha", :require => "recaptcha/rails"
 gem 'sucker_punch'
+gem 'honeypot-captcha'
 
 group :development do
   gem 'letter_opener'  

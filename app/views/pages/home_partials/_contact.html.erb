@@ -3,7 +3,7 @@
 		<h1>Contact</h1>
 
 		<div class="contact-form">
-			<%= form_tag "/contact" do %>
+			<%= form_tag "/contact", honeypot: true do %>
 				<div class="field">
 					<%= label_tag :first_name, "First Name" %><br/>
 					<%= text_field_tag :first_name, nil, :size => "30", :class => "contact-field" %><br/>
@@ -19,10 +19,6 @@
 				<div class="field">
 					<%= label_tag :message, "Message" %><br/>
 					<%= text_area_tag :message, nil, :cols => 95, :rows => 10, :class => "contact-field" %><br/>
-				</div>
-				<div class="field">
-					<%= label_tag :recaptcha, "Captcha: Please Type the words you see below" %>
-					<%= recaptcha_tags :display => {:theme => "clean" } if !Rails.env.development? %>
 				</div>
 				<div class="actions">
 					<%= link_to "SUBMIT", "#", :id => "contact-submit", :class => "btn contact-submit" %>

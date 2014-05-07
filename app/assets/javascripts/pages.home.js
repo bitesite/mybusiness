@@ -21,8 +21,7 @@ function submitContactForm() {
 	var last_name = $("#last_name").val();
 	var email_address = $("#email_address").val();
 	var message = $("#message").val();
-	var recaptcha_response_field = $("#recaptcha_response_field").val();
-	var recaptcha_challenge_field = $("#recaptcha_challenge_field").val();
+	var honey_pot = $("#a_comment_body").val();
 
 	$("#contact-submit").html("Submitting...<img src='/assets/ajax-loader.gif' class='ajax-loader' />");
 	$("#contact-submit").attr('disabled', 'disabled');
@@ -35,8 +34,7 @@ function submitContactForm() {
 				last_name : last_name, 
 				email_address : email_address, 
 				message : message, 
-				recaptcha_response_field : recaptcha_response_field,
-				recaptcha_challenge_field : recaptcha_challenge_field },
+				honey_pot : honey_pot },
 		dataType: "json",
 		success:function(data, textStatus, jqXHR){
 			if(data.success) {
