@@ -54,14 +54,13 @@ class PagesController < ApplicationController
 
     if request.post?
       if !params[:email_address].blank? && !params[:message].blank?
-        if verify_recaptcha
+        if verify_recaptcha || Rails.env.development?
           first_name = params[:first_name]
           last_name = params[:last_name]
           customer_email = params[:email_address]
           message = params[:message]
         
-          AdminMailer.customer_contact(first_name, last_name, customer_email, message).deliver
-          VisitorMailer.contact_confirmation(first_name, last_name, customer_email, message).deliver
+          EmailJob.new.async.perform(first_name, last_name, customer_email, message)
           @success = true
         else
          @message = "We're sorry but the Captcha did not match. Please try again. If you continue to have trouble, e-mail us directly at info@bitesite.ca."
