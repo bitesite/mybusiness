@@ -28,5 +28,18 @@
 		&:hover {
 			background:#222;
 		};
+
+		.header-link-rest {
+			display:none;
+			width:0;
+		}
+
+		&:hover {
+			.header-link-rest {
+				display:inline;
+			}
+		}
 	}
+
+
 }
