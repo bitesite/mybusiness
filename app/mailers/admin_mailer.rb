@@ -17,6 +17,7 @@ class AdminMailer < ActionMailer::Base
     
     mail(:to => "info@bitesite.ca",
          :from => @customer_email,
+         :reply_to => @customer_email,
          :subject => "BiteSite.ca: Message from #{customer_email}")
   end
   
