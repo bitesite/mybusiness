@@ -210,3 +210,15 @@ a.standard-button {
 		};
 	}
 }
+
+/* Tables */
+.resource-table {
+	border-collapse:collapse;
+	width:100%;
+	tr {
+		td {
+			border:1px solid #888;
+			padding:5px;
+		}
+	}
+}

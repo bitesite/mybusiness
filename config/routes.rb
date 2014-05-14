@@ -2,6 +2,9 @@ Mybusiness::Application.routes.draw do
   
 
 
+  resources :settings
+
+
   resources :contests do
     resources :contestants
   end

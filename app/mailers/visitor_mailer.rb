@@ -1,5 +1,6 @@
 class VisitorMailer < ActionMailer::Base
   default from: "info@bitesite.ca"
+  add_template_helper(ApplicationHelper)
   
   def contact_confirmation(first_name, last_name, customer_email, message)
     
