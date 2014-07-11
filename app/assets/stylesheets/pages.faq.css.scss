@@ -1,0 +1,39 @@
+.faq {
+  padding-top:64px;
+
+  .faq-entry {
+    .question {
+      font-weight:bold;
+      margin:10px 0;
+    }
+
+    .answer {
+      margin:10px 0;
+
+      img {
+        display:block;
+        margin:20px auto;
+        width:75%;
+      }
+
+      ul {
+        li {
+          margin:10px 0;
+        }
+      }
+
+      .email-account {
+        font-weight:bold;
+        color:#857700;
+      }
+
+      .destination-email-address {
+        font-weight:bold;
+        color:#851918;
+      }
+    }
+
+
+  }
+
+}
