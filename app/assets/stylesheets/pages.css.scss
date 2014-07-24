@@ -306,9 +306,12 @@
 	padding:0px 10px;
 	color:#555;
 	color:#999;
+	line-height:20px;
+	text-align:justify;
 	
 	a {
 		color:#aaa;
+		font-weight:600;
 	}
 }
 
@@ -344,6 +347,7 @@
 	width:600px;
 	font-size:13px;
 	text-align:justify;
+	line-height:20px;
 }
 
 .about-picture-caption {
@@ -373,6 +377,9 @@
 .contact-caption {
 	width: 35%;
 	float:right;
+	font-size:15px;
+	line-height:22px;
+	text-align:justify;
 }
 
 .contact-submit-info {

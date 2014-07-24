@@ -26,7 +26,6 @@ p {
 a {
 	border:none;
 	color:#555;
-	font-weight:600;
 	
 	&:hover {
 		color:#000;
@@ -47,20 +46,16 @@ a {
 	display:inline-block;
 	padding:10px 60px;
 	
-	/*box-shadow:inset 1px 1px 1px white, 1px 1px 1px black;*/
-	border:2px solid #fff;
-	background:#ccc;
+	background:#666;
 	border-radius:5px;
 	text-align:center;
 	text-decoration:none;
-	color:black;
+	color:white;
 	margin-bottom:10px;
 	font-family: "Raleway";
-	font-weight:600;
 	&:hover {
-		background:#bbb;
+		background:#444;
 		color:white;
-		border:2px solid #999;
 	};
 }
 
