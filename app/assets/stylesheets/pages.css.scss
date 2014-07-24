@@ -4,6 +4,59 @@
 
 /* GENERAL ***************************************************/
 
+.contact-us-hero {
+  background:#759AB0;
+  display:block;
+  width: 120px;
+  padding: 10px 15px;
+  text-align:center;
+  text-decoration:none;
+  border-radius:5px;
+  position:relative;
+  right:-750px;
+  top:380px;
+  font-size:12px;
+  color:white;
+  font-weight:normal;
+  
+  &:hover {
+    color:black;
+  };
+}
+
+.portfolio-text-link, .price {
+	display:inline-block;
+	border:1px solid transparent;
+	border-radius:5px;
+	padding:5px 10px;
+	text-decoration:none;
+	color:white;
+	margin:10px 0;
+	font-weight:normal;
+	font-size:0.75em;
+	box-shadow:1px 1px 2px black;
+}
+
+.portfolio-text-link {
+	background: rgb(31,118,158); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(31,118,158,1) 0%, rgba(125,185,232,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(31,118,158,1)), color-stop(100%,rgba(125,185,232,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(31,118,158,1) 0%,rgba(125,185,232,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(31,118,158,1) 0%,rgba(125,185,232,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(31,118,158,1) 0%,rgba(125,185,232,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(31,118,158,1) 0%,rgba(125,185,232,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1f769e', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
+	&:hover {
+		box-shadow:1px 1px 2px black inset;
+		color:white;
+	}
+}
+
+.price {
+	background:#444;
+}
+
+
 
 /* HOME ******************************************************/
 
@@ -12,8 +65,6 @@
 	top:180px;
 	right:60px;
 }
-
-
 
 .business-card {
 	position:absolute;
@@ -99,9 +150,6 @@
 	position:relative;
 }
 
-
-
-
 /* SERVICES */
 .services-section {
 	padding-bottom:0px;
@@ -175,7 +223,6 @@
 		}
 	}
 
-
 	.screenshot {
 		width: 46%;
 		vertical-align:middle;
@@ -185,12 +232,7 @@
 			border-radius:5px;
 		};
 	}
-	
-	.price-tag {
-		margin: 20px auto;
-		width:50%;
-	}
-	
+		
 	.webdesign {
 		position:relative;
 		left:10px;
@@ -434,212 +476,3 @@
 	height: 520px;
 }
 
-/* VIDEO ***************************/
-
-.video-hero {
-	height:500px;
-	width:100%;
-	background:#000;
-	background-image:url("/assets/videohero.jpg");
-	background-repeat:no-repeat;
-	background-position:center;
-	position:relative;
-}
-
-.contact-us-hero {
-	background:#759AB0;
-	display:block;
-	width: 120px;
-	padding: 10px 15px;
-	text-align:center;
-	text-decoration:none;
-	border-radius:40px;
-	position:relative;
-	right:-750px;
-	top:380px;
-	font-size:12px;
-	color:black;
-	
-	&:hover {
-		color:white
-	};
-}
-
-
-
-.video-hero-description {
-	text-align:right;
-	position:absolute;
-	font-size:14px;
-	right:60px;
-	top:300px;
-	display:block;
-	width: 400px;
-	color: #fff;
-}
-
-.video-description {
-	text-align:center;
-	width:760px;
-	margin:0 auto 30px auto;
-}
-
-.video-price-tag {
-	margin: 20px 0;
-	width:200px;
-}
-
-.video-listing {
-	float:left;
-	padding:11px;
-	width: 170px;
-	.video-listing-caption {
-		text-align:center;
-		height:40px;
-		font-size:13px;
-	}
-}
-
-/** WEDDING ********************************************/
-
-.wedding-hero {
-	height:500px;
-	width:100%;
-	background:#FFF;
-	background-image:url("/assets/weddinghero.jpg");
-	background-repeat:no-repeat;
-	background-position:center;
-	position:relative;
-}
-
-.wedding-logo {
-	position:absolute;
-	top:160px;
-	left:0px;
-}
-
-.wedding-hero-description {
-	text-align:left;
-	position:absolute;
-	font-size:14px;
-	left:5px;
-	top:280px;
-	display:block;
-	width: 400px;
-	color: #2b2b2b;
-}
-
-.wedding-contact-us-hero {
-	left:5px;
-}
-
-.wedding-description {
-	width:580px;
-	margin:0 auto 20px auto;
-}
-
-.wedding-services-section {
-	background:#1A1A1A;
-	color:white;
-	padding:20px 0px;
-}
-
-.wedding-video-samples-section {
-	.wedding-video-sample {
-		float:left;
-		margin:20px 0;
-		
-		&:first-child {
-			margin-right:40px;
-		}
-
-		.title {
-			text-align:center;
-			font-size:1.25em;
-			margin:10px 0;
-		}
-	}
-}
-
-.wedding-contest-section {
-	background:#efefef;
-	
-	.video-contest-winners {
-		width:80%;
-		margin:0 auto;
-	}
-	
-	.congratulations {
-		font-size:16px;
-	}
-	
-	.winners {
-		font-size:30px;
-		font-weight:bold;
-	}
-	
-	.winners-pic {
-		margin:0 20px 0 0;
-		width:250px;
-		float:left;
-	}
-}
-
-.wedding-contest-form {
-	background:#fff;
-	padding:20px;
-	margin:20px auto;
-	width:500px;
-	border-radius:30px;
-	border:1px solid #bbb;
-	
-	label {
-	}
-	
-	input[type="text"] {
-		padding:5px;
-		width:480px;
-	}
-	
-	textarea {
-		display:block;
-		padding:5px;
-		width:480px;
-		border:1px solid #bbb;
-	}
-}
-
-.contest-closed {
-	padding:20px 10px;
-	font-size:13px;
-}
-
-.wedding-contest-rules {
-	margin:10px 0px;
-	padding:10px;
-	border:1px solid #222;
-	font-size:12px;
-}
-
-.wedding-services {
-	margin-bottom:15px;
-}
-
-.wedding-service {
-	float:left;
-	width:278px;
-	padding:10px;
-	border:1px solid #eee;
-	margin:10px;
-	border-radius:10px;
-	
-	.wedding-service-logo {
-		color:#eee;
-		font-size:60px;
-		font-weight:bold;
-	}
-	
-	.wedding-service-logo-subheader {
-		color:#eee;
-	}
-}

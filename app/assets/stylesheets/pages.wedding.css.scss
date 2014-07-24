@@ -1,0 +1,143 @@
+/** WEDDING ********************************************/
+
+.wedding-hero {
+  height:500px;
+  width:100%;
+  background:#FFF;
+  background-image:url("/assets/weddinghero.jpg");
+  background-repeat:no-repeat;
+  background-position:center;
+  position:relative;
+}
+
+.wedding-logo {
+  position:absolute;
+  top:160px;
+  left:0px;
+}
+
+.wedding-hero-description {
+  text-align:left;
+  position:absolute;
+  font-size:14px;
+  left:5px;
+  top:280px;
+  display:block;
+  width: 400px;
+  color: #2b2b2b;
+}
+
+.wedding-contact-us-hero {
+  left:5px;
+}
+
+.wedding-description {
+  width:580px;
+  margin:0 auto 20px auto;
+}
+
+.wedding-services-section {
+  background:#1A1A1A;
+  color:white;
+  padding:20px 0px;
+}
+
+.wedding-video-samples-section {
+  .wedding-video-sample {
+    float:left;
+    margin:20px 0;
+    
+    &:first-child {
+      margin-right:40px;
+    }
+
+    .title {
+      text-align:center;
+      font-size:1.25em;
+      margin:10px 0;
+    }
+  }
+}
+
+.wedding-contest-section {
+  background:#efefef;
+  
+  .video-contest-winners {
+    width:80%;
+    margin:0 auto;
+  }
+  
+  .congratulations {
+    font-size:16px;
+  }
+  
+  .winners {
+    font-size:30px;
+    font-weight:bold;
+  }
+  
+  .winners-pic {
+    margin:0 20px 0 0;
+    width:250px;
+    float:left;
+  }
+}
+
+.wedding-contest-form {
+  background:#fff;
+  padding:20px;
+  margin:20px auto;
+  width:500px;
+  border-radius:30px;
+  border:1px solid #bbb;
+  
+  label {
+  }
+  
+  input[type="text"] {
+    padding:5px;
+    width:480px;
+  }
+  
+  textarea {
+    display:block;
+    padding:5px;
+    width:480px;
+    border:1px solid #bbb;
+  }
+}
+
+.contest-closed {
+  padding:20px 10px;
+  font-size:13px;
+}
+
+.wedding-contest-rules {
+  margin:10px 0px;
+  padding:10px;
+  border:1px solid #222;
+  font-size:12px;
+}
+
+.wedding-services {
+  margin-bottom:15px;
+}
+
+.wedding-service {
+  float:left;
+  width:278px;
+  padding:10px;
+  border:1px solid #eee;
+  margin:10px;
+  border-radius:10px;
+  
+  .wedding-service-logo {
+    color:#eee;
+    font-size:60px;
+    font-weight:bold;
+  }
+  
+  .wedding-service-logo-subheader {
+    color:#eee;
+  }
+}
