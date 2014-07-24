@@ -1,11 +1,11 @@
 class NewsPostsController < ApplicationController
   
   before_filter :deny_access_for_non_admins, :except => [:index, :show]
+  before_filter :set_title
   
   # GET /news_posts
   # GET /news_posts.json
   def index
-    @title = "News"
     @news_posts = NewsPost.all
 
     respond_to do |format|
@@ -84,4 +84,9 @@ class NewsPostsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  private
+    def set_title
+      @title = "News"
+    end
 end

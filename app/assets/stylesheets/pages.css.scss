@@ -535,6 +535,23 @@
 	padding:20px 0px;
 }
 
+.wedding-video-samples-section {
+	.wedding-video-sample {
+		float:left;
+		margin:20px 0;
+		
+		&:first-child {
+			margin-right:40px;
+		}
+
+		.title {
+			text-align:center;
+			font-size:1.25em;
+			margin:10px 0;
+		}
+	}
+}
+
 .wedding-contest-section {
 	background:#efefef;
 	
