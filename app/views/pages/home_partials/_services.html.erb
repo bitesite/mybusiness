@@ -8,18 +8,20 @@
 		
 			<div class="caption-right caption">
 				<h2>Web Design & Development</h2>
-				BiteSite offers full-scale Web Design and Development
-				to its customers. Whether it be a simple one-page site
-				to put you on the map, or a full-blown web application
-				to increase efficiency at your business, BiteSite can
-				do it. BiteSite’s customers historically have included
-				individuals looking for a stylish portfolio, couples looking
-				for a wedding website, and small businesses looking
-				for a web presence. 
-				<br>
-				<%= link_to "View some of our web work", "#", :class => "portfolio-text-link", :id => "web-portfolio-text-link" %>
-				<br>
-				<%= image_tag "price200.png", :class => "price-tag" %>
+				<div class="description">
+					BiteSite offers full-scale Web Design and Development
+					to its customers. Whether it be a simple one-page site
+					to put you on the map, or a full-blown web application
+					to increase efficiency at your business, BiteSite can
+					do it. BiteSite’s customers historically have included
+					individuals looking for a stylish portfolio, couples looking
+					for a wedding website, and small businesses looking
+					for a web presence. 
+				</div>
+				<div class="actions">
+					<%= link_to "VIEW SOME OF OUR WEB WORK", "#", :class => "portfolio-text-link", :id => "web-portfolio-text-link" %>
+					<span class="price">STARTING AT $200</span>
+				</div>				
 			</div>
 			<div class="clear-floats"></div>
 		</div>
@@ -69,24 +71,25 @@
 	
 	<div class="container">
 		<div class="feature">
-			<%= image_tag "videoproduction.png", 
-					:class => "screenshot screenshot-right videoproduction portfolio-item",
-					 "data-title" => 'demo-reel-video' %>
+			<%= link_to image_tag("videoproduction.png", 
+					:class => "screenshot screenshot-right videoproduction",
+					 "data-title" => 'demo-reel-video'), "/video", target: "_blank" %>
 
 			<div class="caption-left caption">
 				<h2>Video Production</h2>
-				From Live Video to Motion Graphics, BiteSite has a
-				passion for the video format. Promotional Material,
-				Training Videos, and Weddings are just a few of the
-				projects BiteSite has taken on . A video can be an
-				extremely effective mode of communication. You can
-				expect a professional quality video with a strong artistic
-				direction. <%= link_to "Visit our Video Portal", "/video" %><br>
-				<%= link_to "View our demo reel", "#", :class => "portfolio-text-link portfolio-item", "data-title" => 'demo-reel-video' %> / 
-				<%= link_to "View one of our Wedding Videos", "#", :class => "portfolio-text-link portfolio-item", "data-title" => 'hana-and-chris-video' %>
-				<br>
-				<%= image_tag "price500.png", :class => "price-tag" %>
-				
+				<div class="description">
+					From Live Video to Motion Graphics, BiteSite has a
+					passion for the video format. Promotional Material,
+					Training Videos, and Weddings are just a few of the
+					projects BiteSite has taken on . A video can be an
+					extremely effective mode of communication. You can
+					expect a professional quality video with a strong artistic
+					direction.	
+				</div>
+				<div class="actions">
+					<%= link_to "VISIT OUR VIDEO PORTAL", "/video", class: "portfolio-text-link", target: "_blank" %>
+					<span class="price">STARTING AT $500</span>	
+				</div>
 			</div>
 			<div class="clear-floats"></div>
 		</div>
@@ -100,27 +103,23 @@
 
 			<div class="caption-right caption">
 				<h2>Photography</h2>
-				BiteSite offers photography services for a variety of
-				occassions from Weddings, to Corporate Advertising,
-				and Special Events. BiteSite loves original work and
-				that’s why our photography services can be combined
-				with our Web offerrings to give a truly unique look. No
-				more stock photos of people that have nothing to do
-				with your company working in offices that you’ve
-				never seen before. 
-				<br>
-				<%= link_to "View some of our shots", "#", :class => "portfolio-text-link portfolio-item-photos", "data-title" => 'weddingphotos' %>
-				<br>
-				<%= image_tag "price150.png", :class => "price-tag" %>
-				
+				<div class="description">
+					BiteSite offers photography services for a variety of
+					occassions from Weddings, to Corporate Advertising,
+					and Special Events. BiteSite loves original work and
+					that’s why our photography services can be combined
+					with our Web offerrings to give a truly unique look. No
+					more stock photos of people that have nothing to do
+					with your company working in offices that you’ve
+					never seen before. 	
+				</div>
+				<div class="action">
+					<%= link_to "VIEW SOME OF OUR SHOTS", "#", :class => "portfolio-text-link portfolio-item-photos", "data-title" => 'weddingphotos' %>
+					<span class="price">STARTING AT $150</span>	
+				</div>
 			</div>
 			<div class="clear-floats"></div>
 		</div>
-		
-
-		
-
-		
 	</div>
 	
 	<div class="container">
@@ -131,17 +130,18 @@
 
 			<div class="caption-left caption">
 				<h2>Mobile Development</h2>
-				Today’s mobile market is growing at an incredible rate
-				and companies are realizing that a mobile presence is
-				key to their success. Whether it be Mobile-Optimized
-				sites, or native iOS Apps, BiteSite has a lot to offer.
-				BiteSite will help you design and deliver a compelling
-				experience for your customers. 
-				<br>
-				<%= link_to "View some of our mobile work", "#", :class => "portfolio-text-link", :id => "mobile-portfolio-text-link" %>
-				<br>
-				<%= image_tag "price750.png", :class => "price-tag" %>
-				
+				<div class="description">
+					Today’s mobile market is growing at an incredible rate
+					and companies are realizing that a mobile presence is
+					key to their success. Whether it be Mobile-Optimized
+					sites, or native iOS Apps, BiteSite has a lot to offer.
+					BiteSite will help you design and deliver a compelling
+					experience for your customers. 
+				</div>
+				<div class="actions">
+					<%= link_to "VIEW SOME OF OUR MOBILE WORK", "#", :class => "portfolio-text-link", :id => "mobile-portfolio-text-link" %>
+					<span class="price">STARTING AT $750</span>
+				</div>
 			</div>
 			<div class="clear-floats"></div>
 		</div>
@@ -178,9 +178,8 @@
 				to make sure that your company has a look to match
 				the excellence of your company.
 				<br>
-				<%= link_to "View some of our graphic design work", "#", :class => "portfolio-text-link portfolio-item-photos", "data-title" => "promos" %>
-				<br>
-				<%= image_tag "price75.png", :class => "price-tag" %>
+				<%= link_to "VIEW SOME OF OUR GRAPHIC DESIGN WORK", "#", :class => "portfolio-text-link portfolio-item-photos", "data-title" => "promos" %>
+				<span class="price">STARTING AT $75</span>
 				
 			</div>
 			<div class="clear-floats"></div>
