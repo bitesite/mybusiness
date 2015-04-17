@@ -1,23 +1,22 @@
 /* VIDEO ***************************/
 
 .video-hero {
-  height:500px;
+  height:400px;
   width:100%;
   background:#000;
   background-image:url("/assets/videohero.jpg");
   background-repeat:no-repeat;
   background-position:center;
   position:relative;
+  text-align:center;
 }
 
 .video-hero-description {
-  text-align:right;
-  position:absolute;
+  text-align:center;
   font-size:14px;
-  right:60px;
-  top:300px;
   display:block;
   width: 400px;
+  margin:0px auto;
   color: #fff;
 }
 

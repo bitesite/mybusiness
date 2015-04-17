@@ -8,13 +8,11 @@
   background:#759AB0;
   display:block;
   width: 120px;
-  padding: 10px 15px;
+  padding: 10px 10px;
   text-align:center;
   text-decoration:none;
   border-radius:5px;
-  position:relative;
-  right:-750px;
-  top:380px;
+  margin:40px auto;
   font-size:12px;
   color:white;
   font-weight:normal;
@@ -60,20 +58,10 @@
 
 /* HOME ******************************************************/
 
-.logo {
-	position:absolute;
-	top:180px;
-	right:60px;
-}
 
-.business-card {
-	position:absolute;
-	bottom:0px;
-	left:60px;
-}
 
 .hero {
-	height:500px;
+	height:400px;
 	
 	background: #efefef; /* Old browsers */
 	background: -moz-linear-gradient(top,  #efefef 0%, #ffffff 100%); /* FF3.6+ */
@@ -84,18 +72,26 @@
 	background: linear-gradient(to bottom,  #efefef 0%,#ffffff 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#efefef', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 	
+	background: url("/assets/herobg.png");
+	background-repeat:no-repeat;
+	background-size:cover;
+
+	.container {
+		text-align:center;
+	}
+	
+}
+
+.logo {
+	margin-top:110px;
 }
 
 .hero-description {
-	text-align:right;
-	position:absolute;
 	font-size:14px;
-	right:60px;
-	top:300px;
 	display:block;
 	width: 400px;
-	color: #5d5d5d;
-
+	margin:0 auto;
+	color: white;
 }
 
 .navigation-bar {

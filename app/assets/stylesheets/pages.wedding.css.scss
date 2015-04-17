@@ -1,29 +1,22 @@
 /** WEDDING ********************************************/
 
 .wedding-hero {
-  height:500px;
+  height:400px;
   width:100%;
   background:#FFF;
   background-image:url("/assets/weddinghero.jpg");
   background-repeat:no-repeat;
   background-position:center;
   position:relative;
-}
-
-.wedding-logo {
-  position:absolute;
-  top:160px;
-  left:0px;
+  text-align:center;
 }
 
 .wedding-hero-description {
-  text-align:left;
-  position:absolute;
+  position:relative;
   font-size:14px;
-  left:5px;
-  top:280px;
   display:block;
   width: 400px;
+  margin:0 auto;
   color: #2b2b2b;
 }
 

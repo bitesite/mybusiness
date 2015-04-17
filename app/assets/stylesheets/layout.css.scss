@@ -19,14 +19,14 @@
 	z-index:10;
 	
 	.header-link {
-		background:#777;
-		color:white;
+		background:white;
+		color:#222;
 		text-decoration:none;
 		padding:5px 20px;
 		display:inline-block;
 		font-size:10px;
 		&:hover {
-			background:#222;
+			background:#eee;
 		};
 
 		.header-link-rest {
