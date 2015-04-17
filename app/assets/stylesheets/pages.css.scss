@@ -5,7 +5,7 @@
 /* GENERAL ***************************************************/
 
 .contact-us-hero {
-  background:#759AB0;
+  background:#444;
   display:block;
   width: 120px;
   padding: 10px 10px;
@@ -18,7 +18,8 @@
   font-weight:normal;
   
   &:hover {
-    color:black;
+    background:#222;
+    color:white;
   };
 }
 
