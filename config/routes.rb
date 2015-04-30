@@ -15,8 +15,8 @@ Mybusiness::Application.routes.draw do
   get "pages/home"
   
   match "/video" => "pages#video"
-  match "/wedding" => "pages#wedding"
-  match "/wedding_contest_submit" => "pages#wedding_contest_submit"
+  
+  
   match "/news" => "news_posts#index"
   match "/contact" => "pages#contact"
   match "/signin" => redirect("/users/signin")
@@ -29,6 +29,8 @@ Mybusiness::Application.routes.draw do
   match "/addons" => redirect("/")
   match "/about" => redirect("/")
   match "/portfolio" => redirect("/")
+  match "/wedding" => redirect("/")
+  match "/wedding_contest_submit" => redirect("/")
   
   root :to => "pages#home"
 
