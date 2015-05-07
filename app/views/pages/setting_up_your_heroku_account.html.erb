@@ -1,0 +1,196 @@
+<div class="blank-page-navigation-bar">
+  <div class="container">
+    <div class="blank-page-nav-links">
+      <%= link_to "BACK TO BITESITE.CA", "/" %>
+    </div>
+    <div class="clear-floats"></div>
+  </div>
+</div>
+
+<div class="setting-up-your-heroku-account">
+  <div class="container">
+    <h1>Setting up your Heroku Account</h1>
+
+    <h2>Why do I need to do this?</h2>
+    <p>
+      BiteSite Inc. has always striven to provide its customers with the best services for as little cost as possible. It has always been
+      a balance of providing a robust solution that makes for easy updates, maintainable code, and reliable uptime. For these reasons
+      and more, BiteSite has always used Heroku as its choice for hosting client websites.
+    </p>
+
+    <p>
+      Heroku is one of the rare hosting providers that makes it incredibly easy for BiteSite developers to practice good software engineering
+      while at the same time keeping costs low for our clients. Up until recently (this post was written May 2015), Heroku has offered a entry
+      level hosting tier that was free. This entry level tier was able to support most of BiteSite's needs.
+    </p>
+
+    <p>
+      In BiteSite's Terms and Conditions, BiteSite has always said that it will continue to use Heroku and not charge the client for it. However,
+      should Heroku change its pricing model, BiteSite would have to offload that cost to its clients.
+    </p>
+
+    <p>
+      BiteSite regrets to inform its clients that Heroku has indeed changed its pricing model and the entry-level free tier will most likely
+      not suit most clients anymore. As such, most clients will have to upgrade to their new "Hobby" tier which costs $7/month.
+    </p>
+
+    <p>
+      BiteSite has done some research around the web to find cheaper providers, but the lowest cost for a reputable host is about $3.50/month and
+      does not offer nearly the feature set that Heroku offers. That is why BiteSite is encouraging all of its clients to upgrade to the Hobby tier.
+      $7/month while a lot more than free, is a very competitive rate.
+    </p>
+    <p>
+      Up until now, because most clients have been using the free tier, BiteSite has managed all the hosting. With going to a paid tier, BiteSite will no longer manage its clients' hosting, and thus, clients need to set up a Heroku account so they can start paying for their hosting. The rest of this page will guide clients through the setup of a Heroku account.
+    </p>
+
+    <h2>Should I upgrade to the Hobby tier</h2>
+
+    <p>
+      Before setting up your Heroku account so you can start paying for the Hobby tier, you should know that you do have the option of remaining on the free tier. Here are the key differences:
+    </p>
+    <p>
+      Free hosting tier:
+      <ul>
+        <li>
+          If your website is not accessed for 30 minutes, your hosting server goes to sleep. The next person to access your site will
+          need to wait for the server to wake up which can take over 1 minute (which is long for someone to wait for a website to load).
+        </li>
+        <li>
+          Your server must sleep at least 6 hours out of 24 hours before you are charged.
+        </li>
+      </ul>
+    </p>
+    <p>
+      Paid "Hobby" hosting tier:
+      <ul>
+        <li>
+          Your website server never goes to sleep. It is up and running 24/7.
+        </li>
+        <li>
+          Costs you $7/month.
+        </li>
+      </ul>
+    </p>
+    <p>
+      So, if you're ok with your website visitors potentially needing to wait 1 minute for your website to load, then you can stay on the free
+      tier. Otherwise, you need to upgrade to the paid "Hobby" tier. In both cases, you still need to setup a Heroku account.
+    </p>
+
+
+    <h2>Setting up your Heroku account</h2>
+
+    <h3>Step 1: Visit Heroku.com and Sign up</h3> 
+    <table class="instruction-table">
+      <tr>
+        <td>Go to www.heroku.com and click on "Sign up" in the upper right corner. </td>
+        <td><%= image_tag "heroku_0.png" %></td>
+      </tr>
+
+      <tr>
+        <td>Fill out the required fields and click "Create an account".</td>
+        <td><%= image_tag "heroku_1.png" %></td>
+      </tr>
+
+      <tr>
+        <td>You will get a message saying to check your e-mail</td>
+        <td><%= image_tag "heroku_2.png" %></td>
+      </tr>
+    </table>
+   
+
+    <h3>Step 2: Verify your e-mail</h3> 
+    <table class="instruction-table">
+      <tr>
+        <td>Log in to your e-mail and look for an e-mail from Heroku. Activate
+          your account by clicking on the link in the e-mail.
+        </td>
+        <td><%= image_tag "heroku_3.png" %></td>
+      </tr>
+    </table>      
+   
+
+    <h3>Step 3: Create a password</h3> 
+    <table class="instruction-table">
+      <tr>
+        <td>After clicking on the link, you will be brought to page to create a password.
+        Create your password and click on "Set password and log in".
+        </td>
+        <td><%= image_tag "heroku_4.png" %></td>
+      </tr>
+    </table>      
+   
+
+    <h3>Step 4: Proceed to your account</h3> 
+    <table class="instruction-table">
+      <tr>
+        <td>After creating your password, you will be brought to a page where you can proceed
+          to your account. Click on the link to proceed.
+        </td>
+        <td><%= image_tag "heroku_5.png" %></td>
+      </tr>
+    </table>      
+   
+
+    <h3>Step 5: Enter your billing information</h3> 
+    <table class="instruction-table">
+      <tr>
+        <td>Once in your account, you will be brought to your dashboard. In the upper-left
+          you will see your e-mail address with a drop-down arrow. Click on it and you
+          will see a list of options drop down for "View Notifications", "Manage Account"
+          and "Logout". Select "Manage Account"
+        </td>
+        <td><%= image_tag "heroku_6.png" %></td>
+      </tr>
+      <tr>
+        <td>You will be brought to your account page. Click on the "Billing" tab at the top
+        of the page.</td>
+        <td><%= image_tag "heroku_7.png" %></td>
+      </tr>
+      <tr>
+        <td>You will be brought to your billing page. Click on "Add Credit Card".</td>
+        <td><%= image_tag "heroku_8.png" %></td>
+      </tr>
+      <tr>
+        <td>Fill in your Credit Card details and click on "Save Details" and you're all
+        done setting up your account. But don't forget Step 6 below.</td>
+        <td><%= image_tag "heroku_9.png" %></td>
+      </tr>
+    </table>
+   
+
+    <h3>Step 6: Give BiteSite your information</h3>
+    <table class="instruction-table">
+      <tr>
+        <td>
+          Once you have successfully finished setting up your account, e-mail
+          <%= link_to "info@bitesite.ca", "mailto:info@bitesite.ca" %> with the following:
+          <ul>
+            <li><b>Subject</b>: Heroku Account Setup</li>
+            <li>
+              <b>Body</b>: 
+              <p>
+                Dear BiteSite,<br>
+                I have finished setting up my Heroku account. Here is my info:<br><br>
+                Name: [YOUR NAME]<br>
+                Heroku Account E-mail: [THE E-MAIL ADDRESS YOU USED FOR HEROKU]</p>
+            </li>
+          </ul>
+        </td>
+        <td></td>
+      </tr>
+    </table>
+
+    <h2>Transfer of Ownership</h2>
+    <p>
+      Now that you have your Heroku account setup, BiteSite employees will transfer ownership of your website to your account. That
+      way any costs incurred (like upgrading to the free tier) will be incurred by you the client.
+    </p>
+    <p>
+      After BiteSite has received your information, BiteSite employees will initiate the transfer of ownership. You should
+      receive an e-mail asking you to confirm the transfer of ownership. Follow the instructions to accept the transfer
+      and you're all finished. From that point on, any charges associated with that website will
+      be charged to your credit card. This includes the $7/fee.
+    </p>
+
+  </div>
+</div>

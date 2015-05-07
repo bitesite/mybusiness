@@ -84,6 +84,10 @@ class PagesController < ApplicationController
   def terms_and_conditions
     @title = "Terms and Conditions"
   end
+
+  def setting_up_your_heroku_account
+    @title = "Setting up your Heroku account"
+  end
   
   private
   

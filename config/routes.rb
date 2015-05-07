@@ -17,12 +17,13 @@ Mybusiness::Application.routes.draw do
   match "/video" => "pages#video"
   
   
-  match "/news" => "news_posts#index"
+  get "/news" => "news_posts#index"
   match "/contact" => "pages#contact"
   match "/signin" => redirect("/users/signin")
-  match "/admin" => "pages#admin"
-  match "/terms_and_conditions" => "pages#terms_and_conditions"
+  get "/admin" => "pages#admin"
+  get "/terms_and_conditions" => "pages#terms_and_conditions"
   get "/faq" => "pages#faq"
+  get "/setting_up_your_heroku_account" => "pages#setting_up_your_heroku_account"
 
   # Legacy Routes
   match "/packages" => redirect("/")

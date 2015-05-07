@@ -1,0 +1,26 @@
+.setting-up-your-heroku-account {
+  padding-top:64px;
+
+
+  h3 {
+    background:#555;
+    color:white;
+    margin:0;
+    margin-top:10px;
+    padding:10px 5px;
+  }
+
+  table.instruction-table {
+    margin:0;
+    border-collapse:collapse;
+    tr {
+      border-bottom:1px solid #555;
+      td {
+        vertical-align:top;
+        border-top:1px solid #555;
+        border-bottom:1px solid #555;
+      }
+    }
+  }
+
+}
