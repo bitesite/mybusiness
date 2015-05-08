@@ -30,43 +30,54 @@
 
     <p>
       Heroku is one of the rare hosting providers that makes it incredibly easy for BiteSite developers to practice good software engineering
-      while at the same time keeping costs low for our clients. Up until recently (this post was written May 2015), Heroku has offered a entry
-      level hosting tier that was free. This entry level tier was able to support most of BiteSite's needs.
+      while at the same time keeps costs low for our clients. Up until recently (this post was written May 2015), Heroku has offered a entry-level 
+      hosting tier that was free. This entry-level tier was able to support most of BiteSite's clients' needs.
     </p>
 
     <p>
-      In BiteSite's Terms and Conditions, BiteSite has always said that it will continue to use Heroku and not charge the client for it. However,
+      In BiteSite's <%= link_to "Terms and Conditions", terms_and_conditions_path %>, BiteSite has always said that it will continue to use Heroku and not charge the client for it. However,
       should Heroku change its pricing model, BiteSite would have to offload that cost to its clients.
     </p>
 
     <p>
       <b>
-      BiteSite regrets to inform its clients that Heroku has indeed changed its pricing model and the entry-level free tier will most likely
-      not suit most clients anymore. In changing their free tier plan, they've also
-      introduced a new entry-level "Hobby" plan which costs $7/month (before this change, Heroku's entry-level plan was $35/month). This "hobby" plan should
-      suit most of BiteSite's clients.
+        BiteSite regrets to inform its clients that Heroku has indeed changed its pricing model and the entry-level free tier will not suit most clients anymore. 
+      </b>
+    </p>
+
+    <p>
+      <b>
+        In changing their free tier plan, they've introduced a new entry-level "Hobby" plan which costs $7/month (before this change, Heroku's entry-level plan was $35/month). This "hobby" plan should
+        suit most of BiteSite's clients.
+      </b>
     </p>
     <p>
-      Because the free tier will no longer suit BiteSite's client anymore, most clients will have to upgrade to their new "Hobby" tier which costs $7/month.</b>
+      Because the free tier will no longer suit BiteSite's clients anymore, most clients will have to upgrade to Heroku's new "Hobby" tier which costs $7/month.</b>
     </p>
 
     <p>
       BiteSite has done some research around the web to find cheaper providers, but the lowest cost for a reputable host is about $3.50/month and
       does not offer nearly the feature set that Heroku offers. That is why BiteSite is encouraging all of its clients to stay with Heroku and upgrade to their entry-level "Hobby" tier.
-      We understand that $7/month is a lot more to pay, but we hope you understand that it is a very competitive rate.
+      We understand that $7/month is a lot more to pay, but it is a very competitive rate.
     </p>
     <p>
-      Up until now, because most clients have been using the free tier, BiteSite has managed all the hosting. With going to a paid tier, BiteSite will no longer manage its clients' hosting, and thus, clients need to set up a Heroku account so they can start paying for their hosting. The rest of this page will guide clients through the setup of a Heroku account.
+      Up until now, because most clients have been using the free tier, BiteSite has managed all the hosting under BiteSite's Heroku account. With going to a paid tier, BiteSite will no longer manage its clients' hosting, and thus, clients need to set up their own Heroku account so they can start paying for their hosting. The rest of this page will guide clients through the setup of a Heroku account.
     </p>
 
     <p>
-      We apologize for the inconvenience and understand it is a very unwelcome change. However,
+      After you have set up your Heroku account, BiteSite will transfer ownership of your website to your Heroku account.
+    </p>
+
+    <p>
+      We apologize for the inconvenience and understand it is a unwelcome change. However,
       the nature of modern Web Applications is that they depend on many service providers who
       are free to change their services at any point.
     </p>
     <p>
-      To see Heroku's official post on the matter, please visit <%= link_to "https://blog.heroku.com/archives/2015/5/7/new-dyno-types-public-beta", "https://blog.heroku.com/archives/2015/5/7/new-dyno-types-public-beta", target: "_blank" %>.
-      You can also read this article which outlines the new plans <%= link_to "https://blog.heroku.com/archives/2015/5/7/new-dyno-types-public-beta", "https://blog.heroku.com/archives/2015/5/7/new-dyno-types-public-beta", target: "_blank" %>.
+      To see Heroku's official post on the matter, please visit <br>
+      <%= link_to "https://blog.heroku.com/archives/2015/5/7/new-dyno-types-public-beta", "https://blog.heroku.com/archives/2015/5/7/new-dyno-types-public-beta", target: "_blank" %>.<br>
+      You can also read this article which talks specifically about the changes to the free tier<br> 
+      <%= link_to "https://blog.heroku.com/archives/2015/5/7/heroku-free-dynos", "https://blog.heroku.com/archives/2015/5/7/heroku-free-dynos", target: "_blank" %>.
     </p>
     <p>
       Should you have any questions at all, please feel free to reach out to us at <%= link_to "info@bitesite.ca", "mailto:info@bitesite.ca" %>.
@@ -78,7 +89,8 @@
     <h2>Should I upgrade to the "Hobby" tier?</h2>
 
     <p>
-      Before setting up your Heroku account so you can start paying for the Hobby tier, you should know that you do have the option of remaining on the free tier. Here are the key differences:
+      In setting up your Heroku account so you can start paying for the "Hobby" tier, you should know that you do have the option of remaining on the free tier. 
+      Here are the key differences:
     </p>
     <p>
       Free hosting tier:
@@ -89,6 +101,15 @@
         </li>
         <li>
           Your server must sleep at least 6 hours out of 24 hours before you are charged.
+        </li>
+        <li>
+          If your website goes over the hours it is allowed to be awake, you will be charged.
+        </li>
+        <li>
+          No long-term commitment. Plan can be switched at anytime.
+        </li>
+        <li>
+          Full details at <%= link_to "https://www.heroku.com/beta-pricing", "https://www.heroku.com/beta-pricing", target: "_blank" %>
         </li>
       </ul>
     </p>
@@ -101,11 +122,17 @@
         <li>
           Costs you $7/month.
         </li>
+        <li>
+          No long-term commitment. Plan can be switched at anytime.
+        </li>
+        <li>
+          Full details at <%= link_to "https://www.heroku.com/beta-pricing", "https://www.heroku.com/beta-pricing", target: "_blank" %>
+        </li>
       </ul>
     </p>
     <p>
       So, if you're ok with your website visitors potentially needing to wait 1 minute for your website to load, then you can stay on the free
-      tier. Otherwise, you need to upgrade to the paid "Hobby" tier. In both cases, you still need to setup a Heroku account.
+      tier. Otherwise, you need to upgrade to the paid "Hobby" tier. <b>In both cases, you still need to setup a Heroku account.</b>
     </p>
 
 
@@ -144,7 +171,7 @@
     <h3>Step 3: Create a password</h3> 
     <table class="instruction-table">
       <tr>
-        <td>After clicking on the link, you will be brought to page to create a password.
+        <td>After clicking on the link, you will be brought to page to create a password for your Heroku account.
         Create your password and click on "Set password and log in".
         </td>
         <td><%= image_tag "heroku_4.png" %></td>
@@ -212,16 +239,19 @@
       </tr>
     </table>
 
-    <h2>Transfer of Ownership</h2>
+    <h2>Transfer of Ownership and Final Steps</h2>
     <p>
       Now that you have your Heroku account setup, BiteSite employees will transfer ownership of your website to your account. That
-      way any costs incurred (like upgrading to the free tier) will be incurred by you the client.
+      way any costs incurred (like upgrading to the "Hobby" tier) will be incurred by you, the client.
     </p>
     <p>
       After BiteSite has received your information, BiteSite employees will initiate the transfer of ownership. You should
       receive an e-mail asking you to confirm the transfer of ownership. Follow the instructions to accept the transfer
       and you're all finished. From that point on, any charges associated with that website will
-      be charged to your credit card. This includes the $7/fee. If there are any further instructions, BiteSite will communicate with you directly.
+      be charged to your credit card. This includes the $7/fee. 
+    </p>
+    <p>
+      If there are any further instructions, BiteSite will communicate with you directly.
     </p>
 
   </div>
