@@ -44,10 +44,8 @@ function windowScroll() {
 	else { highlightNavLink("#"); }
 		
 	/* Animations based on scroll posiiton */
-	if(pixelsDown > 750) { animateVideoProduction(); }
-	if(pixelsDown > 950) { animatePhotography(); }
-	if(pixelsDown > 1350) { animateMobileDevelopment(); }
-	if(pixelsDown > 1750) { animateGraphicDesign(); }
+	if(pixelsDown > 550) { animateVideoProduction(); }
+	if(pixelsDown > 800) { animateMobileDevelopment(); }
 }
 
 function highlightNavLink(id) {

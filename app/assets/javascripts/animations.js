@@ -7,7 +7,7 @@ function animateMobileDevelopment() {
 	/* Feature Images */
 	if(!mobileDevelopmentAnimateStop) {
 		$('.mobiledevelopment').animate({
-	    	left: '-=500'
+	    	left: '+=500'
 	  	}, 1000, function() {
 	  	});			
 		mobileDevelopmentAnimateStop = true;
