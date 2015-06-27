@@ -7,7 +7,7 @@ $(function(){
 });
 
 function navigateTo(destination) {
-	$('html,body').animate({scrollTop: $(destination).offset().top - 64},'slow');
+	$('html,body').animate({scrollTop: $(destination).offset().top - 50},'slow');
 }
 
 /*
@@ -23,16 +23,6 @@ function windowScroll() {
 	var navBarHeight = 0;
 	if($(".navigation-bar")) {
 		navBarHeight = $(".navigation-bar").height();
-	}
-	
-	/* Navigation Bar */
-	if(pixelsDown > $(".hero").height() - 1) {
-		$(".navigation-bar").addClass("navigation-bar-fixed");
-		$("#home").addClass("fixed-nav");
-	}
-	else {
-		$(".navigation-bar").removeClass("navigation-bar-fixed");
-		$("#home").removeClass("fixed-nav");
 	}
 	
 	/* Highlighted Nav */

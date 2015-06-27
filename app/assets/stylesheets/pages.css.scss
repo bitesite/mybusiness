@@ -62,17 +62,7 @@
 
 
 .hero {
-	height:400px;
-	
-	background: #efefef; /* Old browsers */
-	background: -moz-linear-gradient(top,  #efefef 0%, #ffffff 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#efefef), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  #efefef 0%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  #efefef 0%,#ffffff 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  #efefef 0%,#ffffff 100%); /* IE10+ */
-	background: linear-gradient(to bottom,  #efefef 0%,#ffffff 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#efefef', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
-	
+	height:400px;	
 	background: url("/assets/herobg.png");
 	background-repeat:no-repeat;
 	background-size:cover;
@@ -80,11 +70,11 @@
 	.container {
 		text-align:center;
 	}
-	
-}
 
-.logo {
-	margin-top:110px;
+	.logo {
+		margin-top:110px;
+	}
+	
 }
 
 .hero-description {
@@ -96,50 +86,52 @@
 }
 
 .navigation-bar {
-	background:#ddd;
+	background:#414b52;
 	width:100%;
 	z-index:1000;
-	height:64px;
+
+	.logo {
+		float:left;
+		img {
+			height:40px;
+			margin:10px 0;
+		}
+	}
+
+	.nav-links {
+		float:right;
+		margin:0 auto;
+		
+		a {
+			display:inline-block;
+			margin:15px 0 15px 45px;
+			color:#fff;
+			text-decoration:none;
+			font-family: "Raleway", "Arial";
+			border:none;
+			font-size:1em;
+			font-weight:400;
+			border-radius:30px;		
+			
+			&.nav-selected {
+				color:#ccc;
+			};
+			
+			&:hover {
+				color:#ddd;
+			};
+			
+
+		}
+	}
 }
 
 .navigation-bar-fixed {
 	position:fixed;
 	top:0;
-	box-shadow:0px 2px 5px #888;
 }
 
-.nav-links {
-	text-align:center;
-	width: 600px;
-	margin:0 auto;
-	
-	a {
-		float:left;
-		display:block;
-		width: 90px;
-		padding:10px 30px;
-		margin:10px 0px;
-		color:#666;
-		text-decoration:none;
-		font-family: "Raleway", "Arial";
-		border:none;
-		font-size:20px;
-		font-weight:400;
-		border-radius:30px;		
-		
-		&.nav-selected {
-			background:#ffffff;
-			color:black;
-		};
-		
-		&:hover {
-			background:#ffffff;
-			color:#666;
-		};
-		
 
-	}
-}
 
 .page-section {
 	background:#fff;
