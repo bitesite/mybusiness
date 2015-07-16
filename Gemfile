@@ -5,12 +5,13 @@ gem 'pg'
 gem 'newrelic_rpm'
 gem 'rmagick'
 gem 'carrierwave'
-gem "fog", "~> 1.3.1"
+gem 'fog'
 gem "devise"
 gem 'mailchimp'
 gem "recaptcha", :require => "recaptcha/rails"
 gem 'sucker_punch'
 gem 'honeypot-captcha'
+gem 'dotenv-rails'
 
 group :development do
   gem 'letter_opener'  

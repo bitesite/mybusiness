@@ -11,6 +11,7 @@ class PagesController < ApplicationController
                         the right-fit company to bring success to all who are invovled."
                         
     @recent_news_posts = NewsPost.all(:limit => 3)
+    @video_listings = VideoListing.all
   end
   
   def video

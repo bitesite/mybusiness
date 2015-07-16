@@ -7,7 +7,7 @@ html {
 body {
 	padding: 0px;
 	margin: 0px;
-	font-family: "Raleway";
+	font-family: "Avenir LT Std 35 Light";
 	position:relative;
 }
 
@@ -32,27 +32,24 @@ a {
 	};
 }
 
-.btn {
-	background: #e8edfc; /* Old browsers */
-	background: -moz-linear-gradient(top,  #e8edfc 0%, #ffffff 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e8edfc), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  #e8edfc 0%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  #e8edfc 0%,#ffffff 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  #e8edfc 0%,#ffffff 100%); /* IE10+ */
-	background: linear-gradient(to bottom,  #e8edfc 0%,#ffffff 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8edfc', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
-
-	
+.btn {	
 	display:inline-block;
 	padding:10px 60px;
-	
-	background:#666;
 	border-radius:5px;
 	text-align:center;
 	text-decoration:none;
-	color:white;
 	margin-bottom:10px;
-	font-family: "Raleway";
+}
+
+.btn-sm {
+	font-size:0.8em;
+	padding:5px 10px;
+}
+
+.btn-primary {
+	background:#666;
+	color:white;
+
 	&:hover {
 		background:#444;
 		color:white;
@@ -70,15 +67,12 @@ a {
 
 /* Text */
 h1 {
-	padding:0px;
-	margin:20px 0px;
-	display:block;
+	margin:40px 0px;
 	text-align:center;
-	width:100%;
-	font:"Raleway";
-	font-weight:200;
-	font-size:50px;
+	font-family: 'Avenir LT Std 85 Heavy';
+	font-size:1.5em;
 	color:#555;
+	letter-spacing: 5px;
 }
 
 h2 {
@@ -173,7 +167,7 @@ a.standard-button {
 /* Generic Blank Pages */
 
 .blank-page-navigation-bar {
-	background:#ddd;
+	background:#414b52;
 	width:100%;
 	z-index:1000;
 	position:fixed;
@@ -191,16 +185,14 @@ a.standard-button {
 		width: 240px;
 		padding:10px 30px;
 		margin:10px 0px;
-		color:#666;
+		color:white;
 		text-decoration:none;
-		font-family: "Raleway", "Arial";
 		font-size:20px;
 		font-weight:400;
 
 		
 		&:hover {
-			background:white;
-			color:black;
+			color:#ccc;
 			border-radius:30px;
 		};
 	}

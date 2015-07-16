@@ -1,7 +1,7 @@
 <div class="page-section services-section">
 	<div class="container">
 
-		<h1>What we build</h1>
+		<h1>WHAT WE BUILD</h1>
 		
 		<div class="feature">
 			<%= image_tag "webdesign.png", :class => "screenshot screenshot-left webdesign" %>
@@ -20,7 +20,7 @@
 					We're talking about full-blown custom Web Applications.
 				</div>
 				<div class="actions">
-					<%= link_to "VIEW SOME OF OUR WEB WORK", "#", :class => "portfolio-text-link", :id => "web-portfolio-text-link" %>
+					<%= link_to "VIEW SOME OF OUR WEB WORK", "#", :class => "btn btn-sm btn-primary portfolio-text-link", :id => "web-portfolio-text-link" %>
 				</div>				
 			</div>
 			<div class="clear-floats"></div>
@@ -87,17 +87,51 @@
 					From Live Video to Motion Graphics, BiteSite has a
 					passion for the video format. Promotional Material,
 					Training Videos, and Event Coverage are just a few of the
-					projects BiteSite has taken on. A video can be an
-					extremely effective mode of communication. BiteSite delivers
-					professional quality video with a strong artistic
-					direction.	
+					projects BiteSite has taken on. Video is an
+					extremely effective mode of communication and gets people excited about your message. 
+					BiteSite delivers professional quality video with a strong artistic direction.	
 				</div>
 				<div class="actions">
-					<%= link_to "VISIT OUR VIDEO PORTAL", "/video", class: "portfolio-text-link", target: "_blank" %>
+					<%= link_to "VIEW SOME OF OUR VIDEO WORK", "#", class: "btn btn-sm btn-primary portfolio-text-link", id: "video-portfolio-text-link" %>
 				</div>
 			</div>
 			<div class="clear-floats"></div>
 		</div>
+	</div>
+
+	<div class="videoproduction-portfolio folder-portfolio">
+		<div class="container">
+			<div class="folder-portfolio-header">SOME OF OUR VIDEO WORK</div>
+			<div class="videos-listing">
+				<% @video_listings.each do |video| %>
+					<%= link_to video.link, class: "video-listing", target: "_blank" do %>
+						<div class="video-listing-image">
+							<% if video.image_url.nil? %>
+								<%= image_tag("defaultnews.png", :class => "video-image") %>
+							<% else %>
+								<%= image_tag(video.image_url.to_s, :class => "video-image")  %>
+							<% end %>
+						</div>
+						<div class="video-listing-caption">
+							<b><%= video.name %></b><br>
+							(Click to view)
+
+							<% if admin? %>
+							/
+							<%= link_to "e", edit_video_listing_path(video) %>
+							<%= link_to "d", video, 
+							:method => "delete", 
+							:confirm => "Are you sure you want to delete this video listing", 
+							:delete => "Delete Video Listing?" %>
+							<% end %>
+						</div>
+					<% end %>
+				<% end %>
+			</div>
+			<div class="clear-floats"></div>
+			<%= link_to "CLOSE", "#", :class => "videoproduction-portfolio-close standard-button" %>			
+		</div>
+
 	</div>
 
 	
@@ -116,7 +150,7 @@
 					can help you build rich native apps to execute your vision.
 				</div>
 				<div class="actions">
-					<%= link_to "VIEW SOME OF OUR MOBILE WORK", "#", :class => "portfolio-text-link", :id => "mobile-portfolio-text-link" %>
+					<%= link_to "VIEW SOME OF OUR MOBILE WORK", "#", :class => "btn btn-sm btn-primary portfolio-text-link", :id => "mobile-portfolio-text-link" %>
 				</div>
 			</div>
 			<div class="clear-floats"></div>

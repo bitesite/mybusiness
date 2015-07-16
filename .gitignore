@@ -11,3 +11,4 @@ doc/
 .project
 .DS_Store
 .sass-cache/*
+.env

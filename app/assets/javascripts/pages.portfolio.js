@@ -13,6 +13,14 @@ $(function(){
 		$(".webdesign-portfolio").slideUp(400);
 		return false;
 	});
+
+	$(".videoproduction").click(openVideoPortfolioFolder);
+	$("#video-portfolio-text-link").click(openVideoPortfolioFolder);
+	
+	$(".videoproduction-portfolio-close").click(function(){
+		$(".videoproduction-portfolio").slideUp(400);
+		return false;
+	});
 	
 	$(".mobiledevelopment").click(openMobilePortfolioFolder);
 	$("#mobile-portfolio-text-link").click(openMobilePortfolioFolder);
@@ -52,14 +60,11 @@ $(function(){
 
 function openWebPortfolioFolder() {
 	$(".webdesign-portfolio").slideDown(400);
-	
-	/* Need to figure this out - scroll enough to reveal the work if its hidden
-	var _bottom = $(window).scrollTop() + $(window).height();
-	if(_bottom < 1130) {
-		$('html,body').animate({scrollTop: 400},'slow');
-	}
-	*/
-	
+	return false;
+}
+
+function openVideoPortfolioFolder() {
+	$(".videoproduction-portfolio").slideDown(400);
 	return false;
 }
 
