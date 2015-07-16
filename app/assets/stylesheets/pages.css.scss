@@ -95,8 +95,8 @@
 			font-weight:400;
 			border-top:3px solid transparent;
 
-			-webkit-transition: border 300ms, color 300ms;
-			transition: border 300ms, color 300ms;
+			-webkit-transition: border 200ms, color 200ms;
+			transition: border 200ms, color 200ms;
 			
 			&.nav-selected {
 				color:white;
@@ -141,7 +141,7 @@
 	
 	width:100%;
 	background:#777;
-	box-shadow:inset 0px 5px 20px black;
+	
 	display:none;
 	padding:20px 0px;
 	
