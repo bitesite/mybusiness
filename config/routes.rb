@@ -14,9 +14,6 @@ Mybusiness::Application.routes.draw do
 
   get "pages/home"
   
-  match "/video" => "pages#video"
-  
-  
   get "/news" => "news_posts#index"
   match "/contact" => "pages#contact"
   match "/signin" => redirect("/users/signin")
@@ -24,14 +21,6 @@ Mybusiness::Application.routes.draw do
   get "/terms_and_conditions" => "pages#terms_and_conditions"
   get "/faq" => "pages#faq"
   get "/setting_up_your_heroku_account" => "pages#setting_up_your_heroku_account"
-
-  # Legacy Routes
-  match "/packages" => redirect("/")
-  match "/addons" => redirect("/")
-  match "/about" => redirect("/")
-  match "/portfolio" => redirect("/")
-  match "/wedding" => redirect("/")
-  match "/wedding_contest_submit" => redirect("/")
   
   root :to => "pages#home"
 

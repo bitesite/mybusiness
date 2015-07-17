@@ -7,7 +7,7 @@ $(function(){
 });
 
 function navigateTo(destination) {
-	$('html,body').animate({scrollTop: $(destination).offset().top - 50},'slow');
+	$('html,body').animate({scrollTop: $(destination).offset().top - 43},'slow');
 }
 
 /*

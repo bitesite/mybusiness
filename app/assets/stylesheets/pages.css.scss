@@ -66,10 +66,9 @@
 		float:left;
 		
 		img.logo {
-			height:40px;
-			margin:10px 0;
+			height:30px;
 			opacity:0;
-
+			margin-top:7px;
 			-webkit-transition: opacity 300ms;
 			transition: opacity 300ms;
 
@@ -86,7 +85,7 @@
 		a {
 			display:inline-block;
 			height:25px;
-			padding-top:20px;
+			padding-top:10px;
 			color:#ccc;
 			margin-left:30px;
 			text-decoration:none;
