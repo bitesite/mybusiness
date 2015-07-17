@@ -115,15 +115,6 @@
 						<div class="video-listing-caption">
 							<b><%= video.name %></b><br>
 							(Click to view)
-
-							<% if admin? %>
-							/
-							<%= link_to "e", edit_video_listing_path(video) %>
-							<%= link_to "d", video, 
-							:method => "delete", 
-							:confirm => "Are you sure you want to delete this video listing", 
-							:delete => "Delete Video Listing?" %>
-							<% end %>
 						</div>
 					<% end %>
 				<% end %>

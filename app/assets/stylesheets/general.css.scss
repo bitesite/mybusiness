@@ -203,8 +203,8 @@ a.standard-button {
 	border-collapse:collapse;
 	width:100%;
 	tr {
+		border-bottom:1px solid #ddd;
 		td {
-			border:1px solid #888;
 			padding:5px;
 		}
 	}

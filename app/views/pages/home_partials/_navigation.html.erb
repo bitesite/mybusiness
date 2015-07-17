@@ -8,6 +8,9 @@
 			<%= link_to "NEWS", "#", :id => "news-link", :class => "nav-link", :destination => ".news-section" %>
 			<%= link_to "WHO WE ARE", "#", :id => "about-link", :class => "nav-link", :destination => ".about-section" %>
 			<%= link_to "CONTACT US", "#", :id => "contact-link", :class => "nav-link", :destination => ".contact-section" %>
+      <% if admin? %>
+        <%= link_to "LOGOUT", destroy_user_session_path, :method => :delete %>
+      <% end %>
 		</div>
 		<div class="clear-floats"></div>
 	</div>

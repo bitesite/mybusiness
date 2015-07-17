@@ -8,7 +8,7 @@ Mybusiness::Application.routes.draw do
 
   resources :video_listings
 
-  devise_for :users, :path_names => { :sign_in => 'signin', :sign_out => 'signout', :sign_up => 'signup' }
+  devise_for :users
 
   resources :news_posts
 
@@ -24,4 +24,5 @@ Mybusiness::Application.routes.draw do
   
   root :to => "pages#home"
 
+  match "*path" => redirect("/") unless Rails.env.development?
 end
