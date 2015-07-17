@@ -70,7 +70,7 @@
 			<div class="clear-floats">
 				
 			</div>
-			<%= link_to "CLOSE", "#", :class => "webdesign-portfolio-close standard-button" %>			
+			<%= link_to "CLOSE", "#", :class => "webdesign-portfolio-close btn btn-primary btn-sm" %>			
 		</div>
 
 	</div>
@@ -102,7 +102,7 @@
 	<div class="videoproduction-portfolio folder-portfolio">
 		<div class="container">
 			<div class="folder-portfolio-header">SOME OF OUR VIDEO WORK</div>
-			<div class="videos-listing">
+			<div class="video-listings">
 				<% @video_listings.each do |video| %>
 					<%= link_to video.link, class: "video-listing", target: "_blank" do %>
 						<div class="video-listing-image">
@@ -118,9 +118,11 @@
 						</div>
 					<% end %>
 				<% end %>
+				
+				<div class="clear-floats"></div>
 			</div>
-			<div class="clear-floats"></div>
-			<%= link_to "CLOSE", "#", :class => "videoproduction-portfolio-close standard-button" %>			
+			
+			<%= link_to "CLOSE", "#", :class => "videoproduction-portfolio-close btn btn-sm btn-primary" %>			
 		</div>
 
 	</div>
@@ -162,7 +164,7 @@
 			<div class="clear-floats">
 				
 			</div>
-			<%= link_to "CLOSE", "#", :class => "mobiledevelopment-portfolio-close standard-button" %>			
+			<%= link_to "CLOSE", "#", :class => "mobiledevelopment-portfolio-close btn btn-sm btn-primary" %>			
 		</div>
 
 	</div>
