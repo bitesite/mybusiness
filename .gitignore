@@ -12,3 +12,4 @@ doc/
 .DS_Store
 .sass-cache/*
 .env
+public/uploads
