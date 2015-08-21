@@ -4,10 +4,10 @@ class PagesController < ApplicationController
   before_filter :deny_access_for_non_admins, :only => [:admin]
 
   def home
-    @title = "A Software Development and Video Production Firm"
-    @meta_description = "BiteSite is an Ottawa, Canada based company dedicated to building stylish, elegant, and robust Websites and Web Applications and producing
-                        eye-catching media. It targets small to medium size businesses as well as individuals such as event organizers, teachers, and wedding couples.
-                        Our media services include photography, video production, and graphic design. BiteSite believes strongly in finding the right-fit customer for
+    @title = "A Software Development and Video Production Firm based in Ottawa, Canada"
+    @meta_description = "BiteSite is an Ottawa, Canada based company dedicated to building stylish, elegant, and robust Web and Mobile Applications and producing
+                        eye-catching, professional media. It targets small to medium size businesses from start-ups to well established businesses.
+                        BiteSite believes strongly in finding the right-fit customer for
                         the right-fit company to bring success to all who are invovled."
                         
     @recent_news_posts = NewsPost.all(:limit => 3)
