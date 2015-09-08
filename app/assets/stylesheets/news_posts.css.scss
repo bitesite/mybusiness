@@ -2,6 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.news-post.hidden {
+	background:#ddd;
+	border:1px solid #ccc;
+}
+
 .news-index {
 	padding-top:64px;
 }
@@ -10,7 +15,6 @@
 	font-size: 20px;
 	color:white;
 	padding: 10px;
-	background:#fff;
 	color:#555;
 	font-weight:400;
 }
@@ -36,7 +40,6 @@
 .news-post-body {
 	display:block;
 	padding: 10px 0;
-	background:#fff;
 	min-height: 110px;
 	color:#555;
 	font-size:14px;

@@ -10,7 +10,7 @@ class PagesController < ApplicationController
                         BiteSite believes strongly in finding the right-fit customer for
                         the right-fit company to bring success to all who are invovled."
                         
-    @recent_news_posts = NewsPost.all(:limit => 3)
+    @recent_news_posts = NewsPost.published.limit(3)
     @video_listings = VideoListing.all
   end
   

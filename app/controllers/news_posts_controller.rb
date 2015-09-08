@@ -4,7 +4,8 @@ class NewsPostsController < ApplicationController
   before_filter :set_title
   
   def index
-    @news_posts = NewsPost.all
+    @news_posts = NewsPost.published
+    @news_posts = NewsPost.all if admin?
   end
 
   def show
@@ -23,7 +24,7 @@ class NewsPostsController < ApplicationController
     @news_post = NewsPost.new(params[:news_post])
 
     if @news_post.save
-      redirect_to @news_post, notice: 'News post was successfully created.'
+      redirect_to news_posts_path, notice: 'News post was successfully created.'
     else
       render action: "new"
     end
@@ -33,9 +34,9 @@ class NewsPostsController < ApplicationController
     @news_post = NewsPost.find(params[:id])
 
     if @news_post.update_attributes(params[:news_post])
-      format.html { redirect_to @news_post, notice: 'News post was successfully updated.' }
+      redirect_to news_posts_path, notice: 'News post was successfully updated.'
     else
-      format.html { render action: "edit" }
+      render action: "edit"
     end
   end
 
