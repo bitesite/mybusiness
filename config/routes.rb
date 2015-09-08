@@ -1,5 +1,8 @@
 Mybusiness::Application.routes.draw do
   
+  resources :careers
+
+
   resources :settings
 
   resources :contests do

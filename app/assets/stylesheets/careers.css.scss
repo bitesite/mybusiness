@@ -1,0 +1,38 @@
+// Place all the styles related to the Careers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.careers-index {
+  padding-top:64px;
+
+
+  .career {
+    margin-bottom:20px;
+    
+    h2 {
+      font-family: 'Avenir LT Std 85 Heavy';
+      font-weight:bold;
+      text-align:center;
+    }
+
+    h3 {
+      font-family: 'Avenir LT Std 65 Medium';
+      margin:0;
+      text-align:center;
+    }
+
+    .career-date {
+      text-align:center;
+    }
+
+    .career-body {
+      .emphasize {
+        font-family: 'Avenir LT Std 85 Heavy';
+      }
+    }
+
+
+  }
+
+
+}

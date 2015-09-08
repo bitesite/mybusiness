@@ -1,0 +1,27 @@
+<div class="blank-page-navigation-bar">
+  <div class="container">
+    <div class="blank-page-nav-links">
+      <%= link_to "BACK TO BITESITE.CA", "/" %>
+    </div>
+    <div class="clear-floats"></div>
+  </div>
+</div>
+
+<div class="careers-index">
+  <h1>CAREERS</h1>
+
+  <% if admin? %>
+    <div class="container">
+      <%= link_to 'New Career', new_career_path %> <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
+    </div>
+  <% end %><br>
+  
+  <% if @careers.blank? %>
+    <div class="container">
+      BiteSite is not currently hiring. Please check back or contact us direclty at info@bitesite.ca.   
+    </div>
+    
+  <% else %>
+    <%= render @careers %>
+  <% end %>
+</div>

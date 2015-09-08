@@ -1,0 +1,27 @@
+<div class="career">
+  <div class="career-header">
+    <div class="container">
+      <h2><%= career.title %></h2>
+      <h3><%= career.capacity %> - <%= career.location %></h3>
+      <div class="career-date">
+        Posted: <%= convert_time_string career.created_at %>
+      </div>     
+    </div>
+  </div>
+  <div class="career-body">
+    <div class="container">
+      <%= raw career.description %>
+
+      <% if admin? %>
+        <div class="career-actions">
+          <%= link_to "edit", edit_career_path(career) %>
+          <%= link_to "delete", career, 
+                    :method => "delete", 
+                    :confirm => "Are you sure you want to delete this career", 
+                    :delete => "Delete News Post?" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="clear-floats"></div>
+</div>
