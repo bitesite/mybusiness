@@ -12,7 +12,7 @@
   text-align:center;
   text-decoration:none;
   border-radius:5px;
-  margin:40px auto;
+  margin:40px auto 10px auto;
   font-size:12px;
   color:white;
   font-weight:normal;
@@ -388,6 +388,15 @@
 .staff-section {
 	padding:20px 0;
 	background: #ddd;
+
+	.were-hiring {
+		text-align:center;
+		margin:30px 0 20px 0;
+
+		a {
+			text-decoration:none;
+		}
+	}
 }
 
 .staff-listing {

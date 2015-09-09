@@ -65,4 +65,12 @@
 	</div>
 
 	<div class="clear-floats"></div>
+
+	<% if Career.count > 0 %>
+		<div class="were-hiring">
+			<%= link_to "Want to join our team? We're hiring! Click here for details", careers_path %>	
+		</div>
+	  
+	<% end %>
+
 </div>
