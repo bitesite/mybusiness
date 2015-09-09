@@ -383,6 +383,38 @@
 	}
 }
 
+/* STAFF SECTION */
+
+.staff-section {
+	padding:20px 0;
+	background: #ddd;
+}
+
+.staff-listing {
+	width:50%;
+	float:left;
+
+	img {
+		width:125px;
+		display:inline-block;
+		float:left;
+	}
+	.caption {
+		margin-left:20px;
+		margin-top:40px;
+		float:left;
+		.name {
+			font-size:1.25em;
+			font-family:"Avenir LT Std 85 Heavy";
+		}
+
+		.position {
+
+		}
+	}
+
+}
+
 /* CONTACT */
 .contact-section {
 	background:#efefef;
