@@ -5,9 +5,26 @@
 .careers-index {
   padding-top:64px;
 
+  .page-index {
+    list-style:none;
+    padding-left:0;
+    li {
+      margin:5px 0;
+    }
+  }
+
 
   .career {
+    .page-anchor {
+      display:block;
+      padding-top:64px;
+    }
     margin-bottom:20px;
+
+    &:nth-child(even) {
+      background:#f3f3f3;  
+    }
+    
     
     h2 {
       font-family: 'Avenir LT Std 85 Heavy';

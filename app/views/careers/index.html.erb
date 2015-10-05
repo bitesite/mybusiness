@@ -22,6 +22,18 @@
     </div>
     
   <% else %>
+    <div class="container">
+      <h2>Current Listings</h2>
+      <ul class='page-index'>
+        <% @careers.each do |career| %>
+          
+          <a href="#career_<%= career.id %>">
+            <li><%= career.title %> (<%= convert_time_string career.created_at %>)</li>
+          </a>
+        <% end %>
+      </ul>  
+    </div>
+    
     <%= render @careers %>
   <% end %>
 </div>
