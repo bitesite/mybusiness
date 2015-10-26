@@ -15,6 +15,10 @@
 
 
   .career {
+
+    &.archived {
+      border:1px solid red;
+    }
     .page-anchor {
       display:block;
       padding-top:64px;
