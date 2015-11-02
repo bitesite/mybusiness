@@ -62,15 +62,31 @@
 				<div class="position">Software Developer</div>	
 			</div>
 		</div>
+		<div class="staff-listing">
+			<%= image_tag "tim.png" %>
+			<div class="caption">
+				<div class='name'>Tim Clark</div>
+				<div class="position">Filmmaker</div>	
+			</div>
+		</div>
+
+		<% if Career.count > 0 %>
+
+			<div class="staff-listing">
+				<%= image_tag "hiringavatar.png" %>
+				<div class="caption">
+					<div class='name'>Want to join our team?</div>
+					<div class="position"><%= link_to "We're hiring! Click here for details", careers_path %>	</div>	
+				</div>
+			</div>		  
+		<% end %>
+
 	</div>
+
+
 
 	<div class="clear-floats"></div>
 
-	<% if Career.count > 0 %>
-		<div class="were-hiring">
-			<%= link_to "Want to join our team? We're hiring! Click here for details", careers_path %>	
-		</div>
-	  
-	<% end %>
+	
 
 </div>
