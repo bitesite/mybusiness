@@ -12,6 +12,21 @@ class PagesController < ApplicationController
                         
     @recent_news_posts = NewsPost.published.limit(3)
     @video_listings = VideoListing.all
+
+
+    @competencies = [
+      {icon: "desktop" , title: "UI Design"},
+      {icon: "desktop" , title: "Web Development"},
+      {icon: "desktop" , title: "iOS Development"},
+      {icon: "desktop" , title: "Android Development"},
+      {icon: "desktop" , title: "Graphic Design"},
+      {icon: "desktop" , title: "Photography"},
+      {icon: "desktop" , title: "Film Production"},
+      {icon: "desktop" , title: "Motion Graphics"},
+      {icon: "desktop" , title: "Web Design"},
+      {icon: "desktop" , title: "Web Design"}
+    ]
+
   end
   
   def wedding_contest_submit
@@ -68,6 +83,34 @@ class PagesController < ApplicationController
 
   def setting_up_your_heroku_account
     @title = "Setting up your Heroku account"
+  end
+
+  def international_safety
+    @title = "International Safety Website - Case Study"
+  end
+
+  def mydoma
+    @title = "Mydoma Studio Video - Case Study"
+  end
+
+  def ollie
+    @title = "Project Ollie Web Application - Case Study"
+  end
+
+  def lspark_grad
+    @title = "L-SPARK Grad Video - Case Study"
+  end
+
+  def d3m
+    @title = "Teldio D3M - Case Study"
+  end
+
+  def martello
+    @title = "Martello All Devices Video - Case Study"
+  end
+
+  def solink
+    @title = "Solink Explainer Video - Case Study"
   end
   
   private

@@ -1,4 +1,5 @@
 @import "globals";
+@import "colorswatches";
 
 /* GENERAL ***************************************************/
 
@@ -57,7 +58,7 @@
 
 
 .navigation-bar {
-	background:#414b52;
+	background:$dark-aqua;
 	width:100%;
 	z-index:1000;
 
@@ -161,48 +162,96 @@
 	position:relative;
 }
 
-/* SERVICES */
-.services-section {
-	padding-bottom:0px;
-}
+/* FEATURED WORK */
+.featured-work-section {
+	.featured-work-listings {
+		line-height:0px;
 
-.folder-portfolio {
-	
-	.folder-portfolio-header {
-		font-size:25px;
-		font-weight:bold;
-		margin-bottom:20px;
-	}
-	
-	width:100%;
-	background:#777;
-	
-	display:none;
-	padding:20px 0px;
-	
-	ul {
-		list-style:none;
-		padding-left:0px;
-		margin-bottom:50px;
-		
-		li {
-			margin-right: 20px;
-			margin-bottom:10px;
+		a {
+			margin:0;
+			position:relative;
+			display:block;
+			width:33.3333%;
 			float:left;
-			
-			a {
-				color:#ccc;
-				text-decoration:none;
-				
-				&:visited {
-					color:#ccc;
-				};
-				
-				&:hover {
-					color:black;
-				}
+
+			-webkit-transition: box-shadow 300ms;
+	    transition: box-shadow 300ms;
+
+			@media only screen and (max-width: 800px) {
+				width:50%;
 			}
 
+			@media only screen and (max-width: 500px) {
+				width:100%;
+			}
+
+			img.featured-work-listing {
+				width:100%;
+				margin:0;	
+			}
+
+			&:hover {
+				z-index:1000;
+				box-shadow:0 0 20px black;
+			}
+		}
+		
+	}
+}
+
+/* SERVICES */
+.services-section {
+
+	background:$dark-aqua;
+	color:white;
+
+	h1 {
+		color:white;
+	}
+
+	.feature {
+		width:calc(33.3333% - 40px);
+		float:left;
+		padding:0 20px;
+		text-align:center;
+
+		@media only screen and (max-width: $mobile-menu-device-width) {
+			float:none;
+			width:100%;
+			padding:0;
+		}
+
+		.feature-icon {
+			color:white;
+			font-size:3em;
+			margin-bottom:20px;
+		}
+
+		h2 {
+			text-align:center;
+			margin-bottom:20px;
+		}
+
+		.description {
+			text-align:justify;
+			line-height:2em;
+			color:#ddd;
+		}
+	}
+
+	.competencies-section {
+		margin:40px 0 20px 0;
+		color:#aaa;
+		font-size:0.75em;
+		text-align:center;
+
+		.competencies {
+			margin:10px 0;
+
+			.competency {
+				display:inline-block;
+				margin:5px;
+			}
 		}
 	}
 }
@@ -251,74 +300,6 @@
 	  	height:101px;
 	  	padding-top:40px;
 	  }
-	}
-}
-
-
-
-.feature {
-	
-	margin: 50px 0px 20px 0px;
-	
-	.caption-left, .screenshot-left {
-		float:left;
-	}
-
-	.caption-right, .screenshot-right {
-		float:right;
-	}
-
-	.caption {
-		width: 46%;
-		font-size:15px;
-		line-height:2;
-		color:#555;
-		text-align:center;
-
-		.description {
-			text-align:justify;
-		}
-
-		.actions {
-			margin-top:10px;
-		}
-	}
-
-	.screenshot {
-		width: 46%;
-		vertical-align:middle;
-		padding:5px;
-		&:hover {
-			background:#BBB;
-			border-radius:5px;
-		};
-	}
-		
-	.webdesign {
-		position:relative;
-	}
-
-	.mobiledevelopment {
-		position:relative;
-	}
-	
-	.videoproduction {
-		position:relative;
-	}	
-
-	@media only screen and (max-width: $mobile-menu-device-width) {
-		.caption-left, .caption-right, .screenshot-left, .screenshot-right {
-			float:none;
-			width:100%;
-
-			img.screenshot, img.screenshot-left, img.screenshot-right {
-				width:100%;
-			}
-
-			.webdesign {
-				left:0px;
-			}
-		}
 	}
 }
 
@@ -577,41 +558,31 @@
 }
 
 
-/* PORTFOLIO *******************************************************/
+/* CASE STUDIES ********************/
+.case-study {
+	padding-top:41px;
+	.hero {
+		background:none;
+		background:#999;
+		height:200px;
 
-.vimeo-video-modal-dialog-body {
-	width: 640px;
-	left: 50%;
-	margin: 100px -315px;	
-}
+		h1 {
+			letter-spacing:0px;
+			margin-top:50px;
 
-.vimeo-wide-video-modal-dialog-body {
-	width: 720px;
-	left: 50%;
-	margin: 100px -415px;	
-}
+		}
 
-.youtube-video-modal-dialog-body {
-	width: 775px;
-	left: 50%;
-	margin: 100px -403px;	
-}
+		.services {
+			.service {
+				border:1px solid white;
+				padding:5px 10px;
+				color:white;
+			}
+		}
+	}
 
-.wistia-video-modal-dialog-body {
-	width: 640px;
-	left:50%;
-	margin: 100px -320px;
-}
-
-.photos-modal-dialog-body {
-	width: 800px;
-	left: 50%;
-	margin: 100px -425px;
-
-	text-align:center;
-}
-
-.portfolio-photo {
-	height: 520px;
+	.main-body {
+		padding:20px 0;
+	}
 }
 

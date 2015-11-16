@@ -24,6 +24,15 @@ Mybusiness::Application.routes.draw do
   get "/terms_and_conditions" => "pages#terms_and_conditions"
   get "/faq" => "pages#faq"
   get "/setting_up_your_heroku_account" => "pages#setting_up_your_heroku_account"
+
+  get "/international_safety" => "pages#international_safety"
+  get "/mydoma" => "pages#mydoma"
+  get "/ollie" => "pages#ollie"
+  get "/lspark_grad" => "pages#lspark_grad"
+  get "/solink" => "pages#solink"
+  get "/martello" => "pages#martello"
+  get "/christine_kelly" => "pages#christine_kelly"
+  get "/d3m" => "pages#d3m"
   
   root :to => "pages#home"
 

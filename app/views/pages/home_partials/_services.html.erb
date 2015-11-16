@@ -4,167 +4,57 @@
 		<h1>WHAT WE BUILD</h1>
 		
 		<div class="feature">
-			<%= image_tag "webdesign.png", :class => "screenshot screenshot-left webdesign" %>
-		
-			<div class="caption-right caption">
-				<h2>Web Applications</h2>
-				<div class="description">
-					
-					Are you a startup with the next big idea? Want to change the
-					world with the next Facebook or Uber but need a software team
-					to build your first release? Maybe you've already got a great app
-					but need a team to help you with a side project. BiteSite
-					can help. We help businesses execute their vision by building
-					powerful full stack Web Applications. And We're not talking about
-					your basic websites here or sites built on CMSs like Wordpress.
-					We're talking about full-blown custom Web Applications.
-				</div>
-				<div class="actions">
-					<%= link_to "VIEW SOME OF OUR WEB WORK", "#", :class => "btn btn-sm btn-primary portfolio-text-link", :id => "web-portfolio-text-link" %>
-				</div>				
+			<%= icon("desktop", class: "feature-icon") %>
+			<h2>Web Applications</h2>
+			<div class="description">			
+				Are you a startup with the next big idea? A well-establish company with
+				an amazing side project? BiteSite
+				can help. We help businesses execute their vision by building
+				powerful full stack Web Applications. And we're not talking about
+				your basic websites here or sites built on CMSs like Wordpress.
+				We're talking about full-blown custom Web Applications.
 			</div>
-			<div class="clear-floats"></div>
-		</div>
-	</div>
-	
-	<div class="webdesign-portfolio folder-portfolio">
-		<div class="container">
-			<div class="folder-portfolio-header">SOME OF OUR WEB WORK</div>
-			<ul>
-				<li><%= link_to "INTERNATIONAL SAFETY", "http://www.internationalsafety.com", :target => "_blank" %></li>
-				<li>/</li>
-				<li><%= link_to "BLUE BIRD COFFEE", "http://www.bluebirdcoffee.ca", :target => "_blank" %></li>
-				<li>/</li>
-				<li><%= link_to "WE RAISE SOCIAL", "http://www.weraisesocial.com", :target => "_blank" %></li>
-				<li>/</li>
-				<li><%= link_to "CHRISTINE KELLY", "http://www.christinekelly.ca", :target => "_blank" %></li>
-				<li>/</li>
-				<li><%= link_to "ASPIRE PERFORMANCE CONSULTING", "http://www.aspireperformanceconsulting.com", :target => "_blank" %></li>
-				<li>/</li>
-				<li><%= link_to "SEEKR-PRO", "http://www.seekr-pro.com", :target => "_blank" %></li>
-				<li>/</li>
-				<li><%= link_to "AIRLINE ROUTE MAPS", "http://www.airlineroutemaps.com", :target => "_blank" %></li>
-				<li>/</li>
-				<li><%= link_to "MULTINEXUS", "http://www.multinexus.com", :target => "_blank" %></li>
-				<li>/</li>
-				<li><%= link_to "ELLIOTT FARM EQUIPMENT", "http://www.elliottfarmequipment.com", :target => "_blank" %></li>
-				<li>/</li>
-				<li><%= link_to "MMB COUNSELLING & CONSULTING", "http://www.mmbcounselling.com", :target => "_blank" %></li>
-				<li>/</li>
-				<li><%= link_to "HORSES BY HANNAH", "http://www.horsesbyhannah.ca", :target => "_blank" %></li>
-				<li>/</li>
-				<li><%= link_to "M&D", "http://www.marilynanddouglas.com", :target => "_blank" %></li>
-				<li>/</li>
-				<li><%= link_to "ELITE EDGE", "http://www.elite-edge.ca", :target => "_blank" %></li>
-				<li>/</li>
-				<li><%= link_to "LIAM WONG", "http://www.liamwongsound.com", :target => "_blank" %></li>
-				<li>/</li>
-				<li><%= link_to "ALBERTA HARPIST", "http://www.albertaharpist.com", :target => "_blank" %></li>
-				<li>/</li>
-				<li><%= link_to "CAPO", "http://capoapp.herokuapp.com/", :target => "_blank" %></li>
-				<li>/</li>
-				<li><%= link_to "JEN & WAYNE", "http://www.jenandwayne.com", :target => "_blank" %></li>
-			</ul>
-			<div class="clear-floats">
-				
-			</div>
-			<%= link_to "CLOSE", "#", :class => "webdesign-portfolio-close btn btn-primary btn-sm" %>			
 		</div>
 
-	</div>
-	
-	<div class="container">
 		<div class="feature">
-			<%= link_to image_tag("videoproduction.png", 
-					:class => "screenshot screenshot-right videoproduction",
-					 "data-title" => 'demo-reel-video'), "/video", target: "_blank" %>
-
-			<div class="caption-left caption">
-				<h2>Video Productions</h2>
-				<div class="description">
-					From Live Video to Motion Graphics, BiteSite has a
-					passion for the video format. Promotional Material,
-					Training Videos, and Event Coverage are just a few of the
-					projects BiteSite has taken on. Video is an
-					extremely effective mode of communication and gets people excited about your message. 
-					BiteSite delivers professional quality video with a strong artistic direction.	
-				</div>
-				<div class="actions">
-					<%= link_to "VIEW SOME OF OUR VIDEO WORK", "#", class: "btn btn-sm btn-primary portfolio-text-link", id: "video-portfolio-text-link" %>
-				</div>
+			<%= icon("video-camera", class: "feature-icon") %>
+			<h2>Video Productions</h2>
+			<div class="description">
+				From Live Video to Motion Graphics, BiteSite has a
+				passion for the video format. Promotional Material,
+				Training Videos, and Event Coverage are just a few of the
+				projects BiteSite has taken on. Video is an
+				extremely effective mode of communication and gets people excited about your message. 
+				BiteSite delivers professional quality video with a strong artistic direction.	
 			</div>
-			<div class="clear-floats"></div>
 		</div>
-	</div>
+		
+		<div class="feature">
+			<%= icon("mobile", class: "feature-icon") %>
+			<h2>Mobile Applications</h2>
+			<div class="description">
+				Need a iOS or Android App to complement your web application?
+				Or maybe you have an amazing idea and need a team to build
+				your prototype? Whatever your mobile needs are, BiteSite
+				can help you build rich native apps to execute your vision.
+			</div>
+		</div>
+		<div class="clear"></div>
 
-	<div class="videoproduction-portfolio folder-portfolio">
-		<div class="container">
-			<div class="folder-portfolio-header">SOME OF OUR VIDEO WORK</div>
-			<div class="video-listings">
-				<% @video_listings.each do |video| %>
-					<%= link_to video.link, class: "video-listing", target: "_blank" do %>
-						<div class="video-listing-image">
-							<% if video.image_url.nil? %>
-								<%= image_tag("defaultnews.png", :class => "video-image") %>
-							<% else %>
-								<%= image_tag(video.image_url.to_s, :class => "video-image")  %>
-							<% end %>
-						</div>
-						<div class="video-listing-caption">
-							<b><%= video.name %></b><br>
-							(Click to view)
-						</div>
-					<% end %>
-				<% end %>
-				
-				<div class="clear-floats"></div>
+		<div class="competencies-section">
+			We execute our core projects with our many competencies:
+
+			<div class="competencies">
+				<% @competencies.each do |competency| %>
+
+				<span class='competency'>
+					<%= icon(competency[:icon]) %> <%= competency[:title] %>
+				</span>
+
+			<% end %>	
 			</div>
 			
-			<%= link_to "CLOSE", "#", :class => "videoproduction-portfolio-close btn btn-sm btn-primary" %>			
-		</div>
 
-	</div>
-
-	
-	<div class="container">
-
-		
-		<div class="feature">
-			<%= image_tag "mobiledevelopment.png", :class => "screenshot screenshot-left mobiledevelopment" %>
-
-			<div class="caption-right caption">
-				<h2>Mobile Applications</h2>
-				<div class="description">
-					Need a iOS or Android App to complement your web application?
-					Or maybe you have an amazing idea and need a team to build
-					your prototype? Whatever your mobile needs are, BiteSite
-					can help you build rich native apps to execute your vision.
-				</div>
-				<div class="actions">
-					<%= link_to "VIEW SOME OF OUR MOBILE WORK", "#", :class => "btn btn-sm btn-primary portfolio-text-link", :id => "mobile-portfolio-text-link" %>
-				</div>
-			</div>
-			<div class="clear-floats"></div>
 		</div>
 	</div>
-	
-	
-	<div class="mobiledevelopment-portfolio folder-portfolio">
-		<div class="container">
-			<div class="folder-portfolio-header">SOME OF OUR MOBILE WORK</div>
-			<ul>
-				<li><%= link_to "ESD POUTINE", "https://itunes.apple.com/ca/app/esd-poutine/id899560146", target: "_blank" %></li>
-				<li>/</li>
-				<li><%= link_to "CNTDWN", "https://itunes.apple.com/app/cntdwn/id555898837", target: "_blank" %></li>
-				<li>/</li>
-				<li><%= link_to "CAPO (web-optimized site)", "http://capoapp.heroku.com/", target: "_blank" %></li>
-			</ul>
-			<div class="clear-floats">
-				
-			</div>
-			<%= link_to "CLOSE", "#", :class => "mobiledevelopment-portfolio-close btn btn-sm btn-primary" %>			
-		</div>
-
-	</div>
-	
 </div>
