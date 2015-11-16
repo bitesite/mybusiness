@@ -13,6 +13,15 @@ $(function(){
 	preload([
 	    '/assets/ajax-loader.gif'
 	]);
+
+	$(document).on("click", ".mobile-menu-toggle", function(){
+		if($(".mobile-menu.nav-links").is(":visible")) {
+			$(".mobile-menu.nav-links").slideUp(300);
+		}
+		else {
+			$(".mobile-menu.nav-links").slideDown(300);
+		}
+	});
 });
 
 

@@ -8,6 +8,7 @@ $(function(){
 
 function navigateTo(destination) {
 	$('html,body').animate({scrollTop: $(destination).offset().top - 43},'slow');
+	$(".mobile-menu.nav-links").slideUp(200);
 }
 
 /*
@@ -33,10 +34,6 @@ function windowScroll() {
 	else if(pixelsDown > $(".services-section").offset().top - navBarHeight - scrollTolerance) { highlightNavLink("#services-link"); }
 	else { highlightNavLink("#"); }
 		
-	/* Animations based on scroll posiiton */
-	if(pixelsDown > 550) { animateVideoProduction(); }
-	if(pixelsDown > 800) { animateMobileDevelopment(); }
-
 	if(pixelsDown > 150) {
 		$(".navigation-bar img.logo").addClass("visible");
 	}

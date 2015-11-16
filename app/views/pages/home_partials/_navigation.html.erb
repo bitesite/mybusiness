@@ -3,7 +3,8 @@
     <div class="logo-container">
       <%= image_tag "logo2015-white-500x108.png", :class => "logo" %>
     </div>
-		<div class="nav-links">
+
+		<div class="nav-links normal-menu">
 			<%= link_to "WHAT WE BUILD", "#", :id => "services-link", :class => "nav-link", :destination => ".services-section" %>
 			<%= link_to "NEWS", "#", :id => "news-link", :class => "nav-link", :destination => ".news-section" %>
 			<%= link_to "WHO WE ARE", "#", :id => "about-link", :class => "nav-link", :destination => ".about-section" %>
@@ -12,6 +13,21 @@
         <%= link_to "LOGOUT", destroy_user_session_path, :method => :delete %>
       <% end %>
 		</div>
+
+    <div class="mobile-menu">
+      <%= icon("reorder", class: "mobile-menu-toggle") %>
+    </div>
 		<div class="clear-floats"></div>
+
+    <div class="nav-links mobile-menu">
+      <%= link_to "WHAT WE BUILD", "#", :id => "services-link", :class => "nav-link", :destination => ".services-section" %>
+      <%= link_to "NEWS", "#", :id => "news-link", :class => "nav-link", :destination => ".news-section" %>
+      <%= link_to "WHO WE ARE", "#", :id => "about-link", :class => "nav-link", :destination => ".about-section" %>
+      <%= link_to "CONTACT US", "#", :id => "contact-link", :class => "nav-link", :destination => ".contact-section" %>
+      <% if admin? %>
+        <%= link_to "LOGOUT", destroy_user_session_path, :method => :delete %>
+      <% end %>
+    </div>
 	</div>
 </div>
+

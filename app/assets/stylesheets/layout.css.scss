@@ -1,12 +1,12 @@
 
 .container {
 	margin: 0 auto;
-	width: 960px;
 	height:100%;
 	position:relative;
 	overflow:hidden;
-	/*border-right: 1px solid #333;
-	border-left: 1px solid #333;*/
+	max-width:960px;
+	padding:0 20px;
+	width:calc(100% - 40px);
 }
 
 
