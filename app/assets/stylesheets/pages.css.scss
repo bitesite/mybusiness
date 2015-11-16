@@ -400,16 +400,12 @@
 /* ABOUT */
 
 .about-section {
-/*	background: #90c1df;
-	background-image:url(/assets/aboutbg.png);*/
-	
 	background: #9dc7e0; 
 	background-image:url(/assets/aboutbg2.png);
 	
 	background-position:bottom center;
 	background-repeat:no-repeat;
 	
-	/*height:470px;*/
 	min-height:470px;
 	border-top:1px solid #bbb;	
 }
@@ -421,7 +417,8 @@
 }
 
 .about-text {
-	width:600px;
+	max-width:600px;
+	width:100%;
 	font-size:13px;
 	text-align:justify;
 	line-height:20px;
