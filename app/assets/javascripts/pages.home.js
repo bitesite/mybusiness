@@ -21,6 +21,7 @@ $(function(){
 		else {
 			$(".mobile-menu.nav-links").slideDown(300);
 		}
+		return false;
 	});
 });
 
