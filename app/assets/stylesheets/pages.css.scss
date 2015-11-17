@@ -164,6 +164,7 @@
 
 /* FEATURED WORK */
 .featured-work-section {
+	padding-bottom:80px;
 	.featured-work-listings {
 		line-height:0px;
 
@@ -171,7 +172,7 @@
 			margin:0;
 			position:relative;
 			display:block;
-			width:33.3333%;
+			width:25%;
 			float:left;
 
 			-webkit-transition: box-shadow 300ms;
@@ -215,10 +216,11 @@
 		padding:0 20px;
 		text-align:center;
 
-		@media only screen and (max-width: $mobile-menu-device-width) {
+		@media only screen and (max-width: 800px) {
 			float:none;
 			width:100%;
 			padding:0;
+			margin:30px 0;
 		}
 
 		.feature-icon {
@@ -343,7 +345,7 @@
 	text-align:center;
 	margin-bottom:40px;
 
-	@media only screen and (max-width: 700px) {
+	@media only screen and (max-width: 800px) {
 		width:100%;
 		padding:0;
 	}
@@ -453,6 +455,23 @@
 
 		.position {
 
+		}
+	}
+
+	@media only screen and (max-width: 800px) {
+		display:block;
+		width:50%;
+		float:left;
+		text-align:center;
+
+		img {
+			display:block;
+			float:none;
+			margin:0 auto;
+		}
+
+		.caption {
+			float:none;
 		}
 	}
 
