@@ -580,6 +580,7 @@
 /* CASE STUDIES ********************/
 .case-study {
 	padding-top:41px;
+
 	.hero {
 		background:none;
 		background:#999;
@@ -588,8 +589,9 @@
 		h1 {
 			letter-spacing:0px;
 			margin-top:50px;
-
 		}
+
+
 
 		.services {
 			.service {
@@ -602,6 +604,15 @@
 
 	.main-body {
 		padding:20px 0;
+
+		h2 {
+			margin-top:40px;
+			text-align:center;
+		}
+
+		p {
+			line-height:2em;
+		}
 	}
 }
 
