@@ -112,6 +112,10 @@ class PagesController < ApplicationController
   def solink
     @title = "Solink Explainer Video - Case Study"
   end
+
+  def christine_kelly
+    @title = "Christine Kelly PHD Web Application"
+  end
   
   private
   

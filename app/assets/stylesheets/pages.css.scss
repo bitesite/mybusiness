@@ -582,13 +582,14 @@
 	padding-top:41px;
 
 	.hero {
-		background:none;
-		background:#999;
 		height:200px;
+		background-size:cover;
 
 		h1 {
 			letter-spacing:0px;
 			margin-top:50px;
+			color:white;
+			text-shadow:2px 2px black;
 		}
 
 
@@ -616,3 +617,11 @@
 	}
 }
 
+.is-case-study .hero { background-image:url(/assets/is_header_bg.jpg); }
+.mydoma-case-study .hero { background-image:url(/assets/mydoma_header_bg.jpg); }
+.lspark-case-study .hero { background-image:url(/assets/lspark_header_bg.jpg); }
+.martello-case-study .hero { background-image:url(/assets/martello_header_bg.jpg); }
+.ollie-case-study .hero { background-image:url(/assets/ollie_header_bg.jpg); }
+.d3m-case-study .hero { background-image:url(/assets/d3m_header_bg.jpg); }
+.christine-kelly-case-study .hero { background-image:url(/assets/christinekelly_header_bg.jpg); }
+.solink-case-study .hero { background-image:url(/assets/solink_header_bg.jpg); }
