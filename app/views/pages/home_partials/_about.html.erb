@@ -2,95 +2,66 @@
 	<div class="container">
 		<h1>WHO WE ARE</h1>
 		
+		<div class="staff-listings">
+			<% @staff_listings.each do |staff_listing| %>
+				<div class="staff-listing">
+					<%= image_tag staff_listing[:avatar] %>
+					<div class="caption">
+						<div class='name'><%= staff_listing[:name] %></div>
+						<div class="position"><%= staff_listing[:position] %></div>	
+					</div>
+					<div class="clear"></div>
+				</div>
+			<% end %>
+
+			<% if Career.count > 0 %>
+
+				<div class="staff-listing">
+					<%= image_tag "hiringavatar.png" %>
+					<div class="caption">
+						<div class='name'>Want to join our team?</div>
+						<div class="position"><%= link_to "We're hiring! Click here!", careers_path %>	</div>	
+					</div>
+					<div class="clear"></div>
+				</div>		  
+			<% end %>
+			<div class="clear-floats"></div>
+		</div>
 
 		<div class="about-text">
-		<p>
-			BiteSite is a software development and video production firm based out of Ottawa, Canada. 
-			We have a strong philosophy in working on projects that excite us and the customer.
+			<p>
+				BiteSite is a software development and video production firm based out of Ottawa, Canada. 
+				We have a strong philosophy in working on projects that excite us and the customer.
 
-			Although we have great respect
-			for the big boys like Google, Facebook, Shopify and the way they do things, we have no visions of taking over the world or being the next big thing. 
-		</p>
-		<p>
-			We get way more satisfaction in developing something for somebody and having them say "Wow, that's really cool!" than landing a huge deal attached to a
-			lot of dollars.
-		</p>
-		<p>
-			We also have a philosophy in finding a good fit between customer and company. We think that if a project is not right for us, it will be bad news
-			for both parties involved. However, if we find a good fit, then we know we can deliver something both parties will be excited about.
-		</p>
-		<p>
-			We get great satisfaction in dealing with customers who
-			are open minded and are willing to take the time to build something great. We love clients
-			who are forward thinking and who bring their expertise to complement ours.
-			In our past lives, we discovered that collaboration is truly the only
-			way to success.
-		</p>
-		<p>
-			When it comes down to it - BiteSite was started with the intention of working on great things and having fun while doing it. And that's not
-			just for our staff. We believe it should be fun for our customers as well. When both parties involved have fun and let their creative juices flow,
-			truly amazing things are born.
-		</p>
-		<p>
-			BiteSite believes in culture above all else. If we sound like a fit, be sure to contact us below.
-		</p>
-		
-		<div class="about-picture-caption">
-			<span class="name">CASEY LI</span>
-			<span class="title">CEO & FOUNDER</span>
-		</div>
+				Although we have great respect
+				for the big boys like Google, Facebook, Shopify and the way they do things, we have no visions of taking over the world or being the next big thing. 
+			</p>
+			<p>
+				We get way more satisfaction in developing something for somebody and having them say "Wow, that's really cool!" than landing a huge deal attached to a
+				lot of dollars.
+			</p>
+			<p>
+				We also have a philosophy in finding a good fit between customer and company. We think that if a project is not right for us, it will be bad news
+				for both parties involved. However, if we find a good fit, then we know we can deliver something both parties will be excited about.
+			</p>
+			<p>
+				We get great satisfaction in dealing with customers who
+				are open minded and are willing to take the time to build something great. We love clients
+				who are forward thinking and who bring their expertise to complement ours.
+				In our past lives, we discovered that collaboration is truly the only
+				way to success.
+			</p>
+			<p>
+				When it comes down to it - BiteSite was started with the intention of working on great things and having fun while doing it. And that's not
+				just for our staff. We believe it should be fun for our customers as well. When both parties involved have fun and let their creative juices flow,
+				truly amazing things are born.
+			</p>
+			<p>
+				BiteSite believes in culture above all else. If we sound like a fit, be sure to contact us below.
+			</p>
 		
 		</div>
 		
 		<div class="clear-floats"></div>
 	</div>
-</div>
-
-<div class="page-section staff-section">	
-	<div class="container">
-		<div class="staff-listing">
-			<%= image_tag "ryan.png" %>
-			<div class="caption">
-				<div class='name'>Ryan O'Connor</div>
-				<div class="position">Software Developer</div>	
-			</div>
-			<div class="clear"></div>
-		</div>
-		<div class="staff-listing">
-			<%= image_tag "tucker.png" %>
-			<div class="caption">
-				<div class='name'>Menelik Tucker</div>
-				<div class="position">Software Developer</div>	
-			</div>
-			<div class="clear"></div>
-		</div>
-		<div class="staff-listing">
-			<%= image_tag "tim.png" %>
-			<div class="caption">
-				<div class='name'>Tim Clark</div>
-				<div class="position">Filmmaker</div>	
-			</div>
-			<div class="clear"></div>
-		</div>
-
-		<% if Career.count > 0 %>
-
-			<div class="staff-listing">
-				<%= image_tag "hiringavatar.png" %>
-				<div class="caption">
-					<div class='name'>Want to join our team?</div>
-					<div class="position"><%= link_to "We're hiring! Click here for details", careers_path %>	</div>	
-				</div>
-				<div class="clear"></div>
-			</div>		  
-		<% end %>
-
-	</div>
-
-
-
-	<div class="clear-floats"></div>
-
-	
-
 </div>

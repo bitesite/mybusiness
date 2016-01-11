@@ -26,6 +26,17 @@ class PagesController < ApplicationController
       {icon: "fire" , title: "Motion Graphics"}
     ]
 
+    @staff_listings = [
+      {name: "Casey Li", position: "CEO & Founder", avatar: "casey.png"},
+      {name: "Ryan O'Connor", position: "Software Developer", avatar: "ryan.png"},
+      {name: "Menelik Tucker", position: "Software Developer", avatar: "tucker.png"},
+      {name: "Tim Clark", position: "Filmmaker", avatar: "tim.png"}
+    ]
+
+  end
+
+  def portfolio
+    @title = "Portfolio"
   end
   
   def wedding_contest_submit

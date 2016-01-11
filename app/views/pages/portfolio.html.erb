@@ -1,0 +1,61 @@
+<div class="blank-page-navigation-bar">
+  <div class="container">
+    <div class="blank-page-nav-links">
+      <%= link_to "BACK TO BITESITE.CA", "/" %>
+    </div>
+    <div class="clear-floats"></div>
+  </div>
+</div>
+
+<div class="portfolio container">
+  <h1>Portfolio</h1>
+
+  <h2>Web Application Projects</h2>
+
+  <ul>
+    <li><%= link_to "INTERNATIONAL SAFETY", "http://www.internationalsafety.com", :target => "_blank" %></li>
+    <li><%= link_to "BLUE BIRD COFFEE", "http://www.bluebirdcoffee.ca", :target => "_blank" %></li>
+    <li><%= link_to "WE RAISE SOCIAL", "http://www.weraisesocial.com", :target => "_blank" %></li>
+    <li><%= link_to "CHRISTINE KELLY", "http://www.christinekelly.ca", :target => "_blank" %></li>
+    <li><%= link_to "ASPIRE PERFORMANCE CONSULTING", "http://www.aspireperformanceconsulting.com", :target => "_blank" %></li>
+    <li><%= link_to "SEEKR-PRO", "http://www.seekr-pro.com", :target => "_blank" %></li>
+    <li><%= link_to "AIRLINE ROUTE MAPS", "http://www.airlineroutemaps.com", :target => "_blank" %></li>
+    <li><%= link_to "MULTINEXUS", "http://www.multinexus.com", :target => "_blank" %></li>
+    <li><%= link_to "ELLIOTT FARM EQUIPMENT", "http://www.elliottfarmequipment.com", :target => "_blank" %></li>
+    <li><%= link_to "MMB COUNSELLING & CONSULTING", "http://www.mmbcounselling.com", :target => "_blank" %></li>
+    <li><%= link_to "HORSES BY HANNAH", "http://www.horsesbyhannah.ca", :target => "_blank" %></li>
+    <li><%= link_to "M&D", "http://www.marilynanddouglas.com", :target => "_blank" %></li>
+    <li><%= link_to "ELITE EDGE", "http://www.elite-edge.ca", :target => "_blank" %></li>
+    <li><%= link_to "LIAM WONG", "http://www.liamwongsound.com", :target => "_blank" %></li>
+    <li><%= link_to "ALBERTA HARPIST", "http://www.albertaharpist.com", :target => "_blank" %></li>
+    <li><%= link_to "CAPO", "http://capoapp.herokuapp.com/", :target => "_blank" %></li>
+    <li><%= link_to "JEN & WAYNE", "http://www.jenandwayne.com", :target => "_blank" %></li>
+  </ul>
+
+  <h2>Video Projects</h2>
+  <div class="video-listings">
+    <% VideoListing.all.each do |video| %>
+      <%= link_to video.link, class: "video-listing", target: "_blank" do %>
+        <div class="video-listing-image">
+          <% if video.image_url.nil? %>
+            <%= image_tag("defaultnews.png", :class => "video-image") %>
+          <% else %>
+            <%= image_tag(video.image_url.to_s, :class => "video-image")  %>
+          <% end %>
+        </div>
+        <div class="video-listing-caption">
+          <b><%= video.name %></b><br>
+          (Click to view)
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="clear"></div>
+
+  <h2>Mobile Projects</h2>
+  <ul>
+    <li><%= link_to "ESD POUTINE", "https://itunes.apple.com/ca/app/esd-poutine/id899560146", target: "_blank" %></li>
+    <li><%= link_to "CNTDWN", "https://itunes.apple.com/app/cntdwn/id555898837", target: "_blank" %></li>
+    <li><%= link_to "CAPO (web-optimized site)", "http://capoapp.heroku.com/", target: "_blank" %></li>
+  </ul>
+</div>

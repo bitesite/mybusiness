@@ -33,6 +33,8 @@ Mybusiness::Application.routes.draw do
   get "/martello" => "pages#martello"
   get "/christine_kelly" => "pages#christine_kelly"
   get "/d3m" => "pages#d3m"
+
+  get "/portfolio" => "pages#portfolio"
   
   root :to => "pages#home"
 

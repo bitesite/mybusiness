@@ -32,6 +32,7 @@ function windowScroll() {
 	else if (pixelsDown > $(".about-section").offset().top - navBarHeight - scrollTolerance) { highlightNavLink("#about-link"); }
 	else if (pixelsDown > $(".news-section").offset().top - navBarHeight - scrollTolerance) { highlightNavLink("#news-link"); }
 	else if(pixelsDown > $(".services-section").offset().top - navBarHeight - scrollTolerance) { highlightNavLink("#services-link"); }
+	else if(pixelsDown > $(".featured-work-section").offset().top - navBarHeight - scrollTolerance) { highlightNavLink("#featured-work-link"); }
 	else { highlightNavLink("#"); }
 		
 	if(pixelsDown > 150) {

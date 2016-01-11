@@ -1,33 +1,6 @@
 @import "globals";
 @import "colorswatches";
 
-/* GENERAL ***************************************************/
-
-.contact-us-hero {
-  background:#444;
-  display:block;
-  width: 120px;
-  padding: 10px 10px;
-  text-align:center;
-  text-decoration:none;
-  border-radius:5px;
-  margin:40px auto 10px auto;
-  font-size:12px;
-  color:white;
-  font-weight:normal;
-  
-  &:hover {
-    background:#222;
-    color:white;
-  };
-}
-
-.price {
-	background:#444;
-}
-
-
-
 /* HOME ******************************************************/
 .hero {
 	height:400px;	
@@ -45,15 +18,34 @@
 		}
 
 		.hero-description {
-			font-size:14px;
 			display:block;
 			max-width: 800px;
 			width:100%;
 			margin:0 auto;
 			color: white;
+			font-size:0.9em;
 		}
 
 	}	
+
+	.contact-us-hero {
+	  background:#444;
+	  display:block;
+	  width: 120px;
+	  padding: 10px 10px;
+	  text-align:center;
+	  text-decoration:none;
+	  border-radius:5px;
+	  margin:40px auto 10px auto;
+	  color:white;
+	  font-weight:normal;
+	  font-size:0.8em;
+	  
+	  &:hover {
+	    background:#222;
+	    color:white;
+	  };
+	}
 }
 
 
@@ -160,6 +152,8 @@
 	background:#fff;
 	padding-bottom:30px;
 	position:relative;
+	font-size:0.9em;
+	line-height:2em;
 }
 
 /* FEATURED WORK */
@@ -192,7 +186,7 @@
 			}
 
 			&:hover {
-				z-index:1000;
+				z-index:500;
 				box-shadow:0 0 20px black;
 			}
 		}
@@ -236,7 +230,6 @@
 
 		.description {
 			text-align:justify;
-			line-height:2em;
 			color:#ddd;
 		}
 	}
@@ -244,8 +237,9 @@
 	.competencies-section {
 		margin:40px 0 20px 0;
 		color:#aaa;
-		font-size:0.75em;
 		text-align:center;
+		line-height:1em;
+		font-size:0.9em;
 
 		.competencies {
 			margin:10px 0;
@@ -258,52 +252,7 @@
 	}
 }
 
-.video-listings {
-	margin-bottom:20px;
-	
-	.video-listing {
-		position:relative;
-		display:block;
-	  float:left;
-	  width: 160px;
-	  height:141px;
 
-	  .video-listing-image {
-	  	position:absolute;
-	  	top:0;
-	  	left:0;
-	  	width:160px;
-	  	height:141px;
-	  	img {
-	  		width:100%;
-	  		height:100%;
-	  	}
-	  }
-	  
-	  .video-listing-caption {
-	  	position:absolute;
-	  	top:0;
-	  	left:0;
-	  	width:140px;
-	  	height:0px;
-	  	padding:0px 10px;
-	  	background:rgba(0, 0, 0, 0.85);
-	  	color:white;
-	    text-align:center;
-	    font-size:13px;
-	    display:block;
-	    overflow:hidden;
-
-	    -webkit-transition: height 300ms, padding 300ms;
-	    transition: height 300ms, padding 300ms;
-	  }
-
-	  &:hover .video-listing-caption {
-	  	height:101px;
-	  	padding-top:40px;
-	  }
-	}
-}
 
 /* ANNOUNCEMENTS */
 .announcement-section {
@@ -362,11 +311,9 @@
 .recent-news-post-body {
 	margin-top:15px;
 	text-align:left;
-	font-size:12px;
 	padding:0px 10px;
 	color:#555;
 	color:#999;
-	line-height:20px;
 	text-align:justify;
 	
 	a {
@@ -383,46 +330,18 @@
 /* ABOUT */
 
 .about-section {
-	background: #9dc7e0; 
-	background-image:url(/assets/aboutbg2.png);
-	
+	background: #fff; 
 	background-position:bottom center;
 	background-repeat:no-repeat;
-	
-	min-height:470px;
 	border-top:1px solid #bbb;	
 }
 
-.about-picture {
-	box-shadow:5px 5px 5px black;
-	width:98%;
-	border:5px solid white;
-}
-
 .about-text {
-	max-width:600px;
-	width:100%;
-	font-size:13px;
 	text-align:justify;
-	line-height:20px;
 }
 
-.about-picture-caption {
-	.name {
-		font-size:20px;
-		color:#444;
-	}
-	.title {
-		font-size:20px;
-		color:#777;
-	}
-}
-
-/* STAFF SECTION */
-
-.staff-section {
-	padding:20px 0;
-	background: #ddd;
+.staff-listings {
+	background: #fff;
 
 	.were-hiring {
 		text-align:center;
@@ -432,50 +351,47 @@
 			text-decoration:none;
 		}
 	}
-}
-
-.staff-listing {
-	width:50%;
-	float:left;
-	margin-bottom:30px;
-
-	img {
-		width:125px;
-		display:inline-block;
+	
+	.staff-listing {
+		width:20%;
 		float:left;
-	}
-	.caption {
-		margin-left:20px;
-		margin-top:40px;
-		float:left;
-		.name {
-			font-size:1.25em;
-			font-family:"Avenir LT Std 85 Heavy";
-		}
-
-		.position {
-
-		}
-	}
-
-	@media only screen and (max-width: 800px) {
-		display:block;
-		width:50%;
-		float:left;
+		margin-bottom:30px;
 		text-align:center;
 
 		img {
-			display:block;
-			float:none;
-			margin:0 auto;
+			width:100px;
+			display:inline-block;
 		}
-
 		.caption {
-			float:none;
+			.name {
+				font-family:"Avenir LT Std 85 Heavy";
+			}
 		}
-	}
 
+		@media only screen and (max-width: 800px) {
+			display:block;
+			width:33.333332%;
+			float:left;
+			text-align:center;
+
+			img {
+				display:block;
+				float:none;
+				margin:0 auto;
+			}
+
+			.caption {
+				float:none;
+			}
+		}
+
+		@media only screen and (max-width: 500px) {
+			width:50%;
+		}
+
+	}
 }
+
 
 /* CONTACT */
 .contact-section {
@@ -491,8 +407,7 @@
 .contact-caption {
 	width: 35%;
 	float:right;
-	font-size:15px;
-	line-height:22px;
+	line-height:2em;
 	text-align:justify;
 }
 
@@ -524,7 +439,6 @@
 
 .contact-field  {
 	width: calc(100% - 10px);
-	font-size: 1.0em;
 	border: 1px solid;
 	border-left:none;
 	border-top:none;
@@ -548,10 +462,8 @@
 	width:100%;
 	text-align:center;
 	color:#999;
-	font-size:20px;
 
 	.page-links {
-		font-size:0.8em;
 		a {
 			text-decoration:none;
 			margin:0 10px;
@@ -572,7 +484,6 @@
 
 .footer-ads-caption {
 	margin: 5px 0;
-	font-size:12px;
 	color:#666;
 }
 
@@ -625,3 +536,55 @@
 .d3m-case-study .hero { background-image:url(/assets/d3m_header_bg.jpg); }
 .christine-kelly-case-study .hero { background-image:url(/assets/christinekelly_header_bg.jpg); }
 .solink-case-study .hero { background-image:url(/assets/solink_header_bg.jpg); }
+
+/* PORTFOLIO **********************/
+.portfolio {
+	padding-top:64px;
+
+	.video-listings {
+		margin-bottom:20px;
+		
+		.video-listing {
+			position:relative;
+			display:block;
+		  float:left;
+		  width: 160px;
+		  height:141px;
+
+		  .video-listing-image {
+		  	position:absolute;
+		  	top:0;
+		  	left:0;
+		  	width:160px;
+		  	height:141px;
+		  	img {
+		  		width:100%;
+		  		height:100%;
+		  	}
+		  }
+		  
+		  .video-listing-caption {
+		  	position:absolute;
+		  	top:0;
+		  	left:0;
+		  	width:140px;
+		  	height:0px;
+		  	padding:0px 10px;
+		  	background:rgba(0, 0, 0, 0.85);
+		  	color:white;
+		    text-align:center;
+		    font-size:13px;
+		    display:block;
+		    overflow:hidden;
+
+		    -webkit-transition: height 300ms, padding 300ms;
+		    transition: height 300ms, padding 300ms;
+		  }
+
+		  &:hover .video-listing-caption {
+		  	height:101px;
+		  	padding-top:40px;
+		  }
+		}
+	}
+}
