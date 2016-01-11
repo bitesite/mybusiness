@@ -15,16 +15,15 @@ class PagesController < ApplicationController
 
 
     @competencies = [
-      {icon: "desktop" , title: "UI Design"},
-      {icon: "desktop" , title: "Web Development"},
-      {icon: "desktop" , title: "iOS Development"},
-      {icon: "desktop" , title: "Android Development"},
-      {icon: "desktop" , title: "Graphic Design"},
-      {icon: "desktop" , title: "Photography"},
-      {icon: "desktop" , title: "Film Production"},
-      {icon: "desktop" , title: "Motion Graphics"},
+      {icon: "magnet" , title: "UI Design"},
       {icon: "desktop" , title: "Web Design"},
-      {icon: "desktop" , title: "Web Design"}
+      {icon: "code" , title: "Web Development"},
+      {icon: "mobile" , title: "iOS Development"},
+      {icon: "mobile" , title: "Android Development"},
+      {icon: "paint-brush" , title: "Graphic Design"},
+      {icon: "camera-retro" , title: "Photography"},
+      {icon: "video-camera" , title: "Film Production"},
+      {icon: "fire" , title: "Motion Graphics"}
     ]
 
   end

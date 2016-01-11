@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.13'
+gem 'rails', '3.2.22'
 gem 'pg'
 gem 'newrelic_rpm'
 gem 'rmagick'
@@ -31,5 +31,5 @@ end
 gem 'jquery-rails'
 gem 'thin'
 
-ruby '1.9.3'
+ruby '2.0.0'
 #ruby-gemset=mybusiness
