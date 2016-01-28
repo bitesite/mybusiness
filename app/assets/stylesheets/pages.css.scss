@@ -158,7 +158,7 @@
 
 /* FEATURED WORK */
 .featured-work-section {
-	padding-bottom:80px;
+	padding-bottom:50px;
 	.featured-work-listings {
 		line-height:0px;
 
@@ -191,6 +191,15 @@
 			}
 		}
 		
+	}
+
+	.portfolio-link-container {
+		text-align:center;
+		margin-top:20px;
+
+		a {
+			text-decoration:none;
+		}
 	}
 }
 
@@ -524,6 +533,10 @@
 
 		p {
 			line-height:2em;
+
+			b {
+				font-family: "Avenir LT Std 65 Medium";
+			}
 		}
 	}
 }
@@ -541,50 +554,35 @@
 .portfolio {
 	padding-top:64px;
 
-	.video-listings {
-		margin-bottom:20px;
-		
-		.video-listing {
-			position:relative;
-			display:block;
-		  float:left;
-		  width: 160px;
-		  height:141px;
+	.portfolio-section {
+		width:calc(33.333333% - 20px);
+		float:left;
+		padding:0 10px;
 
-		  .video-listing-image {
-		  	position:absolute;
-		  	top:0;
-		  	left:0;
-		  	width:160px;
-		  	height:141px;
-		  	img {
-		  		width:100%;
-		  		height:100%;
-		  	}
-		  }
-		  
-		  .video-listing-caption {
-		  	position:absolute;
-		  	top:0;
-		  	left:0;
-		  	width:140px;
-		  	height:0px;
-		  	padding:0px 10px;
-		  	background:rgba(0, 0, 0, 0.85);
-		  	color:white;
-		    text-align:center;
-		    font-size:13px;
-		    display:block;
-		    overflow:hidden;
-
-		    -webkit-transition: height 300ms, padding 300ms;
-		    transition: height 300ms, padding 300ms;
-		  }
-
-		  &:hover .video-listing-caption {
-		  	height:101px;
-		  	padding-top:40px;
-		  }
+		@media only screen and (max-width: 800px) {
+			float:none;
+			width:100%;
+			padding:0;
 		}
 	}
+
+	h2 {
+		text-align:center;
+	}
+
+	.portfolio-listing {
+		display:block;
+		max-width:500px;
+		margin:20px auto;
+		display:block;
+		padding:20px 0;
+		text-align:center;
+		border:1px solid #eee;
+		text-decoration:none;
+
+		&:hover {
+			box-shadow:0 0 5px #777;
+		}
+	}
+
 }
