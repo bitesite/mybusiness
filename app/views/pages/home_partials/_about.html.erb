@@ -14,17 +14,22 @@
 				</div>
 			<% end %>
 
-			<% if Career.count > 0 %>
+			
 
-				<div class="staff-listing">
-					<%= image_tag "hiringavatar.png" %>
-					<div class="caption">
-						<div class='name'>Want to join our team?</div>
-						<div class="position"><%= link_to "We're hiring! Click here!", careers_path %>	</div>	
-					</div>
-					<div class="clear"></div>
-				</div>		  
-			<% end %>
+			<div class="staff-listing">
+				<%= image_tag "hiringavatar.png" %>
+				<div class="caption">
+					<div class='name'>Want to join our team?</div>
+					<div class="position">
+						<% if Career.published.count > 0 %>
+							<%= link_to "We're hiring! Click here!", careers_path %>
+						<% else %>
+							<%= link_to "Click here!", careers_path %>
+						<% end %>
+					</div>	
+				</div>
+				<div class="clear"></div>
+			</div>		  
 			<div class="clear-floats"></div>
 		</div>
 
