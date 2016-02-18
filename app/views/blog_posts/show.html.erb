@@ -1,0 +1,30 @@
+<div class="blank-page-navigation-bar">
+  <div class="container">
+    <div class="blank-page-nav-links">
+      <%= link_to "BACK TO BITESITE.CA", "/" %>
+    </div>
+    <div class="clear-floats"></div>
+  </div>
+</div>
+
+<div class="blog-posts-show">
+  <div class="container">
+    <h1>
+      <%= @blog_post.title %>
+    </h1>
+    <h2>
+      <%= convert_time_string @blog_post.created_at %>
+    </h2>
+
+    <p>
+      <%= markdown @blog_post.body %>
+    </p>
+
+
+    <% if admin? %>
+      <%= link_to 'Edit', edit_blog_post_path(@blog_post) %> |
+    <% end %>
+    <%= link_to 'Back', blog_posts_path %>
+    
+  </div>
+</div>

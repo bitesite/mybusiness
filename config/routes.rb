@@ -1,5 +1,9 @@
 Mybusiness::Application.routes.draw do
   
+  resources :blog_posts
+  get "/blog" => "blog_posts#index"
+
+
   resources :careers
 
 

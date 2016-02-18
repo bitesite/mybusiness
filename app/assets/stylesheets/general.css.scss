@@ -32,6 +32,12 @@ a {
 	};
 }
 
+ul {
+	li {
+		margin-bottom:5px;
+	}
+}
+
 .btn {	
 	display:inline-block;
 	padding:10px 60px;
@@ -49,6 +55,9 @@ a {
 .btn-primary {
 	background:#666;
 	color:white;
+	border-width:1px;
+	border-style:solid;
+	font-size:1em;
 
 	&:hover {
 		background:#444;
@@ -158,7 +167,23 @@ a.standard-button {
 
 .field {
 	padding-bottom: 10px;
+	
+	label {
+		display:block;
+
+		&.check-box-label {
+		  display:inline-block;
+		  margin:0;
+		}
+	}
+
+	input[type="text"], input[type="email"], input[type="password"], textarea {
+		padding:5px;
+		display:block;
+		width:calc(100% - 10px);
+	}
 }
+
 
 .ajax-loader {
 	vertical-align:middle;

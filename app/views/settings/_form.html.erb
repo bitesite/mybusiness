@@ -12,11 +12,11 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name %>
     <%= f.select :name, options_for_select(Setting::SETTING_NAMES.map{|x| [x, x]}, selected: @setting.name), include_blank: true %>
   </div>
   <div class="field">
-    <%= f.label :value %><br />
+    <%= f.label :value %>
     <%= f.text_area :value %>
   </div>
   <div class="actions">

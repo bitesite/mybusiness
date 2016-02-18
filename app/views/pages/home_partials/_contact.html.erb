@@ -5,20 +5,20 @@
 		<div class="contact-form">
 			<%= form_tag "/contact", honeypot: true do %>
 				<div class="field">
-					<%= label_tag :first_name, "First Name" %><br/>
-					<%= text_field_tag :first_name, nil, :size => "30", :class => "contact-field" %><br/>
+					<%= label_tag :first_name, "First Name" %>
+					<%= text_field_tag :first_name, nil, :size => "30", :class => "contact-field" %>
 				</div>
 				<div class="field">
-					<%= label_tag :last_name, "Last Name" %><br/>
-					<%= text_field_tag :last_name, nil, :size => "30", :class => "contact-field" %><br/>
+					<%= label_tag :last_name, "Last Name" %>
+					<%= text_field_tag :last_name, nil, :size => "30", :class => "contact-field" %>
 				</div>
 				<div class="field">
-					<%= label_tag :email_address, "E-Mail Address" %><br/>
-					<%= text_field_tag :email_address, nil, :size => "30", :class => "contact-field" %><br/>
+					<%= label_tag :email_address, "E-Mail Address" %>
+					<%= text_field_tag :email_address, nil, :size => "30", :class => "contact-field" %>
 				</div>
 				<div class="field">
-					<%= label_tag :message, "Message" %><br/>
-					<%= text_area_tag :message, nil, :cols => 95, :rows => 10, :class => "contact-field" %><br/>
+					<%= label_tag :message, "Message" %>
+					<%= text_area_tag :message, nil, :cols => 95, :rows => 10, :class => "contact-field" %>
 				</div>
 				<div class="actions">
 					<%= link_to "SUBMIT", "#", :id => "contact-submit", :class => "btn btn-primary contact-submit" %>

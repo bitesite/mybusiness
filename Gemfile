@@ -4,6 +4,7 @@ gem 'rails', '3.2.22'
 gem 'pg'
 gem 'newrelic_rpm'
 gem 'rmagick'
+gem 'redcarpet'
 gem 'carrierwave'
 gem 'fog'
 gem "devise"
