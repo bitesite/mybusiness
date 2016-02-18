@@ -189,6 +189,22 @@ a.standard-button {
 	vertical-align:middle;
 }
 
+/* Markdown */
+strong {
+	font-family: 'Avenir LT Std 85 Heavy';
+}
+
+code {
+	word-wrap: normal;
+  word-break: normal;
+  white-space: pre;
+  display: block;
+  padding: 20px;
+  line-height: 1.5em;
+  border: 1px solid #eee;
+  border-radius: 10px;
+}
+
 /* Generic Blank Pages */
 
 .blank-page-navigation-bar {

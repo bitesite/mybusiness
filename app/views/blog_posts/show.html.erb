@@ -16,9 +16,7 @@
       <%= convert_time_string @blog_post.created_at %>
     </h2>
 
-    <p>
-      <%= markdown @blog_post.body %>
-    </p>
+    <%= markdown @blog_post.body %>
 
 
     <% if admin? %>

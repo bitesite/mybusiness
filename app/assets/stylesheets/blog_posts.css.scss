@@ -5,7 +5,7 @@
 
 .blog-post {
 
-  margin:10px 0;
+  margin:10px 0 30px 0;
 
   &.hidden {
     background:#ddd;
@@ -61,4 +61,6 @@
     margin-bottom:20px;
     font-style:italic;
   }
+
+
 }
