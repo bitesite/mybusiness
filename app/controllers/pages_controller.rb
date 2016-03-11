@@ -127,6 +127,10 @@ class PagesController < ApplicationController
     @title = "Christine Kelly PHD Web Application"
   end
   
+  def filefacets
+    @title = "FileFacets How it works Video"
+  end
+
   private
   
   def build_contestant_hash

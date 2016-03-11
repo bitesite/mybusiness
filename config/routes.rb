@@ -31,6 +31,7 @@ Mybusiness::Application.routes.draw do
 
   get "/international_safety" => "pages#international_safety"
   get "/mydoma" => "pages#mydoma"
+  get "/filefacets" => "pages#filefacets"
   get "/ollie" => "pages#ollie"
   get "/lspark_grad" => "pages#lspark_grad"
   get "/solink" => "pages#solink"
