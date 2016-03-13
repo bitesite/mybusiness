@@ -60,6 +60,13 @@ class PagesController < ApplicationController
 
     if request.post?
       if !params[:email_address].blank? && !params[:message].blank?
+
+        ContactFormSubmission.create({ first_name: params[:first_name],
+                                       last_name: params[:last_name],
+                                       email_address: params[:email_address],
+                                       message: params[:message]
+                                     })
+
         if params[:honey_pot].blank?
           first_name = params[:first_name]
           last_name = params[:last_name]

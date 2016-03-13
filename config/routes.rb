@@ -14,6 +14,7 @@ Mybusiness::Application.routes.draw do
   end
 
   resources :video_listings
+  resources :contact_form_submissions, only: [:index]
 
   devise_for :users
 
