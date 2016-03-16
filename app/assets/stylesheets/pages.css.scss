@@ -362,7 +362,7 @@
 	}
 	
 	.staff-listing {
-		width:20%;
+		width:16.6666%;
 		float:left;
 		margin-bottom:30px;
 		text-align:center;
@@ -530,6 +530,34 @@
 		h2 {
 			margin-top:40px;
 			text-align:center;
+		}
+
+		.quote {
+			font-family: "Avenir LT Std 45 Book Oblique";
+			width:100%;
+			max-width:700px;
+			margin:40px auto;
+			line-height:2em;
+
+			.avatar {
+				float:left;
+				width:calc(20% - 20px);
+				padding:10px;
+
+				img {
+					width:100%;
+				}
+			}
+
+			.body {
+				float:left;
+				width:calc(80% - 20px);
+				padding:10px;
+
+				.author {
+					font-size:0.9em;
+				}
+			}
 		}
 
 		p {
