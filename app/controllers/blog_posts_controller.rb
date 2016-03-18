@@ -35,11 +35,6 @@ class BlogPostsController < ApplicationController
     end
   end
 
-  def destroy
-    @blog_post.destroy
-    redirect_to blog_posts_url
-  end
-
   private
     def set_title
       @title = "Blog"
