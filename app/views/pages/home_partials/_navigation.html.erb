@@ -10,6 +10,7 @@
 			<%= link_to "NEWS", "#", id: "news-link", class: "nav-link", destination: ".news-section" %>
 			<%= link_to "WHO WE ARE", "#", id: "about-link", class: "nav-link", destination: ".about-section" %>
 			<%= link_to "CONTACT US", "#", id: "contact-link", class: "nav-link", destination: ".contact-section" %>
+      <%= link_to "BLOG", blog_path, class: "nav-link" %>
       <% if admin? %>
         <%= link_to "LOGOUT", destroy_user_session_path, :method => :delete %>
       <% end %>
@@ -26,6 +27,7 @@
       <%= link_to "NEWS", "#", id: "news-link", class: "nav-link", destination: ".news-section" %>
       <%= link_to "WHO WE ARE", "#", id: "about-link", class: "nav-link", destination: ".about-section" %>
       <%= link_to "CONTACT US", "#", id: "contact-link", class: "nav-link", destination: ".contact-section" %>
+      <%= link_to "BLOG", blog_path, class: "nav-link" %>
       <% if admin? %>
         <%= link_to "LOGOUT", destroy_user_session_path, :method => :delete %>
       <% end %>

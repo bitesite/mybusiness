@@ -11,7 +11,7 @@
   <div class="container">
   <h1>THE BITESITE BLOG</h1>
 
-  <% if admin? %>
+  <% if can? :new, BlogPost %>
     <%= link_to 'New Blog post', new_blog_post_path %> <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
   <% end %><br>
   

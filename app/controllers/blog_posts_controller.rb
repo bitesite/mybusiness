@@ -19,6 +19,7 @@ class BlogPostsController < ApplicationController
   end
 
   def create
+    @blog_post.user = current_user
     if @blog_post.save
       redirect_to @blog_post, notice: 'Blog post was successfully created.'
     else
