@@ -1,6 +1,6 @@
 Mybusiness::Application.routes.draw do
   
-  resources :blog_posts
+  resources :blog_posts, except: [:destroy]
   get "/blog" => "blog_posts#index"
 
 

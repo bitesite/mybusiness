@@ -9,11 +9,7 @@
   <div class="blog-post-actions">
     <%= link_to "View full post", blog_post %>
     <% if can? :edit, blog_post %>
-      <%= link_to "edit", edit_blog_post_path(blog_post) %>
-      <%= link_to "delete", blog_post, 
-                :method => "delete", 
-                :confirm => "Are you sure you want to delete this news post", 
-                :delete => "Delete News Post?" %><br>
+      <%= link_to "edit", edit_blog_post_path(blog_post) %><br>
       Author: <%= blog_post.user.try(:email) %>
     <% end %>
   </div>
