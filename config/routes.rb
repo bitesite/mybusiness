@@ -35,6 +35,7 @@ Mybusiness::Application.routes.draw do
   get "/filefacets" => "pages#filefacets"
   get "/ollie" => "pages#ollie"
   get "/lspark_grad" => "pages#lspark_grad"
+  get "/lspark" => "pages#lspark"
   get "/solink" => "pages#solink"
   get "/martello" => "pages#martello"
   get "/christine_kelly" => "pages#christine_kelly"

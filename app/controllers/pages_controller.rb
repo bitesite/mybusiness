@@ -118,6 +118,10 @@ class PagesController < ApplicationController
     @title = "L-SPARK Grad Video - Case Study"
   end
 
+  def lspark
+    @title = "L-SPARK - Case Study"
+  end
+
   def d3m
     @title = "Teldio D3M - Case Study"
   end

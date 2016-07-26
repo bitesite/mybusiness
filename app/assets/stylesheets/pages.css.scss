@@ -532,6 +532,49 @@
 			text-align:center;
 		}
 
+		.two-video-layout {
+			.left-video {
+				width:calc(50% - 5px);
+				float:left;
+				padding-right:5px;
+			}
+
+			.right-video {
+				width:calc(50% - 5px);
+				float:left;
+				padding-left:5px;
+			}
+
+			@media only screen and (max-width: $mobile-menu-device-width) {
+				.left-video, .right-video { width: 100%; padding:0; float:none; }
+			}
+		}
+
+		.four-video-layout {
+			.left-video {
+				width:calc(25% - 5px);
+				float:left;
+				padding-right:5px;
+			}
+
+			.middle-video {
+				width:calc(25% - 5px);
+				float:left;
+				padding-left:2.5px;
+				padding-right:2.5px;
+			}
+
+			.right-video {
+				width:calc(25% - 5px);
+				float:left;
+				padding-left:5px;
+			}
+
+			@media only screen and (max-width: $mobile-menu-device-width) {
+				.left-video, .right-video, .middle-video { width: 100%; padding:0; float:none; }
+			}
+		}
+
 		.quote {
 			font-family: "Avenir LT Std 45 Book Oblique";
 			width:100%;
