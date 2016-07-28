@@ -582,6 +582,8 @@
 			margin:40px auto;
 			line-height:2em;
 
+
+
 			.avatar {
 				float:left;
 				width:calc(20% - 20px);
@@ -599,6 +601,14 @@
 
 				.author {
 					font-size:0.9em;
+				}
+			}
+
+			&.wide {
+				max-width:100%;
+
+				.avatar {
+					max-width:120px;
 				}
 			}
 		}
