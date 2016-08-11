@@ -1,0 +1,20 @@
+/* Forms */
+
+.field {
+  padding-bottom: 10px;
+  
+  label {
+    display:block;
+
+    &.check-box-label {
+      display:inline-block;
+      margin:0;
+    }
+  }
+
+  input[type="text"], input[type="email"], input[type="password"], textarea {
+    padding:5px;
+    display:block;
+    width:calc(100% - 10px);
+  }
+}

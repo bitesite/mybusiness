@@ -61,20 +61,24 @@ class PagesController < ApplicationController
     if request.post?
       if !params[:email_address].blank? && !params[:message].blank?
 
-        ContactFormSubmission.create({ first_name: params[:first_name],
-                                       last_name: params[:last_name],
-                                       email_address: params[:email_address],
-                                       message: params[:message]
-                                     })
+        if EmailBlacklisting.exists?(email: params[:email_address].upcase.strip)
+          @message = "Your e-mail has been blacklisted. If you want to appeal this, please contact info@bitesite.ca directly."
+        else
+          ContactFormSubmission.create({ first_name: params[:first_name],
+                                         last_name: params[:last_name],
+                                         email_address: params[:email_address],
+                                         message: params[:message]
+                                       })
 
-        if params[:honey_pot].blank?
-          first_name = params[:first_name]
-          last_name = params[:last_name]
-          customer_email = params[:email_address]
-          message = params[:message]
-        
-          EmailJob.new.async.perform(first_name, last_name, customer_email, message)
-          @success = true
+          if params[:honey_pot].blank?
+            first_name = params[:first_name]
+            last_name = params[:last_name]
+            customer_email = params[:email_address]
+            message = params[:message]
+          
+            EmailJob.new.async.perform(first_name, last_name, customer_email, message)
+            @success = true
+          end
         end
       end
     end

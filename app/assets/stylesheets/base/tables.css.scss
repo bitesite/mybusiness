@@ -1,0 +1,11 @@
+/* Tables */
+.resource-table {
+  border-collapse:collapse;
+  width:100%;
+  tr {
+    border-bottom:1px solid #ddd;
+    td {
+      padding:5px;
+    }
+  }
+}

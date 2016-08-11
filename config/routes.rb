@@ -1,5 +1,7 @@
 Mybusiness::Application.routes.draw do
   
+
+
   resources :blog_posts, except: [:destroy]
   get "/blog" => "blog_posts#index"
 
@@ -19,6 +21,7 @@ Mybusiness::Application.routes.draw do
   devise_for :users
 
   resources :news_posts
+  resources :email_blacklistings, except: [:show]
 
   get "pages/home"
   

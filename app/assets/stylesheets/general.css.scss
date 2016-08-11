@@ -19,50 +19,10 @@ body {
 	clear:both;
 }
 
-p {
-	color:#555;
-}
-
-a {
-	border:none;
-	color:#555;
-	
-	&:hover {
-		color:#000;
-	};
-}
-
 ul {
 	li {
 		margin-bottom:5px;
 	}
-}
-
-.btn {	
-	display:inline-block;
-	padding:10px 60px;
-	border-radius:5px;
-	text-align:center;
-	text-decoration:none;
-	margin-bottom:10px;
-}
-
-.btn-sm {
-	font-size:0.8em;
-	padding:5px 10px;
-}
-
-.btn-primary {
-	background:#666;
-	color:white;
-	border-width:1px;
-	border-style:solid;
-	font-size:1em;
-
-	&:hover {
-		background:#444;
-		color:white;
-	};
 }
 
 .center {
@@ -71,26 +31,6 @@ ul {
 
 .italic {
 	font-style:italic;
-}
-
-
-/* Text */
-h1 {
-	margin:40px 0px;
-	text-align:center;
-	font-family: 'Avenir LT Std 85 Heavy';
-	font-size:1.5em;
-	color:#555;
-	letter-spacing: 5px;
-}
-
-h2 {
-	padding:0px;
-	margin: 0px;
-}
-
-h3 {
-	color:#555;
 }
 
 
@@ -138,71 +78,9 @@ table.dialog tr td {
 	padding: 10px 0 10px 0;
 }
 
-/* Links and Buttons */
-.standard-button {
-	padding: 10px;
-	font-size: 1em;
-	border-radius: 8px;
-	background-color: #333;
-	color: #888;
-	text-decoration: none;
-
-}
-
-a.standard-button {
-	line-height: 40px;
-	font-size: 12px;
-	padding: 10px 20px 10px 20px;
-
-
-	&:hover {
-		background-color: black;
-		color: white;
-		text-decoration: none;
-	}
-}
-
-
-/* Forms */
-
-.field {
-	padding-bottom: 10px;
-	
-	label {
-		display:block;
-
-		&.check-box-label {
-		  display:inline-block;
-		  margin:0;
-		}
-	}
-
-	input[type="text"], input[type="email"], input[type="password"], textarea {
-		padding:5px;
-		display:block;
-		width:calc(100% - 10px);
-	}
-}
-
 
 .ajax-loader {
 	vertical-align:middle;
-}
-
-/* Markdown */
-strong {
-	font-family: 'Avenir LT Std 85 Heavy';
-}
-
-code {
-	word-wrap: normal;
-  word-break: normal;
-  white-space: pre;
-  display: block;
-  padding: 20px;
-  line-height: 1.5em;
-  border: 1px solid #eee;
-  border-radius: 10px;
 }
 
 /* Generic Blank Pages */
@@ -236,18 +114,6 @@ code {
 			color:#ccc;
 			border-radius:30px;
 		};
-	}
-}
-
-/* Tables */
-.resource-table {
-	border-collapse:collapse;
-	width:100%;
-	tr {
-		border-bottom:1px solid #ddd;
-		td {
-			padding:5px;
-		}
 	}
 }
 

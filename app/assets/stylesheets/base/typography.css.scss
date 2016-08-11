@@ -1,0 +1,38 @@
+/* Text */
+h1 {
+  margin:40px 0px;
+  text-align:center;
+  font-family: 'Avenir LT Std 85 Heavy';
+  font-size:1.5em;
+  color:#555;
+  letter-spacing: 5px;
+}
+
+h2 {
+  padding:0px;
+  margin: 0px;
+}
+
+h3 {
+  color:#555;
+}
+
+p {
+  color:#555;
+}
+
+/* Markdown */
+strong {
+  font-family: 'Avenir LT Std 85 Heavy';
+}
+
+code {
+  word-wrap: normal;
+  word-break: normal;
+  white-space: pre;
+  display: block;
+  padding: 20px;
+  line-height: 1.5em;
+  border: 1px solid #eee;
+  border-radius: 10px;
+}
