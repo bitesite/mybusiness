@@ -15,5 +15,9 @@
   .blog-post-image {
     text-align:center;
     margin:10px 0;
+
+    img {
+      max-width:100%;
+    }
   }
 }
