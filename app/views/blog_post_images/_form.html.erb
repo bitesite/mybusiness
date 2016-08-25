@@ -1,0 +1,21 @@
+<%= form_for([@blog_post, @blog_post_image], html: { multipart: true, id: 'blog-post-images-form'}) do |f| %>
+  <% if @blog_post_image.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@blog_post_image.errors.count, "error") %> prohibited this news_post from being saved:</h2>
+
+      <ul>
+      <% @blog_post_image.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Submit", class: "btn btn-primary" %>
+  </div>
+<% end %>

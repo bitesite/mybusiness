@@ -8,13 +8,16 @@
 @import "base/tables";
 @import "base/typography";
 
+@import "pages/blog_posts_index";
+@import "pages/blog_posts_show";
+@import "pages/blog_posts_form";
+
 @import "careers";
 @import "devise";
 @import "fonts";
 @import "general";
 @import "layout";
 @import "contact_form_submissions";
-@import "blog_posts";
 @import "news_posts";
 @import "email_blacklistings";
 @import "pages.admin";

@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>Blog Post Images for '<%= @blog_post.title %>'</h1>
+
+  <p>
+    <%= @blog_post.blog_post_images.size %> images.
+  </p>
+
+  <% @blog_post.blog_post_images.each do |blog_post_image| %>
+    <div>
+      <%= image_tag blog_post_image.image.url %>
+    </div>
+  <% end %>
+
+  <%= link_to "Add Image", new_blog_post_blog_post_image_path(@blog_post),
+                           class: "btn btn-primary" %>
+
+  <p>
+    <%= link_to "Edit Blog Post", edit_blog_post_path(@blog_post) %>
+  </p>
+
+</div>

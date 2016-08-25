@@ -1,4 +1,4 @@
-<%= form_for(@blog_post) do |f| %>
+<%= form_for(@blog_post, html: { id: 'blog-posts-form'} ) do |f| %>
   <% if @blog_post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@blog_post.errors.count, "error") %> prohibited this blog_post from being saved:</h2>
@@ -19,6 +19,31 @@
     <%= f.label :body %>
     <%= f.text_area :body %>
   </div>
+
+  <div class="field image-previews">
+    <h3>Images available for use</h3>
+
+    <table class='resource-table'>
+      <thead>
+        <tr>
+          <th></th>
+          <th>HTML Code</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+      </tbody>
+      <% @blog_post.blog_post_images.each do |blog_post_image| %>
+        <tr class='image-preview'>
+          <td><%= image_tag blog_post_image.image.url %></td>
+          <td>
+            &lt;div class='blog-post-image'&gt;&lt;img src='<%= blog_post_image.image.url %>'/&gt;&lt;/div&gt;
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+
   <div class="field">
     <%= f.check_box :published %> <%= f.label :published, class: "check-box-label" %>
   </div>

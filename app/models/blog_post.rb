@@ -3,4 +3,5 @@ class BlogPost < ActiveRecord::Base
   scope :published, -> { where(published: true).order("created_at desc") }
   attr_accessible :body, :title, :published
   belongs_to :user
+  has_many :blog_post_images
 end
