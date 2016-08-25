@@ -114,8 +114,8 @@ class PagesController < ApplicationController
     @title = "Mydoma Studio Video - Case Study"
   end
 
-  def ollie
-    @title = "Project Ollie Web Application - Case Study"
+  def splice
+    @title = "Splice Web Application - Case Study"
   end
 
   def lspark_grad
