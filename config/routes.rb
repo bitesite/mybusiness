@@ -2,7 +2,10 @@ Mybusiness::Application.routes.draw do
   
 
 
-  resources :blog_posts, except: [:destroy]
+  resources :blog_posts, except: [:destroy] do
+    resources :blog_post_images, except: [:show, :edit, :update]
+  end
+
   get "/blog" => "blog_posts#index"
 
 

@@ -7,8 +7,10 @@ class Ability
 
     if user.roles? :staff
         can :manage, BlogPost
+        can :manage, BlogPostImage
     elsif user.roles? :admin
         can :manage, BlogPost
+        can :manage, BlogPostImage
     else
         can :read, BlogPost
     end
