@@ -4,15 +4,19 @@
     <div class="blog-post-date"><%= convert_time_string blog_post.created_at %></div>    
   </div>
   <div class="blog-post-body">
-    <%= markdown blog_post.body %><br/>
+    <%= markdown blog_post.body, false %><br/>
   </div>
   <div class="blog-post-actions">
     <%= link_to "View full post", blog_post %>
+    
     <% if can? :edit, blog_post %>
-      <%= link_to "edit", edit_blog_post_path(blog_post) %><br/>
-      <%= link_to "add images", blog_post_blog_post_images_path(blog_post) %><br/>
-      Author: <%= blog_post.user.try(:email) %>
+      <div class='edit-actions'>
+        <%= link_to "edit", edit_blog_post_path(blog_post) %>
+        <%= link_to "add images", blog_post_blog_post_images_path(blog_post) %><br/>
+        Author: <%= blog_post.user.try(:email) %>
+      </div>
     <% end %>
+
   </div>
   <div class="clear-floats"></div>
 </div>

@@ -7,11 +7,15 @@
 
   <% @blog_post.blog_post_images.each do |blog_post_image| %>
     <div>
-      <%= image_tag blog_post_image.url %>
+      <%= image_tag blog_post_image.image.url %>
     </div>
   <% end %>
 
   <%= link_to "Add Image", new_blog_post_blog_post_image_path(@blog_post),
                            class: "btn btn-primary" %>
+
+  <p>
+    <%= link_to "Edit Blog Post", edit_blog_post_path(@blog_post) %>
+  </p>
 
 </div>

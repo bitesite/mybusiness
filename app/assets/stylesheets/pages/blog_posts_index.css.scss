@@ -1,0 +1,60 @@
+// Place all the styles related to the BlogPosts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#blog-posts-index {
+  padding-top:64px;
+  
+  .blog-post {
+
+    margin:10px 0 30px 0;
+
+    &.hidden {
+      background:#ddd;
+    }
+    
+    .blog-post-header {
+      font-size: 2em;
+      color:white;
+      color:#555;
+      font-weight:400;
+      margin-bottom:10px;
+    }
+
+    .blog-post-actions {
+      margin:10px 0;
+      a {
+        color:#555;
+        &:visited{
+          color:#555;
+        };
+      }
+
+      .edit-actions {
+        margin:10px 0;
+      }
+    }
+
+    .blog-post-date {
+      font-size:12px;
+      margin-top:2px;
+      font-style:italic;
+    }
+
+    .blog-post-body {
+      display:block;
+      color:#555;
+      font-size:14px;
+      a {
+        font-weight:bold;
+        text-decoration:underline;
+      }
+
+      .blog-post-image {
+        text-align:center;
+        margin:10px 0;
+      }
+    }
+  }
+
+}

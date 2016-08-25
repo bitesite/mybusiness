@@ -12,7 +12,7 @@ class BlogPostImagesController < ApplicationController
 
   def create
     if @blog_post_image.save
-      redirect_to @blog_post, notice: 'Blog post image was successfully created.'
+      redirect_to blog_post_blog_post_images_path(@blog_post), notice: 'Blog post image was successfully created.'
     else
       render action: "new"
     end
