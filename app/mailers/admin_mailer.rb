@@ -1,11 +1,12 @@
 class AdminMailer < ActionMailer::Base
-  default from: "from@example.com"
+  default from: "info@bitesite.ca"
   
   def visitor_has_entered_contest(contestant)
     @contestant = contestant
     
     mail(:to => "info@bitesite.ca",
          :from => "info@bitesite.ca",
+         :reply_to => @contestant.email,
          :subject => "BiteSite.ca: Contest Entered by #{@contestant.email}")
   end
   

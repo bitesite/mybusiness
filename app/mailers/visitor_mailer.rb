@@ -10,6 +10,7 @@ class VisitorMailer < ActionMailer::Base
     
     mail(:to => customer_email,
          :from => "info@bitesite.ca",
+         :reply_to => "info@bitesite.ca",
          :subject => "Thanks for contacting BiteSite.ca!")
   end
   
@@ -20,6 +21,7 @@ class VisitorMailer < ActionMailer::Base
         
     mail(:to => @contestant.email,
          :from => "info@bitesite.ca",
+         :reply_to => "info@bitesite.ca",
          :subject => "Thanks for entering the Wedding Video Contest 2013")
   end
   

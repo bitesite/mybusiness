@@ -68,7 +68,7 @@ Mybusiness::Application.configure do
   # GMail Configuration
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :address              => "smtp.gmail.com",
+    :address              => "smtp.mailgun.org",
     :port                 => 587,
     :user_name            => ENV['SMTP_USER'],
     :password             => ENV['SMTP_PASSWORD'],
