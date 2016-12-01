@@ -26,6 +26,16 @@ class PagesController < ApplicationController
       {icon: "fire" , title: "Motion Graphics"}
     ]
 
+    @tools = [
+      { icon: "desktop", title: "Ruby on Rails" },
+      { icon: "desktop", title: "React" },
+      { icon: "mobile", title: "React Native" },
+      { icon: "desktop", title: "Heroku" },
+      { icon: "video-camera", title: "Final Cut Pro X" },
+      { icon: "video-camera", title: "Adobe Creative Cloud" },
+      { icon: "video-camera", title: "Davinci Resolve" }
+    ]
+
     @staff_listings = [
       {name: "Casey Li", position: "CEO & Founder", avatar: "casey.png"},
       {name: "Ryan O'Connor", position: "Software Developer", avatar: "ryan.png"},

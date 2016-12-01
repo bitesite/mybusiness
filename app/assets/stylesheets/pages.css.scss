@@ -23,7 +23,11 @@
 			width:100%;
 			margin:0 auto;
 			color: white;
-			font-size:0.9em;
+			font-size:1.2em;
+
+			strong {
+				font-family: 'Avenir LT Std 65 Medium';
+			}
 		}
 
 	}	
@@ -254,6 +258,23 @@
 			margin:10px 0;
 
 			.competency {
+				display:inline-block;
+				margin:5px;
+			}
+		}
+	}
+
+	.tools-section {
+		margin:10px 0 20px 0;
+		color:#aaa;
+		text-align:center;
+		line-height:1em;
+		font-size:0.9em;
+
+		.tools {
+			margin:10px 0;
+
+			.tool {
 				display:inline-block;
 				margin:5px;
 			}
