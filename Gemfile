@@ -3,21 +3,37 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.22'
 gem 'pg'
 gem 'newrelic_rpm'
-gem 'rmagick'
+gem 'rmagick', require: false
 gem 'redcarpet'
 gem 'carrierwave'
 gem 'fog'
-gem "devise"
 gem 'mailchimp'
 gem "recaptcha", :require => "recaptcha/rails"
 gem 'sucker_punch'
 gem 'honeypot-captcha'
 gem 'dotenv-rails'
 gem 'font-awesome-sass', '~> 4.4.0'
+
+# Authentication
+gem 'devise', '3.5.10'
+
+# Authorization
 gem 'cancancan'
+gem 'rolify'
 
 group :development do
-  gem 'letter_opener'  
+  gem 'letter_opener' 
+end
+
+group :development, :test do
+  gem 'rspec-rails', '~> 3.6'
+  gem 'factory_girl_rails'
+  gem 'faker', '1.7.3'
+  gem 'pry'
+end
+
+group :test do
+  gem 'database_cleaner'
 end
 
 group :production do

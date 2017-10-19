@@ -5,6 +5,17 @@ class ApplicationController < ActionController::Base
   
   before_filter :load_news
   
+
+  # - Rescue from CanCanCan AccessDenied exception
+  rescue_from CanCan::AccessDenied do |exception|
+    respond_to do |format|
+      format.html {
+        flash[:error] = 'You are not authorized to view this page.'
+        redirect_to root_url
+      }
+      format.json { render json: {}, status: :unauthorized }
+    end
+  end
   
   def deny_access_for_non_admins
     if !admin?

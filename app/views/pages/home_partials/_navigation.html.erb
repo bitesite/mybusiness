@@ -11,7 +11,7 @@
 			<%= link_to "WHO WE ARE", "#", id: "about-link", class: "nav-link", destination: ".about-section" %>
 			<%= link_to "CONTACT US", "#", id: "contact-link", class: "nav-link", destination: ".contact-section" %>
       <%= link_to "BLOG", blog_path, class: "nav-link" %>
-      <% if admin? %>
+      <% if user_signed_in? %>
         <%= link_to "LOGOUT", destroy_user_session_path, :method => :delete %>
       <% end %>
 		</div>

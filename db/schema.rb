@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20160825025216) do
+ActiveRecord::Schema.define(:version => 20170828200324) do
 
   create_table "blog_post_images", :force => true do |t|
     t.string   "image"
@@ -79,11 +79,29 @@ ActiveRecord::Schema.define(:version => 20160825025216) do
     t.boolean  "hidden"
   end
 
+  create_table "profiles", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.datetime "start_date"
+    t.integer  "employee_number"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.integer  "user_id"
+  end
+
+  add_index "profiles", ["employee_number"], :name => "index_profiles_on_employee_number", :unique => true
+  add_index "profiles", ["user_id"], :name => "index_profiles_on_user_id"
+
   create_table "roles", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "resource_id"
+    t.string   "resource_type"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
+
+  add_index "roles", ["name", "resource_type", "resource_id"], :name => "index_roles_on_name_and_resource_type_and_resource_id"
+  add_index "roles", ["name"], :name => "index_roles_on_name"
 
   create_table "roles_users", :id => false, :force => true do |t|
     t.integer "role_id"
@@ -114,6 +132,13 @@ ActiveRecord::Schema.define(:version => 20160825025216) do
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "users_roles", :id => false, :force => true do |t|
+    t.integer "user_id"
+    t.integer "role_id"
+  end
+
+  add_index "users_roles", ["user_id", "role_id"], :name => "index_users_roles_on_user_id_and_role_id"
 
   create_table "video_listings", :force => true do |t|
     t.string   "name"
