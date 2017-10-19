@@ -16,6 +16,14 @@ class ApplicationController < ActionController::Base
       format.json { render json: {}, status: :unauthorized }
     end
   end
+
+  def after_sign_in_path_for(resource)
+    if resource.has_role? :staff
+      staff_dashboard
+    else
+      root_path
+    end
+  end
   
   def deny_access_for_non_admins
     if !admin?

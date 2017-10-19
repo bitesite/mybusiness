@@ -156,18 +156,23 @@ class PagesController < ApplicationController
     @title = "FileFacets How it works Video"
   end
 
+  def staff_dashboard
+    redirect_to root_path if !can?(:view, :staff_dashboard)
+    @title = "Staff Dashboard"
+  end
+
   private
   
-  def build_contestant_hash
-    if params[:newsletter] == "true"
-      newsletter_text = "Interested in BiteSite Newsletter"
-      register_mailchimp_user_for_newsletter(params[:first_name], params[:last_name], params[:email])
-    else
-      newsletter_text = "Not Interested in BiteSite Newsletter"
+    def build_contestant_hash
+      if params[:newsletter] == "true"
+        newsletter_text = "Interested in BiteSite Newsletter"
+        register_mailchimp_user_for_newsletter(params[:first_name], params[:last_name], params[:email])
+      else
+        newsletter_text = "Not Interested in BiteSite Newsletter"
+      end
+      
+      notes = "#{params[:wedding_date]} / #{params[:wedding_location]} / #{params[:message]} / #{newsletter_text}"
+      @contestant_hash = { first_name: params[:first_name], last_name: params[:last_name], email: params[:email], notes: notes }    
     end
-    
-    notes = "#{params[:wedding_date]} / #{params[:wedding_location]} / #{params[:message]} / #{newsletter_text}"
-    @contestant_hash = { first_name: params[:first_name], last_name: params[:last_name], email: params[:email], notes: notes }    
-  end
 
 end

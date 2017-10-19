@@ -48,6 +48,7 @@ Mybusiness::Application.routes.draw do
   get "/christine_kelly" => "pages#christine_kelly"
   get "/d3m" => "pages#d3m"
   get "/portfolio" => "pages#portfolio"
+  get "/dashboard" => "pages#staff_dashboard"
   root :to => "pages#home"
 
   match "*path" => redirect("/") unless Rails.env.development?

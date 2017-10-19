@@ -1,30 +1,41 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
-
+@import "base/globals";
+@import "base/general";
+@import "base/colorswatches";
 @import "base/buttons";
 @import "base/forms";
 @import "base/links";
 @import "base/tables";
 @import "base/typography";
 @import 'base/flash';
+@import "base/fonts";
 
-@import "pages/blog_posts_index";
-@import "pages/blog_posts_show";
-@import "pages/blog_posts_form";
-@import "pages/blog_post_images_index";
+@import "common/layout";
 
-@import "careers";
-@import "devise";
-@import "fonts";
-@import "general";
-@import "layout";
-@import "contact_form_submissions";
-@import "news_posts";
-@import "email_blacklistings";
-@import "pages.admin";
-@import "pages";
-@import "pages.faq";
-@import "pages.setting_up_your_heroku_account";
-@import "pages.terms_and_conditions";
-@import "video_listings";
+@import "views/blog_posts/index";
+@import "views/blog_posts/show";
+@import "views/blog_posts/form";
+@import "views/blog_post_images/index";
+@import "views/pages/staff_dashboard";
+
+@import "views/careers/index";
+
+@import "views/devise/devise";
+
+@import "views/contact_form_submissions/index";
+
+@import "views/news_posts/index";
+
+@import "views/email_blacklistings/index";
+
+@import "views/pages/admin";
+@import "views/pages/case_studies";
+@import "views/pages/home";
+@import "views/pages/portfolio";
+@import "views/pages/faq";
+@import "views/pages/setting_up_your_heroku_account";
+@import "views/pages/terms_and_conditions";
+
+@import "views/video_listings/index";
