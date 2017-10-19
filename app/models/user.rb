@@ -10,11 +10,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   # attr_accessible :title, :body
   
-  has_and_belongs_to_many :roles
   has_many :blog_posts
   has_one :profile, dependent: :destroy
   
-  def roles?(role)
-    self.roles.include?(Role.find_by_name(role))
-  end
 end

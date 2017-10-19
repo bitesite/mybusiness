@@ -1,17 +1,13 @@
 module SessionsHelper
   def admin?
-    is_role?(:admin)
+    current_user && current_user.has_role?(:admin)
   end
 
   def staff?
-    is_role?(:staff)
+    current_user && current_user.has_role?(:staff)
   end
 
   def supervisor?
-    is_role?(:supervisor)
-  end
-
-  def is_role?(role)
-    current_user.nil? ? false : current_user.has_role?(role)
+    current_user && current_user.has_role?(:supervisor)
   end
 end
