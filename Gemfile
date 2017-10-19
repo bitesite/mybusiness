@@ -49,5 +49,5 @@ end
 gem 'jquery-rails'
 gem 'thin'
 
-ruby '2.0.0'
+ruby '2.2.4'
 #ruby-gemset=mybusiness

@@ -62,7 +62,7 @@ GEM
     dotenv-rails (2.0.1)
       dotenv (= 2.0.1)
     erubis (2.7.0)
-    eventmachine (1.0.3)
+    eventmachine (1.0.4)
     excon (0.13.4)
     execjs (1.4.0)
       multi_json (~> 1.0)
@@ -241,7 +241,7 @@ DEPENDENCIES
   uglifier (>= 1.0.3)
 
 RUBY VERSION
-   ruby 2.0.0p648
+   ruby 2.2.4p230
 
 BUNDLED WITH
    1.15.4
