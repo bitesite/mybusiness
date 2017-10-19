@@ -159,6 +159,7 @@ class PagesController < ApplicationController
   def staff_dashboard
     redirect_to root_path if !can?(:view, :staff_dashboard)
     @title = "Staff Dashboard"
+    render layout: 'non_landing'
   end
 
   private

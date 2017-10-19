@@ -11,6 +11,7 @@ Mybusiness::Application.routes.draw do
     resources :contestants
   end
 
+  resource :profile, only: [:show, :edit, :update]
 
   # - BLOG POSTS
   get "/blog" => "blog_posts#index"

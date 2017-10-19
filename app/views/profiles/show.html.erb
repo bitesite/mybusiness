@@ -1,0 +1,19 @@
+<h1>Profile</h1>
+
+<div>
+  First Name: <%= @profile.first_name %>
+</div>
+
+<div>
+  Last Name: <%= @profile.last_name %>
+</div>
+
+<div>
+  Employee Number: <%= @profile.employee_number %>
+</div>
+
+<div>
+  Start Date: <%= @profile.start_date %>
+</div>
+
+<%= link_to "Edit Profile", edit_profile_path %>

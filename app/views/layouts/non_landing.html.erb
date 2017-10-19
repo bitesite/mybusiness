@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BiteSite - <%= @title %></title>
+    <meta name="description" content="<%= @meta_description %>">
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> 
+
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+    
+
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-32705304-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+    
+      <%= favicon_link_tag 'favicon.png', :type => 'image/png' %> 
+  </head>
+  <body class='non-landing-layout'>
+    <%= render 'layouts/flash', flash: flash %>
+    
+
+    <div>
+      <div class="blank-page-navigation-bar">
+        <div class="container">
+          <div class="blank-page-nav-links">
+            <%= link_to "BACK TO BITESITE.CA", "/" %>
+          </div>
+          <div class="clear-floats"></div>
+        </div>
+      </div>
+
+      <div class='non-landing-main container'>
+        <%= yield %>
+      </div>
+    </div>
+
+  </body>
+</html>
