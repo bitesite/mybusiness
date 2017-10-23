@@ -1,8 +1,4 @@
 Mybusiness::Application.routes.draw do
-
-
-
-
   # - RESOURCES
   resources :careers
   resources :settings
@@ -11,6 +7,10 @@ Mybusiness::Application.routes.draw do
     collection do
       get 'bulk_new'
       post 'bulk_create'
+    end
+
+    member do
+      put 'approve'
     end
   end
   resources :contact_form_submissions, only: [:index]

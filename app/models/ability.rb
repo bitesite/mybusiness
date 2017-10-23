@@ -10,6 +10,8 @@ class Ability
       can :view, :staff_dashboard
       can :manage, Profile, user_id: user.id
       can :manage, TimeOffEntry, user_id: user.id
+    elsif user.has_role?(:supervisor)
+      can :approve, TimeOffEntry
     elsif user.has_role?(:admin)
       can :manage, :all
     else

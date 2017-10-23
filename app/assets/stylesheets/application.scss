@@ -1,4 +1,3 @@
-@import "font-awesome-sprockets";
 @import "font-awesome";
 
 @import "base/globals";
@@ -37,5 +36,7 @@
 @import "views/pages/faq";
 @import "views/pages/setting_up_your_heroku_account";
 @import "views/pages/terms_and_conditions";
+
+@import "views/time_off_entries/index";
 
 @import "views/video_listings/index";

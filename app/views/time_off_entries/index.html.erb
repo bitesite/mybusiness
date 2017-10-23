@@ -1,32 +1,109 @@
-<h1>Time Off</h1>
+<div id="time-off-entries-index">
+  <h1>Time Off</h1>
 
-<%= link_to 'Request Time Off (Multiple)', bulk_new_time_off_entries_path, class: 'btn btn-primary' %>
-<%= link_to 'Request Time Off (Single)', new_time_off_entry_path, class: 'btn btn-primary' %>
+  <h2>Your Time Off</h2>
 
-<table class='resource-table'>
-  <tr>
-    <th>Entry date</th>
-    <th>Time off type</th>
-    <th>Amount</th>
-    <th>Notes</th>
-    <th>Status</th>
-    <th></th>
-    <th></th>
-  </tr>
+  <%= link_to 'Request Time Off (Multiple)', bulk_new_time_off_entries_path, class: 'btn btn-primary' %>
+  <%= link_to 'Request Time Off (Single)', new_time_off_entry_path, class: 'btn btn-primary' %>
 
-<% @time_off_entries.each do |time_off_entry| %>
-  <tr>
-    <td><%= time_off_entry.entry_date %></td>
-    <td><%= time_off_entry.time_off_type %></td>
-    <td><%= time_off_entry.amount %></td>
-    <td><%= time_off_entry.notes %></td>
-    <td><%= time_off_entry.status %></td>
-    <td><%= link_to 'Edit', edit_time_off_entry_path(time_off_entry) %></td>
-    <td><%= link_to 'Destroy', time_off_entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+  <table class='resource-table'>
+    <tr>
+      <th>User</th>
+      <th>Entry date</th>
+      <th>Time off type</th>
+      <th>Amount</th>
+      <th>Notes</th>
+      <th>Status</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
 
-<br />
+  <% @time_off_entries.each do |time_off_entry| %>
+    <tr>
+      <td><%= time_off_entry.user.email %></td>
+      <td><%= time_off_entry.entry_date %></td>
+      <td><%= time_off_entry.time_off_type %></td>
+      <td><%= time_off_entry.amount %></td>
+      <td><%= time_off_entry.notes %></td>
+      <td><%= time_off_entry.status %></td>
+      <td><%= link_to 'Edit', edit_time_off_entry_path(time_off_entry) %></td>
+      <td><%= link_to 'Destroy', time_off_entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td></td>
+    </tr>
+  <% end %>
+  </table>
 
+  <br />
 
+  <% if supervisor? %>
+    <h2>Your reports Pending Time off</h2>
+
+    <table class='resource-table'>
+      <tr>
+        <th>User</th>
+        <th>Entry date</th>
+        <th>Time off type</th>
+        <th>Amount</th>
+        <th>Notes</th>
+        <th>Status</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+    <% @pending_time_off_entries.each do |time_off_entry| %>
+      <tr>
+        <td><%= time_off_entry.user.email %></td>
+        <td><%= time_off_entry.entry_date %></td>
+        <td><%= time_off_entry.time_off_type %></td>
+        <td><%= time_off_entry.amount %></td>
+        <td><%= time_off_entry.notes %></td>
+        <td><%= time_off_entry.status %></td>
+        <td><%= link_to 'Edit', edit_time_off_entry_path(time_off_entry) %></td>
+        <td><%= link_to 'Destroy', time_off_entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <% if time_off_entry.status == 'Pending' %>
+            <%= link_to 'Approve', approve_time_off_entry_path(time_off_entry), method: :put %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+    </table>
+
+    <h2>All reports Pending Time off</h2>
+
+    <table class='resource-table'>
+      <tr>
+        <th>User</th>
+        <th>Entry date</th>
+        <th>Time off type</th>
+        <th>Amount</th>
+        <th>Notes</th>
+        <th>Status</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+    <% @all_time_off_entries.each do |time_off_entry| %>
+      <tr>
+        <td><%= time_off_entry.user.email %></td>
+        <td><%= time_off_entry.entry_date %></td>
+        <td><%= time_off_entry.time_off_type %></td>
+        <td><%= time_off_entry.amount %></td>
+        <td><%= time_off_entry.notes %></td>
+        <td><%= time_off_entry.status %></td>
+        <td><%= link_to 'Edit', edit_time_off_entry_path(time_off_entry) %></td>
+        <td><%= link_to 'Destroy', time_off_entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <% if time_off_entry.status == 'Pending' %>
+            <%= link_to 'Approve', approve_time_off_entry_path(time_off_entry), method: :put %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+    </table>
+
+  <% end %>
+</div>

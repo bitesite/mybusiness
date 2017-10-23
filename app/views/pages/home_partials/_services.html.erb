@@ -4,7 +4,7 @@
 		<h1>WHAT WE BUILD</h1>
 		
 		<div class="feature">
-			<%= icon("desktop", class: "feature-icon") %>
+			<%= fa_icon("desktop", class: "feature-icon") %>
 			<h2>Web Applications</h2>
 			<div class="description">			
 				Are you a startup with the next big idea? A well-establish company with
@@ -17,7 +17,7 @@
 		</div>
 
 		<div class="feature">
-			<%= icon("video-camera", class: "feature-icon") %>
+			<%= fa_icon("video-camera", class: "feature-icon") %>
 			<h2>Video Productions</h2>
 			<div class="description">
 				From Live Video to Motion Graphics, BiteSite has a
@@ -30,7 +30,7 @@
 		</div>
 		
 		<div class="feature">
-			<%= icon("mobile", class: "feature-icon") %>
+			<%= fa_icon("mobile", class: "feature-icon") %>
 			<h2>Mobile Applications</h2>
 			<div class="description">
 				Need a iOS or Android App to complement your web application?
@@ -48,7 +48,7 @@
 				<% @competencies.each do |competency| %>
 
 					<span class='competency'>
-						<%= icon(competency[:icon]) %> <%= competency[:title] %>
+						<%= fa_icon(competency[:icon]) %> <%= competency[:title] %>
 					</span>
 
 				<% end %>	
@@ -61,7 +61,7 @@
 			<div class="tools">
 				<% @tools.each do |tool| %>
 					<span class="tool">
-						<%= icon(tool[:icon]) %> <%= tool[:title] %>
+						<%= fa_icon(tool[:icon]) %> <%= tool[:title] %>
 					</span>
 				<% end %>
 			</div>

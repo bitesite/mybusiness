@@ -1,3 +1,15 @@
-<h1>Staff Dashbaord</h1>
-<%= link_to "Manage Profile", profile_path %><br />
-<%= link_to "Time Off System", time_off_entries_path %>
+<div id="pages-staff-dashboard">
+  <h1>Staff Dashbaord</h1>
+
+  <div class="staff-dashboard-menu">
+    <%= link_to profile_path do %>
+      <%= fa_icon "user-circle-o" %>
+      <div>Manage Profile</div>
+    <% end %>
+    <%= link_to time_off_entries_path do %>  
+      <%= fa_icon "calendar" %>
+      <div>Time Off System</div>
+    <% end %>
+  </div>
+  
+</div>

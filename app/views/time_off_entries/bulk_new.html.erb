@@ -2,11 +2,11 @@
 
 <%= form_tag('/time_off_entries/bulk_create', method: :post) do |f| %>
   <div class="field">
-    <%= label_tag :start_date %>
+    <%= label_tag :start_date, "Start Date (inclusive)" %>
     <%= select_date Time.now, prefix: "start_date" %>
   </div>
   <div class="field">
-    <%= label_tag :end_date %>
+    <%= label_tag :end_date, "End Date (inclusive)" %>
     <%= select_date Time.now, prefix: "end_date" %>
   </div>
   <div class="field">
