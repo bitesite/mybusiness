@@ -13,6 +13,7 @@ gem 'sucker_punch'
 gem 'honeypot-captcha'
 gem 'dotenv-rails'
 gem 'font-awesome-rails'
+gem 'test-unit', '~> 3.0'
 
 # Authentication
 gem 'devise', '3.5.10'
@@ -30,7 +31,6 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker', '1.7.3'
   gem 'pry'
-  gem 'test-unit', '~> 3.0'
 end
 
 group :test do
