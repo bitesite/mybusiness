@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20170828200324) do
+ActiveRecord::Schema.define(:version => 20171023142933) do
 
   create_table "blog_post_images", :force => true do |t|
     t.string   "image"
@@ -113,6 +113,17 @@ ActiveRecord::Schema.define(:version => 20170828200324) do
     t.text     "value"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "time_off_entries", :force => true do |t|
+    t.date     "entry_date"
+    t.string   "time_off_type"
+    t.float    "amount"
+    t.text     "notes"
+    t.string   "status"
+    t.integer  "user_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "users", :force => true do |t|

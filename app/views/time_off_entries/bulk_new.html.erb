@@ -1,0 +1,26 @@
+<h1>Request Time off</h1>
+
+<%= form_tag('/time_off_entries/bulk_create', method: :post) do |f| %>
+  <div class="field">
+    <%= label_tag :start_date %>
+    <%= select_date Time.now, prefix: "start_date" %>
+  </div>
+  <div class="field">
+    <%= label_tag :end_date %>
+    <%= select_date Time.now, prefix: "end_date" %>
+  </div>
+  <div class="field">
+    <%= label_tag :time_off_type %>
+    <%= select_tag :time_off_type, options_for_select(TimeOffEntry::VALID_TYPES) %>
+  </div>
+  <div class="field">
+    <%= label_tag :notes %>
+    <%= text_area_tag :notes %>
+  </div>
+  <div class="actions">
+    <%= submit_tag %>
+  </div>
+<% end %>
+
+
+<%= link_to 'Back', time_off_entries_path %>

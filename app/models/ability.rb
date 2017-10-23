@@ -8,9 +8,8 @@ class Ability
       can :manage, BlogPost
       can :manage, BlogPostImage
       can :view, :staff_dashboard
-      can :manage, Profile do |profile|
-        profile.user == user
-      end
+      can :manage, Profile, user_id: user.id
+      can :manage, TimeOffEntry, user_id: user.id
     elsif user.has_role?(:admin)
       can :manage, :all
     else

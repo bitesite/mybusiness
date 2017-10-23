@@ -1,10 +1,18 @@
 Mybusiness::Application.routes.draw do
 
 
+
+
   # - RESOURCES
   resources :careers
   resources :settings
   resources :video_listings
+  resources :time_off_entries, except: [:show] do
+    collection do
+      get 'bulk_new'
+      post 'bulk_create'
+    end
+  end
   resources :contact_form_submissions, only: [:index]
 
   resources :contests do

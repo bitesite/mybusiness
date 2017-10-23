@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Entry date:</b>
+  <%= @time_off_entry.entry_date %>
+</p>
+
+<p>
+  <b>Time off type:</b>
+  <%= @time_off_entry.time_off_type %>
+</p>
+
+<p>
+  <b>Amount:</b>
+  <%= @time_off_entry.amount %>
+</p>
+
+<p>
+  <b>Notes:</b>
+  <%= @time_off_entry.notes %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @time_off_entry.status %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @time_off_entry.user_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_time_off_entry_path(@time_off_entry) %> |
+<%= link_to 'Back', time_off_entries_path %>
