@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 describe BlogPostsController, type: :controller do
-  shared_examples 'a user who can not manage blog posts' do
+  shared_examples 'a user who can view blog posts' do
     describe "GET #index" do
-      it "returns a 200 OK" do
+      it "denies access" do
         get :index
         expect(response).to have_http_status :ok
       end
@@ -20,7 +20,7 @@ describe BlogPostsController, type: :controller do
   end
 
   context 'when not signed in' do
-    it_behaves_like 'a user who can not manage blog posts'
+    it_behaves_like 'a user who can view blog posts'
   end
 
   context 'when signed in' do
@@ -28,7 +28,7 @@ describe BlogPostsController, type: :controller do
       sign_in create(:user)
     end
 
-    it_behaves_like 'a user who can not manage blog posts'
+    it_behaves_like 'a user who can view blog posts'
   end
 
   context 'when signed in as an admin' do
@@ -48,6 +48,6 @@ describe BlogPostsController, type: :controller do
       sign_in create(:supervisor_user)
     end
 
-    it_behaves_like 'a user who can not manage blog posts'
+    it_behaves_like 'a user who can view blog posts'
   end
 end
