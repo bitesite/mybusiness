@@ -9,19 +9,19 @@ FactoryGirl.define do
 
     factory :admin_user do
       after(:build) do |user|
-        user.add_role(build(:admin_role))
+        user.add_role :admin
       end
     end
 
     factory :staff_user do
       after(:build) do |user|
-        user.add_role(build(:staff_role))
+        user.add_role :staff
       end
     end
 
     factory :supervisor_user do
       after(:build) do |user|
-        user.add_role(build(:supervisor_user))
+        user.add_role :supervisor
       end
     end
   end
