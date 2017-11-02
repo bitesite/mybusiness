@@ -10,6 +10,7 @@ namespace :deploy do
 
   def deploy(branch_name, remote_name, deployment_name)
     puts "Deploying #{branch_name} branch to heroku #{deployment_name} server..."
+    puts "Note: This is based on a git remote named #{remote_name}"
 
     sure = false
 
@@ -21,20 +22,24 @@ namespace :deploy do
     end
 
     if sure
-
-      puts "Note: This is based on a git remote named #{remote_name}"
+      
       output = `git push #{remote_name} #{branch_name}:master`
 
-      puts "====================="
-      puts output
-      puts "====================="
+      # TODO: Verify somehow that the heroku deploy succeeded
+      #       Can't seem to analyze the output of the git push
+      # puts "====================="
+      # puts output
+      # puts "====================="
+      # if output.include?("Verifying deploy... done.")
 
-      if output.include?("Verifying deploy... done.")
+
+      puts "Would you like to run migrations? [y/n]"
+      if STDIN.gets.strip == 'y'
         puts "...running database migrations..."
         `heroku run rake db:migrate -r #{remote_name}`
         puts "...database migrations complete..."
       else
-        puts "There was an error in the push to #{remote_name}."
+        puts "...database migrations not run..."
       end
       puts "...Complete."
     else
