@@ -5,7 +5,7 @@ namespace :deploy do
   end
 
   task :production do
-    deploy('develop', 'heroku', 'PRODUCTION')
+    deploy('master', 'heroku', 'PRODUCTION')
   end
 
   def deploy(branch_name, remote_name, deployment_name)
