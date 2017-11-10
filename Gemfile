@@ -15,6 +15,8 @@ gem 'dotenv-rails'
 gem 'font-awesome-rails'
 gem 'test-unit', '~> 3.0'
 
+gem 'deployem'
+
 # Authentication
 gem 'devise', '3.5.10'
 

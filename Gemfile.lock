@@ -50,6 +50,7 @@ GEM
     coffee-script-source (1.6.2)
     daemons (1.1.9)
     database_cleaner (1.6.1)
+    deployem (0.0.4)
     devise (3.5.10)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -218,6 +219,7 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 3.2.1)
   database_cleaner
+  deployem
   devise (= 3.5.10)
   dotenv-rails
   factory_girl_rails
