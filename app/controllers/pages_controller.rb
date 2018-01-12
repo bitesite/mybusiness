@@ -40,7 +40,8 @@ class PagesController < ApplicationController
       {name: "Casey Li", position: "CEO & Founder", avatar: "casey.png"},
       {name: "Ryan O'Connor", position: "Software Developer", avatar: "ryan.png"},
       {name: "Tim Clark", position: "Filmmaker", avatar: "tim.png"},
-      {name: "Brendan McNeill", position: "Producer", avatar: "brendan.png"}
+      {name: "Brendan McNeill", position: "Producer", avatar: "brendan.png"},
+      {name: "Yuhan Lee", position: "Software Developer", avatar: "yuhan.png"}
     ]
 
   end
