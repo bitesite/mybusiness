@@ -48,6 +48,7 @@ class PagesController < ApplicationController
 
   def portfolio
     @title = "Portfolio"
+    render layout: 'non_landing'
   end
   
   def wedding_contest_submit
@@ -119,42 +120,52 @@ class PagesController < ApplicationController
 
   def international_safety
     @title = "International Safety Website - Case Study"
+    render layout: 'non_landing'
   end
 
   def mydoma
     @title = "Mydoma Studio Video - Case Study"
+    render layout: 'non_landing'
   end
 
   def splice
     @title = "Splice Web Application - Case Study"
+    render layout: 'non_landing'
   end
 
   def lspark_grad
     @title = "L-SPARK Grad Video - Case Study"
+    render layout: 'non_landing'
   end
 
   def lspark
     @title = "L-SPARK - Case Study"
+    render layout: 'non_landing'
   end
 
   def d3m
     @title = "Teldio D3M - Case Study"
+    render layout: 'non_landing'
   end
 
   def martello
     @title = "Martello All Devices Video - Case Study"
+    render layout: 'non_landing'
   end
 
   def solink
     @title = "Solink Explainer Video - Case Study"
+    render layout: 'non_landing'
   end
 
   def christine_kelly
     @title = "Christine Kelly PHD Web Application"
+    render layout: 'non_landing'
   end
   
   def filefacets
     @title = "FileFacets How it works Video"
+    render layout: 'non_landing'
   end
 
   def staff_dashboard

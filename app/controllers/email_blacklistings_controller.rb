@@ -1,6 +1,7 @@
 class EmailBlacklistingsController < ApplicationController
 
   before_filter :deny_access_for_non_admins
+  layout 'non-landing'
 
   def index
     @email_blacklistings = EmailBlacklisting.all

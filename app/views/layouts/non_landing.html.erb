@@ -36,13 +36,19 @@
       <div class="blank-page-navigation-bar">
         <div class="container">
           <div class="blank-page-nav-links">
-            <%= link_to "BACK TO BITESITE.CA", "/" %>
+            <% if staff? %>
+              <%= link_to "HOME", "/", class: 'staff-blank-page-nav-link' %>
+              <%= link_to "DASHBOARD", staff_dashboard_path, class: 'staff-blank-page-nav-link' %>
+              <%= link_to "SIGN OUT", destroy_user_session_path, method: :delete, class: 'staff-blank-page-nav-link' %>
+            <% else %>
+              <%= link_to "BACK TO BITESITE.CA", "/" %>
+            <% end %>
           </div>
           <div class="clear-floats"></div>
         </div>
       </div>
 
-      <div class='non-landing-main container'>
+      <div class='non-landing-main'>
         <%= yield %>
       </div>
     </div>

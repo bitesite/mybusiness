@@ -43,8 +43,6 @@ Mybusiness::Application.routes.draw do
   get "pages/home"
   match "/contact" => "pages#contact"
   get "/admin" => "pages#admin"
-  get "/terms_and_conditions" => "pages#terms_and_conditions"
-  get "/faq" => "pages#faq"
   get "/setting_up_your_heroku_account" => "pages#setting_up_your_heroku_account"
   get "/international_safety" => "pages#international_safety"
   get "/mydoma" => "pages#mydoma"

@@ -1,18 +1,9 @@
-<div class="blank-page-navigation-bar">
-	<div class="container">
-		<div class="blank-page-nav-links">
-			<%= link_to "BACK TO BITESITE.CA", "/" %>
-		</div>
-		<div class="clear-floats"></div>
-	</div>
-</div>
-
 <div class="news-index">
 	<h1>NEWS</h1>
 
 	<% if admin? %>
 		<div class="container">
-			<%= link_to 'New News post', new_news_post_path %> <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
+			<%= link_to 'New News post', new_news_post_path %>
 		</div>
 	<% end %><br>
 	

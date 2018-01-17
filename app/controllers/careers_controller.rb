@@ -2,6 +2,7 @@ class CareersController < ApplicationController
 
   before_filter :deny_access_for_non_admins, :except => [:index, :show]
   before_filter :set_title
+  layout 'non_landing'
 
   def index
     @careers = Career.published

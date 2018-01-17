@@ -95,13 +95,12 @@ table.dialog tr td {
 
 .blank-page-nav-links {
 	text-align:center;
-	width: 300px;
+	width: 100%;
+	text-align:center;
 	margin: 0 auto;
 	
 	a {
-		float:left;
-		display:block;
-		width: 240px;
+		display:inline-block;
 		padding:10px 30px;
 		margin-top:2px;
 		color:white;

@@ -1,6 +1,7 @@
 class BlogPostsController < ApplicationController
   load_and_authorize_resource
   before_filter :set_title
+  layout 'non_landing'
 
   def index
     @blog_posts = BlogPost.published
