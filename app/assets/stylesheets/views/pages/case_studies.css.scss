@@ -19,6 +19,18 @@
         border:1px solid white;
         padding:5px 10px;
         color:white;
+        display:inline-block;
+      }
+    }
+
+    @media only screen and (max-width: $mobile-menu-device-width) {
+      height: auto;
+
+      .services {
+        .service {
+          display: block;
+          margin: 10px 0;
+        }
       }
     }
   }
@@ -123,6 +135,7 @@
 }
 
 .is-case-study .hero { background-image:url(/assets/is_header_bg.jpg); }
+.curtisswright-case-study .hero { background-image:url(/assets/curtisswright_header_bg.jpg); }
 .mydoma-case-study .hero { background-image:url(/assets/mydoma_header_bg.jpg); }
 .lspark-case-study .hero { background-image:url(/assets/lspark_header_bg.jpg); }
 .filefacets-case-study .hero { background-image:url(/assets/filefacets_header_bg.jpg); }

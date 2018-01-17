@@ -55,6 +55,7 @@ Mybusiness::Application.routes.draw do
   get "/ewa" => "pages#ewa"
   get "/christine_kelly" => "pages#christine_kelly"
   get "/d3m" => "pages#d3m"
+  get "/curtisswright" => "pages#curtisswright"
   get "/portfolio" => "pages#portfolio"
   get "/staff_dashboard" => "pages#staff_dashboard"
   root :to => "pages#home"
