@@ -37,11 +37,11 @@ class PagesController < ApplicationController
     ]
 
     @staff_listings = [
-      {name: "Casey Li", position: "CEO & Founder", avatar: "casey.png"},
-      {name: "Ryan O'Connor", position: "Software Developer", avatar: "ryan.png"},
-      {name: "Tim Clark", position: "Filmmaker", avatar: "tim.png"},
-      {name: "Brendan McNeill", position: "Producer", avatar: "brendan.png"},
-      {name: "Yuhan Lee", position: "Software Developer", avatar: "yuhan.png"}
+      {name: "Casey Li", position: "CEO & Founder", avatar: "staff/casey.png"},
+      {name: "Ryan O'Connor", position: "Software Developer", avatar: "staff/ryan.png"},
+      {name: "Tim Clark", position: "Filmmaker", avatar: "staff/tim.png"},
+      {name: "Brendan McNeill", position: "Producer", avatar: "staff/brendan.png"},
+      {name: "Yuhan Lee", position: "Software Developer", avatar: "staff/yuhan.png"}
     ]
 
   end
@@ -153,7 +153,7 @@ class PagesController < ApplicationController
     render layout: 'non_landing'
   end
 
-  def curtisswright
+  def curtiss_wright
     @title = "Curtiss-Wright Defense Solutions TLCM Video - Case Study"
     render layout: 'non_landing'
   end
@@ -175,6 +175,11 @@ class PagesController < ApplicationController
   
   def filefacets
     @title = "FileFacets How it works Video"
+    render layout: 'non_landing'
+  end
+
+  def inspec_homes
+    @title = "Inspec Homes Web Application"
     render layout: 'non_landing'
   end
 
