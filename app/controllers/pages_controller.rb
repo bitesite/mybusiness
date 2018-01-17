@@ -153,6 +153,11 @@ class PagesController < ApplicationController
     render layout: 'non_landing'
   end
 
+  def ewa
+    @title = "Enterprise Wireless Alliance Cevo GO Video - Case Study"
+    render layout: 'non_landing'
+  end
+
   def solink
     @title = "Solink Explainer Video - Case Study"
     render layout: 'non_landing'

@@ -52,6 +52,7 @@ Mybusiness::Application.routes.draw do
   get "/lspark" => "pages#lspark"
   get "/solink" => "pages#solink"
   get "/martello" => "pages#martello"
+  get "/ewa" => "pages#ewa"
   get "/christine_kelly" => "pages#christine_kelly"
   get "/d3m" => "pages#d3m"
   get "/portfolio" => "pages#portfolio"
