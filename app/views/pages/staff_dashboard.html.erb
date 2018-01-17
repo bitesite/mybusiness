@@ -6,9 +6,32 @@
       <%= fa_icon "user-circle-o" %>
       <div>Manage Profile</div>
     <% end %>
+
     <%= link_to time_off_entries_path do %>  
       <%= fa_icon "calendar" %>
       <div>Time Off System</div>
+    <% end %>
+    
+    <%= link_to blog_posts_path do %>  
+      <%= fa_icon "pencil-square-o" %>
+      <div>Blog</div>
+    <% end %>
+    
+    <% if admin? %>
+      <%= link_to news_posts_path do %>  
+        <%= fa_icon "newspaper-o" %>
+        <div>News</div>
+      <% end %>
+      
+      <%= link_to video_listings_path do %>  
+        <%= fa_icon "video-camera" %>
+        <div>Video Listings</div>
+      <% end %>
+      
+      <%= link_to email_blacklistings_path do %>  
+        <%= fa_icon "ban" %>
+        <div>E-mail Blacklistings</div>
+      <% end %>
     <% end %>
   </div>
   

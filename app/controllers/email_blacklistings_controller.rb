@@ -18,7 +18,7 @@ class EmailBlacklistingsController < ApplicationController
     @email_blacklisting = EmailBlacklisting.new(params[:email_blacklisting])
 
     if @email_blacklisting.save
-      redirect_to email_blacklisting_url, notice: 'Email blacklisting was successfully created.' 
+      redirect_to email_blacklistings_path, notice: 'Email blacklisting was successfully created.' 
     else
       render action: "new" 
     end
@@ -28,7 +28,7 @@ class EmailBlacklistingsController < ApplicationController
     @email_blacklisting = EmailBlacklisting.find(params[:id])
 
     if @email_blacklisting.update_attributes(params[:email_blacklisting])
-      redirect_to email_blacklisting_url, notice: 'Email blacklisting was successfully updated.' 
+      redirect_to email_blacklistings_path, notice: 'Email blacklisting was successfully updated.' 
     else
       render action: "edit" 
     end
