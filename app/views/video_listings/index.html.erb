@@ -7,20 +7,18 @@
       <tr>
         <th></th>
         <th>Name</th>
-        <th>Link</th>
-        <th></th>
-        <th></th>
-        <th></th>
       </tr>
 
     <% @video_listings.each do |video_listing| %>
       <tr>
         <td><%= image_tag video_listing.image %></td>
-        <td><%= video_listing.name %></td>
-        <td><%= video_listing.link %></td>
-        <td><%= link_to 'Show', video_listing %></td>
-        <td><%= link_to 'Edit', edit_video_listing_path(video_listing) %></td>
-        <td><%= link_to 'Destroy', video_listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <%= video_listing.name %><br />
+          <%= link_to video_listing.link, video_listing.link %><br />
+          <%= link_to 'Show', video_listing %>
+          <%= link_to 'Edit', edit_video_listing_path(video_listing) %>
+          <%= link_to 'Destroy', video_listing, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
       </tr>
     <% end %>
     </table>
