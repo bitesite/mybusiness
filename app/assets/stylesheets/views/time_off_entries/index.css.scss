@@ -3,4 +3,26 @@
     margin-top: 30px;
     margin-bottom: 20px;
   }
+
+  .time-off-entry-status-tag {
+
+    text-transform: uppercase;
+    font-size:0.6em;
+    background: #333;
+    color: white;
+    padding: 4px 4px;
+    border-radius: 2px;
+    font-weight: bold;
+
+    &.pending {
+      background: #BBBB66;
+      color: #333;
+    }
+
+    &.approved {
+      background: green;
+    }
+
+  }
+
 }

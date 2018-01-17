@@ -6,7 +6,7 @@ class TimeOffEntriesController < ApplicationController
   def index
     if supervisor?
       @pending_time_off_entries = TimeOffEntry.pending
-      @all_time_off_entries = TimeOffEntry.all
+      @approved_time_off_entries = TimeOffEntry.approved
     end
   end
 
