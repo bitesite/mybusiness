@@ -1,3 +1,3 @@
-class ContactFormSubmission < ActiveRecord::Base
+class ContactFormSubmission < ApplicationRecord
   default_scope -> { order("created_at desc")}
 end

@@ -1,3 +1,3 @@
-class Contest < ActiveRecord::Base
+class Contest < ApplicationRecord
   has_many :contestants
 end

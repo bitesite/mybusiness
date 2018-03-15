@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   
   include SessionsHelper
   
-  before_filter :load_news
+  before_action :load_news
   
 
   # - Rescue from CanCanCan AccessDenied exception

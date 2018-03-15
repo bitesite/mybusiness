@@ -1,7 +1,7 @@
 class ContestantsController < ApplicationController
   
-  before_filter :deny_access_for_non_admins, :except => [:create]
-  before_filter :load_contest
+  before_action :deny_access_for_non_admins, :except => [:create]
+  before_action :load_contest
   
   def index
     @contestants = @contest.contestants

@@ -1,14 +1,15 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.10'
+gem 'rails', '5.0.6'
 
-gem 'sass-rails',   '5.0.7'
-gem 'coffee-rails', '~> 4.0.1'
+gem 'sass-rails',   '~> 5.0.7'
+gem 'coffee-rails', '~> 4.2.2'
 gem 'uglifier', '>= 1.0.3'
 
 gem 'responders', '~> 2.0'
 
-gem 'pg'
+gem 'pg', '~> 0.18'
+gem 'puma', '~> 3.0'
 gem 'newrelic_rpm'
 gem 'rmagick', require: false
 gem 'redcarpet'
@@ -25,7 +26,7 @@ gem 'test-unit', '~> 3.0'
 gem 'deployem'
 
 # Authentication
-gem 'devise', '3.5.10'
+gem 'devise', '4.0.3'
 
 # Authorization
 gem 'cancancan'
@@ -46,6 +47,7 @@ end
 
 group :test do
   gem 'database_cleaner'
+  gem 'rails-controller-testing'
 end
 
 group :production do
@@ -53,7 +55,6 @@ group :production do
 end
 
 gem 'jquery-rails'
-gem 'thin'
 
 ruby '2.2.4'
 #ruby-gemset=mybusiness

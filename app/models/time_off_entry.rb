@@ -1,4 +1,4 @@
-class TimeOffEntry < ActiveRecord::Base
+class TimeOffEntry < ApplicationRecord
   VALID_TYPES = ['Vacation Day', 'Sick Day', 'Unpaid Vacation']
   VALID_STATUSES = ['Pending', 'Approved']
   VALID_AMOUNTS = [1, 0.5, 0.25]

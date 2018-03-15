@@ -1,5 +1,5 @@
 class SettingsController < ApplicationController
-  before_filter :deny_access_for_non_admins
+  before_action :deny_access_for_non_admins
 
   def index
     @settings = Setting.all

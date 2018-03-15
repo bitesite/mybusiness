@@ -1,6 +1,6 @@
 class VideoListingsController < ApplicationController
   
-  before_filter :deny_access_for_non_admins
+  before_action :deny_access_for_non_admins
   layout 'non_landing'
   
   def index

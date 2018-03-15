@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
 
-  before_filter :build_contestant_hash, :only => [:wedding_contest_submit]
-  before_filter :deny_access_for_non_admins, :only => [:admin]
+  before_action :build_contestant_hash, :only => [:wedding_contest_submit]
+  before_action :deny_access_for_non_admins, :only => [:admin]
 
   def home
     @title = "A Software Development and Video Production Firm based in Ottawa, Canada"

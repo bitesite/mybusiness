@@ -1,4 +1,4 @@
-class EmailBlacklisting < ActiveRecord::Base
+class EmailBlacklisting < ApplicationRecord
   before_save :upcase_and_strip_email
 
   private

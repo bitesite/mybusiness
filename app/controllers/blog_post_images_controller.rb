@@ -2,7 +2,7 @@ class BlogPostImagesController < ApplicationController
 
   load_and_authorize_resource :blog_post
   load_and_authorize_resource :blog_post_image, through: :blog_post
-  before_filter :set_title
+  before_action :set_title
 
   def index
   end
