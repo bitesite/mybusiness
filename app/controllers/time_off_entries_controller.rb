@@ -58,7 +58,7 @@ class TimeOffEntriesController < ApplicationController
     if @time_off_entry.status == 'Approved'
       redirect_to time_off_entries_path, notice: "You can't update an approved request."
     else
-      if @time_off_entry.update_attributes(params[:time_off_entry])
+      if @time_off_entry.update_attributes(time_off_entry_params)
         redirect_to time_off_entries_path, notice: "Time off request successfully deleted."
       else
         render :edit
@@ -81,4 +81,9 @@ class TimeOffEntriesController < ApplicationController
       redirect_to time_off_entries_path, notice: "Time off request successfully deleted."
     end
   end
+
+  private
+    def time_off_entry_params
+      params.require(:time_off_entry).permit(:amount, :entry_date, :notes, :time_off_type, :user_id)
+    end
 end

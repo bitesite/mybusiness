@@ -22,20 +22,20 @@ describe EmailBlacklistingsController, type: :controller do
 
     describe 'GET #edit' do
       it 'denies access' do
-        get :edit, id: email_blacklisting.id
+        get :edit, params: { id: email_blacklisting.id }
         expect(response).to redirect_to root_path
       end
     end
 
     describe 'POST #create' do
       it 'denies access' do
-        post :create, email_blacklisting: attributes_for(:email_blacklisting)
+        post :create, params: { email_blacklisting: attributes_for(:email_blacklisting) }
         expect(response).to redirect_to root_path
       end
 
       it 'does not create a email blacklisting' do
         expect {
-          post :create, email_blacklisting: attributes_for(:email_blacklisting)
+          post :create, params: { email_blacklisting: attributes_for(:email_blacklisting) }
         }.to change(EmailBlacklisting, :count).by(0)
       end
     end
@@ -43,14 +43,14 @@ describe EmailBlacklistingsController, type: :controller do
     describe 'PUT #update' do
       it 'denies access' do
         email_blacklisting
-        put :update, id: email_blacklisting.id, email_blacklisting: {email: "new_email@example.com"}
+        put :update, params: { id: email_blacklisting.id, email_blacklisting: {email: "new_email@example.com"} }
         expect(response).to redirect_to root_path
       end
 
       it 'does not update the email blacklisting' do
         email_blacklisting
         original_email = email_blacklisting.email
-        put :update, id: email_blacklisting.id, email_blacklisting: {email: "#{original_email}.v2"}
+        put :update, params: { id: email_blacklisting.id, email_blacklisting: {email: "#{original_email}.v2"} }
         email_blacklisting.reload
         expect(email_blacklisting.email).to eq(original_email)
       end
@@ -74,7 +74,7 @@ describe EmailBlacklistingsController, type: :controller do
 
     describe 'GET #edit' do
       it 'renders the edit template' do
-        get :edit, id: email_blacklisting.id
+        get :edit, params: { id: email_blacklisting.id }
         expect(response).to render_template :edit
       end
     end
@@ -82,7 +82,7 @@ describe EmailBlacklistingsController, type: :controller do
     describe 'POST #create' do
       it 'creates a email blacklisting' do
         expect {
-          post :create, email_blacklisting: attributes_for(:email_blacklisting)
+          post :create, params: { email_blacklisting: attributes_for(:email_blacklisting) }
         }.to change(EmailBlacklisting, :count).by(1)
       end
     end
@@ -91,7 +91,7 @@ describe EmailBlacklistingsController, type: :controller do
       it 'updates the email blacklisting' do
         email_blacklisting
         original_email = email_blacklisting.email
-        put :update, id: email_blacklisting.id, email_blacklisting: {email: "#{original_email} V2"}
+        put :update, params: { id: email_blacklisting.id, email_blacklisting: {email: "#{original_email} V2"} }
         email_blacklisting.reload
         expect(email_blacklisting.email).to eq("#{original_email} V2")
       end

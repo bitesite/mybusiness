@@ -14,7 +14,7 @@ describe SettingsController, type: :controller do
 
     describe "GET #show" do
       it "returns successfully" do
-        get :show, id: setting.id
+        get :show, params: { id: setting.id }
         expect(response).to redirect_to root_path
       end
     end
@@ -28,20 +28,20 @@ describe SettingsController, type: :controller do
 
     describe 'GET #edit' do
       it 'denies access' do
-        get :edit, id: setting.id
+        get :edit, params: { id: setting.id }
         expect(response).to redirect_to root_path
       end
     end
 
     describe 'POST #create' do
       it 'denies access' do
-        post :create, setting: attributes_for(:setting)
+        post :create, params: { setting: attributes_for(:setting) }
         expect(response).to redirect_to root_path
       end
 
       it 'does not create a setting' do
         expect {
-          post :create, setting: attributes_for(:setting)
+          post :create, params: { setting: attributes_for(:setting) }
         }.to change(Setting, :count).by(0)
       end
     end
@@ -49,14 +49,14 @@ describe SettingsController, type: :controller do
     describe 'PUT #update' do
       it 'denies access' do
         setting
-        put :update, id: setting.id, setting: {name: "NEW TITLE!"}
+        put :update, params: { id: setting.id, setting: {name: "NEW TITLE!"} }
         expect(response).to redirect_to root_path
       end
 
       it 'does not update the setting' do
         setting
         original_name = setting.name
-        put :update, id: setting.id, setting: {name: "#{original_name} V2"}
+        put :update, params: { id: setting.id, setting: {name: "#{original_name} V2"} }
         setting.reload
         expect(setting.name).to eq(original_name)
       end
@@ -74,7 +74,7 @@ describe SettingsController, type: :controller do
 
     describe "GET #show" do
       it "returns successfully" do
-        get :show, id: setting.id
+        get :show, params: { id: setting.id }
         expect(response).to have_http_status :ok
       end
     end
@@ -95,7 +95,7 @@ describe SettingsController, type: :controller do
 
     describe 'GET #edit' do
       it 'renders the edit template' do
-        get :edit, id: setting.id
+        get :edit, params: { id: setting.id }
         expect(response).to render_template :edit
       end
     end
@@ -103,7 +103,7 @@ describe SettingsController, type: :controller do
     describe 'POST #create' do
       it 'creates a setting' do
         expect {
-          post :create, setting: attributes_for(:setting)
+          post :create, params: { setting: attributes_for(:setting) }
         }.to change(Setting, :count).by(1)
       end
     end
@@ -112,7 +112,7 @@ describe SettingsController, type: :controller do
       it 'updates the setting' do
         setting
         original_name = setting.name
-        put :update, id: setting.id, setting: {name: "#{original_name} V2"}
+        put :update, params: { id: setting.id, setting: {name: "#{original_name} V2"} }
         setting.reload
         expect(setting.name).to eq("#{original_name} V2")
       end

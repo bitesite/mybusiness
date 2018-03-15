@@ -1,5 +1,5 @@
 class EmailBlacklistingsController < ApplicationController
-  before_filter :deny_access_for_non_admins
+  before_action :deny_access_for_non_admins
   layout 'non_landing'
 
   def index
@@ -15,7 +15,7 @@ class EmailBlacklistingsController < ApplicationController
   end
 
   def create
-    @email_blacklisting = EmailBlacklisting.new(params[:email_blacklisting])
+    @email_blacklisting = EmailBlacklisting.new(email_blacklisting_params)
 
     if @email_blacklisting.save
       redirect_to email_blacklistings_path, notice: 'Email blacklisting was successfully created.' 
@@ -27,7 +27,7 @@ class EmailBlacklistingsController < ApplicationController
   def update
     @email_blacklisting = EmailBlacklisting.find(params[:id])
 
-    if @email_blacklisting.update_attributes(params[:email_blacklisting])
+    if @email_blacklisting.update_attributes(email_blacklisting_params)
       redirect_to email_blacklistings_path, notice: 'Email blacklisting was successfully updated.' 
     else
       render action: "edit" 
@@ -40,4 +40,9 @@ class EmailBlacklistingsController < ApplicationController
 
     redirect_to email_blacklistings_url 
   end
+
+  private
+    def email_blacklisting_params
+      params.require(:email_blacklisting).permit(:email)
+    end
 end

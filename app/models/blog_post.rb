@@ -1,7 +1,6 @@
-class BlogPost < ActiveRecord::Base
+class BlogPost < ApplicationRecord
   default_scope -> { order("created_at desc")}
-  scope :published, -> { where(published: true).order("created_at desc") }
-  attr_accessible :body, :title, :published
-  belongs_to :user
+  scope :published, -> { where(published: true) }
+  belongs_to :user, optional: true
   has_many :blog_post_images
 end

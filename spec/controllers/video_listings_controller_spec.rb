@@ -15,7 +15,7 @@ describe VideoListingsController, type: :controller do
 
     describe "GET #show" do
       it "returns successfully" do
-        get :show, id: video_listing.id
+        get :show, params: { id: video_listing.id }
         expect(response).to redirect_to root_path
       end
     end
@@ -29,20 +29,20 @@ describe VideoListingsController, type: :controller do
 
     describe 'GET #edit' do
       it 'denies access' do
-        get :edit, id: video_listing.id
+        get :edit, params: { id: video_listing.id }
         expect(response).to redirect_to root_path
       end
     end
 
     describe 'POST #create' do
       it 'denies access' do
-        post :create, video_listing: attributes_for(:video_listing)
+        post :create, params: { video_listing: attributes_for(:video_listing) }
         expect(response).to redirect_to root_path
       end
 
       it 'does not create a video listing' do
         expect {
-          post :create, video_listing: attributes_for(:video_listing)
+          post :create, params: { video_listing: attributes_for(:video_listing) }
         }.to change(VideoListing, :count).by(0)
       end
     end
@@ -50,14 +50,14 @@ describe VideoListingsController, type: :controller do
     describe 'PUT #update' do
       it 'denies access' do
         video_listing
-        put :update, id: video_listing.id, video_listing: {name: "NEW NAME!"}
+        put :update, params: { id: video_listing.id, video_listing: {name: "NEW NAME!"} }
         expect(response).to redirect_to root_path
       end
 
       it 'does not update the video listing' do
         video_listing
         original_name = video_listing.name
-        put :update, id: video_listing.id, video_listing: {name: "#{original_name} V2"}
+        put :update, params: { id: video_listing.id, video_listing: {name: "#{original_name} V2"} }
         video_listing.reload
         expect(video_listing.name).to eq(original_name)
       end
@@ -74,7 +74,7 @@ describe VideoListingsController, type: :controller do
 
     describe "GET #show" do
       it "returns successfully" do
-        get :show, id: video_listing.id
+        get :show, params: { id: video_listing.id }
         expect(response).to have_http_status :ok
       end
     end
@@ -88,7 +88,7 @@ describe VideoListingsController, type: :controller do
 
     describe 'GET #edit' do
       it 'renders the edit template' do
-        get :edit, id: video_listing.id
+        get :edit, params: { id: video_listing.id }
         expect(response).to render_template :edit
       end
     end
@@ -96,7 +96,7 @@ describe VideoListingsController, type: :controller do
     describe 'POST #create' do
       it 'creates a video listing' do
         expect {
-          post :create, video_listing: attributes_for(:video_listing)
+          post :create, params: { video_listing: attributes_for(:video_listing) }
         }.to change(VideoListing, :count).by(1)
       end
     end
@@ -105,7 +105,7 @@ describe VideoListingsController, type: :controller do
       it 'updates the video listing' do
         video_listing
         original_name = video_listing.name
-        put :update, id: video_listing.id, video_listing: {name: "#{original_name} V2"}
+        put :update, params: { id: video_listing.id, video_listing: {name: "#{original_name} V2"} }
         video_listing.reload
         expect(video_listing.name).to eq("#{original_name} V2")
       end

@@ -1,7 +1,7 @@
 module ApplicationHelper
 
   def cms_value(setting_name)
-    value = Setting.find_by_name(setting_name).try(:value)
+    value = Setting.find_by(name: setting_name).try(:value)
   end
 
   def markdown(text, filter_html=true)

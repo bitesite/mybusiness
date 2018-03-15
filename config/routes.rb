@@ -29,7 +29,6 @@ Mybusiness::Application.routes.draw do
 
 
   # - DEVISE
-  match "/signin" => redirect("/users/signin")
   devise_for :users, controllers: { registrations: 'registrations' }
 
 
@@ -41,7 +40,8 @@ Mybusiness::Application.routes.draw do
 
   # - PAGES
   get "pages/home"
-  match "/contact" => "pages#contact"
+  get "/contact" => "pages#contact"
+  post "/contact" => "pages#contact"
   get "/admin" => "pages#admin"
   get "/setting_up_your_heroku_account" => "pages#setting_up_your_heroku_account"
   get "/international_safety" => "pages#international_safety"
@@ -60,6 +60,4 @@ Mybusiness::Application.routes.draw do
   get "/inspec_homes" => "pages#inspec_homes"
   get "/staff_dashboard" => "pages#staff_dashboard"
   root :to => "pages#home"
-
-  match "*path" => redirect("/") unless Rails.env.development?
 end

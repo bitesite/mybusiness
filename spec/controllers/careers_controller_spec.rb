@@ -14,7 +14,7 @@ describe CareersController, type: :controller do
 
     describe "GET #show" do
       it "returns successfully" do
-        get :show, id: career.id
+        get :show, params: { id: career.id }
         expect(response).to have_http_status :ok
       end
     end
@@ -30,20 +30,20 @@ describe CareersController, type: :controller do
 
     describe 'GET #edit' do
       it 'denies access' do
-        get :edit, id: career.id
+        get :edit, params: { id: career.id }
         expect(response).to redirect_to root_path
       end
     end
 
     describe 'POST #create' do
       it 'denies access' do
-        post :create, career: attributes_for(:career)
+        post :create, params: { career: attributes_for(:career) }
         expect(response).to redirect_to root_path
       end
 
       it 'does not create a career' do
         expect {
-          post :create, career: attributes_for(:career)
+          post :create, params: { career: attributes_for(:career) }
         }.to change(Career, :count).by(0)
       end
     end
@@ -51,14 +51,14 @@ describe CareersController, type: :controller do
     describe 'PUT #update' do
       it 'denies access' do
         career
-        put :update, id: career.id, career: {title: "NEW TITLE!"}
+        put :update, params: { id: career.id, career: {title: "NEW TITLE!"} }
         expect(response).to redirect_to root_path
       end
 
       it 'does not update the career' do
         career
         original_title = career.title
-        put :update, id: career.id, career: {title: "#{original_title} V2"}
+        put :update, params: { id: career.id, career: {title: "#{original_title} V2"} }
         career.reload
         expect(career.title).to eq(original_title)
       end
@@ -82,7 +82,7 @@ describe CareersController, type: :controller do
 
     describe 'GET #edit' do
       it 'renders the edit template' do
-        get :edit, id: career.id
+        get :edit, params: { id: career.id }
         expect(response).to render_template :edit
       end
     end
@@ -90,7 +90,7 @@ describe CareersController, type: :controller do
     describe 'POST #create' do
       it 'creates a career' do
         expect {
-          post :create, career: attributes_for(:career)
+          post :create, params: { career: attributes_for(:career) }
         }.to change(Career, :count).by(1)
       end
     end
@@ -99,7 +99,7 @@ describe CareersController, type: :controller do
       it 'updates the career' do
         career
         original_title = career.title
-        put :update, id: career.id, career: {title: "#{original_title} V2"}
+        put :update, params: { id: career.id, career: {title: "#{original_title} V2"} }
         career.reload
         expect(career.title).to eq("#{original_title} V2")
       end

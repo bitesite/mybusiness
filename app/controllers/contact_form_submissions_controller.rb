@@ -1,7 +1,7 @@
 class ContactFormSubmissionsController < ApplicationController
   
-  before_filter :deny_access_for_non_admins
-  before_filter :set_title
+  before_action :deny_access_for_non_admins
+  before_action :set_title
   layout 'non_landing'
   
   def index
@@ -9,6 +9,10 @@ class ContactFormSubmissionsController < ApplicationController
   end
 
   private
+    def contact_form_submission
+      params.require(:contact_form_submission).permit(:email_address, :first_name, :last_name, :message)  
+    end
+
     def set_title
       @title = "Contact Form Subsmissions"
     end
