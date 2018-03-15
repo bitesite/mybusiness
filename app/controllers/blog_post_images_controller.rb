@@ -2,7 +2,7 @@ class BlogPostImagesController < ApplicationController
 
   load_and_authorize_resource :blog_post
   load_and_authorize_resource :blog_post_image, through: :blog_post
-  before_filter :set_title
+  before_action :set_title
 
   def index
   end
@@ -19,6 +19,11 @@ class BlogPostImagesController < ApplicationController
   end
 
   private
+
+    def blog_post_image_params
+      params.require(:blog_post_image).permit(:blog_post_id, :image)
+    end
+
     def set_title
       @title = "Blog Post Images"
     end

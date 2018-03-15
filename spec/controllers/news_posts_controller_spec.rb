@@ -14,7 +14,7 @@ describe NewsPostsController, type: :controller do
 
     describe "GET #show" do
       it "returns successfully" do
-        get :show, id: news_post.id
+        get :show, params: { id: news_post.id }
         expect(response).to have_http_status :ok
       end
     end
@@ -30,20 +30,20 @@ describe NewsPostsController, type: :controller do
 
     describe 'GET #edit' do
       it 'denies access' do
-        get :edit, id: news_post.id
+        get :edit, params: { id: news_post.id }
         expect(response).to redirect_to root_path
       end
     end
 
     describe 'POST #create' do
       it 'denies access' do
-        post :create, news_post: attributes_for(:news_post)
+        post :create, params: { news_post: attributes_for(:news_post) }
         expect(response).to redirect_to root_path
       end
 
       it 'does not create a news post' do
         expect {
-          post :create, news_post: attributes_for(:news_post)
+          post :create, params: { news_post: attributes_for(:news_post) }
         }.to change(NewsPost, :count).by(0)
       end
     end
@@ -51,14 +51,14 @@ describe NewsPostsController, type: :controller do
     describe 'PUT #update' do
       it 'denies access' do
         news_post
-        put :update, id: news_post.id, news_post: {title: "NEW TITLE!"}
+        put :update, params: { id: news_post.id, news_post: {title: "NEW TITLE!"} }
         expect(response).to redirect_to root_path
       end
 
       it 'does not update the news post' do
         news_post
         original_title = news_post.title
-        put :update, id: news_post.id, news_post: {title: "#{original_title} V2"}
+        put :update, params: { id: news_post.id, news_post: {title: "#{original_title} V2"} }
         news_post.reload
         expect(news_post.title).to eq(original_title)
       end
@@ -82,7 +82,7 @@ describe NewsPostsController, type: :controller do
 
     describe 'GET #edit' do
       it 'renders the edit template' do
-        get :edit, id: news_post.id
+        get :edit, params: { id: news_post.id }
         expect(response).to render_template :edit
       end
     end
@@ -90,7 +90,7 @@ describe NewsPostsController, type: :controller do
     describe 'POST #create' do
       it 'creates a news post' do
         expect {
-          post :create, news_post: attributes_for(:news_post)
+          post :create, params: { news_post: attributes_for(:news_post) }
         }.to change(NewsPost, :count).by(1)
       end
     end
@@ -99,7 +99,7 @@ describe NewsPostsController, type: :controller do
       it 'updates the news post' do
         news_post
         original_title = news_post.title
-        put :update, id: news_post.id, news_post: {title: "#{original_title} V2"}
+        put :update, params: { id: news_post.id, news_post: {title: "#{original_title} V2"} }
         news_post.reload
         expect(news_post.title).to eq("#{original_title} V2")
       end

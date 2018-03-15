@@ -1,6 +1,6 @@
 require 'faker'
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :career do
     title 'Software Developer'
     description 'This is a great job'

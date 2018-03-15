@@ -23,20 +23,20 @@ describe BlogPostsController, type: :controller do
 
     describe 'GET #edit' do
       it 'denies access' do
-        get :edit
+        get :edit, params: { id: blog_post.id }
         expect(response).to redirect_to root_path
       end
     end
 
     describe 'POST #create' do
       it 'denies access' do
-        post :create, blog_post: attributes_for(:blog_post)
+        post :create, params: { blog_post: attributes_for(:blog_post) }
         expect(response).to redirect_to root_path
       end
 
       it 'does not create a blog post' do
         expect {
-          post :create, blog_post: attributes_for(:blog_post)
+          post :create, params: { blog_post: attributes_for(:blog_post) }
         }.to change(BlogPost, :count).by(0)
       end
     end
@@ -44,14 +44,14 @@ describe BlogPostsController, type: :controller do
     describe 'PUT #update' do
       it 'denies access' do
         blog_post
-        put :update, id: blog_post.id, blog_post: {title: "NEW TITLE!"}
+        put :update, params: { id: blog_post.id, blog_post: {title: "NEW TITLE!"} }
         expect(response).to redirect_to root_path
       end
 
       it 'does not update the blog post' do
         blog_post
         original_title = blog_post.title
-        put :update, id: blog_post.id, blog_post: {title: "#{original_title} V2"}
+        put :update, params: { id: blog_post.id, blog_post: {title: "#{original_title} V2"} }
         blog_post.reload
         expect(blog_post.title).to eq(original_title)
       end
@@ -75,7 +75,7 @@ describe BlogPostsController, type: :controller do
 
     describe 'GET #edit' do
       it 'renders the edit template' do
-        get :edit
+        get :edit, params: { id: blog_post.id }
         expect(response).to render_template :edit
       end
     end
@@ -83,7 +83,7 @@ describe BlogPostsController, type: :controller do
     describe 'POST #create' do
       it 'creates a blog post' do
         expect {
-          post :create, blog_post: attributes_for(:blog_post)
+          post :create, params: { blog_post: attributes_for(:blog_post) }
         }.to change(BlogPost, :count).by(1)
       end
     end
@@ -92,7 +92,7 @@ describe BlogPostsController, type: :controller do
       it 'updates the blog post' do
         blog_post
         original_title = blog_post.title
-        put :update, id: blog_post.id, blog_post: {title: "#{original_title} V2"}
+        put :update, params: { id: blog_post.id, blog_post: {title: "#{original_title} V2"} }
         blog_post.reload
         expect(blog_post.title).to eq("#{original_title} V2")
       end
@@ -115,7 +115,8 @@ describe BlogPostsController, type: :controller do
 
   context 'when signed in as an admin' do
     before :each do
-      sign_in create(:admin_user)
+      user = create(:admin_user)
+      sign_in user
     end
 
     it_behaves_like 'a user who can view blog posts'

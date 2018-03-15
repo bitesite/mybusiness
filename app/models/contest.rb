@@ -1,4 +1,3 @@
-class Contest < ActiveRecord::Base
-  attr_accessible :name
+class Contest < ApplicationRecord
   has_many :contestants
 end

@@ -12,13 +12,6 @@ describe TimeOffEntriesController, type: :controller do
       end
     end
 
-    describe "GET #index" do
-      it "returns successfully" do
-        get :show, id: time_off_entry.id
-        expect(response).to redirect_to root_path
-      end
-    end
-
     describe 'GET #new' do
       it 'denies access' do
         get :new
@@ -28,20 +21,20 @@ describe TimeOffEntriesController, type: :controller do
 
     describe 'GET #edit' do
       it 'denies access' do
-        get :edit
+        get :edit, params: { id: time_off_entry.id }
         expect(response).to redirect_to root_path
       end
     end
 
     describe 'POST #create' do
       it 'denies access' do
-        post :create, time_off_entry: attributes_for(:time_off_entry)
+        post :create, params: { time_off_entry: attributes_for(:time_off_entry) }
         expect(response).to redirect_to root_path
       end
 
       it 'does not create a time off entry' do
         expect {
-          post :create, time_off_entry: attributes_for(:time_off_entry)
+          post :create, params: { time_off_entry: attributes_for(:time_off_entry) }
         }.to change(TimeOffEntry, :count).by(0)
       end
     end
@@ -49,14 +42,14 @@ describe TimeOffEntriesController, type: :controller do
     describe 'PUT #update' do
       it 'denies access' do
         time_off_entry
-        put :update, id: time_off_entry.id, time_off_entry: {notes: "NEW NOTES!"}
+        put :update, params: { id: time_off_entry.id, time_off_entry: {notes: "NEW NOTES!"} }
         expect(response).to redirect_to root_path
       end
 
       it 'does not update the time off entry' do
         time_off_entry
         original_notes = time_off_entry.notes
-        put :update, id: time_off_entry.id, time_off_entry: {notes: "#{original_notes} V2"}
+        put :update, params: { id: time_off_entry.id, time_off_entry: {notes: "#{original_notes} V2"} }
         time_off_entry.reload
         expect(time_off_entry.notes).to eq(original_notes)
       end
@@ -71,13 +64,6 @@ describe TimeOffEntriesController, type: :controller do
       end
     end
 
-    describe "GET #index" do
-      it "returns successfully" do
-        get :show, id: @time_off_entry.id
-        expect(response).to have_http_status :ok
-      end
-    end
-
     describe 'GET #new' do
       it 'renders the new template' do
         get :new
@@ -87,7 +73,7 @@ describe TimeOffEntriesController, type: :controller do
 
     describe 'GET #edit' do
       it 'renders the edit template' do
-        get :edit, id: @time_off_entry.id
+        get :edit, params: { id: @time_off_entry.id }
         expect(response).to render_template :edit
       end
     end
@@ -95,7 +81,7 @@ describe TimeOffEntriesController, type: :controller do
     describe 'POST #create' do
       it 'creates a time off entry' do
         expect {
-          post :create, time_off_entry: attributes_for(:time_off_entry)
+          post :create, params: { time_off_entry: attributes_for(:time_off_entry) }
         }.to change(TimeOffEntry, :count).by(1)
       end
     end
@@ -103,7 +89,7 @@ describe TimeOffEntriesController, type: :controller do
     describe 'PUT #update' do
       it 'updates the time off entry' do
         original_notes = @time_off_entry.notes
-        put :update, id: @time_off_entry.id, time_off_entry: {notes: "#{original_notes} V2"}
+        put :update, params: { id: @time_off_entry.id, time_off_entry: {notes: "#{original_notes} V2"} }
         @time_off_entry.reload
         expect(@time_off_entry.notes).to eq("#{original_notes} V2")
       end

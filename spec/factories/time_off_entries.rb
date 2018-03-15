@@ -1,6 +1,6 @@
 require 'faker'
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :time_off_entry do
     entry_date { Date.today }
     amount 1.0

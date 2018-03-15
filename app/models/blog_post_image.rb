@@ -1,5 +1,4 @@
-class BlogPostImage < ActiveRecord::Base
-  attr_accessible :blog_post_id, :image
+class BlogPostImage < ApplicationRecord
   belongs_to :blog_post
 
   mount_uploader :image, BlogPostImageUploader

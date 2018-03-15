@@ -1,16 +1,23 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.22.5'
-gem 'pg'
+gem 'rails', '5.1.5'
+
+gem 'sass-rails',   '~> 5.0.7'
+gem 'coffee-rails', '~> 4.2.2'
+gem 'uglifier', '>= 1.0.3'
+
+gem 'responders', '~> 2.0'
+
+gem 'pg', '~> 0.18'
+gem 'puma', '~> 3.0'
 gem 'newrelic_rpm'
 gem 'rmagick', require: false
 gem 'redcarpet'
 gem 'carrierwave'
-gem 'fog'
+gem 'fog-aws'
 gem 'mailchimp'
 gem "recaptcha", :require => "recaptcha/rails"
 gem 'sucker_punch'
-gem 'honeypot-captcha'
 gem 'dotenv-rails'
 gem 'font-awesome-rails'
 gem 'test-unit', '~> 3.0'
@@ -18,39 +25,35 @@ gem 'test-unit', '~> 3.0'
 gem 'deployem'
 
 # Authentication
-gem 'devise', '3.5.10'
+gem 'devise', '4.4.2'
 
 # Authorization
 gem 'cancancan'
 gem 'rolify'
 
 group :development do
+  gem 'spring'
+  gem 'web-console', '~> 3.5.1'
   gem 'letter_opener' 
 end
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.6'
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
   gem 'faker', '1.7.3'
   gem 'pry'
 end
 
 group :test do
   gem 'database_cleaner'
+  gem 'rails-controller-testing'
 end
 
 group :production do
-	gem 'rails_12factor'
-end
-
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-  gem 'uglifier', '>= 1.0.3'
+  gem 'rails_12factor'
 end
 
 gem 'jquery-rails'
-gem 'thin'
 
 ruby '2.2.4'
 #ruby-gemset=mybusiness

@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
 
-  before_filter :build_contestant_hash, :only => [:wedding_contest_submit]
-  before_filter :deny_access_for_non_admins, :only => [:admin]
+  before_action :build_contestant_hash, :only => [:wedding_contest_submit]
+  before_action :deny_access_for_non_admins, :only => [:admin]
 
   def home
     @title = "A Software Development and Video Production Firm based in Ottawa, Canada"
@@ -53,12 +53,12 @@ class PagesController < ApplicationController
   
   def wedding_contest_submit
     
-    @contest = Contest.find_by_name("Wedding Video 2013")
+    @contest = Contest.find_by(name: "Wedding Video 2013")
     @contestant = @contest.contestants.build(@contestant_hash)
     @success = @contestant.save
     
-    AdminMailer.visitor_has_entered_contest(@contestant).deliver
-    VisitorMailer.contest_confirmation(@contestant).deliver
+    AdminMailer.visitor_has_entered_contest(@contestant).deliver_now
+    VisitorMailer.contest_confirmation(@contestant).deliver_now
     
     respond_to do |format|
       format.json { render json: { success: @success }.to_json }
