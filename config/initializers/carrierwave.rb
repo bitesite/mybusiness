@@ -1,6 +1,5 @@
 if Rails.env.production? || ENV['FORCE_AMAZON_AWS'] 
   CarrierWave.configure do |config|
-    config.storage = :fog
     config.fog_provider = 'fog/aws'
     config.fog_credentials = {
       :provider               => 'AWS',       # required
@@ -8,6 +7,7 @@ if Rails.env.production? || ENV['FORCE_AMAZON_AWS']
       :aws_secret_access_key  => ENV['AWS_SECRET_ACCESS_KEY'],       # required
     }
     config.fog_directory  = ENV['AWS_S3_BUCKET']                     # required
+    config.storage = :fog
 
   end
 else
