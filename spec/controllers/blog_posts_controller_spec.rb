@@ -36,7 +36,7 @@ describe BlogPostsController, type: :controller do
 
       it 'does not create a blog post' do
         expect {
-          post :create, bog_post: attributes_for(:blog_post)
+          post :create, blog_post: attributes_for(:blog_post)
         }.to change(BlogPost, :count).by(0)
       end
     end
@@ -81,7 +81,7 @@ describe BlogPostsController, type: :controller do
     end
 
     describe 'POST #create' do
-      it 'creates a blog post' do |variable|
+      it 'creates a blog post' do
         expect {
           post :create, blog_post: attributes_for(:blog_post)
         }.to change(BlogPost, :count).by(1)
