@@ -1,17 +1,19 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.1.16'
+gem 'rails', '4.2.10'
 
-gem 'sass-rails',   '~> 4.0.5'
+gem 'sass-rails',   '5.0.7'
 gem 'coffee-rails', '~> 4.0.1'
 gem 'uglifier', '>= 1.0.3'
+
+gem 'responders', '~> 2.0'
 
 gem 'pg'
 gem 'newrelic_rpm'
 gem 'rmagick', require: false
 gem 'redcarpet'
 gem 'carrierwave'
-gem 'fog'
+gem 'fog-aws'
 gem 'mailchimp'
 gem "recaptcha", :require => "recaptcha/rails"
 gem 'sucker_punch'
@@ -31,6 +33,7 @@ gem 'rolify'
 
 group :development do
   gem 'spring'
+  gem 'web-console', '~> 2.0'
   gem 'letter_opener' 
 end
 

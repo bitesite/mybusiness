@@ -57,8 +57,8 @@ class PagesController < ApplicationController
     @contestant = @contest.contestants.build(@contestant_hash)
     @success = @contestant.save
     
-    AdminMailer.visitor_has_entered_contest(@contestant).deliver
-    VisitorMailer.contest_confirmation(@contestant).deliver
+    AdminMailer.visitor_has_entered_contest(@contestant).deliver_now
+    VisitorMailer.contest_confirmation(@contestant).deliver_now
     
     respond_to do |format|
       format.json { render json: { success: @success }.to_json }
