@@ -20,7 +20,7 @@ class VideoListingsController < ApplicationController
   end
 
   def create
-    @video_listing = VideoListing.new(params[:video_listing])
+    @video_listing = VideoListing.new(video_listing_params)
 
     if @video_listing.save
       redirect_to video_listings_path, notice: 'Video listing was successfully created.'
@@ -32,7 +32,7 @@ class VideoListingsController < ApplicationController
   def update
     @video_listing = VideoListing.find(params[:id])
 
-    if @video_listing.update_attributes(params[:video_listing])
+    if @video_listing.update_attributes(video_listing_params)
       redirect_to video_listings_path, notice: 'Video listing was successfully updated.'
     else
       render action: "edit"
@@ -45,4 +45,9 @@ class VideoListingsController < ApplicationController
 
     redirect_to video_listings_path   
   end
+
+  private
+    def video_listing_params
+      params.require(:video_listing).permit(:image, :link, :name)
+    end
 end

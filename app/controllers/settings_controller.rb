@@ -18,7 +18,7 @@ class SettingsController < ApplicationController
   end
 
   def create
-    @setting = Setting.new(params[:setting])
+    @setting = Setting.new(setting_params)
 
     if @setting.save
       redirect_to settings_path, notice: 'Setting was successfully created.'
@@ -30,7 +30,7 @@ class SettingsController < ApplicationController
   def update
     @setting = Setting.find(params[:id])
 
-    if @setting.update_attributes(params[:setting])
+    if @setting.update_attributes(setting_params)
       redirect_to settings_path, notice: 'Setting was successfully updated.'
     else
       render action: "edit"
@@ -43,4 +43,9 @@ class SettingsController < ApplicationController
 
     redirect_to settings_url
   end
+
+  private
+    def setting_params
+      params.require(:setting).permit(:name, :value)
+    end
 end

@@ -20,7 +20,7 @@ class ContestantsController < ApplicationController
   end
 
   def create
-    @contestant = @contest.contestants.build(params[:contest])
+    @contestant = @contest.contestants.build(contestant_params)
 
     if @contestant.save
       redirect_to @contest, notice: 'Contestant created.'
@@ -32,7 +32,7 @@ class ContestantsController < ApplicationController
   def update
     @contestant = @contest.contestants.find(params[:id])
 
-    if @topic.update_attributes(params[:topic])
+    if @contestant.update_attributes(contestant_params)
       redirect_to @contest, notice: 'Contestant was successfully updated.'
     else
       render action: "edit"
@@ -47,6 +47,10 @@ class ContestantsController < ApplicationController
   end
   
   private
+    def contestant_params
+      params.require(:contestant).permit(:email, :first_name, :last_name, :notes)
+    end
+
     def load_contest
       @contest = Contest.find(params[:contest_id])
     end

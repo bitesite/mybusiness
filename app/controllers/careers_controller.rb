@@ -22,7 +22,7 @@ class CareersController < ApplicationController
   end
 
   def create
-    @career = Career.new(params[:career])
+    @career = Career.new(career_params)
 
     if @career.save
       redirect_to careers_path, notice: 'Career was successfully created.'
@@ -34,7 +34,7 @@ class CareersController < ApplicationController
   def update
     @career = Career.find(params[:id])
 
-    if @career.update_attributes(params[:career])
+    if @career.update_attributes(career_params)
       redirect_to careers_path, notice: 'Career was successfully updated.'
     else
       render action: "edit"
@@ -48,6 +48,10 @@ class CareersController < ApplicationController
   end
 
   private
+    def career_params
+      params.require(:career).permit(:capacity, :description, :title, :location, :archived)
+    end
+
     def set_title
       @title = "Careers"
     end

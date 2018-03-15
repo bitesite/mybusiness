@@ -19,7 +19,7 @@ class ContestsController < ApplicationController
   end
 
   def create
-    @contest = Contest.new(params[:contest])
+    @contest = Contest.new(contest_params)
 
     if @contest.save
       redirect_to @contest, notice: 'Contest was successfully created.'
@@ -31,7 +31,7 @@ class ContestsController < ApplicationController
   def update
     @contest = Contest.find(params[:id])
 
-    if @contest.update_attributes(params[:contest])
+    if @contest.update_attributes(contest_params)
       redirect_to @contest, notice: 'Contest was successfully updated.'
     else
       render action: "edit"
@@ -44,4 +44,9 @@ class ContestsController < ApplicationController
 
     redirect_to contests_url
   end
+
+  private
+    def contest_params
+      params.require(:contest).permit(:name)
+    end
 end

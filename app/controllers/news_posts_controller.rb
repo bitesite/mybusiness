@@ -23,7 +23,7 @@ class NewsPostsController < ApplicationController
   end
 
   def create
-    @news_post = NewsPost.new(params[:news_post])
+    @news_post = NewsPost.new(news_post_params)
 
     if @news_post.save
       redirect_to news_posts_path, notice: 'News post was successfully created.'
@@ -35,7 +35,7 @@ class NewsPostsController < ApplicationController
   def update
     @news_post = NewsPost.find(params[:id])
 
-    if @news_post.update_attributes(params[:news_post])
+    if @news_post.update_attributes(news_post_params)
       redirect_to news_posts_path, notice: 'News post was successfully updated.'
     else
       render action: "edit"
@@ -49,6 +49,10 @@ class NewsPostsController < ApplicationController
   end
 
   private
+    def news_post_params
+      params.require(:news_post).permit(:body, :image, :title, :hidden)
+    end
+
     def set_title
       @title = "News"
     end

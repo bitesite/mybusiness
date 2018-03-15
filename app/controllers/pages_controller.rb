@@ -53,7 +53,7 @@ class PagesController < ApplicationController
   
   def wedding_contest_submit
     
-    @contest = Contest.find_by_name("Wedding Video 2013")
+    @contest = Contest.find_by(name: "Wedding Video 2013")
     @contestant = @contest.contestants.build(@contestant_hash)
     @success = @contestant.save
     

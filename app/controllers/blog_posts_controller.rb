@@ -28,7 +28,7 @@ class BlogPostsController < ApplicationController
   end
 
   def update
-    if @blog_post.update_attributes(params[:blog_post])
+    if @blog_post.update_attributes(blog_post_params)
       redirect_to @blog_post, notice: 'Blog post was successfully updated.'
     else
       render action: "edit"
@@ -36,6 +36,10 @@ class BlogPostsController < ApplicationController
   end
 
   private
+    def blog_post_params 
+      params.require(:blog_post).permit(:body, :title, :published)
+    end
+
     def set_title
       @title = "Blog"
     end
