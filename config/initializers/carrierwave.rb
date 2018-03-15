@@ -1,6 +1,7 @@
 if Rails.env.production? || ENV['FORCE_AMAZON_AWS'] 
   CarrierWave.configure do |config|
     config.storage = :fog
+    config.fog_provider = 'fog/aws'
     config.fog_credentials = {
       :provider               => 'AWS',       # required
       :aws_access_key_id      => ENV['AWS_ACCESS_KEY_ID'],       # required

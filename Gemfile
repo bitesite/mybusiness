@@ -14,7 +14,7 @@ gem 'newrelic_rpm'
 gem 'rmagick', require: false
 gem 'redcarpet'
 gem 'carrierwave'
-gem 'fog'
+gem 'fog-aws'
 gem 'mailchimp'
 gem "recaptcha", :require => "recaptcha/rails"
 gem 'sucker_punch'
