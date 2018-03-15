@@ -23,7 +23,7 @@ describe BlogPostsController, type: :controller do
 
     describe 'GET #edit' do
       it 'denies access' do
-        get :edit
+        get :edit, id: blog_post.id
         expect(response).to redirect_to root_path
       end
     end
@@ -75,7 +75,7 @@ describe BlogPostsController, type: :controller do
 
     describe 'GET #edit' do
       it 'renders the edit template' do
-        get :edit
+        get :edit, id: blog_post.id
         expect(response).to render_template :edit
       end
     end

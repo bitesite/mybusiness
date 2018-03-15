@@ -12,13 +12,6 @@ describe TimeOffEntriesController, type: :controller do
       end
     end
 
-    describe "GET #index" do
-      it "returns successfully" do
-        get :show, id: time_off_entry.id
-        expect(response).to redirect_to root_path
-      end
-    end
-
     describe 'GET #new' do
       it 'denies access' do
         get :new
@@ -28,7 +21,7 @@ describe TimeOffEntriesController, type: :controller do
 
     describe 'GET #edit' do
       it 'denies access' do
-        get :edit
+        get :edit, id: time_off_entry.id
         expect(response).to redirect_to root_path
       end
     end
@@ -67,13 +60,6 @@ describe TimeOffEntriesController, type: :controller do
     describe "GET #index" do
       it "returns successfully" do
         get :index
-        expect(response).to have_http_status :ok
-      end
-    end
-
-    describe "GET #index" do
-      it "returns successfully" do
-        get :show, id: @time_off_entry.id
         expect(response).to have_http_status :ok
       end
     end
