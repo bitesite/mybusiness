@@ -48,9 +48,6 @@ module Mybusiness
     # For Heroku
     config.assets.initialize_on_precompile = false
 
-    
-    config.active_record.raise_in_transactional_callbacks = true
-
     # Testing Generators
     config.generators do |g|
       g.test_framework :rspec,

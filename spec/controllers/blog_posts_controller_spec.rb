@@ -115,7 +115,8 @@ describe BlogPostsController, type: :controller do
 
   context 'when signed in as an admin' do
     before :each do
-      sign_in create(:admin_user)
+      user = create(:admin_user)
+      sign_in user
     end
 
     it_behaves_like 'a user who can view blog posts'

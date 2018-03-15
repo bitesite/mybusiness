@@ -3,7 +3,7 @@
 		<h1>CONTACT US</h1>
 
 		<div class="contact-form">
-			<%= form_tag "/contact", honeypot: true do %>
+			<%= form_tag "/contact" do %>
 				<div class="field">
 					<%= label_tag :first_name, "First Name" %>
 					<%= text_field_tag :first_name, nil, :size => "30", :class => "contact-field" %>

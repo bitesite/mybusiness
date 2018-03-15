@@ -86,5 +86,5 @@ RSpec.configure do |config|
   end
 
   # Factory Girl Config
-  config.include FactoryGirl::Syntax::Methods
+  config.include FactoryBot::Syntax::Methods
 end

@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '5.0.6'
+gem 'rails', '5.1.5'
 
 gem 'sass-rails',   '~> 5.0.7'
 gem 'coffee-rails', '~> 4.2.2'
@@ -18,7 +18,6 @@ gem 'fog-aws'
 gem 'mailchimp'
 gem "recaptcha", :require => "recaptcha/rails"
 gem 'sucker_punch'
-gem 'honeypot-captcha'
 gem 'dotenv-rails'
 gem 'font-awesome-rails'
 gem 'test-unit', '~> 3.0'
@@ -26,7 +25,7 @@ gem 'test-unit', '~> 3.0'
 gem 'deployem'
 
 # Authentication
-gem 'devise', '4.0.3'
+gem 'devise', '4.4.2'
 
 # Authorization
 gem 'cancancan'
@@ -34,13 +33,13 @@ gem 'rolify'
 
 group :development do
   gem 'spring'
-  gem 'web-console', '~> 2.0'
+  gem 'web-console', '~> 3.5.1'
   gem 'letter_opener' 
 end
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.6'
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
   gem 'faker', '1.7.3'
   gem 'pry'
 end
