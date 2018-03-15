@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.0.13'
+gem 'rails', '4.1.16'
 
 gem 'sass-rails',   '~> 4.0.5'
 gem 'coffee-rails', '~> 4.0.1'
@@ -30,6 +30,7 @@ gem 'cancancan'
 gem 'rolify'
 
 group :development do
+  gem 'spring'
   gem 'letter_opener' 
 end
 

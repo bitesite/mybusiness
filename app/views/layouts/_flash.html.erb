@@ -1,8 +1,8 @@
 <% ['notice', 'flash', 'success'].each do |key| %>
-	<% if flash[:"#{key}"] %>
+	<% if flash[key] %>
 		<div class='flash'>
 			<div class="#{key}">
-				<%= flash[:"#{key}"] %>
+				<%= flash[key] %>
 			</div>
 		</div>
 	<% end %>

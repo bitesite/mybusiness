@@ -6,6 +6,6 @@ class TimeOffEntry < ActiveRecord::Base
   belongs_to :user
 
   default_scope -> { order("entry_date asc") }
-  scope :pending, -> { where(status: 'Pending').order("entry_date asc") }
-  scope :approved, -> { where(status: 'Approved').order("entry_date asc") }
+  scope :pending, -> { where(status: 'Pending') }
+  scope :approved, -> { where(status: 'Approved') }
 end
