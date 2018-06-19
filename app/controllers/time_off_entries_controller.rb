@@ -4,10 +4,7 @@ class TimeOffEntriesController < ApplicationController
   layout 'non_landing'
 
   def index
-    if supervisor?
-      @pending_time_off_entries = TimeOffEntry.pending
-      @approved_time_off_entries = TimeOffEntry.approved
-    end
+    @time_off_entries = @time_off_entries.chronological
   end
 
   def new

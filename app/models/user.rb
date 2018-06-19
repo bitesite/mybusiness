@@ -10,5 +10,7 @@ class User < ApplicationRecord
   has_many :blog_posts
   has_one :profile, dependent: :destroy
   has_many :time_off_entries
+
+  scope :alphabetical, -> { order("email asc") }
   
 end

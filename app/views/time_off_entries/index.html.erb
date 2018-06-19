@@ -1,109 +1,42 @@
 <div id="time-off-entries-index">
-  <h1>Time Off</h1>
+  <div class="container">
+    
+    <h1>Time Off</h1>
 
-  <h2>Your Time Off</h2>
+    <h2>Your Time Off</h2>
+    <%= render 'time_off_table', time_off_entries: @time_off_entries %>
 
-  <%= link_to 'Request Time Off (Multiple)', bulk_new_time_off_entries_path, class: 'btn btn-primary' %>
-  <%= link_to 'Request Time Off (Single)', new_time_off_entry_path, class: 'btn btn-primary' %>
+    <div class="actions">
+      <%= link_to 'Request Time Off (Multiple)', bulk_new_time_off_entries_path, class: 'btn btn-primary' %>
+      <%= link_to 'Request Time Off (Single)', new_time_off_entry_path, class: 'btn btn-primary' %>
+    </div>
 
-  <table class='resource-table'>
-    <tr>
-      <th>User</th>
-      <th>Entry date</th>
-      <th>Time off type</th>
-      <th>Amount</th>
-      <th>Notes</th>
-      <th>Status</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
 
-  <% @time_off_entries.each do |time_off_entry| %>
-    <tr>
-      <td><%= time_off_entry.user.email %></td>
-      <td><%= time_off_entry.entry_date %></td>
-      <td><%= time_off_entry.time_off_type %></td>
-      <td><%= time_off_entry.amount %></td>
-      <td><%= time_off_entry.notes %></td>
-      <td><%= time_off_entry.status %></td>
-      <td><%= link_to 'Edit', edit_time_off_entry_path(time_off_entry) %></td>
-      <td><%= link_to 'Destroy', time_off_entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      <td></td>
-    </tr>
-  <% end %>
-  </table>
+    <br />
 
-  <br />
+    <% if supervisor? %>
+      <h2>Your Reports 'Pending' Time off</h2>
 
-  <% if supervisor? %>
-    <h2>Your Reports 'Pending' Time off</h2>
+      <% User.all.alphabetical.each do |user| %>
+        <% if user != current_user %>
 
-    <table class='resource-table'>
-      <tr>
-        <th>Status</th>
-        <th>User</th>
-        <th>Entry date</th>
-        <th>Time off type</th>
-        <th>Amount</th>
-        <th>Notes</th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-
-    <% @pending_time_off_entries.each do |time_off_entry| %>
-      <tr>
-        <td><%= time_off_entry_status_tag time_off_entry %></td>
-        <td><%= time_off_entry.user.email %></td>
-        <td><%= time_off_entry.entry_date %></td>
-        <td><%= time_off_entry.time_off_type %></td>
-        <td><%= time_off_entry.amount %></td>
-        <td><%= time_off_entry.notes %></td>
-        <td><%= link_to 'Edit', edit_time_off_entry_path(time_off_entry) %></td>
-        <td><%= link_to 'Destroy', time_off_entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td>
-          <% if time_off_entry.status == 'Pending' %>
-            <%= link_to 'Approve', approve_time_off_entry_path(time_off_entry), method: :put %>
+          <% if user.time_off_entries.pending.present? %>
+            <h3><%= user.email %>'s Time Off</h3>
+            <%= render 'time_off_table', time_off_entries:  user.time_off_entries.pending.chronological %>
           <% end %>
-        </td>
-      </tr>
+        <% end %>
+      <% end %>
+
+
+      <h2>Your Reports 'Approved' Time off</h2>
+
+      <% User.all.alphabetical.each do |user| %>
+        <% if user != current_user %>
+
+          <h3><%= user.email %>'s Time Off</h3>
+          <%= render 'time_off_table', time_off_entries:  user.time_off_entries.approved.chronological %>
+        <% end %>
+      <% end %>
     <% end %>
-    </table>
-
-    <h2>Your Reports 'Approved' Time off</h2>
-
-    <table class='resource-table'>
-      <tr>
-        <th>Status</th>
-        <th>User</th>
-        <th>Entry date</th>
-        <th>Time off type</th>
-        <th>Amount</th>
-        <th>Notes</th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-
-    <% @approved_time_off_entries.each do |time_off_entry| %>
-      <tr>
-        <td><%= time_off_entry_status_tag time_off_entry %></td>
-        <td><%= time_off_entry.user.email %></td>
-        <td><%= time_off_entry.entry_date %></td>
-        <td><%= time_off_entry.time_off_type %></td>
-        <td><%= time_off_entry.amount %></td>
-        <td><%= time_off_entry.notes %></td>
-        <td><%= link_to 'Edit', edit_time_off_entry_path(time_off_entry) %></td>
-        <td><%= link_to 'Destroy', time_off_entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td>
-          <% if time_off_entry.status == 'Pending' %>
-            <%= link_to 'Approve', approve_time_off_entry_path(time_off_entry), method: :put %>
-          <% end %>
-        </td>
-      </tr>
-    <% end %>
-    </table>
-
-  <% end %>
+  </div>
 </div>
