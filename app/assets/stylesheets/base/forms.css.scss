@@ -1,20 +1,26 @@
 /* Forms */
 
-.field {
-  padding-bottom: 10px;
-  
-  label {
-    display:block;
+form {
+  .field {
+    margin-bottom: 10px;
+    
+    label {
+      display:block;
 
-    &.checkbox-label {
-      display:inline-block;
-      margin:0;
+      &.checkbox-label {
+        display:inline-block;
+        margin:0;
+      }
+    }
+
+    input[type="text"], input[type="email"], input[type="password"], textarea {
+      padding:5px;
+      display:block;
+      width:calc(100% - 10px);
     }
   }
-
-  input[type="text"], input[type="email"], input[type="password"], textarea {
-    padding:5px;
-    display:block;
-    width:calc(100% - 10px);
+  
+  .actions {
+    margin-bottom: 10px;
   }
 }

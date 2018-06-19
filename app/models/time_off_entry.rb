@@ -5,7 +5,8 @@ class TimeOffEntry < ApplicationRecord
 
   belongs_to :user, optional: true
 
-  default_scope -> { order("entry_date asc") }
   scope :pending, -> { where(status: 'Pending') }
   scope :approved, -> { where(status: 'Approved') }
+  scope :chronological, -> { order("entry_date asc") }
+  scope :reverse_chronological, -> { order("entry_date desc") }
 end

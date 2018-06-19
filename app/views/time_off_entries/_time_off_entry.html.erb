@@ -1,0 +1,12 @@
+<tr>
+  <td><%= time_off_entry_status_tag time_off_entry %></td>
+  <td><%= time_off_entry.user.email %></td>
+  <td><%= time_off_entry.entry_date %></td>
+  <td><%= time_off_entry.time_off_type %></td>
+  <td><%= time_off_entry.amount %></td>
+  <td><%= time_off_entry.notes %></td>
+  <td><%= time_off_entry.status %></td>
+  <td><%= link_to 'Edit', edit_time_off_entry_path(time_off_entry) %></td>
+  <td><%= link_to 'Destroy', time_off_entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  <td></td>
+</tr>
