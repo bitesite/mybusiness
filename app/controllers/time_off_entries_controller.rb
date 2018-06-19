@@ -59,7 +59,7 @@ class TimeOffEntriesController < ApplicationController
       redirect_to time_off_entries_path, notice: "You can't update an approved request."
     else
       if @time_off_entry.update_attributes(time_off_entry_params)
-        redirect_to time_off_entries_path, notice: "Time off request successfully deleted."
+        redirect_to time_off_entries_path, notice: "Time off request successfully updated."
       else
         render :edit
       end
