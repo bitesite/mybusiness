@@ -14,9 +14,7 @@
 
 @import "common/layout";
 
-@import "views/blog_posts/index";
-@import "views/blog_posts/show";
-@import "views/blog_posts/form";
+@import "views/blog_posts/*";
 @import "views/blog_post_images/index";
 @import "views/pages/staff_dashboard";
 
