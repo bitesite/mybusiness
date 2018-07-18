@@ -4,4 +4,5 @@ class BlogPost < ApplicationRecord
   belongs_to :user, optional: true
   has_many :blog_post_images
   mount_uploader :featured_image, BlogPostFeaturedImageUploader
+  acts_as_taggable
 end

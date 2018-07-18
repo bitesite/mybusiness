@@ -6,6 +6,7 @@ class BlogPostsController < ApplicationController
   def index
     @blog_posts = BlogPost.published
     @blog_posts = BlogPost.all if admin?
+    @blog_posts = @blog_posts.tagged_with(params[:tag_name]) if params[:tag_name]
     @blog_posts = @blog_posts.paginate(page: params[:page], per_page: 10)
   end
 
@@ -38,7 +39,7 @@ class BlogPostsController < ApplicationController
 
   private
     def blog_post_params 
-      params.require(:blog_post).permit(:body, :title, :published, :featured_image)
+      params.require(:blog_post).permit(:body, :title, :published, :featured_image, :tag_list)
     end
 
     def set_title

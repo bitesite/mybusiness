@@ -12,7 +12,13 @@
   </div>
 
   <div class="blog-post-body">
-    <%= markdown blog_post.body, false %><br/>
+    <%= markdown blog_post.body, false %>
+  </div>
+
+  <div class="tags">
+    <% blog_post.tags.each do |tag| %>
+      <span class='tag'><%= tag.name %></span>
+    <% end %>
   </div>
 
   <div class="blog-post-actions">    
@@ -23,7 +29,6 @@
         Author: <%= blog_post.user.try(:email) %>
       </div>
     <% end %>
-
   </div>
   <div class="clear-floats"></div>
 </div>

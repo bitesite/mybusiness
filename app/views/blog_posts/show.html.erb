@@ -10,10 +10,18 @@
     <%= markdown @blog_post.body %>
 
 
-    <% if admin? %>
-      <%= link_to 'Edit', edit_blog_post_path(@blog_post) %> |
-    <% end %>
-    <%= link_to 'Back', blog_posts_path %>
+    <div class="tags">
+      <% @blog_post.tags.each do |tag| %>
+        <span class='tag'><%= tag.name %></span>
+      <% end %>
+    </div>
+
+    <div class="actions">
+      <% if admin? %>
+        <%= link_to 'Edit', edit_blog_post_path(@blog_post) %> |
+      <% end %>
+      <%= link_to 'Back', blog_posts_path %>
+    </div>
     
   </div>
 </div>

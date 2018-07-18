@@ -14,7 +14,22 @@
       <%= will_paginate @blog_posts %>
     </div>
     <div class="blog-menu">
-      Menu
+      <div class='menu-title'>
+        Most Popular Tags
+      </div>
+      <div class='menu-links'>
+        <% ActsAsTaggableOn::Tag.most_used(10).each do |tag| %>
+          <%= link_to tag.name, blog_posts_path(tag_name: tag.name), class: 'menu-link' %>
+        <% end %>
+      </div>
+      <div class='menu-title'>
+        Contact us
+      </div>
+      <div class='contact'>
+        @bitesite<br>
+        info@bitesite.ca<br>
+        www.bitesite.ca
+      </div>
     </div>
     <div class="clear"></div>
 

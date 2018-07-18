@@ -22,6 +22,7 @@ gem 'dotenv-rails'
 gem 'font-awesome-rails'
 gem 'test-unit', '~> 3.0'
 gem 'will_paginate'
+gem 'acts-as-taggable-on'
 
 gem 'deployem'
 
@@ -56,5 +57,5 @@ end
 
 gem 'jquery-rails'
 
-ruby '2.2.4'
+ruby '2.5.0'
 #ruby-gemset=mybusiness
