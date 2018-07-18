@@ -1,10 +1,10 @@
 class TimeOffEntriesController < ApplicationController
   
-  load_and_authorize_resource through: :current_user, except: [:bulk_new, :bulk_create, :approve]
+  load_and_authorize_resource
   layout 'non_landing'
 
   def index
-    @time_off_entries = @time_off_entries.chronological
+    @time_off_entries = current_user.time_off_entries.chronological
   end
 
   def new
@@ -81,6 +81,10 @@ class TimeOffEntriesController < ApplicationController
 
   private
     def time_off_entry_params
-      params.require(:time_off_entry).permit(:amount, :entry_date, :notes, :time_off_type, :user_id)
+      if supervisor?
+        params.require(:time_off_entry).permit(:amount, :entry_date, :notes, :time_off_type, :user_id, :status)
+      else
+        params.require(:time_off_entry).permit(:amount, :entry_date, :notes, :time_off_type, :user_id)
+      end
     end
 end

@@ -8,5 +8,12 @@
   <td><%= time_off_entry.status %></td>
   <td><%= link_to 'Edit', edit_time_off_entry_path(time_off_entry) %></td>
   <td><%= link_to 'Destroy', time_off_entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  <td></td>
+  <td>
+    <% if supervisor? && (time_off_entry.status == 'Pending') %>
+      <%= form_with model: time_off_entry, local: true do |f| %>
+        <%= f.hidden_field :status, value: "Approved" %>
+        <%= f.submit 'Approve', class: 'btn btn-sm btn-primary' %>
+      <% end %>
+    <% end %>
+  </td>
 </tr>
