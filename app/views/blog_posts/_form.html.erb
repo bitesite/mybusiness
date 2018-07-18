@@ -17,12 +17,12 @@
   </div>
   <div class="field">
     <%= f.label :body %>
-    <%= f.text_area :body %>
+    <%= f.text_area :body, rows: 20 %>
   </div>
 
   <div class="field">
-    <%= f.label :tag_list %>
-    <%= f.text_field :tag_list %>
+    <%= f.label :tag_list, "Tags (comma separated)" %>
+    <%= f.text_field :tag_list, value: @blog_post.tag_list.join(", ") %>
   </div>
 
   <div class="field">

@@ -74,7 +74,7 @@
       .blog-post-body {
         display:block;
         color:#555;
-        font-size:14px;
+        font-size:15px;
         line-height: 2em;
         text-align: justify;
         
@@ -114,17 +114,21 @@
     width: 300px;
     padding-left: 40px;
 
-    .menu-title {
-      font-family: 'Avenir LT Std 85 Heavy';
-      margin-bottom: 10px;
-    }
+    .menu-section {
+      margin-bottom: 30px;
+      
+      .menu-title {
+        font-family: 'Avenir LT Std 85 Heavy';
+        margin-bottom: 10px;
+      }
 
-    .menu-links {
-      .menu-link {
+      a {
         display: block;
         margin: 10px 0;
+        text-decoration: none;
       }
     }
+
   }
   
   

@@ -14,21 +14,26 @@
       <%= will_paginate @blog_posts %>
     </div>
     <div class="blog-menu">
-      <div class='menu-title'>
-        Most Popular Tags
+      <div class="menu-section">
+        <div class='menu-title'>
+          Most Popular Tags
+        </div>
+        <div class='menu-links'>
+          <% ActsAsTaggableOn::Tag.most_used(10).each do |tag| %>
+            <%= link_to "#{tag.name} (#{BlogPost.tagged_with(tag.name).count})", blog_posts_path(tag_name: tag.name), class: 'menu-link' %>
+          <% end %>
+        </div>
       </div>
-      <div class='menu-links'>
-        <% ActsAsTaggableOn::Tag.most_used(10).each do |tag| %>
-          <%= link_to tag.name, blog_posts_path(tag_name: tag.name), class: 'menu-link' %>
-        <% end %>
-      </div>
-      <div class='menu-title'>
-        Contact us
-      </div>
-      <div class='contact'>
-        @bitesite<br>
-        info@bitesite.ca<br>
-        www.bitesite.ca
+
+      <div class="menu-section">
+        <div class='menu-title'>
+          Contact us
+        </div>
+        <div class='contact'>
+          <%= link_to "@bitesite", "http://www.twitter.com/bitesite" %>
+          <%= link_to "info@bitesite.ca", "mailto:info@bitesite.ca" %>
+          <%= link_to "www.bitesite.ca", "http://www.bitesite.ca" %>
+        </div>
       </div>
     </div>
     <div class="clear"></div>
