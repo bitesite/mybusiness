@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= "#{@title} | " if @title.present? %>The BiteSite Blog</title>
+    <meta name="description" content="<%= @meta_description %>">
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> 
+
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+    
+
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-32705304-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+    
+      <%= favicon_link_tag 'favicon.png', :type => 'image/png' %> 
+  </head>
+  <body class='blog-layout'>
+    <%= render 'layouts/flash', flash: flash %>
+    
+
+    <div>
+      <div class="blank-page-navigation-bar">
+        <div class="container">
+          <div class="blank-page-nav-links">
+            <% if staff? %>
+              <%= link_to "HOME", "/", class: 'staff-blank-page-nav-link' %>
+              <%= link_to "DASHBOARD", staff_dashboard_path, class: 'staff-blank-page-nav-link' %>
+              <%= link_to "SIGN OUT", destroy_user_session_path, method: :delete, class: 'staff-blank-page-nav-link' %>
+            <% else %>
+              <%= link_to "BACK TO BITESITE.CA", "/" %>
+            <% end %>
+          </div>
+          <div class="clear-floats"></div>
+        </div>
+      </div>
+
+      <div class='blog-main'>
+
+        <div id="blog-posts-index">
+          <div class="container">
+            <div class='blog-title'>THE BITESITE BLOG</div>
+
+            <div class="blog-content">
+              <%= yield %>
+            </div>
+            <div class="blog-menu">
+              <div class="menu-section">
+                <div class='menu-title'>
+                  The BiteSite Blog
+                </div>
+                <div class='menu-links'>
+                  <%= link_to "Blog Home", blog_posts_path %>
+                </div>
+              </div>
+
+              <div class="menu-section">
+                <div class='menu-title'>
+                  Most Popular Tags
+                </div>
+                <div class='menu-links'>
+                  <% ActsAsTaggableOn::Tag.most_used(10).each do |tag| %>
+                    <%= link_to "#{tag.name} (#{BlogPost.tagged_with(tag.name).count})", blog_posts_path(tag_name: tag.name), class: 'menu-link' %>
+                  <% end %>
+                </div>
+              </div>
+
+              <div class="menu-section">
+                <div class='menu-title'>
+                  Contact us
+                </div>
+                <div class='contact'>
+                  <%= link_to "@bitesite", "http://www.twitter.com/bitesite" %>
+                  <%= link_to "info@bitesite.ca", "mailto:info@bitesite.ca" %>
+                  <%= link_to "www.bitesite.ca", "http://www.bitesite.ca" %>
+                </div>
+              </div>
+
+              <% if can? :new, BlogPost %>
+                <div class="menu-section">
+                  <div class='menu-title'>
+                    Blog Actions
+                  </div>
+                  <div class="menu-links">
+                    <%= link_to 'New Blog post', new_blog_post_path %>
+                    <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
+                  </div>
+                </div>
+              <% end %>
+
+            </div>
+            <div class="clear"></div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>

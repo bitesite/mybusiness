@@ -52,3 +52,43 @@
 		padding-top:41px;
 	}
 }
+
+.blog-layout {
+	.blog-main {
+		padding-top:41px;
+
+		.blog-title {
+		  margin:40px 0px;
+		  text-align:center;
+		  font-family: 'Avenir LT Std 85 Heavy';
+		}
+
+		
+		.blog-content {
+		  float:left;
+		  width: calc(100% - 340px);
+	  }
+
+	  .blog-menu {
+	    float:left;
+	    width: 300px;
+	    padding-left: 40px;
+
+	    .menu-section {
+	      margin-bottom: 30px;
+	      
+	      .menu-title {
+	        font-family: 'Avenir LT Std 85 Heavy';
+	        margin-bottom: 10px;
+	      }
+
+	      a {
+	        display: block;
+	        margin: 10px 0;
+	        text-decoration: none;
+	      }
+	    }
+
+	  }	
+	}
+}

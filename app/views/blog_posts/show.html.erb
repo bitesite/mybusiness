@@ -1,36 +1,32 @@
 <div id="blog-posts-show">
-  <div class="container">
+  <% if @blog_post.featured_image_url.nil? %>
+    <%= image_tag 'defaultblog.jpg', class: 'featured-image' %>
+  <% else %>
+    <%= image_tag @blog_post.featured_image_url, class: 'featured-image' %>
+  <% end %>
 
-    <% if @blog_post.featured_image_url.nil? %>
-      <%= image_tag 'defaultblog.jpg', class: 'featured-image' %>
-    <% else %>
-      <%= image_tag @blog_post.featured_image_url, class: 'featured-image' %>
+  <h1>
+    <%= @blog_post.title %>
+  </h1>
+  <h2>
+    <%= convert_time_string @blog_post.created_at %>
+  </h2>
+
+  <div class="blog-post-body">
+    <%= markdown @blog_post.body %>
+  </div>
+
+
+  <div class="tags">
+    <% @blog_post.tags.each do |tag| %>
+      <span class='tag'><%= tag.name %></span>
     <% end %>
+  </div>
 
-    <h1>
-      <%= @blog_post.title %>
-    </h1>
-    <h2>
-      <%= convert_time_string @blog_post.created_at %>
-    </h2>
-
-    <div class="blog-post-body">
-      <%= markdown @blog_post.body %>
-    </div>
-
-
-    <div class="tags">
-      <% @blog_post.tags.each do |tag| %>
-        <span class='tag'><%= tag.name %></span>
-      <% end %>
-    </div>
-
-    <div class="actions">
-      <% if admin? %>
-        <%= link_to 'Edit', edit_blog_post_path(@blog_post) %> |
-      <% end %>
-      <%= link_to 'Back', blog_posts_path %>
-    </div>
-    
+  <div class="actions">
+    <% if admin? %>
+      <%= link_to 'Edit', edit_blog_post_path(@blog_post) %> |
+    <% end %>
+    <%= link_to 'Back', blog_posts_path %>
   </div>
 </div>

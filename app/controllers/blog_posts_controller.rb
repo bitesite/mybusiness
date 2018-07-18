@@ -1,23 +1,27 @@
 class BlogPostsController < ApplicationController
   load_and_authorize_resource
   before_action :set_title
-  layout 'non_landing'
 
   def index
     @blog_posts = BlogPost.published
     @blog_posts = BlogPost.all if admin?
     @blog_posts = @blog_posts.tagged_with(params[:tag_name]) if params[:tag_name]
     @blog_posts = @blog_posts.paginate(page: params[:page], per_page: 10)
+    @title = ""
+    render layout: 'blog'
   end
 
   def show
-    @title = "Blog - #{@blog_post.title}"
+    @title = "#{@blog_post.title}"
+    render layout: 'blog'
   end
 
   def new
+    render layout: 'non_landing'
   end
 
   def edit
+    render layout: 'non_landing'
   end
 
   def create
@@ -25,7 +29,7 @@ class BlogPostsController < ApplicationController
     if @blog_post.save
       redirect_to @blog_post, notice: 'Blog post was successfully created.'
     else
-      render action: "new"
+      render action: "new", layout: 'non_landing'
     end
   end
 
@@ -33,7 +37,7 @@ class BlogPostsController < ApplicationController
     if @blog_post.update_attributes(blog_post_params)
       redirect_to @blog_post, notice: 'Blog post was successfully updated.'
     else
-      render action: "edit"
+      render action: "edit", layout: 'non_landing'
     end
   end
 
