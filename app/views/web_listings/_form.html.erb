@@ -1,0 +1,32 @@
+<%= form_with(model: web_listing, local: true) do |form| %>
+  <% if web_listing.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(web_listing.errors.count, "error") %> prohibited this web_listing from being saved:</h2>
+
+      <ul>
+      <% web_listing.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :web_listing_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :url %>
+    <%= form.text_field :url, id: :web_listing_url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :position %>
+    <%= form.number_field :position, id: :web_listing_position %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

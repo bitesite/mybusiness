@@ -1,0 +1,34 @@
+
+<div class="container">
+  <h1>Web Listings</h1>
+
+  <table class='resource-table'>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Url</th>
+        <th>Position</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @web_listings.each do |web_listing| %>
+        <tr>
+          <td><%= web_listing.name %></td>
+          <td><%= web_listing.url %></td>
+          <td><%= web_listing.position %></td>
+          <td>
+            <%= link_to 'Show', web_listing %>
+            <%= link_to 'Edit', edit_web_listing_path(web_listing) %>
+            <%= link_to 'Destroy', web_listing, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to 'New Web Listing', new_web_listing_path %>
+</div>

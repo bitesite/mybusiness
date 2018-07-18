@@ -22,25 +22,9 @@
   <div class="portfolio-section">
     <h2>Web</h2>
 
-    <%= link_to "International Safety", "http://www.internationalsafety.com", class: "portfolio-listing", target: "_blank" %>
-    <%= link_to "Splice", "http://www.splice.co", class: "portfolio-listing", target: "_blank" %>
-    <%= link_to "Inspec Homes", "http://www.inspechomes.com", class: "portfolio-listing", target: "_blank" %>
-    <%= link_to "Blue Bird Coffee", "http://www.bluebirdcoffeeottawa.ca", class: "portfolio-listing", target: "_blank" %>
-    <%= link_to "MMB Counselling & Consulting", "http://www.mmbcounselling.com", class: "portfolio-listing", target: "_blank" %>
-    <%= link_to "Christine Kelly", "http://www.christinekelly.ca", class: "portfolio-listing", target: "_blank" %>
-    <%= link_to "We Raise Social", "http://www.weraisesocial.com", class: "portfolio-listing", target: "_blank" %>
-    <%= link_to "Aspire Performance Consulting", "http://www.aspireperformanceconsulting.com", class: "portfolio-listing", target: "_blank" %>
-    <%= link_to "Seekr-Pro", "http://www.seekr-pro.com", class: "portfolio-listing", target: "_blank" %>
-    <%= link_to "Airline Route Maps", "http://www.airlineroutemaps.com", class: "portfolio-listing", target: "_blank" %>
-    <%= link_to "Multinexus", "http://www.multinexus.com", class: "portfolio-listing", target: "_blank" %>
-    <%= link_to "Elliott Farm Equipment", "http://www.elliottfarmequipment.com", class: "portfolio-listing", target: "_blank" %>
-    <%= link_to "Horses by Hannah", "http://www.horsesbyhannah.ca", class: "portfolio-listing", target: "_blank" %>
-    <%= link_to "M&D", "http://www.marilynanddouglas.com", class: "portfolio-listing", target: "_blank" %>
-    <%= link_to "Elite Edge", "http://www.elite-edge.ca", class: "portfolio-listing", target: "_blank" %>
-    <%= link_to "Liam Wong", "http://www.liamwongsound.com", class: "portfolio-listing", target: "_blank" %>
-    <%= link_to "Alberta Harpist", "http://www.albertaharpist.com", class: "portfolio-listing", target: "_blank" %>
-    <%= link_to "Capo", "http://capoapp.herokuapp.com/", class: "portfolio-listing", target: "_blank" %>
-    <%= link_to "Jen & Wayne", "http://www.jenandwayne.com", class: "portfolio-listing", target: "_blank" %>
+    <% WebListing.sorted.each do |web_listing| %>
+      <%= link_to web_listing.name, web_listing.url, class: "portfolio-listing" %>
+    <% end %>
     <div class="clear"></div>
   </div>
 

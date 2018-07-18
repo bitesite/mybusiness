@@ -3,6 +3,7 @@ Mybusiness::Application.routes.draw do
   resources :careers
   resources :settings
   resources :video_listings
+  resources :web_listings, except: [:show]
   resources :time_off_entries, except: [:show] do
     collection do
       get 'bulk_new'
