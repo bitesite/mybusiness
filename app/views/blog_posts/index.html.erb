@@ -1,11 +1,22 @@
 <div id="blog-posts-index">
   <div class="container">
-  <h1>THE BITESITE BLOG</h1>
+    <div class='blog-title'>THE BITESITE BLOG</div>
 
-  <% if can? :new, BlogPost %>
-    <%= link_to 'New Blog post', new_blog_post_path %> <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
-  <% end %><br>
-  
-  <%= render @blog_posts %>
+    <% if can? :new, BlogPost %>
+      <div class="index-actions">
+        <%= link_to 'New Blog post', new_blog_post_path %> <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
+      </div>
+    <% end %>
+
+    <div class="blog-content">
+      <%= render @blog_posts %>
+
+      <%= will_paginate @blog_posts %>
+    </div>
+    <div class="blog-menu">
+      Menu
+    </div>
+    <div class="clear"></div>
+
   </div>
 </div>

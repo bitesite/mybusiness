@@ -6,6 +6,7 @@ class BlogPostsController < ApplicationController
   def index
     @blog_posts = BlogPost.published
     @blog_posts = BlogPost.all if admin?
+    @blog_posts = @blog_posts.paginate(page: params[:page], per_page: 10)
   end
 
   def show
@@ -37,7 +38,7 @@ class BlogPostsController < ApplicationController
 
   private
     def blog_post_params 
-      params.require(:blog_post).permit(:body, :title, :published)
+      params.require(:blog_post).permit(:body, :title, :published, :featured_image)
     end
 
     def set_title

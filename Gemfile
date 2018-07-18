@@ -21,6 +21,7 @@ gem 'sucker_punch'
 gem 'dotenv-rails'
 gem 'font-awesome-rails'
 gem 'test-unit', '~> 3.0'
+gem 'will_paginate'
 
 gem 'deployem'
 
