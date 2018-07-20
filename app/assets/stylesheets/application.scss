@@ -15,24 +15,13 @@
 @import "common/layout";
 
 @import "views/blog_posts/*";
-@import "views/blog_post_images/index";
-@import "views/pages/staff_dashboard";
-
-@import "views/careers/index";
-
-@import "views/devise/devise";
-
-@import "views/contact_form_submissions/index";
-
-@import "views/news_posts/index";
-
-@import "views/pages/admin";
-@import "views/pages/case_studies";
-@import "views/pages/home";
-@import "views/pages/portfolio";
-@import "views/pages/setting_up_your_heroku_account";
-@import "views/pages/terms_and_conditions";
-
-@import "views/time_off_entries/index";
-
-@import "views/video_listings/index";
+@import "views/blog_post_images/*";
+@import "views/pages/*";
+@import "views/careers/*";
+@import "views/devise/*";
+@import "views/contact_form_submissions/*";
+@import "views/news_posts/*";
+@import "views/pages/*";
+@import "views/profiles/*";
+@import "views/time_off_entries/*";
+@import "views/video_listings/*";

@@ -10,6 +10,16 @@
   </div>
 
   <div class="field">
+    <%= f.label :job_title %>
+    <%= f.text_field :job_title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :avatar, "Profile Picture (optimal 400x400px)" %>
+    <%= f.file_field :avatar %>
+  </div>
+
+  <div class="field">
     <%= f.label :employee_number %>
     <%= f.text_field :employee_number %>
   </div>

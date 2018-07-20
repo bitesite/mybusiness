@@ -1,6 +1,6 @@
 .blog-post {
 
-  margin-bottom: 40px;
+  margin-bottom: 100px;
 
   &.hidden {
     border: 1px solid red;
@@ -97,6 +97,37 @@
       border-radius: 2px;
       overflow: scroll; 
       background: $pale-gray;
+    }
+  }
+
+  .author {
+    margin-top: 20px;
+
+    @include clear-floats-container;
+
+    .avatar-container {
+      float:left;
+      width: 40px;
+
+      img {
+        width: 100%;
+        border-radius: 40px;
+      }
+    }
+    .author-info {
+      float:left;
+      width:calc(100% - 60px);
+      padding-left: 10px;
+
+      .full-name {
+        font-size:1.5em;
+      }
+
+      .job-title {
+        font-size: 0.8em;
+        color: $gray;
+        text-transform: uppercase;
+      }
     }
   }
 }

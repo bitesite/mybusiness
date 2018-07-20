@@ -1,0 +1,34 @@
+#profiles-show {
+  .profile-container {
+    margin: 0 auto;
+    background: $pale-gray;
+    max-width: 500px;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+
+    .avatar {
+      margin: 20px 0;
+      width: 200px;
+      height: 200px;
+      border-radius:200px;
+    }
+
+    .full-name {
+      font-size: 1.5em;
+    }
+
+    .email {
+      font-size: 1.25em;
+      margin-bottom: 20px;
+    }
+
+    .employee-number {
+
+    }
+
+    .actions {
+      margin: 10px 0;
+    }
+  }
+}

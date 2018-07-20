@@ -1,0 +1,11 @@
+$mobile-menu-device-width: 800px;
+
+@mixin clear-floats-container {
+  &:after {
+    content: ".";
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+  }
+}

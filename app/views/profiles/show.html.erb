@@ -1,19 +1,38 @@
-<h1>Profile</h1>
+<div id="profiles-show">
+  <div class="container">
+    <h1>Profile</h1>
 
-<div>
-  First Name: <%= @profile.first_name %>
+    <div class="profile-container">
+
+      <% if @profile.avatar_url.nil? %>
+        <%= image_tag "blankavatar.png", class: 'avatar' %>
+      <% else %>
+        <%= image_tag @profile.avatar, class: 'avatar' %>
+      <% end %>
+
+      <div class='full-name'>
+        <%= @profile.full_name %>
+      </div>
+      
+      <div class='email'>
+        <%= @profile.user.email %>
+      </div>
+
+      <div class='job-title'>
+        Job Title: <%= @profile.job_title %>
+      </div>
+
+      <div class='employee-number'>
+        Employee Number: <%= @profile.employee_number %>
+      </div>
+
+      <div class='start date'>
+        Start Date: <%= @profile.start_date %>
+      </div>
+
+      <div class="actions">
+        <%= link_to "Edit Profile", edit_profile_path %>
+      </div>
+    </div>
+  </div>
 </div>
-
-<div>
-  Last Name: <%= @profile.last_name %>
-</div>
-
-<div>
-  Employee Number: <%= @profile.employee_number %>
-</div>
-
-<div>
-  Start Date: <%= @profile.start_date %>
-</div>
-
-<%= link_to "Edit Profile", edit_profile_path %>

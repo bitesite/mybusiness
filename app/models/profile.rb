@@ -1,4 +1,16 @@
 class Profile < ApplicationRecord
-  belongs_to :user, optional: true
+  belongs_to :user
   validates :employee_number, uniqueness: true, allow_nil: true
+  mount_uploader :avatar, AvatarUploader
+
+  def full_name
+    "#{first_name || "(first name)"} #{last_name || "(last name)"}"
+  end
+
+  def suitable_for_blog?
+    avatar.present? && 
+      first_name.present? && 
+      last_name.present? &&
+      job_title.present?
+  end
 end

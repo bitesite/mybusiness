@@ -11,15 +11,28 @@
     <div class="blog-post-date"><%= convert_time_string blog_post.created_at %></div>    
   </div>
 
-  <div class="blog-post-body">
-    <%= markdown blog_post.body, false %>
-  </div>
-
   <div class="tags">
     <% blog_post.tags.each do |tag| %>
       <span class='tag'><%= tag.name %></span>
     <% end %>
   </div>
+
+  <div class="blog-post-body">
+    <%= markdown blog_post.body, false %>
+  </div>
+  
+  <% if blog_post.user.profile.suitable_for_blog? %>
+    <div class="author">
+      <div class='avatar-container'>
+        <%= image_tag blog_post.user.profile.avatar_url %>
+      </div>
+      <div class="author-info">
+        <div class='full-name'><%= blog_post.user.profile.full_name %></div>
+        <div class='job-title'><%= blog_post.user.profile.job_title %></div>
+      </div>
+    </div>
+  <% end %>
+  
 
   <div class="blog-post-actions">    
     <% if can? :edit, blog_post %>
@@ -30,5 +43,7 @@
       </div>
     <% end %>
   </div>
+
+
   <div class="clear-floats"></div>
 </div>
