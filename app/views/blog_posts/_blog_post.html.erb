@@ -28,9 +28,13 @@
       </div>
       <div class="author-info">
         <div class='full-name'><%= blog_post.user.profile.full_name %></div>
-        <div class='job-title'><%= blog_post.user.profile.job_title %></div>
+        <div class='job-title'><%= blog_post.user.profile.job_title %>, BiteSite</div>
       </div>
     </div>
+  <% else %>
+    <% if staff? %>
+      Author: <%= blog_post.user.try(:email) %>
+    <% end %>
   <% end %>
   
 
@@ -39,7 +43,6 @@
       <div class='edit-actions'>
         <%= link_to "edit", edit_blog_post_path(blog_post) %>
         <%= link_to "add images", blog_post_blog_post_images_path(blog_post) %><br/>
-        Author: <%= blog_post.user.try(:email) %>
       </div>
     <% end %>
   </div>
