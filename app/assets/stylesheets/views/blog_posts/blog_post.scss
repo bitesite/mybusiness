@@ -70,6 +70,10 @@
     font-size:15px;
     line-height: 2em;
     text-align: justify;
+
+    h2 {
+      margin-top: 50px;
+    }
     
     a {
       font-weight:bold;
@@ -101,7 +105,7 @@
   }
 
   .author {
-    margin-top: 20px;
+    margin-top: 40px;
 
     @include clear-floats-container;
 
