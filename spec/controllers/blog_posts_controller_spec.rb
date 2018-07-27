@@ -25,7 +25,7 @@ describe BlogPostsController, type: :controller do
     describe "GET #show" do
       it "returns successfully" do
         get :show, params: { id: draft_blog_post.id }
-        expect(response).to redirect_to blog_path
+        expect(response).to redirect_to blog_posts_path
       end
     end
   end

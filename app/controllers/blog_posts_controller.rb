@@ -46,7 +46,7 @@ class BlogPostsController < ApplicationController
     def friendly_find
       @blog_post = BlogPost.friendly.find(params[:id])
       if !(@blog_post.published || staff? || admin?)
-        redirect_to blog_path
+        redirect_to blog_posts_path
       end
     end
 

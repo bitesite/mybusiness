@@ -23,8 +23,8 @@ Mybusiness::Application.routes.draw do
   resource :profile, only: [:show, :edit, :update]
 
   # - BLOG POSTS
-  get "/blog" => "blog_posts#index"
-  resources :blog_posts, except: [:destroy] do
+  # get "/blog" => "blog_posts#index"
+  resources :blog_posts, path: '/blog', except: [:destroy] do
     resources :blog_post_images, except: [:show, :edit, :update]
   end
 
