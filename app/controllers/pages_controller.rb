@@ -88,7 +88,7 @@ class PagesController < ApplicationController
             customer_email = params[:email_address]
             message = params[:message]
           
-            EmailJob.new.async.perform(first_name, last_name, customer_email, message)
+            EmailJob.perform_async(first_name, last_name, customer_email, message)
             @success = true
           end
         end
