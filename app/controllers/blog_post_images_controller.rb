@@ -1,5 +1,5 @@
 class BlogPostImagesController < ApplicationController
-
+  before_action :friendly_find_blog_post
   load_and_authorize_resource :blog_post
   load_and_authorize_resource :blog_post_image, through: :blog_post
   before_action :set_title
@@ -19,6 +19,9 @@ class BlogPostImagesController < ApplicationController
   end
 
   private
+    def friendly_find_blog_post
+      @blog_post = BlogPost.friendly.find(params[:blog_post_id])
+    end
 
     def blog_post_image_params
       params.require(:blog_post_image).permit(:blog_post_id, :image)

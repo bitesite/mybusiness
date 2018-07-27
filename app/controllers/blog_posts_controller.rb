@@ -1,4 +1,5 @@
 class BlogPostsController < ApplicationController
+  before_action :friendly_find, only: [:show, :edit, :update]
   load_and_authorize_resource :blog_post, except: [:show]
   before_action :set_title
 
@@ -12,15 +13,8 @@ class BlogPostsController < ApplicationController
   end
 
   def show
-    @blog_post = BlogPost.friendly.find(params[:id])
     @title = "#{@blog_post.title}"
-
-    if @blog_post.published || (staff? || admin?)
-      render layout: 'blog'
-    else
-      redirect_to blog_path
-    end
-
+    render layout: 'blog'
   end
 
   def new
@@ -49,6 +43,13 @@ class BlogPostsController < ApplicationController
   end
 
   private
+    def friendly_find
+      @blog_post = BlogPost.friendly.find(params[:id])
+      if !(@blog_post.published || staff? || admin?)
+        redirect_to blog_path
+      end
+    end
+
     def blog_post_params 
       params.require(:blog_post).permit(:body, :title, :published, :featured_image, :tag_list)
     end
