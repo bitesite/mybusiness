@@ -11,7 +11,7 @@ gem 'responders', '~> 2.0'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
 gem 'newrelic_rpm'
-gem 'rmagick', require: false
+gem 'mini_magick'
 gem 'redcarpet'
 gem 'carrierwave'
 gem 'fog-aws'
