@@ -12,6 +12,15 @@ describe ContactFormSubmissionsController, type: :controller do
         expect(response).to redirect_to root_path
       end
     end
+
+    describe "DELETE #destroy" do
+      it 'does not destroy the contact form submission' do
+        contact_form_submission
+        expect {
+          delete :destroy, params: { id: contact_form_submission }
+        }.to change(ContactFormSubmission, :count).by(0)
+      end
+    end
   end
 
   shared_examples 'a user who can manage contact form submissions' do
@@ -20,6 +29,13 @@ describe ContactFormSubmissionsController, type: :controller do
         get :index
         expect(response).to have_http_status :ok
       end
+    end
+
+    it 'does not destroy the contact form submission' do
+      contact_form_submission
+      expect {
+        delete :destroy, params: { id: contact_form_submission }
+      }.to change(ContactFormSubmission, :count).by(-1)
     end
   end
 

@@ -2,17 +2,19 @@
   <div class="container">
   <h1>CONTACT FORM SUBMISSIONS</h1>
 
-  <% @contact_form_submissions.each do |c| %>
+  <% @contact_form_submissions.each do |contact_form_submission| %>
     <div class="contact-form-submission">
       <div>
-        <%= c.first_name %> <%= c.last_name %> (<%= c.email_address %>)
+        <%= contact_form_submission.first_name %> <%= contact_form_submission.last_name %> (<%= contact_form_submission.email_address %>)
       </div>
       <div>
-        <%= c.message %>
+        <%= contact_form_submission.message %>
       </div>
       <div>
-        <%= c.created_at %>
+        <%= contact_form_submission.created_at %>
       </div>
+
+      <%= link_to 'Destroy', contact_form_submission, method: :delete, data: { confirm: 'Are you sure?'} %>
     </div>
   <% end %>
   </div>

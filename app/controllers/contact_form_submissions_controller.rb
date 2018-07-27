@@ -1,11 +1,15 @@
 class ContactFormSubmissionsController < ApplicationController
-  
-  before_action :deny_access_for_non_admins
+  load_and_authorize_resource
   before_action :set_title
   layout 'non_landing'
   
   def index
     @contact_form_submissions = ContactFormSubmission.all
+  end
+
+  def destroy
+    @contact_form_submission.destroy
+    redirect_to contact_form_submissions_path
   end
 
   private

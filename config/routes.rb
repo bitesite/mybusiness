@@ -14,7 +14,7 @@ Mybusiness::Application.routes.draw do
       put 'approve'
     end
   end
-  resources :contact_form_submissions, only: [:index]
+  resources :contact_form_submissions, only: [:index, :destroy]
 
   resources :contests do
     resources :contestants
