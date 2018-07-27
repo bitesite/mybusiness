@@ -3,11 +3,37 @@ require 'rails_helper'
 describe BlogPostsController, type: :controller do
 
   let(:blog_post) { create(:blog_post) }
+  let(:draft_blog_post) { create(:draft_blog_post) }
 
   shared_examples 'a user who can view blog posts' do
     describe "GET #index" do
       it "returns successfully" do
         get :index
+        expect(response).to have_http_status :ok
+      end
+    end
+
+    describe "GET #show" do
+      it "returns successfully" do
+        get :show, params: { id: blog_post.id }
+        expect(response).to have_http_status :ok
+      end
+    end
+  end
+
+  shared_examples 'a user who can\'t view draft blog posts' do
+    describe "GET #show" do
+      it "returns successfully" do
+        get :show, params: { id: draft_blog_post.id }
+        expect(response).to redirect_to blog_path
+      end
+    end
+  end
+
+  shared_examples 'a user who can view draft blog posts' do
+    describe "GET #show" do
+      it "returns successfully" do
+        get :show, params: { id: draft_blog_post.id }
         expect(response).to have_http_status :ok
       end
     end
@@ -102,6 +128,7 @@ describe BlogPostsController, type: :controller do
   context 'when not signed in' do
     it_behaves_like 'a user who can view blog posts'
     it_behaves_like 'a user who cannot manage blog posts'
+    it_behaves_like 'a user who can\'t view draft blog posts'
   end
 
   context 'when signed in' do
@@ -111,6 +138,7 @@ describe BlogPostsController, type: :controller do
 
     it_behaves_like 'a user who can view blog posts'
     it_behaves_like 'a user who cannot manage blog posts'
+    it_behaves_like 'a user who can\'t view draft blog posts'
   end
 
   context 'when signed in as an admin' do
@@ -121,6 +149,7 @@ describe BlogPostsController, type: :controller do
 
     it_behaves_like 'a user who can view blog posts'
     it_behaves_like 'a user who can manage blog posts'
+    it_behaves_like 'a user who can view draft blog posts'
   end
 
   context 'when signed in as staff' do
@@ -130,6 +159,7 @@ describe BlogPostsController, type: :controller do
 
     it_behaves_like 'a user who can view blog posts'
     it_behaves_like 'a user who can manage blog posts'
+    it_behaves_like 'a user who can view draft blog posts'
   end
 
   context 'when signed in as a supervisor' do

@@ -1,5 +1,5 @@
 class BlogPostsController < ApplicationController
-  load_and_authorize_resource
+  load_and_authorize_resource :blog_post, except: [:show]
   before_action :set_title
 
   def index
@@ -12,8 +12,15 @@ class BlogPostsController < ApplicationController
   end
 
   def show
+    @blog_post = BlogPost.friendly.find(params[:id])
     @title = "#{@blog_post.title}"
-    render layout: 'blog'
+
+    if @blog_post.published || (staff? || admin?)
+      render layout: 'blog'
+    else
+      redirect_to blog_path
+    end
+
   end
 
   def new

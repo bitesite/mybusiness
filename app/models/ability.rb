@@ -4,7 +4,7 @@ class Ability
   def initialize(user)
     user ||= User.new # guest user (not logged in)
 
-    can :read, BlogPost
+    can :read, BlogPost, published: true
 
 
     if user.has_role?(:staff)

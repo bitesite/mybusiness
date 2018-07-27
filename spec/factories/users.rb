@@ -5,7 +5,10 @@ FactoryBot.define do
     email { Faker::Internet.email }
     password 'secret12'
     password_confirmation 'secret12'
-    profile
+
+    after(:build) do |user|
+      user.profile = build(:profile)
+    end
 
     factory :admin_user do
       after(:build) do |user|
@@ -25,4 +28,11 @@ FactoryBot.define do
       end
     end
   end
+
+  factory :user_for_profile, class: User do
+    email { Faker::Internet.email }
+    password 'secret12'
+    password_confirmation 'secret12'
+  end
+
 end

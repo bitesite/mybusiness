@@ -24,6 +24,8 @@ gem 'test-unit', '~> 3.0'
 gem 'will_paginate'
 gem 'acts-as-taggable-on'
 
+gem 'friendly_id'
+
 gem 'deployem'
 
 # Authentication
