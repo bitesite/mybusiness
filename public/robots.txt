@@ -4,4 +4,4 @@
 # User-Agent: *
 # Disallow: /
 
-Sitemap: http://app.wistia.com/sitemaps/12391.xml
+Sitemap: https://bitesite.s3.amazonaws.com/sitemap.xml.gz

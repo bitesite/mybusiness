@@ -34,8 +34,7 @@ Mybusiness::Application.routes.draw do
 
 
   # - NEWS POSTS
-  get "/news" => "news_posts#index"
-  resources :news_posts
+  resources :news_posts, path: '/news'
   resources :email_blacklistings, except: [:show]
 
 

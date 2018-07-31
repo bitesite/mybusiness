@@ -222,6 +222,8 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    sitemap_generator (6.0.1)
+      builder (~> 3.0)
     slop (3.6.0)
     spring (1.7.2)
     sprockets (3.7.1)
@@ -289,6 +291,7 @@ DEPENDENCIES
   rolify
   rspec-rails (~> 3.6)
   sass-rails (~> 5.0.7)
+  sitemap_generator
   spring
   sucker_punch
   test-unit (~> 3.0)
