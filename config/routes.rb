@@ -39,6 +39,8 @@ Mybusiness::Application.routes.draw do
 
 
   # - PAGES
+  root "pages#home"
+
   get "pages/home"
   get "/contact" => "pages#contact"
   post "/contact" => "pages#contact"
@@ -59,5 +61,6 @@ Mybusiness::Application.routes.draw do
   get "/portfolio" => "pages#portfolio"
   get "/inspechomes" => "pages#inspechomes"
   get "/staff_dashboard" => "pages#staff_dashboard"
-  root :to => "pages#home"
+
+  get '/sitemap.xml.gz', to: redirect('https://bitesite.s3.amazonaws.com/sitemap.xml.gz')
 end
