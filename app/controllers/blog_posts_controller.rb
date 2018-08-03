@@ -7,7 +7,7 @@ class BlogPostsController < ApplicationController
     @blog_posts = BlogPost.published
     @blog_posts = BlogPost.all if (admin? || staff?)
     @blog_posts = @blog_posts.tagged_with(params[:tag_name]) if params[:tag_name]
-    @blog_posts = @blog_posts.paginate(page: params[:page], per_page: 10)
+    @blog_posts = @blog_posts.paginate(page: params[:page], per_page: 5)
     @title = ""
     render layout: 'blog'
   end
