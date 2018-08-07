@@ -62,5 +62,5 @@ Mybusiness::Application.routes.draw do
   get "/inspechomes" => "pages#inspechomes"
   get "/staff_dashboard" => "pages#staff_dashboard"
 
-  get '/sitemap.xml.gz', to: redirect('https://bitesite.s3.amazonaws.com/sitemap.xml.gz')
+  get "/sitemap.xml" => "sitemap#index", format: "xml", as: :sitemap
 end
