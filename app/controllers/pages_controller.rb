@@ -38,7 +38,6 @@ class PagesController < ApplicationController
 
     @staff_listings = [
       {name: "Casey Li", position: "CEO & Founder", avatar: "staff/casey.png"},
-      {name: "Ryan O'Connor", position: "Software Developer", avatar: "staff/ryan.png"},
       {name: "Tim Clark", position: "Filmmaker", avatar: "staff/tim.png"},
       {name: "Brendan McNeill", position: "Producer", avatar: "staff/brendan.png"},
       {name: "Yuhan Lee", position: "Software Developer", avatar: "staff/yuhan.png"}
