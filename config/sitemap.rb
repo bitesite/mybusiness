@@ -37,7 +37,6 @@ SitemapGenerator::Sitemap.create do
   add christine_kelly_path
   add d3m_path
   add curtiss_wright_path
-  add inspechomes_path
 
   # NEWS
   add news_posts_path
