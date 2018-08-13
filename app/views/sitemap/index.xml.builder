@@ -76,11 +76,6 @@ xml.tag! 'urlset',
     xml.changefreq "yearly"
     xml.priority '0.5'
   end
-  xml.url do
-    xml.loc inspechomes_url
-    xml.changefreq "yearly"
-    xml.priority '0.5'
-  end
 
   # NEWS
   xml.url do
