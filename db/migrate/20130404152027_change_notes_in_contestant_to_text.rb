@@ -1,4 +1,4 @@
-class ChangeNotesInContestantToText < ActiveRecord::Migration
+class ChangeNotesInContestantToText < ActiveRecord::Migration[4.2]
   def up
     change_column :contestants, :notes, :text
   end

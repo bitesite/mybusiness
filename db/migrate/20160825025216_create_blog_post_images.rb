@@ -1,4 +1,4 @@
-class CreateBlogPostImages < ActiveRecord::Migration
+class CreateBlogPostImages < ActiveRecord::Migration[4.2]
   def change
     create_table :blog_post_images do |t|
       t.string :image
