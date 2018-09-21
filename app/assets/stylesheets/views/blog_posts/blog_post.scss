@@ -102,6 +102,41 @@
       overflow: scroll; 
       background: $pale-gray;
     }
+
+    table {
+      width: 80%;
+      border-collapse: collapse;
+      margin: 40px auto;
+      thead {
+        tr {
+          border-bottom: 2px solid $gray;
+          
+          th {
+            font-family: 'Avenir LT Std 85 Heavy';
+            padding: 10px 10px;
+          }
+        }
+      }
+
+      tbody {
+        tr {
+          border-bottom: 1px solid $gray;
+        
+          td {
+            padding: 15px 10px;
+          }
+
+          &:nth-child(odd) {
+            background: $pale-gray;
+          }
+          
+          &:last-child {
+            border-bottom: none;
+          }
+        }
+
+      }
+    }
   }
 
   .author {
