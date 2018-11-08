@@ -1,24 +1,30 @@
 <div class="blog-post <%= blog_post.published ? '' : 'hidden' %>">
 
-  <% if blog_post.featured_image_url.nil? %>
-    <%= image_tag 'defaultblog.jpg', class: 'featured-image' %>
-  <% else %>
-    <%= image_tag blog_post.featured_image_url, class: 'featured-image' %>
-  <% end %>
-
-  <div class="blog-post-header">
-    <h1><%= blog_post.title %></h1>
-    <div class="blog-post-date"><%= convert_time_string blog_post.created_at %></div>    
-  </div>
-
-  <div class="tags">
-    <% blog_post.tags.each do |tag| %>
-      <span class='tag'><%= tag.name %></span>
+  <div class="expandable-container">
+    <% if blog_post.featured_image_url.nil? %>
+      <%= image_tag 'defaultblog.jpg', class: 'featured-image' %>
+    <% else %>
+      <%= image_tag blog_post.featured_image_url, class: 'featured-image' %>
     <% end %>
-  </div>
 
-  <div class="blog-post-body">
-    <%= markdown blog_post.body, false %>
+    <div class="blog-post-header">
+      <h1><%= blog_post.title %></h1>
+      <div class="blog-post-date"><%= convert_time_string blog_post.created_at %></div>    
+    </div>
+
+    <div class="tags">
+      <% blog_post.tags.each do |tag| %>
+        <span class='tag'><%= tag.name %></span>
+      <% end %>
+    </div>
+
+    <div class="blog-post-body">
+      <%= markdown blog_post.body, false %>
+    </div>
+
+    <div class='expandable-container-bottom-bar'>
+      <%= link_to 'Click here to read the full article', blog_post, class: 'read-more' %>
+    </div>
   </div>
   
   <% if blog_post.user.profile.suitable_for_blog? %>

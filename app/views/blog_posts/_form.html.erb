@@ -30,6 +30,11 @@
     <%= f.file_field :featured_image %>
   </div>
 
+  <div class="field">
+    <%= f.check_box :remove_featured_image %>
+    <%= f.label :remove_featured_image, "Remove Featured Image", class: 'checkbox-label' %>
+  </div>
+
   <div class="field image-previews">
     <h3>Images available for use</h3>
 
