@@ -1,3 +1,5 @@
+<%= javascript_pack_tag 'blog_post_comments' %>
+
 <div id="blog-posts-show">
 
   <div class="blog-post <%= @blog_post.published ? '' : 'hidden' %>">
@@ -39,6 +41,8 @@
         Author: <%= @blog_post.user.try(:email) %>
       <% end %>
     <% end %>
+
+    <div id='blog-post-comments-component-mount-point'></div>
     
 
     <div class="blog-post-actions">    
