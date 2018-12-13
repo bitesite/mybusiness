@@ -2,7 +2,7 @@
 
   <div class="expandable-container">
 
-    <% if !blog_post.featured_video %>
+    <% if blog_post.featured_video.blank? %>
       <% if blog_post.featured_image_url.nil? %>
         <%= image_tag 'defaultblog.jpg', class: 'featured-image' %>
       <% else %>
@@ -21,7 +21,7 @@
       <% end %>
     </div>
 
-    <% if blog_post.featured_video %>
+    <% if blog_post.featured_video.present? %>
       <div class="blog-post-featured-video">
         <iframe width="100%" height="400" src="<%= blog_post.featured_video %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>      
       </div>
