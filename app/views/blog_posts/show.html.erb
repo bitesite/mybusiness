@@ -16,7 +16,7 @@
     <meta property="og:image" content="<%= asset_url("defaultblog.jpg").gsub("https://", "http://") %>" />
     <meta name="twitter:image" content="<%= asset_url("defaultblog.jpg") %>" />
   <% else %>
-    <meta property="og:image" content="<%= @blog_post.featured_image_url %>" />
+    <meta property="og:image" content="<%= @blog_post.featured_image_url.gsub("https://", "http://") %>" />
     <meta name="twitter:image" content="<%= @blog_post.featured_image_url %>" />
   <% end %>
 
