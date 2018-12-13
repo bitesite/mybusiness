@@ -1,23 +1,25 @@
 <div id="blog-posts-show">
 
-  <meta property="og:title" content="<%= @blog_post.title %>" />
-  <meta property="og:site_name" content="The BiteSite Blog" />
-  <meta property="og:url" content="<%= blog_post_url @blog_post  %>" />
-  <meta name="twitter:title" content="<%= @blog_post.title %>" />
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:site" content="@bitesite" />
+  <% content_for :social_meta_tags do %>
+    <meta property="og:title" content="<%= @blog_post.title %>" />
+    <meta property="og:site_name" content="The BiteSite Blog" />
+    <meta property="og:url" content="<%= blog_post_url @blog_post  %>" />
+    <meta name="twitter:title" content="<%= @blog_post.title %>" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@bitesite" />
 
-  <% if @blog_post.meta_description %>
-    <meta property="og:description" content="<%= @blog_post.meta_description %>"/>
-    <meta name="twitter:description" content="<%= @blog_post.meta_description %>" />
-  <% end %>
+    <% if @blog_post.meta_description %>
+      <meta property="og:description" content="<%= @blog_post.meta_description %>"/>
+      <meta name="twitter:description" content="<%= @blog_post.meta_description %>" />
+    <% end %>
 
-  <% if @blog_post.featured_video.blank? %>
-    <meta property="og:image" content="<%= asset_url("defaultblog.jpg").gsub("https://", "http://") %>" />
-    <meta name="twitter:image" content="<%= asset_url("defaultblog.jpg") %>" />
-  <% else %>
-    <meta property="og:image" content="<%= @blog_post.featured_image_url.gsub("https://", "http://") %>" />
-    <meta name="twitter:image" content="<%= @blog_post.featured_image_url %>" />
+    <% if @blog_post.featured_video.blank? %>
+      <meta property="og:image" content="<%= asset_url("defaultblog.jpg").gsub("https://", "http://") %>" />
+      <meta name="twitter:image" content="<%= asset_url("defaultblog.jpg") %>" />
+    <% else %>
+      <meta property="og:image" content="<%= @blog_post.featured_image_url.gsub("https://", "http://") %>" />
+      <meta name="twitter:image" content="<%= @blog_post.featured_image_url %>" />
+    <% end %>
   <% end %>
 
   <div class="blog-post <%= @blog_post.published ? '' : 'hidden' %>">
