@@ -31,6 +31,11 @@
   </div>
 
   <div class="field">
+    <%= f.label :featured_video, "Featured Video (YouTube Embed link, e.g. https://www.youtube.com/embed/...)" %>
+    <%= f.text_field :featured_video %>
+  </div>
+
+  <div class="field">
     <%= f.check_box :remove_featured_image %>
     <%= f.label :remove_featured_image, "Remove Featured Image", class: 'checkbox-label' %>
   </div>
