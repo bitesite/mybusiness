@@ -14,6 +14,7 @@ class BlogPostsController < ApplicationController
 
   def show
     @title = "#{@blog_post.title}"
+    @meta_description = @blog_post.meta_description if @blog_post.meta_description.present?
     render layout: 'blog'
   end
 
@@ -35,6 +36,7 @@ class BlogPostsController < ApplicationController
   end
 
   def update
+    prepare_blog_post_for_slug_update
     if @blog_post.update_attributes(blog_post_params)
       redirect_to @blog_post, notice: 'Blog post was successfully updated.'
     else
@@ -51,10 +53,16 @@ class BlogPostsController < ApplicationController
     end
 
     def blog_post_params 
-      params.require(:blog_post).permit(:body, :title, :published, :featured_image, :remove_featured_image, :tag_list)
+      params.require(:blog_post).permit(:body, :title, :published, :featured_image, :remove_featured_image, :featured_video, :tag_list, :meta_description)
     end
 
     def set_title
       @title = "Blog"
+    end
+
+    def prepare_blog_post_for_slug_update
+      if params[:update_slug]
+        @blog_post.slug = nil
+      end
     end
 end
