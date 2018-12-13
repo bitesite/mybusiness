@@ -6,6 +6,15 @@
 
   .blog-post {
 
+    h1 a {
+      text-decoration: none;
+      color: $dark-gray;
+
+      &:hover {
+        color: $dark-aqua;
+      }
+    }
+
     .expandable-container {
       max-height: 750px;
       overflow: hidden;
