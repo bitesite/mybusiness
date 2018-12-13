@@ -15,9 +15,20 @@
     <%= f.label :title %>
     <%= f.text_field :title %>
   </div>
+
+  <div class="field">
+    <%= check_box_tag :update_slug %>
+    <%= f.label :update_slug, "Update URL", class: 'checkbox-label' %>
+  </div>
+
   <div class="field">
     <%= f.label :body %>
     <%= f.text_area :body, rows: 20 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :meta_description %>
+    <%= f.text_area :meta_description, rows: 2 %>
   </div>
 
   <div class="field">
