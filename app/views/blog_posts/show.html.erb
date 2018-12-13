@@ -1,11 +1,33 @@
 <div id="blog-posts-show">
 
+  <meta property="og:title" content="<%= @blog_post.title %>" />
+  <meta property="og:site_name" content="The BiteSite Blog" />
+  <meta property="og:url" content="<%= blog_post_url @blog_post  %>" />
+  <meta name="twitter:title" content="<%= @blog_post.title %>" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@bitesite" />
+
+  <% if @blog_post.meta_description %>
+    <meta property="og:description" content="<%= @blog_post.meta_description %>"/>
+    <meta name="twitter:description" content="<%= @blog_post.meta_description %>" />
+  <% end %>
+
+  <% if @blog_post.featured_video.blank? %>
+    <meta property="og:image" content="<%= asset_url("defaultblog.jpg") %>" />
+    <meta name="twitter:image" content="<%= asset_url("defaultblog.jpg") %>" />
+  <% else %>
+    <meta property="og:image" content="<%= @blog_post.featured_image_url %>" />
+    <meta name="twitter:image" content="<%= @blog_post.featured_image_url %>" />
+  <% end %>
+
   <div class="blog-post <%= @blog_post.published ? '' : 'hidden' %>">
 
-    <% if @blog_post.featured_image_url.nil? %>
-      <%= image_tag 'defaultblog.jpg', class: 'featured-image' %>
-    <% else %>
-      <%= image_tag @blog_post.featured_image_url, class: 'featured-image' %>
+    <% if @blog_post.featured_video.blank? %>
+      <% if @blog_post.featured_image_url.nil? %>
+        <%= image_tag 'defaultblog.jpg', class: 'featured-image' %>
+      <% else %>
+        <%= image_tag @blog_post.featured_image_url, class: 'featured-image' %>
+      <% end %>
     <% end %>
 
     <div class="blog-post-header">
@@ -18,6 +40,12 @@
         <span class='tag'><%= tag.name %></span>
       <% end %>
     </div>
+
+    <% if @blog_post.featured_video.present? %>
+      <div class="blog-post-featured-video">
+        <iframe width="100%" height="400" src="<%= @blog_post.featured_video %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>      
+      </div>
+    <% end %>
 
     <div class="blog-post-body">
       <%= markdown @blog_post.body, false %>
@@ -55,9 +83,6 @@
   </div>
 
   <div class="actions">
-    <% if admin? %>
-      <%= link_to 'Edit', edit_blog_post_path(@blog_post) %> |
-    <% end %>
     <%= link_to 'Back to The BiteSite Blog', blog_posts_path %>
   </div>
 </div>
