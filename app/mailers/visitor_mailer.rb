@@ -1,4 +1,4 @@
-class VisitorMailer < ActionMailer::Base
+class VisitorMailer < ApplicationMailer
   default from: "info@bitesite.ca"
   add_template_helper(ApplicationHelper)
   

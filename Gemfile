@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'rails', '5.1.5'
 
+gem 'webpacker', '~> 3.5'
+
 gem 'sass-rails',   '~> 5.0.7'
 gem 'coffee-rails', '~> 4.2.2'
 gem 'uglifier', '>= 1.0.3'
@@ -61,3 +63,5 @@ gem 'jquery-rails'
 
 ruby '2.5.0'
 #ruby-gemset=mybusiness
+
+gem "rabl", "~> 0.14.0"

@@ -1,3 +1,5 @@
+<%= javascript_pack_tag 'comments' %>
+
 <div id="blog-posts-show">
 
   <meta property="og:title" content="<%= @blog_post.title %>" />
@@ -67,6 +69,8 @@
         Author: <%= @blog_post.user.try(:email) %>
       <% end %>
     <% end %>
+
+    <div id='blog-post-comments-component-mount-point' data-blog-post-id='<%= @blog_post.id %>'></div>
     
 
     <div class="blog-post-actions">    
