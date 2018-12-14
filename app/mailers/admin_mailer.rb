@@ -1,4 +1,4 @@
-class AdminMailer < ActionMailer::Base
+class AdminMailer < ApplicationMailer
   default from: "info@bitesite.ca"
   
   def visitor_has_entered_contest(contestant)
@@ -20,6 +20,14 @@ class AdminMailer < ActionMailer::Base
          :from => @customer_email,
          :reply_to => @customer_email,
          :subject => "BiteSite.ca: Message from #{customer_email}")
+  end
+
+  def comment_notification(comment)
+    @comment = comment
+    mail(:to => "info@bitesite.ca",
+         :from => comment.email,
+         :reply_to => comment.email,
+         :subject => "Someone commented on '#{comment.blog_post.title}'")
   end
   
 end

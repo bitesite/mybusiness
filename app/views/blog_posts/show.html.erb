@@ -1,4 +1,4 @@
-<%= javascript_pack_tag 'blog_post_comments' %>
+<%= javascript_pack_tag 'comments' %>
 
 <div id="blog-posts-show">
 
@@ -70,7 +70,7 @@
       <% end %>
     <% end %>
 
-    <div id='blog-post-comments-component-mount-point'></div>
+    <div id='blog-post-comments-component-mount-point' data-blog-post-id='<%= @blog_post.id %>'></div>
     
 
     <div class="blog-post-actions">    
