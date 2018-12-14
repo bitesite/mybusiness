@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181213155626) do
+ActiveRecord::Schema.define(version: 20181214171744) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,16 @@ ActiveRecord::Schema.define(version: 20181213155626) do
     t.datetime "updated_at", null: false
     t.string "location", limit: 255
     t.boolean "archived"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.text "body"
+    t.bigint "blog_post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["blog_post_id"], name: "index_comments_on_blog_post_id"
   end
 
   create_table "contact_form_submissions", id: :serial, force: :cascade do |t|
@@ -209,4 +219,5 @@ ActiveRecord::Schema.define(version: 20181213155626) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "comments", "blog_posts"
 end

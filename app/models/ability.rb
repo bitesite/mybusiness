@@ -5,6 +5,8 @@ class Ability
     user ||= User.new # guest user (not logged in)
 
     can :read, BlogPost, published: true
+    can :read, Comment
+    can :create, Comment
 
 
     if user.has_role?(:staff)
