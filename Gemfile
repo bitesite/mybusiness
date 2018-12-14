@@ -63,3 +63,5 @@ gem 'jquery-rails'
 
 ruby '2.5.0'
 #ruby-gemset=mybusiness
+
+gem "rabl", "~> 0.14.0"

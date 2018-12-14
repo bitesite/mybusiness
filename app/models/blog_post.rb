@@ -6,6 +6,7 @@ class BlogPost < ApplicationRecord
   
   belongs_to :user, optional: true
   has_many :blog_post_images
+  has_many :comments
   
   mount_uploader :featured_image, BlogPostFeaturedImageUploader
   
