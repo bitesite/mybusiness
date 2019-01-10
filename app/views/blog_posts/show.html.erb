@@ -15,7 +15,7 @@
       <meta name="twitter:description" content="<%= @blog_post.meta_description %>" />
     <% end %>
 
-    <% if @blog_post.featured_video.blank? %>
+    <% if @blog_post.featured_image.blank? %>
       <meta property="og:image" content="<%= asset_url("defaultblog.jpg").gsub("https://", "http://") %>" />
       <meta name="twitter:image" content="<%= asset_url("defaultblog.jpg") %>" />
     <% else %>
