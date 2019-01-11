@@ -8,6 +8,7 @@ module ApplicationHelper
     md = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true, 
                                                           space_after_headers: false, 
                                                           hard_wrap: true, 
+                                                          tables: true,
                                                           filter_html: filter_html)
     md.render(text).html_safe
   end  

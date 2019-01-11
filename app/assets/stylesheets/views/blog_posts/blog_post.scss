@@ -104,9 +104,12 @@
     }
 
     table {
-      width: 80%;
+      width: 100%;
+      max-width: 650px;
       border-collapse: collapse;
       margin: 40px auto;
+      text-align: left;
+      
       thead {
         tr {
           border-bottom: 2px solid $gray;
