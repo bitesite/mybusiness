@@ -16,6 +16,7 @@ gem 'newrelic_rpm'
 gem 'mini_magick'
 gem 'redcarpet'
 gem 'carrierwave'
+gem 'aws-sdk-s3'
 gem 'fog-aws'
 gem 'mailchimp'
 gem "recaptcha", :require => "recaptcha/rails"

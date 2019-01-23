@@ -8,12 +8,9 @@ class DownloadsController < ApplicationController
   end
 
   def show
-  end
-
-  def download
-    if session[:permitted_to_download] == true
+    if session[:permitted_to_download]
       session[:permitted_to_download] = false
-      redirect_to root_path #TODO Change this to serve the file
+      @url = generate_presigned_url
     else
       redirect_to new_contact_path
     end
@@ -52,5 +49,9 @@ class DownloadsController < ApplicationController
   private
     def download_params
       params.require(:download).permit(:aws_object_key, :name)
+    end
+
+    def generate_presigned_url
+      S3_PRESIGNER.presigned_url(:get_object, bucket: ENV['AWS_S3_BUCKET'], key: @download.aws_object_key)
     end
 end
