@@ -20,6 +20,13 @@ Mybusiness::Application.routes.draw do
     resources :contestants
   end
 
+  resources :downloads do
+    member do
+      get :download
+    end
+  end
+  resources :contacts
+  
   resource :profile, only: [:show, :edit, :update]
 
   # - BLOG POSTS

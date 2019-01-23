@@ -1,0 +1,13 @@
+<div class="container">
+  <p>
+    <strong>Aws object key:</strong>
+    <%= @download.aws_object_key %>
+  </p>
+
+  <p>
+    <strong>Name:</strong>
+    <%= @download.name %>
+  </p>
+
+  <%= link_to "Click here to download", download_download_path(@download) %>  
+</div>

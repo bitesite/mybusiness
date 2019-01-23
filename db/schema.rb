@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181214171744) do
+ActiveRecord::Schema.define(version: 20190123212857) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,6 +65,16 @@ ActiveRecord::Schema.define(version: 20181214171744) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "contacts", force: :cascade do |t|
+    t.string "email"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "job"
+    t.text "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "contestants", id: :serial, force: :cascade do |t|
     t.string "first_name", limit: 255
     t.string "last_name", limit: 255
@@ -77,6 +87,13 @@ ActiveRecord::Schema.define(version: 20181214171744) do
 
   create_table "contests", id: :serial, force: :cascade do |t|
     t.string "name", limit: 255
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "downloads", force: :cascade do |t|
+    t.string "aws_object_key"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -7,6 +7,8 @@ class Ability
     can :read, BlogPost, published: true
     can :read, Comment
     can :create, Comment
+    can [:new, :create], Contact
+    can [:show, :download], Download
 
 
     if user.has_role?(:staff)

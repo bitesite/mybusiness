@@ -1,0 +1,27 @@
+<%= form_with(model: download, local: true) do |form| %>
+  <% if download.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(download.errors.count, "error") %> prohibited this download from being saved:</h2>
+
+      <ul>
+      <% download.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :aws_object_key %>
+    <%= form.text_field :aws_object_key, id: :download_aws_object_key %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :download_name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
