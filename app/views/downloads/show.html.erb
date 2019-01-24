@@ -1,13 +1,9 @@
-<div class="container">
-  <p>
-    <strong>Aws object key:</strong>
-    <%= @download.aws_object_key %>
-  </p>
-
-  <p>
-    <strong>Name:</strong>
-    <%= @download.name %>
-  </p>
-
-  <%= link_to "Click here to download", download_download_path(@download) %>  
+<div id="downloads-show">
+  <div class="container">
+    <div class='download-box'>
+      <div class='message'>Thanks for submitting your information!</div>
+      <div class='sub-message'>Your download is available at the link below!</div>
+      <%= link_to "Download #{@download.name}", @url, class: 'download-btn' %>  
+    </div>
+  </div>
 </div>

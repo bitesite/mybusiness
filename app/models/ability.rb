@@ -8,7 +8,7 @@ class Ability
     can :read, Comment
     can :create, Comment
     can [:new, :create], Contact
-    can [:show, :download], Download
+    can :show, Download
 
 
     if user.has_role?(:staff)

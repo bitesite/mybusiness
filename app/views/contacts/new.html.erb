@@ -1,7 +1,26 @@
-<div class="container">
-  <h1>New Contact</h1>
+<div id="contacts-new">
+  <div class="container">
+    <div class="contact-form">
+      <h1>BiteSite Downloads</h1>
 
-  <%= render 'form', contact: @contact %>
+      <div class='instructions'>
+        <div class='main-message'>
+          Thanks for your interest in downloading one of BiteSite's offerings!
+          All you have to do is fill out the form below to let us know a little bit
+          about yourself. 
+        </div>
+        <div class='sub-message'>
+          BiteSite likes to know who our audience is so we can better
+          serve our community. Your information will be kept private and we will only send
+          you newsletters or information pieces after asking your permission. If you have filled
+          out this form before, we will simply update your information with the information provided
+          here. If you have any questions, do not hesitate to contact us at info@bitesite.ca.
+        </div>
+      </div>
 
-  <%= link_to 'Back', contacts_path %>
+      <%= render 'form', contact: @contact %>
+
+      <%= link_to 'Back', contacts_path %>
+    </div>
+  </div>  
 </div>

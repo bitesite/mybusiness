@@ -8,7 +8,7 @@ class DownloadsController < ApplicationController
   end
 
   def show
-    if session[:permitted_to_download]
+    if admin? || session[:permitted_to_download]
       session[:permitted_to_download] = false
       @url = generate_presigned_url
     else

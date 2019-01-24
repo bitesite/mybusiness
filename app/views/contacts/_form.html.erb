@@ -12,35 +12,36 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :email %>
+    <%= form.label :email, "Email*" %>
     <%= form.text_field :email, id: :contact_email %>
   </div>
 
   <div class="field">
-    <%= form.label :first_name %>
+    <%= form.label :first_name, "First name*" %>
     <%= form.text_field :first_name, id: :contact_first_name %>
   </div>
 
   <div class="field">
-    <%= form.label :last_name %>
+    <%= form.label :last_name, "Last name*" %>
     <%= form.text_field :last_name, id: :contact_last_name %>
   </div>
 
   <div class="field">
-    <%= form.label :job %>
-    <%= form.text_field :job, id: :contact_job %>
+    <%= form.label :job, "What best describes you?" %>
+    <%= form.select :job, options_for_select(["Marketer", "Business Owner", "Sales", "Videographer/Filmmaker", "Software Developer", "Other"]), id: :contact_job %>
   </div>
 
   <div class="field">
-    <%= form.label :comment %>
+    <%= label_tag :download_id, "What are you interested in downloading" %>
+    <%= select_tag :download_id, options_from_collection_for_select(Download.all, :id, :name), id: :contact_job %>
+  </div>
+
+  <div class="field">
+    <%= form.label :comment, "Anything else you'd like to tell us?" %>
     <%= form.text_area :comment, id: :contact_comment %>
   </div>
 
-  <div class="field">
-    <%= text_field_tag :download_id, 1 %>
-  </div>
-
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Submit", class: 'btn btn-primary' %>
   </div>
 <% end %>

@@ -1,0 +1,22 @@
+#contacts-new {
+  .contact-form {
+    max-width: 550px;
+    margin: 0 auto;
+
+    .instructions {
+      margin: 10px 0;
+      text-align: center;
+      line-height: 20px;
+
+      .main-message {
+        font-size: 1em;
+        margin-bottom: 10px;
+      }
+      
+      .sub-message {
+        font-size: 0.8em;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}

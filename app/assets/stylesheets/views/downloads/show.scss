@@ -1,0 +1,34 @@
+#downloads-show {
+  .download-box {
+    max-width: 600px;
+    padding: 20px;
+    width: calc(100% - 40px);
+    margin: 40px auto;
+    text-align: center;
+
+    .message {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    .sub-message {
+      font-size: 1.5em;
+      margin-bottom: 20px;
+    }
+
+    .download-btn {
+      display: inline-block;
+      background: $aqua;
+      color: white;
+      text-decoration: none;
+      padding: 20px 30px;
+      border-radius: 5px;
+      box-shadow: 3px 3px 3px $gray;
+
+      &:hover {
+        background: $light-aqua;
+      }
+    }
+
+  }
+}
