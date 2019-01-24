@@ -18,7 +18,7 @@ class ContactsController < ApplicationController
   end
 
   def create
-    @contact = Contact.find_by(email: params[:contact][:email].downcase)
+    @contact = Contact.find_by(email: params[:contact][:email].downcase.strip)
 
     if @contact
       @contact.assign_attributes(contact_params)

@@ -3,10 +3,10 @@ class Contact < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
 
-  before_validation :downcase_email
+  before_validation :strip_and_downcase_email
 
   private
-    def downcase_email
-      self.email = self.email.downcase
+    def strip_and_downcase_email
+      self.email = self.email.downcase.strip
     end
 end
