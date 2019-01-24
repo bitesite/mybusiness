@@ -21,6 +21,8 @@ Mybusiness::Application.routes.draw do
   end
 
   resources :downloads
+
+  get '/download' => 'contacts#new'
   resources :contacts
   
   resource :profile, only: [:show, :edit, :update]
