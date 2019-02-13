@@ -5,10 +5,10 @@ class PagesController < ApplicationController
 
   def home
     @title = "A Custom Software and Video Production Firm based in Ottawa, Canada"
-    @meta_description = "BiteSite is an Ottawa, Canada based company dedicated to building stylish, elegant, and robust Web and Mobile Applications and producing
-                        eye-catching, professional media. It targets small to medium size businesses from start-ups to well established businesses.
-                        BiteSite believes strongly in finding the right-fit customer for
-                        the right-fit company to bring success to all who are invovled."
+    @meta_description = "BiteSite is an Ottawa, Canada based company dedicated to building elegant custom software and producing cinematic
+                        corporate video. It targets small to medium size businesses from start-ups to well established businesses.
+                        BiteSite believes strongly in finding the right-fit customer for the right-fit company to bring success
+                        to all who are invovled."
                         
     @recent_news_posts = NewsPost.published.limit(3)
     @video_listings = VideoListing.all
