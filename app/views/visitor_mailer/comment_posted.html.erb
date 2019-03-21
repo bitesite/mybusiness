@@ -1,0 +1,27 @@
+<div>
+  <%= image_tag attachments['emailheader.png'].url, style: "height: 20px;" %>
+</div>
+<hr>
+
+<p>
+  Hi <%= @to_name %>,
+</p>
+
+<p>
+  Someone has left a comment on the BiteSite.ca blog post '<b><%= @blog_post.title %></b>' and we thought
+  you might be interested as you also left a comment.
+</p>
+
+<p style="display: block; background: #eeeeee; padding: 15px; border-radius: 3px; font-size: 14px;">
+  <%= @poster_name %> said<br /> 
+  "<%= @comment_body %>"
+</p>
+
+<p>
+  If you would like to reply to this comment, please visit the blog post at <%= link_to blog_post_url(@blog_post), blog_post_url(@blog_post) %>, scroll to the bottom, 
+  and leave your own comment.
+</p>
+
+<p style="font-size: 10px;">
+  If you would like to STOP receiving e-mails about this blog post, please send an e-mail to info@bitesite.ca.
+</p>

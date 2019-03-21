@@ -24,5 +24,18 @@ class VisitorMailer < ApplicationMailer
          :reply_to => "info@bitesite.ca",
          :subject => "Thanks for entering the Wedding Video Contest 2013")
   end
+
+  def comment_posted(to_email, to_name, blog_post, poster_name, comment_body)
+
+    attachments.inline['emailheader.png'] = File.read(Rails.root.join('app/assets/images/emailheader.png'))
+
+    # Doing it this way rather than passing in the comment model so we can't accidentally send to multiple people
+    @to_name, @blog_post, @poster_name, @comment_body = to_name, blog_post, poster_name, comment_body
+
+    mail(to: to_email,
+         from: 'info@bitesite.ca',
+         reply_to: 'info@bitesite.ca',
+         subject: "Someone left a comment on '#{blog_post.title}'")
+  end
   
 end
