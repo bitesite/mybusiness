@@ -67,6 +67,7 @@ Mybusiness::Application.routes.draw do
   get "/portfolio" => "pages#portfolio"
   get "/inspechomes" => "pages#inspechomes"
   get "/staff_dashboard" => "pages#staff_dashboard"
+  get "/mobile-video-course" => "pages#mobile_video_course"
 
   get "/sitemap.xml" => "sitemap#index", format: "xml", as: :sitemap
 end

@@ -1,0 +1,121 @@
+#pages-mobile-video-course {
+  .hero-banner {
+    text-align: center;
+    background: asset-url("herobg.png");
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:top center;
+
+    .logo {
+      margin-top: 75px;
+      margin-bottom: 25px;
+      height: 50px;
+    }
+
+    .slogan {
+      font-size: 2.5em;
+      color: white;
+      margin: 0 auto;
+      max-width: 500px;
+      font-weight: bold;
+    }
+
+    padding-bottom: 50px;
+  }
+
+  .main-body {
+    padding-top: 20px;
+
+    .video-container {
+      float: left;
+      width: 560px;
+      padding: 20px;
+    }
+
+    .writeup {
+      float: left;
+      width: calc(100% - 640px);
+      padding: 20px;
+      text-align: center;
+
+      .slogan {
+        font-size: 1.5em;
+        font-weight: bold;
+      }
+
+      .subslogan {
+        font-size: 1.25em;
+        font-weight: bold;
+      }
+
+      p.emphasize {
+        font-weight: bold;
+      }
+    } 
+
+    @include clear-floats-container;
+
+    @media only screen and (max-width: $mobile-menu-device-width) {
+      .video-container {
+        float: none;
+        width: calc(100% - 20px);
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+
+      .writeup {
+        float: none;
+        width: 100%;
+        width: calc(100% - 20px);
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+    }
+  }
+
+  .sign-up-form-section {
+    background: $dark-aqua;
+    color: white;
+    min-height: 200px;
+    @include clear-floats-container;
+    padding-top: 20px;
+
+    .writeup-container {
+      padding-top: 100px;
+      float: left;
+      width: 500px;
+
+      .writeup {
+        font-size: 1.5em;
+        font-weight: bold;
+        margin: 0 auto;
+        text-align: center;
+        max-width: 350px;
+      }
+
+    }
+
+    .sign-up-form {
+      float: left;
+      width: calc(100% - 500px);
+    }
+
+    @media only screen and (max-width: $mobile-menu-device-width) {
+      .writeup-container {
+        float: none;
+        width: calc(100% - 20px);
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 10px;
+      }
+
+      .writeup {
+        float: none;
+        width: 100%;
+        width: calc(100% - 20px);
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+    }
+  }
+}

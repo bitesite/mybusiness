@@ -66,6 +66,11 @@ class PagesController < ApplicationController
     end
   end
 
+  def mobile_video_course
+    @title = "Mobile Video Course"
+    render layout: 'non_landing'
+  end
+
   def contact
     @title = "Home"
     @success = false
