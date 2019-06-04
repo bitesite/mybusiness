@@ -28,13 +28,13 @@
 
     .video-container {
       float: left;
-      width: 560px;
+      width: 50%;
       padding: 20px;
     }
 
     .writeup {
       float: left;
-      width: calc(100% - 640px);
+      width: calc(50% - 80px);
       padding: 20px;
       text-align: center;
 
@@ -76,7 +76,6 @@
   .sign-up-form-section {
     background: $dark-aqua;
     color: white;
-    min-height: 200px;
     @include clear-floats-container;
     padding-top: 20px;
 
@@ -98,6 +97,7 @@
     .sign-up-form {
       float: left;
       width: calc(100% - 500px);
+      padding-bottom: 50px;
     }
 
     @media only screen and (max-width: $mobile-menu-device-width) {
@@ -109,7 +109,7 @@
         padding-top: 10px;
       }
 
-      .writeup {
+      .sign-up-form {
         float: none;
         width: 100%;
         width: calc(100% - 20px);
