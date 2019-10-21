@@ -1,5 +1,7 @@
 $mobile-menu-device-width: 800px;
 
+$transition: 200ms;
+
 @mixin clear-floats-container {
   &:after {
     content: ".";

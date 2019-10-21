@@ -6,7 +6,27 @@
 	</head>
 	<body>
 		<%= render 'layouts/flash', flash: flash %>
-		<%= yield %>
+
+		<div id="header">
+			<div class="container">
+				<div class='logo-container'>
+					<%= link_to image_tag('logo2015-blue.png', class: 'logo'), root_path %>
+				</div>
+				<div class='nav-links'>
+					<%= link_to 'Software', '#' %>
+					<%= link_to 'Video', '#' %>
+					<%= link_to 'Blog', '#' %>
+					<%= link_to 'Contact', '#' %>
+				</div>
+			</div>
+		</div>
+		<div id="content">
+			<%= yield %>
+		</div>
+		<div id="footer">
+			
+		</div>
+
 
 		<!-- Start of HubSpot Embed Code -->
 		<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4735307.js"></script>

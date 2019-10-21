@@ -1,14 +1,93 @@
 <div id="pages-home">
-  <div id="home" class='fixed-nav'>
-  <%= render "pages/home_partials/navigation" %>
-  <%= render "pages/home_partials/hero" %>
-  <%= render "pages/home_partials/announcements" %>
-  <%= render "pages/home_partials/featured_work" %>
-  <%= render "pages/home_partials/services" %>
-  <%= render "pages/home_partials/news" %>
-  <%= render "pages/home_partials/about" %>
-  <%= render "pages/home_partials/contact" %>
-  <%= render "pages/home_partials/footer" %>
-  <%= render "pages/home_partials/portfolio_dialogs" %>
+  <div class="hero">
+    <div class="container">
+      <div class='slogan'>We build <span class='emphasize'>custom software</span> and produce <span class='emphasize'>videos</span>.</div>
+      <div class='subslogan'>
+        BITESITE IS A CUSTOM SOFTWARE AND VIDEO PRODUCTION FIRM FOCUSED
+        ON WORKING WITH <span class='emphasize'>SMALL TO MEDIUM OTTAWA TECH COMPANIES</span>
+      </div>
+      <%= image_tag 'Wireframe-Circles.png', class: 'circles' %>
+    </div>
+  </div>
+  <div class="services">
+    <div class="container">
+      <div class="service">
+        <div class="header">
+          <h2>Custom Software</h2>
+          <%= image_tag 'Wireframe-Computer.png' %>
+        </div>
+        <div class="writeup">
+          BiteSite is a full service custom software shop. From process, to design,
+          to implementation, we deliver solutions that allow businesses to stand out. 
+
+          <div class='actions'>
+            <%= link_to 'Read more →', '#' %>
+          </div>
+        </div>
+      </div>
+
+      <div class="service">
+        <div class="header">
+          <h2>Video Production</h2>
+          <%= image_tag 'Wireframe-Camera.png' %>
+        </div>
+        <div class="writeup">
+          BiteSite is a full service video production house. From concept to delivery,
+          we produce video with high production value that allow your business to stand out. 
+
+          <div class='actions'>
+            <%= link_to 'Read more →', '#' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-section">
+    <div class="container">
+      <h1 class='section-header'>
+        <span class='text'>Contact</span>
+        <div class='background-extension'></div>
+      </h1>
+
+      <div class='contact-section-body'>
+        <div class="contact-form">
+          <%= form_tag "/contact" do %>
+            <div class="field">
+              <%= text_field_tag :first_name, nil, placeholder: 'first name', class: "contact-field" %>
+            </div>
+            <div class="field">
+              <%= text_field_tag :last_name, nil, placeholder: 'last name', class: "contact-field" %>
+            </div>
+            <div class="field">
+              <%= text_field_tag :email_address, nil, placeholder: 'email', class: "contact-field" %>
+            </div>
+            <div class="field">
+              <%= text_area_tag :message, nil, rows: 10, placeholder: 'message', class: "contact-field" %>
+            </div>
+            <div class="actions">
+              <%= link_to "Submit", "#", :id => "contact-submit", class: "contact-submit" %>
+              
+              <div class="contact-submit-info" id="contact-submit-info"></div>
+            </div>
+          <% end %>
+        </div>
+        <div class="contact-caption">
+
+          <h3>Contact us for anything!</h3> 
+          <p>Know exactly what you want? Have no idea at all? Want to just open up a conversation about your options? 
+          Have some technical questions? Whatever it may be, please drop us a line and we'll do
+          our best to answer any questions you may have.</p>
+
+          <p><b>BiteSite believes strongly in finding a good fit company for a good
+          fit customer</b>. So if we find out we're not right for you, we won't pressure you. If we do, we'll
+          be happy to build something you'll truly be excited about.</p>
+          
+          <p>If you have any troubles with the contact form, you can also e-mail us directly at <b><%= link_to "info@bitesite.ca", "mailto:info@bitesite.ca" %></b>.</p>
+
+        </div>
+      </div>
+
+    </div>
   </div>
 </div>

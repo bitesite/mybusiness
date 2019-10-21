@@ -1,9 +1,7 @@
 
 .container {
 	margin: 0 auto;
-	height:100%;
 	position:relative;
-	overflow:hidden;
 	max-width:1170px;
 	padding:0 20px;
 	width:calc(100% - 40px);
@@ -14,44 +12,61 @@
 	top:0;
 }
 
+$header-height: 70px;
 
+#header {
+	height: $header-height;
+	position: fixed;
+	width: 100%;
+	background: white;
+	z-index: 1000;
 
-/* Header Links */
-.header-links {
-	text-align:right;
-	position:absolute;
-	width:100%;
-	z-index:10;
-	
-	.header-link {
-		background:white;
-		color:#222;
-		text-decoration:none;
-		padding:5px 20px;
-		display:inline-block;
-		font-size:10px;
-		&:hover {
-			background:#eee;
-		};
+	.container {
+		display: flex;
+		height: 100%;
 
-		.header-link-rest {
-			display:none;
-			width:0;
+		.logo-container {
+			width: 185px;
+			height: 100%;
+
+			display: flex;
+			align-items: center;
+
+			.logo {
+				width: 100%;
+			}
 		}
 
-		&:hover {
-			.header-link-rest {
-				display:inline;
+		.nav-links {
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+
+			height: 100%;
+			width: calc(100% - 185px);
+
+			a {
+				font-style: normal;
+				font-family: 'Avenir LT Std 65 Medium';
+				color: $light-gray-1;
+				text-decoration: none;
+				text-transform: lowercase;
+				margin: 0 20px;
+				transition: 200ms;
+
+				&:hover {
+					color: $primary-color;
+				}
 			}
 		}
 	}
+
 }
 
-.non-landing-layout {
-	.non-landing-main {
-		padding-top:41px;
-	}
+#content {
+	padding-top: $header-height;
 }
+
 
 .blog-layout {
 	.blog-main {

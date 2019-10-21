@@ -1,0 +1,111 @@
+#pages-home {
+  .hero {
+    position: relative;
+    padding-top: 120px;
+
+    .slogan {
+      position: relative;
+      text-align: left;
+      font-family: 'Avenir Next Condensed Regular';
+      text-transform: uppercase;
+      font-size: 85px;
+      max-width: 1000px;
+      line-height: 70px;
+
+      background: white;
+      padding: 30px 0px 30px 0;
+      z-index: 10;
+
+      .emphasize {
+        font-family: 'Avenir Next Condensed Medium';
+        color: $primary-color;
+      }
+    }
+
+    .subslogan {
+      font-family: 'Avenir LT Std 65 Medium';
+      max-width: 720px;
+      font-size: 19px;
+
+      .emphasize {
+        font-family: 'Avenir LT Std 85 Heavy';
+      }
+    }
+
+    img.circles {
+      opacity: 0.3;
+      position: absolute;
+      z-index: 1;
+      top: -100px;
+      right: -80px;
+
+      -webkit-animation: rotation 40s linear infinite;
+      -moz-animation: rotation 40s linear infinite;
+      animation: rotation 40s linear infinite;
+    }
+  }
+
+  .services {
+    margin-top: 250px;
+
+    .container {
+      display: flex;
+      justify-content: space-around;
+
+      .service {
+        max-width: 350px;
+
+        .header {
+          display: flex;
+          align-items: center;
+
+          h2 {
+            text-transform: uppercase;
+            font-family: 'Avenir LT Std 85 Heavy';
+          }
+
+          img {
+            height: 70px;
+            margin-left: 20px;
+          }
+        }
+
+        .writeup {
+          margin-left: 50px;
+          text-align: justify;
+
+          .actions {
+            margin-top: 30px;
+          }
+        }
+      }
+    }
+  }
+
+  .contact-section {
+    margin-top: 60px;
+
+    .contact-section-body {
+      display: flex;
+
+      .contact-form {
+        width: calc(60% - 80px);
+        padding: 0 40px;
+      }
+
+      .contact-caption {
+        width: 40%;
+        text-align: justify;
+      }
+    }
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}

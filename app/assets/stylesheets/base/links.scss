@@ -1,0 +1,11 @@
+a {
+  border:none;
+  color: $primary-color;
+  transition: $transition;
+  text-decoration: none;
+  font-style: italic;
+  
+  &:hover {
+    color:#000;
+  };
+}
