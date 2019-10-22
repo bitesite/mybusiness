@@ -1,4 +1,5 @@
 Mybusiness::Application.routes.draw do
+  resources :do_not_notify_listings
   # - RESOURCES
   resources :careers
   resources :settings
