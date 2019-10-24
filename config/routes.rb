@@ -61,10 +61,12 @@ Mybusiness::Application.routes.draw do
 
   # - PAGES
   root "pages#home"
+  get 'software' => 'pages#software'
+  get 'video' => 'pages#video'
 
-  get "pages/home"
   get "/contact" => "pages#contact"
   post "/contact" => "pages#contact"
+    
   get "/admin" => "pages#admin"
   get "/setting_up_your_heroku_account" => "pages#setting_up_your_heroku_account"
   get "/portfolio" => "pages#portfolio"

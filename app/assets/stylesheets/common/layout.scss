@@ -65,6 +65,42 @@ $header-height: 70px;
 
 #content {
 	padding-top: $header-height;
+
+	.hero {
+	  position: relative;
+	  padding-top: 120px;
+		
+		.slogan {
+		  position: relative;
+		  text-align: left;
+		  font-family: 'Avenir Next Condensed Regular';
+		  text-transform: uppercase;
+		  font-size: 85px;
+		  line-height: 70px;
+
+		  background: white;
+		  padding: 30px 0px 30px 0;
+		  z-index: 10;
+
+		  .emphasize {
+		    font-family: 'Avenir Next Condensed Medium';
+		    color: $primary-color;
+		  }
+		}
+
+		.subslogan {
+		  font-family: 'Avenir LT Std 65 Medium';
+		  font-size: 19px;
+
+		  .emphasize {
+		    font-family: 'Avenir LT Std 85 Heavy';
+		  }
+		}
+	}
+
+	.section {
+		padding: 75px 0;
+	}
 }
 
 #footer {
@@ -78,7 +114,7 @@ $header-height: 70px;
 
 .blog-layout {
 	.blog-main {
-		padding-top:41px;
+		padding-top:100px;
 
 		.blog-title {
 		  margin:40px 0px;
