@@ -1,0 +1,22 @@
+<%= form_with(model: do_not_notify_listing, local: true) do |form| %>
+  <% if do_not_notify_listing.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(do_not_notify_listing.errors.count, "error") %> prohibited this do_not_notify_listing from being saved:</h2>
+
+      <ul>
+      <% do_not_notify_listing.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email, id: :do_not_notify_listing_email %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
