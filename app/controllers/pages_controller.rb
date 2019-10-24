@@ -10,32 +10,6 @@ class PagesController < ApplicationController
                         BiteSite believes strongly in finding the right-fit customer for the right-fit company to bring success
                         to all who are invovled."
                         
-    @recent_news_posts = NewsPost.published.limit(3)
-    @video_listings = VideoListing.all
-
-
-    @competencies = [
-      {icon: "magnet" , title: "UI Design"},
-      {icon: "desktop" , title: "Web Design"},
-      {icon: "code" , title: "Web Development"},
-      {icon: "mobile" , title: "iOS Development"},
-      {icon: "mobile" , title: "Android Development"},
-      {icon: "paint-brush" , title: "Graphic Design"},
-      {icon: "camera-retro" , title: "Photography"},
-      {icon: "video-camera" , title: "Film Production"},
-      {icon: "fire" , title: "Motion Graphics"}
-    ]
-
-    @tools = [
-      { icon: "desktop", title: "Ruby on Rails" },
-      { icon: "desktop", title: "React" },
-      { icon: "mobile", title: "React Native" },
-      { icon: "desktop", title: "Heroku" },
-      { icon: "video-camera", title: "Final Cut Pro X" },
-      { icon: "video-camera", title: "Adobe Creative Cloud" },
-      { icon: "video-camera", title: "Davinci Resolve" }
-    ]
-
     @staff_listings = [
       {name: "Casey Li", position: "CEO & Founder", avatar: "staff/casey.png"},
       {name: "Tim Clark", position: "Filmmaker", avatar: "staff/tim.png"},
@@ -44,7 +18,39 @@ class PagesController < ApplicationController
       {name: "Chris Francis", position: "Software Developer", avatar: "staff/chris.png"},
       {name: "Jason Connell", position: "Filmmaker", avatar: "staff/jason.png"}
     ]
+  end
 
+  def software
+    @competencies = [
+      {icon: "magnet" , title: "UI Design"},
+      {icon: "desktop" , title: "Web Design"},
+      {icon: "code" , title: "Web Development"},
+      {icon: "mobile" , title: "iOS Development"},
+      {icon: "mobile" , title: "Android Development"}
+    ]
+
+    @tools = [
+      { icon: "desktop", title: "Ruby on Rails" },
+      { icon: "desktop", title: "React" },
+      { icon: "mobile", title: "React Native" },
+      { icon: "desktop", title: "Heroku" }
+    ]
+  end
+
+  def video
+    @competencies = [
+      {icon: "video-camera" , title: "Film Production"},
+      {icon: "paint-brush" , title: "Graphic Design"},
+      {icon: "camera-retro" , title: "Photography"},
+      {icon: "fire" , title: "Motion Graphics"}
+    ]
+
+    @tools = [
+      { icon: "video-camera", title: "Adobe Creative Suite" },
+      { icon: "video-camera", title: "Final Cut Pro X" },
+      { icon: "video-camera", title: "Adobe Creative Cloud" },
+      { icon: "video-camera", title: "Davinci Resolve" }
+    ]
   end
 
   def portfolio
