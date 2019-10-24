@@ -1,8 +1,6 @@
 class DownloadsController < ApplicationController
   load_and_authorize_resource
 
-  layout 'non_landing'
-
   def index
     @downloads = Download.all
   end

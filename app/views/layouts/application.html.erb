@@ -7,25 +7,13 @@
 	<body>
 		<%= render 'layouts/flash', flash: flash %>
 
-		<div id="header">
-			<div class="container">
-				<div class='logo-container'>
-					<%= link_to image_tag('logo2015-blue.png', class: 'logo'), root_path %>
-				</div>
-				<div class='nav-links'>
-					<%= link_to 'Software', '#' %>
-					<%= link_to 'Video', '#' %>
-					<%= link_to 'Blog', '#' %>
-					<%= link_to 'Contact', '#' %>
-				</div>
-			</div>
-		</div>
+		<%= render 'layouts/header' %>
+
 		<div id="content">
 			<%= yield %>
 		</div>
-		<div id="footer">
-			
-		</div>
+	
+		<%= render 'layouts/footer' %>
 
 
 		<!-- Start of HubSpot Embed Code -->

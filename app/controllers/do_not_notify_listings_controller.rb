@@ -1,6 +1,5 @@
 class DoNotNotifyListingsController < ApplicationController
   load_and_authorize_resource
-  layout 'non_landing'
 
   def index
   end

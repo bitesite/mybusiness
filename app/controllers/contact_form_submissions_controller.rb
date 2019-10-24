@@ -1,7 +1,6 @@
 class ContactFormSubmissionsController < ApplicationController
   load_and_authorize_resource
   before_action :set_title
-  layout 'non_landing'
   
   def index
     @contact_form_submissions = ContactFormSubmission.all

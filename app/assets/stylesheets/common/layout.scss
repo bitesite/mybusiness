@@ -67,6 +67,14 @@ $header-height: 70px;
 	padding-top: $header-height;
 }
 
+#footer {
+	padding: 50px 0;
+	background: $dark-primary-color-1;
+	color: $primary-gray;
+	font-size: 0.8em;
+	text-transform: uppercase;
+}
+
 
 .blog-layout {
 	.blog-main {

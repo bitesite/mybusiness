@@ -3,8 +3,6 @@ class NewsPostsController < ApplicationController
   before_action :deny_access_for_non_admins, :except => [:index, :show]
   before_action :set_title
   
-  layout 'non_landing'
-
   def index
     @news_posts = NewsPost.published
     @news_posts = NewsPost.all if admin?

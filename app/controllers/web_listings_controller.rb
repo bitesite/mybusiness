@@ -1,6 +1,5 @@
 class WebListingsController < ApplicationController
   load_and_authorize_resource
-  layout 'non_landing'
 
   def index
     @web_listings = @web_listings.sorted
