@@ -22,7 +22,7 @@
           to implementation, we deliver solutions that allow businesses to stand out. 
 
           <div class='actions'>
-            <%= link_to 'Read more →', '#' %>
+            <%= link_to 'Read more →', software_path %>
           </div>
         </div>
       </div>
@@ -37,7 +37,7 @@
           we produce video with high production value that allow your business to stand out. 
 
           <div class='actions'>
-            <%= link_to 'Read more →', '#' %>
+            <%= link_to 'Read more →', video_path %>
           </div>
         </div>
       </div>
@@ -52,27 +52,7 @@
       </h1>
 
       <div class='contact-section-body'>
-        <div class="contact-form">
-          <%= form_tag "/contact" do %>
-            <div class="field">
-              <%= text_field_tag :first_name, nil, placeholder: 'first name', class: "contact-field" %>
-            </div>
-            <div class="field">
-              <%= text_field_tag :last_name, nil, placeholder: 'last name', class: "contact-field" %>
-            </div>
-            <div class="field">
-              <%= text_field_tag :email_address, nil, placeholder: 'email', class: "contact-field" %>
-            </div>
-            <div class="field">
-              <%= text_area_tag :message, nil, rows: 10, placeholder: 'message', class: "contact-field" %>
-            </div>
-            <div class="actions">
-              <%= link_to "Submit", "#", :id => "contact-submit", class: "contact-submit" %>
-              
-              <div class="contact-submit-info" id="contact-submit-info"></div>
-            </div>
-          <% end %>
-        </div>
+        <%= render 'pages/contact_form' %>
         <div class="contact-caption">
 
           <h3>Contact us for anything!</h3> 

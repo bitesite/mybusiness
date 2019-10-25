@@ -21,36 +21,11 @@ class PagesController < ApplicationController
   end
 
   def software
-    @competencies = [
-      {icon: "magnet" , title: "UI Design"},
-      {icon: "desktop" , title: "Web Design"},
-      {icon: "code" , title: "Web Development"},
-      {icon: "mobile" , title: "iOS Development"},
-      {icon: "mobile" , title: "Android Development"}
-    ]
-
-    @tools = [
-      { icon: "desktop", title: "Ruby on Rails" },
-      { icon: "desktop", title: "React" },
-      { icon: "mobile", title: "React Native" },
-      { icon: "desktop", title: "Heroku" }
-    ]
+    @title = "Custom Software Development"
   end
 
   def video
-    @competencies = [
-      {icon: "video-camera" , title: "Film Production"},
-      {icon: "paint-brush" , title: "Graphic Design"},
-      {icon: "camera-retro" , title: "Photography"},
-      {icon: "fire" , title: "Motion Graphics"}
-    ]
-
-    @tools = [
-      { icon: "video-camera", title: "Adobe Creative Suite" },
-      { icon: "video-camera", title: "Final Cut Pro X" },
-      { icon: "video-camera", title: "Adobe Creative Cloud" },
-      { icon: "video-camera", title: "Davinci Resolve" }
-    ]
+    @title = "Video Production"
   end
 
   def portfolio

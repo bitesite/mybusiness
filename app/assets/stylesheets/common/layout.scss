@@ -101,6 +101,25 @@ $header-height: 70px;
 	.section {
 		padding: 75px 0;
 	}
+
+	.feature-list {
+		display: flex;
+
+		.feature {
+
+			.feature-header {
+				font-family: 'Avenir LT Std 85 Heavy';
+				font-size: 1.25em;
+				height: 60px;
+				display: flex;
+				align-items: center;
+			}
+
+			.feature-body {
+				text-align: justify;
+			}
+		}
+	}
 }
 
 #footer {

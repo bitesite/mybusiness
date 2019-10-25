@@ -1,0 +1,41 @@
+#pages-video {
+  .services-list {
+    margin-top: 30px;
+
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .feature {
+      margin: 20px;
+      max-width: 400px;
+    }
+  }
+
+  .common-projects-list {
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .feature {
+      margin: 20px;
+      max-width: 400px;
+    }
+  }
+
+  .tools-list {
+    justify-content: center;
+
+    .feature {
+      margin: 20px;
+      max-width: 400px;
+    }
+  }
+
+  .customer-list {
+    justify-content: center;
+    
+    .feature {
+      margin: 20px;
+      max-width: 400px;
+    }
+  }
+}
