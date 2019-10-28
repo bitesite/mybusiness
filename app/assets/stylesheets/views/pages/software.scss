@@ -1,4 +1,17 @@
 #pages-software {
+
+  .hero {
+    height: 400px;
+
+    img.computer {
+      position: absolute;
+      top: 60px;
+      right: 30px;
+      z-index: -1;
+      opacity: 0.5;
+    }
+  }
+
   .services-list {
     margin-top: 30px;
 
@@ -6,7 +19,7 @@
     flex-wrap: wrap;
 
     .feature {
-      margin: 20px;
+      margin: 40px;
       max-width: 300px;
     }
   }

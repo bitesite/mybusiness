@@ -61,10 +61,9 @@ Mybusiness::Application.routes.draw do
 
   # - PAGES
   root "pages#home"
-  get 'software' => 'pages#software'
-  get 'video' => 'pages#video'
-
-  get "/contact" => "pages#contact"
+  get '/software' => 'pages#software'
+  get '/video' => 'pages#video'
+  get '/contact_us' => 'pages#contact'
   post "/contact" => "pages#contact"
     
   get "/admin" => "pages#admin"

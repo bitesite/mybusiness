@@ -81,7 +81,7 @@ class PagesController < ApplicationController
     end
     
     respond_to do |format|
-      format.html { redirect_to "/"}
+      format.html
       format.json { render :json => { :success => @success, :message => @message }.to_json }
     end
     
