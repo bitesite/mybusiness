@@ -68,6 +68,7 @@ $header-height: 70px;
 
 #content {
 	padding-top: $header-height;
+	padding-bottom: 50px;
 	background: white;
 
 	.hero {
@@ -103,7 +104,7 @@ $header-height: 70px;
 	}
 
 	.section {
-		padding: 75px 0;
+		padding: 75px 0 0 0;
 	}
 
 	.feature-list {
@@ -112,11 +113,20 @@ $header-height: 70px;
 		.feature {
 
 			.feature-header {
-				font-family: 'Avenir LT Std 85 Heavy';
-				font-size: 1.25em;
-				height: 60px;
-				display: flex;
-				align-items: center;
+				text-align: center;
+
+				img {
+					max-width: 100%;
+				}
+
+				.text {
+					font-family: 'Avenir LT Std 85 Heavy';
+					font-size: 1.25em;
+					height: 60px;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+				}
 			}
 
 			.feature-body {

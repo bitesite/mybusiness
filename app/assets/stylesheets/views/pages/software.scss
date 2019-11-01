@@ -21,6 +21,13 @@
     .feature {
       margin: 40px;
       max-width: 300px;
+
+      .feature-header {
+        img {
+          height: 200px;
+          max-width: 100%;
+        }
+      }
     }
   }
 
@@ -30,24 +37,39 @@
     .feature {
       margin: 20px;
       max-width: 400px;
+
+      .feature-header {
+        img {
+          height: 200px;
+          max-width: 100%;
+        }
+      }
     }
   }
 
   .tools-list {
     justify-content: center;
+    flex-wrap: wrap;
 
     .feature {
       margin: 20px;
-      max-width: 400px;
+      max-width: 120px;
+
+      .feature-header {
+        img {
+          max-width: 100%;
+        }
+      }
     }
   }
 
   .customer-list {
     justify-content: center;
+    flex-wrap: wrap;
     
     .feature {
       margin: 20px;
-      max-width: 400px;
+      max-width: 190px;
     }
   }
 }

@@ -23,7 +23,9 @@
 
       <div class="feature-list services-list">
         <div class="feature">
-          <div class="feature-header">Pre-production</div>
+          <div class="feature-header">
+            <div class='text'>Pre-production</div>
+          </div>
           <div class="feature-body spaced">
             From Scripting and Concepting, to Scheduling, to Storyboarding, and General Coordination,
             we pride ourselves on doing a lot of up front work to maximize results down the line.
@@ -31,7 +33,9 @@
         </div>
 
         <div class="feature">
-          <div class="feature-header">Production</div>
+          <div class="feature-header">
+            <div class='text'>Production</div>
+          </div>
           <div class="feature-body spaced">
             When all the planning is done, we light, shoot, direct, and interview to capture
             amazing footage for your video.
@@ -39,7 +43,9 @@
         </div>
 
         <div class="feature">
-          <div class="feature-header">Post-production</div>
+          <div class="feature-header">
+            <div class='text'>Post-production</div>
+          </div>
           <div class="feature-body spaced">
             With everything shot, we'll do Editing, Motion Graphics, Music Selection, Sound Mixing, and Colour Grading
             to produce a professional, high-quality production ready for you to use.
@@ -54,13 +60,11 @@
         <div class='background-extension'></div>
       </h1>
 
-      <div class='spaced'>
-        
-      </div>
-
       <div class="feature-list common-projects-list">
         <div class="feature">
-          <div class="feature-header">Retainer</div>
+          <div class="feature-header">
+            <div class='text'>Retainer</div>
+          </div>
           <div class="feature-body spaced">
             Our latest offering comes direclty out of a need we recognized from our clients. They
             wanted repeatable, higher frequency releases to go along with their marketing strategies.
@@ -69,7 +73,9 @@
         </div>
 
         <div class="feature">
-          <div class="feature-header">Explainer Videos</div>
+          <div class="feature-header">
+            <div class='text'>Explainer Videos</div>
+          </div>
           <div class="feature-body spaced">
             From screencasts to full animated explainer videos, we love educating our clients users
             on what they have to offer.
@@ -77,7 +83,9 @@
         </div>
 
         <div class="feature">
-          <div class="feature-header">Testimonial Videos</div>
+          <div class="feature-header">
+            <div class='text'>Testimonial Videos</div>
+          </div>
           <div class="feature-body spaced">
             Hearing real words from real customers can really improve your credibility and highlight
             the impact your company has on the world. With testimonial videos, we'll help get the
@@ -86,7 +94,9 @@
         </div>
 
         <div class="feature">
-          <div class="feature-header">Promo Videos</div>
+          <div class="feature-header">
+            <div class='text'>Promo Videos</div>
+          </div>
           <div class="feature-body spaced">
             From full blown scripted works with hired actors, to smaller productions involving your
             staff, we can help you create a video that will promote your product or service and
@@ -95,7 +105,9 @@
         </div>
 
         <div class="feature">
-          <div class="feature-header">Training Videos</div>
+          <div class="feature-header">
+            <div class='text'>Training Videos</div>
+          </div>
           <div class="feature-body spaced">
             Sometimes the easiest way to learn something is by watching a video. Whether your
             on-boarding new users or your internal staff, we'll craft a professional video
@@ -104,11 +116,115 @@
         </div>
 
         <div class="feature">
-          <div class="feature-header">Event Coverage</div>
+          <div class="feature-header">
+            <div class='text'>Event Coverage</div>
+          </div>
           <div class="feature-body spaced">
             Videos that highlight the best moments of your event can act as a great way to
             celebrate your achievement as well as promote your next event. We'll shoot, interview,
             and edit together a video that captures the essence of your event.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h1 class='section-header'>
+        <span class='text'>Sample Work</span>
+        <div class='background-extension'></div>
+      </h1>
+
+      <div class='spaced'>
+        Here is a small selection of our past work
+      </div>
+
+      <div class="feature-list sample-work-list">
+        
+
+        <%= link_to 'https://www.youtube.com/watch?v=hdyYeo9ypIU', class: 'feature' do %>
+          <div class="feature-header">
+            <%= image_tag('rewind-if-i-lost-my-website-data.jpg') %>
+            <div class="text">Rewind - "If I lost my website data..."</div>
+          </div>
+        <% end %>
+        <%= link_to 'https://www.youtube.com/watch?v=MDkRLr-Jc8s', class: 'feature' do %>
+          <div class="feature-header">
+            <%= image_tag('app8-promo-video.jpg') %>
+            <div class="text">App8 Promo Video</div>
+          </div>
+        <% end %>
+        <%= link_to 'https://www.youtube.com/watch?v=6y3txtJf8CI', class: 'feature' do %>
+          <div class="feature-header">
+            <%= image_tag('pallium-we-are-at-a-turning-point.jpg') %>
+            <div class="text">Pallium Canada - We're at a turning point</div>
+          </div>
+        <% end %>
+        <%= link_to 'https://www.curtisswrightds.com/content/videos/Curtiss-Wright_TLCM_Video-1080p.mp4', class: 'feature' do %>
+          <div class="feature-header">
+            <%= image_tag('curtiss-wright-tlcm-video.jpg') %>
+            <div class="text">Curtiss-Wright - TLCM Video</div>
+          </div>
+        <% end %>
+        <%= link_to 'https://vimeo.com/221324164', class: 'feature' do %>
+          <div class="feature-header">
+            <%= image_tag('l-spark-2017-grad.jpg') %>
+            <div class="text">L-SPARK 2017 Grad Video</div>
+          </div>
+        <% end %>
+        <%= link_to 'https://www.youtube.com/watch?v=y5PNixQLYmI', class: 'feature' do %>
+          <div class="feature-header">
+            <%= image_tag('filefacets-dsar-video.jpg') %>
+            <div class="text">FileFacets DSAR Video</div>
+          </div>
+        <% end %>
+
+      </div>
+
+      <div class="center-aligned">
+        <%= link_to 'View Full Portflio', portfolio_path %>
+      </div>
+    </div>
+
+
+
+    <div class="section">
+      <h1 class='section-header'>
+        <span class='text'>Customers</span>
+        <div class='background-extension'></div>
+      </h1>
+      <div class='spaced'>
+        Here are just a few of our customers
+      </div>
+
+      <div class="feature-list customer-list">
+        <div class="feature">
+          <div class="feature-header">
+            <%= image_tag 'rewind.jpg' %>
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="feature-header">
+            <%= image_tag 'l-spark.jpg' %>
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="feature-header">
+            <%= image_tag 'relogix.jpg' %>
+          </div>
+        </div>
+
+
+        <div class="feature">
+          <div class="feature-header">
+            <%= image_tag 'app8.jpg' %>
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="feature-header">
+            <%= image_tag 'iridian-spectral-technologies.jpg' %>
           </div>
         </div>
       </div>
@@ -125,51 +241,52 @@
 
       <div class="feature-list tools-list">
         <div class="feature">
-          <div class="feature-header">Blackmagic Design Cameras</div>
+          <div class="feature-header">
+            <%= image_tag 'blackmagic-design-cameras.jpg' %>
+            <div class='text'>Blackmagic Design Cameras</div>
+          </div>
         </div>
 
         <div class="feature">
-          <div class="feature-header">DJI Gimbals</div>
+          <div class="feature-header">
+            <%= image_tag 'dji.jpg' %>
+            <div class='text'>DJI Gimbals</div>
+          </div>
         </div>
 
         <div class="feature">
-          <div class="feature-header">Final Cut Pro X</div>
+          <div class="feature-header">
+            <%= image_tag 'zoom-audio.jpg' %>
+            <div class='text'>Zoom Recorders</div>
+          </div>
         </div>
 
         <div class="feature">
-          <div class="feature-header">Adobe Creative Suite</div>
+          <div class="feature-header">
+            <%= image_tag 'sennheiser.jpg' %>
+            <div class='text'>Sennheiser Microphones</div>
+          </div>
         </div>
 
         <div class="feature">
-          <div class="feature-header">Davinci Resolve</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section">
-      <h1 class='section-header'>
-        <span class='text'>Customers</span>
-        <div class='background-extension'></div>
-      </h1>
-      <div class='spaced'>
-        Here are just a few of our customers
-      </div>
-
-      <div class="feature-list customer-list">
-        <div class="feature">
-          <div class="feature-header">Rewind</div>
+          <div class="feature-header">
+            <%= image_tag 'final-cut-pro-x.jpg' %>
+            <div class='text'>Final Cut Pro X</div>
+          </div>
         </div>
 
         <div class="feature">
-          <div class="feature-header">Relogix</div>
+          <div class="feature-header">
+            <%= image_tag 'adobe-creative-cloud.jpg' %>
+            <div class='text'>Adobe Creative Cloud Suite</div>
+          </div>
         </div>
 
         <div class="feature">
-          <div class="feature-header">L-SPARK</div>
-        </div>
-
-        <div class="feature">
-          <div class="feature-header">App8</div>
+          <div class="feature-header">
+            <%= image_tag 'davinci-resolve.jpg' %>
+            <div class='text'>Davinci Resolve</div>
+          </div>
         </div>
       </div>
     </div>

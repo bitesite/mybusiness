@@ -34,21 +34,36 @@
     }
   }
 
+  .sample-work-list {
+    justify-content: center;
+    flex-wrap: wrap;
+
+    a.feature {
+      margin: 40px;
+      max-width: 300px;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 0.8em;
+    }
+  }
+
   .tools-list {
     justify-content: center;
+    flex-wrap: wrap;
 
     .feature {
       margin: 20px;
-      max-width: 400px;
+      max-width: 120px;
     }
   }
 
   .customer-list {
     justify-content: center;
+    flex-wrap: wrap;
     
     .feature {
       margin: 20px;
-      max-width: 400px;
+      max-width: 180px;
     }
   }
 }
