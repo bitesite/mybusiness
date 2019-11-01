@@ -1,7 +1,6 @@
 class VideoListingsController < ApplicationController
   
   before_action :deny_access_for_non_admins
-  layout 'non_landing'
   
   def index
     @video_listings = VideoListing.all

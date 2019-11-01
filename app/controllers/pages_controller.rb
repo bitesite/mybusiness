@@ -5,37 +5,9 @@ class PagesController < ApplicationController
 
   def home
     @title = "A Custom Software and Video Production Firm based in Ottawa, Canada"
-    @meta_description = "BiteSite is an Ottawa, Canada based company dedicated to building elegant custom software and producing cinematic
-                        corporate video. It targets small to medium size businesses from start-ups to well established businesses.
-                        BiteSite believes strongly in finding the right-fit customer for the right-fit company to bring success
-                        to all who are invovled."
+    @meta_description = "BiteSite is a Custom Software and Video Production firm focusing on small to medium Ottawa tech businesses. We build web and mobile
+                         applications and produce corporate video."
                         
-    @recent_news_posts = NewsPost.published.limit(3)
-    @video_listings = VideoListing.all
-
-
-    @competencies = [
-      {icon: "magnet" , title: "UI Design"},
-      {icon: "desktop" , title: "Web Design"},
-      {icon: "code" , title: "Web Development"},
-      {icon: "mobile" , title: "iOS Development"},
-      {icon: "mobile" , title: "Android Development"},
-      {icon: "paint-brush" , title: "Graphic Design"},
-      {icon: "camera-retro" , title: "Photography"},
-      {icon: "video-camera" , title: "Film Production"},
-      {icon: "fire" , title: "Motion Graphics"}
-    ]
-
-    @tools = [
-      { icon: "desktop", title: "Ruby on Rails" },
-      { icon: "desktop", title: "React" },
-      { icon: "mobile", title: "React Native" },
-      { icon: "desktop", title: "Heroku" },
-      { icon: "video-camera", title: "Final Cut Pro X" },
-      { icon: "video-camera", title: "Adobe Creative Cloud" },
-      { icon: "video-camera", title: "Davinci Resolve" }
-    ]
-
     @staff_listings = [
       {name: "Casey Li", position: "CEO & Founder", avatar: "staff/casey.png"},
       {name: "Tim Clark", position: "Filmmaker", avatar: "staff/tim.png"},
@@ -44,12 +16,24 @@ class PagesController < ApplicationController
       {name: "Chris Francis", position: "Software Developer", avatar: "staff/chris.png"},
       {name: "Jason Connell", position: "Filmmaker", avatar: "staff/jason.png"}
     ]
+  end
 
+  def software
+    @title = "Custom Software Development"
+    @meta_description = "BiteSite provides Custom Software development services and focuses on Ottawa area small to medium tech businesses. We specialize in
+                         process management using agile methods like Scrum, product management, and software development to deliver
+                         high quality web and mobile applications."
+  end
+
+  def video
+    @title = "Video Production"
+    @meta_description = "BiteSite provides Video production services and focuses on Ottawa area small to medium tech businesses. We provide a full suite
+                         of services to deliver promo videos, explainer videos, training videos, testimonial videos, and more. From
+                         live-action to animated, and from large projects to small, we're here to help."
   end
 
   def portfolio
     @title = "Portfolio"
-    render layout: 'non_landing'
   end
   
   def wedding_contest_submit
@@ -68,11 +52,12 @@ class PagesController < ApplicationController
 
   def mobile_video_course
     @title = "Mobile Video Course"
-    render layout: 'non_landing'
   end
 
   def contact
-    @title = "Home"
+    @title = "Contact"
+    @meta_description = "BiteSite is a Custom Software and Video Production firm focusing on small to medium Ottawa tech businesses. We build web and mobile
+                         applications and produce corporate video. Contact us today whatever your interests are."
     @success = false
     @message = ""
 
@@ -102,7 +87,7 @@ class PagesController < ApplicationController
     end
     
     respond_to do |format|
-      format.html { redirect_to "/"}
+      format.html
       format.json { render :json => { :success => @success, :message => @message }.to_json }
     end
     
@@ -124,77 +109,11 @@ class PagesController < ApplicationController
     @title = "Setting up your Heroku account"
   end
 
-  def international_safety
-    @title = "International Safety Website - Case Study"
-    render layout: 'non_landing'
-  end
-
-  def mydoma
-    @title = "Mydoma Studio Video - Case Study"
-    render layout: 'non_landing'
-  end
-
-  def splice
-    @title = "Splice Web Application - Case Study"
-    render layout: 'non_landing'
-  end
-
-  def lspark_grad
-    @title = "L-SPARK Grad Video - Case Study"
-    render layout: 'non_landing'
-  end
-
-  def lspark
-    @title = "L-SPARK - Case Study"
-    render layout: 'non_landing'
-  end
-
-  def d3m
-    @title = "Teldio D3M - Case Study"
-    render layout: 'non_landing'
-  end
-
-  def martello
-    @title = "Martello All Devices Video - Case Study"
-    render layout: 'non_landing'
-  end
-
-  def curtiss_wright
-    @title = "Curtiss-Wright Defense Solutions TLCM Video - Case Study"
-    render layout: 'non_landing'
-  end
-
-  def ewa
-    @title = "Enterprise Wireless Alliance Cevo GO Video - Case Study"
-    render layout: 'non_landing'
-  end
-
-  def solink
-    @title = "Solink Explainer Video - Case Study"
-    render layout: 'non_landing'
-  end
-
-  def christine_kelly
-    @title = "Christine Kelly PHD Web Application"
-    render layout: 'non_landing'
-  end
-  
-  def filefacets
-    @title = "FileFacets How it works Video"
-    render layout: 'non_landing'
-  end
-
-  def inspec_homes
-    @title = "Inspec Homes Web Application"
-    render layout: 'non_landing'
-  end
-
   def staff_dashboard
     if !can?(:view, :staff_dashboard)
       redirect_to root_path 
     else
       @title = "Staff Dashboard"
-      render layout: 'non_landing'
     end
   end
 

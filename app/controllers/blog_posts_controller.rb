@@ -19,11 +19,9 @@ class BlogPostsController < ApplicationController
   end
 
   def new
-    render layout: 'non_landing'
   end
 
   def edit
-    render layout: 'non_landing'
   end
 
   def create
@@ -31,7 +29,7 @@ class BlogPostsController < ApplicationController
     if @blog_post.save
       redirect_to @blog_post, notice: 'Blog post was successfully created.'
     else
-      render action: "new", layout: 'non_landing'
+      render action: "new", layout: 'blog'
     end
   end
 
@@ -40,7 +38,7 @@ class BlogPostsController < ApplicationController
     if @blog_post.update_attributes(blog_post_params)
       redirect_to @blog_post, notice: 'Blog post was successfully updated.'
     else
-      render action: "edit", layout: 'non_landing'
+      render action: "edit", layout: 'blog'
     end
   end
 

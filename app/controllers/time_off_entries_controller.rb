@@ -1,7 +1,6 @@
 class TimeOffEntriesController < ApplicationController
   
   load_and_authorize_resource
-  layout 'non_landing'
 
   def index
     @time_off_entries = current_user.time_off_entries.chronological

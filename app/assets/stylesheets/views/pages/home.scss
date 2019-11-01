@@ -1,0 +1,97 @@
+#pages-home {
+  img.circles {
+    opacity: 0.3;
+    position: absolute;
+    z-index: 1;
+    top: 60px;
+    right: 150px;
+
+    -webkit-animation: rotation 40s linear infinite;
+    -moz-animation: rotation 40s linear infinite;
+    animation: rotation 40s linear infinite;
+  }
+
+  .hero {
+    .slogan {
+      max-width: 950px;
+    }
+
+    .subslogan {
+      max-width: 720px;
+    }
+  }
+
+  .services {
+    margin-top: 250px;
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+
+      .service {
+        width: 350px;
+
+        .header {
+          display: flex;
+          align-items: center;
+
+          h2 {
+            text-transform: uppercase;
+            font-family: 'Avenir LT Std 85 Heavy';
+          }
+
+          img {
+            height: 70px;
+            margin-left: 20px;
+          }
+        }
+
+        .writeup {
+          margin-left: 50px;
+          text-align: justify;
+
+          .actions {
+            margin-top: 30px;
+          }
+        }
+      }
+    }
+  }
+
+  .contact-section {
+    margin-top: 60px;
+    padding-bottom: 70px;
+
+    h3 {
+      margin-top: 0;
+    }
+
+    .contact-section-body {
+      display: flex;
+
+      .contact-form {
+        width: calc(60% - 80px);
+        padding: 0 40px;
+
+        .actions {
+          text-align: right;
+        }
+      }
+
+      .contact-caption {
+        width: 40%;
+        text-align: justify;
+      }
+    }
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}

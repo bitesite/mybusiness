@@ -1,0 +1,69 @@
+#pages-video {
+
+  .hero {
+    height: 400px;
+    
+    img.camera {
+      position: absolute;
+      top: 80px;
+      right: 30px;
+      z-index: -1;
+      opacity: 0.5;
+    }
+  }
+
+  .services-list {
+    margin-top: 30px;
+
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .feature {
+      margin: 20px;
+      max-width: 350px;
+    }
+  }
+
+  .common-projects-list {
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .feature {
+      margin: 40px;
+      max-width: 300px;
+    }
+  }
+
+  .sample-work-list {
+    justify-content: center;
+    flex-wrap: wrap;
+
+    a.feature {
+      margin: 40px;
+      max-width: 300px;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 0.8em;
+    }
+  }
+
+  .tools-list {
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .feature {
+      margin: 20px;
+      max-width: 120px;
+    }
+  }
+
+  .customer-list {
+    justify-content: center;
+    flex-wrap: wrap;
+    
+    .feature {
+      margin: 20px;
+      max-width: 180px;
+    }
+  }
+}
