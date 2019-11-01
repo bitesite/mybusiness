@@ -5,10 +5,8 @@ class PagesController < ApplicationController
 
   def home
     @title = "A Custom Software and Video Production Firm based in Ottawa, Canada"
-    @meta_description = "BiteSite is an Ottawa, Canada based company dedicated to building elegant custom software and producing cinematic
-                        corporate video. It targets small to medium size businesses from start-ups to well established businesses.
-                        BiteSite believes strongly in finding the right-fit customer for the right-fit company to bring success
-                        to all who are invovled."
+    @meta_description = "BiteSite is a Custom Software and Video Production firm focusing on small to medium Ottawa tech businesses. We build web and mobile
+                         applications and produce corporate video."
                         
     @staff_listings = [
       {name: "Casey Li", position: "CEO & Founder", avatar: "staff/casey.png"},
@@ -22,10 +20,16 @@ class PagesController < ApplicationController
 
   def software
     @title = "Custom Software Development"
+    @meta_description = "BiteSite provides Custom Software development services and focuses on Ottawa area small to medium tech businesses. We specialize in
+                         process management using agile methods like Scrum, product management, and software development to deliver
+                         high quality web and mobile applications."
   end
 
   def video
     @title = "Video Production"
+    @meta_description = "BiteSite provides Video production services and focuses on Ottawa area small to medium tech businesses. We provide a full suite
+                         of services to deliver promo videos, explainer videos, training videos, testimonial videos, and more. From
+                         live-action to animated, and from large projects to small, we're here to help."
   end
 
   def portfolio
@@ -51,7 +55,9 @@ class PagesController < ApplicationController
   end
 
   def contact
-    @title = "Home"
+    @title = "Contact"
+    @meta_description = "BiteSite is a Custom Software and Video Production firm focusing on small to medium Ottawa tech businesses. We build web and mobile
+                         applications and produce corporate video. Contact us today whatever your interests are."
     @success = false
     @message = ""
 

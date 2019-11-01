@@ -127,6 +127,14 @@ $header-height: 70px;
 					align-items: center;
 					justify-content: center;
 				}
+
+				.simple-text {
+					font-size: 1em;
+					height: 60px;
+					display: flex;
+					align-items: center;
+					justify-content: center;	
+				}
 			}
 
 			.feature-body {
