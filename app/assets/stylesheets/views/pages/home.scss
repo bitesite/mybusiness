@@ -22,7 +22,7 @@
   }
 
   .services {
-    margin-top: 250px;
+    margin-top: 230px;
 
     .container {
       display: flex;
@@ -31,6 +31,7 @@
 
       .service {
         width: 350px;
+        margin: 20px 0;
 
         .header {
           display: flex;
@@ -82,6 +83,19 @@
       .contact-caption {
         width: 40%;
         text-align: justify;
+      }
+
+      @media screen and (max-width: $mobile-menu-device-width) {
+        flex-wrap: wrap;
+
+        .contact-form {
+          width: 100%;
+          padding: 0;
+        }
+
+        .contact-caption {
+          width: 100%;
+        }
       }
     }
   }

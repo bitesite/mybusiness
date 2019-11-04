@@ -4,14 +4,17 @@
       <%= link_to image_tag('logo2015-blue.png', class: 'logo'), root_path %>
     </div>
     <div class='nav-links'>
-      <%= link_to 'Software', software_path %>
-      <%= link_to 'Video', video_path %>
-      <%= link_to 'Blog', blog_posts_path %>
-      <%= link_to 'Contact', contact_us_path %>
-
-      <% if user_signed_in? %>
-        <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
-      <% end %>
+      <%= render 'layouts/nav_links' %>
     </div>
+
+    <div class='mobile-menu-toggle-container'>
+      <%= link_to fa_icon('bars'), '#', class: 'mobile-menu-toggle' %>
+    </div>
+  </div>
+</div>
+
+<div class="mobile-nav-links-container">
+  <div class="mobile-nav-links">
+    <%= render 'layouts/nav_links' %>
   </div>
 </div>

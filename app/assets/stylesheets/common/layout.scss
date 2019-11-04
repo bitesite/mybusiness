@@ -61,9 +61,55 @@ $header-height: 70px;
 					color: $primary-color;
 				}
 			}
+
+			@media screen and (max-width: $mobile-menu-device-width) {
+				display: none;
+			}
+		}
+
+		.mobile-menu-toggle-container {
+			display: none;
+			
+			@media screen and (max-width: $mobile-menu-device-width) {
+				width: calc(100% - 185px);
+				display: flex;
+
+				justify-content: flex-end;
+				align-items: center;
+				font-size: 2em;
+			}
 		}
 	}
 
+
+}
+
+.mobile-nav-links-container {
+	display: none;
+
+	@media screen and (max-width: $mobile-menu-device-width) {
+		display: block;
+
+		.mobile-nav-links {
+			display: none;
+			top: 70px;
+			background: white;
+			max-height: calc(100% - #{$header-height});
+			width: 100%;
+			overflow-y: scroll;
+			position: fixed;
+			z-index: 2000;
+
+			a {
+				display: block;
+				padding: 20px 0;
+				text-align: center;
+				font-style: normal;
+
+				border-bottom: 1px solid $light-gray-1;
+			}
+		}
+	}
 }
 
 #content {
@@ -90,6 +136,11 @@ $header-height: 70px;
 		  .emphasize {
 		    font-family: 'Avenir Next Condensed Medium';
 		    color: $primary-color;
+		  }
+
+		  @media screen and (max-width: $mobile-menu-device-width) {
+		  	font-size: 60px;
+		  	line-height: 55px;
 		  }
 		}
 
