@@ -11,8 +11,26 @@ xml.tag! 'urlset',
   end
 
   xml.url do
+    xml.loc software_url
+    xml.changefreq "monthly"
+    xml.priority '1.0'
+  end
+
+  xml.url do
+    xml.loc video_url
+    xml.changefreq "monthly"
+    xml.priority '1.0'
+  end
+
+  xml.url do
+    xml.loc contact_us_url
+    xml.changefreq "monthly"
+    xml.priority '1.0'
+  end
+
+  xml.url do
     xml.loc portfolio_url
-    xml.changefreq "yearly"
+    xml.changefreq "monthly"
     xml.priority '0.5'
   end
 
