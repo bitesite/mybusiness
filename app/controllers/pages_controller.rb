@@ -5,7 +5,7 @@ class PagesController < ApplicationController
 
   def home
     @title = "A Custom Software and Video Production Firm based in Ottawa, Canada"
-    @meta_description = "BiteSite is a Custom Software and Video Production firm focusing on small to medium Ottawa tech businesses. We build web and mobile
+    @meta_description = "BiteSite is a Custom Software and Video Production firm focused on working with small to medium Ottawa tech businesses. We build web and mobile
                          applications and produce corporate video."
                         
     @staff_listings = [
