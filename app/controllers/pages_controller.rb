@@ -20,14 +20,14 @@ class PagesController < ApplicationController
 
   def software
     @title = "Custom Software Development"
-    @meta_description = "BiteSite provides Custom Software development services and focuses on Ottawa area small to medium tech businesses. We specialize in
+    @meta_description = "BiteSite provides Custom Software development services and focuses on working with Ottawa area small to medium tech businesses. We specialize in
                          process management using agile methods like Scrum, product management, and software development to deliver
                          high quality web and mobile applications."
   end
 
   def video
     @title = "Video Production"
-    @meta_description = "BiteSite provides Video production services and focuses on Ottawa area small to medium tech businesses. We provide a full suite
+    @meta_description = "BiteSite provides Video production services and focuses on working with Ottawa area small to medium tech businesses. We provide a full suite
                          of services to deliver promo videos, explainer videos, training videos, testimonial videos, and more. From
                          live-action to animated, and from large projects to small, we're here to help."
   end
