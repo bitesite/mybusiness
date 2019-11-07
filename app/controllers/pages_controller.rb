@@ -8,7 +8,8 @@ class PagesController < ApplicationController
     @meta_description = "BiteSite is a Custom Software and Video Production firm focused on working with small to medium Ottawa tech businesses. We build web and mobile
                          applications and produce corporate video."
                         
-    @latest_blog_posts = BlogPost.limit(3)
+    featured_blog_post_ids = Setting.find_by(name: 'featured_blog_post_ids')
+    @latest_blog_posts = BlogPost.where(id: featured_blog_post_ids.value.split(","))
   end
 
   def software

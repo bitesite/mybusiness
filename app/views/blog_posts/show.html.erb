@@ -80,6 +80,7 @@
         <div class='edit-actions'>
           <%= link_to "edit", edit_blog_post_path(@blog_post) %>
           <%= link_to "add images", blog_post_blog_post_images_path(@blog_post) %><br/>
+          ID: <%= @blog_post.id %>
         </div>
       <% end %>
     </div>
