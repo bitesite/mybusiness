@@ -1,13 +1,12 @@
 <div id="footer">
   <div class="container">
     <div>
-      BiteSite Inc.<br />
+      <b>BiteSite Inc.</b><br />
       Custom Software and Video Production<br />
       info@bitesite.ca<br />
       204 - 78 George St.<br />
       Ottawa, ON<br />
       K1N 5W1<br />
-      <%= link_to 'Staff Sign in', new_user_session_path %>
     </div>
 
     <div>
@@ -15,6 +14,15 @@
     </div>
 
     <div>
+      <div class='social-links'>
+        <%= link_to fa_icon('linkedin'), 'https://www.linkedin.com/company/2894614/' %>
+        <%= link_to fa_icon('twitter'), 'https://www.twitter.com/bitesite' %>
+        <%= link_to fa_icon('youtube-play'), 'https://www.youtube.com/user/bitesiteca' %>
+      </div>
+
+      <div class="staff-sign-in">
+        <%= link_to 'Staff Sign in', new_user_session_path %>
+      </div>
     </div>
   </div>
 </div>

@@ -17,7 +17,7 @@
           <h2>Custom Software</h2>
           <%= image_tag 'Wireframe-Computer.png' %>
         </div>
-        <div class="writeup">
+        <div class="writeup spaced">
           BiteSite is a full service custom software shop. From process, to design,
           to implementation, we deliver web and mobile applications to execute your vision. 
 
@@ -32,7 +32,7 @@
           <h2>Video Production</h2>
           <%= image_tag 'Wireframe-Camera.png' %>
         </div>
-        <div class="writeup">
+        <div class="writeup spaced">
           BiteSite is a full service video production house. From concept to delivery,
           we produce corporate video with high production value that allow your business to stand out. 
 
@@ -41,6 +41,39 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+
+  <div class="latest-blog-section">
+    <div class="container">
+      <h1 class='section-header'>
+        <span class='text'>Blog</span>
+        <div class='background-extension'></div>
+      </h1>
+
+      <div class="center-aligned">
+        Our latest posts
+      </div>
+      
+      <div class='latest-blog-posts'>
+        <% @latest_blog_posts.each do |blog_post| %>
+          <div class="blog-post spaced">
+            <div class='image-container'>
+              <%= image_tag blog_post.featured_image %>
+            </div>
+            <div class="title"><%= blog_post.title %></div>
+            <div class="description">
+              <%= blog_post.meta_description %>
+            </div>
+            <%= link_to 'Read more →', blog_post %>
+          </div>
+        <% end %>
+      </div>
+
+      <div class='center-aligned view-all-container'>
+        <%= link_to "View all posts", blog_posts_path %>
+      </div>
+
     </div>
   </div>
 
@@ -56,15 +89,15 @@
         <div class="contact-caption">
 
           <h3>Contact us for anything!</h3> 
-          <p>Know exactly what you want? Have no idea at all? Want to just open up a conversation about your options? 
+          <p class='spaced'>Know exactly what you want? Have no idea at all? Want to just open up a conversation about your options? 
           Have some technical questions? Whatever it may be, please drop us a line and we'll do
           our best to answer any questions you may have.</p>
 
-          <p><b>BiteSite believes strongly in finding a good fit company for a good
+          <p class='spaced'><b>BiteSite believes strongly in finding a good fit company for a good
           fit customer</b>. So if we find out we're not right for you, we won't pressure you. If we do, we'll
           be happy to build something you'll truly be excited about.</p>
           
-          <p>If you have any troubles with the contact form, you can also e-mail us directly at <b><%= link_to "info@bitesite.ca", "mailto:info@bitesite.ca" %></b>.</p>
+          <p class='spaced'>If you have any troubles with the contact form, you can also e-mail us directly at <b><%= link_to "info@bitesite.ca", "mailto:info@bitesite.ca" %></b>.</p>
 
         </div>
       </div>

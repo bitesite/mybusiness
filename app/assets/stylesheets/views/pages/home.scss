@@ -60,6 +60,50 @@
     }
   }
 
+  .latest-blog-section {
+    
+    .latest-blog-posts {
+
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 20px;
+
+      .blog-post {
+        margin: 0 30px;
+        width: calc(33.333% - 60px);
+
+        .image-container {
+          text-align: center;
+          img {
+            width: 200px;
+            height: 200px;
+          }
+        }
+
+        .title {
+          font-size: 1.5em;
+          font-weight: bold;
+          text-align: center;
+          margin: 10px 0;
+        }
+
+        .description {
+          text-align: justify;
+        }
+
+        @media screen and (max-width: #{$mobile-menu-device-width}) {
+          margin: 20px 0;
+          width: 100%;
+        }
+
+      }
+    }
+
+    .view-all-container {
+      margin: 40px 0 20px 0;
+    }
+  }
+
   .contact-section {
     margin-top: 60px;
     padding-bottom: 70px;

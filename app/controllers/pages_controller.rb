@@ -8,14 +8,7 @@ class PagesController < ApplicationController
     @meta_description = "BiteSite is a Custom Software and Video Production firm focused on working with small to medium Ottawa tech businesses. We build web and mobile
                          applications and produce corporate video."
                         
-    @staff_listings = [
-      {name: "Casey Li", position: "CEO & Founder", avatar: "staff/casey.png"},
-      {name: "Tim Clark", position: "Filmmaker", avatar: "staff/tim.png"},
-      {name: "Brendan McNeill", position: "Producer", avatar: "staff/brendan.png"},
-      {name: "Jack Wu", position: "Software Developer", avatar: "staff/jack.png"},
-      {name: "Chris Francis", position: "Software Developer", avatar: "staff/chris.png"},
-      {name: "Jason Connell", position: "Filmmaker", avatar: "staff/jason.png"}
-    ]
+    @latest_blog_posts = BlogPost.limit(3)
   end
 
   def software
