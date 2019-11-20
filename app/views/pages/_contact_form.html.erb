@@ -12,6 +12,9 @@
     <div class="field">
       <%= text_area_tag :message, nil, rows: 10, placeholder: 'message', class: "contact-field" %>
     </div>
+    <div class="recaptcha-container">
+      <%= recaptcha_tags %>
+    </div>
     <div class="actions">
       <%= link_to "Submit", "#", :id => "contact-submit", class: "contact-submit" %>
       

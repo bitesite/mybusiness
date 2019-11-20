@@ -19,7 +19,7 @@ gem 'carrierwave'
 gem 'aws-sdk-s3'
 gem 'fog-aws'
 gem 'mailchimp'
-gem "recaptcha", :require => "recaptcha/rails"
+gem "recaptcha"
 gem 'sucker_punch'
 gem 'dotenv-rails'
 gem 'font-awesome-rails'
