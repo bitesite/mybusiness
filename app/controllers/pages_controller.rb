@@ -52,10 +52,13 @@ class PagesController < ApplicationController
     @title = "Contact"
     @meta_description = "BiteSite is a Custom Software and Video Production firm focusing on small to medium Ottawa tech businesses. We build web and mobile
                          applications and produce corporate video. Contact us today whatever your interests are."
-    @success = false
-    @message = ""
+    
+    
 
     if request.post?
+      @success = false
+      @message = "We're sorry but there was an issue submitting your request"
+
       if !params[:email_address].blank? && !params[:message].blank?
 
         if EmailBlacklisting.exists?(email: params[:email_address].upcase.strip)
@@ -75,14 +78,10 @@ class PagesController < ApplicationController
           
             EmailJob.perform_async(first_name, last_name, customer_email, message)
             @success = true
+            @message = "We've received your message and we'll be in touch shortly."
           end
         end
       end
-    end
-    
-    respond_to do |format|
-      format.html
-      format.json { render :json => { :success => @success, :message => @message }.to_json }
     end
     
   end
