@@ -56,32 +56,32 @@ class PagesController < ApplicationController
     
 
     if request.post?
-      @success = false
-      @message = "We're sorry but there was an issue submitting your request"
+      @first_name = params[:first_name]
+      @last_name = params[:last_name]
+      @email_address = params[:email_address]
+      @message = params[:message]
 
-      if !params[:email_address].blank? && !params[:message].blank?
+      if !verify_recaptcha
+        @success = false
+        @result_message = "Please verify that you are not a robot."
+      elsif @email_address.blank? || @message.blank?
+        @success = false
+        @result_message = "Please fill out both your email address and a message."
+      elsif EmailBlacklisting.exists?(email: params[:email_address].upcase.strip)
+        @success = false
+        @result_message = "Your e-mail has been blacklisted. If you want to appeal this, please contact info@bitesite.ca directly."
+      else
+        ContactFormSubmission.create(first_name: @first_name,
+                                     last_name: @last_name,
+                                     email_address: @email_address,
+                                     message: @message
+                                    )
 
-        if EmailBlacklisting.exists?(email: params[:email_address].upcase.strip)
-          @message = "Your e-mail has been blacklisted. If you want to appeal this, please contact info@bitesite.ca directly."
-        else
-          ContactFormSubmission.create({ first_name: params[:first_name],
-                                         last_name: params[:last_name],
-                                         email_address: params[:email_address],
-                                         message: params[:message]
-                                       })
-
-          if params[:honey_pot].blank?
-            first_name = params[:first_name]
-            last_name = params[:last_name]
-            customer_email = params[:email_address]
-            message = params[:message]
-          
-            EmailJob.perform_async(first_name, last_name, customer_email, message)
-            @success = true
-            @message = "We've received your message and we'll be in touch shortly."
-          end
-        end
+        EmailJob.perform_async(@first_name, @last_name, @email_address, @message)
+        @success = true
+        @result_message = "We've received your message and we'll be in touch shortly."
       end
+
     end
     
   end
