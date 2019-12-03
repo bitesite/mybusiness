@@ -1,21 +1,22 @@
 <div class="contact-form">
   <%= form_tag "/contact" do %>
     <div class="field">
-      <%= text_field_tag :first_name, nil, placeholder: 'first name', class: "contact-field" %>
+      <%= text_field_tag :first_name, @first_name, placeholder: 'first name', class: "contact-field" %>
     </div>
     <div class="field">
-      <%= text_field_tag :last_name, nil, placeholder: 'last name', class: "contact-field" %>
+      <%= text_field_tag :last_name, @last_name, placeholder: 'last name', class: "contact-field" %>
     </div>
     <div class="field">
-      <%= text_field_tag :email_address, nil, placeholder: 'email', class: "contact-field" %>
+      <%= text_field_tag :email_address, @email_address, placeholder: 'email', class: "contact-field" %>
     </div>
     <div class="field">
-      <%= text_area_tag :message, nil, rows: 10, placeholder: 'message', class: "contact-field" %>
+      <%= text_area_tag :message, @message, rows: 10, placeholder: 'message', class: "contact-field" %>
+    </div>
+    <div class="recaptcha-container">
+      <%= recaptcha_tags %>
     </div>
     <div class="actions">
-      <%= link_to "Submit", "#", :id => "contact-submit", class: "contact-submit" %>
-      
-      <div class="contact-submit-info" id="contact-submit-info"></div>
+      <%= submit_tag "Submit", class: "btn btn-primary contact-submit" %>
     </div>
   <% end %>
 </div>

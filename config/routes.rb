@@ -23,6 +23,10 @@ Mybusiness::Application.routes.draw do
 
   resources :downloads
 
+  # These pages need to be above the resources :contact to avoid conflict
+  get '/contact' => 'pages#contact'
+  post "/contact" => "pages#contact"
+
   get '/download' => 'contacts#new'
   resources :contacts
   
@@ -63,8 +67,6 @@ Mybusiness::Application.routes.draw do
   root "pages#home"
   get '/software' => 'pages#software'
   get '/video' => 'pages#video'
-  get '/contact_us' => 'pages#contact'
-  post "/contact" => "pages#contact"
     
   get "/admin" => "pages#admin"
   get "/setting_up_your_heroku_account" => "pages#setting_up_your_heroku_account"

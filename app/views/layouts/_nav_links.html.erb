@@ -1,7 +1,7 @@
 <%= link_to 'Software', software_path %>
 <%= link_to 'Video', video_path %>
 <%= link_to 'Blog', blog_posts_path %>
-<%= link_to 'Contact', contact_us_path %>
+<%= link_to 'Contact', contact_path %>
 
 <% if user_signed_in? %>
   <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
