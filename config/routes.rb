@@ -67,6 +67,7 @@ Mybusiness::Application.routes.draw do
   root "pages#home"
   get '/software' => 'pages#software'
   get '/video' => 'pages#video'
+  get '/video/retainer' => 'pages#video_retainer'
     
   get "/admin" => "pages#admin"
   get "/setting_up_your_heroku_account" => "pages#setting_up_your_heroku_account"

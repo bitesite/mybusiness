@@ -1,0 +1,84 @@
+#pages-video-retainer {
+  
+  .logo-container {
+    margin: 50px auto;
+    width: 800px;
+
+    img.logo {
+      width: 100%;
+    }
+
+  }
+
+  .overview-section {
+    .spaced {
+      margin: 20px 0;
+    }
+  }
+
+  .sample-work-list {
+    justify-content: center;
+    flex-wrap: wrap;
+
+    a.feature {
+      margin: 40px;
+      max-width: 300px;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 0.8em;
+    }
+  }
+
+  .tiers-section {
+    .tiers-list {
+      justify-content: center;
+      flex-wrap: wrap;
+  
+      .feature {
+        margin: 40px;
+        height: 300px;
+        width: 300px;
+        border-radius: 500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+  
+        .feature-header {
+          font-size: 50px;
+          color: black;
+          font-weight: bold;
+  
+          .per-month {
+            font-size: 20px;
+          }
+        }
+  
+        .feature-body {
+          text-align: center;
+        }
+  
+  
+        &.feature-1 { background: #ccebf3; }
+        &.feature-2 { background: #cde9e4; }
+        &.feature-3 { background: #dcdef0; }
+      }
+    }
+
+    .caption {
+      text-align: center;
+      font-style: italic;
+    }
+  }
+
+  .contact-section {
+    .contact-form-container {
+      margin: 20px 0;
+    }
+
+    .full-video-offering {
+      font-size: 0.9em;
+    }
+  }
+  
+}

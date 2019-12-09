@@ -26,6 +26,13 @@ class PagesController < ApplicationController
                          live-action to animated, and from large projects to small, we're here to help."
   end
 
+  def video_retainer
+    @title = "Video Production Retainer"
+    @meta_description = "The BiteSite Video Production Retainer is a way for Ottawa area small to medium tech businesses to release regular video content
+                         at an affordable price. This is the perfect complement to a marketing or on-boarding strategy and can really give your business
+                         a differentiator."
+  end
+
   def portfolio
     @title = "Portfolio"
   end

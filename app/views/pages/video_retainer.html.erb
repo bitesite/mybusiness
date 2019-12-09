@@ -1,0 +1,127 @@
+<div id='pages-video-retainer'>
+  <div class='container'>
+    <div class='logo-container'>
+      <%= image_tag 'Video-Retainer-Logo.png', alt: 'BiteSite Video Retainer Logo', class: 'logo' %>
+    </div>
+
+    <div class="section overview-section">
+      <h1 class='section-header'>
+        <span class='text'>Overview</span>
+        <div class='background-extension'></div>
+      </h1>
+      <div class='spaced'>
+        The BiteSite Video Retainer is a package that allows our clients to deliver <strong>high-quality video content on a regular basis
+        at an affordable rate</strong>. It is a great complement to marketing and on-boarding strategies but is also flexible to suit your needs.
+      </div>
+      <div class='spaced'>
+        After years of working in the video production industry, we started realizing that our customers required something on the
+        more economical side and an offering that allowed for higher frequency of output. We also realized that each client was different
+        and had different capabilities in-house. With this, we worked with clients to design an offering that was more suited towards
+        their needs, and thus, the BiteSite video retainer was born.
+      </div>
+    </div>
+
+    <div class="section">
+      <h1 class='section-header'>
+        <span class='text'>Sample Work</span>
+        <div class='background-extension'></div>
+      </h1>
+
+      <div class='spaced center-aligned'>
+        The following work was produced using the retainer package.
+      </div>
+
+      <div class="feature-list sample-work-list">
+        <%= link_to 'https://www.youtube.com/watch?v=fTFyqUhdh2o', class: 'feature' do %>
+          <div class="feature-header">
+            <%= image_tag('rewind-quickbooks-online.jpg') %>
+            <div class="text">Rewind - QuickBooks Online On-boarding</div>
+          </div>
+        <% end %>
+        <%= link_to 'https://www.linkedin.com/posts/l-spark_last-week-we-welcomed-our-new-cohort-for-activity-6587349080232603648-akZg/', class: 'feature' do %>
+          <div class="feature-header">
+            <%= image_tag('l-spark-meet-lsa6.jpg') %>
+            <div class="text">L-SPARK - Meet LSA6</div>
+          </div>
+        <% end %>
+        <%= link_to 'https://www.youtube.com/watch?v=TAGPenvqjZE', class: 'feature' do %>
+          <div class="feature-header">
+            <%= image_tag('rewind-bfcm-ad.jpg') %>
+            <div class="text">Rewind - BFCM Ad</div>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="center-aligned">
+        <%= link_to 'View Full BiteSite Video Portflio', portfolio_path %>
+      </div>
+    </div>
+
+    <div class="section tiers-section">
+      <h1 class='section-header'>
+        <span class='text'>Tiers</span>
+        <div class='background-extension'></div>
+      </h1>
+      <div class='spaced'>
+        The BiteSite Video Retainer is offered in 3 tiers. Each tier offers you a certain number of video production hours a month.
+        Those hours are very flexible and can be used for <strong>scripting, concepting, video shoots, interviews, editing, motion graphics/animation,
+        sound mixing, music licenses, graphic design</strong>, and more. The BiteSite team will work with you to ensure that we are maximizing our partership.
+      </div>
+      <div class="feature-list tiers-list">
+        <div class='feature feature-1'>
+          <div class="feature-header">
+            $1000<span class='per-month'>/mo.</span>
+          </div>
+          <div class="feature-body spaced">
+            8 hours per month <br />
+            ~ 1 video per month
+          </div>
+        </div>
+        <div class='feature feature-2'>
+          <div class="feature-header">
+            $2000<span class='per-month'>/mo.</span>
+          </div>
+          <div class="feature-body spaced">
+            16 hours per month <br />
+            ~ 2 videos per month
+          </div>
+        </div>
+        <div class='feature feature-3'>
+          <div class="feature-header">
+            $3000<span class='per-month'>/mo.</span>
+          </div>
+          <div class="feature-body spaced">
+            24 hours per month <br />
+            ~ 3 video per month
+          </div>
+        </div>
+      </div>
+
+      <div class='caption'>
+        All tiers require a 3-month minimum commitment. Prices do not include applicable taxes. Terms are flexible.
+      </div>
+    </div>
+
+    <div class="section contact-section">
+      <h1 class='section-header'>
+        <span class='text'>Interested?</span>
+        <div class='background-extension'></div>
+      </h1>
+      <div class='spaced'>
+        If the BiteSite Video Retainer sounds like something that would suit your organization, fill out the form below and we'll start the
+        conversation. 
+      </div>
+      <div class='full-video-offering'>
+        If you're interested in BiteSite's video work, but the retainer is not the right fit, check out our full video offering <%= link_to 'here', video_path %>.
+      </div>
+      
+      <div class='contact-form-container'>
+        <%= render 'pages/contact_form' %>
+      </div>
+    </div>
+
+  </div>
+
+
+
+</div>
