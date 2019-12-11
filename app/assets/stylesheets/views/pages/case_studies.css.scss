@@ -1,4 +1,11 @@
 /* CASE STUDIES ********************/
+#content {
+  .case-study {
+    .hero {
+      padding-top: 100px;
+    }
+  }
+}
 .case-study {
   .hero {
     height:200px;
@@ -6,13 +13,12 @@
 
     h1 {
       letter-spacing:0px;
-      margin-top:50px;
+      margin: 0;
       color:white;
       text-shadow:2px 2px black;
       font-family: "Avenir LT Std 65 Medium";
+      font-size: 3em;
     }
-
-
 
     .services {
       .service {
@@ -20,6 +26,8 @@
         padding:5px 10px;
         color:white;
         display:inline-block;
+        text-transform: uppercase;
+        font-size: 0.8em;
       }
     }
 
@@ -135,7 +143,7 @@
 }
 
 .is-case-study .hero { background-image:url(/assets/case_studies/is_header_bg.jpg); }
-.curtisswright-case-study .hero { background-image:url(/assets/case_studies/curtisswright_header_bg.jpg); }
+.curtiss_wright-case-study .hero { background-image:url(/assets/case_studies/curtiss_wright_header_bg.jpg); }
 .mydoma-case-study .hero { background-image:url(/assets/case_studies/mydoma_header_bg.jpg); }
 .lspark-case-study .hero { background-image:url(/assets/case_studies/lspark_header_bg.jpg); }
 .filefacets-case-study .hero { background-image:url(/assets/case_studies/filefacets_header_bg.jpg); }

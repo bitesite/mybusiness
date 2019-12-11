@@ -23,7 +23,13 @@ xml.tag! 'urlset',
   end
 
   xml.url do
-    xml.loc contact_us_url
+    xml.loc video_retainer_url
+    xml.changefreq "monthly"
+    xml.priority '1.0'
+  end
+
+  xml.url do
+    xml.loc contact_url
     xml.changefreq "monthly"
     xml.priority '1.0'
   end

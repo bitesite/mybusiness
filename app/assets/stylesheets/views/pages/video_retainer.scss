@@ -2,7 +2,8 @@
   
   .logo-container {
     margin: 50px auto;
-    width: 800px;
+    width: 100%;
+    max-width: 800px;
 
     img.logo {
       width: 100%;
@@ -38,11 +39,15 @@
         margin: 40px;
         height: 300px;
         width: 300px;
-        border-radius: 500px;
+        border-radius: 300px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+
+        @media screen and (max-width: $mobile-menu-device-width) {
+          margin: 20px 10px;
+        }
   
         .feature-header {
           font-size: 50px;
