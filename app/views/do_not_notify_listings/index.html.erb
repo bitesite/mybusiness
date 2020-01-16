@@ -1,10 +1,11 @@
 <div class="container">
   <h1>Do Not Notify Listings</h1>
 
-  <table>
+  <table class='resource-table'>
     <thead>
       <tr>
         <th>Email</th>
+        <th>Blog Post IDs</th>
         <th colspan="3"></th>
       </tr>
     </thead>
@@ -13,6 +14,7 @@
       <% @do_not_notify_listings.each do |do_not_notify_listing| %>
         <tr>
           <td><%= do_not_notify_listing.email %></td>
+          <td><%= do_not_notify_listing.blog_post_ids %></td>
           <td><%= link_to 'Show', do_not_notify_listing %></td>
           <td><%= link_to 'Edit', edit_do_not_notify_listing_path(do_not_notify_listing) %></td>
           <td><%= link_to 'Destroy', do_not_notify_listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>

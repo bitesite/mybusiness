@@ -36,6 +36,6 @@ class DoNotNotifyListingsController < ApplicationController
 
   private
     def do_not_notify_listing_params
-      params.require(:do_not_notify_listing).permit(:email)
+      params.require(:do_not_notify_listing).permit(:email, :blog_post_ids)
     end
 end

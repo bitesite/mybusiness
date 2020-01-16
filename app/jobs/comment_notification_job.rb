@@ -3,21 +3,26 @@ class CommentNotificationJob
 
   def perform(comment)
     AdminMailer.comment_notification(comment).deliver_now
-
-    already_notified_email_addresses = []
+    
+    # Gather all email addresses to notify
+    email_addresses_to_notify = []
 
     comment.blog_post.comments.each do |existing_comment|
       existing_comment_formatted_email = existing_comment.email.strip.downcase
       comment_formatted_email = comment.email.strip.downcase
 
-      if existing_comment_formatted_email != comment_formatted_email && 
-         !already_notified_email_addresses.include?(existing_comment_formatted_email) &&
-         !DoNotNotifyListing.should_not_notify?(existing_comment_formatted_email)
-        
-        already_notified_email_addresses << existing_comment_formatted_email
-        VisitorMailer.comment_posted(existing_comment_formatted_email, existing_comment.name, comment.blog_post, comment.name, comment.body).deliver_now
+      if existing_comment_formatted_email != comment_formatted_email
+
+        if !DoNotNotifyListing.should_not_notify?(existing_comment_formatted_email, comment.blog_post)
+          email_addresses_to_notify << existing_comment_formatted_email
+        end
 
       end
+    end
+
+    email_addresses_to_notify = email_addresses_to_notify.uniq
+    email_addresses_to_notify.each do |email|
+      VisitorMailer.comment_posted(email, comment.blog_post, comment.name, comment.body).deliver_now
     end
   end
 end
