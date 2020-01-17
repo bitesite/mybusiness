@@ -63,6 +63,9 @@ Mybusiness::Application.routes.draw do
   get "/curtiss_wright" => "case_studies#curtiss_wright"
   get "/inspechomes" => "case_studies#inspechomes"
 
+  # - PRIVACY POLICIES
+  get '/privacy_policies/cntdwn2' => 'privacy_policies#cntdwn2'
+
   # - PAGES
   root "pages#home"
   get '/software' => 'pages#software'
