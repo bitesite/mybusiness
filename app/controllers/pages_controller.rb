@@ -4,16 +4,15 @@ class PagesController < ApplicationController
   before_action :deny_access_for_non_admins, :only => [:admin]
 
   def home
-    @title = "A Custom Software and Video Production Firm based in Ottawa, Canada"
-    @meta_description = "BiteSite is a Custom Software and Video Production firm focused on working with small to medium Ottawa tech businesses. We build web and mobile
-                         applications and produce corporate video."
+    @title = "A Custom Software Firm based in Ottawa, Canada"
+    @meta_description = "BiteSite is a Custom Software firm based in Ottawa, Canaad focused on building web and mobile applications."
                         
     featured_blog_post_ids = Setting.find_by(name: 'featured_blog_post_ids')
     @latest_blog_posts = BlogPost.where(id: featured_blog_post_ids.value.split(","))
   end
 
   def services
-    @title = "Custom Software Development"
+    @title = "Custom Software Development Services"
     @meta_description = "BiteSite provides Custom Software development services and focuses on working with Ottawa area small to medium tech businesses. We specialize in
                          process management using agile methods like Scrum, product management, and software development to deliver
                          high quality web and mobile applications."
@@ -54,8 +53,8 @@ class PagesController < ApplicationController
 
   def contact
     @title = "Contact"
-    @meta_description = "BiteSite is a Custom Software and Video Production firm focusing on small to medium Ottawa tech businesses. We build web and mobile
-                         applications and produce corporate video. Contact us today whatever your interests are."
+    @meta_description = "BiteSite is a Custom Software firm based in Ottawa, Canaad focused on building web and mobile applications.
+                        Contact us today whatever your interests are."
     
     
 
