@@ -12,7 +12,7 @@ class PagesController < ApplicationController
     @latest_blog_posts = BlogPost.where(id: featured_blog_post_ids.value.split(","))
   end
 
-  def software
+  def services
     @title = "Custom Software Development"
     @meta_description = "BiteSite provides Custom Software development services and focuses on working with Ottawa area small to medium tech businesses. We specialize in
                          process management using agile methods like Scrum, product management, and software development to deliver
@@ -27,10 +27,7 @@ class PagesController < ApplicationController
   end
 
   def video_retainer
-    @title = "Video Production Retainer"
-    @meta_description = "The BiteSite Video Production Retainer is a way for Ottawa area small to medium tech businesses to release regular video content
-                         at an affordable price. This is the perfect complement to a marketing or on-boarding strategy and can really give your business
-                         a differentiator."
+    redirect_to video_path
   end
 
   def portfolio

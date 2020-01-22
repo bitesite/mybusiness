@@ -1,12 +1,14 @@
 <div id="pages-home">
-  <%= image_tag 'Wireframe-Circles.png', class: 'circles' %>
+  <div class='circles-container'>
+    <%= image_tag 'Wireframe-Circles.png', class: 'circles' %>
+  </div>
   
   <div class="hero">
     <div class="container">
-      <div class='slogan'>We build <span class='emphasize'>custom software</span> and produce <span class='emphasize'>videos</span>.</div>
+      <div class='slogan'>We build <span class='emphasize'>custom software</span>.</div>
       <div class='subslogan'>
-        BITESITE IS A CUSTOM SOFTWARE AND VIDEO PRODUCTION FIRM FOCUSED
-        ON WORKING WITH <span class='emphasize'>SMALL TO MEDIUM OTTAWA TECH COMPANIES</span>
+        BITESITE IS A CUSTOM SOFTWARE FIRM FOCUSED
+        ON BUILDING <span class='emphasize'>WEB AND MOBILE APPLICATIONS</span>
       </div>
     </div>
   </div>
@@ -14,35 +16,65 @@
     <div class="container">
       <div class="service">
         <div class="header">
-          <h2>Custom Software</h2>
           <%= image_tag 'Wireframe-Computer.png' %>
+          <h2>Custom Software</h2>
         </div>
         <div class="writeup spaced">
           BiteSite is a full service custom software shop. From process, to design,
           to implementation, we deliver web and mobile applications to execute your vision. 
-
-          <div class='actions'>
-            <%= link_to 'Read more →', software_path %>
-          </div>
-        </div>
-      </div>
-
-      <div class="service">
-        <div class="header">
-          <h2>Video Production</h2>
-          <%= image_tag 'Wireframe-Camera.png' %>
-        </div>
-        <div class="writeup spaced">
-          BiteSite is a full service video production house. From concept to delivery,
-          we produce corporate video with high production value that allow your business to stand out. 
-
-          <div class='actions'>
-            <%= link_to 'Read more →', video_path %>
-          </div>
+          <%= link_to 'Read more →', services_path %>
         </div>
       </div>
     </div>
   </div>
+
+      <div class="section">
+      <h1 class='section-header'>
+        <span class='text'>Customers</span>
+        <div class='background-extension'></div>
+      </h1>
+      <div class='spaced center-aligned'>
+        Here are just a few of our custom software customers
+      </div>
+
+      <div class="feature-list customer-list">
+        <div class="feature">
+          <div class="feature-header">
+            <%= image_tag 'international-safety.jpg' %>
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="feature-header">
+            <%= image_tag 'inspec-homes.jpg' %>
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="feature-header">
+            <%= image_tag 'fansaves.jpg' %>
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="feature-header">
+            <%= image_tag 'above-the-line-media-services.jpg' %>
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="feature-header">
+            <%= image_tag 'fnpc.jpg' %>
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="feature-header">
+            <%= image_tag 'bluebirdcoffee.jpg' %>
+          </div>
+        </div>
+      </div>
+    </div>
 
   <div class="featured-blog-section">
     <div class="container">

@@ -68,7 +68,7 @@ Mybusiness::Application.routes.draw do
 
   # - PAGES
   root "pages#home"
-  get '/software' => 'pages#software'
+  get '/services' => 'pages#services'
   get '/video' => 'pages#video'
   get '/video/retainer' => 'pages#video_retainer'
     

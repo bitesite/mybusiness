@@ -1,28 +1,51 @@
 #pages-home {
-  img.circles {
-    opacity: 0.3;
+  .circles-container {
     position: absolute;
-    z-index: 1;
-    top: 60px;
-    right: 150px;
+    text-align: center;
+    width: 100%;
 
-    -webkit-animation: rotation 40s linear infinite;
-    -moz-animation: rotation 40s linear infinite;
-    animation: rotation 40s linear infinite;
+    img.circles {
+      opacity: 0.3;
+      position: relative;
+      z-index: 1;
+
+      width: calc(100% - 150px);
+      max-width: 500px;
+  
+      -webkit-animation: rotation 40s linear infinite;
+      -moz-animation: rotation 40s linear infinite;
+      animation: rotation 40s linear infinite;
+    }
   }
+  
 
   .hero {
+    padding-top: 180px;
+
+    @media screen and (max-width: $mobile-menu-device-width) { 
+      padding-top: 100px;
+    }
+
     .slogan {
-      max-width: 950px;
+      position: relative;
+      text-align: center;
+      z-index: 5;
     }
 
     .subslogan {
-      max-width: 720px;
+      position: relative;
+      text-align: center;
+      margin-top: -20px;
+      z-index: 10;
     }
   }
 
   .services {
-    margin-top: 230px;
+    margin-top: 250px;
+
+    @media screen and (max-width: $mobile-menu-device-width) { 
+      margin-top: 150px;
+    }
 
     .container {
       display: flex;
@@ -30,33 +53,36 @@
       justify-content: space-around;
 
       .service {
-        width: 350px;
-        margin: 20px 0;
+        max-width: 350px;
 
         .header {
-          display: flex;
-          align-items: center;
+          text-align: center;
+          
+          img {
+            height: 70px;
+          }
 
           h2 {
             text-transform: uppercase;
             font-family: 'Avenir LT Std 85 Heavy';
-          }
-
-          img {
-            height: 70px;
-            margin-left: 20px;
+            margin: 10px 0;
           }
         }
 
         .writeup {
-          margin-left: 50px;
           text-align: justify;
-
-          .actions {
-            margin-top: 30px;
-          }
         }
       }
+    }
+  }
+
+  .customer-list {
+    justify-content: center;
+    flex-wrap: wrap;
+    
+    .feature {
+      margin: 20px;
+      max-width: 150px;
     }
   }
 
