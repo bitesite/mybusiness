@@ -5,7 +5,7 @@ class PagesController < ApplicationController
 
   def home
     @title = "A Custom Software Firm based in Ottawa, Canada"
-    @meta_description = "BiteSite is a Custom Software firm based in Ottawa, Canaad focused on building web and mobile applications."
+    @meta_description = "BiteSite is a Custom Software firm based in Ottawa, Canada focused on building web and mobile applications."
                         
     featured_blog_post_ids = Setting.find_by(name: 'featured_blog_post_ids')
     @latest_blog_posts = BlogPost.where(id: featured_blog_post_ids.value.split(","))
@@ -53,7 +53,7 @@ class PagesController < ApplicationController
 
   def contact
     @title = "Contact"
-    @meta_description = "BiteSite is a Custom Software firm based in Ottawa, Canaad focused on building web and mobile applications.
+    @meta_description = "BiteSite is a Custom Software firm based in Ottawa, Canada focused on building web and mobile applications.
                         Contact us today whatever your interests are."
     
     
