@@ -11,19 +11,7 @@ xml.tag! 'urlset',
   end
 
   xml.url do
-    xml.loc software_url
-    xml.changefreq "monthly"
-    xml.priority '1.0'
-  end
-
-  xml.url do
-    xml.loc video_url
-    xml.changefreq "monthly"
-    xml.priority '1.0'
-  end
-
-  xml.url do
-    xml.loc video_retainer_url
+    xml.loc services_url
     xml.changefreq "monthly"
     xml.priority '1.0'
   end
@@ -45,56 +33,67 @@ xml.tag! 'urlset',
     xml.changefreq "yearly"
     xml.priority '0.5'
   end
+
   xml.url do
     xml.loc mydoma_url
     xml.changefreq "yearly"
     xml.priority '0.5'
   end
+
   xml.url do
     xml.loc filefacets_url
     xml.changefreq "yearly"
     xml.priority '0.5'
   end
+
   xml.url do
     xml.loc splice_url
     xml.changefreq "yearly"
     xml.priority '0.5'
   end
+
   xml.url do
     xml.loc lspark_grad_url
     xml.changefreq "yearly"
     xml.priority '0.5'
   end
+
   xml.url do
     xml.loc lspark_url
     xml.changefreq "yearly"
     xml.priority '0.5'
   end
+
   xml.url do
     xml.loc solink_url
     xml.changefreq "yearly"
     xml.priority '0.5'
   end
+
   xml.url do
     xml.loc martello_url
     xml.changefreq "yearly"
     xml.priority '0.5'
   end
+
   xml.url do
     xml.loc ewa_url
     xml.changefreq "yearly"
     xml.priority '0.5'
   end
+
   xml.url do
     xml.loc christine_kelly_url
     xml.changefreq "yearly"
     xml.priority '0.5'
   end
+
   xml.url do
     xml.loc d3m_url
     xml.changefreq "yearly"
     xml.priority '0.5'
   end
+  
   xml.url do
     xml.loc curtiss_wright_url
     xml.changefreq "yearly"
