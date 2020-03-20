@@ -2,6 +2,8 @@ class FrequentlyAskedQuestionsController < ApplicationController
   load_and_authorize_resource
 
   def index
+    @title = 'FAQ'
+    @meta_description = "Answers to some commonly asked questions when dealing with a custom software company and dealing with BiteSite specifically."
     @frequently_asked_questions = @frequently_asked_questions.in_order
   end
 
