@@ -1,0 +1,32 @@
+<%= form_with(model: frequently_asked_question, local: true) do |form| %>
+  <% if frequently_asked_question.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(frequently_asked_question.errors.count, "error") %> prohibited this frequently_asked_question from being saved:</h2>
+
+      <ul>
+      <% frequently_asked_question.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :question %>
+    <%= form.text_field :question, id: :frequently_asked_question_question %>
+  </div>
+
+  <div class="field">
+    <%= form.label :answer %>
+    <%= form.text_area :answer, id: :frequently_asked_question_answer %>
+  </div>
+
+  <div class="field">
+    <%= form.label :position %>
+    <%= form.number_field :position, id: :frequently_asked_question_position %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Submit', class: 'btn btn-primary' %>
+  </div>
+<% end %>

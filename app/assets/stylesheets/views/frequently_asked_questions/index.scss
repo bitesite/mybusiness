@@ -1,0 +1,21 @@
+#frequently-asked-questions-index {
+
+  .blurb {
+    margin-bottom: 20px;
+  }
+  
+  .frequently-asked-questions {
+    .frequently-asked-question {
+      margin: 5px 0 20px 0;
+
+      .question {
+        font-family: 'Avenir LT Std 85 Heavy';
+        margin-bottom: 10px;
+      }
+
+      .actions {
+        margin: 5px 0;
+      }
+    }
+  }
+}

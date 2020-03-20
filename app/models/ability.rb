@@ -9,6 +9,7 @@ class Ability
     can :create, Comment
     can [:new, :create], Contact
     can :show, Download
+    can :read, FrequentlyAskedQuestion
 
 
     if user.has_role?(:staff)

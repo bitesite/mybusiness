@@ -1,6 +1,7 @@
 Mybusiness::Application.routes.draw do
-  resources :do_not_notify_listings
   # - RESOURCES
+  resources :frequently_asked_questions, except: [:show]
+  resources :do_not_notify_listings
   resources :careers
   resources :settings
   resources :video_listings

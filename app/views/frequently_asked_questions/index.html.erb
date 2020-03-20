@@ -1,0 +1,35 @@
+<div id="frequently-asked-questions-index">
+  <div class="container">
+    <h1>Frequently Asked Questions</h1>
+
+    <div class='blurb'>
+      Here are some common questions people have when working with us. If you don't see your question here,
+      do not hesitate to <%= link_to 'contact us', contact_path %>.
+    </div>
+
+    <div class="frequently-asked-questions">
+      <% @frequently_asked_questions.each do |frequently_asked_question| %>
+        <div class='frequently-asked-question'>
+          <div class="question">
+            Q: <%= frequently_asked_question.question %>
+          </div>
+
+          <div class="answer">
+            A: <%= frequently_asked_question.answer %>
+          </div>
+          
+          <% if can?(:edit, FrequentlyAskedQuestion) %>
+            <div class="actions">
+              <%= link_to 'Edit', edit_frequently_asked_question_path(frequently_asked_question) %>
+              <%= link_to 'Destroy', frequently_asked_question, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+
+    <% if can?(:new, FrequentlyAskedQuestion) %>
+      <%= link_to 'New Frequently Asked Question', new_frequently_asked_question_path, class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>
