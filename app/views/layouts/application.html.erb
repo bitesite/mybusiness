@@ -4,7 +4,7 @@
 		<title>BiteSite | <%= @title %></title>
 		<%= render 'layouts/shared_head' %>
 	</head>
-	<body>
+	<body class='<%= @body_class%>'>
 		<%= render 'layouts/flash', flash: flash %>
 
 		<%= render 'layouts/header' %>

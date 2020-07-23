@@ -4,6 +4,7 @@ class PagesController < ApplicationController
   before_action :deny_access_for_non_admins, :only => [:admin]
 
   def home
+    @body_class = 'home'
     @title = "A Custom Software Firm based in Ottawa, Canada"
     @meta_description = "BiteSite is a Custom Software firm based in Ottawa, Canada focused on building web and mobile applications."
                         

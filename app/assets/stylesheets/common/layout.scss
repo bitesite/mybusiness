@@ -1,5 +1,5 @@
 body {
-	background: $dark-primary-color-1;
+	background: $dark-primary-color-3;
 }
 
 .container {
@@ -16,6 +16,20 @@ body {
 }
 
 $header-height: 70px;
+
+body.home {
+	#header {
+		background: $dark-primary-color-4;
+
+		.container {
+			.nav-links {
+				a {
+					color: white;
+				}
+			}
+		}
+	}
+}
 
 #header {
 	height: $header-height;
@@ -197,7 +211,7 @@ $header-height: 70px;
 
 #footer {
 	padding: 50px 0;
-	background: $dark-primary-color-1;
+	background: $dark-primary-color-3;
 	color: $primary-gray;
 	font-size: 0.8em;
 	text-transform: uppercase;

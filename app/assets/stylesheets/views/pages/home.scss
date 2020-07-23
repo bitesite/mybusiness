@@ -20,7 +20,9 @@
   
 
   .hero {
-    padding-top: 180px;
+    height: 500px;
+    position: relative;
+    background: $dark-primary-color-4;
 
     @media screen and (max-width: $mobile-menu-device-width) { 
       padding-top: 100px;
@@ -30,6 +32,12 @@
       position: relative;
       text-align: center;
       z-index: 5;
+      background: $dark-primary-color-4;
+      color: white;
+
+      .emphasize {
+        color: white;
+      }
     }
 
     .subslogan {
@@ -37,6 +45,38 @@
       text-align: center;
       margin-top: -20px;
       z-index: 10;
+      color: #aaa;
+    }
+
+    .panel {
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      box-shadow: 0 -10px 10px black;
+    }
+
+    .panel-1 {
+      background: $primary-color;
+      height: 50px;
+      z-index: 4;
+    }
+
+    .panel-2 {
+      background: $dark-primary-color-1;
+      height: 100px;
+      z-index: 3;
+    }
+
+    .panel-3 {
+      background: $dark-primary-color-2;
+      height: 150px;
+      z-index: 2;
+    }
+
+    .panel-4 {
+      background: $dark-primary-color-3;
+      height: 200px;
+      z-index: 1;
     }
   }
 
