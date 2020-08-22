@@ -80,5 +80,9 @@ Mybusiness::Application.routes.draw do
   get "/staff_dashboard" => "pages#staff_dashboard"
   get "/mobile-video-course" => "pages#mobile_video_course"
 
+  namespace :playbook do
+    get '/' => 'pages#home'
+  end
+
   get "/sitemap.xml" => "sitemap#index", format: "xml", as: :sitemap
 end
