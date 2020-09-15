@@ -97,6 +97,16 @@ class PagesController < ApplicationController
     @title = "FAQ"
   end
 
+  def about
+    @title = "About"
+    @team_members = [
+      { image: 'staff/casey.png', name: 'Casey Li', position: 'CEO & Founder' },
+      { image: 'staff/jack.png', name: 'Jack Wu', position: 'Software Developer' },
+      { image: 'staff/chris.png', name: 'Chris Francis', position: 'Software Developer' }
+    ]
+  end
+  
+
   def terms_and_conditions
     @title = "Terms and Conditions"
   end
