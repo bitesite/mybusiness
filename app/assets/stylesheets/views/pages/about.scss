@@ -1,0 +1,38 @@
+#pages-about {
+  h1 {
+    text-align: center;
+  }
+
+  .about-writeup {
+    line-height: 32px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  h2 {
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .team-members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+    
+    .team-member {
+      text-align: center;
+      margin: 20px 40px;
+
+      .name {
+        font-weight: bold;
+        font-size: 1.2em;
+      }
+
+      .position {
+
+      }
+    }
+  }
+}
