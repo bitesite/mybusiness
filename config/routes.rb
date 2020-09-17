@@ -83,6 +83,9 @@ Mybusiness::Application.routes.draw do
 
   namespace :playbook do
     get '/' => 'pages#home'
+    get '/coming_soon' => 'pages#coming_soon'
+    get '/contracts' => 'pages#contracts'
+    get '/projects' => 'pages#projects'
   end
 
   get "/sitemap.xml" => "sitemap#index", format: "xml", as: :sitemap

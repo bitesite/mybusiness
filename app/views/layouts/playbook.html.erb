@@ -1,0 +1,42 @@
+<% content_for :content do %>
+  <div id="playbook-layout">
+    <div class='container'>
+      <div class="playbook-menu">
+        <%= link_to 'Playbook Home', playbook_path %>
+        <%= link_to 'Customers', playbook_coming_soon_path, class: 'coming-soon-link' %>
+        <%= link_to 'Sales Process', playbook_coming_soon_path, class: 'coming-soon-link' %>
+        <%= link_to 'Project Types', playbook_projects_path %>
+        <%= link_to 'Contracts', playbook_contracts_path %>
+        <%= link_to 'Team Members', playbook_coming_soon_path, class: 'coming-soon-link' %>
+        <%= link_to 'How we hire', playbook_coming_soon_path, class: 'coming-soon-link' %>
+        <%= link_to 'How we work', playbook_coming_soon_path, class: 'coming-soon-link' %>
+        <%= link_to 'Customer Role', playbook_coming_soon_path, class: 'coming-soon-link' %>
+        <%= link_to 'MVP', playbook_coming_soon_path, class: 'coming-soon-link' %>
+        <%= link_to 'Scrum Express', playbook_coming_soon_path, class: 'coming-soon-link' %>
+        <%= link_to 'Tools', playbook_coming_soon_path, class: 'coming-soon-link' %>
+        <%= link_to 'Product Management', playbook_coming_soon_path, class: 'coming-soon-link' %>
+        <%= link_to 'Design', playbook_coming_soon_path, class: 'coming-soon-link' %>
+        <%= link_to 'Development', playbook_coming_soon_path, class: 'coming-soon-link' %>
+        <%= link_to 'Technologies', playbook_coming_soon_path, class: 'coming-soon-link' %>
+        <%= link_to 'Communication', playbook_coming_soon_path, class: 'coming-soon-link' %>
+        <%= link_to 'Invoices and Payment', playbook_coming_soon_path, class: 'coming-soon-link' %>
+        <%= link_to 'Project Handover', playbook_coming_soon_path, class: 'coming-soon-link' %>
+      </div>
+      <div class="playbook-content">
+        <%= yield %>
+
+        <div class='disclaimer'>
+          <div class='main'>
+            This is a constantly evolving document, so check back regularly.
+          </div>
+          <div class='sub'>
+            Aside from outright plagiarism and claiming that this is your work, feel free
+            to use this in anyway you want.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<%= render template: "layouts/application" %>

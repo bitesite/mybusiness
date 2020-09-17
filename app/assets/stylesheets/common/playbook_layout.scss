@@ -1,0 +1,67 @@
+#playbook-layout {
+  .container {
+    display: flex;
+
+    .playbook-menu {
+      a {
+        display: block;
+        padding: 10px;
+        width: 200px;
+        border-bottom: 1px solid $light-gray-1;
+
+        &:last-child {
+          border: none;
+        }
+
+        &.coming-soon-link {
+          color: $light-gray-1;
+        }
+      }
+    }
+
+    .playbook-content {
+      padding-left: 30px;
+
+      h1 {
+
+      }
+
+      h2 {
+        margin-top: 40px;
+        font-size: 1em;
+        font-family: 'Avenir LT Std 85 Heavy';
+        text-transform: uppercase;
+
+      }
+
+      p {
+        line-height: 2em;
+      }
+
+      ul {
+        li {
+          margin: 20px 0;
+        }
+      }
+
+      .disclaimer {
+        margin: 60px auto;
+        padding: 10px;
+        background: $light-gray-3;
+        border-radius: 3px;
+        max-width: 600px;
+        text-align: center;
+        font-size: 14px;
+
+        .main {
+
+        }
+
+        .sub {
+          margin-top: 10px;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
