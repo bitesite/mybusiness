@@ -16,6 +16,11 @@ class Playbook::PagesController < ApplicationController
   def scrum_express
     @title = 'Scrum Express'
   end
+
+  def how_we_use_trello
+    @title = 'How we use Trello'
+  end
+  
   
 
   def coming_soon

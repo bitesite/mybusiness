@@ -87,6 +87,7 @@ Mybusiness::Application.routes.draw do
     get '/contracts' => 'pages#contracts'
     get '/projects' => 'pages#projects'
     get '/scrum_express' => 'pages#scrum_express'
+    get '/how_we_use_trello' => 'pages#how_we_use_trello'
   end
 
   get "/sitemap.xml" => "sitemap#index", format: "xml", as: :sitemap
