@@ -23,18 +23,26 @@
       padding-left: 30px;
 
       h1 {
-
+        font-size: 2em;
       }
 
       h2 {
         margin-top: 40px;
-        font-size: 1em;
+        font-size: 1.4em;
         text-transform: uppercase;
+      }
 
+      h3 {
+        font-size: 1.25em;
+        font-style: italic;
       }
 
       p {
         line-height: 2em;
+      }
+
+      img {
+        max-width: 100%;
       }
 
       ul {
