@@ -13,6 +13,11 @@ class Playbook::PagesController < ApplicationController
     @title = 'Project Types'
   end
   
+  def scrum_express
+    @title = 'Scrum Express'
+  end
+  
+
   def coming_soon
   end
   

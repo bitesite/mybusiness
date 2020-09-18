@@ -50,7 +50,8 @@ $header-height: 70px;
 
 			a {
 				font-style: normal;
-				font-family: 'Avenir LT Std 65 Medium';
+				font-family: 'Avenir LT Std';
+				font-weight: 65;
 				color: $light-gray-1;
 				text-decoration: none;
 				text-transform: lowercase;
@@ -124,7 +125,7 @@ $header-height: 70px;
 		.slogan {
 		  position: relative;
 		  text-align: left;
-		  font-family: 'Avenir Next Condensed Regular';
+			font-family: 'Avenir Next Condensed';
 		  text-transform: uppercase;
 		  font-size: 85px;
 		  line-height: 70px;
@@ -134,7 +135,8 @@ $header-height: 70px;
 		  z-index: 10;
 
 		  .emphasize {
-		    font-family: 'Avenir Next Condensed Medium';
+				font-family: 'Avenir Next Condensed';
+				font-weight: 500;
 		    color: $primary-color;
 		  }
 
@@ -145,11 +147,13 @@ $header-height: 70px;
 		}
 
 		.subslogan {
-		  font-family: 'Avenir LT Std 65 Medium';
+			font-family: 'Avenir LT Std';
+			font-weight: 65;
 		  font-size: 19px;
 
 		  .emphasize {
-		    font-family: 'Avenir LT Std 85 Heavy';
+				font-family: 'Avenir LT Std';
+				font-weight: 85;
 		  }
 		}
 	}
@@ -171,7 +175,8 @@ $header-height: 70px;
 				}
 
 				.text {
-					font-family: 'Avenir LT Std 85 Heavy';
+					font-family: 'Avenir LT Std';
+					font-weight: 85;
 					font-size: 1.25em;
 					height: 60px;
 					display: flex;
@@ -234,7 +239,8 @@ $header-height: 70px;
 		.blog-title {
 		  margin:40px 0px;
 		  text-align:center;
-		  font-family: 'Avenir LT Std 85 Heavy';
+			font-family: 'Avenir LT Std';
+			font-weight: 85;
 		}
 
 		
@@ -272,7 +278,8 @@ $header-height: 70px;
 	      margin-bottom: 30px;
 	      
 	      .menu-title {
-	        font-family: 'Avenir LT Std 85 Heavy';
+					font-family: 'Avenir LT Std';
+					font-weight: 85;
 	        margin-bottom: 10px;
 	      }
 

@@ -16,7 +16,8 @@
       margin: 0;
       color:white;
       text-shadow:2px 2px black;
-      font-family: "Avenir LT Std 65 Medium";
+      font-family: "Avenir LT Std";
+      font-weight: 65;
       font-size: 3em;
     }
 
@@ -95,7 +96,9 @@
     }
 
     .quote {
-      font-family: "Avenir LT Std 45 Book Oblique";
+      font-family: "Avenir LT Std";
+      font-weight: 45;
+      font-style: italic;
       width:100%;
       max-width:700px;
       margin:40px auto;
@@ -136,7 +139,8 @@
       line-height:2em;
 
       b {
-        font-family: "Avenir LT Std 65 Medium";
+        font-family: "Avenir LT Std";
+        font-weight: 65;
       }
     }
   }

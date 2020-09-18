@@ -86,6 +86,7 @@ Mybusiness::Application.routes.draw do
     get '/coming_soon' => 'pages#coming_soon'
     get '/contracts' => 'pages#contracts'
     get '/projects' => 'pages#projects'
+    get '/scrum_express' => 'pages#scrum_express'
   end
 
   get "/sitemap.xml" => "sitemap#index", format: "xml", as: :sitemap
