@@ -2,6 +2,10 @@
   .container {
     display: flex;
 
+    a.playbook-menu-toggle {
+      display: none;
+    }
+
     .playbook-menu {
       a {
         display: block;
@@ -16,6 +20,16 @@
         &.coming-soon-link {
           color: $light-gray-1;
         }
+      }
+
+      .menu-header {
+        background: $primary-color;
+        color: white;
+        text-transform: uppercase;
+        font-weight: 85;
+        font-size: 0.7em;
+        padding: 5px 5px 2px 5px;
+        line-height: normal;
       }
     }
 
@@ -68,6 +82,33 @@
           margin-top: 10px;
           font-size: 12px;
         }
+      }
+    }
+
+  }
+  
+  @media screen and (max-width: $mobile-menu-device-width) {
+    .container {
+      display: block;
+
+      a.playbook-menu-toggle {
+        background: $light-primary-color-2;
+        color: $primary-color;
+        display: block;
+        padding: 10px 0;
+        text-align: center;
+      }
+
+      .playbook-menu {
+        display: none;
+
+        a {
+          width: auto;
+        }
+      }
+
+      .playbook-content {
+        padding: 0;
       }
     }
   }
