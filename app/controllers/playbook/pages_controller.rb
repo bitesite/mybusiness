@@ -12,6 +12,10 @@ class Playbook::PagesController < ApplicationController
   def projects
     @title = 'Project Types'
   end
+
+  def how_we_work
+    @title = 'How we work'
+  end
   
   def scrum_express
     @title = 'Scrum Express'
@@ -24,6 +28,11 @@ class Playbook::PagesController < ApplicationController
   def scrum_express_roles
     @title = 'Scrum Express Roles'
   end
+
+  def product_managers
+    @title = 'Scrum Express Product Managers'
+  end
+  
 
   def tools
     @title = 'Tools'
