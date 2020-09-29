@@ -17,6 +17,12 @@ xml.tag! 'urlset',
   end
 
   xml.url do
+    xml.loc about_url
+    xml.changefreq "monthly"
+    xml.priority '1.0'
+  end
+
+  xml.url do
     xml.loc frequently_asked_questions_url
     xml.changefreq "monthly"
     xml.priority '1.0'
