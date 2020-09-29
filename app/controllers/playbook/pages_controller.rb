@@ -21,19 +21,22 @@ class Playbook::PagesController < ApplicationController
     @title = 'Scrum Express'
   end
 
-  def how_we_use_trello
-    @title = 'How we use Trello'
-  end
-
   def scrum_express_roles
     @title = 'Scrum Express Roles'
+  end
+
+  def development_sprint
+    @title = 'Scrum Express Development Sprint'
+  end
+  
+  def how_we_use_trello
+    @title = 'How we use Trello'
   end
 
   def product_managers
     @title = 'Scrum Express Product Managers'
   end
   
-
   def tools
     @title = 'Tools'
   end

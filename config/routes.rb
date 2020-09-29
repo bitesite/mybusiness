@@ -89,8 +89,9 @@ Mybusiness::Application.routes.draw do
     get '/how_we_work' => 'pages#how_we_work'
 
     get '/scrum_express' => 'pages#scrum_express'
-    get '/how_we_use_trello' => 'pages#how_we_use_trello'
     get '/scrum_express_roles' => 'pages#scrum_express_roles'
+    get '/development_sprint' => 'pages#development_sprint'
+    get '/how_we_use_trello' => 'pages#how_we_use_trello'
     get '/product_managers' => 'pages#product_managers'
 
     get '/technologies' => 'pages#technologies'
