@@ -116,7 +116,7 @@ xml.tag! 'urlset',
   xml.url do
     xml.loc playbook_url
     xml.changefreq "always"
-    xml.priority '0.5'
+    xml.priority '1.0'
   end
 
   xml.url do
@@ -144,16 +144,23 @@ xml.tag! 'urlset',
   end
   
   xml.url do
+    xml.loc playbook_scrum_express_roles_url
+    xml.changefreq "always"
+    xml.priority '0.5'
+  end
+
+  xml.url do
+    xml.loc playbook_development_sprint_url
+    xml.changefreq "always"
+    xml.priority '0.5'
+  end
+
+  xml.url do
     xml.loc playbook_how_we_use_trello_url
     xml.changefreq "always"
     xml.priority '0.5'
   end
   
-  xml.url do
-    xml.loc playbook_scrum_express_roles_url
-    xml.changefreq "always"
-    xml.priority '0.5'
-  end
   
   xml.url do
     xml.loc playbook_product_managers_url
