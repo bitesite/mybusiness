@@ -106,6 +106,67 @@ xml.tag! 'urlset',
     xml.priority '0.5'
   end
 
+  # PLAYBOOK
+  xml.url do
+    xml.loc playbook_url
+    xml.changefreq "always"
+    xml.priority '0.5'
+  end
+
+  xml.url do
+    xml.loc playbook_contracts_url
+    xml.changefreq "always"
+    xml.priority '0.5'
+  end
+  
+  xml.url do
+    xml.loc playbook_projects_url
+    xml.changefreq "always"
+    xml.priority '0.5'
+  end
+  
+  xml.url do
+    xml.loc playbook_how_we_work_url
+    xml.changefreq "always"
+    xml.priority '0.5'
+  end
+
+  xml.url do
+    xml.loc playbook_scrum_express_url
+    xml.changefreq "always"
+    xml.priority '0.5'
+  end
+  
+  xml.url do
+    xml.loc playbook_how_we_use_trello_url
+    xml.changefreq "always"
+    xml.priority '0.5'
+  end
+  
+  xml.url do
+    xml.loc playbook_scrum_express_roles_url
+    xml.changefreq "always"
+    xml.priority '0.5'
+  end
+  
+  xml.url do
+    xml.loc playbook_product_managers_url
+    xml.changefreq "always"
+    xml.priority '0.5'
+  end
+
+  xml.url do
+    xml.loc playbook_technologies_url
+    xml.changefreq "always"
+    xml.priority '0.5'
+  end
+  
+  xml.url do
+    xml.loc playbook_tools_url
+    xml.changefreq "always"
+    xml.priority '0.5'
+  end
+
   # NEWS
   xml.url do
     xml.loc news_posts_url
