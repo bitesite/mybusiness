@@ -95,10 +95,12 @@ class PagesController < ApplicationController
 
   def faq
     @title = "FAQ"
+    @meta_description = "Browse frequently asked questions about BiteSite Inc. and its custom software services."
   end
 
   def about
     @title = "About"
+    @meta_description = "Read about our company and our team members."
     @team_members = [
       { image: 'staff/casey.png', name: 'Casey Li', position: 'CEO & Founder' },
       { image: 'staff/jack.png', name: 'Jack Wu', position: 'Software Developer' },
