@@ -23,57 +23,163 @@
 
   <h4>Incoming Feeback</h4>
   <p>
-    Coming Soon
+    All cards start here. Generally anybody that's part of the team (and even people who are not)
+    can submit their feedback by creating a brand new card in Incoming Feedback. This can include
+    bugs, new features, and ideas. Generally you write a brief description as the title of the card
+    and add any details on the back of the card. We suggest all cards getting added at the bottom
+    of the list.
   </p>
 
   <h4>Product Backlog</h4>
   <p>
-    Coming Soon
+    The goal of the product management meeting is to groom the Product Backlog. The goal of grooming
+    the Product Backlog is to have a prioritized list of the most 'important' cards at the top. This
+    invovles a couple of things:
+
+    <ul>
+      <li>
+        Going through incoming feedback and deciding which cards are worth developing and which ones
+        are not. If they are worth developing, details should be fleshed out and then the card should
+        be put into the Prodduct Backlog in an appropriate place based on 'importance'. If the card
+        is not worth developing, it should be archived.
+      </li>
+      <li>
+        Adjust cards that are already in the backlog. As development progresses, new
+        information may come up that might lead to you re-arranging the order of the backlog,
+        adding more details, or even archiving cards that aren't necessary anymore. Anything
+        in the backlog has not been developed yet, so it's fair game to adjust to our heart's content.
+      </li>
+    </ul>
+  </p>
+
+  <p>
+    The product backlog also contains the list of cards that developers need to estimate during
+    Estimation Poker. The developers should estimate starting from the top and working their way
+    down.
   </p>
 
   <h4>Current Sprint</h4>
   <p>
-    Coming Soon
+    During the Sprint Planning meeting, the Sprint team pulls cards from the backlog into the Current Sprint.
+    Based on past performance, a general velocity (or capacity) should be known and can help with how
+    many cards you take.
+  </p>
+
+  <p>
+    If no new information has come in since the last product management meeting, generally, Sprint Planning
+    involves simply pulling from the top of the backlog. However, we understand that last minute information
+    can come in, so last minute cards lower in the backlog, or even in Incoming Feedback sometimes need to
+    be quickly estimated and put into the Current Sprint.
+  </p>
+
+  <p>
+    Once the Sprint has been planned, the Current Sprint cards represent what is expected to be coded, reviewed,
+    tested, and shipped by the end of the Sprint. In principle, nothing more should be added once the Sprint
+    starts.
   </p>
 
   <h4>Needs Revisions/PR Comments</h4>
   <p>
-    Coming Soon
+    The Needs Revisions/PR Comments column actually comes later in the process, but is put here as generally
+    cards that are further along in development are towards the right, and ones that are further behind are
+    towards the left. There are two scenarios in which cards get put into Needs Revisions/PR Comments:
+
+    <ul>
+      <li>
+        When other developers review your code and decide that there needs to be some tweaks before
+        it gets merged, they will send your card back to this column for you to fix. That would mean
+        that a card would move from 'Waiting for PR to be Reviewed' back to this column. If that's the case,
+        developers should leave comments on the PR directly, move the card back here, and leave a message
+        that @ the developer that there are some comments to address.
+      </li>
+      <li>
+        If your card gets merged and shipped to Staging, but the product tester requests some changes
+        or discovers bugs while testing on staging, the Product Tester will send your card back
+        to this column for you to fix. That would mean that a card would move from 'Uploaded to Staging for Review'
+        back to this column. If that's the case, the Product Tester shoud leave a comment as to what needs
+        to be addressed and then move the card back to this column.
+      </li>
+    </ul>
   </p>
 
   <h4>Doing</h4>
   <p>
-    Coming Soon
+    Developers are in charge of taking cards from the backlog are working on them. Once they decide
+    to take on a card from the Product Backlog, they assign themselves to the card and move it into
+    Doing. They code away on a feature branch. Once the feature branch is ready to be merged, they
+    should add some test notes to the card and then move onto the next step.
   </p>
 
   <h4>Waiting for PR to be Reviewed</h4>
   <p>
-    Coming Soon
+    Once a developer has a feature branch that they are ready to merge into the 'develop' branch,
+    they create a Pull Request (feature -> develop) and move their card into this column. Once
+    they move the card into this column, they leave a comment on the card @ the developers with a
+    link to the PR. (e.g. "PR is ready for review").
+  </p>
+
+  <p>
+    Note that cards put into this column should have test notes ready to go. These are usually
+    implemented as a checklist of steps called 'TOTEST'.
   </p>
   
   <h4>Merged to Develop</h4>
   <p>
-    Coming Soon
+    Once a Pull Request is put up, developer should review it. If they decide the code needs some
+    work, they should move the card back to 'Needs Revision/PR Comments'. If the PR looks good,
+    they should approve the PR using BitBucket/GitHub interface. If they are the last reviewer
+    to approve the PR, they should then merge the PR, and they move the card into this column.
+  </p>
+  
+  <p>
+    Because our Git strategy involves shipping everything on the develop branch together, we
+    need to keep track of what cards have been merged to develop at least once. Since the
+    card can come back and go through cycles, we also tag the card the first time it's
+    been merged to develop and leave that tag on forever. So if you move a card into
+    'Merged to Develop', ensure you also add the Merged to Develop tag. (<i>Note: Some Trello
+    boards are set up to do this automatically using tools like Butler Bot</i>).
   </p>
   
   <h4>Pushed to Staging for Review</h4>
   <p>
-    Coming Soon
+    At any point if there are 1 or more cards in the 'Merged to Develop' column, the Staging
+    Pusher can decide to push the code up to the staging server. Once the push is complete,
+    the Staging Pusher will move all the cards currently in 'Merged to Develop' to this column.
+  </p>
+
+  <p>
+    After cards have been pushed up to Staging, the Staging Pusher should @ the Product Tester
+    on all the cards to let them know that the card is ready for testing. (<i>Note: Some Trello
+    boards are set up to do this automatically using tools like Butler Bot</i>))
   </p>
   
   <h4>Approved for Production</h4>
   <p>
-    Coming Soon
+    If the Product Tester reviews the card on staging and discovers bugs or needs somethings changed,
+    they should send it back to 'Needs Revisions/PR Comments'. If they are satisfied with the feature,
+    they will move the card to Approved for Production.
   </p>
   
   <h4>Shipped to Production</h4>
   <p>
-    Coming Soon
+    At the end of the Sprint, once all cards have been approved, the Production Pusher will merge the
+    develop code into master, and push all the features to Production ready for users to enjoy. Once
+    the push is complete, the Production Pusher should clear out whatever's currently in this column
+    by moving all the existing cards to 'Complete' and then moving all of this Sprint's cards into this column.
+  </p>
+
+  <p>
+    <b>Important!</b> Once cards have hit this stage, they never go back. If there are issues, or tweaks
+    that need to be made - new cards are created rather than sending a card back. If you want to reference
+    a card that has hit Shipped to Production, use Trello attachments.
   </p>
   
   <h4>Complete</h4>
   <p>
-    Coming Soon
+    This column acts as an archive for all cards completed. Shipped to Production generally represents the last
+    push to Production (or at least produciton pushses within the Sprint - so it might include hotfixes), whereas
+    complete represents everything else. (<i>Note: Some Trello boards are set up to automatically archive the cards
+    in this column</i>)
   </p>
 
   <h3>Tags</h3>
