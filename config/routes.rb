@@ -84,6 +84,8 @@ Mybusiness::Application.routes.draw do
   namespace :playbook do
     get '/' => 'pages#home'
     get '/coming_soon' => 'pages#coming_soon'
+    
+    get '/customers' => 'pages#customers'
     get '/contracts' => 'pages#contracts'
     get '/projects' => 'pages#projects'
     get '/how_we_work' => 'pages#how_we_work'

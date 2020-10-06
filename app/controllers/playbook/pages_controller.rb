@@ -6,6 +6,12 @@ class Playbook::PagesController < ApplicationController
     @meta_description = "Welcome to the BiteSite playbook - an openly public, constantly evolving document of how we run our business and build custom software."
   end
 
+  def customers
+    @title = 'Customers'
+    @meta_description = 'Read about the types of customers that BiteSite Inc. works for.'
+  end
+  
+
   def contracts
     @title = 'Contracts'
     @meta_description = "Read about how BiteSite Inc. structures its custom software contracts."
@@ -18,6 +24,7 @@ class Playbook::PagesController < ApplicationController
 
   def how_we_work
     @title = 'How we work'
+    @meta_description = "A writeup on what the day-to-day work at BiteSite is like."
   end
   
   def scrum_express
@@ -37,26 +44,27 @@ class Playbook::PagesController < ApplicationController
   
   def how_we_use_trello
     @title = 'How we use Trello'
+    @meta_description = "A detailed look at how we use Trello to manage Scrum Express."
   end
 
   def product_managers
     @title = 'Scrum Express Product Managers'
+    @meta_description = "A detailed look at what Scrum Express Product Managers do."
   end
   
   def tools
     @title = 'Tools'
+    @meta_description = "Here is a writeup on all the Tools we use at BiteSite to help with our Custom Software Development."
   end
 
   def technologies
     @title = 'Technologies'
+    @meta_description = "Take a look at BiteSite's technology stack when it comes to Web Application Development and Mobile Development."
   end
   
-  
-  
-  
-  
-
   def coming_soon
+    @title = 'Playbook Work in Progress'
+    @meta_description = 'This part of the playbook that is being worked on.'
   end
   
   
