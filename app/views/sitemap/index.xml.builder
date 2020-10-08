@@ -120,6 +120,18 @@ xml.tag! 'urlset',
   end
 
   xml.url do
+    xml.loc playbook_custom_software_url
+    xml.changefreq "always"
+    xml.priority '0.5'
+  end
+
+  xml.url do
+    xml.loc playbook_values_url
+    xml.changefreq "always"
+    xml.priority '0.5'
+  end
+
+  xml.url do
     xml.loc playbook_customers_url
     xml.changefreq "always"
     xml.priority '0.5'

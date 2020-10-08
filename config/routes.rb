@@ -85,6 +85,9 @@ Mybusiness::Application.routes.draw do
     get '/' => 'pages#home'
     get '/coming_soon' => 'pages#coming_soon'
     
+    get '/custom_software' => 'pages#custom_software'
+    get '/values' => 'pages#values'
+
     get '/customers' => 'pages#customers'
     get '/contracts' => 'pages#contracts'
     get '/projects' => 'pages#projects'

@@ -6,6 +6,16 @@ class Playbook::PagesController < ApplicationController
     @meta_description = "Welcome to the BiteSite playbook - an openly public, constantly evolving document of how we run our business and build custom software."
   end
 
+  def custom_software
+    @title = 'Custom Software'
+    @meta_description = 'What is Custom Software? Is Custom Software right for me? Read all about it and why it can be a great choice for some.'
+  end
+
+  def values
+    @title = 'Values'
+    @meta_description = "It's important to understand what drives us at BiteSite. Here are our company values."
+  end
+  
   def customers
     @title = 'Customers'
     @meta_description = 'Read about the types of customers that BiteSite Inc. works for.'
