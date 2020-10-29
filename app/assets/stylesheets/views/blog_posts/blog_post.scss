@@ -90,6 +90,10 @@
     }
 
     code {
+      background: $pale-gray;
+    }
+
+    pre code {
       width: calc(100% - 40px);
       word-wrap: normal;
       word-break: normal;

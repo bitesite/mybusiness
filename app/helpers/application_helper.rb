@@ -9,6 +9,7 @@ module ApplicationHelper
                                                           space_after_headers: false, 
                                                           hard_wrap: true, 
                                                           tables: true,
+                                                          fenced_code_blocks: true,
                                                           filter_html: filter_html)
     md.render(text).html_safe
   end  
