@@ -1,0 +1,56 @@
+.component-test-animation {
+  .steps {
+    display: flex;
+    .step {
+      width: 33.333%;
+      text-align: center;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .progress-bar-container {
+    margin: 20px 0;
+    background: #ccc;
+    height: 10px;
+
+    .progress-bar {
+      height: 100%;
+      background: #2288aa;
+      text-align: center;
+      color: white;
+    }
+  }
+
+  .checkout-body {
+    height: 450px;
+    position: relative;
+    overflow: hidden;
+
+    .checkout-body-card {
+      position: absolute;
+      margin: 0 10px;
+      padding: 20px;
+      width: calc(100% - 60px);
+      background: #eee;
+      border: 1px solid #ddd;
+      border-radius: 5px 5px 0 0;
+      height: 300px;
+      box-shadow: 0 0 10px #999;
+
+      &.card-1 {
+        z-index: 3;
+      }
+
+      &.card-2 {
+        z-index: 2;
+      }
+
+      &.card-3 {
+        z-index: 1;
+      }
+    }
+  }
+}
