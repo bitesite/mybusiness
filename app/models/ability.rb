@@ -4,6 +4,7 @@ class Ability
   def initialize(user)
     user ||= User.new # guest user (not logged in)
 
+    can :read, NewsPost
     can :read, BlogPost, published: true
     can :read, Comment
     can :create, Comment

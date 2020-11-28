@@ -110,6 +110,8 @@ Mybusiness::Application.routes.draw do
           get :status
         end  
       end
+
+      resources :news_posts, only: [:index]
     end
   end
 
