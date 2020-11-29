@@ -112,6 +112,7 @@ Mybusiness::Application.routes.draw do
       end
 
       resources :news_posts, only: [:index]
+      resources :time_off_entries, only: [:index]
     end
   end
 

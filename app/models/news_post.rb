@@ -1,5 +1,5 @@
 class NewsPost < ApplicationRecord
-  default_scope -> { order("created_at DESC") }
+  scope :reverse_chronological, -> { order("created_at desc") }
   scope :published, -> { where(hidden: false) }  
   mount_uploader :image, ImageUploader
 end
