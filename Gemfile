@@ -33,7 +33,7 @@ gem 'friendly_id'
 gem 'deployem'
 
 # Authentication
-gem 'devise', '4.4.2'
+gem 'devise', '4.7.1'
 
 # Authorization
 gem 'cancancan'
