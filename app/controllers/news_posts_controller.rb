@@ -6,6 +6,7 @@ class NewsPostsController < ApplicationController
   def index
     @news_posts = NewsPost.published
     @news_posts = NewsPost.all if admin?
+    @news_posts = @news_posts.reverse_chronological
   end
 
   def show

@@ -103,5 +103,22 @@ Mybusiness::Application.routes.draw do
     get '/tools' => 'pages#tools'
   end
 
+  namespace :api do
+    namespace :v1 do
+      resources :sessions, only: [:create, :destroy] do
+        collection do
+          get :status
+        end  
+      end
+
+      resources :news_posts, only: [:index]
+      resources :time_off_entries, only: [:index] do
+        collection do
+          post :bulk_create
+        end
+      end
+    end
+  end
+
   get "/sitemap.xml" => "sitemap#index", format: "xml", as: :sitemap
 end
