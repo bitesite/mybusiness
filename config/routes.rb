@@ -112,7 +112,11 @@ Mybusiness::Application.routes.draw do
       end
 
       resources :news_posts, only: [:index]
-      resources :time_off_entries, only: [:index]
+      resources :time_off_entries, only: [:index] do
+        collection do
+          post :bulk_create
+        end
+      end
     end
   end
 
