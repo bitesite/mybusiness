@@ -24,7 +24,12 @@ class NewsPostsController < ApplicationController
   def create
     @news_post = NewsPost.new(news_post_params)
 
+    if !@news_post.hidden
+      @news_post.published_at = DateTime.now
+    end
+
     if @news_post.save
+      @news_post.send_push_notifications if !@news_post.hidden
       redirect_to news_posts_path, notice: 'News post was successfully created.'
     else
       render action: "new"
@@ -33,8 +38,15 @@ class NewsPostsController < ApplicationController
 
   def update
     @news_post = NewsPost.find(params[:id])
+    notify = false
+
+    if @news_post.hidden && news_post_params[:hidden] == "0" && !@news_post.published_before?
+      notify = true
+      @news_post.published_at = DateTime.now
+    end
 
     if @news_post.update_attributes(news_post_params)
+      @news_post.send_push_notifications if notify
       redirect_to news_posts_path, notice: 'News post was successfully updated.'
     else
       render action: "edit"
@@ -49,7 +61,7 @@ class NewsPostsController < ApplicationController
 
   private
     def news_post_params
-      params.require(:news_post).permit(:body, :image, :title, :hidden)
+      params.require(:news_post).permit(:body, :image, :title, :hidden, :visibility)
     end
 
     def set_title

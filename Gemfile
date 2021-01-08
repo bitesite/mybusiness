@@ -27,6 +27,7 @@ gem 'test-unit', '~> 3.0'
 gem 'will_paginate'
 gem 'acts-as-taggable-on'
 gem 'jwt'
+gem 'exponent-server-sdk'
 
 gem 'friendly_id'
 
