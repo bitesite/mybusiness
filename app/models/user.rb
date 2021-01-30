@@ -11,5 +11,7 @@ class User < ApplicationRecord
   has_one :profile, dependent: :destroy
   has_many :time_off_entries
 
-  scope :alphabetical, -> { order("email asc") }  
+  scope :alphabetical, -> { order("email asc") }
+
+  accepts_nested_attributes_for :profile, update_only: true
 end

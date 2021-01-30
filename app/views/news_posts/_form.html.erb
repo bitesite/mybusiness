@@ -26,6 +26,10 @@
   <div class="field">
     <%= f.check_box :hidden %> Hidden?
   </div>
+  <div class="field">
+    <%= f.label :visibility %>
+    <%= f.select :visibility, options_for_select(NewsPost::VALID_VISIBILITIES, selected: @news_post.visibility) %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

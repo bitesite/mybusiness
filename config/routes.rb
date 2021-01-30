@@ -117,6 +117,8 @@ Mybusiness::Application.routes.draw do
           post :bulk_create
         end
       end
+
+      resource :account, only: [:update]
     end
   end
 
