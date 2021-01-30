@@ -5,7 +5,13 @@ class NewsPostsController < ApplicationController
   
   def index
     @news_posts = NewsPost.published
+    
+    if !admin? && !staff?
+      @news_posts = @news_posts.publicly_visible
+    end
+    
     @news_posts = NewsPost.all if admin?
+
     @news_posts = @news_posts.reverse_chronological
   end
 
@@ -15,6 +21,7 @@ class NewsPostsController < ApplicationController
 
   def new
     @news_post = NewsPost.new
+    @news_post.visibility = 'internal'
   end
 
   def edit

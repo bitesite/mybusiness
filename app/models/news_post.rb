@@ -2,6 +2,7 @@ class NewsPost < ApplicationRecord
   VALID_VISIBILITIES = ['public', 'internal']
 
   scope :reverse_chronological, -> { order("created_at desc") }
+  scope :publicly_visible, -> { where(visibility: 'public') }
   scope :published, -> { where(hidden: false) }  
   mount_uploader :image, ImageUploader
 
