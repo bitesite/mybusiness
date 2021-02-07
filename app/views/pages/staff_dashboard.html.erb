@@ -1,63 +1,65 @@
 <div id="pages-staff-dashboard">
-  <h1>Staff Dashbaord</h1>
+  <div class="container">
+    <h1>Staff Dashboard</h1>
 
-  <div class="staff-dashboard-menu">
-    <%= link_to profile_path do %>
-      <%= fa_icon "user-circle-o" %>
-      <div>Manage Profile</div>
-    <% end %>
+    <div class="staff-dashboard-menu">
+      <%= link_to profile_path do %>
+        <%= fa_icon "user-circle-o" %>
+        <div class='link-text'>Manage Profile</div>
+      <% end %>
 
-    <%= link_to time_off_entries_path do %>  
-      <%= fa_icon "calendar" %>
-      <div>Time Off System</div>
-    <% end %>
-    
-    <%= link_to blog_posts_path do %>  
-      <%= fa_icon "pencil-square-o" %>
-      <div>Blog</div>
-    <% end %>
-    
-    <% if admin? %>
-      <%= link_to news_posts_path do %>  
-        <%= fa_icon "newspaper-o" %>
-        <div>News</div>
+      <%= link_to time_off_entries_path do %>  
+        <%= fa_icon "calendar" %>
+        <div class='link-text'>Time Off System</div>
       <% end %>
       
-      <%= link_to video_listings_path do %>  
-        <%= fa_icon "video-camera" %>
-        <div>Video Listings</div>
-      <% end %>
-
-      <%= link_to web_listings_path do %>  
-        <%= fa_icon "compass" %>
-        <div>Web Listings</div>
+      <%= link_to blog_posts_path do %>  
+        <%= fa_icon "pencil-square-o" %>
+        <div class='link-text'>Blog</div>
       <% end %>
       
-      <%= link_to email_blacklistings_path do %>  
-        <%= fa_icon "ban" %>
-        <div>E-mail Blacklistings</div>
-      <% end %>
+      <% if admin? %>
+        <%= link_to news_posts_path do %>  
+          <%= fa_icon "newspaper-o" %>
+          <div class='link-text'>News</div>
+        <% end %>
+        
+        <%= link_to video_listings_path do %>  
+          <%= fa_icon "video-camera" %>
+          <div class='link-text'>Video Listings</div>
+        <% end %>
 
-      <%= link_to do_not_notify_listings_path do %>  
-        <%= fa_icon "envelope" %>
-        <div>Do Not Notify Listings</div>
-      <% end %>
+        <%= link_to web_listings_path do %>  
+          <%= fa_icon "compass" %>
+          <div class='link-text'>Web Listings</div>
+        <% end %>
+        
+        <%= link_to email_blacklistings_path do %>  
+          <%= fa_icon "ban" %>
+          <div class='link-text'>E-mail Blacklistings</div>
+        <% end %>
 
-      <%= link_to contact_form_submissions_path do %>  
-        <%= fa_icon "envelope-open-o" %>
-        <div>Contact Form Submissions</div>
-      <% end %>
+        <%= link_to do_not_notify_listings_path do %>  
+          <%= fa_icon "envelope" %>
+          <div class='link-text'>Do Not Notify Listings</div>
+        <% end %>
 
-      <%= link_to contacts_path do %>  
-        <%= fa_icon "address-card" %>
-        <div>Contacts</div>
-      <% end %>
+        <%= link_to contact_form_submissions_path do %>  
+          <%= fa_icon "envelope-open-o" %>
+          <div class='link-text'>Contact Form Submissions</div>
+        <% end %>
 
-      <%= link_to downloads_path do %>  
-        <%= fa_icon "download" %>
-        <div>Downloads</div>
+        <%= link_to contacts_path do %>  
+          <%= fa_icon "address-card" %>
+          <div class='link-text'>Contacts</div>
+        <% end %>
+
+        <%= link_to downloads_path do %>  
+          <%= fa_icon "download" %>
+          <div class='link-text'>Downloads</div>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
   
 </div>
