@@ -3,7 +3,7 @@ Mybusiness::Application.routes.draw do
   resources :frequently_asked_questions, except: [:show]
   resources :do_not_notify_listings
   resources :careers
-  resources :settings
+  resources :settings, except: [:show]
   resources :video_listings
   resources :web_listings, except: [:show]
   resources :time_off_entries, except: [:show] do
@@ -119,6 +119,7 @@ Mybusiness::Application.routes.draw do
       end
 
       resource :account, only: [:update]
+      resources :settings, only: [:index]
     end
   end
 
