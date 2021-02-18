@@ -4,16 +4,38 @@
 
 .careers-index {
 
-  .page-index {
+  .current-listings {
     list-style:none;
     padding-left:0;
     li {
       margin:5px 0;
     }
+
+    border-bottom: 1px solid #ddd;
   }
 
 
   .career {
+
+    
+
+    .career-header {
+      text-align: center;
+      margin-bottom: 30px;
+  
+      h2 {
+        font-family: 'Avenir LT Std';
+        font-weight: 85;
+        font-weight:bold;
+        font-size: 2em;
+        margin-bottom: 15px;
+      }
+
+      .career-date {
+        font-size: 14px;
+        margin-top: 5px;
+      }
+    }
 
     &.archived {
       border:1px solid red;
@@ -22,32 +44,23 @@
       display:block;
       padding-top:64px;
     }
-    margin-bottom:20px;
-
-    &:nth-child(even) {
-      background:#f3f3f3;  
-    }
     
     
-    h2 {
-      font-family: 'Avenir LT Std';
-      font-weight: 85;
-      font-weight:bold;
-      text-align:center;
-    }
 
     h3 {
       font-family: 'Avenir LT Std';
-      font-weight: 65;
+      font-weight: 85;
+      font-size: 16px;
       margin:0;
-      text-align:center;
+      text-transform: uppercase;
     }
 
-    .career-date {
-      text-align:center;
-    }
+ 
 
     .career-body {
+      line-height: 2em;
+      margin-bottom:20px;
+
       .emphasize {
         font-family: 'Avenir LT Std';
         font-weight: 85;

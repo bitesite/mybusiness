@@ -1,34 +1,34 @@
 <div class="careers-index">
-  <h1>CAREERS</h1>
-
-  <% if admin? %>
-    <div class="container">
-      <%= link_to 'New Career', new_career_path %> <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
-    </div>
-  <% end %><br>
-  
-  <% if @careers.blank? %>
-    <div class="container">
-      BiteSite is not currently hiring but we are always on the lookout for great talent.
-      Even when we don't have active listings, we still like to grow our network and meet like-minded individuals.
-      So feel free to contact us to drop us your resume, let us know you're out there, or just to say hi.
-      Check back at anytime for active listings or 
-      contact us directly at <%= link_to "info@bitesite.ca", "mailto:info@bitesite.ca" %>.   
-    </div>
+  <div class="container">
+    <h1>CAREERS</h1>
     
-  <% else %>
-    <div class="container">
-      <h2>Current Listings</h2>
-      <ul class='page-index'>
+    <% if admin? %>
+        <%= link_to 'New Career', new_career_path %>
+    <% end %><br>
+    
+    <% if @careers.blank? %>
+        <p>
+          BiteSite is not currently hiring but we are always on the lookout for great talent.
+          Even when we don't have active listings, we still like to grow our network and meet like-minded individuals.
+          So feel free to contact us to drop us your resume, let us know you're out there, or just to say hi.
+          Check back at anytime for active listings or 
+          contact us directly at <%= link_to "info@bitesite.ca", "mailto:info@bitesite.ca" %>.   
+        </p>
+    <% else %>
+      <div>Current Listings</div>
+      <div class='current-listings'>
         <% @careers.each do |career| %>
           
-          <a href="#career_<%= career.id %>">
-            <li><%= career.title %> (<%= convert_time_string career.created_at %>)</li>
-          </a>
+          <% if !career.archived? %>
+            <a href="#career_<%= career.id %>">
+              <li><%= career.title %> (<%= convert_time_string career.created_at %>)</li>
+            </a>
+          <% end %>
         <% end %>
-      </ul>  
-    </div>
-    
-    <%= render @careers %>
-  <% end %>
+      </div>  
+      
+      <%= render @careers %>
+    <% end %>
+  </div>
+
 </div>
