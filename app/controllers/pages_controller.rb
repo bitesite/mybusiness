@@ -124,6 +124,12 @@ class PagesController < ApplicationController
     end
   end
 
+  def ui_design_test
+    @title = "Login"
+    render layout: 'blank'
+  end
+  
+
   private
   
     def build_contestant_hash

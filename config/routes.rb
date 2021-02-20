@@ -81,6 +81,8 @@ Mybusiness::Application.routes.draw do
   get "/staff_dashboard" => "pages#staff_dashboard"
   get "/mobile-video-course" => "pages#mobile_video_course"
 
+  get "/ui_design_test" => "pages#ui_design_test"
+
   namespace :playbook do
     get '/' => 'pages#home'
     get '/coming_soon' => 'pages#coming_soon'
