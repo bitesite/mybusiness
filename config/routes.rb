@@ -121,6 +121,7 @@ Mybusiness::Application.routes.draw do
       end
 
       resource :account, only: [:update]
+      resource :profile, only: [:show]
       resources :settings, only: [:index]
     end
   end

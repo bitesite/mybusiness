@@ -24,6 +24,7 @@ class ProfilesController < ApplicationController
                                       :first_name,
                                       :last_name,
                                       :start_date,
-                                      :avatar)
+                                      :avatar,
+                                      :weekly_billable_hours_target)
     end
 end
