@@ -66,6 +66,7 @@ Mybusiness::Application.routes.draw do
 
   # - PRIVACY POLICIES
   get '/privacy_policies/cntdwn2' => 'privacy_policies#cntdwn2'
+  get '/privacy_policies/bitesite_mobile' => 'privacy_policies#bitesite_mobile'
 
   # - PAGES
   root "pages#home"
