@@ -28,6 +28,7 @@ gem 'will_paginate'
 gem 'acts-as-taggable-on'
 gem 'jwt'
 gem 'exponent-server-sdk'
+gem 'select2-rails'
 
 gem 'friendly_id'
 

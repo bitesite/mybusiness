@@ -15,25 +15,25 @@
     <br />
 
     <% if supervisor? %>
-      <h2>Your Reports 'Pending' Time off</h2>
+      <h2>Your Direct Reports 'Pending' Time off</h2>
 
-      <% User.all.alphabetical.each do |user| %>
+      <% current_user.direct_reports.alphabetical.each do |user| %>
         <% if user != current_user %>
 
           <% if user.time_off_entries.pending.present? %>
-            <h3><%= user.email %>'s Time Off</h3>
+            <h3><%= user.full_name %>'s Pending Time Off</h3>
             <%= render 'time_off_table', time_off_entries:  user.time_off_entries.pending.chronological %>
           <% end %>
         <% end %>
       <% end %>
 
 
-      <h2>Your Reports 'Approved' Time off</h2>
+      <h2>Your Direct Reports 'Approved' Time off</h2>
 
-      <% User.all.alphabetical.each do |user| %>
+      <% current_user.direct_reports.alphabetical.each do |user| %>
         <% if user != current_user %>
 
-          <h3><%= user.email %>'s Time Off</h3>
+          <h3><%= user.full_name %>'s Approved Time Off</h3>
           <%= render 'time_off_table', time_off_entries:  user.time_off_entries.approved.chronological %>
         <% end %>
       <% end %>

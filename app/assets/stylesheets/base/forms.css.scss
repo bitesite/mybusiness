@@ -18,9 +18,19 @@ form {
       display:block;
       width:calc(100% - 10px);
     }
+    
+    select {
+      width: 100%;
+    }
   }
+
   
   .actions {
+    display: flex;
     margin-bottom: 10px;
+
+    .btn {
+      margin-right: 5px;
+    }
   }
 }

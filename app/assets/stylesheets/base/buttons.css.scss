@@ -1,11 +1,12 @@
-.btn {  
+a.btn, .btn {  
   display:inline-block;
-  padding:10px 60px;
-  text-align:center;
-  text-decoration:none;
-  margin-bottom:10px;
+  padding: 10px 60px;
+  text-align: center;
+  text-decoration: none;
   cursor: pointer;
   border: none;
+  font-style: normal;
+  font-size: 14px;
 }
 
 .btn-sm {
@@ -14,16 +15,23 @@
 }
 
 .btn-primary {
-  background:$primary-color;
-  color:white;
-  border-width:1px;
-  border-style:solid;
-  font-size:1em;
+  background: $primary-color;
+  color: white;
 
   &:hover {
     background: $light-primary-color-1;
     color:white;
   };
+}
+
+.btn-ghost {
+  background: transparent;
+  color: $primary-color;
+
+  &:hover {
+    background-color: $light-primary-color-1;
+    color: white;
+  }
 }
 
 a.standard-button {

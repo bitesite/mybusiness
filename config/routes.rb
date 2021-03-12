@@ -22,6 +22,7 @@ Mybusiness::Application.routes.draw do
     resources :contestants
   end
 
+  resources :users, only: [:index, :edit, :update]
   resources :downloads
 
   # These pages need to be above the resources :contact to avoid conflict

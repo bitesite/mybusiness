@@ -21,7 +21,13 @@
       </div>
 
       <div class="staff-sign-in">
-        <%= link_to 'Staff Sign in', new_user_session_path %>
+        <% if user_signed_in? %>
+          <% if staff? %>
+            <%= link_to 'Staff Dashboard', staff_dashboard_path %>
+          <% end %>
+        <% else %>
+          <%= link_to 'Staff Sign in', new_user_session_path %>
+        <% end %>
       </div>
     </div>
   </div>

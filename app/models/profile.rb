@@ -4,8 +4,13 @@ class Profile < ApplicationRecord
   mount_uploader :avatar, AvatarUploader
 
   def full_name
-    "#{first_name || "(first name)"} #{last_name || "(last name)"}"
+    "#{first_name || "[first name]"} #{last_name || "[last name]"}"
   end
+
+  def name_and_email
+    "#{first_name || "[first name]"} #{last_name || "[last name]"} (#{user.try(:email)})"
+  end
+  
 
   def suitable_for_blog?
     avatar.present? && 

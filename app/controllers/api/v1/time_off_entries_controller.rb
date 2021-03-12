@@ -1,4 +1,6 @@
 class Api::V1::TimeOffEntriesController < Api::V1::ApplicationController
+  include TimeOffEntriesHelpers
+
   respond_to :json
   
   before_action :authenticate_request!
@@ -28,7 +30,8 @@ class Api::V1::TimeOffEntriesController < Api::V1::ApplicationController
       end
     end
 
+    notify_supervisor_of_new_time_off_entries
+
     head 200
-  end
-  
+  end    
 end

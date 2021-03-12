@@ -1,19 +1,19 @@
 /* Flash */
 .flash {
   position: fixed;
-  top: 0;
-  left: 50%;
-  margin-left: -200px;
+  bottom: 10px;
+  left: 10px;
   font-family: "Arial", sans-serif;
-  font-size: 12px;
-  width: 400px;
+  font-size: 14px;
   background: white;
   z-index: 1001;
   color: #222;
   border: 1px solid gray;
   border-top: none;
-  padding: 5px;
-  text-align: center;
+  padding: 15px 20px;
+  background: $light-gray-3;
+  box-shadow: 2px 2px 10px $gray;
+  border-radius: $border-radius;
 }
 .error, .notice {
   color: #fff;

@@ -1,0 +1,51 @@
+<div id="users-index">
+  <div class="container">
+    <h2>Staff</h2>
+    <table class='resource-table'>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Direct Reports</th>
+          <th>Expo Push Token</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @staff.each do |user| %>
+          <tr>
+            <td><%= user.id %></td>
+            <td><%= user.name_and_email %></td>
+            <td>
+              <% user.direct_reports.each do |direct_report| %>
+                <%= direct_report.name_and_email %><br />
+              <% end %>
+            </td>
+            <td><%= user.profile.expo_push_token %></td>
+            <td><%= link_to 'edit', edit_user_path(user) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <h2>All Users</h2>
+    <table class='resource-table'>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <td><%= user.id %></td>
+            <td><%= user.name_and_email %></td>
+            <td><%= link_to 'edit', edit_user_path(user) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
