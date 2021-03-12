@@ -1,0 +1,28 @@
+<div id="users-edit">
+  <div class="container">
+    <%= form_with model: @user, local: true do |f| %>
+      <div class="field">
+        <label>Direct Reports</label>
+
+        <%= f.select :direct_report_ids,
+                     options_from_collection_for_select(User.staff.alphabetical, :id, :name_and_email, selected: @user.direct_report_ids),
+                     {},
+                     class: 'select2', multiple: 'multiple' %>
+      </div>
+
+      <div class="field">
+        <label>Roles</label>
+
+        <%= f.select :role_ids,
+                     options_from_collection_for_select(Role.all, :id, :name, selected: @user.direct_report_ids, selected: @user.role_ids),
+                     {},
+                     class: 'select2', multiple: 'multiple' %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit 'Submit', class: 'btn btn-primary' %>
+        <%= link_to 'Cancel', users_path, class: 'btn btn-ghost' %>
+      </div>
+    <% end %>
+  </div>
+</div>

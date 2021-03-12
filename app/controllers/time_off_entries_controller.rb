@@ -1,5 +1,6 @@
 class TimeOffEntriesController < ApplicationController
-  
+  include TimeOffEntriesHelpers
+
   load_and_authorize_resource
 
   def index
@@ -32,6 +33,8 @@ class TimeOffEntriesController < ApplicationController
       end
     end
 
+    notify_supervisor_of_new_time_off_entries
+
     redirect_to time_off_entries_path
   end
 
@@ -44,6 +47,7 @@ class TimeOffEntriesController < ApplicationController
   def create
     @time_off_entry.status = 'Pending'
     if @time_off_entry.save
+      notify_supervisor_of_new_time_off_entries
       redirect_to time_off_entries_path, notice: 'Time off successfully requested!'
     else
       render :new
@@ -55,6 +59,7 @@ class TimeOffEntriesController < ApplicationController
       redirect_to time_off_entries_path, notice: "You can't update an approved request."
     else
       if @time_off_entry.update_attributes(time_off_entry_params)
+        notify_staff_of_approved_time_off_entries
         redirect_to time_off_entries_path, notice: "Time off request successfully updated."
       else
         render :edit
