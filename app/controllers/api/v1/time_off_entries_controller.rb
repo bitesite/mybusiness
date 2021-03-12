@@ -4,11 +4,21 @@ class Api::V1::TimeOffEntriesController < Api::V1::ApplicationController
   respond_to :json
   
   before_action :authenticate_request!
-  load_and_authorize_resource through: :current_user
+  load_and_authorize_resource through: :current_user, except: [:approve]
+  load_and_authorize_resource only: [:approve]
 
   def index
+    if params[:pending_reports_entries]
+      @include_user_info = true
+      @time_off_entries = TimeOffEntry.where(user_id: current_user.direct_reports.map{|user| user.id}).where(status: 'Pending').order(entry_date: :asc)
+    end
+
     @time_off_entries = @time_off_entries.limit(params[:limit]) if params[:limit]
     @time_off_entries = @time_off_entries.offset(params[:offset]) if params[:offset]
+
+    if @include_user_info
+      @time_off_entries = @time_off_entries.includes(user: [:profile])
+    end
   end
 
   def bulk_create
@@ -33,5 +43,15 @@ class Api::V1::TimeOffEntriesController < Api::V1::ApplicationController
     notify_supervisor_of_new_time_off_entries
 
     head 200
-  end    
+  end
+  
+  def approve
+    @time_off_entry = TimeOffEntry.find params[:id]
+    @time_off_entry.status = "Approved"
+    
+    @time_off_entry.save
+    notify_staff_of_approved_time_off_entries
+    
+    head 200
+  end
 end

@@ -120,6 +120,10 @@ Mybusiness::Application.routes.draw do
         collection do
           post :bulk_create
         end
+
+        member do
+          put :approve
+        end
       end
 
       resource :account, only: [:update]

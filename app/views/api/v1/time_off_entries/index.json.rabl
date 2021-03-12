@@ -8,3 +8,9 @@ attributes :id,
            :status,
            :created_at,
            :updated_at
+
+if @include_user_info
+  child :user do
+    attributes :name_and_email
+  end
+end
