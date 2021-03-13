@@ -16,6 +16,11 @@ class UsersController < ApplicationController
       render :edit
     end
   end
+
+  def show
+    
+  end
+  
   
   private
     def user_params

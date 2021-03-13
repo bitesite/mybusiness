@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :blog_posts
   has_one :profile, dependent: :destroy
   has_many :time_off_entries
+  has_many :devices
   has_many :direct_reports, class_name: 'User', foreign_key: :supervisor_id
   belongs_to :supervisor, class_name: 'User', foreign_key: :supervisor_id, optional: true
 
@@ -19,4 +20,20 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :profile, update_only: true
 
   delegate :full_name, :name_and_email, to: :profile, allow_nil: true
+
+  def construct_expo_push_notification_messages(title, body)
+    messages = []
+
+    devices.where(signed_in: true).each do |device|
+      messages << {
+        to: device.push_token,
+        sound: 'default',
+        title: title,
+        body: body
+      }
+    end
+
+    messages
+  end
+  
 end

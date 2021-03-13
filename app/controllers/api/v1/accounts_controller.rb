@@ -11,10 +11,20 @@ class Api::V1::AccountsController < Api::V1::ApplicationController
     end
   end
 
-  private
+  def register_device
+    device = current_user.devices.find_or_create_by(push_token: params[:device][:push_token])
 
-    def user_params
-      params.require(:user).permit(profile_attributes: [:expo_push_token])
+    device.update(device_params)
+    device.update(signed_in_at: DateTime.now)
+
+    head 200
+  end
+  
+
+  private
+    def device_params
+      params.require(:device).permit(:signed_in, :os, :os_version, :push_token)
     end
+    
   
 end

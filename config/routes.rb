@@ -22,28 +22,28 @@ Mybusiness::Application.routes.draw do
     resources :contestants
   end
 
-  resources :users, only: [:index, :edit, :update]
   resources :downloads
-
+  
   # These pages need to be above the resources :contact to avoid conflict
   get '/contact' => 'pages#contact'
   post "/contact" => "pages#contact"
-
+  
   get '/download' => 'contacts#new'
   resources :contacts
   
   resource :profile, only: [:show, :edit, :update]
-
+  
   # - BLOG POSTS
   # get "/blog" => "blog_posts#index"
   resources :blog_posts, path: '/blog', except: [:destroy] do
     resources :blog_post_images, except: [:show, :edit, :update]
     resources :comments, only: [:index, :create]
   end
-
-
+  
+  
   # - DEVISE
   devise_for :users, controllers: { registrations: 'registrations' }
+  resources :users, only: [:index, :edit, :update, :show]
 
 
   # - NEWS POSTS
@@ -126,7 +126,12 @@ Mybusiness::Application.routes.draw do
         end
       end
 
-      resource :account, only: [:update]
+      resource :account, only: [:update] do
+        collection do
+          put :register_device
+        end  
+      end
+
       resource :profile, only: [:show]
       resources :settings, only: [:index]
     end

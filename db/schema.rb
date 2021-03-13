@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210312144821) do
+ActiveRecord::Schema.define(version: 20210312234926) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -91,6 +91,18 @@ ActiveRecord::Schema.define(version: 20210312144821) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "devices", force: :cascade do |t|
+    t.string "push_token"
+    t.boolean "signed_in"
+    t.string "os"
+    t.string "os_version"
+    t.datetime "signed_in_at"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_devices_on_user_id"
+  end
+
   create_table "do_not_notify_listings", force: :cascade do |t|
     t.string "email"
     t.datetime "created_at", null: false
@@ -152,7 +164,6 @@ ActiveRecord::Schema.define(version: 20210312144821) do
     t.integer "user_id"
     t.string "avatar"
     t.string "job_title"
-    t.string "expo_push_token"
     t.float "weekly_billable_hours_target"
     t.index ["employee_number"], name: "index_profiles_on_employee_number", unique: true
     t.index ["user_id"], name: "index_profiles_on_user_id"
@@ -257,4 +268,5 @@ ActiveRecord::Schema.define(version: 20210312144821) do
   end
 
   add_foreign_key "comments", "blog_posts"
+  add_foreign_key "devices", "users"
 end

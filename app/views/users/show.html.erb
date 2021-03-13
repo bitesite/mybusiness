@@ -1,0 +1,32 @@
+<div id="users-show">
+  <div class="container">
+    <h1><%= @user.name_and_email %></h1>
+
+    <h2>Devices</h2>
+
+    <table class='resource-table'>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Push Token</th>
+          <th>OS</th>
+          <th>Version</th>
+          <th>Signed in</th>
+          <th>Signed in at</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @user.devices.each do |device| %>
+          <tr>
+            <td><%= device.id %></td>
+            <td><%= device.push_token %></td>
+            <td><%= device.os %></td>
+            <td><%= device.os_version %></td>
+            <td><%= device.signed_in %></td>
+            <td><%= device.signed_in_at %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
