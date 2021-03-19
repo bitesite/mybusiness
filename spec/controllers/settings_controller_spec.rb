@@ -12,13 +12,6 @@ describe SettingsController, type: :controller do
       end
     end
 
-    describe "GET #show" do
-      it "returns successfully" do
-        get :show, params: { id: setting.id }
-        expect(response).to redirect_to root_path
-      end
-    end
-
     describe 'GET #new' do
       it 'denies access' do
         get :new
@@ -68,13 +61,6 @@ describe SettingsController, type: :controller do
     describe "GET #index" do
       it "returns successfully" do
         get :index
-        expect(response).to have_http_status :ok
-      end
-    end
-
-    describe "GET #show" do
-      it "returns successfully" do
-        get :show, params: { id: setting.id }
         expect(response).to have_http_status :ok
       end
     end

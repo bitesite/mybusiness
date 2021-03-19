@@ -4,18 +4,20 @@ module TimeOffEntriesHelpers
 
     supervisor = current_user.supervisor
 
-    messages = supervisor.construct_expo_push_notification_messages(
-      'Time off to approve!',
-      "#{current_user.full_name} has submitted some time off"
-    )
+    if supervisor
+      messages = supervisor.construct_expo_push_notification_messages(
+        'Time off to approve!',
+        "#{current_user.full_name} has submitted some time off"
+      )
 
-    if messages.present?
-      handler = client.send_messages(messages)
+      if messages.present?
+        handler = client.send_messages(messages)
+      end
     end
   end
 
   def notify_staff_of_approved_time_off_entries
-    if (@time_off_entry.saved_changes[:status][0] != 'Approved' && @time_off_entry.saved_changes[:status][1] == 'Approved')
+    if (@time_off_entry.saved_changes[:status] && @time_off_entry.saved_changes[:status][0] != 'Approved' && @time_off_entry.saved_changes[:status][1] == 'Approved')
       client = Exponent::Push::Client.new
 
       user = @time_off_entry.user

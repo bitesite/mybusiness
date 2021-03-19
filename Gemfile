@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '5.1.5'
+gem 'rails', '5.2.4.5'
 
 gem 'webpacker', '4.0.7'
 
@@ -24,7 +24,7 @@ gem 'sucker_punch'
 gem 'dotenv-rails'
 gem 'font-awesome-rails'
 gem 'test-unit', '~> 3.0'
-gem 'will_paginate'
+gem 'will_paginate', '~> 3.1.0'
 gem 'acts-as-taggable-on'
 gem 'jwt'
 gem 'exponent-server-sdk'
