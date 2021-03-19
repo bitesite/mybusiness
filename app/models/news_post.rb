@@ -11,10 +11,10 @@ class NewsPost < ApplicationRecord
 
     messages = []
     
-    User.find_each do |user|
-      if user.profile.expo_push_token.present?
+    Device.find_each do |device|
+      if device.push_token.present?
         messages << {
-          to: user.profile.expo_push_token,
+          to: device.push_token,
           sound: 'default',
           title: self.title,
           body: self.body.truncate(50)

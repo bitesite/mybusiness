@@ -88,7 +88,7 @@
         <% @latest_blog_posts.each do |blog_post| %>
           <div class="blog-post spaced">
             <div class='image-container'>
-              <%= image_tag blog_post.featured_image %>
+              <%= image_tag blog_post.featured_image_url %>
             </div>
             <div class="title"><%= blog_post.title %></div>
             <div class="description">

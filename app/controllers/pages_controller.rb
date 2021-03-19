@@ -7,8 +7,12 @@ class PagesController < ApplicationController
     @title = "A Custom Software Firm based in Ottawa, Canada"
     @meta_description = "BiteSite is a Custom Software firm based in Ottawa, Canada focused on building web and mobile applications."
                         
+    @latest_blog_posts = []
+    
     featured_blog_post_ids = Setting.find_by(name: 'featured_blog_post_ids')
-    @latest_blog_posts = BlogPost.where(id: featured_blog_post_ids.value.split(","))
+    if featured_blog_post_ids.present?
+      @latest_blog_posts = BlogPost.where(id: featured_blog_post_ids.value.split(","))
+    end
   end
 
   def services
