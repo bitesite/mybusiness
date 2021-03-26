@@ -25,7 +25,7 @@ class DevicesController < ApplicationController
 
   private
     def device_params
-      params.require(:device).permit(:web_push_endpoint)
+      params.require(:device).permit(:web_push_endpoint, :web_push_p256dh, :web_push_auth)
     end
     
   

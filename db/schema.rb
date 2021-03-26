@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_26_152043) do
+ActiveRecord::Schema.define(version: 2021_03_26_174906) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -101,6 +101,8 @@ ActiveRecord::Schema.define(version: 2021_03_26_152043) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "web_push_endpoint"
+    t.string "web_push_p256dh"
+    t.string "web_push_auth"
     t.index ["user_id"], name: "index_devices_on_user_id"
   end
 

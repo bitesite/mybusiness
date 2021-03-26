@@ -19,16 +19,19 @@ window.addEventListener('load', function() {
 });
 
 function sendSubscriptionToServer(subscription) {
+  const subscriptionJSON = subscription.toJSON();
+
   $.ajax({
     url: '/devices',
     method: 'POST',
     data: {
       device: {
-        web_push_endpoint: subscription.endpoint
+        web_push_endpoint: subscriptionJSON.endpoint,
+        web_push_p256dh: subscriptionJSON.keys.p256dh,
+        web_push_auth: subscriptionJSON.keys.auth
       }
     },
     success: function() {
-      console.log("Subscription successfully registered with server.");
     }, 
     error: function() {
       console.log("Error registering subscription with server.");
