@@ -1,10 +1,16 @@
 class Device < ApplicationRecord
   belongs_to :user, optional: true
 
-  def send_web_push_notification
+  def send_web_push_notification(title='Title', body='Body')
+
+    message = {
+      title: title,
+      body: body,
+    }
+
     Webpush.payload_send(
       endpoint: self.web_push_endpoint,
-      message: "A message",
+      message: JSON.generate(message),
       p256dh: self.web_push_p256dh,
       auth: self.web_push_auth,
       vapid: {

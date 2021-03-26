@@ -61,9 +61,10 @@ function onActivate(event) {
 
 function onPush(event) {
   console.log('Received a push message', event);
+  var messageData = event.data.json();
   
-  var title = 'Yay a message.';
-  var body = 'We have received a push message.';
+  var title = messageData.title || 'BiteSite Notification!';
+  var body = messageData.body || 'We have received a message.';
   var icon = '/images/icon-192x192.png';
   var tag = 'simple-push-demo-notification-tag';
 
