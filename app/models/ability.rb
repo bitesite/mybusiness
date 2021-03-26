@@ -11,6 +11,7 @@ class Ability
     can [:new, :create], Contact
     can :show, Download
     can :read, FrequentlyAskedQuestion
+    can :create, Device
 
 
     if user.has_role?(:staff)

@@ -2,18 +2,22 @@
 <html>
 	<head>
 		<title>BiteSite | <%= @title %></title>
-		<%= render 'layouts/shared_head' %>
+		<%= render "layouts/shared_head" %>
+		<link rel="manifest" href="/manifest.json" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<%= javascript_pack_tag 'notifications' %>
+		<%= Gon::Base.render_data %>
 	</head>
 	<body>
-		<%= render 'layouts/flash', flash: flash %>
+		<%= render "layouts/flash", flash: flash %>
 
-		<%= render 'layouts/header' %>
+		<%= render "layouts/header" %>
 
 		<div id="content">
 			<%= content_for?(:content) ? yield(:content) : yield %>
 		</div>
 	
-		<%= render 'layouts/footer' %>
+		<%= render "layouts/footer" %>
 
 
 		<!-- Start of HubSpot Embed Code -->

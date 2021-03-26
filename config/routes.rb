@@ -32,6 +32,8 @@ Mybusiness::Application.routes.draw do
   resources :contacts
   
   resource :profile, only: [:show, :edit, :update]
+
+  resources :devices, only: [:create]
   
   # - BLOG POSTS
   # get "/blog" => "blog_posts#index"

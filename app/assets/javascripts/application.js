@@ -13,7 +13,15 @@
 //= require jquery
 //= require jquery_ujs
 //= require select2-full
-//= require_tree .
+//= require animations
+//= require flash
+//= require jquery.maxlength-min
+//= require navigation
+//= require pages.portfolio
+//= require pages.wedding
+//= require playbook
+//= require scrollnavigation
+//= require serviceworker-companion
 
 $(function() {
   $(".select2" ).select2();

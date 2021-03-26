@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
   
   before_action :load_news
-  
+  before_action :load_vapid_public_key_into_gon
 
   # - Rescue from CanCanCan AccessDenied exception
   rescue_from CanCan::AccessDenied do |exception|
@@ -35,6 +35,11 @@ class ApplicationController < ActionController::Base
   def load_news
     @recent_news_posts = NewsPost.limit(5)
   end
+
+  def load_vapid_public_key_into_gon
+    gon.push(vapid_public_key_bytes: Base64.urlsafe_decode64(ENV['VAPID_PUBLIC_KEY']).bytes)
+  end
+  
   
   def register_mailchimp_user_for_newsletter(first_name, last_name, email)
     register_mailchimp_user(first_name, last_name, email, "b1abc6bdf8")
