@@ -6,7 +6,7 @@
 		<link rel="manifest" href="/manifest.json" />
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<%= javascript_pack_tag 'notifications' %>
-		<%= Gon::Base.render_data %>
+		<%= include_gon %>
 	</head>
 	<body>
 		<%= render "layouts/flash", flash: flash %>
