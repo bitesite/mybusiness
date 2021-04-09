@@ -108,7 +108,8 @@ class PagesController < ApplicationController
     @team_members = [
       { image: 'staff/casey.png', name: 'Casey Li', position: 'CEO & Founder' },
       { image: 'staff/jack.png', name: 'Jack Wu', position: 'Software Developer' },
-      { image: 'staff/chris.png', name: 'Chris Francis', position: 'Software Developer' }
+      { image: 'staff/chris.png', name: 'Chris Francis', position: 'Software Developer' },
+      { image: 'staff/tania.png', name: 'Tania Das', position: 'UX/UI Designer' }
     ]
   end
   
