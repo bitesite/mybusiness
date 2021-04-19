@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '5.2.5'
 
-gem 'webpacker', '4.0.7'
+gem 'webpacker', '5.2.1'
 
 gem 'sass-rails',   '~> 5.0.7'
 gem 'coffee-rails', '~> 4.2.2'
