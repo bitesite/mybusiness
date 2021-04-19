@@ -14,11 +14,14 @@ RUN apt-get update -y
 RUN apt-get install yarn -y
 
 WORKDIR /app
+
 COPY Gemfile /app/Gemfile
 COPY Gemfile.lock /app/Gemfile.lock
 RUN bundle install
+
 COPY package.json /app/package.json
 COPY yarn.lock /app/yarn.lock
 RUN yarn install
+
 COPY . /app
 CMD ["rails", "s", "-b", "0.0.0.0"]
