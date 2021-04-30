@@ -29,6 +29,9 @@ gem 'acts-as-taggable-on'
 gem 'jwt'
 gem 'exponent-server-sdk'
 gem 'select2-rails'
+gem 'serviceworker-rails'
+gem 'webpush'
+gem 'gon'
 
 gem 'friendly_id'
 

@@ -11,6 +11,10 @@ class Ability
     can [:new, :create], Contact
     can :show, Download
     can :read, FrequentlyAskedQuestion
+    
+    if !user.new_record?
+      can :manage, Device, user_id: user.id
+    end
 
 
     if user.has_role?(:staff)
