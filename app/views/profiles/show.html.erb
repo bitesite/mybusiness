@@ -1,3 +1,4 @@
+<%= javascript_pack_tag 'web_push_notifications_manager' %>
 <div id="profiles-show">
   <div class="container">
     <h1>Profile</h1>
@@ -33,6 +34,8 @@
       <div class='start date'>
         WBHT: <%= @profile.weekly_billable_hours_target %>
       </div>
+
+      <div class='web-push-notifications-manager-mount-point'></div>
 
       <div class="actions">
         <%= link_to "Edit Profile", edit_profile_path %>
