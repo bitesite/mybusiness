@@ -1,5 +1,5 @@
 class Device < ApplicationRecord
-  belongs_to :user, optional: true
+  belongs_to :user
 
   def send_web_push_notification(title='Title', body='Body')
 

@@ -3,7 +3,7 @@ class DevicesController < ApplicationController
 
   def create
     successful_save = false
-    existing_device = Device.find_by(web_push_endpoint: @device.web_push_endpoint)
+    existing_device = current_user.devices.find_by(web_push_endpoint: @device.web_push_endpoint)
     
     if existing_device
       @device = existing_device
