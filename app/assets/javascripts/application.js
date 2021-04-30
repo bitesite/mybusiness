@@ -21,8 +21,7 @@
 //= require pages.wedding
 //= require playbook
 //= require scrollnavigation
-//= require serviceworker-companion
 
-$(function() {
-  $(".select2" ).select2();
+$(function () {
+  $('.select2').select2();
 });
