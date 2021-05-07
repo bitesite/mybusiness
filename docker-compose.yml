@@ -21,7 +21,7 @@ services:
       RAILS_ENV: development
       WEBPACKER_DEV_SERVER_HOST: 0.0.0.0
   db:
-    image: "postgres"
+    image: "postgres:12.6-alpine"
     ports:
       - "5432:5432"
     volumes:
