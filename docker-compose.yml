@@ -3,7 +3,7 @@ services:
   web:
     build: .
     volumes:
-      - .:/app
+      - .:/app:delegated
     ports:
       - "3000:3000"
     environment:
@@ -15,7 +15,7 @@ services:
     ports:
       - '3035:3035'
     volumes:
-      - .:/app
+      - .:/app:delegated
     environment:
       NODE_ENV: development
       RAILS_ENV: development

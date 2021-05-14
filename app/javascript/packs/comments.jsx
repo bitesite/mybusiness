@@ -71,7 +71,7 @@ class Comments extends React.Component {
         <h2>Comments</h2>
         <div className="comments-list">
           {comments.length == 0 ? (
-            <div>There are currently no comments for this post. Be the first to comment below!</div>
+            <div>There are currently no comments for this post! Be the first to comment below!</div>
           ) : (
             <>
               {comments.map((comment) => (
