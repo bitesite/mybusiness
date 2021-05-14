@@ -2,7 +2,6 @@
   "dependencies": {
     "@babel/preset-react": "^7.6.3",
     "@rails/webpacker": "4.0.7",
-    "fsevents": "1.2.9",
     "prop-types": "^15.6.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -28,6 +27,6 @@
     "lint:fix": "eslint . --fix"
   },
   "engines": {
-    "node": "12.x"
+    "node": "14.x"
   }
 }
