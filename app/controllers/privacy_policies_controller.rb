@@ -6,5 +6,9 @@ class PrivacyPoliciesController < ApplicationController
   def bitesite_mobile
     @title = "BiteSite Mobile App Privacy Policy"
   end
+
+  def readysetshow
+    @title = "ReadySetShow Privacy Policy"
+  end
   
 end
