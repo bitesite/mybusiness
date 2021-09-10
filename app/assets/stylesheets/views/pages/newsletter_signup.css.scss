@@ -1,0 +1,52 @@
+#pages-newsletter-signup {
+  .container {
+    color: $dark-aqua;
+    @include clear-floats-container;
+    padding-top: 20px;
+
+    .writeup-container {
+      margin-bottom: 40px;
+
+      .writeup {
+        font-size: 1.5em;
+        font-weight: bold;
+        margin: 0 auto;
+        text-align: center;
+        max-width: 500px;
+      }
+
+    }
+
+    .sign-up-form {
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+      padding-bottom: 50px;
+
+      h2 {
+        font-weight: bold;
+      }
+
+      form {
+        border: 1px solid #ccc;
+
+        .permissions {
+          border-top: 3px solid #ccc;
+          padding-top: 20px;
+        }
+
+        input[type='submit'].button {
+          background-color: $dark-aqua;
+
+          &:hover {
+            background-color: $aqua;
+          }
+        }
+
+        p.gdpr-paragraph {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}

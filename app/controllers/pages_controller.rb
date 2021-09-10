@@ -57,8 +57,8 @@ class PagesController < ApplicationController
     end
   end
 
-  def mobile_video_course
-    @title = "Mobile Video Course"
+  def newsletter_signup
+    @title = "Newsletter Signup"
   end
 
   def contact

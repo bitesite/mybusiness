@@ -85,7 +85,7 @@ Mybusiness::Application.routes.draw do
   get "/portfolio" => "pages#portfolio"
   
   get "/staff_dashboard" => "pages#staff_dashboard"
-  get "/mobile-video-course" => "pages#mobile_video_course"
+  get "/newsletter_signup" => "pages#newsletter_signup"
 
   get "/ui_design_test" => "pages#ui_design_test"
 
