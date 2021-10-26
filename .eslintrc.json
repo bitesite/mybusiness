@@ -23,7 +23,6 @@
         }
     ],
     "rules": {
-        "quotes": ["error", "double"],
         "indent": ["error", 2],
         "semi-spacing": ["error", { "before": false, "after": true }],
         "lines-between-class-members": ["error", "always"],
