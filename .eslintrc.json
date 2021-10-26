@@ -19,7 +19,7 @@
     ],
     "overrides": [
         {
-            "files": [ "app/javascript/**" ],
+            "files": [ "app/javascript/**" ]
         }
     ],
     "rules": {
