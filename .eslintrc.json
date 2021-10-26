@@ -17,6 +17,30 @@
     "plugins": [
         "react"
     ],
+    "overrides": [
+        {
+            "files": [ "app/javascript/**" ],
+        }
+    ],
     "rules": {
+        "quotes": ["error", "double"],
+        "indent": ["error", 2],
+        "semi-spacing": ["error", { "before": false, "after": true }],
+        "lines-between-class-members": ["error", "always"],
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+        "no-new": "off",
+        "import/prefer-default-export": "off",
+        "react/jsx-props-no-spreading": "off",
+        "max-len": "off",
+        "linebreak-style": "off",
+        "no-confusing-arrow": "off",
+        "object-curly-newline": "off",
+        "no-use-before-define": "off",
+        "arrow-parens": "off",
+        "space-before-function-paren": "off",
+        "comma-dangle": "off",
+        "react/require-default-props": "off",
+        "no-throw-literal": "off",
+        "no-plusplus": "off"
     }
 }
