@@ -1,0 +1,58 @@
+name: Rspec Test
+
+on: pull_request
+
+jobs:
+  rspec-run:
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+
+    env:
+      PGHOST: postgres
+      PGUSER: postgres
+      PGPORT: 5432
+      RAILS_ENV: test
+      # The following env are randomly generated strings
+      SECRET_KEY_BASE: 7636b00bb76d4e669a9ee3b0b9ba563ce13f84da9717a6499b0c085471ca4eb6bfc4442cf39f474b23d5d77c0377627da926383dbaf9f16edc4affbd5938ac86
+      DEVISE_SECRET_KEY: 7636b00bb76d4e669a9ee3b0b9ba563ce13f84da9717a6499b0c085471ca4eb6bfc4442cf39f474b23d5d77c0377627da926383dbaf9f16edc4affbd5938ac87
+      AWS_ACCESS_KEY_ID: PLACEHOLDERKEY
+      AWS_SECRET_ACCESS_KEY: PLACEHOLDERPLACEHOLDER
+      AWS_S3_BUCKET: PLACEHOLDER
+      RECAPTCHA_SITE_KEY: PLACEHOLDERPLACEHOLDERPLACEHOLDERPLACEHOLDER
+      RECAPTCHA_SECRET_KEY: PLACEHOLDERPLACEHOLDERPLACEHOLDERPLACEHOLDER
+      AWS_REGION: us-east-1
+      VAPID_PUBLIC_KEY: 7636b00bb76d4e669a9ee3b0b9ba563ce13f84da9717a6499b0c085471ca4eb6bfc4442cf39f474b23d5d77c0377627da926383dbaf9f16edc4affbd5938ac86
+      VAPID_PRIVATE_KEY: 7636b00bb76d4e669a9ee3b0b9ba563ce13f84da9717a6499b0c085471ca4eb6bfc4442cf39f474b23d5d77c0377627da926383dbaf9f16edc4affbd5938ac86
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.5.7
+          bundler-cache: true
+
+      - name: Set up Rails app
+        # Duplicate database config file for test environment
+        run: |
+          cp config/database.yml.tmpl config/database.yml \
+          && RAILS_ENV=test bundle exec rails db:setup
+
+      - name: Run tests
+        run: |
+          bundle exec rspec

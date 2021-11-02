@@ -1,9 +1,13 @@
 {
-  "extends": [
-    "wesbos"
+  "extends": ["wesbos"],
+  "overrides": [
+    {
+      "files": ["app/javascript/**"]
+    }
   ],
+  "parser": "@babel/eslint-parser",
   "rules": {
-    "no-console": 2,
+    "no-console": ["error", { "allow": ["warn", "error"] }],
     "prettier/prettier": [
       "error",
       {
