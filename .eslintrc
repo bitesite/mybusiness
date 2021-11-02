@@ -1,6 +1,9 @@
 {
-  "extends": [
-    "wesbos"
+  "extends": ["wesbos"],
+  "overrides": [
+    {
+      "files": ["app/javascript/**"]
+    }
   ],
   "rules": {
     "no-console": 2,

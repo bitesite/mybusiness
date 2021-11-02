@@ -1,5 +1,15 @@
-# Ignore built files and .github folder
 node_modules/*
 vendor/*
 .github/*
 app/assets/*
+bin/*
+config/*
+db/*
+lib/*
+log/*
+public/*
+script/*
+spec/*
+tmp/*
+ventor/*
+*.config.js
