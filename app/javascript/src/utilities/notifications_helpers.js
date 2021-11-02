@@ -59,7 +59,7 @@ function sendSubscriptionToServer(subscription, signedIn, onSuccess) {
       }
     },
     error() {
-      console.log('Error registering subscription with server.');
+      console.error('Error registering subscription with server.');
     },
   });
 }
@@ -74,7 +74,7 @@ function deleteSubscriptionFromServer(subscription) {
     },
     success() {},
     error() {
-      console.log('Error registering subscription with server.');
+      console.error('Error registering subscription with server.');
     },
   });
 }
