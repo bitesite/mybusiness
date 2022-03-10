@@ -68,6 +68,8 @@ end
 
 gem 'jquery-rails'
 
+gem 'resque'
+
 ruby '2.5.7'
 #ruby-gemset=mybusiness
 
