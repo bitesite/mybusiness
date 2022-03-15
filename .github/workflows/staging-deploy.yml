@@ -15,3 +15,10 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "bitesitestaging"
           heroku_email: "jack@thejackwu.com"
+      - name: Ensure User is Still Logged in to Heroku
+        run: heroku auth:whoami
+
+      - name: Run Database Migrations
+        env:
+          HEROKU_API_KEY: ${{secrets.HEROKU_API_KEY}}
+        run: heroku run rake db:migrate -a ${{secrets.HEROKU_STAGING_APP_NAME}}
