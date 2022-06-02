@@ -117,7 +117,8 @@ class PagesController < ApplicationController
       { image: 'staff/chris.png', name: 'Chris Francis', position: 'Software Developer' },
       { image: 'staff/tania.png', name: 'Tania Das', position: 'UX/UI Designer' },
       { image: 'staff/anna.png', name: 'Anna Baranova', position: 'Software Developer' },
-      { image: 'staff/angela.png', name: 'Angela Choi', position: 'Software Developer' }
+      { image: 'staff/angela.png', name: 'Angela Choi', position: 'Software Developer' },
+      { image: 'staff/nar.png', name: 'Nar Raeewal', position: 'Software Developer' }
     ]
   end
   
