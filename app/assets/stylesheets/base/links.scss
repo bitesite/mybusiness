@@ -1,11 +1,26 @@
 a {
-  border:none;
+  border: none;
   color: $primary-color;
   transition: $transition;
   text-decoration: none;
   font-style: italic;
-  
+
   &:hover {
-    color:#000;
-  };
+    color: #000;
+  }
+}
+
+// ------------------------------------------New Links ------------------------------------------
+
+a {
+  color: #394243;
+  transition: $transition;
+
+  &:hover {
+    color: #58b3b8;
+  }
+
+  &.selected {
+    color: #2a7f89;
+  }
 }
