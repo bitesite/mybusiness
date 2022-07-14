@@ -109,6 +109,10 @@ GEM
     faker (1.7.3)
       i18n (~> 0.5)
     ffi (1.11.3)
+    figstrap_rails (0.0.4)
+      rails
+      sass
+      sass-rails
     fog-aws (2.0.1)
       fog-core (~> 1.38)
       fog-json (~> 1.0)
@@ -331,6 +335,7 @@ DEPENDENCIES
   exponent-server-sdk
   factory_bot_rails
   faker (= 1.7.3)
+  figstrap_rails
   fog-aws
   font-awesome-rails
   friendly_id
