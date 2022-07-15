@@ -8,25 +8,25 @@
 }
 .case-study {
   .hero {
-    height:200px;
-    background-size:cover;
+    height: 200px;
+    background-size: cover;
 
     h1 {
-      letter-spacing:0px;
+      letter-spacing: 0px;
       margin: 0;
-      color:white;
-      text-shadow:2px 2px black;
-      font-family: "Avenir LT Std";
+      color: white;
+      text-shadow: 2px 2px black;
+      font-family: "Helvetica Neue";
       font-weight: 65;
       font-size: 3em;
     }
 
     .services {
       .service {
-        border:1px solid white;
-        padding:5px 10px;
-        color:white;
-        display:inline-block;
+        border: 1px solid white;
+        padding: 5px 10px;
+        color: white;
+        display: inline-block;
         text-transform: uppercase;
         font-size: 0.8em;
       }
@@ -45,115 +45,146 @@
   }
 
   .main-body {
-    padding:20px 0;
+    padding: 20px 0;
 
     h2 {
-      margin-top:40px;
-      text-align:center;
+      margin-top: 40px;
+      text-align: center;
     }
 
     .two-video-layout {
       .left-video {
-        width:calc(50% - 5px);
-        float:left;
-        padding-right:5px;
+        width: calc(50% - 5px);
+        float: left;
+        padding-right: 5px;
       }
 
       .right-video {
-        width:calc(50% - 5px);
-        float:left;
-        padding-left:5px;
+        width: calc(50% - 5px);
+        float: left;
+        padding-left: 5px;
       }
 
       @media only screen and (max-width: $mobile-menu-device-width) {
-        .left-video, .right-video { width: 100%; padding:0; float:none; }
+        .left-video,
+        .right-video {
+          width: 100%;
+          padding: 0;
+          float: none;
+        }
       }
     }
 
     .four-video-layout {
       .left-video {
-        width:calc(25% - 5px);
-        float:left;
-        padding-right:5px;
+        width: calc(25% - 5px);
+        float: left;
+        padding-right: 5px;
       }
 
       .middle-video {
-        width:calc(25% - 5px);
-        float:left;
-        padding-left:2.5px;
-        padding-right:2.5px;
+        width: calc(25% - 5px);
+        float: left;
+        padding-left: 2.5px;
+        padding-right: 2.5px;
       }
 
       .right-video {
-        width:calc(25% - 5px);
-        float:left;
-        padding-left:5px;
+        width: calc(25% - 5px);
+        float: left;
+        padding-left: 5px;
       }
 
       @media only screen and (max-width: $mobile-menu-device-width) {
-        .left-video, .right-video, .middle-video { width: 100%; padding:0; float:none; }
+        .left-video,
+        .right-video,
+        .middle-video {
+          width: 100%;
+          padding: 0;
+          float: none;
+        }
       }
     }
 
     .quote {
-      font-family: "Avenir LT Std";
+      font-family: "Helvetica Neue";
       font-weight: 45;
       font-style: italic;
-      width:100%;
-      max-width:700px;
-      margin:40px auto;
-      line-height:2em;
-
-
+      width: 100%;
+      max-width: 700px;
+      margin: 40px auto;
+      line-height: 2em;
 
       .avatar {
-        float:left;
-        width:calc(20% - 20px);
-        padding:10px;
+        float: left;
+        width: calc(20% - 20px);
+        padding: 10px;
 
         img {
-          width:100%;
+          width: 100%;
         }
       }
 
       .body {
-        float:left;
-        width:calc(80% - 20px);
-        padding:10px;
+        float: left;
+        width: calc(80% - 20px);
+        padding: 10px;
 
         .author {
-          font-size:0.9em;
+          font-size: 0.9em;
         }
       }
 
       &.wide {
-        max-width:100%;
+        max-width: 100%;
 
         .avatar {
-          max-width:120px;
+          max-width: 120px;
         }
       }
     }
 
     p {
-      line-height:2em;
+      line-height: 2em;
 
       b {
-        font-family: "Avenir LT Std";
+        font-family: "Helvetica Neue";
         font-weight: 65;
       }
     }
   }
 }
 
-.is-case-study .hero { background-image: image-url('case_studies/is_header_bg.jpg'); }
-.curtiss_wright-case-study .hero { background-image: image-url('case_studies/curtiss_wright_header_bg.jpg'); }
-.mydoma-case-study .hero { background-image: image-url('case_studies/mydoma_header_bg.jpg'); }
-.lspark-case-study .hero { background-image: image-url('case_studies/lspark_header_bg.jpg'); }
-.filefacets-case-study .hero { background-image: image-url('case_studies/filefacets_header_bg.jpg'); }
-.ewa-case-study .hero { background-image: image-url('case_studies/ewa_header_bg.jpg'); }
-.martello-case-study .hero { background-image: image-url('case_studies/martello_header_bg.jpg'); }
-.splice-case-study .hero { background-image: image-url('case_studies/splice_header_bg.jpg'); }
-.d3m-case-study .hero { background-image: image-url('case_studies/d3m_header_bg.jpg'); }
-.christine-kelly-case-study .hero { background-image: image-url('case_studies/christine_kelly_header_bg.jpg'); }
-.solink-case-study .hero { background-image: image-url('case_studies/solink_header_bg.jpg'); }
+.is-case-study .hero {
+  background-image: image-url("case_studies/is_header_bg.jpg");
+}
+.curtiss_wright-case-study .hero {
+  background-image: image-url("case_studies/curtiss_wright_header_bg.jpg");
+}
+.mydoma-case-study .hero {
+  background-image: image-url("case_studies/mydoma_header_bg.jpg");
+}
+.lspark-case-study .hero {
+  background-image: image-url("case_studies/lspark_header_bg.jpg");
+}
+.filefacets-case-study .hero {
+  background-image: image-url("case_studies/filefacets_header_bg.jpg");
+}
+.ewa-case-study .hero {
+  background-image: image-url("case_studies/ewa_header_bg.jpg");
+}
+.martello-case-study .hero {
+  background-image: image-url("case_studies/martello_header_bg.jpg");
+}
+.splice-case-study .hero {
+  background-image: image-url("case_studies/splice_header_bg.jpg");
+}
+.d3m-case-study .hero {
+  background-image: image-url("case_studies/d3m_header_bg.jpg");
+}
+.christine-kelly-case-study .hero {
+  background-image: image-url("case_studies/christine_kelly_header_bg.jpg");
+}
+.solink-case-study .hero {
+  background-image: image-url("case_studies/solink_header_bg.jpg");
+}

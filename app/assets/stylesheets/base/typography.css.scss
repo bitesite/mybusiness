@@ -4,11 +4,11 @@ body {
 }
 
 h1 {
-  margin:40px 0px;
-  font-family: 'Avenir LT Std';
+  margin: 40px 0px;
+  font-family: "Helvetica Neue";
   font-weight: 85;
-  font-size:1.5em;
-  color:#555;
+  font-size: 1.5em;
+  color: #555;
 
   &.section-header {
     position: relative;
@@ -42,21 +42,21 @@ h1 {
 }
 
 h2 {
-  padding:0px;
+  padding: 0px;
   margin: 20px 0;
-  font-family: 'Avenir LT Std';
+  font-family: "Helvetica Neue";
   font-weight: 85;
-  font-size:1.25em;
+  font-size: 1.25em;
 }
 
 h3 {
-  color:#555;
-  font-family: 'Avenir LT Std';
+  color: #555;
+  font-family: "Helvetica Neue";
   font-weight: 85;
 }
 
 p {
-  color:#555;
+  color: #555;
 }
 
 .spaced {
@@ -67,7 +67,8 @@ p {
   text-align: center;
 }
 
-b, strong {
-  font-family: 'Avenir LT Std';
+b,
+strong {
+  font-family: "Helvetica Neue";
   font-weight: 85;
 }
