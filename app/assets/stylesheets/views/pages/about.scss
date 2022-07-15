@@ -15,8 +15,32 @@
     }
 
     .about-content {
-      margin-top: 77px;
       max-width: 780px;
+    }
+  }
+  .about-page-beliefs {
+    padding: 64px 120px 128px;
+    .about-belief-content {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: 1fr;
+      .about-belief-item {
+        .about-belief-item-title {
+          border-left: 3px solid #2a7f89;
+          height: 44px;
+          text-align: start;
+          line-height: 44px;
+          padding-left: 10px;
+          div {
+            line-height: 1.5;
+            display: inline-block;
+            vertical-align: middle;
+          }
+        }
+        .about-belief-item-content {
+          text-align: start;
+        }
+      }
     }
   }
 
