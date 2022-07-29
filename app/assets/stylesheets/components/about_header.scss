@@ -1,0 +1,52 @@
+.component-about-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 1440px;
+  text-align: center;
+  .about-page-header {
+    color: $darkest-gray;
+    .about-image {
+      max-height: 300px;
+      max-width: 450px;
+      object-fit: cover;
+      align-self: center;
+    }
+
+    .about-content {
+      max-width: 780px;
+    }
+  }
+  .about-page-beliefs {
+    padding: 64px 120px 128px;
+    .about-belief-title {
+      color: $darkest-gray;
+      margin: 0;
+    }
+    .about-belief-content {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: 1fr;
+      .about-belief-item {
+        .about-belief-item-title {
+          border-left: 3px solid $primary-default-color;
+          height: 44px;
+          text-align: start;
+          line-height: 44px;
+          padding-left: 10px;
+          color: $darkest-gray;
+          div {
+            line-height: 1.5;
+            display: inline-block;
+            vertical-align: middle;
+          }
+        }
+        .about-belief-item-content {
+          text-align: start;
+          color: $dark-gray;
+        }
+      }
+    }
+  }
+}

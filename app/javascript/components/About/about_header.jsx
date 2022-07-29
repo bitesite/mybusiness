@@ -1,10 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
-import aboutHeroImage from '../../assets/images/about-hero-image.png';
+import aboutHeroImage from '../../../assets/images/about-hero-image.png';
 
-const AboutPage = () => (
-  <div className="about-page fgs-al  fgs-al-v frs-al-g-10">
+const AboutHeader = () => (
+  <div className="component-about-header">
     <div className="about-page-header fgs-al  fgs-al-v fgs-al-g-60">
       <h1 className="about-header-title">About Us</h1>
       <img src={aboutHeroImage} alt="about-main-pic" className="about-image" />
@@ -17,7 +15,7 @@ const AboutPage = () => (
       </div>
     </div>
     <div className="about-page-beliefs  fgs-al  fgs-al-v fgs-al-g-60 fgs-al-align-items-center fgs-al-justify-content-flex-center">
-      <div className="about-belief-title">Our Beliefs</div>
+      <h1 className="about-belief-title">Our Beliefs</h1>
       <div className="about-belief-content  fgs-al  fgs-al-h frs-al-g-30 fgs-al-align-items-flex-start fgs-al-p-10">
         <div className="about-belief-item fgs-al fgs-al-v fgs-al-g-20  fgs-al-align-items-flex-start fgs-al-p-10">
           <div className="about-belief-item-title">
@@ -57,13 +55,4 @@ const AboutPage = () => (
   </div>
 );
 
-export default AboutPage;
-
-AboutPage.propTypes = {};
-
-document.addEventListener('DOMContentLoaded', () => {
-  const element = document.getElementById('about-page-component-mount-point');
-  if (element) {
-    ReactDOM.render(<AboutPage />, element);
-  }
-});
+export default AboutHeader;
