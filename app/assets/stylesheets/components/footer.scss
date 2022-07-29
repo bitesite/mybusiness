@@ -8,38 +8,14 @@
     width: fill;
 
     .company-info {
-      border: solid white;
-
+      font-family: "Helvetica Neue";
+      font-style: normal;
       .title {
-        /* Caption/Bold */
-
-        font-family: "Helvetica Neue";
-        font-style: normal;
-        font-weight: 700;
-        font-size: 12px;
-        line-height: 15px;
-        /* identical to box height */
-
-        letter-spacing: 0.003em;
-
-        /* Primary/Darkest */
-
-        color: #004251;
+        color: $primary-color;
       }
 
       .info {
-        /* Caption/ Light */
-
-        font-family: "Helvetica Neue";
-        font-style: normal;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 14px;
-        letter-spacing: 0.003em;
-
-        /* Shade/Dark */
-
-        color: #888e8e;
+        color: $dark-gray;
       }
     }
 
@@ -50,17 +26,10 @@
 
         font-family: "Helvetica Neue";
         font-style: normal;
-        font-weight: 500;
-        font-size: 12px;
-        line-height: 22px;
-
-        /* identical to box height, or 183% */
-
-        letter-spacing: 0.3px;
 
         /* Shade/Darkest */
 
-        color: #394243;
+        color: $darkest-gray;
       }
 
       .resources-links {
@@ -73,13 +42,10 @@
         font-weight: 700;
         font-size: 12px;
         line-height: 15px;
-        /* identical to box height */
-
-        letter-spacing: 0.003em;
 
         /* Shade/Dark */
 
-        color: #888e8e;
+        color: $dark-gray;
         white-space: nowrap;
       }
       .social-media-links {

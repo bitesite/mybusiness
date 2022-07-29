@@ -8,8 +8,8 @@ import Link from '../components/link';
 const Footer = () => (
   <div className="footer">
     <div className="container fgs-al  fgs-al-align-items-flex-start  fgs-al-justify-content-space-between">
-      <div className="company-info fgs-ali fgs-al fgs-al-v fgs-al-g-10 ">
-        <span className="title fgs-ali">BiteSite Inc.</span>
+      <div className="company-info caption-light fgs-ali fgs-al fgs-al-v fgs-al-g-10 ">
+        <span className="title caption-bold fgs-ali">BiteSite Inc.</span>
 
         <div className="info fgs-al fgs-ali  fgs-al-v fgs-al-g-6">
           <span className="info fgs-ali">© 2021 BiteSite Inc.</span>
@@ -24,7 +24,7 @@ const Footer = () => (
       </div>
 
       <div className="links fgs-al fgs-ali  fgs-al-h fgs-al-align-items-flex-start fgs-al-g-60 ">
-        <div className="company-links fgs-ali fgs-al fgs-al-v fgs-al-g-6">
+        <div className="company-links caption-medium fgs-ali fgs-al fgs-al-v fgs-al-g-6">
           <span className="links-title fgs-ali">COMPANY</span>
           <Link path="/services" className="fgs-ali">
             Services
@@ -40,7 +40,7 @@ const Footer = () => (
           </Link>
         </div>
 
-        <div className="resources-links fgs-ali fgs-al fgs-al-v fgs-al-g-6">
+        <div className="resources-links caption-medium fgs-ali fgs-al fgs-al-v fgs-al-g-6">
           <span className="links-title fgs-ali">RESOURCES</span>
           <Link path="/blog" className="fgs-ali">
             Blog
