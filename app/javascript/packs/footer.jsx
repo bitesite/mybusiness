@@ -2,24 +2,28 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { faYoutube, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import Link from '../components/link';
 
 const Footer = () => (
   <div className="footer">
     <div className="container fgs-al  fgs-al-align-items-flex-start  fgs-al-justify-content-space-between">
       <div className="company-info fgs-ali fgs-al fgs-al-v fgs-al-g-10 ">
-        <span className="title fgs-ali">2021 BiteSite Inc.</span>
+        <span className="title fgs-ali">BiteSite Inc.</span>
 
-        <div className="fgs-al fgs-ali  fgs-al-v fgs-al-g-6">
-          <span className="info fgs-ali">204 - 78 George St.</span>
-          <span className="info fgs-ali">Ottawa, ON</span>
-          <span className="info fgs-ali">K1N 5W1</span>
+        <div className="info fgs-al fgs-ali  fgs-al-v fgs-al-g-6">
+          <span className="info fgs-ali">© 2021 BiteSite Inc.</span>
+
+          <span className="info fgs-ali">
+            204 - 78 George St.
+            <br />
+            Ottawa, ON <br /> K1N 5W1
+          </span>
           <span className="info fgs-ali">info@bitesite.ca</span>
         </div>
       </div>
 
-      <div className="links fgs-al fgs-ali  fgs-al-h fgs-al-align-items-flex-start fgs-al-g-60">
+      <div className="links fgs-al fgs-ali  fgs-al-h fgs-al-align-items-flex-start fgs-al-g-60 ">
         <div className="company-links fgs-ali fgs-al fgs-al-v fgs-al-g-6">
           <span className="links-title fgs-ali">COMPANY</span>
           <Link path="/services" className="fgs-ali">
@@ -54,10 +58,10 @@ const Footer = () => (
 
           <div className="fgs-ali fgs-al fgs-al-h fgs-al-g-20 fgs-al-align-items-flex-center">
             <Link path="https://www.youtube.com/user/bitesiteca">
-              <FontAwesomeIcon icon={faCoffee} />
+              <FontAwesomeIcon icon={faYoutube} className="fa-2x" />
             </Link>
             <Link path="https://www.twitter.com/bitesite">
-              <FontAwesomeIcon icon={faCoffee} />
+              <FontAwesomeIcon icon={faTwitter} className="fa-2x" />
             </Link>
           </div>
         </div>
