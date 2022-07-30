@@ -1,0 +1,15 @@
+.component-our-team {
+  padding: 128px 120px;
+  .our-team-content {
+    overflow: auto;
+    width: 100%;
+    .our-team-member {
+      .our-team-member-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}

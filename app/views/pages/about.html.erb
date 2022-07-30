@@ -2,19 +2,6 @@
 
 <div id="pages-about">
   <div class="container">
-   
-    <div id='about-page-component-mount-point'    %>'></div>
-
-    <div class="team-members">
-      <% @team_members.each do |team_member| %>
-        <div class='team-member'>
-          <%= image_tag team_member[:image] %>
-          <div>
-            <div class='name'><%= team_member[:name] %></div>
-            <div class='position'><%= team_member[:position] %></div>
-          </div>
-        </div>
-      <% end %>
-    </div>
+    <div id='about-page-component-mount-point' data-team-members='<%= @team_members %>'></div>
   </div>
 </div>
