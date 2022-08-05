@@ -20,7 +20,14 @@
       }
     }
   }
-  .card-image {
-    height: 150px;
+
+  .right {
+    order: 1;
+  }
+
+  .image-block {
+    .card-image {
+      height: 150px;
+    }
   }
 }
