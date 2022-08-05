@@ -7,13 +7,13 @@ const GeneralPost = ({ image, header, text, button }) => (
       <div className="content fgs-al fgs-ali fgs-al-v fgs-al-g-30 ">
         <div className="title fgs-ali heading-regular fgs-al-g-16">{header}</div>
         <p className="text fgs-ali">{text}</p>
-        <button className="button" type="button">
+        <button className="button fgs-ali btn primary-default" type="button">
           {button}
         </button>
       </div>
 
       <div className="fgs-ali">
-        <img className="card-image" src={image} alt="text" />
+        <img className="card-image" src={image} alt="general component" />
       </div>
     </div>
   </div>
