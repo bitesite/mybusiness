@@ -5,7 +5,8 @@
   justify-content: center;
   text-align: center;
   color: $darkest-gray;
-  width: 100%;
+  // width: 100%;
+  padding: 96px 0px;
   .about-page-header {
     color: $darkest-gray;
     .about-image {
@@ -20,15 +21,15 @@
     }
   }
   .about-page-beliefs {
-    padding: 64px 0 128px 0;
+    padding: 64px 0 0 0;
     .about-belief-title {
       color: $darkest-gray;
       margin: 0;
     }
     .about-belief-content {
       display: grid;
-      grid-auto-flow: column;
-      grid-auto-columns: 1fr;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-gap: 24px;
       .about-belief-item {
         .about-belief-item-title {
           border-left: 3px solid $primary-default-color;

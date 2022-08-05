@@ -4,8 +4,8 @@
   background-color: $background;
   .learn-more-about-us-container {
     display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
     color: $darkest-gray;
     .learn-more-about-us-image {
       display: flex;
