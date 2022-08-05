@@ -31,15 +31,19 @@
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       grid-gap: 24px;
       .about-belief-item {
+        display: grid;
+        grid-template-rows: 1fr 4fr;
         .about-belief-item-title {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
           border-left: 3px solid $primary-default-color;
-          height: 44px;
           text-align: start;
-          line-height: 44px;
+          line-height: 24px;
           padding-left: 10px;
+          min-height: 50px;
           color: $darkest-gray;
           div {
-            line-height: 1.5;
             display: inline-block;
             vertical-align: middle;
           }

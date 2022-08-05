@@ -18,9 +18,7 @@ const AboutHeader = () => (
       <div className="about-belief-title heading-regular">Our Beliefs</div>
       <div className="about-belief-content  fgs-al  fgs-al-h frs-al-g-30 fgs-al-align-items-flex-start fgs-al-p-10">
         <div className="about-belief-item fgs-al fgs-al-v fgs-al-g-30  fgs-al-align-items-flex-start fgs-al-p-10">
-          <div className="about-belief-item-title">
-            <div className="heading-small">Transparency</div>
-          </div>
+          <div className="about-belief-item-title heading-small">Transparency</div>
           <div className="about-belief-item-content body-regular">
             We place honesty amongst ourselves and with our clients above business, money, or conflict. At BiteSite, we don’t shy
             away from speaking our mind, because we know the best teams are made up of authentic people who value collaboration
@@ -29,9 +27,7 @@ const AboutHeader = () => (
           </div>
         </div>
         <div className="about-belief-item fgs-al fgs-al-v fgs-al-g-30  fgs-al-align-items-flex-start fgs-al-p-10">
-          <div className="about-belief-item-title">
-            <div className="heading-small">Flexibility</div>
-          </div>
+          <div className="about-belief-item-title heading-small">Flexibility</div>
           <div className="about-belief-item-content body-regular">
             The reality is, it's very hard to predict how well a product, or even a client relationship, will do. Whether it be
             personalities, working style, or environment, there are a lot of factors that have to line up for a successful
@@ -40,9 +36,7 @@ const AboutHeader = () => (
           </div>
         </div>
         <div className="about-belief-item fgs-al fgs-al-v fgs-al-g-30  fgs-al-align-items-flex-start fgs-al-p-10">
-          <div className="about-belief-item-title">
-            <div className="heading-small">Predictability/ Collaborative Progress/ Iterations</div>
-          </div>
+          <div className="about-belief-item-title heading-small">Predictability/ Collaborative Progress/ Iterations</div>
 
           <div className="about-belief-item-content body-regular">
             We work best when there is a well structured, defined process that still allows for agile flexibility. We believe that
