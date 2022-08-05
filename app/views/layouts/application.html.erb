@@ -6,8 +6,12 @@
 		<link rel="manifest" href="/manifest.json" />
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<%= include_gon %>
+		<%= javascript_pack_tag "services" %> 
+
+
 	</head>
 	<body>
+
 		<%= render "layouts/flash", flash: flash %>
 
 		<%= render "layouts/header" %>
