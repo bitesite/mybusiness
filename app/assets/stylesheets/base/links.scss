@@ -13,14 +13,20 @@ a {
 // ------------------------------------------New Links ------------------------------------------
 
 a {
-  color: #394243;
+  color: $darkest-gray;
   transition: $transition;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: underline;
+  font-family: "Helvetica Neue", sans-serif;
+  line-height: 18px;
+  letter-spacing: 0.3px;
+  font-style: normal;
 
   &:hover {
-    color: #58b3b8;
+    color: $primary-lighter-color;
   }
-
   &.selected {
-    color: #2a7f89;
+    color: $primary-default-color;
   }
 }

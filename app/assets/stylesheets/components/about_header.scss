@@ -3,8 +3,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 1440px;
   text-align: center;
+  color: $darkest-gray;
+  width: 100%;
   .about-page-header {
     color: $darkest-gray;
     .about-image {
@@ -19,7 +20,7 @@
     }
   }
   .about-page-beliefs {
-    padding: 64px 120px 128px;
+    padding: 64px 0 128px 0;
     .about-belief-title {
       color: $darkest-gray;
       margin: 0;

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ProcessSteps from '../process_steps';
 
 const ProcessStepProgress = () => {
-  const [status, setStatus] = useState(0);
+  const [status, setStatus] = useState(null);
 
   const steps = [
     {
@@ -44,21 +44,22 @@ const ProcessStepProgress = () => {
     const totalDocScrollLength = docHeight - winHeight;
     const scrollPostion = Math.floor((scrollTop / totalDocScrollLength) * 100);
 
-    if (scrollPostion > 38 && scrollPostion <= 40) {
+    if (scrollPostion > 40 && scrollPostion <= 45) {
       return setStatus(0);
     }
-    if (scrollPostion > 40 && scrollPostion < 44) {
+    if (scrollPostion > 45 && scrollPostion <= 50) {
       return setStatus(1);
     }
-    if (scrollPostion > 44 && scrollPostion < 48) {
+    if (scrollPostion > 50 && scrollPostion <= 55) {
       return setStatus(2);
     }
-    if (scrollPostion > 48 && scrollPostion < 50) {
+    if (scrollPostion > 55 && scrollPostion <= 58) {
       return setStatus(3);
     }
-    if (scrollPostion > 50) {
+    if (scrollPostion > 58) {
       return setStatus(4);
     }
+    return setStatus(null);
   };
 
   const listenToScrollEvent = () => {

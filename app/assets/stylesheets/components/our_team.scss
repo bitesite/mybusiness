@@ -1,14 +1,19 @@
 .component-our-team {
   padding: 128px 120px;
   .our-team-content {
-    overflow: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     .our-team-member {
+      width: 200px;
       .our-team-member-info {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        gap: 10px;
       }
     }
   }

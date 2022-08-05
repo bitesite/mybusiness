@@ -16,8 +16,8 @@ const OurTeam = ({ teamMembers }) => (
               <img src={teamMember.image} alt={teamMember.name} />
             </div>
             <div className="our-team-member-info">
-              <div className="our-team-member-name">{teamMember.name}</div>
-              <div className="our-team-member-title">{teamMember.position}</div>
+              <div className="our-team-member-name heading-small">{teamMember.name}</div>
+              <div className="our-team-member-title body-large">{teamMember.position}</div>
             </div>
           </div>
         ))}
