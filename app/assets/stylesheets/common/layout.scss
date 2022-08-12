@@ -1,295 +1,328 @@
 body {
-	background: $dark-primary-color-1;
+  background: $dark-primary-color-1;
 }
 
 .container {
-	margin: 0 auto;
-	position:relative;
-	max-width:1170px;
-	padding:0 20px;
-	width:calc(100% - 40px);
+  margin: 0 auto;
+  position: relative;
+  max-width: 1170px;
+  padding: 0 20px;
 }
 
 .navigation-bar-fixed {
-	position:fixed;
-	top:0;
+  position: fixed;
+  top: 0;
 }
 
 $header-height: 70px;
 
 #header {
-	height: $header-height;
-	position: fixed;
-	width: 100%;
-	background: white;
-	z-index: 1000;
+  height: $header-height;
+  position: fixed;
+  width: 100%;
+  background: white;
+  z-index: 1000;
 
-	.container {
-		display: flex;
-		height: 100%;
+  .container {
+    display: flex;
+    height: 100%;
 
-		.logo-container {
-			width: 185px;
-			height: 100%;
+    .logo-container {
+      width: 185px;
+      height: 100%;
 
-			display: flex;
-			align-items: center;
+      display: flex;
+      align-items: center;
 
-			.logo {
-				width: 100%;
-			}
-		}
+      .logo {
+        width: 100%;
+      }
+    }
 
-		.nav-links {
-			display: flex;
-			align-items: center;
-			justify-content: flex-end;
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
 
-			height: 100%;
-			width: calc(100% - 185px);
+      height: 100%;
+      width: calc(100% - 185px);
 
-			a {
-				font-style: normal;
-				font-family: 'Avenir LT Std';
-				font-weight: 65;
-				color: $light-gray-1;
-				text-decoration: none;
-				text-transform: lowercase;
-				margin: 0 20px;
-				transition: 200ms;
+      a {
+        font-style: normal;
+        font-family: "Avenir LT Std";
+        font-weight: 65;
+        color: $light-gray-1;
+        text-decoration: none;
+        text-transform: lowercase;
+        margin: 0 20px;
+        transition: 200ms;
 
-				&:hover {
-					color: $primary-color;
-				}
-			}
+        &:hover {
+          color: $primary-color;
+        }
+      }
 
-			@media screen and (max-width: $mobile-menu-device-width) {
-				display: none;
-			}
-		}
+      @media screen and (max-width: $mobile-menu-device-width) {
+        display: none;
+      }
+    }
 
-		.mobile-menu-toggle-container {
-			display: none;
-			
-			@media screen and (max-width: $mobile-menu-device-width) {
-				width: calc(100% - 185px);
-				display: flex;
+    .mobile-menu-toggle-container {
+      display: none;
 
-				justify-content: flex-end;
-				align-items: center;
-				font-size: 2em;
-			}
-		}
-	}
+      @media screen and (max-width: $mobile-menu-device-width) {
+        width: calc(100% - 185px);
+        display: flex;
 
-
+        justify-content: flex-end;
+        align-items: center;
+        font-size: 2em;
+      }
+    }
+  }
 }
 
 .mobile-nav-links-container {
-	display: none;
+  display: none;
 
-	@media screen and (max-width: $mobile-menu-device-width) {
-		display: block;
+  @media screen and (max-width: $mobile-menu-device-width) {
+    display: block;
 
-		.mobile-nav-links {
-			display: none;
-			top: 70px;
-			background: white;
-			max-height: calc(100% - #{$header-height});
-			width: 100%;
-			overflow-y: scroll;
-			position: fixed;
-			z-index: 2000;
+    .mobile-nav-links {
+      display: none;
+      top: 70px;
+      background: white;
+      max-height: calc(100% - #{$header-height});
+      width: 100%;
+      overflow-y: scroll;
+      position: fixed;
+      z-index: 2000;
 
-			a {
-				display: block;
-				padding: 20px 0;
-				text-align: center;
-				font-style: normal;
+      a {
+        display: block;
+        padding: 20px 0;
+        text-align: center;
+        font-style: normal;
 
-				border-bottom: 1px solid $light-gray-1;
-			}
-		}
-	}
+        border-bottom: 1px solid $light-gray-1;
+      }
+    }
+  }
 }
 
 #content {
-	padding-top: $header-height;
-	padding-bottom: 50px;
-	background: white;
+  padding-top: $header-height;
+  padding-bottom: 50px;
+  background: white;
+  min-height: 500px;
 
-	.hero {
-	  position: relative;
-	  padding-top: 120px;
-		
-		.slogan {
-		  position: relative;
-		  text-align: left;
-			font-family: 'Avenir Next Condensed';
-		  text-transform: uppercase;
-		  font-size: 85px;
-		  line-height: 70px;
+  .hero {
+    position: relative;
+    padding-top: 120px;
 
-		  background: white;
-		  padding: 30px 0px 30px 0;
-		  z-index: 10;
+    .slogan {
+      position: relative;
+      text-align: left;
+      font-family: "Avenir Next Condensed";
+      text-transform: uppercase;
+      font-size: 85px;
+      line-height: 70px;
 
-		  .emphasize {
-				font-family: 'Avenir Next Condensed';
-				font-weight: 500;
-		    color: $primary-color;
-		  }
+      background: white;
+      padding: 30px 0px 30px 0;
+      z-index: 10;
 
-		  @media screen and (max-width: $mobile-menu-device-width) {
-		  	font-size: 60px;
-		  	line-height: 55px;
-		  }
-		}
+      .emphasize {
+        font-family: "Avenir Next Condensed";
+        font-weight: 500;
+        color: $primary-color;
+      }
 
-		.subslogan {
-			font-family: 'Avenir LT Std';
-			font-weight: 65;
-		  font-size: 19px;
+      @media screen and (max-width: $mobile-menu-device-width) {
+        font-size: 60px;
+        line-height: 55px;
+      }
+    }
 
-		  .emphasize {
-				font-family: 'Avenir LT Std';
-				font-weight: 85;
-		  }
-		}
-	}
+    .subslogan {
+      font-family: "Avenir LT Std";
+      font-weight: 65;
+      font-size: 19px;
 
-	.section {
-		padding: 75px 0 0 0;
-	}
+      .emphasize {
+        font-family: "Avenir LT Std";
+        font-weight: 85;
+      }
+    }
+  }
 
-	.feature-list {
-		display: flex;
+  .section {
+    padding: 75px 0 0 0;
+  }
 
-		.feature {
+  .feature-list {
+    display: flex;
 
-			.feature-header {
-				text-align: center;
+    .feature {
+      .feature-header {
+        text-align: center;
 
-				img {
-					max-width: 100%;
-				}
+        img {
+          max-width: 100%;
+        }
 
-				.text {
-					font-family: 'Avenir LT Std';
-					font-weight: 85;
-					font-size: 1.25em;
-					height: 60px;
-					display: flex;
-					align-items: center;
-					justify-content: center;
-				}
+        .text {
+          font-family: "Avenir LT Std";
+          font-weight: 85;
+          font-size: 1.25em;
+          height: 60px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
 
-				.simple-text {
-					font-size: 1em;
-					height: 60px;
-					display: flex;
-					align-items: center;
-					justify-content: center;	
-				}
-			}
+        .simple-text {
+          font-size: 1em;
+          height: 60px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
 
-			.feature-body {
-				text-align: justify;
-			}
-		}
-	}
+      .feature-body {
+        text-align: justify;
+      }
+    }
+  }
 }
 
 #footer {
-	padding: 50px 0;
-	background: $dark-primary-color-1;
-	color: $primary-gray;
-	font-size: 0.8em;
-	text-transform: uppercase;
+  background: #ffffff;
 
-	.container {
-		display: flex;
-		justify-content: space-between;
-	}
+  .container {
+    padding: 48px 120px;
+    background: #ffffff;
+    box-shadow: 0px -1px 3px rgba(97, 104, 105, 0.15);
+    width: fill;
 
-	a {
-		color: $primary-gray;
-	}
+    .company-info {
+      border: solid white;
 
-	.social-links {
-		a {
-			font-size: 2em;
-			margin-left: 30px;
-		}
-	}
+      .title {
+        color: $primary-color;
+      }
 
-	.staff-sign-in {
-		margin-top: 20px;
-		text-align: right;
-	}
+      .info {
+        color: $dark-gray;
+      }
+    }
+
+    .links {
+      gap: 80px;
+
+      font-family: "Helvetica Neue";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 22px;
+      /* identical to box height, or 183% */
+
+      letter-spacing: 0.3px;
+
+      /* Shade/Darkest */
+
+      color: #394243;
+
+      a,
+      .company-links {
+        gap: 4px;
+      }
+
+      .resources-links {
+        gap: 4px;
+      }
+
+      .links-title {
+        font-family: "Helvetica Neue";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 15px;
+        /* identical to box height */
+
+        letter-spacing: 0.003em;
+
+        /* Shade/Dark */
+
+        color: #888e8e;
+      }
+      .social-media-links {
+        .icon {
+          width: 20.14px;
+        }
+      }
+    }
+  }
 }
 
-
 .blog-layout {
-	
-	.blog-main {
-		background: white;
-		padding-top:100px;
+  .blog-main {
+    background: white;
+    padding-top: 100px;
 
-		.blog-title {
-		  margin:40px 0px;
-		  text-align:center;
-			font-family: 'Avenir LT Std';
-			font-weight: 85;
-		}
+    .blog-title {
+      margin: 40px 0px;
+      text-align: center;
+      font-family: "Avenir LT Std";
+      font-weight: 85;
+    }
 
-		
-		.blog-content {
-		  float:left;
-		  width: calc(100% - 340px);
+    .blog-content {
+      float: left;
+      min-height: 500px;
 
-		  @media only screen and (max-width: 1050px) {
-		  	width: calc(100% - 220px);
-		  }
+      @media only screen and (max-width: 1050px) {
+        width: calc(100% - 220px);
+      }
 
-		  @media only screen and (max-width: 760px) {
-		  	float: none;
-		  	width: 100%;
-		  }
-	  }
+      @media only screen and (max-width: 760px) {
+        float: none;
+        width: 100%;
+      }
+    }
 
-	  .blog-menu {
-	    float:left;
-	    width: 300px;
-	    padding-left: 40px;
+    .blog-menu {
+      float: left;
+      width: 300px;
+      padding-left: 40px;
 
-	    @media only screen and (max-width: 1050px) {
-	    	width: 180px;
-	    	padding-left: 40px;
-	    }
+      @media only screen and (max-width: 1050px) {
+        width: 180px;
+        padding-left: 40px;
+      }
 
-	    @media only screen and (max-width: 760px) {
-	    	float: none;
-	    	width: 100%;
-	    	padding: 0;
-	    }
+      @media only screen and (max-width: 760px) {
+        float: none;
+        width: 100%;
+        padding: 0;
+      }
 
-	    .menu-section {
-	      margin-bottom: 30px;
-	      
-	      .menu-title {
-					font-family: 'Avenir LT Std';
-					font-weight: 85;
-	        margin-bottom: 10px;
-	      }
+      .menu-section {
+        margin-bottom: 30px;
 
-	      a {
-	        display: block;
-	        margin: 10px 0;
-	        text-decoration: none;
-	      }
-	    }
+        .menu-title {
+          font-family: "Avenir LT Std";
+          font-weight: 85;
+          margin-bottom: 10px;
+        }
 
-	  }	
-	}
+        a {
+          display: block;
+          margin: 10px 0;
+          text-decoration: none;
+        }
+      }
+    }
+  }
 }
