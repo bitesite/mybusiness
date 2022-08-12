@@ -1,9 +1,9 @@
 import React from 'react';
 import aboutHeroImage from '../../../assets/images/about-hero-image.png';
 
-const AboutHeader = () => (
+const AboutHeader = ({ isMobileWidth }) => (
   <div className="component-about-header">
-    <div className="about-page-header fgs-al  fgs-al-v fgs-al-g-60">
+    <div className={`about-page-header fgs-al  fgs-al-v ${isMobileWidth ? 'fgs-al-g-30' : 'fgs-al-g-60'}`}>
       <div className="about-header-title heading-large">About Us</div>
       <img src={aboutHeroImage} alt="about-main-pic" className="about-image" />
       <div className="about-content body-large">
@@ -14,10 +14,22 @@ const AboutHeader = () => (
         platforms, we specialize in full-stack Web Applications and iOS and Android applications.
       </div>
     </div>
-    <div className="about-page-beliefs  fgs-al  fgs-al-v fgs-al-g-60 fgs-al-align-items-center fgs-al-justify-content-flex-center">
+    <div
+      className={`about-page-beliefs fgs-al fgs-al-v fgs-al-align-items-center fgs-al-justify-content-flex-center ${
+        isMobileWidth ? 'fgs-al-g-40' : 'fgs-al-g-60'
+      }`}
+    >
       <div className="about-belief-title heading-regular">Our Beliefs</div>
-      <div className="about-belief-content  fgs-al  fgs-al-h frs-al-g-30 fgs-al-align-items-flex-start fgs-al-p-10">
-        <div className="about-belief-item fgs-al fgs-al-v fgs-al-g-30  fgs-al-align-items-flex-start fgs-al-p-10">
+      <div
+        className={`about-belief-content fgs-al fgs-al-h frs-al-g-30 fgs-al-align-items-flex-start ${
+          isMobileWidth ? '' : 'fgs-al-p-10'
+        }`}
+      >
+        <div
+          className={`about-belief-item fgs-al fgs-al-v fgs-al-g-30  fgs-al-align-items-flex-start ${
+            isMobileWidth ? '' : 'fgs-al-p-10'
+          }`}
+        >
           <div className="about-belief-item-title heading-small">Transparency</div>
           <div className="about-belief-item-content body-regular">
             We place honesty amongst ourselves and with our clients above business, money, or conflict. At BiteSite, we don’t shy

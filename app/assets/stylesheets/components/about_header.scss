@@ -5,7 +5,6 @@
   justify-content: center;
   text-align: center;
   color: $darkest-gray;
-  // width: 100%;
   padding: 96px 0px;
   .about-page-header {
     color: $darkest-gray;
@@ -57,11 +56,28 @@
   }
 
   @media only screen and (max-width: 760px) {
-    padding: 0 16px;
+    padding: 0;
     .about-page-header {
       .about-image {
         max-width: 305px;
         height: auto;
+      }
+      .about-content {
+        text-align: left;
+      }
+    }
+    .about-page-beliefs {
+      .about-belief-title {
+        align-self: flex-start;
+      }
+      .about-belief-content {
+        .about-belief-item {
+          display: grid;
+          grid-template-rows: none;
+          .about-belief-item-title {
+            min-height: 40px;
+          }
+        }
       }
     }
   }

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const OurTeam = ({ teamMembers }) => (
+const OurTeam = ({ teamMembers, isMobileWidth }) => (
   <div className="component-our-team fgs-al  fgs-al-v fgs-al-g-60 fgs-al-align-items-center fgs-al-justify-content-flex-center">
     <div className="our-team-title heading-regular">Our Team</div>
     <div className="our-team-content fgs-al fgs-al-h fgs-al-g-30 fgs-al-align-items-flex-start fgs-al-justify-content-flex-center">

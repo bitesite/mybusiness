@@ -47,5 +47,35 @@
         padding-bottom: 40px;
       }
     }
+    .our-process-step-item-title {
+      display: flex;
+      align-items: center;
+      .our-process-step-item-number {
+        border: 1px solid $primary-default-color;
+        background-color: $primary-default-color;
+        color: #ffffff;
+        min-width: 32px;
+        height: 32px;
+        border-radius: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+      }
+    }
+  }
+  @media only screen and (max-width: 760px) {
+    padding: 40px 16px;
+    display: flex;
+    width: 90vw;
+    position: relative;
+    left: 50%;
+    margin-left: -49vw;
+  }
+  .our-process-title {
+    align-self: flex-start;
+  }
+  .our-process-content {
+    text-align: left;
   }
 }
