@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
 
-const ServicesPage = () => <div className="component-services" />;
+const ServicesPage = () => <div id="component-services" />;
 
 export default ServicesPage;
 
