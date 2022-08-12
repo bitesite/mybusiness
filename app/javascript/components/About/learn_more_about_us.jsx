@@ -5,7 +5,11 @@ const LearnMoreAboutUs = () => (
   <div className="component-learn-more-about-us fgs-al  fgs-al-v fgs-al-g-30 fgs-al-align-items-flex-start">
     <div className="learn-more-about-us-container fgs-al fgs-al-h fgs-al-g-30 fgs-al-align-items-flex-center fgs-al-justify-content-flex-center">
       <div className="learn-more-about-us-image">
-        <img src={learnMoreAboutUsImage} alt="about-main-pic" className="learn-more-about-us-image" />
+        <img
+          src={learnMoreAboutUsImage}
+          alt="a small fictional animal has a lot of questions about web and software."
+          className="learn-more-about-us-image"
+        />
       </div>
       <div className="learn-more-about-us-content fgs-al fgs-al-v fgs-al-g-30 fgs-al-align-items-flex-start">
         <div className="learn-more-about-us-title heading-regular ">Learn More About Us</div>

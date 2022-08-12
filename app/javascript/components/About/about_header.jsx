@@ -6,7 +6,11 @@ const AboutHeader = ({ isMobileWidth }) => (
   <div className="component-about-header">
     <div className={`about-page-header fgs-al  fgs-al-v ${isMobileWidth ? 'fgs-al-g-30' : 'fgs-al-g-60'}`}>
       <div className="about-header-title heading-large">About Us</div>
-      <img src={aboutHeroImage} alt="about-main-pic" className="about-image" />
+      <img
+        src={aboutHeroImage}
+        alt="small fictional animals on top of a laptop building a website together."
+        className="about-image"
+      />
       <div className="about-content body-large">
         BiteSite was founded in 2012 in Ottawa, Canada and started as a general service company offering a wide range of services
         including Web Design and Development, Photography, Graphic Design, Video production and more. Over the years, we've
