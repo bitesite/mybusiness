@@ -55,4 +55,14 @@
       }
     }
   }
+
+  @media only screen and (max-width: 760px) {
+    padding: 0 16px;
+    .about-page-header {
+      .about-image {
+        max-width: 305px;
+        height: auto;
+      }
+    }
+  }
 }
