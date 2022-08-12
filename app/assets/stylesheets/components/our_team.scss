@@ -17,4 +17,10 @@
       }
     }
   }
+  @media only screen and (max-width: 760px) {
+    padding: 40px 0;
+    .our-team-title {
+      align-self: flex-start;
+    }
+  }
 }

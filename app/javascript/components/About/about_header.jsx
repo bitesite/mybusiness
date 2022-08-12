@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import aboutHeroImage from '../../../assets/images/about-hero-image.png';
 
 const AboutHeader = ({ isMobileWidth }) => (
@@ -62,3 +63,7 @@ const AboutHeader = ({ isMobileWidth }) => (
 );
 
 export default AboutHeader;
+
+AboutHeader.propTypes = {
+  isMobileWidth: PropTypes.bool,
+};

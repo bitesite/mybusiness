@@ -28,7 +28,7 @@ const AboutPage = ({ teamMembers }) => {
     <AboutHeader isMobileWidth={isMobileWidth}/>
     <OurProcess isMobileWidth={isMobileWidth}/>
     <OurTeam teamMembers={teamMembers} isMobileWidth={isMobileWidth}/>
-    <LearnMoreAboutUs isMobileWidth={isMobileWidth}/>
+    <LearnMoreAboutUs />
   </div>
 );
   }

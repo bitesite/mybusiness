@@ -2,7 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const OurTeam = ({ teamMembers, isMobileWidth }) => (
-  <div className="component-our-team fgs-al  fgs-al-v fgs-al-g-60 fgs-al-align-items-center fgs-al-justify-content-flex-center">
+  <div
+    className={`component-our-team fgs-al fgs-al-v fgs-al-align-items-center fgs-al-justify-content-flex-center ${
+      isMobileWidth ? 'fgs-al-g-40' : 'fgs-al-g-60'
+    }`}
+  >
     <div className="our-team-title heading-regular">Our Team</div>
     <div className="our-team-content fgs-al fgs-al-h fgs-al-g-30 fgs-al-align-items-flex-start fgs-al-justify-content-flex-center">
       {teamMembers &&
@@ -26,3 +30,14 @@ const OurTeam = ({ teamMembers, isMobileWidth }) => (
 );
 
 export default OurTeam;
+
+OurTeam.propTypes = {
+  teamMembers: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string,
+      position: PropTypes.string,
+      image: PropTypes.string,
+    })
+  ),
+  isMobileWidth: PropTypes.bool,
+};

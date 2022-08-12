@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ProcessStepProgress from './process_step_progress';
 
 const OurProcess = ({ isMobileWidth }) => {
@@ -55,3 +56,7 @@ const OurProcess = ({ isMobileWidth }) => {
   );
 };
 export default OurProcess;
+
+OurProcess.propTypes = {
+  isMobileWidth: PropTypes.bool,
+};

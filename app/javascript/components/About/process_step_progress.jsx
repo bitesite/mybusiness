@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import ProcessSteps from '../process_steps';
 
 const ProcessStepProgress = ({ steps }) => {
@@ -56,3 +57,12 @@ const ProcessStepProgress = ({ steps }) => {
 };
 
 export default ProcessStepProgress;
+
+ProcessStepProgress.propTypes = {
+  steps: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string,
+      description: PropTypes.string,
+    })
+  ),
+};
