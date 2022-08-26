@@ -1,0 +1,33 @@
+.general-component-card {
+  background: $lightest-gray;
+  padding: 128px 120px;
+
+  .content-block {
+    .content {
+      width: 584px;
+      .title {
+        color: $darkest-gray;
+      }
+
+      .text {
+        color: $darkest-gray;
+      }
+      .button {
+        padding: 12px 20px;
+        width: 255px;
+        height: 50px;
+        color: $light-white;
+      }
+    }
+  }
+
+  .right {
+    order: 1;
+  }
+
+  .image-block {
+    .card-image {
+      height: 150px;
+    }
+  }
+}
