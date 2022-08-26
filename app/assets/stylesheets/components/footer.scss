@@ -1,0 +1,90 @@
+.footer {
+  background: #ffffff;
+
+  .container {
+    padding: 48px 120px;
+    background: #ffffff;
+    box-shadow: 0px -1px 3px rgba(97, 104, 105, 0.15);
+    width: fill;
+
+    .company-info {
+      font-family: "Helvetica Neue";
+      font-style: normal;
+      .title {
+        color: $primary-color;
+      }
+
+      .info {
+        color: $dark-gray;
+      }
+    }
+
+    .links {
+      a,
+      .company-links {
+        gap: 4px;
+
+        font-family: "Helvetica Neue";
+        font-style: normal;
+
+        /* Shade/Darkest */
+
+        color: $darkest-gray;
+      }
+
+      .resources-links {
+        gap: 4px;
+      }
+
+      .links-title {
+        font-family: "Helvetica Neue";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 15px;
+
+        /* Shade/Dark */
+
+        color: $dark-gray;
+        white-space: nowrap;
+      }
+      .social-media-links {
+        .icon {
+          width: 20.14px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .footer {
+    .container {
+      padding: 40px 16px;
+
+      display: flex;
+      flex-direction: column;
+
+      .company-info {
+        order: 2;
+        margin-top: 25px;
+        .info {
+          display: flex;
+          flex-direction: row;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .footer {
+    .container {
+      padding: 40px 16px;
+
+      .links {
+        gap: 30px;
+      }
+    }
+  }
+}
