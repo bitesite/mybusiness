@@ -88,28 +88,4 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// document.addEventListener('DOMContentLoaded', () => {
-//   const element = document.getElementById('header-mount-point');
-//   if (element) {
-//     ReactDOM.render(<Header />, element);
-//   }
-// });
 
-// <div class="container">
-// <div class='logo-container'>
-//   <%= link_to image_tag("logo2015-blue.png", class: "logo"), root_path %>
-// </div>
-// <div class='nav-links'>
-//   <%= render "layouts/nav_links" %>
-// </div>
-
-// <div class='mobile-menu-toggle-container'>
-//   <%= link_to fa_icon("bars"), "/google", class: "mobile-menu-toggle" %>
-// </div>
-// </div>
-// </div>
-
-// <div class="mobile-nav-links-container">
-// <div class="mobile-nav-links">
-// <%= render "layouts/nav_links" %>
-// </div>

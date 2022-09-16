@@ -16,17 +16,3 @@
   z-index: 100;
   visibility: visible;
 }
-
-// /* Yellow band effect */
-// .main-nav::before {
-//   content: "";
-//   position: absolute;
-//   top: 0;
-//   bottom: 0;
-//   left: 0;
-//   right: -15px;
-//   background: #fedc2a;
-//   transform-origin: 0 0;
-//   transform: skew(-14deg) translateX(-120%);
-//   transition: all 0.275s 0.1s;
-// }
