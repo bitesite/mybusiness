@@ -1,14 +1,25 @@
 import React from 'react';
 import reactDom from 'react-dom';
+import propTypes from 'prop-types';
+import { motion } from 'framer-motion';
 import Link from './link';
 
-const NavLinks = () => (
-  <div className="main-nav" id="main-nav">
+const NavLinks = ({ className }) => (
+  <motion.div
+    className={className}
+    initial={{ height: 0, opacity: 0 }}
+    animate={{ height: 'auto', opacity: 1 }}
+    transition={{ duration: 2 }}
+  >
     <Link path="/services">Services</Link>
     <Link path="/about">About</Link>
     <Link path="/blog">Blog</Link>
     <Link path="/contact">Contact</Link>
-  </div>
+  </motion.div>
 );
+
+NavLinks.propTypes = {
+  className: propTypes.string,
+};
 
 export default NavLinks;

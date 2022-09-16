@@ -5,15 +5,16 @@ import Link from '../components/link';
 import logo from '../../assets/images/logo2015-blue.png';
 import NavLinks from '../components/nav_links';
 import { isMobileScreenSize } from '../src/utilities/general_helpers';
+import {motion, AnimatePresence} from 'framer-motion';
 
 const Header = () => {
   const [showNav, setShowNav] = useState(false);
+  const [isMobileWidth, setIsMobileWidth] = useState(isMobileScreenSize(760));
 
   const handleNavBarClick = () => {
     setShowNav(!showNav);
   };
 
-  const [isMobileWidth, setIsMobileWidth] = useState(isMobileScreenSize(760));
 
   function resize() {
     if (isMobileScreenSize(830) !== isMobileWidth) {
@@ -27,6 +28,8 @@ const Header = () => {
       window.removeEventListener('resize', resize);
     };
   }, [isMobileWidth]);
+
+
 
   return (
     <div id="header"> 
@@ -49,11 +52,23 @@ const Header = () => {
                  <NavLinks className="regular-nav" />
         </div> }
 </div>
-      {showNav && isMobileWidth &&
 
-      <div className='mobile-nav-links-container'> 
-      <NavLinks className="mobile-nav-links"/> 
-      </div>}
+
+      <AnimatePresence>
+
+      {showNav && isMobileWidth &&
+        <motion.div key="nav-links"
+         className='mobile-nav-links-container' 
+         initial={{x:"50%", y:"-70px" }} 
+         animate={{y: "-70px", x: -20}} 
+         transition={{duration: 0.4, ease: "easeInOut"}}
+         exit={{x:"50%", y:"-70px", transition:{duration: 0.4} }} > 
+
+          <NavLinks className='mobile-nav-links' /> 
+
+        </motion.div>
+       }
+       </AnimatePresence>
 
     
     
@@ -63,34 +78,6 @@ const Header = () => {
 
 };
 
-// const Header = () => (
-//   <>
-//     <div id="header">
-//       <div className="container">
-// <div className="logo-container">
-//   <Link path="/" className="logo">
-//     <img src={logo} alt="logo" />
-//   </Link>
-// </div>
-// <div className="nav-links">
-//   <NavLinks />
-// </div>
-
-//         <div className="mobile-menu-toggle-container">
-//           <Link path="#" className="mobile-menu-toggle">
-//             <Icon icon="quill:hamburger" />
-//           </Link>
-//         </div>
-//       </div>
-//     </div>
-
-//     <div className="mobile-nav-links-container">
-//       <div className="mobile-nav-links">
-//         <NavLinks />
-//       </div>
-//     </div>
-//   </>
-// );
 
 export default Header;
 
