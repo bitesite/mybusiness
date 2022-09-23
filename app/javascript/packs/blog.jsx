@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import { isMobileScreenSize } from '../src/utilities/general_helpers';
 import { Card } from '../bitesite-ui';
 
-const BlogPage = ({blogPosts}) => {
+const BlogPage = () => {
+  const [blogPosts, setBlogPosts] = useState([]);
   const [isMobileWidth, setIsMobileWidth] = useState(isMobileScreenSize(760));
-  console.log(blogPosts);
 
 
   function resize() {
@@ -13,6 +13,17 @@ const BlogPage = ({blogPosts}) => {
       setIsMobileWidth(isMobileScreenSize(760));
     }
   }
+
+  function getBLogPosts () {  
+    $.getJSON('/blog', (result) => {
+      console.log(result);
+      setBlogPosts(result);
+    });
+  }
+
+  useEffect(() => {
+    getBLogPosts();
+  }, []);
 
   useEffect(() => {
     window.addEventListener('resize', resize);
@@ -23,9 +34,9 @@ const BlogPage = ({blogPosts}) => {
 
   return (
   <div className="blog-page fgs-al fgs-al-v">
-   {blogPosts && blogPosts.map(blogPost => {
+   {blogPosts && blogPosts.length > 0 && blogPosts.map(blogPost => {
       return (
-        <Card key={blogPost.id} url={blogPost.featured_image && blogPost.featured_image.url} />
+        <Card key={blogPost.id} url={blogPost.featured_image && blogPost.featured_image.url} title={blogPost.title} tags={blogPost.tag_list} text={blogPost.body}/>
 
       )
    } )}
@@ -40,8 +51,6 @@ BlogPage.propTypes = {};
 document.addEventListener('DOMContentLoaded', () => {
   const element = document.getElementById('blog-page-component-mount-point');
   if (element) {
-    const { blogPosts } = element.dataset;
-    console.log(blogPosts);
-    ReactDOM.render(<BlogPage blogPosts={JSON.parse(blogPosts)} />, element);
+    ReactDOM.render(<BlogPage />, element);
   }
 });

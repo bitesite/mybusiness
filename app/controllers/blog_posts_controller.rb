@@ -9,17 +9,21 @@ class BlogPostsController < ApplicationController
     @blog_posts = @blog_posts.tagged_with(params[:tag_name]) if params[:tag_name]
     @blog_posts = @blog_posts.paginate(page: params[:page], per_page: 5)
     @title = ""
+    @blog_posts = @blog_posts.includes({ user: :profile })
 
     respond_to do |format|
       format.html { render :index }
-      format.json { render json: @blog_posts }
+      format.json { render :index }
     end
   end
 
   def show
     @title = "#{@blog_post.title}"
     @meta_description = @blog_post.meta_description if @blog_post.meta_description.present?
-    render layout: "blog"
+    respond_to do |format|
+      format.html { render :show }
+      format.json { render :show }
+    end
   end
 
   def new
@@ -56,7 +60,7 @@ class BlogPostsController < ApplicationController
   end
 
   def blog_post_params
-    params.require(:blog_post).permit(:body, :title, :published, :featured_image, :remove_featured_image, :featured_video, :tag_list, :meta_description)
+    params.require(:blog_post).permit(:body, :title, :published, :featured_image, :remove_featured_image, :featured_video, :tag_list, :meta_description, :user)
   end
 
   def set_title
