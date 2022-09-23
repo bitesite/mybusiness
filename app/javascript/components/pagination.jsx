@@ -1,4 +1,6 @@
 import React from 'react';
+import { Icon } from '@iconify/react';
+
 import classnames from 'classnames';
 import { usePagination, DOTS } from '../src/utilities/usePagination.js';
 import '../../assets/stylesheets/base/pagination.scss';
@@ -46,14 +48,22 @@ const Pagination = (props) => {
 
         // Render our Page Pills
         return (
-          <li
-            className={classnames('pagination-item', {
-              selected: pageNumber === currentPage,
-            })}
-            onClick={() => onPageChange(pageNumber)}
-          >
-            {pageNumber}
-          </li>
+          <>
+            <li
+              className={classnames('pagination-item', {
+                selected: pageNumber === currentPage,
+              })}
+              onClick={() => onPageChange(pageNumber)}
+            >
+              {pageNumber}
+            </li>
+            <Icon
+              className={classnames('pagination-item', 'line', {
+                selected: pageNumber === currentPage,
+              })}
+              icon="ant-design:line-outlined"
+            />
+          </>
         );
       })}
       {/*  Right Navigation arrow */}

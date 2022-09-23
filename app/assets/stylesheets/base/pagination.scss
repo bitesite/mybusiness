@@ -7,7 +7,7 @@
     padding: 0 12px;
     height: 32px;
     text-align: center;
-    color: $darkest-gray;
+    color: rgba(0, 0, 0, 0.87);
     display: flex;
     box-sizing: border-box;
     align-items: center;
@@ -18,18 +18,37 @@
     font-size: 16px;
     line-height: 18px;
 
+    &.line {
+      visibility: hidden;
+    }
+
     &.dots:hover {
       background-color: transparent;
       cursor: default;
     }
     &:hover {
-      background-color: $primary-lighter-color;
+      background-color: #58b3b8;
       cursor: pointer;
     }
 
     &.selected {
-      background-color: $primary-default-color;
+      background-color: #2a7f89;
       color: #ffffff;
+      margin-left: -10px;
+      margin-right: 22px;
+      transition: margin-left 0.5s;
+
+      &.line {
+        visibility: visible;
+        opacity: 1;
+        border-radius: 0px;
+        height: 1px;
+        text-align: center;
+        margin-top: 15px;
+        transition: transform 2s;
+        transform: scale(2);
+        margin-left: 1px;
+      }
     }
 
     .arrow {
