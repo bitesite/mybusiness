@@ -16,7 +16,6 @@ const BlogPage = () => {
 
   function getBLogPosts () {  
     $.getJSON('/blog', (result) => {
-      console.log(result);
       setBlogPosts(result);
     });
   }
