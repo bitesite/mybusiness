@@ -1,5 +1,11 @@
+<%= javascript_pack_tag "products" %>
+
+
+
 <div id="pages-products">
   <div class="container">
-    <%= markdown Setting.value_for("products_content", '#Products') %>
+  <div id="products-component-mount-point"></div>
+
+    <%= markdown Setting.value_for("products_content", "#Products") %>
   </div>
 </div>
