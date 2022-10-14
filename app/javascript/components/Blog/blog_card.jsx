@@ -62,7 +62,7 @@ const BlogCard = ({ tags, blogPost }) => {
               {author.first_name} {author.last_name}
             </div>
           )}
-          <div className="caption-light">{moment(publishedAt).format('MMMM Do, YYYY')}</div>
+          <div className="caption-light">{moment(publishedAt).format('MMMM D, YYYY')}</div>
         </FooterFrame>
       </Frame>
     </Card>
