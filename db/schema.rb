@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_26_174906) do
+ActiveRecord::Schema.define(version: 2022_10_14_155615) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 2021_03_26_174906) do
     t.string "slug"
     t.string "featured_video"
     t.string "meta_description"
+    t.datetime "published_at"
     t.index ["slug"], name: "index_blog_posts_on_slug"
   end
 
