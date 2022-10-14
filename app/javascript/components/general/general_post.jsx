@@ -1,11 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const GeneralPost = ({ image, header, text, buttonText, link, positionImageRight, buttonHide, buttonClass, onClick }) => (
+const GeneralPost = ({
+  image,
+  header,
+  text,
+  buttonText,
+  link,
+  positionImageRight,
+  buttonHide,
+  buttonClass,
+  onClick,
+  imageStyle,
+}) => (
   <div className="general-component-card fgs-al fgs-al-v fgs-al-g-30">
     <div className="content-block fgs-al fgs-ali fgs-al-h fgs-al-g-60 fgs-al-align-items-center fgs-al-justify-content-space-evenly">
       <div className={`image-block fgs-ali ${positionImageRight ? 'right' : ''}`}>
-        <img className="card-image" src={image} alt="general component" />
+        <img className={`card-image ${imageStyle}`} src={image} alt="general component" />
       </div>
 
       <div className="content fgs-al fgs-ali fgs-al-v fgs-al-g-30 ">
