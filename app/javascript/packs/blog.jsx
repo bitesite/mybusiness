@@ -5,6 +5,7 @@ import { Tag, COLORS } from "../bitesite-ui";
 import BlogCard from "../components/Blog/blog_card";
 import { Frame } from "@bitesite/react-figstrap";
 import styled from "styled-components/macro";
+import Pagination from "../components/pagination";
 
 const BlogFrame = styled(Frame)`
   padding: 96px 120px 128px;
@@ -48,6 +49,7 @@ const TagButton = styled.button`
 const BlogPage = () => {
   const [blogPosts, setBlogPosts] = useState([]);
   const [isMobileWidth, setIsMobileWidth] = useState(isMobileScreenSize(760));
+  const [page, setPage] = useState(1);
 
   const tags = [
     { title: "Video Prodution", value: "videoProduction" },
@@ -140,14 +142,13 @@ const BlogPage = () => {
             return (
               <BlogCard
                 key={blogPost.id}
-                url={blogPost.featured_image && blogPost.featured_image.url}
-                title={blogPost.title}
+                blogPost={blogPost}
                 tags={getTagList(blogPost.tag_list)}
-                text={blogPost.body.slice(0, 200).concat("...")}
               />
             );
           })}
       </BlogPostsFrame>
+      <Pagination totalCount={30} currentPage={page} onPageChange={setPage} pageSize={6} />
     </BlogFrame>
   );
 };
