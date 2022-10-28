@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import TextTruncate from 'react-text-truncate';
 import PropTypes from 'prop-types';
 import moment from 'moment';
@@ -7,12 +7,15 @@ import { Frame } from '@bitesite/react-figstrap';
 import { Icon } from '@iconify/react';
 import { Card, Tag, COLORS } from '../../bitesite-ui';
 
-const CardImage = styled.img`
+const CardImageContainer = styled.div`
   width: 100%;
-  height: 220px;
-  background-image: url(${({ src }) => src});
-  background-size: cover;
+  height: 210px;
   background-color: ${COLORS.shadesLight};
+  img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+  }
 `;
 
 const CardTitle = styled.div`
@@ -42,8 +45,12 @@ const BlogCard = ({ tags, blogPost }) => {
   const { title, body: text, author, published_at: publishedAt, featured_image: featuredImage } = blogPost;
 
   return (
-    <Card>
-      {featuredImage && <CardImage src={featuredImage.url} alt="Blog Post Picture about the article" />}
+    <Card onClick={() => window.history.push(`/blog/${blogPost.id}`)}>
+      {featuredImage && (
+        <CardImageContainer>
+          <img src={featuredImage.url} alt="Blog Post about the article" />
+        </CardImageContainer>
+      )}
       <Frame alignItems="center" justifyContent="flex-start" gap={8}>
         {tags &&
           tags.map((tag, i) => (
@@ -54,7 +61,7 @@ const BlogCard = ({ tags, blogPost }) => {
       </Frame>
       <CardTitle className="body-large">{title}</CardTitle>
       <CardText className="body-small" id="text">
-        <TextTruncate line={4} element="span" truncateText="…" text={text} textTruncateChild={<a href="#">Read more</a>} />
+        <TextTruncate line={4} element="span" truncateText="…" text={text} />
       </CardText>
       <Frame alignItems="flex-start" justifyContent="center" gap={8}>
         {author.avatar && author.avatar.url ? (

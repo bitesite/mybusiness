@@ -8,7 +8,8 @@ import { Frame } from "@bitesite/react-figstrap";
 import styled from "styled-components/macro";
 import Pagination from "../components/pagination";
 import { decodeQueryParams } from "../src/utilities/general_helpers";
-
+import GeneralPost from "../components/general/general_post";
+import BlogPostSubscribeImage from "../../assets/images/blog_post_subscribe.png";
 const BlogFrame = styled(Frame)`
   padding: 96px 120px 128px;
 
@@ -55,7 +56,6 @@ const BlogPage = () => {
   const [totalPages, setTotalPages] = useState(null);
   const [totalPosts, setTotalPosts] = useState(null);
   const [isMobileWidth, setIsMobileWidth] = useState(isMobileScreenSize(760));
-  const [page, setPage] = useState(1);
 
   const tags = [
     { title: "Video Prodution", value: "videoProduction" },
@@ -77,7 +77,6 @@ const BlogPage = () => {
   const getPageNumberFromSearch = () => {
     const { search } = window.location;
     const pageNumberFromSearch = search.match(/page=(\d+)/);
-    console.log(pageNumberFromSearch);
     if (pageNumberFromSearch) {
       return pageNumberFromSearch[1];
     }
@@ -90,15 +89,18 @@ const BlogPage = () => {
     Object.keys(selectedFilters).forEach((key) => {
       params[key] = selectedFilters[key];
     });
-    console.log("params", params);
     window.history.pushState(params, '', `?${queryString.stringify(params)}`);
   };
 
   function getBLogPosts() {
     $.getJSON("/blog/paginated_index", { page: pageNumber, filters: selectedFilters }, (result) => {
-      console.log(result);
       setBlogPosts(result.blog_posts);
+      if(result.total < 9) {
+        setPageNumber(1);
+        setUrlQueryFromFilters();
+      } else {
       setPageNumber(result.page);
+      }
       setTotalPages(result.pages);
       setTotalPosts(result.total);
     });
@@ -127,8 +129,8 @@ const BlogPage = () => {
 
   useEffect(() => {
     if (pageNumber) {
-    getBLogPosts();
-    window.history.pushState(null, null, `/blog?page=${pageNumber}`);
+      getBLogPosts();
+      window.history.pushState(null, null, `/blog?page=${pageNumber}`);
     }
   }, [pageNumber]);
 
@@ -140,15 +142,12 @@ const BlogPage = () => {
 
   const handleTagSelect = (tag) => {
     const updatedFilters = { ...selectedFilters };
-    console.log("updatedFilters", updatedFilters);
-    console.log("tag", tag);
-    if (updatedFilters[tag.value]) {
-      delete updatedFilters[tag.value];
+    if (updatedFilters["tag_name"] && updatedFilters["tag_name"].includes(tag.value)) {
+      updatedFilters["tag_name"] = updatedFilters["tag_name"].filter((t) => t !== tag.value);
     } else {
-      updatedFilters[tag.value] = true;
+      updatedFilters["tag_name"] = updatedFilters["tag_name"] ? [...updatedFilters["tag_name"], tag.value] : [tag.value];
     }
     setSelectedFilters(updatedFilters);
-    console.log("hello");
   };
 
   const handlePageChange = (page) => {
@@ -180,7 +179,7 @@ const BlogPage = () => {
         <div className="blog-tag-title body-medium">Popular Tags:</div>
         {tags.map((tag) => (
           <TagButton onClick={() => handleTagSelect(tag)}>
-            <Tag className="body-small-light" key={tag.value}>
+            <Tag className="body-small-light" key={tag.value} selected={selectedFilters["tag_name"] && selectedFilters["tag_name"].includes(tag.value)}>
               {tag.title}
             </Tag>
           </TagButton>
@@ -209,6 +208,14 @@ const BlogPage = () => {
       <Pagination totalCount={totalPosts} currentPage={pageNumber} onPageChange={handlePageChange} pageSize={9} />
       )}
       <a href="/blog/new">New Blog Post</a>
+      <GeneralPost
+      image={BlogPostSubscribeImage}
+      header='Want to stay up to date with BiteSite?'
+      text="We round up our top blog articles, company updates and industry recommendations in a regular newsletter for our community. Subscribe, and stay in the know!"
+      buttonText="Subscribe to our Newsletter"
+      buttonClass="primary-default"
+      onClick={() => console.log("clicked")}
+    />
     </BlogFrame>
   );
 };

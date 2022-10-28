@@ -11,10 +11,7 @@ class BlogPostsController < ApplicationController
     @blog_posts = BlogPost.all if (admin? || staff?)
     @blog_posts = @blog_posts.tagged_with(params[:tag_name]) if params[:tag_name]
     if params[:filters]
-      @blog_posts = @blog_posts.tagged_with(params[:filters].split(","), any: true)
-      puts @blog_posts = @blog_posts.tagged_with(params[:filters].split(","), any: true)
-      params[:filters].keys.each do |filter|
-      end
+      @blog_posts = @blog_posts.tagged_with(params[:filters][:tag_name].split(","), all: true) if params[:filters][:tag_name]
     end
     @blog_posts = @blog_posts.paginate(page: params[:page], per_page: 9)
     @blog_posts = @blog_posts.includes({ user: :profile })

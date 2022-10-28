@@ -14,6 +14,13 @@ const Tag = styled.div`
   width: fit-content;
   text-transform: capitalize;
   white-space: nowrap;
+  ${(props) =>
+    props.selected &&
+    `
+    color: ${COLORS.primaryWhite};
+    background-color: ${COLORS.primaryDefault};
+    border: 1px solid ${COLORS.primaryDefault};
+  `}
 `;
 
 export default Tag;
