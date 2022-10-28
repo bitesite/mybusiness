@@ -9,13 +9,21 @@ class BlogPostsController < ApplicationController
     @blog_posts = @blog_posts.tagged_with(params[:tag_name]) if params[:tag_name]
     @blog_posts = @blog_posts.paginate(page: params[:page], per_page: 5)
     @title = ""
-    render layout: 'blog'
+    @blog_posts = @blog_posts.includes({ user: :profile })
+
+    respond_to do |format|
+      format.html { render :index }
+      format.json { render :index }
+    end
   end
 
   def show
     @title = "#{@blog_post.title}"
     @meta_description = @blog_post.meta_description if @blog_post.meta_description.present?
-    render layout: 'blog'
+    respond_to do |format|
+      format.html { render :show }
+      format.json { render :show }
+    end
   end
 
   def new
@@ -27,40 +35,41 @@ class BlogPostsController < ApplicationController
   def create
     @blog_post.user = current_user
     if @blog_post.save
-      redirect_to @blog_post, notice: 'Blog post was successfully created.'
+      redirect_to @blog_post, notice: "Blog post was successfully created."
     else
-      render action: "new", layout: 'blog'
+      render action: "new", layout: "blog"
     end
   end
 
   def update
     prepare_blog_post_for_slug_update
     if @blog_post.update_attributes(blog_post_params)
-      redirect_to @blog_post, notice: 'Blog post was successfully updated.'
+      redirect_to @blog_post, notice: "Blog post was successfully updated."
     else
-      render action: "edit", layout: 'blog'
+      render action: "edit", layout: "blog"
     end
   end
 
   private
-    def friendly_find
-      @blog_post = BlogPost.friendly.find(params[:id])
-      if !(@blog_post.published || staff? || admin?)
-        redirect_to blog_posts_path
-      end
-    end
 
-    def blog_post_params 
-      params.require(:blog_post).permit(:body, :title, :published, :featured_image, :remove_featured_image, :featured_video, :tag_list, :meta_description)
+  def friendly_find
+    @blog_post = BlogPost.friendly.find(params[:id])
+    if !(@blog_post.published || staff? || admin?)
+      redirect_to blog_posts_path
     end
+  end
 
-    def set_title
-      @title = "Blog"
-    end
+  def blog_post_params
+    params.require(:blog_post).permit(:body, :title, :published, :featured_image, :remove_featured_image, :featured_video, :tag_list, :meta_description, :user)
+  end
 
-    def prepare_blog_post_for_slug_update
-      if params[:update_slug]
-        @blog_post.slug = nil
-      end
+  def set_title
+    @title = "Blog"
+  end
+
+  def prepare_blog_post_for_slug_update
+    if params[:update_slug]
+      @blog_post.slug = nil
     end
+  end
 end

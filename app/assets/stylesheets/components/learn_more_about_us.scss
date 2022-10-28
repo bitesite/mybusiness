@@ -1,0 +1,35 @@
+.component-learn-more-about-us {
+  max-width: 1440px;
+  padding: 128px 120px;
+  background-color: $background;
+  .learn-more-about-us-container {
+    color: $darkest-gray;
+    .learn-more-about-us-image {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  @media only screen and (max-width: 760px) {
+    padding: 40px 16px;
+    display: flex;
+    width: 90vw;
+    position: relative;
+    left: 50%;
+    margin-left: -49vw;
+    .learn-more-about-us-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .learn-more-about-us-image {
+        max-width: 305px;
+        height: auto;
+        align-self: center;
+      }
+    }
+    .learn-more-about-us-title {
+      align-self: flex-start;
+    }
+  }
+}

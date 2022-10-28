@@ -1,66 +1,7 @@
-#pages-services {
-
-  .hero {
-    height: 400px;
-
-    img.computer {
-      position: absolute;
-      top: 60px;
-      right: 30px;
-      z-index: -1;
-      opacity: 0.5;
-    }
-  }
-
-  .services-list {
-    margin-top: 30px;
-
-    justify-content: center;
-    flex-wrap: wrap;
-
-    .feature {
-      margin: 40px;
-      max-width: 300px;
-
-      .feature-header {
-        img {
-          height: 200px;
-          max-width: 100%;
-        }
-      }
-    }
-  }
-
-  .common-projects-list {
-    justify-content: center;
-    flex-wrap: wrap;
-
-    .feature {
-      margin: 20px;
-      max-width: 350px;
-
-      .feature-header {
-        img {
-          height: 200px;
-          max-width: 100%;
-        }
-      }
-    }
-  }
-
-  .tools-list {
-    justify-content: center;
-    flex-wrap: wrap;
-
-    .feature {
-      margin: 20px;
-      max-width: 120px;
-
-      .feature-header {
-        img {
-          max-width: 100%;
-        }
-      }
-    }
+.services-component {
+  .services-header {
+    text-align: center;
+    padding: 96px 120px 96px 120px;
+    box-sizing: border-box;
   }
 }

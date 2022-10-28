@@ -1,14 +1,29 @@
 {
   "dependencies": {
     "@babel/preset-react": "^7.6.3",
+    "@fortawesome/fontawesome": "^1.1.8",
+    "@fortawesome/fontawesome-free": "^6.1.2",
+    "@fortawesome/fontawesome-free-solid": "^5.0.13",
+    "@fortawesome/fontawesome-svg-core": "^6.1.2",
+    "@fortawesome/free-brands-svg-icons": "^6.1.2",
+    "@fortawesome/free-solid-svg-icons": "^6.1.2",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@rails/webpacker": "4.0.7",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "classnames": "^2.3.2",
+    "framer-motion": "^4.1.17",
     "prop-types": "^15.6.2",
+    "rc-steps": "^4.1.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-switch": "^6.0.0"
+    "react-router-dom": "^6.3.0",
+    "react-switch": "^6.0.0",
+    "styled-components": "^5.3.5"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.16.0",
+    "@iconify/react": "^4.0.0",
     "eslint": "^8.0.1",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-prettier": "^6.11.0",

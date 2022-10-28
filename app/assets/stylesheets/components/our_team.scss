@@ -1,0 +1,26 @@
+.component-our-team {
+  padding: 128px 120px;
+  .our-team-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    .our-team-member {
+      width: 200px;
+      .our-team-member-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+    }
+  }
+  @media only screen and (max-width: 760px) {
+    padding: 40px 0;
+    .our-team-title {
+      align-self: flex-start;
+    }
+  }
+}
