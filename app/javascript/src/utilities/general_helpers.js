@@ -1,4 +1,4 @@
-import queryString from 'query-string';
+/* eslint-disable no-nested-ternary */
 
 export const isMobileScreenSize = (width = 760) => window.innerWidth <= width;
 
@@ -42,7 +42,6 @@ export const decodeQueryParams = (params = getQueryParams(), coerce) => {
       val = decode(param[1]);
 
       if (coerce) {
-        // eslint-disable-next-line no-nested-ternary
         val =
           val && !Number.isNaN(val)
             ? +val
