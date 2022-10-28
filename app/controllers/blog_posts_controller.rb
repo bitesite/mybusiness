@@ -4,16 +4,24 @@ class BlogPostsController < ApplicationController
   before_action :set_title
 
   def index
+  end
+
+  def paginated_index
     @blog_posts = BlogPost.published
     @blog_posts = BlogPost.all if (admin? || staff?)
     @blog_posts = @blog_posts.tagged_with(params[:tag_name]) if params[:tag_name]
-    @blog_posts = @blog_posts.paginate(page: params[:page], per_page: 5)
-    @title = ""
+    if params[:filters]
+      @blog_posts = @blog_posts.tagged_with(params[:filters].split(","), any: true)
+      puts @blog_posts = @blog_posts.tagged_with(params[:filters].split(","), any: true)
+      params[:filters].keys.each do |filter|
+      end
+    end
+    @blog_posts = @blog_posts.paginate(page: params[:page], per_page: 9)
     @blog_posts = @blog_posts.includes({ user: :profile })
 
     respond_to do |format|
-      format.html { render :index }
-      format.json { render :index }
+      format.html
+      format.json
     end
   end
 

@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import TextTruncate from 'react-text-truncate';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import styled, { css } from 'styled-components/macro';
@@ -20,7 +21,10 @@ const CardTitle = styled.div`
 
 const CardText = styled.div`
   color: ${COLORS.shadesLight};
-  height: 105px;
+  height: 110px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
 `;
 
 const Avatar = styled.img`
@@ -49,7 +53,9 @@ const BlogCard = ({ tags, blogPost }) => {
           ))}
       </Frame>
       <CardTitle className="body-large">{title}</CardTitle>
-      <CardText className="body-small">{text.slice(0, 200).concat('...')}</CardText>
+      <CardText className="body-small" id="text">
+        <TextTruncate line={4} element="span" truncateText="…" text={text} textTruncateChild={<a href="#">Read more</a>} />
+      </CardText>
       <Frame alignItems="flex-start" justifyContent="center" gap={8}>
         {author.avatar && author.avatar.url ? (
           <Avatar src={author.avatar_url} alt="Author Avatar" />
@@ -64,6 +70,11 @@ const BlogCard = ({ tags, blogPost }) => {
           )}
           <div className="caption-light">{moment(publishedAt).format('MMMM D, YYYY')}</div>
         </FooterFrame>
+      </Frame>
+      <Frame alignItems="center" justifyContent="center" gap={8}>
+        <a href={`/blog/${blogPost.id}/edit`} className="edit-button">
+          Edit
+        </a>
       </Frame>
     </Card>
   );

@@ -1,0 +1,24 @@
+.product-component-card {
+  background: $lightest-gray;
+  padding: 0px 120px 0px 120px;
+
+  .product-card {
+    width: 582px;
+    height: 197px;
+    box-sizing: border-box;
+    &:hover {
+      background-color: $light-white;
+    }
+    .content {
+      margin-bottom: 20px;
+    }
+  }
+
+  .image-block {
+    .card-image {
+      height: 50px;
+      width: 50px;
+      overflow: hidden;
+    }
+  }
+}

@@ -21,11 +21,6 @@ class PagesController < ApplicationController
                          high quality web and mobile applications."
   end
 
-  def products
-    @title = "Products"
-    @meta_description = "Aside from our core Custom Software services, we like to develop our own products."
-  end
-
   def video
     @title = "Video Production"
     @meta_description = "BiteSite provides Video production services and focuses on working with Ottawa area small to medium tech businesses. We provide a full suite

@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
+import queryString from 'query-string';
 import { isMobileScreenSize } from "../src/utilities/general_helpers";
 import { Tag, COLORS } from "../bitesite-ui";
 import BlogCard from "../components/Blog/blog_card";
 import { Frame } from "@bitesite/react-figstrap";
 import styled from "styled-components/macro";
 import Pagination from "../components/pagination";
+import { decodeQueryParams } from "../src/utilities/general_helpers";
 
 const BlogFrame = styled(Frame)`
   padding: 96px 120px 128px;
@@ -48,6 +50,10 @@ const TagButton = styled.button`
 
 const BlogPage = () => {
   const [blogPosts, setBlogPosts] = useState([]);
+  const [pageNumber, setPageNumber] = useState(null);
+  const [selectedFilters, setSelectedFilters] = useState(decodeQueryParams());
+  const [totalPages, setTotalPages] = useState(null);
+  const [totalPosts, setTotalPosts] = useState(null);
   const [isMobileWidth, setIsMobileWidth] = useState(isMobileScreenSize(760));
   const [page, setPage] = useState(1);
 
@@ -68,10 +74,33 @@ const BlogPage = () => {
     }
   }
 
+  const getPageNumberFromSearch = () => {
+    const { search } = window.location;
+    const pageNumberFromSearch = search.match(/page=(\d+)/);
+    console.log(pageNumberFromSearch);
+    if (pageNumberFromSearch) {
+      return pageNumberFromSearch[1];
+    }
+    return 1;
+  };
+
+  const setUrlQueryFromFilters = () => {
+    const { search } = window.location;
+    const params = queryString.parse(search);
+    Object.keys(selectedFilters).forEach((key) => {
+      params[key] = selectedFilters[key];
+    });
+    console.log("params", params);
+    window.history.pushState(params, '', `?${queryString.stringify(params)}`);
+  };
+
   function getBLogPosts() {
-    $.getJSON("/blog", (result) => {
+    $.getJSON("/blog/paginated_index", { page: pageNumber, filters: selectedFilters }, (result) => {
       console.log(result);
-      setBlogPosts(result);
+      setBlogPosts(result.blog_posts);
+      setPageNumber(result.page);
+      setTotalPages(result.pages);
+      setTotalPosts(result.total);
     });
   }
 
@@ -85,7 +114,8 @@ const BlogPage = () => {
   };
 
   useEffect(() => {
-    getBLogPosts();
+    setPageNumber(getPageNumberFromSearch());
+    setUrlQueryFromFilters();
   }, []);
 
   useEffect(() => {
@@ -95,8 +125,35 @@ const BlogPage = () => {
     };
   }, [isMobileWidth]);
 
-  const handleTagClick = () => {
+  useEffect(() => {
+    if (pageNumber) {
+    getBLogPosts();
+    window.history.pushState(null, null, `/blog?page=${pageNumber}`);
+    }
+  }, [pageNumber]);
+
+  useEffect(() => {
+    setUrlQueryFromFilters();
+    getBLogPosts();
+  }, [selectedFilters]);
+
+
+  const handleTagSelect = (tag) => {
+    const updatedFilters = { ...selectedFilters };
+    console.log("updatedFilters", updatedFilters);
+    console.log("tag", tag);
+    if (updatedFilters[tag.value]) {
+      delete updatedFilters[tag.value];
+    } else {
+      updatedFilters[tag.value] = true;
+    }
+    setSelectedFilters(updatedFilters);
     console.log("hello");
+  };
+
+  const handlePageChange = (page) => {
+    setPageNumber(page);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
@@ -122,7 +179,7 @@ const BlogPage = () => {
       >
         <div className="blog-tag-title body-medium">Popular Tags:</div>
         {tags.map((tag) => (
-          <TagButton onClick={handleTagClick}>
+          <TagButton onClick={() => handleTagSelect(tag)}>
             <Tag className="body-small-light" key={tag.value}>
               {tag.title}
             </Tag>
@@ -148,7 +205,10 @@ const BlogPage = () => {
             );
           })}
       </BlogPostsFrame>
-      <Pagination totalCount={30} currentPage={page} onPageChange={setPage} pageSize={6} />
+      {totalPages && totalPages > 1 && (
+      <Pagination totalCount={totalPosts} currentPage={pageNumber} onPageChange={handlePageChange} pageSize={9} />
+      )}
+      <a href="/blog/new">New Blog Post</a>
     </BlogFrame>
   );
 };
