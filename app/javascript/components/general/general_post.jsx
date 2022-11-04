@@ -12,9 +12,8 @@ const GeneralPost = ({
   buttonClass,
   onClick,
   imageStyle,
-  paddingTopRemove,
 }) => (
-  <div className={`general-component-card ${paddingTopRemove ? 'padding-top-none' : ''} fgs-al fgs-al-v fgs-al-g-30`}>
+  <div className="general-component-card fgs-al fgs-al-v fgs-al-g-30">
     <div className="content-block fgs-al fgs-ali fgs-al-h fgs-al-g-60 fgs-al-align-items-center fgs-al-justify-content-space-evenly">
       <div className={`image-block fgs-ali ${positionImageRight ? 'right' : ''}`}>
         <img className={`card-image ${imageStyle}`} src={image} alt="general component" />
@@ -41,7 +40,6 @@ GeneralPost.defaultProps = {
   link: PropTypes.string,
   positionImageRight: true,
   buttonHide: false,
-  paddingTopRemove: false,
   onClick: () => {},
 };
 
@@ -54,7 +52,6 @@ GeneralPost.propTypes = {
   positionImageRight: PropTypes.bool,
   buttonHide: PropTypes.bool,
   buttonClass: PropTypes.string,
-  paddingTopRemove: PropTypes.bool,
   onClick: () => {},
 };
 

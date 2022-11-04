@@ -21,8 +21,8 @@ const ServicesPage = () => {
     <div className="services-component">
       <div className="heading-regular services-header">We work with you to build custom software and web applications.</div>
       <GeneralPost header={header1} text={text1} image={productManagementImg} buttonHide />
-      <GeneralPost header={header2} text={text2} image={softwareDevImg} buttonHide paddingTopRemove />
-      <GeneralPost header={header3} text={text3} image={uxUiDesignImg} buttonHide paddingTopRemove />
+      <GeneralPost header={header2} text={text2} image={softwareDevImg} buttonHide />
+      <GeneralPost header={header3} text={text3} image={uxUiDesignImg} buttonHide />
     </div>
   );
 };
