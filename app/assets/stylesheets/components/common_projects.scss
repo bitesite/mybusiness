@@ -1,0 +1,36 @@
+.common-projects-card {
+  padding: 120px 20px;
+  .common-projects-title {
+    text-align: center;
+  }
+  .common-projects-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-gap: 24px;
+    .common-projects-item {
+      display: grid;
+      .common-projects-image {
+        width: 50px;
+      }
+      .common-projects-item-title {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        border-left: 3px solid $primary-default-color;
+        text-align: start;
+        line-height: 24px;
+        padding-left: 10px;
+        min-height: 50px;
+        color: $darkest-gray;
+        div {
+          display: inline-block;
+          vertical-align: middle;
+        }
+      }
+      .common-projects-item-content {
+        text-align: start;
+        color: $dark-gray;
+      }
+    }
+  }
+}

@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 2022_10_14_175355) do
     t.string "slug"
     t.string "featured_video"
     t.string "meta_description"
+    t.datetime "published_at"
     t.index ["slug"], name: "index_blog_posts_on_slug"
   end
 

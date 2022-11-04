@@ -3,6 +3,8 @@
   padding: 128px 120px;
 
   .content-block {
+    border: solid blue;
+    flex-wrap: wrap;
     .content {
       width: 584px;
 
@@ -26,6 +28,24 @@
         color: $light-white;
       }
     }
+
+    .mobile-content {
+      max-width: 584px;
+
+      .title {
+        color: $darkest-gray;
+      }
+
+      .text {
+        color: $darkest-gray;
+      }
+      .button {
+        padding: 12px 20px;
+        width: 255px;
+        height: 50px;
+        color: $light-white;
+      }
+    }
   }
 
   .right {
@@ -33,6 +53,13 @@
   }
 
   .image-block {
+    .card-image {
+      max-height: 500px;
+    }
+  }
+
+  .mobile-image-block {
+    order: 0;
     .card-image {
       max-height: 500px;
     }
