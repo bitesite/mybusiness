@@ -5,6 +5,13 @@
   .content-block {
     .content {
       width: 584px;
+
+      .type-text {
+        font-size: 14px;
+        font-weight: 700;
+        color: $primary-default-color;
+      }
+
       .title {
         color: $darkest-gray;
       }

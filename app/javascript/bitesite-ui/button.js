@@ -8,9 +8,8 @@ const Button = styled.button`
   align-items: center;
   justify-content: center;
   padding: 12px 20px;
-  width: 140px;
-  height: 50px;
   border-radius: 1000px;
+  text-decoration: none;
   cursor: pointer;
   ${({ type }) => {
     switch (type) {
@@ -24,6 +23,7 @@ const Button = styled.button`
           &:hover {
             background-color: ${COLORS.primaryLighter};
             border: 1px solid ${COLORS.primaryLighter};
+            color: ${COLORS.primaryWhite};
           }
 
           &:selected {
@@ -46,8 +46,9 @@ const Button = styled.button`
           border: 1px solid ${COLORS.shadesDarknest};
 
           &:hover {
-            border-color: ${COLORS.primaryLighter};
-            color: ${COLORS.primaryLighter};
+            background-color: ${COLORS.primaryLighter};
+            border: 1px solid ${COLORS.primaryLighter};
+            color: ${COLORS.primaryWhite};
           }
 
           &:selected {

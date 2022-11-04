@@ -1,15 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Button } from '../../bitesite-ui';
 
 const GeneralPost = ({
   image,
+  typeText,
   header,
   text,
   buttonText,
   link,
+  linkHide,
+  linkText,
   positionImageRight,
   buttonHide,
   buttonClass,
+  buttonType,
   onClick,
   imageStyle,
 }) => (
@@ -19,13 +24,19 @@ const GeneralPost = ({
         <img className={`card-image ${imageStyle}`} src={image} alt="general component" />
       </div>
 
-      <div className="content fgs-al fgs-ali fgs-al-v fgs-al-g-30 ">
-        <div className="title fgs-ali heading-regular fgs-al-g-16">{header}</div>
+      <div className="content fgs-al fgs-ali fgs-al-v fgs-al-g-16 ">
+        {typeText && <div className="type-text fgs-ali">{typeText}</div>}
+        <div className="title fgs-ali heading-regular">{header}</div>
         <p className="text fgs-ali">{text}</p>
         {!buttonHide && (
-          <button className={`button fgs-ali btn ${buttonClass}`} type="button" onClick={onClick}>
+          <Button className={`${buttonClass}`} type={buttonType} onClick={onClick} href={link}>
             {buttonText}
-          </button>
+          </Button>
+        )}
+        {!linkHide && (
+          <a className="link fgs-ali" href={link}>
+            {linkText}
+          </a>
         )}
       </div>
     </div>
@@ -41,10 +52,14 @@ GeneralPost.defaultProps = {
   positionImageRight: true,
   buttonHide: false,
   onClick: () => {},
+  linkHide: false,
+  linkText: '',
+  buttonType: 'primary',
 };
 
 GeneralPost.propTypes = {
   image: PropTypes.string,
+  typeText: PropTypes.string,
   header: PropTypes.string,
   text: PropTypes.string,
   buttonText: PropTypes.string,
@@ -53,6 +68,9 @@ GeneralPost.propTypes = {
   buttonHide: PropTypes.bool,
   buttonClass: PropTypes.string,
   onClick: () => {},
+  linkHide: PropTypes.bool,
+  linkText: PropTypes.string,
+  buttonType: PropTypes.string,
 };
 
 export default GeneralPost;
