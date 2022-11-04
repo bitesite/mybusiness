@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Frame } from '@bitesite/react-figstrap';
 import { Icon } from '@iconify/react';
 import BradfordImage from '../../assets/images/bradford_case_study.png';
@@ -7,10 +6,10 @@ import TartuImage from '../../assets/images/tartu_case_study.png';
 import ISWAImage from '../../assets/images/iswa_case_study.png';
 
 const CaseStudies = () => (
-  <div className="padding">
+  <div className="case-studies-page">
     <Frame className="case-studies-component" gap="30" vertical alignItems="center">
       <Frame className="heading-regular case-studies-title">Project Case Studies</Frame>
-      <Frame className="case-study-cards" gap="32">
+      <Frame className="case-study-cards" gap="32" justifyContent="center">
         <Frame className="case-study-item" vertical>
           <img src={BradfordImage} className="case-study-image" alt="bradford case study" />
           <Frame className="case-study-text" vertical gap="8" padding="24">
