@@ -38,6 +38,9 @@ Mybusiness::Application.routes.draw do
   # - BLOG POSTS
   # get "/blog" => "blog_posts#index"
   resources :blog_posts, path: "/blog", except: [:destroy] do
+    collection do
+      get "paginated_index"
+    end
     resources :blog_post_images, except: [:show, :edit, :update]
     resources :comments, only: [:index, :create]
   end
