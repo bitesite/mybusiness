@@ -18,6 +18,12 @@ const CardImageContainer = styled.div`
   }
 `;
 
+const CardTags = styled(Frame)`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+`;
+
 const CardTitle = styled.div`
   color: ${COLORS.shadowDarknest};
 `;
@@ -41,24 +47,24 @@ const FooterFrame = styled(Frame)`
   width: fit-content;
 `;
 
-const BlogCard = ({ tags, blogPost }) => {
+const BlogCard = ({ tags, blogPost, width }) => {
   const { title, body: text, author, published_at: publishedAt, featured_image: featuredImage } = blogPost;
 
   return (
-    <Card onClick={() => window.history.push(`/blog/${blogPost.id}`)}>
+    <Card onClick={() => window.history.push(`/blog/${blogPost.id}`)} width={width}>
       {featuredImage && (
         <CardImageContainer>
           <img src={featuredImage.url} alt="Blog Post about the article" />
         </CardImageContainer>
       )}
-      <Frame alignItems="center" justifyContent="flex-start" gap={8}>
+      <CardTags alignItems="center" justifyContent="flex-start">
         {tags &&
           tags.map((tag, i) => (
             <Tag className="body-small-light" key={i}>
               {tag.title}
             </Tag>
           ))}
-      </Frame>
+      </CardTags>
       <CardTitle className="body-large">{title}</CardTitle>
       <CardText className="body-small" id="text">
         <TextTruncate line={4} element="span" truncateText="…" text={text} />
@@ -78,11 +84,13 @@ const BlogCard = ({ tags, blogPost }) => {
           <div className="caption-light">{moment(publishedAt).format('MMMM D, YYYY')}</div>
         </FooterFrame>
       </Frame>
-      <Frame alignItems="center" justifyContent="center" gap={8}>
-        <a href={`/blog/${blogPost.id}/edit`} className="edit-button">
-          Edit
-        </a>
-      </Frame>
+      {window.is(['staff', 'admin']) && (
+        <Frame alignItems="center" justifyContent="center" gap={8}>
+          <a href={`/blog/${blogPost.id}/edit`} className="edit-button">
+            Edit
+          </a>
+        </Frame>
+      )}
     </Card>
   );
 };
@@ -91,6 +99,7 @@ BlogCard.propTypes = {
   url: PropTypes.string,
   tags: PropTypes.arrayOf(PropTypes.object),
   blogPost: PropTypes.object,
+  width: PropTypes.string,
 };
 
 export default BlogCard;

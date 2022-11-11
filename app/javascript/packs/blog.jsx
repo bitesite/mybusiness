@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import queryString from 'query-string';
 import { isMobileScreenSize } from "../src/utilities/general_helpers";
-import { Tag, COLORS } from "../bitesite-ui";
+import { Tag, COLORS, ModalDialog, CloseIcon, Button} from "../bitesite-ui";
 import BlogCard from "../components/Blog/blog_card";
 import { Frame } from "@bitesite/react-figstrap";
 import styled from "styled-components/macro";
@@ -10,26 +10,68 @@ import Pagination from "../components/pagination";
 import { decodeQueryParams } from "../src/utilities/general_helpers";
 import GeneralPost from "../components/general/general_post";
 import BlogPostSubscribeImage from "../../assets/images/blog_post_subscribe.png";
+import { Icon } from "@iconify/react";
+
 const BlogFrame = styled(Frame)`
-  padding: 96px 120px 128px;
 
   .blog-tag-title {
     width: fit-content;
     white-space: nowrap;
   }
+  .blog-post-tag-modal {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px;
+    .modal-body {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .modal-filter-buttons {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+  }
+  .blog-page-tag-button {
+      width: 100%;
+    .filter-icon {
+      margin-right: 10px;
+    }
+  }
   @media (max-width: 760px) {
-    padding: 40px 16px;
+    padding: 40px 26px;
   }
 `;
 
 const BlogPostsFrame = styled(Frame)`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 32px;
-  @media (max-width: 760px) {
-    grid-template-columns: repeat(1, 1fr);
-  }
+display: flex;
+align-items: flex-start;
+justify-content: center;
+flex-wrap: wrap;
+gap: 20px;
+width: 100%;
+.blog-card {
+  flex: 1 1 21%;
+}
+@media (max-width: 760px) {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
 `;
+
+const BlogTagsFrame = styled(Frame)`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  `;
 
 const TagButton = styled.button`
   background: none;
@@ -42,7 +84,7 @@ const TagButton = styled.button`
       background: ${COLORS.primaryDefault};
       color: ${COLORS.primaryWhite};
     }
-    &.selected {
+    &.selected {       
       background: ${COLORS.primaryDefault};
       color: ${COLORS.primaryWhite};
     }
@@ -56,6 +98,7 @@ const BlogPage = () => {
   const [totalPages, setTotalPages] = useState(null);
   const [totalPosts, setTotalPosts] = useState(null);
   const [isMobileWidth, setIsMobileWidth] = useState(isMobileScreenSize(760));
+  const [isTagModalOpen, setIsTagModalOpen] = useState(false);
 
   const tags = [
     { title: "Video Prodution", value: "videoProduction" },
@@ -115,6 +158,12 @@ const BlogPage = () => {
     return updatedTagList;
   };
 
+  const clearFilters = () => {
+    setSelectedFilters({});
+    setIsTagModalOpen(false);
+  };
+
+
   useEffect(() => {
     setPageNumber(getPageNumberFromSearch());
     setUrlQueryFromFilters();
@@ -170,11 +219,45 @@ const BlogPage = () => {
       >
         The BiteSite Blog
       </div>
-      <Frame
+      {isMobileWidth ? (
+        <>
+        {!isTagModalOpen ? (
+        <div className="blog-page-tag-button">
+          <Button type="secondary" onClick={() => setIsTagModalOpen(true)} width='100%'>
+          <Icon icon='bytesize:filter' className="filter-icon" />
+          Popular Tags {selectedFilters["tag_name"] && selectedFilters["tag_name"].length > 0 && `(${selectedFilters["tag_name"].length})`}
+        </Button>
+        </div>
+        ) : (
+      <ModalDialog maxWidth='375px' modalDialogClassName='blog-post-tag-modal'>
+        <div className="modal-title body-regular">
+          <Icon icon='bytesize:filter' className="filter-icon" />
+          Popular Tags:
+        </div>
+        <CloseIcon onClick={() => setIsTagModalOpen(false)} width='100%'/>
+        <div className="modal-body">
+        {tags.map((tag) => (
+            <TagButton onClick={() => handleTagSelect(tag)}>
+            <Tag className="body-small-light" key={tag.value} selected={selectedFilters["tag_name"] && selectedFilters["tag_name"].includes(tag.value)}>
+              {tag.title}
+            </Tag>
+          </TagButton>
+          ))}
+        </div>
+        <div className="modal-filter-buttons">
+          <Button type='primary' width='100%' onClick={() => setIsTagModalOpen(false)}>Apply  <span>[{selectedFilters["tag_name"] ? selectedFilters["tag_name"].length : "0"}]</span> Filters</Button>
+          <Button type='secondary' width='100%' onClick={() => clearFilters() }>Clear Filters</Button>
+        </div>
+      </ModalDialog>
+        )} 
+        </>
+      ) : (
+      <BlogTagsFrame
         className="blog-tags"
         gap={16}
         alignItems="center"
         justifyContent="center"
+        width="100%"
       >
         <div className="blog-tag-title body-medium">Popular Tags:</div>
         {tags.map((tag) => (
@@ -184,19 +267,15 @@ const BlogPage = () => {
             </Tag>
           </TagButton>
         ))}
-      </Frame>
-      <BlogPostsFrame
-        vertical
-        className="blog-posts"
-        gap={64}
-        alignItems="center"
-        justifyContent="center"
-      >
+      </BlogTagsFrame>
+      )}
+      <BlogPostsFrame>
         {blogPosts &&
           blogPosts.length > 0 &&
           blogPosts.map((blogPost) => {
             return (
               <BlogCard
+              className="blog-card"
                 key={blogPost.id}
                 blogPost={blogPost}
                 tags={getTagList(blogPost.tag_list)}
@@ -205,17 +284,18 @@ const BlogPage = () => {
           })}
       </BlogPostsFrame>
       {totalPages && totalPages > 1 && (
-      <Pagination totalCount={totalPosts} currentPage={pageNumber} onPageChange={handlePageChange} pageSize={9} />
+        <Pagination totalCount={totalPosts} currentPage={pageNumber} onPageChange={handlePageChange} pageSize={9} />
       )}
-      <a href="/blog/new">New Blog Post</a>
+      {window.is(['staff', 'admin']) && (
+        <a href="/blog/new">New Blog Post</a>
+      )}
       <GeneralPost
       image={BlogPostSubscribeImage}
       header='Want to stay up to date with BiteSite?'
       text="We round up our top blog articles, company updates and industry recommendations in a regular newsletter for our community. Subscribe, and stay in the know!"
       buttonText="Subscribe to our Newsletter"
       buttonClass="primary-default"
-      onClick={() => console.log("clicked")}
-    />
+      onClick={() => console.log("clicked")}/>
     </BlogFrame>
   );
 };

@@ -21,6 +21,7 @@
 //= require pages.wedding
 //= require playbook
 //= require scrollnavigation
+//= require authorization
 
 $(function () {
   $('.select2').select2();
