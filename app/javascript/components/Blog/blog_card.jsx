@@ -47,11 +47,11 @@ const FooterFrame = styled(Frame)`
   width: fit-content;
 `;
 
-const BlogCard = ({ tags, blogPost, width }) => {
+const BlogCard = ({ tags, blogPost, width, onClick }) => {
   const { title, body: text, author, published_at: publishedAt, featured_image: featuredImage } = blogPost;
 
   return (
-    <Card onClick={() => window.history.push(`/blog/${blogPost.id}`)} width={width}>
+    <Card width={width} onClick={onClick}>
       {featuredImage && (
         <CardImageContainer>
           <img src={featuredImage.url} alt="Blog Post about the article" />
@@ -100,6 +100,7 @@ BlogCard.propTypes = {
   tags: PropTypes.arrayOf(PropTypes.object),
   blogPost: PropTypes.object,
   width: PropTypes.string,
+  onClick: PropTypes.func,
 };
 
 export default BlogCard;

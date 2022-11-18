@@ -11,6 +11,7 @@ import { decodeQueryParams } from "../src/utilities/general_helpers";
 import GeneralPost from "../components/general/general_post";
 import BlogPostSubscribeImage from "../../assets/images/blog_post_subscribe.png";
 import { Icon } from "@iconify/react";
+import { getTagList, tags } from '../src/utilities/blog_post_helpers';
 
 const BlogFrame = styled(Frame)`
 
@@ -45,7 +46,7 @@ const BlogFrame = styled(Frame)`
     }
   }
   @media (max-width: 760px) {
-    padding: 40px 26px;
+    padding: 40px 0;
   }
 `;
 
@@ -64,6 +65,9 @@ width: 100%;
   align-items: center;
   justify-content: center;
   gap: 20px;
+  .blog-card {
+    flex: 1 1 100%;
+  }
 }
 `;
 
@@ -100,16 +104,6 @@ const BlogPage = () => {
   const [isMobileWidth, setIsMobileWidth] = useState(isMobileScreenSize(760));
   const [isTagModalOpen, setIsTagModalOpen] = useState(false);
 
-  const tags = [
-    { title: "Video Prodution", value: "videoProduction" },
-    { title: "Software", value: "software" },
-    { title: "Coding", value: "coding" },
-    { title: "Ruby on Rails", value: "rubyOnRails" },
-    { title: "Business", value: "business" },
-    { title: "Custom Software", value: "customSoftware" },
-    { title: "React Native", value: "reactNative" },
-    { title: "React", value: "react" },
-  ];
 
   function resize() {
     if (isMobileScreenSize(830) !== isMobileWidth) {
@@ -148,15 +142,6 @@ const BlogPage = () => {
       setTotalPosts(result.total);
     });
   }
-
-  const getTagList = (tagList) => {
-    const updatedTagList = [];
-    tagList.forEach((tag) => {
-      const tagObject = tags.find((t) => t.value === tag);
-      updatedTagList.push(tagObject);
-    });
-    return updatedTagList;
-  };
 
   const clearFilters = () => {
     setSelectedFilters({});
@@ -236,12 +221,12 @@ const BlogPage = () => {
         </div>
         <CloseIcon onClick={() => setIsTagModalOpen(false)} width='100%'/>
         <div className="modal-body">
-        {tags.map((tag) => (
-            <TagButton onClick={() => handleTagSelect(tag)}>
-            <Tag className="body-small-light" key={tag.value} selected={selectedFilters["tag_name"] && selectedFilters["tag_name"].includes(tag.value)}>
-              {tag.title}
-            </Tag>
-          </TagButton>
+        {tags && tags.map((tag) => (
+            <TagButton onClick={() => handleTagSelect(tag)} key={tag.value} className="tag-button">
+              <Tag className="body-small-light" selected={selectedFilters["tag_name"] && selectedFilters["tag_name"].includes(tag.value)}>
+                {tag.title}
+              </Tag>
+            </TagButton>
           ))}
         </div>
         <div className="modal-filter-buttons">
@@ -260,9 +245,9 @@ const BlogPage = () => {
         width="100%"
       >
         <div className="blog-tag-title body-medium">Popular Tags:</div>
-        {tags.map((tag) => (
-          <TagButton onClick={() => handleTagSelect(tag)}>
-            <Tag className="body-small-light" key={tag.value} selected={selectedFilters["tag_name"] && selectedFilters["tag_name"].includes(tag.value)}>
+        {tags && tags.map((tag) => (
+          <TagButton onClick={() => handleTagSelect(tag)} key={tag.value} className="tag-button">
+            <Tag className="body-small-light" selected={selectedFilters["tag_name"] && selectedFilters["tag_name"].includes(tag.value)}>
               {tag.title}
             </Tag>
           </TagButton>
@@ -275,6 +260,9 @@ const BlogPage = () => {
           blogPosts.map((blogPost) => {
             return (
               <BlogCard
+              onClick={() => {
+                window.location.href = `/blog/${blogPost.slug}`;
+              }}
               className="blog-card"
                 key={blogPost.id}
                 blogPost={blogPost}
