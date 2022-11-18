@@ -14,6 +14,7 @@ const GeneralPost = ({
   buttonClass,
   onClick,
   imageStyle,
+  className
 }) => {
 
 const [isMobileWidth, setIsMobileWidth] = useState(isMobileScreenSize(760));
@@ -31,7 +32,7 @@ useEffect(() => {
 }, [isMobileWidth]);
 
 return (
-  <div className="general-component-card fgs-al fgs-al-v fgs-al-g-30">
+  <div className={`general-component-card fgs-al fgs-al-v fgs-al-g-30 ${className}`}>
     <div className="content-block fgs-al fgs-ali fgs-al-h fgs-al-g-60 fgs-al-align-items-center fgs-al-justify-content-space-evenly">
       <div className={`fgs-ali ${positionImageRight ? 'right' : ''} ${isMobileWidth ? 'mobile-image-block' : 'image-block'}`}>
         <img className={`card-image ${imageStyle}`} src={image} alt="general component" />
