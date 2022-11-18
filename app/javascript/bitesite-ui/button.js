@@ -8,7 +8,7 @@ const Button = styled.button`
   align-items: center;
   justify-content: center;
   padding: 12px 20px;
-  width: 140px;
+  width: ${(props) => (props.width ? props.width : '140px')};
   height: 50px;
   border-radius: 1000px;
   cursor: pointer;
@@ -67,7 +67,7 @@ const Button = styled.button`
   }}
 `;
 
-const DashboardButton = ({ type, children, onClick, disabled, href = '', className, typography }) => (
+const DashboardButton = ({ type, children, onClick, disabled, href = '', className, typography, width }) => (
   <Button
     as={href ? 'a' : 'button'}
     onClick={onClick}
@@ -75,6 +75,7 @@ const DashboardButton = ({ type, children, onClick, disabled, href = '', classNa
     type={type}
     disabled={disabled}
     href={href}
+    width={width}
   >
     <div>{children}</div>
   </Button>
@@ -90,6 +91,7 @@ DashboardButton.propTypes = {
   href: PropTypes.string,
   className: PropTypes.string,
   typography: PropTypes.string,
+  width: PropTypes.string,
 };
 
 DashboardButton.defaultProps = {

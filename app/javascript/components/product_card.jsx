@@ -7,7 +7,7 @@ const ProductCard = ({ image, header, text, link, positionImageRight, imageStyle
   <div className="product-component-card">
     <div className="product-card fgs-al fgs-ali fgs-al-h fgs-al-g-20 fgs-al-p-20 fgs-al-align-items-flex-start">
       <div className={`image-block fgs-ali ${positionImageRight ? 'right' : ''}`}>
-        <img className={`card-image ${imageStyle}`} src={image} />
+        <img className={`card-image ${imageStyle}`} src={image} alt="product component" />
       </div>
 
       <div className="content fgs-al fgs-ali fgs-al-v  ">
@@ -34,6 +34,7 @@ ProductCard.defaultProps = {
   text: PropTypes.string,
   link: PropTypes.string,
   positionImageRight: false,
+  imageStyle: '',
 };
 
 ProductCard.propTypes = {
@@ -42,6 +43,7 @@ ProductCard.propTypes = {
   text: PropTypes.string,
   link: PropTypes.string,
   positionImageRight: PropTypes.bool,
+  imageStyle: PropTypes.string,
 };
 
 export default ProductCard;
