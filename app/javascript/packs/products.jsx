@@ -11,7 +11,6 @@ const Products = () => {
   function loadProducts() {
     $.getJSON('/products', (results) => {
       setProducts(results);
-      console.log(results);
     });
   }
 

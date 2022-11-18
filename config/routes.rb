@@ -1,6 +1,5 @@
 Mybusiness::Application.routes.draw do
   # - RESOURCES
-  resources :frequently_asked_questions, except: [:show]
   resources :do_not_notify_listings
   resources :careers
   resources :settings, except: [:show]
@@ -46,6 +45,7 @@ Mybusiness::Application.routes.draw do
   end
 
   resources :products, path: "/products"
+  resources :questions, path: "/questions"
 
   # - DEVISE
   devise_for :users, controllers: { registrations: "registrations" }

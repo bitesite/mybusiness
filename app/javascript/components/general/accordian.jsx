@@ -2,25 +2,21 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Frame } from '@bitesite/react-figstrap';
 import { Icon } from '@iconify/react';
 import { icon } from '@fortawesome/fontawesome-svg-core';
+import propTypes from 'prop-types';
 
-const Accordian = ({ accordianTitle, accordianContent, expandAll }) => {
-  const [showContent, setShowContent] = useState(false);
-  const iconType = useRef();
-
-  const handleDisplay = () => {
-    if (iconType.current.className === 'add') {
-      setShowContent(!showContent);
-    }
-    if (iconType.current.className === 'minus') {
-      setShowContent(!showContent);
-    }
+const Accordian = ({ accordianTitle, accordianContent, expandAll, item }) => {
+  const defaultItem = {
+    item,
+    showContent: false,
   };
+
+  const [data, setData] = useState(defaultItem);
 
   useEffect(() => {
     if (expandAll) {
-      setShowContent(true);
+      setData((prev) => ({ ...prev, showContent: true }));
     } else {
-      setShowContent(false);
+      setData((prev) => ({ ...prev, showContent: false }));
     }
   }, [expandAll]);
 
@@ -29,64 +25,40 @@ const Accordian = ({ accordianTitle, accordianContent, expandAll }) => {
       <Frame justifyContent="space-between">
         <Frame className="medium ">{accordianTitle}</Frame>
         <div className="accordian-icon">
-          {expandAll && showContent && (
+          {data.showContent && (
             <div
               className="minus-expanded"
               onClick={(e) => {
                 e.preventDefault;
-                console.log('hide');
-                setShowContent(false);
-              }}
-            >
-              <Icon icon="dashicons:minus" />
-              <div>hello</div>
-            </div>
-          )}
-          {showContent && !expandAll && (
-            <div
-              onClick={(e) => {
-                e.preventDefault;
-                setShowContent(false);
+                setData((prev) => ({ ...prev, showContent: false }));
               }}
             >
               <Icon icon="dashicons:minus" />
             </div>
           )}
-          {!showContent && expandAll && (
+          {!data.showContent && (
             <div
               onClick={(e) => {
                 e.preventDefault;
-                setShowContent(false);
+                defaultItem.showContent = true;
+                setData((prev) => ({ ...prev, showContent: true }));
               }}
             >
-              <Icon icon="dashicons:minus" />
-            </div>
-          )}
-
-          {!showContent && !expandAll && (
-            <div
-              onClick={(e) => {
-                e.preventDefault;
-                setShowContent(true);
-              }}
-            >
-              <Icon icon="fluent:add-16-filled" />
+              <Icon icon="material-symbols:add" />
             </div>
           )}
         </div>
       </Frame>
-      {showContent && !expandAll && <Frame className="body-regular accordian-content">{accordianContent}</Frame>}
-      {!showContent && expandAll && null}
-
-      {expandAll && showContent && <Frame className="body-regular accordian-content">{accordianContent}</Frame>}
+      {data.showContent && <Frame className="body-regular accordian-content">{accordianContent}</Frame>}
     </Frame>
   );
 };
 
 export default Accordian;
 
-// expandone or expand all
-
-// if expand all
-// minus icon
-//
+Accordian.propTypes = {
+  accordianTitle: propTypes.string,
+  accordianContent: propTypes.string,
+  expandAll: propTypes.bool,
+  item: propTypes.number,
+};
