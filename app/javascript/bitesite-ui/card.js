@@ -8,7 +8,8 @@ const Card = styled.div`
   justify-content: flex-start;
   gap: 16px;
   padding: 24px;
-  width: 378px;
+  max-width: ${(props) => (props.maxWidth ? props.maxWidth : '360px')};
+  width: ${(props) => (props.width ? props.width : '100%')};
   height: 530px;
   border: 1px solid #c4c6c7;
   border-radius: 10px;

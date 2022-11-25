@@ -5,17 +5,16 @@ class Ability
     user ||= User.new # guest user (not logged in)
 
     can :read, NewsPost
-    can :read, BlogPost, published: true
+    can [:read, :paginated_index], BlogPost, published: true
     can :read, Comment
     can :create, Comment
     can [:new, :create], Contact
     can :show, Download
     can :read, FrequentlyAskedQuestion
-    
+
     if !user.new_record?
       can :manage, Device, user_id: user.id
     end
-
 
     if user.has_role?(:staff)
       can :manage, BlogPost
@@ -24,11 +23,11 @@ class Ability
       can :manage, Profile, user_id: user.id
       can :manage, TimeOffEntry, user_id: user.id
     end
-    
+
     if user.has_role?(:supervisor)
       can :approve, TimeOffEntry
     end
-    
+
     if user.has_role?(:admin)
       can :manage, :all
     end

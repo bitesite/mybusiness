@@ -40,6 +40,9 @@ Mybusiness::Application.routes.draw do
     collection do
       get "paginated_index"
     end
+    member do
+      get "related_posts"
+    end
     resources :blog_post_images, except: [:show, :edit, :update]
     resources :comments, only: [:index, :create]
   end

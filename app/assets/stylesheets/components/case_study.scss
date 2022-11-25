@@ -1,0 +1,36 @@
+.case-studies-component {
+  background-color: $background;
+  .case-studies-title {
+    text-align: center;
+  }
+
+  .case-study-cards {
+    flex-wrap: wrap;
+    .case-study-item {
+      width: 300px;
+      .case-study-image {
+        width: 300px;
+        z-index: 1;
+      }
+
+      .case-study-text {
+        background-color: white;
+        border: 1px solid #c4c6c7;
+        box-shadow: 0px 1px 3px rgba(97, 104, 105, 0.15);
+        border-radius: 10px;
+        margin-top: -10px;
+      }
+    }
+  }
+  .case-study-link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+  }
+}
+
+.case-studies-page {
+  padding: 100px;
+  background-color: $background;
+}
