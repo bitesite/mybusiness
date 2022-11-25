@@ -65,12 +65,59 @@
   }
 
   .services-projects-beliefs {
+    gap: 160px;
+    padding: 128px 0px;
+
     .general-component-card {
       background: none;
+      justify-content: end;
+
+      .home-general-content {
+        max-width: 480px;
+      }
+
+      .home-general-content-wide {
+        max-width: 580px;
+      }
     }
 
     &.dark-background {
       background-color: $background;
+    }
+  }
+
+  .clients-container {
+    padding: 120px 0;
+
+    .logos-container {
+      flex-wrap: wrap;
+      column-gap: 64px;
+      row-gap: 30px;
+
+      .logo-image {
+        width: 100%;
+        max-width: 200px;
+      }
+    }
+
+    .referral-container {
+      flex-wrap: wrap;
+    }
+  }
+
+  .view-case-studies-link {
+    &:hover {
+      svg {
+        path {
+          fill: $primary-lighter-color;
+        }
+      }
+    }
+    svg {
+      margin-left: 10px;
+      path {
+        transition: $transition;
+      }
     }
   }
 }

@@ -1,10 +1,11 @@
 .general-component-card {
   background: $lightest-gray;
-  padding: 128px 120px;
 
   .content-block {
-    border: solid blue;
-    flex-wrap: wrap;
+    &.mobile-wrap {
+      flex-wrap: wrap;
+    }
+
     .content {
       width: 584px;
 
@@ -45,6 +46,10 @@
         height: 50px;
         color: $light-white;
       }
+    }
+
+    .link {
+      width: fit-content;
     }
   }
 

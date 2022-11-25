@@ -1,0 +1,30 @@
+.component-referral-card {
+  width: 370px;
+  min-height: 340px;
+  padding: 32px;
+  box-sizing: border-box;
+
+  border: 1px solid $light-gray;
+  border-radius: 16px;
+
+  .referral-user-container {
+    .referral-image {
+      max-width: 50px;
+      max-height: 50px;
+      border-radius: 50%;
+
+      object-fit: cover;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  .referral-user-info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
