@@ -8,7 +8,7 @@ const Faq = () => {
   const [questions, setQuestions] = useState([]);
 
   function loadQuestions() {
-    $.getJSON('/questions', (results) => {
+    $.getJSON('/frequently_asked_questions', (results) => {
       setQuestions(results);
     });
   }

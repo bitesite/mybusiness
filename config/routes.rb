@@ -45,7 +45,7 @@ Mybusiness::Application.routes.draw do
   end
 
   resources :products, path: "/products"
-  resources :questions, path: "/questions"
+  resources :frequently_asked_questions, only: [:index, :create, :update, :edit]
 
   # - DEVISE
   devise_for :users, controllers: { registrations: "registrations" }
