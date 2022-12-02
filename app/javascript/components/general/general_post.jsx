@@ -21,10 +21,10 @@ const GeneralPost = ({
   imageStyle,
   contentClass,
 }) => {
-  const [isMobileWidth, setIsMobileWidth] = useState(isMobileScreenSize(760));
+  const [isMobileWidth, setIsMobileWidth] = useState(isMobileScreenSize(780));
   function resize() {
-    if (isMobileScreenSize(830) !== isMobileWidth) {
-      setIsMobileWidth(isMobileScreenSize(760));
+    if (isMobileScreenSize(780) !== isMobileWidth) {
+      setIsMobileWidth(isMobileScreenSize(780));
     }
   }
 
