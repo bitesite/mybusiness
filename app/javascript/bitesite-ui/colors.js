@@ -12,4 +12,5 @@ export const COLORS = {
   shadesBackground: '#F3F5FA',
   shadesShadow: '#616869',
   primaryWhite: '#FFFFFF',
+  background: '#f3f5fa',
 };

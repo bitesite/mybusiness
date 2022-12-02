@@ -1,14 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import GeneralPost from '../components/general/general_post';
-import ContactImage from '../../assets/images/contact_image.png';
+import React from "react";
+import ReactDOM from "react-dom";
+import GeneralPost from "../components/general/general_post";
+import ContactImage from "../../assets/images/contact_image.png";
 
 const Contact = () => {
-  const header = 'Get in Touch!';
+  const header = "Get in Touch!";
   const text = (
     <>
       <div className="body-regular contact-text-container">
-        Excited about your project? Have some questions? Let us know below and we’ll get back to you ASAP!
+        Excited about your project? Have some questions? Let us know below and
+        we&apos;ll get back to you ASAP!
       </div>
       <div className="input-container">
         <label className="body-regular">Full Name</label>
@@ -17,17 +18,29 @@ const Contact = () => {
 
         <label className="body-regular">Email Address</label>
 
-        <input className="input-box-contact" type="email" id="email" pattern=".+@globex\.com" required />
+        <input
+          className="input-box-contact"
+          type="email"
+          id="email"
+          pattern=".+@globex\.com"
+          required
+        />
 
         <label className="body-regular">Message</label>
 
-        <input className="input-box-contact message" type="message" id="message" size="584" required />
+        <input
+          className="input-box-contact message"
+          type="message"
+          id="message"
+          size="584"
+          required
+        />
       </div>
     </>
   );
 
   const handleContactFormSubmit = () => {
-    window.alert('Contact Form Submitted!');
+    window.alert("Contact Form Submitted!");
   };
 
   return (
@@ -45,8 +58,8 @@ const Contact = () => {
 
 export default Contact;
 
-document.addEventListener('DOMContentLoaded', () => {
-  const element = document.getElementById('contact-component-mount-point');
+document.addEventListener("DOMContentLoaded", () => {
+  const element = document.getElementById("contact-component-mount-point");
   if (element) {
     ReactDOM.render(<Contact />, element);
   }

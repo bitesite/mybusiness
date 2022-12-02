@@ -8,10 +8,11 @@ const Button = styled.button`
   align-items: center;
   justify-content: center;
   padding: 12px 20px;
-  width: ${(props) => (props.width ? props.width : '140px')};
+  width: ${(props) => (props.width ? props.width : '100%')};
   height: 50px;
   border-radius: 1000px;
   text-decoration: none;
+  box-sizing: border-box;
   cursor: pointer;
   ${({ type }) => {
     switch (type) {

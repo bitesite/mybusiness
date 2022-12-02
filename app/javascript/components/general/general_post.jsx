@@ -1,8 +1,8 @@
-import React, {useState, useEffect} from 'react';
-import PropTypes from 'prop-types';
-import { Button } from '../../bitesite-ui';
-import { isMobileScreenSize } from '../../src/utilities/general_helpers';
-import {Frame} from '@bitesite/react-figstrap';
+import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
+import { Button } from "../../bitesite-ui";
+import { isMobileScreenSize } from "../../src/utilities/general_helpers";
+import { Frame } from "@bitesite/react-figstrap";
 
 const GeneralPost = ({
   image,
@@ -17,10 +17,11 @@ const GeneralPost = ({
   buttonHide,
   buttonClass,
   buttonType,
+  buttonWidth,
   onClick,
   imageStyle,
   contentClass,
-  className
+  className,
 }) => {
   const [isMobileWidth, setIsMobileWidth] = useState(isMobileScreenSize(780));
   function resize() {
@@ -30,26 +31,52 @@ const GeneralPost = ({
   }
 
   useEffect(() => {
-    window.addEventListener('resize', resize);
+    window.addEventListener("resize", resize);
     return () => {
-      window.removeEventListener('resize', resize);
+      window.removeEventListener("resize", resize);
     };
   }, [isMobileWidth]);
 
   return (
-    <div className={`general-component-card fgs-al fgs-al-v fgs-al-g-30 ${className}`}>
-      <div className={`content-block fgs-al fgs-ali fgs-al-h fgs-al-g-60 fgs-al-align-items-center fgs-al-justify-content-space-evenly ${isMobileWidth ? 'mobile-wrap' : ''}`}>
-        <Frame className={`fgs-al fgs-al-align-items-center ${positionImageRight ? 'right' : ''} ${isMobileWidth ? 'mobile-image-block' : 'image-block'}`}>
-          <img className={`card-image ${imageStyle}`} src={image} alt="general component" />
+    <div
+      className={`general-component-card fgs-al fgs-al-v fgs-al-g-30 ${className}`}
+    >
+      <div
+        className={`content-block fgs-al fgs-ali fgs-al-h fgs-al-g-60 fgs-al-align-items-center fgs-al-justify-content-space-evenly ${
+          isMobileWidth ? "mobile-wrap" : ""
+        }`}
+      >
+        <Frame
+          className={`fgs-al fgs-al-align-items-center ${
+            positionImageRight ? "right" : ""
+          } ${isMobileWidth ? "mobile-image-block" : "image-block"}`}
+        >
+          <img
+            className={`card-image ${imageStyle}`}
+            src={image}
+            alt="general component"
+          />
         </Frame>
 
-        <div className={`${isMobileWidth ? 'mobile-content' : 'content'} fgs-al fgs-ali fgs-al-v fgs-al-g-30 mobile ${contentClass}`}>
+        <div
+          className={`${
+            isMobileWidth ? "mobile-content" : "content"
+          } fgs-al fgs-ali fgs-al-v fgs-al-g-30 mobile ${contentClass}`}
+        >
           {typeText && <div className="type-text fgs-ali">{typeText}</div>}
-          <div className="title fgs-ali heading-regular fgs-al-g-16">{header}</div>
+          <div className="title fgs-ali heading-regular fgs-al-g-16">
+            {header}
+          </div>
           {text}
           {!buttonHide && (
             <div>
-              <Button className={`${buttonClass}`} type={buttonType} onClick={onClick} href={link}>
+              <Button
+                className={`${buttonClass}`}
+                type={buttonType}
+                onClick={onClick}
+                href={link}
+                width={buttonWidth}
+              >
                 {buttonText}
               </Button>
             </div>
@@ -62,22 +89,22 @@ const GeneralPost = ({
         </div>
       </div>
     </div>
-);
-}
+  );
+};
 
 GeneralPost.defaultProps = {
-  image: '',
-  header: '',
+  image: "",
+  header: "",
   text: <></>,
-  buttonText: '',
-  link: '',
+  buttonText: "",
+  link: "",
   positionImageRight: true,
   buttonHide: false,
   onClick: () => {},
   linkHide: false,
   linkText: <></>,
-  buttonType: 'primary',
-  buttonClass: '',
+  buttonType: "primary",
+  buttonClass: "",
 };
 
 GeneralPost.propTypes = {

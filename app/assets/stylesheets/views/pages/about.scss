@@ -1,3 +1,34 @@
 .about-page {
   width: 100%;
+
+  .learn-more-about-us-container {
+    gap: 160px;
+    padding-top: 128px;
+    padding-bottom: 128px;
+
+    .general-component-card {
+      background: none;
+      justify-content: end;
+
+      .home-general-content {
+        max-width: 480px;
+      }
+
+      .home-general-content-wide {
+        max-width: 580px;
+      }
+
+      .how-we-work-button {
+        width: 150px;
+      }
+
+      .contact-us-button {
+        width: 190px;
+      }
+    }
+
+    &.dark-background {
+      background-color: $background;
+    }
+  }
 }

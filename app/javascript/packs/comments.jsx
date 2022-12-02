@@ -2,17 +2,17 @@
 // like app/views/layouts/application.html.erb. All it does is render <div>Hello React</div> at the bottom
 // of the page.
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
+import React from "react";
+import ReactDOM from "react-dom";
+import PropTypes from "prop-types";
 
 class Comments extends React.Component {
   constructor() {
     super();
     this.state = {
-      name: '',
-      email: '',
-      body: '',
+      name: "",
+      email: "",
+      body: "",
       comments: [],
       errors: [],
       submitting: false,
@@ -25,7 +25,7 @@ class Comments extends React.Component {
 
   handleInputChange = (event) => {
     const { target } = event;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const value = target.type === "checkbox" ? target.checked : target.value;
     const { name } = target;
 
     this.setState({ [name]: value });
@@ -47,31 +47,42 @@ class Comments extends React.Component {
 
     $.ajax({
       url: `/blog/${blogPostId}/comments`,
-      method: 'POST',
-      dataType: 'JSON',
+      method: "POST",
+      dataType: "JSON",
       data: { comment: { name, email, body } },
       success: () => {
-        this.setState({ submitting: false, status: 'Success!', name: '', email: '', body: '' });
+        this.setState({
+          submitting: false,
+          status: "Success!",
+          name: "",
+          email: "",
+          body: "",
+        });
         this.loadComments();
       },
       error: (jqXHR, textStatus, errorThrown) => {
         this.setState({
           errors: jqXHR.responseJSON,
           submitting: false,
-          status: "We're sorry, but there was an error submitting your comment.",
+          status:
+            "We're sorry, but there was an error submitting your comment.",
         });
       },
     });
   };
 
   render() {
-    const { name, email, body, comments, status, errors, submitting } = this.state;
+    const { name, email, body, comments, status, errors, submitting } =
+      this.state;
     return (
       <div id="component-comments">
         <h2>Comments</h2>
         <div className="comments-list">
           {comments.length == 0 ? (
-            <div>There are currently no comments for this post. Be the first to comment below!</div>
+            <div>
+              There are currently no comments for this post. Be the first to
+              comment below!
+            </div>
           ) : (
             <>
               {comments.map((comment) => (
@@ -87,19 +98,38 @@ class Comments extends React.Component {
           <h3>Submit your own</h3>
           <div className="field">
             <label>Name (will be visible to the public)</label>
-            <input type="text" name="name" onChange={this.handleInputChange} value={name} />
+            <input
+              type="text"
+              name="name"
+              onChange={this.handleInputChange}
+              value={name}
+            />
           </div>
           <div className="field">
             <label>Email (will NOT be visible to the public)</label>
-            <input type="text" name="email" onChange={this.handleInputChange} value={email} />
+            <input
+              type="text"
+              name="email"
+              onChange={this.handleInputChange}
+              value={email}
+            />
           </div>
           <div className="field">
             <label>Message</label>
-            <textarea rows="4" name="body" onChange={this.handleInputChange} value={body} />
+            <textarea
+              rows="4"
+              name="body"
+              onChange={this.handleInputChange}
+              value={body}
+            />
           </div>
           <div className="actions">
-            <a href="#" className="btn btn-primary" onClick={this.submitComment}>
-              {submitting ? 'Submitting...' : 'Submit'}
+            <a
+              href="#"
+              className="btn btn-primary"
+              onClick={this.submitComment}
+            >
+              {submitting ? "Submitting..." : "Submit"}
             </a>
           </div>
           <div className="status">
@@ -122,9 +152,14 @@ Comments.propTypes = {
   blogPostId: PropTypes.number.isRequired,
 };
 
-document.addEventListener('DOMContentLoaded', () => {
-  const element = document.getElementById('blog-post-comments-component-mount-point');
+document.addEventListener("DOMContentLoaded", () => {
+  const element = document.getElementById(
+    "blog-post-comments-component-mount-point"
+  );
   if (element) {
-    ReactDOM.render(<Comments blogPostId={element.dataset.blogPostId} />, element);
+    ReactDOM.render(
+      <Comments blogPostId={element.dataset.blogPostId} />,
+      element
+    );
   }
 });

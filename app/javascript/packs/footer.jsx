@@ -1,9 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faYoutube, faTwitter } from '@fortawesome/free-brands-svg-icons';
-import Link from '../components/link';
+import React from "react";
+import ReactDOM from "react-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faYoutube, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import Link from "../components/link";
 
 const Footer = () => (
   <div className="footer">
@@ -57,7 +56,10 @@ const Footer = () => (
           <span className="links-title fgs-ali">FOLLOW US</span>
 
           <div className="fgs-ali fgs-al fgs-al-h fgs-al-g-20 fgs-al-align-items-flex-center">
-            <Link path="https://www.youtube.com/user/bitesiteca" target="_blank">
+            <Link
+              path="https://www.youtube.com/user/bitesiteca"
+              target="_blank"
+            >
               <FontAwesomeIcon icon={faYoutube} className="fa-2x" />
             </Link>
             <Link path="https://www.twitter.com/bitesite" target="_blank">
@@ -72,8 +74,8 @@ const Footer = () => (
 
 export default Footer;
 
-document.addEventListener('DOMContentLoaded', () => {
-  const element = document.getElementById('footer-component-mount-point');
+document.addEventListener("DOMContentLoaded", () => {
+  const element = document.getElementById("footer-component-mount-point");
   if (element) {
     ReactDOM.render(<Footer />, element);
   }

@@ -8,9 +8,6 @@ import TrelloIcon from '../../assets/images/tools/trello-icon.png'
 import ExpoIcon from '../../assets/images/tools/logos_expo.png'
 import HerokuIcon from '../../assets/images/tools/logos_heroku.png'
 
-
-
-
 const ToolsWeUse = () => {
   return (
     <div className='tools-component'>
