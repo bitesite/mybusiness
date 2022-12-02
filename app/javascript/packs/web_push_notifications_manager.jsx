@@ -47,7 +47,7 @@ function WebPushNotificationsManager({ hidden }) {
           // We have a subscription, so call unsubscribe on it
           subscription
             .unsubscribe()
-            .then(function (successful) {
+            .then(function () {
               setIsPushEnabled(false);
             })
             .catch(function (e) {

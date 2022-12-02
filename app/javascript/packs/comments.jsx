@@ -23,20 +23,20 @@ class Comments extends React.Component {
     this.loadComments();
   }
 
-  loadComments = () => {
-    const { blogPostId } = this.props;
-
-    $.getJSON(`/blog/${blogPostId}/comments`, (comments) => {
-      this.setState({ comments });
-    });
-  };
-
   handleInputChange = (event) => {
     const { target } = event;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const { name } = target;
 
     this.setState({ [name]: value });
+  };
+
+  loadComments = () => {
+    const { blogPostId } = this.props;
+
+    $.getJSON(`/blog/${blogPostId}/comments`, (comments) => {
+      this.setState({ comments });
+    });
   };
 
   submitComment = (e) => {

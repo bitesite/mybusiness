@@ -55,6 +55,16 @@ class BlogPostsController < ApplicationController
     end
   end
 
+  def related_posts
+    @blog_posts = BlogPost.where("id != ?", params[:id]).where("published = ?", true)
+    @blog_posts = @blog_posts.tagged_with(params[:tag_names].split(","), any: true) if params[:tag_names]
+    @blog_posts = @blog_posts.limit(3)
+
+    respond_to do |format|
+      format.json { render :index }
+    end
+  end
+
   private
 
   def friendly_find

@@ -20,6 +20,7 @@ const GeneralPost = ({
   onClick,
   imageStyle,
   contentClass,
+  className
 }) => {
   const [isMobileWidth, setIsMobileWidth] = useState(isMobileScreenSize(780));
   function resize() {
@@ -36,8 +37,8 @@ const GeneralPost = ({
   }, [isMobileWidth]);
 
   return (
-    <div className="general-component-card fgs-al fgs-al-v fgs-al-g-30">
-      <div className={`content-block fgs-al fgs-ali fgs-al-h fgs-al-g-60 fgs-al-align-items-center fgs-al-justify-content-space-between ${isMobileWidth ? 'mobile-wrap' : ''}`}>
+    <div className={`general-component-card fgs-al fgs-al-v fgs-al-g-30 ${className}`}>
+      <div className={`content-block fgs-al fgs-ali fgs-al-h fgs-al-g-60 fgs-al-align-items-center fgs-al-justify-content-space-evenly ${isMobileWidth ? 'mobile-wrap' : ''}`}>
         <Frame className={`fgs-al fgs-al-align-items-center ${positionImageRight ? 'right' : ''} ${isMobileWidth ? 'mobile-image-block' : 'image-block'}`}>
           <img className={`card-image ${imageStyle}`} src={image} alt="general component" />
         </Frame>

@@ -12,13 +12,15 @@ const SubscribePopup = () => {
         community.
       </div>
       <div className="input-container">
-        <label className="body-regular">Full Name</label>
+        <label className="body-regular" htmlFor="name">
+          Full Name
+          <input className="input-box" type="text" required id="name" />
+        </label>
 
-        <input className="input-box" type="text" required />
-
-        <label className="body-regular">Email Address</label>
-
-        <input className="input-box" type="email" id="email" pattern=".+@globex\.com" required />
+        <label className="body-regular" htmlFor="email">
+          Email Address
+          <input className="input-box" type="email" id="email" pattern=".+@globex\.com" required />
+        </label>
       </div>
     </>
   );
