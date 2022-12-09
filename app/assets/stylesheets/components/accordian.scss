@@ -7,11 +7,30 @@
     margin-top: 20px;
   }
   .accordian-icon {
-    width: 30px;
-    height: 30px;
+    font-size: 30px;
+    margin-top: -5px;
+    path {
+      color: $primary-default-color;
+    }
     &:hover {
       cursor: grab;
     }
+  }
+  .edit-button {
+    background: #2a7f89;
+    box-shadow: 0px 8px 14px rgba(97, 104, 105, 0.15);
+    border-radius: 1000px;
+    transition-duration: 0.4s;
+    width: 90px;
+    height: 40px;
+  }
+  .delete-button {
+    background: $dark-red;
+    box-shadow: 0px 8px 14px rgba(97, 104, 105, 0.15);
+    border-radius: 1000px;
+    transition-duration: 0.4s;
+    width: 90px;
+    height: 40px;
   }
 }
 

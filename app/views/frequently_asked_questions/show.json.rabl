@@ -1,3 +1,3 @@
-collection @questions
+object @question
 
 attributes :id, :title, :content

@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Frame } from '@bitesite/react-figstrap';
 import Accordian from './general/accordian';
+import FaqForm from './faq_form';
 
 const Faq = () => {
   const [expandAll, setExpandAll] = useState(false);
   const [buttonText, setButtonText] = useState('Expand All');
   const [questions, setQuestions] = useState([]);
+
+  const content = <FaqForm />;
 
   function loadQuestions() {
     $.getJSON('/frequently_asked_questions', (results) => {
@@ -40,8 +43,11 @@ const Faq = () => {
           {buttonText}
         </button>
       </Frame>
+
+      <Accordian accordianTitle="Add A Frequently Asked Question" accordianContent={content} hideEditButton />
+
       {questions.map((question, index) => (
-        <Accordian item={index} expandAll={expandAll} accordianTitle={question.title} accordianContent={question.content} />
+        <Accordian id={question.id} expandAll={expandAll} accordianTitle={question.title} accordianContent={question.content} />
       ))}
     </Frame>
   );
