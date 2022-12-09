@@ -1,6 +1,6 @@
 /* eslint-disable no-nested-ternary */
 
-export const isMobileScreenSize = (width = 760) => window.innerWidth <= width;
+export const isMobileScreenSize = (width = 780) => window.innerWidth <= width;
 
 export const getQueryParams = () => {
   const searchParams = decodeURIComponent(window.location.search);

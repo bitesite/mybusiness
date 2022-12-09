@@ -27,30 +27,32 @@ const OurProcess = ({ isMobileWidth }) => {
   ];
 
   return (
-    <div
-      className={`component-our-process fgs-al fgs-al-v fgs-al-align-items-flex-center fgs-al-justify-content-flex-center ${
-        isMobileWidth ? 'fgs-al-g-40' : 'fgs-al-g-60'
-      }`}
-    >
-      <div className="our-process-title heading-regular ">Our Process </div>
-      <div className="our-process-content body-large ">
-        We believe that all good software begins with a good process. Whether you have small updates to make, a short project, or
-        on-going needs, we follow a process that maximizes the effectiveness of your software.
-      </div>
-      <div className="our-process-steps fgs-al fgs-al-v fgs-al-g-40 fgs-al-align-items-flex-start fgs-al-justify-content-flex-start">
-        {!isMobileWidth ? (
-          <ProcessStepProgress steps={steps} />
-        ) : (
-          steps.map(({ title, description }, index) => (
-            <div className="our-process-step-item fgs-al fgs-al-v fgs-al-g-20 fgs-al-justify-content-flex-start">
-              <div className="our-process-step-item-title fgs-al fgs-al-h fgs-al-g-10 fgs-al-align-items-flex-center heading-small">
-                <div className="our-process-step-item-number">{index + 1}</div>
-                <div className="our-process-step-item-title-name">{title}</div>
+    <div className="component-our-process">
+      <div
+        className={`container fgs-al fgs-al-v fgs-al-align-items-flex-center fgs-al-justify-content-flex-center ${
+          isMobileWidth ? 'fgs-al-g-40' : 'fgs-al-g-60'
+        }`}
+      >
+        <div className="our-process-title heading-regular ">Our Process </div>
+        <div className="our-process-content body-large ">
+          We believe that all good software begins with a good process. Whether you have small updates to make, a short project,
+          or on-going needs, we follow a process that maximizes the effectiveness of your software.
+        </div>
+        <div className="our-process-steps fgs-al fgs-al-v fgs-al-g-40 fgs-al-align-items-flex-start fgs-al-justify-content-flex-start">
+          {!isMobileWidth ? (
+            <ProcessStepProgress steps={steps} />
+          ) : (
+            steps.map(({ title, description }, index) => (
+              <div className="our-process-step-item fgs-al fgs-al-v fgs-al-g-20 fgs-al-justify-content-flex-start">
+                <div className="our-process-step-item-title fgs-al fgs-al-h fgs-al-g-10 fgs-al-align-items-flex-center heading-small">
+                  <div className="our-process-step-item-number">{index + 1}</div>
+                  <div className="our-process-step-item-title-name">{title}</div>
+                </div>
+                <div className="our-process-step-item-description body-regular">{description}</div>
               </div>
-              <div className="our-process-step-item-description body-regular">{description}</div>
-            </div>
-          ))
-        )}
+            ))
+          )}
+        </div>
       </div>
     </div>
   );

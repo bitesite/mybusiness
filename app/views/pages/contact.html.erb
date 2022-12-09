@@ -1,20 +1,16 @@
 <%= javascript_pack_tag "contact" %>
 
 <div id="pages-contact">
-  <div class="container">
-    
-    <% if @success.nil? %>
+  <% if @success.nil? %>
+    <div id="contact-component-mount-point"></div>
+  <% else %>
+    <h1><%= @success ? 'Thank you for getting in touch!' : "We're sorry, but something went wrong" %></h1> 
+    <p>
+      <%= @result_message %>
+    </p>
+
+    <% if !@success %>
       <div id="contact-component-mount-point"></div>
-    <% else %>
-      <h1><%= @success ? 'Thank you for getting in touch!' : "We're sorry, but something went wrong" %></h1> 
-      <p>
-        <%= @result_message %>
-      </p>
-
-      <% if !@success %>
-        <div id="contact-component-mount-point"></div>
-      <% end %>
     <% end %>
-
-  </div>
+  <% end %>
 </div>

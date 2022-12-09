@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import aboutHeroImage from '../../../assets/images/about-hero-image.png';
 
 const AboutHeader = ({ isMobileWidth }) => (
-  <div className="component-about-header">
+  <div className="component-about-header container">
     <div className={`about-page-header fgs-al  fgs-al-v ${isMobileWidth ? 'fgs-al-g-30' : 'fgs-al-g-60'}`}>
       <div className="about-header-title heading-large">About Us</div>
       <img
@@ -13,7 +13,7 @@ const AboutHeader = ({ isMobileWidth }) => (
       />
       <div className="about-content body-large">
         BiteSite was founded in 2012 in Ottawa, Canada and started as a general service company offering a wide range of services
-        including Web Design and Development, Photography, Graphic Design, Video production and more. Over the years, we've
+        including Web Design and Development, Photography, Graphic Design, Video production and more. Over the years, we&apos;ve
         learned a lot and found out what we excel at and what customers gain most from our services. From that, we narrowed our
         focus to Custom Software - building custom solutions for customers’ specific needs. While we are capable of many
         platforms, we specialize in full-stack Web Applications and iOS and Android applications.

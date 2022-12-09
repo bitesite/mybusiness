@@ -1,5 +1,4 @@
 import React from 'react';
-import reactDom from 'react-dom';
 import propTypes from 'prop-types';
 import { motion } from 'framer-motion';
 import Link from './link';
@@ -9,7 +8,7 @@ const NavLinks = ({ className }) => (
     className={className}
     initial={{ height: 0, opacity: 0 }}
     animate={{ height: 'auto', opacity: 1 }}
-    transition={{ duration: 2 }}
+    transition={{ duration: 1 }}
   >
     <Link path="/services">Services</Link>
     <Link path="/about">About</Link>

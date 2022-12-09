@@ -2,13 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import GeneralPost from '../components/general/general_post';
 import ContactImage from '../../assets/images/contact_image.png';
+import DarkBackgroundGeneralPost from '../components/general/dark_background_general_post';
 
 const Contact = () => {
   const header = 'Get in Touch!';
   const text = (
     <>
       <div className="body-regular contact-text-container">
-        Excited about your project? Have some questions? Let us know below and we’ll get back to you ASAP!
+        Excited about your project? Have some questions? Let us know below and we&apos;ll get back to you ASAP!
       </div>
       <div className="input-container">
         <label className="body-regular">Full Name</label>
@@ -31,11 +32,10 @@ const Contact = () => {
   };
 
   return (
-    <GeneralPost
+    <DarkBackgroundGeneralPost
       header={header}
       text={text}
       image={ContactImage}
-      imageStyle="contact-image"
       buttonText="Submit Message"
       buttonClass="primary-default"
       onClick={handleContactFormSubmit}

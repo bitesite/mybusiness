@@ -61,7 +61,7 @@ const BlogCard = ({ tags, blogPost, width, onClick }) => {
         {tags &&
           tags.map((tag, i) => (
             <Tag className="body-small-light" key={i}>
-              {tag.title}
+              {tag && tag.title}
             </Tag>
           ))}
       </CardTags>

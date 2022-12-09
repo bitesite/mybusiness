@@ -1,15 +1,16 @@
-#pages-home {
+#component-home {
   .circles-container {
     position: absolute;
     text-align: center;
     width: 100%;
+    margin-top: 65px;
 
     img.circles {
       opacity: 0.3;
       position: relative;
 
       width: calc(100% - 150px);
-      max-width: 500px;
+      max-width: 460px;
 
       -webkit-animation: rotation 40s linear infinite;
       -moz-animation: rotation 40s linear infinite;
@@ -18,7 +19,9 @@
   }
 
   .hero {
-    padding-top: 180px;
+    padding-top: 210px;
+    min-height: 590px;
+    box-sizing: border-box;
 
     @media screen and (max-width: $mobile-menu-device-width) {
       padding-top: 100px;
@@ -27,135 +30,86 @@
     .slogan {
       position: relative;
       text-align: center;
+      font-weight: 600;
+      font-size: 64px;
+      line-height: 56px;
+      color: #394243;
+      background: white;
+      margin-top: 30px;
+      padding: 0 0 30px 0;
+
+      @media screen and (max-width: $mobile-menu-device-width) {
+        font-size: 60px;
+        line-height: 55px;
+      }
+
+      .emphasize {
+        color: $primary-default-color;
+      }
     }
 
     .subslogan {
       position: relative;
       text-align: center;
-      margin-top: -20px;
+      font-size: 20px;
+      background: white;
+
+      .emphasize {
+        font-weight: 85;
+      }
+    }
+
+    .action-container {
+      margin-top: 60px;
     }
   }
 
-  .services {
-    margin-top: 250px;
+  .services-projects-beliefs {
+    gap: 160px;
+    padding-top: 128px;
+    padding-bottom: 128px;
 
-    @media screen and (max-width: $mobile-menu-device-width) {
-      margin-top: 150px;
+    .general-component-card {
+      background: none;
+      justify-content: end;
     }
 
-    .container {
-      display: flex;
+    &.dark-background {
+      background-color: $background;
+    }
+  }
+
+  .clients-container {
+    padding: 120px 0;
+
+    .logos-container {
       flex-wrap: wrap;
-      justify-content: space-around;
+      column-gap: 64px;
+      row-gap: 30px;
 
-      .service {
-        max-width: 350px;
-
-        .header {
-          text-align: center;
-
-          img {
-            height: 70px;
-          }
-
-          h2 {
-            text-transform: uppercase;
-            font-family: "Avenir LT Std";
-            font-weight: 85;
-            margin: 10px 0;
-          }
-        }
-
-        .writeup {
-          text-align: justify;
-        }
+      .logo-image {
+        width: 100%;
+        max-width: 200px;
       }
     }
-  }
 
-  .customer-list {
-    justify-content: center;
-    flex-wrap: wrap;
-
-    .feature {
-      margin: 20px;
-      max-width: 150px;
-    }
-  }
-
-  .featured-blog-section {
-    .featured-blog-posts {
-      display: flex;
+    .referral-container {
       flex-wrap: wrap;
-      margin-top: 20px;
-
-      .blog-post {
-        margin: 0 30px;
-        width: calc(33.333% - 60px);
-
-        .image-container {
-          text-align: center;
-          img {
-            width: 200px;
-            height: 200px;
-          }
-        }
-
-        .title {
-          font-size: 1.5em;
-          font-weight: 45;
-          text-align: center;
-          margin: 10px 0;
-        }
-
-        .description {
-          text-align: justify;
-        }
-
-        @media screen and (max-width: #{$mobile-menu-device-width}) {
-          margin: 20px 0;
-          width: 100%;
-        }
-      }
-    }
-
-    .view-all-container {
-      margin: 40px 0 20px 0;
     }
   }
 
-  .contact-section {
-    margin-top: 60px;
-    padding-bottom: 70px;
-
-    h3 {
-      margin-top: 0;
+  .view-case-studies-link {
+    &:hover {
+      svg {
+        path {
+          fill: $primary-lighter-color;
+        }
+      }
     }
-
-    .contact-section-body {
-      display: flex;
-
-      .contact-form {
-        width: calc(60% - 80px);
-        padding: 0 40px;
-      }
-
-      .contact-caption {
-        width: 40%;
-        text-align: justify;
-      }
-
-      @media screen and (max-width: $mobile-menu-device-width) {
-        flex-wrap: wrap;
-
-        .contact-form {
-          width: 100%;
-          padding: 0;
-        }
-
-        .contact-caption {
-          width: 100%;
-        }
+    svg {
+      margin-left: 10px;
+      path {
+        transition: $transition;
       }
     }
   }

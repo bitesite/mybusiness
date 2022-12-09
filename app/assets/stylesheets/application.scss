@@ -4,7 +4,6 @@
 @import "select2";
 
 @import "base/globals";
-@import "base/general";
 @import "base/colorswatches";
 @import "base/buttons";
 @import "base/forms";
@@ -14,6 +13,7 @@
 @import "base/flash";
 @import "base/fonts";
 @import "base/tags";
+@import "base/general";
 @import "figstrap";
 
 @import "common/*";
@@ -22,7 +22,6 @@
 
 @import "views/blog_posts/*";
 @import "views/blog_post_images/*";
-@import "views/pages/*";
 @import "views/careers/*";
 @import "views/contacts/*";
 @import "views/devise/*";

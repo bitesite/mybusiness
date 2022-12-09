@@ -1,11 +1,21 @@
 .general-component-card {
   background: $lightest-gray;
-  padding: 128px 120px;
 
   .content-block {
-    flex-wrap: wrap;
+    &.mobile-wrap {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
     .content {
-      width: 584px;
+      max-width: 584px;
+      width: 100%;
+
+      .type-text {
+        font-size: 14px;
+        font-weight: 700;
+        color: $primary-default-color;
+      }
 
       .title {
         color: $darkest-gray;
@@ -39,6 +49,10 @@
         color: $light-white;
       }
     }
+
+    .link {
+      width: fit-content;
+    }
   }
 
   .right {
@@ -48,6 +62,7 @@
   .image-block {
     .card-image {
       max-height: 500px;
+      width: 100%;
     }
   }
 
@@ -55,6 +70,7 @@
     order: 0;
     .card-image {
       max-height: 500px;
+      width: 100%;
     }
   }
 }

@@ -1,5 +1,6 @@
 .component-our-team {
-  padding: 128px 120px;
+  padding-top: 128px;
+  padding-bottom: 128px;
   .our-team-content {
     display: flex;
     flex-wrap: wrap;
@@ -17,8 +18,9 @@
       }
     }
   }
-  @media only screen and (max-width: 760px) {
-    padding: 40px 0;
+  @media only screen and (max-width: 780px) {
+    padding-top: 40px;
+    padding-bottom: 40px;
     .our-team-title {
       align-self: flex-start;
     }
