@@ -1,5 +1,16 @@
 <%= javascript_pack_tag "footer" %> 
+<div class="footer-container">
 
 
-<div id="footer-component-mount-point">
+  <div id="footer-component-mount-point"></div>
+  <div class="staff-sign-in">
+      <% if user_signed_in? %>
+        <% if staff? %>
+          <%= link_to "Staff Dashboard", staff_dashboard_path, class: "links" %>
+          <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "links" %>
+        <% end %>
+      <% else %>
+        <%= link_to "Staff Sign in", new_user_session_path, class: "links" %>
+      <% end %>
+  </div>
 </div>
