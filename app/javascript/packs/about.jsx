@@ -5,7 +5,6 @@ import OurProcess from '../components/About/our_process';
 import OurTeam from '../components/About/our_team';
 import LearnMoreAboutUs from '../components/About/learn_more_about_us';
 import { isMobileScreenSize } from '../src/utilities/general_helpers';
-
 const AboutPage = ({ teamMembers }) => {
   const [isMobileWidth, setIsMobileWidth] = useState(isMobileScreenSize(760));
 
