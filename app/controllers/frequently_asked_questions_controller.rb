@@ -21,9 +21,13 @@ class FrequentlyAskedQuestionsController < ApplicationController
     @question = Question.new(question_params)
 
     if @question.save
-      redirect_to services_path
+      respond_to do |format|
+        format.json { render :index }
+      end
     else
-      redirect_to(about_path, notice: "Question was not created successfully.")
+      respond_to do |format|
+        format.json { render json: @media_listing.errors, status: :unprocessable_entity }
+      end
     end
   end
 
@@ -36,9 +40,13 @@ class FrequentlyAskedQuestionsController < ApplicationController
     @question = Question.find(params[:id])
     @question.update_attributes(question_params)
     if @question.save
-      redirect_to about_path, notice: "Question was successfully updated."
+      respond_to do |format|
+        format.json { render :index }
+      end
     else
-      redirect_to about_path, notice: "Question was not created successfully."
+      respond_to do |format|
+        format.json { render json: @question.errors, status: :unprocessable_entity }
+      end
     end
   end
 end

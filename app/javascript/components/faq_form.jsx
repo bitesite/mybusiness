@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import propTypes from 'prop-types';
 
 import GeneralPost from './general/general_post';
 
@@ -67,6 +68,7 @@ const FaqForm = ({ editQuestion, editAnswer, id }) => {
         success: () => {
           setQuestion('');
           setAnswer('');
+          window.location.href = '/services';
         },
         error: () => {
           window.alert('There was an error saving your question');
@@ -83,6 +85,7 @@ const FaqForm = ({ editQuestion, editAnswer, id }) => {
         success: () => {
           setQuestion('');
           setAnswer('');
+          window.location.href = '/services';
         },
         error: () => {
           window.alert('There was an error saving your question');
@@ -103,3 +106,9 @@ const FaqForm = ({ editQuestion, editAnswer, id }) => {
 };
 
 export default FaqForm;
+
+FaqForm.propTypes = {
+  editQuestion: propTypes.string,
+  editAnswer: propTypes.string,
+  id: propTypes.number,
+};

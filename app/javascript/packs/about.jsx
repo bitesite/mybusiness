@@ -5,7 +5,6 @@ import OurProcess from '../components/About/our_process';
 import OurTeam from '../components/About/our_team';
 import LearnMoreAboutUs from '../components/About/learn_more_about_us';
 import { isMobileScreenSize } from '../src/utilities/general_helpers';
-import Faq from '../components/faq';
 const AboutPage = ({ teamMembers }) => {
   const [isMobileWidth, setIsMobileWidth] = useState(isMobileScreenSize(760));
 
@@ -25,7 +24,6 @@ const AboutPage = ({ teamMembers }) => {
 
   return (
   <div className="about-page fgs-al  fgs-al-v frs-al-g-10">
-    <Faq />
     <AboutHeader isMobileWidth={isMobileWidth}/>
     <OurProcess isMobileWidth={isMobileWidth}/>
     <OurTeam teamMembers={teamMembers} isMobileWidth={isMobileWidth}/>

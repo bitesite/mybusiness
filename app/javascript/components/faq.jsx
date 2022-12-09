@@ -33,6 +33,7 @@ const Faq = () => {
       <Frame justifyContent="space-between">
         <Frame className="faq-heading heading-regular">Frequently Asked Questions</Frame>
         <button
+          type="button"
           className="btn secondary-default"
           onClick={(e) => {
             e.preventDefault;
@@ -44,9 +45,11 @@ const Faq = () => {
         </button>
       </Frame>
 
-      <Accordian accordianTitle="Add A Frequently Asked Question" accordianContent={content} hideEditButton />
+      {window.is(['staff', 'admin']) && (
+        <Accordian accordianTitle="Add A Frequently Asked Question" accordianContent={content} hideEditButton />
+      )}
 
-      {questions.map((question, index) => (
+      {questions.map((question) => (
         <Accordian id={question.id} expandAll={expandAll} accordianTitle={question.title} accordianContent={question.content} />
       ))}
     </Frame>

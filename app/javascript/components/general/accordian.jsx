@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Frame } from '@bitesite/react-figstrap';
 import { Icon } from '@iconify/react';
-import { icon } from '@fortawesome/fontawesome-svg-core';
 import propTypes from 'prop-types';
 import FaqForm from '../faq_form';
 
@@ -34,6 +33,7 @@ const Accordian = ({ accordianTitle, accordianContent, expandAll, id, hideEditBu
         },
         success: () => {
           window.alert('success', 'Question deleted successfully');
+          window.location.href = '/services';
         },
         error: () => {
           window.alert('error', 'There was an error deleting this question.');
@@ -57,11 +57,16 @@ const Accordian = ({ accordianTitle, accordianContent, expandAll, id, hideEditBu
         <div className="accordian-icon">
           {data.showContent && (
             <div
+              role="button"
+              tabIndex={0}
               className="minus-expanded"
               onClick={(e) => {
                 e.preventDefault;
                 setData((prev) => ({ ...prev, showContent: false }));
-                console.log(id);
+              }}
+              onKeyDown={(e) => {
+                e.preventDefault;
+                setData((prev) => ({ ...prev, showContent: false }));
               }}
             >
               <Icon icon="dashicons:minus" />
@@ -69,10 +74,16 @@ const Accordian = ({ accordianTitle, accordianContent, expandAll, id, hideEditBu
           )}
           {!data.showContent && (
             <div
+              role="button"
+              tabIndex={0}
               onClick={(e) => {
                 e.preventDefault;
                 defaultItem.showContent = true;
                 setData((prev) => ({ ...prev, showContent: true }));
+              }}
+              onKeyDown={(e) => {
+                e.preventDefault;
+                setData((prev) => ({ ...prev, showContent: false }));
               }}
             >
               <Icon icon="material-symbols:add" />
@@ -82,7 +93,7 @@ const Accordian = ({ accordianTitle, accordianContent, expandAll, id, hideEditBu
       </Frame>
       {data.showContent && <Frame className="body-regular accordian-content">{accordianContent}</Frame>}
 
-      {!window.is(['staff', 'admin']) && !hideEditButton && (
+      {window.is(['staff', 'admin']) && !hideEditButton && (
         <>
           <Frame justifyContent="flex-end" gap={10}>
             <button

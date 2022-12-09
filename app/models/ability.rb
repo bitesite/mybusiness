@@ -22,7 +22,7 @@ class Ability
       can :view, :staff_dashboard
       can :manage, Profile, user_id: user.id
       can :manage, TimeOffEntry, user_id: user.id
-      can [:create], FrequentlyAskedQuestion
+      can [:create, :destroy, :update], FrequentlyAskedQuestion
     end
 
     if user.has_role?(:supervisor)
