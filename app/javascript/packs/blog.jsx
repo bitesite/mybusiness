@@ -342,7 +342,7 @@ const BlogPage = () => {
         />
       )}
       {window.is(["staff", "admin"]) && <a href="/blog/new">New Blog Post</a>}
-      <DarkBackgroundGeneralPost 
+      <DarkBackgroundGeneralPost
         image={BlogPostSubscribeImage}
         header="Want to stay up to date with BiteSite?"
         text="We round up our top blog articles, company updates and industry recommendations in a regular newsletter for our community. Subscribe, and stay in the know!"

@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import GeneralPost from "../components/general/general_post";
 import ContactImage from "../../assets/images/contact_image.png";
+import DarkBackgroundGeneralPost from "../components/general/dark_background_general_post";
 
 const Contact = () => {
   const header = "Get in Touch!";
@@ -44,11 +45,10 @@ const Contact = () => {
   };
 
   return (
-    <GeneralPost
+    <DarkBackgroundGeneralPost
       header={header}
       text={text}
       image={ContactImage}
-      imageStyle="contact-image"
       buttonText="Submit Message"
       buttonClass="primary-default"
       onClick={handleContactFormSubmit}

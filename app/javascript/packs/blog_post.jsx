@@ -10,6 +10,8 @@ import { getTagList } from "../src/utilities/blog_post_helpers";
 import moment from "moment/moment";
 import BlogCard from "../components/Blog/blog_card";
 import Link from "../components/link";
+import DarkBackgroundGeneralPost from "../components/general/dark_background_general_post";
+import BlogPostSubscribeImage from "../../assets/images/blog_post_subscribe.png";
 
 const StyledBlogPost = styled(Frame)`
   max-width: 786px;
@@ -117,115 +119,126 @@ const BlogPost = ({ blogPostId }) => {
 
   return (
     <div className="blog-post-component-mount-point">
-      <StyledBlogPost
-        className="blog-post-component-mount-point"
-        vertical
-        alignItems="center"
-        justifyContent="center"
-        gap={isMobileWidth ? 40 : 60}
-      >
-        {blogPost && (
-          <>
-            {blogPost.featuredImage && (
-              <ImageContainer>
-                <img
-                  src={blogPost.featuredImage.url}
-                  alt="Blog Post about the article"
-                />
-              </ImageContainer>
-            )}
-            <BlogPostHeader
-              vertical
-              alignItems="flex-start"
-              justifyContent="center"
-              gap={20}
-            >
-              <Tags alignItems="center" justifyContent="flex-start" gap={20}>
-                {blogPost.tags &&
-                  getTagList(blogPost.tags).map((tag, i) => (
-                    <Tag className="body-small-light" key={i} selected>
-                      {tag.title}
-                    </Tag>
-                  ))}
-              </Tags>
-              <div className="blog-post-title heading-regular">
-                {blogPost.title}
-              </div>
-              <Frame
-                alignItems="center"
-                justifyContent="flex-start"
-                gap={8}
-                className="blog-post-author"
-                width="100%"
-              >
-                {blogPost.author.avatar && blogPost.author.avatar.url ? (
-                  <Avatar
-                    src={blogPost.author.avatar_url}
-                    alt="Author Avatar"
-                  />
-                ) : (
-                  <Icon icon="bi:person-circle" fontSize={30} />
-                )}
-                <Frame alignItems="center" justifyContent="center" gap={8}>
-                  {blogPost.author && (
-                    <div className="caption-bold">
-                      {blogPost.author.first_name} {blogPost.author.last_name}
-                    </div>
-                  )}
-                  <div className="caption-light">
-                    {moment(blogPost.publishedAt).format("MMMM D, YYYY")}
-                  </div>
-                </Frame>
-              </Frame>
-            </BlogPostHeader>
-            <BlogPostBody
-              alignItems="center"
-              justifyContent="center"
-              gap={8}
-              className="blog-post-content"
-            >
-              <Markdown source={blogPost.text} className="blog-post-text" />
-              <div className="blog-post-finish-line" />
-            </BlogPostBody>
-            <Line className="blog-post-finish-line" />
-          </>
-        )}
-      </StyledBlogPost>
-      {relatedPosts && relatedPosts.length > 0 && (
-        <Frame
-          className="related-posts-container"
+      <div className="container">
+        <StyledBlogPost
+          className="blog-post-component-mount-point"
           vertical
           alignItems="center"
           justifyContent="center"
           gap={isMobileWidth ? 40 : 60}
         >
-          <div className="related-post-title heading-regular">
-            Related Posts
-          </div>
-          <RelatedPosts alignItems="center" justifyContent="center" gap={20}>
-            {relatedPosts.map((post, i) => (
-              <BlogCard
-                key={i}
-                blogPost={post}
-                tags={getTagList(post.tag_list)}
-                className="related-post"
-                onClick={() => {
-                  window.location.href = `/blog/${blogPost.slug}`;
-                }}
-              />
-            ))}
-          </RelatedPosts>
-          <Link
-            onClick={(e) => {
-              e.preventDefault();
-              window.location.href = "/blog";
-            }}
-            className="body-small-bold"
+          {blogPost && (
+            <>
+              {blogPost.featuredImage && (
+                <ImageContainer>
+                  <img
+                    src={blogPost.featuredImage.url}
+                    alt="Blog Post about the article"
+                  />
+                </ImageContainer>
+              )}
+              <BlogPostHeader
+                vertical
+                alignItems="flex-start"
+                justifyContent="center"
+                gap={20}
+              >
+                <Tags alignItems="center" justifyContent="flex-start" gap={20}>
+                  {blogPost.tags &&
+                    getTagList(blogPost.tags).map((tag, i) => (
+                      <Tag className="body-small-light" key={i} selected>
+                        {tag && tag.title}
+                      </Tag>
+                    ))}
+                </Tags>
+                <div className="blog-post-title heading-regular">
+                  {blogPost.title}
+                </div>
+                <Frame
+                  alignItems="center"
+                  justifyContent="flex-start"
+                  gap={8}
+                  className="blog-post-author"
+                  width="100%"
+                >
+                  {blogPost.author.avatar && blogPost.author.avatar.url ? (
+                    <Avatar
+                      src={blogPost.author.avatar_url}
+                      alt="Author Avatar"
+                    />
+                  ) : (
+                    <Icon icon="bi:person-circle" fontSize={30} />
+                  )}
+                  <Frame alignItems="center" justifyContent="center" gap={8}>
+                    {blogPost.author && (
+                      <div className="caption-bold">
+                        {blogPost.author.first_name} {blogPost.author.last_name}
+                      </div>
+                    )}
+                    <div className="caption-light">
+                      {moment(blogPost.publishedAt).format("MMMM D, YYYY")}
+                    </div>
+                  </Frame>
+                </Frame>
+              </BlogPostHeader>
+              <BlogPostBody
+                alignItems="center"
+                justifyContent="center"
+                gap={8}
+                className="blog-post-content"
+              >
+                <Markdown source={blogPost.text} className="blog-post-text" />
+                <div className="blog-post-finish-line" />
+              </BlogPostBody>
+              <Line className="blog-post-finish-line" />
+            </>
+          )}
+        </StyledBlogPost>
+        {relatedPosts && relatedPosts.length > 0 && (
+          <Frame
+            className="related-posts-container"
+            vertical
+            alignItems="center"
+            justifyContent="center"
+            gap={isMobileWidth ? 40 : 60}
           >
-            All BiteSite Blog Posts
-          </Link>
-        </Frame>
-      )}
+            <div className="related-post-title heading-regular">
+              Related Posts
+            </div>
+            <RelatedPosts alignItems="center" justifyContent="center" gap={20}>
+              {relatedPosts.map((post, i) => (
+                <BlogCard
+                  key={i}
+                  blogPost={post}
+                  tags={getTagList(post.tag_list)}
+                  className="related-post"
+                  onClick={() => {
+                    window.location.href = `/blog/${blogPost.slug}`;
+                  }}
+                />
+              ))}
+            </RelatedPosts>
+            <Link
+              onClick={(e) => {
+                e.preventDefault();
+                window.location.href = "/blog";
+              }}
+              className="body-small-bold"
+            >
+              All BiteSite Blog Posts
+            </Link>
+          </Frame>
+        )}
+      </div>
+
+      <DarkBackgroundGeneralPost
+        image={BlogPostSubscribeImage}
+        header="Want to stay up to date with BiteSite?"
+        text="We round up our top blog articles, company updates and industry recommendations in a regular newsletter for our community. Subscribe, and stay in the know!"
+        buttonText="Subscribe to our Newsletter"
+        buttonClass="primary-default blog-post-subscribe-button"
+        onClick={() => console.log("clicked")}
+      />
     </div>
   );
 };

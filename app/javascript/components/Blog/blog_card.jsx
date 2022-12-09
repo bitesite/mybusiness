@@ -1,11 +1,11 @@
-import React from 'react';
-import TextTruncate from 'react-text-truncate';
-import PropTypes from 'prop-types';
-import moment from 'moment';
-import styled, { css } from 'styled-components/macro';
-import { Frame } from '@bitesite/react-figstrap';
-import { Icon } from '@iconify/react';
-import { Card, Tag, COLORS } from '../../bitesite-ui';
+import React from "react";
+import TextTruncate from "react-text-truncate";
+import PropTypes from "prop-types";
+import moment from "moment";
+import styled, { css } from "styled-components/macro";
+import { Frame } from "@bitesite/react-figstrap";
+import { Icon } from "@iconify/react";
+import { Card, Tag, COLORS } from "../../bitesite-ui";
 
 const CardImageContainer = styled.div`
   width: 100%;
@@ -48,7 +48,13 @@ const FooterFrame = styled(Frame)`
 `;
 
 const BlogCard = ({ tags, blogPost, width, onClick }) => {
-  const { title, body: text, author, published_at: publishedAt, featured_image: featuredImage } = blogPost;
+  const {
+    title,
+    body: text,
+    author,
+    published_at: publishedAt,
+    featured_image: featuredImage,
+  } = blogPost;
 
   return (
     <Card width={width} onClick={onClick}>
@@ -61,7 +67,7 @@ const BlogCard = ({ tags, blogPost, width, onClick }) => {
         {tags &&
           tags.map((tag, i) => (
             <Tag className="body-small-light" key={i}>
-              {tag.title}
+              {tag && tag.title}
             </Tag>
           ))}
       </CardTags>
@@ -81,10 +87,12 @@ const BlogCard = ({ tags, blogPost, width, onClick }) => {
               {author.first_name} {author.last_name}
             </div>
           )}
-          <div className="caption-light">{moment(publishedAt).format('MMMM D, YYYY')}</div>
+          <div className="caption-light">
+            {moment(publishedAt).format("MMMM D, YYYY")}
+          </div>
         </FooterFrame>
       </Frame>
-      {window.is(['staff', 'admin']) && (
+      {window.is(["staff", "admin"]) && (
         <Frame alignItems="center" justifyContent="center" gap={8}>
           <a href={`/blog/${blogPost.id}/edit`} className="edit-button">
             Edit

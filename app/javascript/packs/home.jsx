@@ -122,7 +122,6 @@ const Home = () => (
       buttonWidth="150px"
       linkHide
       positionImageRight={false}
-      contentClass="home-general-content-wide"
     />
 
     <div className="clients-container container fgs-al fgs-al-v fgs-al-justify-content-center fgs-al-align-items-center fgs-al-g-60">
@@ -209,7 +208,6 @@ const Home = () => (
       buttonText="Send us a message"
       buttonType="primary"
       buttonWidth="190px"
-      contentClass="home-general-content-wide"
     />
   </Frame>
 );

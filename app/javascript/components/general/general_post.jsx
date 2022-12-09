@@ -22,6 +22,7 @@ const GeneralPost = ({
   imageStyle,
   contentClass,
   className,
+  alignPostClass,
 }) => {
   const [isMobileWidth, setIsMobileWidth] = useState(isMobileScreenSize(780));
   function resize() {
@@ -42,20 +43,18 @@ const GeneralPost = ({
       className={`general-component-card fgs-al fgs-al-v fgs-al-g-30 ${className}`}
     >
       <div
-        className={`content-block fgs-al fgs-ali fgs-al-h fgs-al-g-60 fgs-al-align-items-center fgs-al-justify-content-space-evenly ${
+        className={`content-block fgs-al fgs-ali fgs-al-h fgs-al-g-60 ${alignPostClass} fgs-al-justify-content-space-between ${
           isMobileWidth ? "mobile-wrap" : ""
         }`}
       >
         <Frame
           className={`fgs-al fgs-al-align-items-center ${
             positionImageRight ? "right" : ""
-          } ${isMobileWidth ? "mobile-image-block" : "image-block"}`}
+          } ${
+            isMobileWidth ? "mobile-image-block" : "image-block"
+          } ${imageStyle}`}
         >
-          <img
-            className={`card-image ${imageStyle}`}
-            src={image}
-            alt="general component"
-          />
+          <img className="card-image" src={image} alt="general component" />
         </Frame>
 
         <div
@@ -105,6 +104,7 @@ GeneralPost.defaultProps = {
   linkText: <></>,
   buttonType: "primary",
   buttonClass: "",
+  alignPostClass: "fgs-al-align-items-center",
 };
 
 GeneralPost.propTypes = {
@@ -122,6 +122,7 @@ GeneralPost.propTypes = {
   linkText: PropTypes.node,
   buttonType: PropTypes.string,
   contentClass: PropTypes.string,
+  alignPostClass: PropTypes.string,
 };
 
 export default GeneralPost;

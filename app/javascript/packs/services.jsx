@@ -4,7 +4,6 @@ import productManagementImg from "../../assets/images/services_page/product_mana
 import softwareDevImg from "../../assets/images/services_page/software_dev.png";
 import uxUiDesignImg from "../../assets/images/services_page/ux_ui_design.png";
 import GeneralPost from "../components/general/general_post";
-import { Frame } from "@bitesite/react-figstrap";
 import CommonProjects from "../components/Services/common_projects";
 import CaseStudies from "../components/case_studies";
 import ToolsWeUse from "../components/tools_we_use";
@@ -78,7 +77,6 @@ const ServicesPage = () => {
         buttonType="primary"
         buttonWidth="190px"
         linkHide
-        contentClass="home-general-content-wide"
       />
     </div>
   );

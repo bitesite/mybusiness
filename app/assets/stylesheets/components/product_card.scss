@@ -1,13 +1,10 @@
 .product-component-card {
-  background: $lightest-gray;
-  padding: 0px 120px 0px 120px;
-
   .product-card {
-    width: 582px;
-    height: 197px;
+    width: 100%;
     box-sizing: border-box;
     &:hover {
       background-color: $light-white;
+      cursor: pointer;
     }
     .content {
       margin-bottom: 20px;
@@ -16,9 +13,9 @@
 
   .image-block {
     .card-image {
-      height: 50px;
-      width: 50px;
-      overflow: hidden;
+      height: 80px;
+      width: 80px;
+      object-fit: cover;
     }
   }
 }

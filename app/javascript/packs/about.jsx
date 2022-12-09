@@ -122,7 +122,6 @@ const AboutPage = ({ teamMembers }) => {
         }
         buttonHide
         positionImageRight={false}
-        contentClass="home-general-content-wide"
       />
     </div>
   );
