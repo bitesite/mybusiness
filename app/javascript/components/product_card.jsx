@@ -1,32 +1,17 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Icon } from "@iconify/react";
-import Link from "./link";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Icon } from '@iconify/react';
+import Link from './link';
 
-const ProductCard = ({
-  image,
-  header,
-  text,
-  link,
-  positionImageRight,
-  imageStyle,
-}) => (
+const ProductCard = ({ image, header, text, link, positionImageRight, imageStyle }) => (
   <div className="product-component-card">
     <div className="product-card fgs-al fgs-ali fgs-al-h fgs-al-g-20 fgs-al-p-20 fgs-al-align-items-flex-start">
-      <div
-        className={`image-block fgs-ali ${positionImageRight ? "right" : ""}`}
-      >
-        <img
-          className={`card-image ${imageStyle}`}
-          src={image}
-          alt="product component"
-        />
+      <div className={`image-block fgs-ali ${positionImageRight ? 'right' : ''}`}>
+        <img className={`card-image ${imageStyle}`} src={image} alt="product component" />
       </div>
 
       <div className="content fgs-al fgs-ali fgs-al-v  ">
-        <div className="title fgs-ali body-large-bold fgs-al-g-16">
-          {header}
-        </div>
+        <div className="title fgs-ali body-large-bold fgs-al-g-16">{header}</div>
         <p className="text fgs-ali ">{text}</p>
         <Link
           onClick={(e) => {
@@ -49,7 +34,7 @@ ProductCard.defaultProps = {
   text: PropTypes.string,
   link: PropTypes.string,
   positionImageRight: false,
-  imageStyle: "",
+  imageStyle: '',
 };
 
 ProductCard.propTypes = {

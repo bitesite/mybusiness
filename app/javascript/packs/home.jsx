@@ -1,28 +1,28 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { Frame } from "@bitesite/react-figstrap";
-import { Button } from "../bitesite-ui";
-import GeneralPost from "../components/general/general_post";
-import ReferralCard from "../components/Clients/referral_card";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Frame } from '@bitesite/react-figstrap';
+import { Button } from '../bitesite-ui';
+import GeneralPost from '../components/general/general_post';
+import ReferralCard from '../components/Clients/referral_card';
 
 // Images
-import WireframeCircles from "../../assets/images/Wireframe-Circles.png";
-import UserOnPhone from "../../assets/images/user-on-phone.png";
-import ProjectsCircleIcons from "../../assets/images/projects-circle-icons.png";
-import WomanBrowserIcon from "../../assets/images/woman-browser-icon.png";
-import ContactImage from "../../assets/images/contact_image.png";
-import UndrawBuildingWebsite from "../../assets/images/undraw_building_website.png";
+import WireframeCircles from '../../assets/images/Wireframe-Circles.png';
+import UserOnPhone from '../../assets/images/user-on-phone.png';
+import ProjectsCircleIcons from '../../assets/images/projects-circle-icons.png';
+import WomanBrowserIcon from '../../assets/images/woman-browser-icon.png';
+import ContactImage from '../../assets/images/contact_image.png';
+import UndrawBuildingWebsite from '../../assets/images/undraw_building_website.png';
 
-import AboveTheLineLogo from "../../assets/images/aboveTheLineLogo.jpeg";
-import BradfordCoopLogo from "../../assets/images/bradfordCoopLogo.jpeg";
-import FansavesLogo from "../../assets/images/fansavesLogo.jpeg";
-import FnpcLogo from "../../assets/images/fnpcLogo.jpeg";
-import GmfrcLogo from "../../assets/images/gmfrcLogo.jpeg";
-import InspecHomesLogo from "../../assets/images/inspecHomesLogo.jpeg";
-import InternationalSafetyLogo from "../../assets/images/internationalSafetyLogo.jpeg";
-import OdoughsLogo from "../../assets/images/odoughsLogo.jpeg";
-import ChrisImage from "../../assets/images/staff/chris.png";
-import DarkBackgroundGeneralPost from "../components/general/dark_background_general_post";
+import AboveTheLineLogo from '../../assets/images/aboveTheLineLogo.jpeg';
+import BradfordCoopLogo from '../../assets/images/bradfordCoopLogo.jpeg';
+import FansavesLogo from '../../assets/images/fansavesLogo.jpeg';
+import FnpcLogo from '../../assets/images/fnpcLogo.jpeg';
+import GmfrcLogo from '../../assets/images/gmfrcLogo.jpeg';
+import InspecHomesLogo from '../../assets/images/inspecHomesLogo.jpeg';
+import InternationalSafetyLogo from '../../assets/images/internationalSafetyLogo.jpeg';
+import OdoughsLogo from '../../assets/images/odoughsLogo.jpeg';
+import ChrisImage from '../../assets/images/staff/chris.png';
+import DarkBackgroundGeneralPost from '../components/general/dark_background_general_post';
 
 const Home = () => (
   <Frame id="component-home" className="fgs-al" vertical>
@@ -34,10 +34,7 @@ const Home = () => (
       <div className="slogan">
         We Build <span className="emphasize">Custom Software</span>
       </div>
-      <div className="subslogan">
-        BiteSite is a custom software firm focused on building web and mobile
-        applications.
-      </div>
+      <div className="subslogan">BiteSite is a custom software firm focused on building web and mobile applications.</div>
       <div className="action-container fgs-al fgs-al-g-30 fgs-al-justify-content-center">
         <Button type="primary" href="/contact">
           Work with us
@@ -58,13 +55,7 @@ const Home = () => (
         linkText={
           <>
             More about our services
-            <svg
-              width="33"
-              height="16"
-              viewBox="0 0 33 16"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
+            <svg width="33" height="16" viewBox="0 0 33 16" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M32.7071 8.70711C33.0976 8.31658 33.0976 7.68342 32.7071 7.29289L26.3431 0.928932C25.9526 0.538408 25.3195 0.538408 24.9289 0.928932C24.5384 1.31946 24.5384 1.95262 24.9289 2.34315L30.5858 8L24.9289 13.6569C24.5384 14.0474 24.5384 14.6805 24.9289 15.0711C25.3195 15.4616 25.9526 15.4616 26.3431 15.0711L32.7071 8.70711ZM0 9H32V7H0V9Z"
                 fill="#394243"
@@ -101,19 +92,14 @@ const Home = () => (
       header="How we work"
       text={
         <>
-          We like process at BiteSite. We integrate our clients into our
-          software development process so we can all agree on what works well.
-          When it comes to decisions, whether suggestions come from staff or
-          clients, we always take the same approach: small experiments that
-          introduce as little disruption as possible and take as little effort
-          as possible to get off the ground. It's basically the MVP or Minimum
-          Viable Product approach.
+          We like process at BiteSite. We integrate our clients into our software development process so we can all agree on what
+          works well. When it comes to decisions, whether suggestions come from staff or clients, we always take the same
+          approach: small experiments that introduce as little disruption as possible and take as little effort as possible to get
+          off the ground. It's basically the MVP or Minimum Viable Product approach.
           <br />
           <br />
-          We approach most (if not all) new ideas as something to try out and
-          see where it goes. This flexible approach is what enables us to get
-          your application up and running quickly, as well as to make
-          improvements whenever needed.
+          We approach most (if not all) new ideas as something to try out and see where it goes. This flexible approach is what
+          enables us to get your application up and running quickly, as well as to make improvements whenever needed.
         </>
       }
       link="/about"
@@ -127,30 +113,14 @@ const Home = () => (
     <div className="clients-container container fgs-al fgs-al-v fgs-al-justify-content-center fgs-al-align-items-center fgs-al-g-60">
       <div className="heading-regular">Clients we've worked with</div>
       <div className="fgs-al fgs-al-justify-content-center logos-container">
-        <img
-          className="logo-image"
-          src={InternationalSafetyLogo}
-          alt="InternationalSafety Logo"
-        />
+        <img className="logo-image" src={InternationalSafetyLogo} alt="InternationalSafety Logo" />
         <img className="logo-image" src={FansavesLogo} alt="Fansaves Logo" />
         <img className="logo-image" src={FnpcLogo} alt="Fnpc Logo" />
-        <img
-          className="logo-image"
-          src={InspecHomesLogo}
-          alt="InspecHomes Logo"
-        />
+        <img className="logo-image" src={InspecHomesLogo} alt="InspecHomes Logo" />
         <img className="logo-image" src={OdoughsLogo} alt="Odoughs Logo" />
         <img className="logo-image" src={GmfrcLogo} alt="Gmfrc Logo" />
-        <img
-          className="logo-image"
-          src={AboveTheLineLogo}
-          alt="AboveTheLine Logo"
-        />
-        <img
-          className="logo-image"
-          src={BradfordCoopLogo}
-          alt="BradfordCoop Logo"
-        />
+        <img className="logo-image" src={AboveTheLineLogo} alt="AboveTheLine Logo" />
+        <img className="logo-image" src={BradfordCoopLogo} alt="BradfordCoop Logo" />
       </div>
       <div className="fgs-al fgs-al-justify-content-center referral-container fgs-al-g-30 ">
         <ReferralCard
@@ -192,16 +162,14 @@ const Home = () => (
       header="Get in Touch!"
       text={
         <>
-          Know exactly what you want? Have no idea at all? Want to just open up
-          a conversation about your options? Have some technical questions?
-          Whatever it may be, please drop us a line and we&apos;ll do our best
-          to answer any questions you may have.
+          Know exactly what you want? Have no idea at all? Want to just open up a conversation about your options? Have some
+          technical questions? Whatever it may be, please drop us a line and we&apos;ll do our best to answer any questions you
+          may have.
           <br />
           <br />
-          BiteSite believes strongly in finding a good fit company for a good
-          fit customer. So if we find out we&apos;re not right for you, we
-          won&apos;t pressure you. If we do, we&apos;ll be happy to build
-          something you&apos;ll truly be excited about.
+          BiteSite believes strongly in finding a good fit company for a good fit customer. So if we find out we&apos;re not right
+          for you, we won&apos;t pressure you. If we do, we&apos;ll be happy to build something you&apos;ll truly be excited
+          about.
         </>
       }
       link="/contact"
@@ -212,8 +180,8 @@ const Home = () => (
   </Frame>
 );
 
-document.addEventListener("DOMContentLoaded", () => {
-  const element = document.getElementById("home-mount-point");
+document.addEventListener('DOMContentLoaded', () => {
+  const element = document.getElementById('home-mount-point');
 
   if (element) {
     ReactDOM.render(<Home />, element);
