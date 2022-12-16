@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
-import GeneralPost from '../components/general/general_post';
 import ContactImage from '../../assets/images/contact_image.png';
 import DarkBackgroundGeneralPost from '../components/general/dark_background_general_post';
 
 const Contact = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+
   const header = 'Get in Touch!';
   const text = (
     <>
@@ -14,21 +19,90 @@ const Contact = () => {
       <div className="input-container">
         <label className="body-regular">Full Name</label>
 
-        <input className="input-box-contact" type="text" required />
+        <input
+          className="input-box-contact"
+          type="text"
+          value={name}
+          onChange={(e) => {
+            setName(e.target.value);
+          }}
+          required
+        />
 
         <label className="body-regular">Email Address</label>
 
-        <input className="input-box-contact" type="email" id="email" pattern=".+@globex\.com" required />
+        <input
+          className="input-box-contact"
+          type="email"
+          id="email"
+          value={email}
+          pattern=".+@globex\.com"
+          onChange={(e) => {
+            setEmail(e.target.value);
+          }}
+          required
+        />
 
         <label className="body-regular">Message</label>
 
-        <input className="input-box-contact message" type="message" id="message" size="584" required />
+        <input
+          className="input-box-contact message"
+          type="message"
+          id="message"
+          value={message}
+          size="584"
+          onChange={(e) => {
+            setMessage(e.target.value);
+          }}
+          required
+        />
       </div>
     </>
   );
 
+  const contactFormValid = () => {
+    if ((!name, !email, !message)) {
+      window.alert('Please fill out all fields');
+      return false;
+    }
+  };
+
+  const clearForm = () => {
+    setName('');
+    setFirstName('');
+    setLastName('');
+    setEmail('');
+    setMessage('');
+  };
+
+  useEffect(() => {
+    if (name) {
+      const nameArr = name.split(' ');
+      setFirstName(nameArr[0]);
+      nameArr.shift();
+      setLastName(nameArr.join(' '));
+    }
+  }, [name]);
+
   const handleContactFormSubmit = () => {
-    window.alert('Contact Form Submitted!');
+    contactFormValid();
+    $.ajax({
+      url: '/contact',
+      method: 'POST',
+      data: {
+        first_name: firstName,
+        last_name: lastName,
+        email_address: email,
+        message,
+      },
+      success: () => {
+        window.alert('success');
+        clearForm();
+      },
+      error: () => {
+        window.alert('There was an error saving your question');
+      },
+    });
   };
 
   return (
