@@ -20,7 +20,7 @@ const Contact = () => {
         <label className="body-regular">Full Name</label>
 
         <input
-          className="input-box-contact"
+          className="input-box-contact body-regular"
           type="text"
           value={name}
           onChange={(e) => {
@@ -32,7 +32,7 @@ const Contact = () => {
         <label className="body-regular">Email Address</label>
 
         <input
-          className="input-box-contact"
+          className="input-box-contact body-regular"
           type="email"
           id="email"
           value={email}
@@ -45,8 +45,8 @@ const Contact = () => {
 
         <label className="body-regular">Message</label>
 
-        <input
-          className="input-box-contact message"
+        <textarea
+          className="input-box-contact message body-regular"
           type="message"
           id="message"
           value={message}
