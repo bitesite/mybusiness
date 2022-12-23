@@ -12,6 +12,7 @@
     "@iconify/react": "^4.0.0",
     "@rails/webpacker": "4.0.7",
     "classnames": "^2.3.2",
+    "dotenv-webpack": "^8.0.1",
     "framer-motion": "^4.1.17",
     "moment": "^2.29.4",
     "prop-types": "^15.6.2",

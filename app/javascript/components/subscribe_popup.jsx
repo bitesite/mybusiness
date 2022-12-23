@@ -4,7 +4,7 @@ import MailchimpSubscribe from 'react-mailchimp-subscribe';
 import styled from 'styled-components/macro';
 import { Icon } from '@iconify/react';
 import Mailbox from '../../assets/images/mailbox-large.png';
-import { Button, COLORS } from '../bitesite-ui';
+import { Button, COLORS, Alert } from '../bitesite-ui';
 
 const SubscribeFormWrapper = styled.div`
   display: flex;
@@ -126,23 +126,30 @@ const SubscribePopupWrapper = styled.div`
 const SubscribeForm = ({ onValidated, status, message }) => {
   const [email, setEmail] = useState('');
   const [fullName, setFullName] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const submit = () =>
-    email &&
-    fullName &&
-    email.indexOf('@') > -1 &&
-    onValidated({
-      EMAIL: email,
-      LNAME: fullName,
-    });
+    email && fullName && email.indexOf('@') > -1
+      ? onValidated({
+          EMAIL: email,
+          LNAME: fullName,
+        })
+      : setErrorMessage('Enter a valid email address and full name.');
 
   const clearFields = () => {
     setEmail('');
     setFullName('');
+    setErrorMessage('');
   };
 
   useEffect(() => {
     if (status === 'success') clearFields();
+  }, [status]);
+
+  useEffect(() => {
+    if (status) {
+      setErrorMessage('');
+    }
   }, [status]);
 
   return (
@@ -151,9 +158,29 @@ const SubscribeForm = ({ onValidated, status, message }) => {
         Stay in the know about our top blog articles, company updates and industry recommendations in a regular newsletter for our
         community.
       </div>
-      {status === 'sending' && <div style={{ color: 'blue' }}>sending...</div>}
-      {status === 'error' && <div style={{ color: 'red' }} dangerouslySetInnerHTML={{ __html: message }} />}
-      {status === 'success' && <div style={{ color: 'green' }} dangerouslySetInnerHTML={{ __html: message }} />}
+      {status === 'sending' && (
+        <Alert alertType="warning" className="alert" margin="30px 0 0 0">
+          <Icon icon="mi:circle-warning" /> <span className="body-small-light">Sending...</span>
+        </Alert>
+      )}
+      {status === 'error' && (
+        <Alert alertType="error" className="alert" margin="30px 0 0 0">
+          <Icon icon="mi:circle-warning" />
+          <span className="body-small-light" dangerouslySetInnerHTML={{ __html: message }} />
+        </Alert>
+      )}
+      {status === 'success' && (
+        <Alert alertType="success" className="alert" margin="30px 0 0 0">
+          <Icon icon="akar-icons:circle-check" />
+          <span className="body-small-light" dangerouslySetInnerHTML={{ __html: message }} />
+        </Alert>
+      )}
+      {errorMessage && (
+        <Alert alertType="error" className="alert" margin="30px 0 0 0">
+          <Icon icon="mi:circle-warning" />
+          <span className="body-small-light">{errorMessage}</span>
+        </Alert>
+      )}
       <div className="input-container">
         <div className="input-box-item">
           <label className="body-regular input-box-label" htmlFor="fullName">
@@ -182,8 +209,7 @@ const SubscribeForm = ({ onValidated, status, message }) => {
 };
 
 const SubscribePopup = ({ onClose }) => {
-  const url =
-    'https://bitesite.us20.list-manage.com/subscribe/post?u=ebbbe5d87132eda4ed7f05057&amp;id=4f3ed4a6c9&amp;v_id=4327&amp;f_id=00103fe4f0';
+  const url = `https://bitesite.us20.list-manage.com/subscribe/post?u=${process.env.REACT_APP_MAILCHIMP_U};id=${process.env.REACT_APP_MAILCHIMP_ID};v_id=4327&amp;f_id=00103fe4f0`;
 
   return (
     <SubscribePopupWrapper className="subscribe-popup">
