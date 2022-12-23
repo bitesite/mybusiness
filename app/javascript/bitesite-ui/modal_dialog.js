@@ -39,7 +39,18 @@ const ModalDialogContainer = styled.div`
   }
 `;
 
-function ModalDialog({ children, maxWidth, marginTop, modalDialogClassName, padding }) {
+const PopupContainer = styled(ModalDialogContainer)`
+  .modal-dialog {
+    position: relative;
+    background: ${COLORS.primaryWhite};
+    border: 1px solid ${COLORS.shadesLight};
+    border-radius: 10px;
+    box-shadow: 0px 8px 14px rgba(97, 104, 105, 0.15);
+    padding: 0;
+  }
+`;
+
+function ModalDialog({ children, maxWidth, marginTop, modalDialogClassName, padding, popup }) {
   useEffect(() => {
     document.body.style.overflow = 'hidden';
 
@@ -49,9 +60,17 @@ function ModalDialog({ children, maxWidth, marginTop, modalDialogClassName, padd
   }, []);
 
   return (
-    <ModalDialogContainer maxWidth={maxWidth} marginTop={marginTop} padding={padding}>
-      <div className={`modal-dialog ${modalDialogClassName}`}>{children}</div>
-    </ModalDialogContainer>
+    <>
+      {!popup ? (
+        <ModalDialogContainer maxWidth={maxWidth} marginTop={marginTop} padding={padding}>
+          <div className={`modal-dialog ${modalDialogClassName}`}>{children}</div>
+        </ModalDialogContainer>
+      ) : (
+        <PopupContainer maxWidth={maxWidth} marginTop={marginTop} padding={padding}>
+          <div className={`modal-dialog ${modalDialogClassName}`}>{children}</div>
+        </PopupContainer>
+      )}
+    </>
   );
 }
 
@@ -66,6 +85,7 @@ ModalDialog.propTypes = {
   maxWidth: PropTypes.number,
   marginTop: PropTypes.number,
   padding: PropTypes.number,
+  popup: PropTypes.bool,
 };
 
 export default ModalDialog;

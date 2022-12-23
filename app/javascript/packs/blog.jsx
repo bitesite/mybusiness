@@ -12,6 +12,7 @@ import BlogPostSubscribeImage from "../../assets/images/blog_post_subscribe.png"
 import { Icon } from "@iconify/react";
 import { getTagList, tags } from "../src/utilities/blog_post_helpers";
 import DarkBackgroundGeneralPost from "../components/general/dark_background_general_post";
+import SubscribePopup from "../components/subscribe_popup";
 
 const BlogFrame = styled(Frame)`
   .blog-tag-title {
@@ -102,6 +103,7 @@ const BlogPage = () => {
   const [totalPosts, setTotalPosts] = useState(null);
   const [isMobileWidth, setIsMobileWidth] = useState(isMobileScreenSize(780));
   const [isTagModalOpen, setIsTagModalOpen] = useState(false);
+  const [subscribePopupOpen, setSubscribePopupOpen] = useState(false);
 
   function resize() {
     if (isMobileScreenSize(830) !== isMobileWidth) {
@@ -348,8 +350,21 @@ const BlogPage = () => {
         text="We round up our top blog articles, company updates and industry recommendations in a regular newsletter for our community. Subscribe, and stay in the know!"
         buttonText="Subscribe to our Newsletter"
         buttonClass="primary-default blog-post-subscribe-button"
-        onClick={() => console.log("clicked")}
+        onClick={(e) => {
+          e.preventDefault();
+          setSubscribePopupOpen(true);
+        }}
       />
+      {subscribePopupOpen && (
+         <ModalDialog
+         maxWidth="783px"
+         modalDialogClassName="blog-post-subscribe-modal"
+         padding="0 0 0 0"
+         popup
+       >
+        <SubscribePopup onClose={() => setSubscribePopupOpen(false)} />
+        </ModalDialog>
+      )}
     </BlogFrame>
   );
 };
