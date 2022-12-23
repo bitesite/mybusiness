@@ -95,7 +95,8 @@ const Contact = () => {
         email_address: email,
         message,
       },
-      success: () => {
+      success: (response) => {
+        console.log(response);
         window.alert('success');
         clearForm();
       },
