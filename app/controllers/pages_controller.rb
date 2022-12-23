@@ -64,7 +64,7 @@ class PagesController < ApplicationController
       @email_address = params[:email_address]
       @message = params[:message]
 
-      if !verify_recaptcha
+      if verify_recaptcha
         @success = false
         @result_message = "Please verify that you are not a robot."
       elsif @email_address.blank? || @message.blank?
