@@ -85,6 +85,7 @@ ModalDialog.propTypes = {
   maxWidth: PropTypes.number,
   marginTop: PropTypes.number,
   padding: PropTypes.number,
+  popup: PropTypes.bool,
 };
 
 export default ModalDialog;
