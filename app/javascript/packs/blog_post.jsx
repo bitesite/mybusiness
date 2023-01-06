@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import styled from "styled-components";
 import Markdown from "react-remarkable";
 import { isMobileScreenSize } from "../src/utilities/general_helpers";
-import { Tag, COLORS } from "../bitesite-ui";
+import { Tag, COLORS, ModalDialog } from "../bitesite-ui";
 import { Frame } from "@bitesite/react-figstrap";
 import { Icon } from "@iconify/react";
 import { getTagList } from "../src/utilities/blog_post_helpers";
@@ -12,6 +12,7 @@ import BlogCard from "../components/Blog/blog_card";
 import Link from "../components/link";
 import DarkBackgroundGeneralPost from "../components/general/dark_background_general_post";
 import BlogPostSubscribeImage from "../../assets/images/blog_post_subscribe.png";
+import SubscribePopup from "../components/subscribe_popup";
 
 const StyledBlogPost = styled(Frame)`
   max-width: 786px;
@@ -65,6 +66,7 @@ const BlogPost = ({ blogPostId }) => {
   const [blogPost, setBlogPost] = useState(null);
   const [relatedPosts, setRelatedPosts] = useState(null);
   const [isMobileWidth, setIsMobileWidth] = useState(isMobileScreenSize(780));
+  const [subscribePopupOpen, setSubscribePopupOpen] = useState(false);
 
   function resize() {
     if (isMobileScreenSize(830) !== isMobileWidth) {
@@ -102,7 +104,7 @@ const BlogPost = ({ blogPostId }) => {
         setRelatedPosts(data);
       },
       error: (error) => {
-        console.log(error);
+        console.error(error);
       },
     });
   };
@@ -237,8 +239,22 @@ const BlogPost = ({ blogPostId }) => {
         text="We round up our top blog articles, company updates and industry recommendations in a regular newsletter for our community. Subscribe, and stay in the know!"
         buttonText="Subscribe to our Newsletter"
         buttonClass="primary-default blog-post-subscribe-button"
-        onClick={() => console.log("clicked")}
+        onClick={(e) => {
+          e.preventDefault();
+          setSubscribePopupOpen(true);
+        }}
       />
+      {subscribePopupOpen && (
+         <ModalDialog
+         maxWidth="783px"
+         modalDialogClassName="blog-post-subscribe-modal"
+         padding="0 0 0 0"
+         popup
+         marginTop="15%"
+       >
+        <SubscribePopup onClose={() => setSubscribePopupOpen(false)} />
+        </ModalDialog>
+      )}
     </div>
   );
 };

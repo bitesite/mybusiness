@@ -34,8 +34,8 @@ const AboutPage = ({ teamMembers }) => {
         image={LearnMoreAboutUs}
         header="Learn More About Us"
         text={
-          <>
-            <div className="learn-more-about-us-text fgs-al fgs-al-v fgs-al-g-20 fgs-al-align-items-flex-start">
+          <div className="learn-more-about-us-post">
+            <div className="learn-more-about-us-text fgs-al fgs-al-v fgs-al-g-30 fgs-al-align-items-flex-start">
               <div className="body-regular">
                 Take a look at some of the client projects we’ve worked on. Our
                 experience ranges from one-page designs to full-stack web and
@@ -59,7 +59,7 @@ const AboutPage = ({ teamMembers }) => {
                 </svg>
               </a>
             </div>
-            <div className="learn-more-about-us-text fgs-al fgs-al-v fgs-al-g-20 fgs-al-align-items-flex-start">
+            <div className="learn-more-about-us-text fgs-al fgs-al-v fgs-al-g-30 fgs-al-align-items-flex-start">
               <div className="body-regular">
                 We put our everyday practices into an openly available and
                 constantly evolving playbook. We hope this helps put everyone on
@@ -85,7 +85,7 @@ const AboutPage = ({ teamMembers }) => {
                 </svg>
               </a>
             </div>
-            <div className="learn-more-about-us-text fgs-al fgs-al-v fgs-al-g-20 fgs-al-align-items-flex-start">
+            <div className="learn-more-about-us-text fgs-al fgs-al-v fgs-al-g-30 fgs-al-align-items-flex-start">
               <div className="body-regular">
                 Besides our Custom Software Services, we like to create our own
                 products. Whether it&apos;s to help out our daily work, pursue
@@ -111,7 +111,7 @@ const AboutPage = ({ teamMembers }) => {
                 </svg>
               </a>
             </div>
-          </>
+          </div>
         }
         buttonHide
         positionImageRight={false}
