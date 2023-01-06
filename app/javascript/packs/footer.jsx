@@ -44,7 +44,7 @@ const Footer = () => (
             Blog
           </Link>
           <Link path="/news" target="_blank" className="fgs-ali caption-medium no-underline">
-            News
+            Newsletter
           </Link>
           <Link path="/playbook" target="_blank" className="fgs-ali caption-medium no-underline">
             Playbook

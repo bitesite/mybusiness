@@ -23,6 +23,14 @@
       }
 
       .links {
+        a {
+          &:hover {
+            color: $primary-lighter-color;
+          }
+          &.selected {
+            color: $primary-default-color;
+          }
+        }
         a,
         .company-links {
           gap: 4px;
