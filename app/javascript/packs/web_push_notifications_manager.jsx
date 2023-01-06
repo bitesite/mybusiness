@@ -80,7 +80,6 @@ function WebPushNotificationsManager({ hidden }) {
   }
 
   useEffect(() => {
-    console.log('Hello');
     registerServiceWorker(() => {
       initializeServiceWorkerNotificationState(handleSubscriptionFound);
     });
