@@ -25,8 +25,8 @@ function ReferralCard({ header, text, userImage, userName, date }) {
           <img src={userImage} alt="International Safety" />
         </div>
         <div className="referral-user-info-container">
-          <div className="body-small-medium">{userName}</div>
-          <div className="caption-medium">{date}</div>
+          <div className="user-name body-small-medium">{userName}</div>
+          <div className="date caption-medium">{date}</div>
         </div>
       </div>
     </div>

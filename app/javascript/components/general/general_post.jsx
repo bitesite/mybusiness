@@ -66,7 +66,7 @@ const GeneralPost = ({
           <div className="title fgs-ali heading-regular fgs-al-g-16">
             {header}
           </div>
-          {text}
+          <div className="body-large">{text}</div>
           {!buttonHide && (
             <div>
               <Button

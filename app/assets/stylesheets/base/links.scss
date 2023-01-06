@@ -36,4 +36,7 @@ a {
   svg {
     margin-left: 10px;
   }
+  &.disabled {
+    cursor: not-allowed;
+  }
 }

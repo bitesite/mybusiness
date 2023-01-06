@@ -29,7 +29,7 @@ const CardTitle = styled.div`
 `;
 
 const CardText = styled.div`
-  color: ${COLORS.shadesLight};
+  color: ${COLORS.shadesDark};
   height: 110px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -66,7 +66,7 @@ const BlogCard = ({ tags, blogPost, width, onClick }) => {
           ))}
       </CardTags>
       <CardTitle className="body-large">{title}</CardTitle>
-      <CardText className="body-small" id="text">
+      <CardText className="body-small-light" id="text">
         <TextTruncate line={4} element="span" truncateText="…" text={text} />
       </CardText>
       <Frame alignItems="flex-start" justifyContent="center" gap={8}>

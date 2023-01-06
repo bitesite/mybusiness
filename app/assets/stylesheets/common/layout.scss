@@ -26,16 +26,16 @@ $header-height: 70px;
     flex-direction: row;
 
     .logo-container {
-      width: 185px;
+      width: 250px;
       height: 100%;
 
       display: flex;
       align-items: center;
 
       .logo {
-        width: 50%;
+        width: 80%;
         img {
-          width: 121px;
+          width: 100%;
         }
       }
     }
@@ -51,14 +51,17 @@ $header-height: 70px;
 
       a {
         font-style: normal;
-        font-weight: 65;
+        font-weight: 500;
+        font-size: 14px;
         text-decoration: none;
-        text-transform: lowercase;
         margin: 0 20px;
         transition: 200ms;
-        color: $primary-darkest-color;
+        color: $darkest-gray;
         &:hover {
-          color: $primary-color;
+          color: $primary-lighter-color;
+        }
+        &.active {
+          color: $primary-default-color;
         }
       }
 

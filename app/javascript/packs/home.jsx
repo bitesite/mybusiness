@@ -21,7 +21,7 @@ import GmfrcLogo from '../../assets/images/gmfrcLogo.jpeg';
 import InspecHomesLogo from '../../assets/images/inspecHomesLogo.jpeg';
 import InternationalSafetyLogo from '../../assets/images/internationalSafetyLogo.jpeg';
 import OdoughsLogo from '../../assets/images/odoughsLogo.jpeg';
-import ChrisImage from '../../assets/images/staff/chris.png';
+import GusImage from '../../assets/images/guskhourie.png';
 import DarkBackgroundGeneralPost from '../components/general/dark_background_general_post';
 
 const Home = () => (
@@ -125,23 +125,9 @@ const Home = () => (
       <div className="fgs-al fgs-al-justify-content-center referral-container fgs-al-g-30 ">
         <ReferralCard
           header="Thank you BiteSite!"
-          text="It has been 7 great years of building International Safety and we just keep going strong. BiteSite has become our software team and we wouldn't have it any other way!"
-          userImage={ChrisImage}
+          text="We have a massive database of products for sale. Our customers can now quickly sort through thousands of products and find exactly what they need in seconds."
+          userImage={GusImage}
           userName="Gus Khouri"
-          date="Jul 21, 2021"
-        />
-        <ReferralCard
-          header="Our new site is amazing."
-          text="We needed a new online store to manage our business, and BiteSite delivered! We are so happy with the results and look forward to working with BiteSite again."
-          userImage={ChrisImage}
-          userName="Kerry Skarjack"
-          date="Jul 21, 2021"
-        />
-        <ReferralCard
-          header="Thank you BiteSite!"
-          text="Tartu College was in need of a student portal quickly as COVID restrictions lifted and students were allowed to return to college. BiteSite built what we needed in under a month to admit our students in!"
-          userImage={ChrisImage}
-          userName="Mai-Liis Veinberg"
           date="Jul 21, 2021"
         />
       </div>
