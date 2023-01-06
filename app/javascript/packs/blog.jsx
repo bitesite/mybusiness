@@ -361,6 +361,7 @@ const BlogPage = () => {
          modalDialogClassName="blog-post-subscribe-modal"
          padding="0 0 0 0"
          popup
+         marginTop="15%"
        >
         <SubscribePopup onClose={() => setSubscribePopupOpen(false)} />
         </ModalDialog>

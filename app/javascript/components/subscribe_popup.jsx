@@ -13,7 +13,7 @@ const SubscribeFormWrapper = styled.div`
   justify-content: space-between;
   background: ${COLORS.primaryWhite};
   width: 100%;
-  margin-top: 10px;
+  margin-top: 60px;
 
   .popup-text-container {
     color: ${COLORS.shadesDark};
@@ -215,12 +215,14 @@ const SubscribePopup = ({ onClose }) => {
     <SubscribePopupWrapper className="subscribe-popup">
       <div className="subscribe-popup-form-container">
         <div className="body-large-bold">Subscribe to the BiteSite Newsletter!</div>
-        <MailchimpSubscribe
-          url={url}
-          render={({ subscribe, status, message }) => (
-            <SubscribeForm onValidated={(formData) => subscribe(formData)} status={status} message={message} />
-          )}
-        />
+        <div className="mailchimp-subscribe">
+          <MailchimpSubscribe
+            url={url}
+            render={({ subscribe, status, message }) => (
+              <SubscribeForm onValidated={(formData) => subscribe(formData)} status={status} message={message} />
+            )}
+          />
+        </div>
       </div>
       <div className="subscribe-popup-image">
         <img src={Mailbox} alt="Mailbox" />
