@@ -14,6 +14,7 @@
         font-style: normal;
         .title {
           color: $primary-color;
+          text-transform: uppercase;
         }
 
         .info {
@@ -73,6 +74,10 @@
           .info {
             display: flex;
             flex-direction: row;
+            gap: 25px;
+            .company-address {
+              margin-top: -25px;
+            }
           }
         }
       }
@@ -89,11 +94,37 @@
         }
       }
     }
+    .staff-sign-in {
+      position: absolute;
+      left: 15px;
+      bottom: 20px;
+    }
+  }
+
+  @media only screen and (max-width: 830px) {
+    .footer {
+      .container {
+        padding: 40px 16px;
+
+        .links {
+          gap: 30px;
+        }
+      }
+    }
+    .staff-sign-in {
+      margin-left: -105px;
+    }
   }
 
   .staff-sign-in {
     position: absolute;
-    right: 265px;
+    left: 120px;
     bottom: 20px;
+
+    a {
+      color: $light-gray;
+      text-decoration: none;
+      font-size: 12px;
+    }
   }
 }
