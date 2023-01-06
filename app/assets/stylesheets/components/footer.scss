@@ -2,12 +2,10 @@
   position: relative;
   .footer {
     background: #ffffff;
+    box-shadow: 0px -1px 3px rgba(97, 104, 105, 0.15);
 
     .container {
       padding: 48px 120px;
-      background: #ffffff;
-      box-shadow: 0px -1px 3px rgba(97, 104, 105, 0.15);
-      width: fill;
 
       .company-info {
         font-family: "Helvetica Neue";
@@ -102,11 +100,6 @@
         }
       }
     }
-    .staff-sign-in {
-      position: absolute;
-      left: 15px;
-      bottom: 20px;
-    }
   }
 
   @media only screen and (max-width: 830px) {
@@ -124,9 +117,21 @@
     }
   }
 
+  @media only screen and (min-width: 1400px) {
+    .footer {
+      .container {
+        padding: 40px 16px;
+
+        .links {
+          gap: 30px;
+        }
+      }
+    }
+  }
+
   .staff-sign-in {
     position: absolute;
-    left: 120px;
+    left: 7.5rem;
     bottom: 20px;
 
     a {
