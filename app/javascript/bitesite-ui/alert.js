@@ -24,9 +24,9 @@ const Alert = styled.div`
       case 'error':
         return `
           border-color: ${COLORS.alertRed};
-          background-color: ${COLORS.lavenderBlush};
+        background-color: ${COLORS.lavenderBlush};
           color: ${COLORS.alertRed};
-        `;
+      `;
       case 'warning':
         return `
           border-color: ${COLORS.yellowOrange};

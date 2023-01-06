@@ -29,7 +29,11 @@ Mybusiness::Application.configure do
 
   # E-Mail Configuration
   config.action_mailer.delivery_method = :letter_opener
+
+  # Default Mailer
   config.action_mailer.default_url_options = { :host => "localhost:3000" }
+  config.action_mailer.preview_path = "#{Rails.root}/spec/mailers/previews"
+  config.action_mailer.show_previews = true
 
   # For Heroku
   config.assets.initialize_on_precompile = false

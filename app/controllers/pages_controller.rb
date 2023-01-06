@@ -64,7 +64,7 @@ class PagesController < ApplicationController
       @email_address = params[:email_address]
       @message = params[:message]
 
-      if !verify_recaptcha
+      if verify_recaptcha
         @success = false
         @result_message = "Please verify that you are not a robot."
       elsif @email_address.blank? || @message.blank?
@@ -74,14 +74,24 @@ class PagesController < ApplicationController
         @success = false
         @result_message = "Your e-mail has been blacklisted. If you want to appeal this, please contact info@bitesite.ca directly."
       else
-        ContactFormSubmission.create(first_name: @first_name,
-                                     last_name: @last_name,
-                                     email_address: @email_address,
-                                     message: @message)
+        new_contact_form_submission =
+          ContactFormSubmission.create(first_name: @first_name,
+                                       last_name: @last_name,
+                                       email_address: @email_address,
+                                       message: @message)
 
-        EmailJob.perform_async(@first_name, @last_name, @email_address, @message)
-        @success = true
-        @result_message = "We've received your message and we'll be in touch shortly."
+        if new_contact_form_submission.persisted?
+          EmailJob.perform_async(@first_name, @last_name, @email_address, @message)
+          @success = true
+          @result_message = "We've received your message and we'll be in touch shortly."
+        else
+          @success = false
+          @result_message = "Something went wrong. Please try again."
+        end
+      end
+
+      respond_to do |format|
+        format.json { render json: { success: @success, result_message: @result_message }.to_json }
       end
     end
   end
