@@ -42,10 +42,7 @@ const AboutPage = ({ teamMembers }) => {
                 mobile applications.
               </div>
               <a
-                href="/case_studies"
-                className="playbook-link"
-                target="_blank"
-                rel="noopener noreferrer"
+                className="playbook-link disabled"
               >
                 View Case Studies
                 <svg
@@ -72,8 +69,6 @@ const AboutPage = ({ teamMembers }) => {
               <a
                 href="/playbook"
                 className="playbook-link"
-                target="_blank"
-                rel="noopener noreferrer"
               >
                 Read our Playbook
                 <svg
@@ -100,8 +95,6 @@ const AboutPage = ({ teamMembers }) => {
               <a
                 href="/products"
                 className="products-link"
-                target="_blank"
-                rel="noopener noreferrer"
               >
                 View our Products
                 <svg
