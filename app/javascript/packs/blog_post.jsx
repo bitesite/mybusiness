@@ -62,6 +62,12 @@ const RelatedPosts = styled(Frame)`
   flex-wrap: wrap;
 `;
 
+const StyledGeneralPost = styled.div`
+.blog-post-subscribe-button {
+  width: fit-content;
+}
+`;
+
 const BlogPost = ({ blogPostId }) => {
   const [blogPost, setBlogPost] = useState(null);
   const [relatedPosts, setRelatedPosts] = useState(null);
@@ -232,7 +238,7 @@ const BlogPost = ({ blogPostId }) => {
           </Frame>
         )}
       </div>
-
+      <StyledGeneralPost className="blog-post-subscribe">
       <DarkBackgroundGeneralPost
         image={BlogPostSubscribeImage}
         header="Want to stay up to date with BiteSite?"
@@ -244,6 +250,7 @@ const BlogPost = ({ blogPostId }) => {
           setSubscribePopupOpen(true);
         }}
       />
+      </StyledGeneralPost>
       {subscribePopupOpen && (
          <ModalDialog
          maxWidth="783px"
