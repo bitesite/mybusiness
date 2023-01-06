@@ -19,6 +19,11 @@ const BlogFrame = styled(Frame)`
     width: fit-content;
     white-space: nowrap;
   }
+  .blog-page-tag-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   .blog-post-tag-modal {
     display: flex;
     flex-wrap: wrap;
@@ -56,9 +61,9 @@ const BlogPostsFrame = styled(Frame)`
   justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
-  width: 100%;
+  max-width: 1198px;
   .blog-card {
-    flex: 1 1 21%;
+    flex: 1 1 41%;
   }
   @media (max-width: 780px) {
     flex-direction: column;
@@ -220,7 +225,7 @@ const BlogPage = () => {
               <Button
                 type="secondary"
                 onClick={() => setIsTagModalOpen(true)}
-                width="100%"
+                width="80%"
               >
                 <Icon icon="bytesize:filter" className="filter-icon" />
                 Popular Tags{" "}
