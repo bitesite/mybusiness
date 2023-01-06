@@ -12,4 +12,11 @@ export const COLORS = {
   shadesBackground: '#F3F5FA',
   shadesShadow: '#616869',
   primaryWhite: '#FFFFFF',
+  background: '#f3f5fa',
+  honeydew: '#F5FFF3',
+  green: '#079864',
+  lavenderBlush: '#FFEDEC',
+  alertRed: '#A90F1C',
+  blanchedAlmond: '#FFECCF',
+  yellowOrange: '#F4AF46',
 };

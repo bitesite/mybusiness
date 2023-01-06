@@ -26,16 +26,16 @@ $header-height: 70px;
     flex-direction: row;
 
     .logo-container {
-      width: 185px;
+      width: 250px;
       height: 100%;
 
       display: flex;
       align-items: center;
 
       .logo {
-        width: 50%;
+        width: 80%;
         img {
-          width: 121px;
+          width: 100%;
         }
       }
     }
@@ -51,15 +51,17 @@ $header-height: 70px;
 
       a {
         font-style: normal;
-        font-family: "Avenir LT Std";
-        font-weight: 65;
+        font-weight: 500;
+        font-size: 14px;
         text-decoration: none;
-        text-transform: lowercase;
         margin: 0 20px;
         transition: 200ms;
-        color: $primary-darkest-color;
+        color: $darkest-gray;
         &:hover {
-          color: $primary-color;
+          color: $primary-lighter-color;
+        }
+        &.active {
+          color: $primary-default-color;
         }
       }
 
@@ -117,47 +119,12 @@ $header-height: 70px;
 
 #content {
   padding-top: $header-height;
-  padding-bottom: 50px;
   background: white;
   min-height: 500px;
 
   .hero {
     position: relative;
     padding-top: 120px;
-
-    .slogan {
-      position: relative;
-      text-align: left;
-      font-family: "Avenir Next Condensed";
-      text-transform: uppercase;
-      font-size: 85px;
-      line-height: 70px;
-
-      background: white;
-      padding: 30px 0px 30px 0;
-
-      .emphasize {
-        font-family: "Avenir Next Condensed";
-        font-weight: 500;
-        color: $primary-color;
-      }
-
-      @media screen and (max-width: $mobile-menu-device-width) {
-        font-size: 60px;
-        line-height: 55px;
-      }
-    }
-
-    .subslogan {
-      font-family: "Avenir LT Std";
-      font-weight: 65;
-      font-size: 19px;
-
-      .emphasize {
-        font-family: "Avenir LT Std";
-        font-weight: 85;
-      }
-    }
   }
 
   .section {
@@ -176,7 +143,6 @@ $header-height: 70px;
         }
 
         .text {
-          font-family: "Avenir LT Std";
           font-weight: 85;
           font-size: 1.25em;
           height: 60px;
@@ -278,7 +244,7 @@ $header-height: 70px;
     .blog-title {
       margin: 40px 0px;
       text-align: center;
-      font-family: "Avenir LT Std";
+
       font-weight: 85;
     }
 
@@ -290,7 +256,7 @@ $header-height: 70px;
         width: calc(100% - 220px);
       }
 
-      @media only screen and (max-width: 760px) {
+      @media only screen and (max-width: 780px) {
         float: none;
         width: 100%;
       }
@@ -306,7 +272,7 @@ $header-height: 70px;
         padding-left: 40px;
       }
 
-      @media only screen and (max-width: 760px) {
+      @media only screen and (max-width: 780px) {
         float: none;
         width: 100%;
         padding: 0;
@@ -316,7 +282,6 @@ $header-height: 70px;
         margin-bottom: 30px;
 
         .menu-title {
-          font-family: "Avenir LT Std";
           font-weight: 85;
           margin-bottom: 10px;
         }

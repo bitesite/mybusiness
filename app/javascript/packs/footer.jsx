@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faYoutube, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { Frame } from '@bitesite/react-figstrap';
 import Link from '../components/link';
 
 const Footer = () => (
@@ -14,41 +14,39 @@ const Footer = () => (
         <div className="info caption-light fgs-al fgs-ali  fgs-al-v fgs-al-g-6">
           <span className="caption-light fgs-ali">© 2021 BiteSite Inc.</span>
 
-          <span className="caption-light fgs-ali">
+          <span className="caption-light fgs-ali company-address">
             204 - 78 George St.
             <br />
             Ottawa, ON <br /> K1N 5W1
           </span>
-          <span className="caption-light fgs-ali">info@bitesite.ca</span>
+          <span className="caption-light fgs-ali company-address">info@bitesite.ca</span>
         </div>
       </div>
 
       <div className="links fgs-al fgs-ali  fgs-al-h fgs-al-align-items-flex-start fgs-al-g-60 ">
         <div className="company-links caption-medium fgs-ali fgs-al fgs-al-v fgs-al-g-6">
           <span className="links-title fgs-ali">COMPANY</span>
-          <Link path="/services" target="_blank" className="fgs-ali">
+          <Link path="/services" target="_blank" className="fgs-ali caption-medium no-underline">
             Services
           </Link>
-          <Link path="/about" target="_blank" className="fgs-ali">
+          <Link path="/about" target="_blank" className="fgs-ali caption-medium no-underline">
             About
           </Link>
-          <Link path="/careers" target="_blank" className="fgs-ali">
-            Careers
-          </Link>
-          <Link path="/contact" target="_blank" className="fgs-ali">
+
+          <Link path="/contact" target="_blank" className="fgs-ali caption-medium no-underline">
             Contact
           </Link>
         </div>
 
         <div className="resources-links caption-medium fgs-ali fgs-al fgs-al-v fgs-al-g-6">
           <span className="links-title fgs-ali">RESOURCES</span>
-          <Link path="/blog" target="_blank" className="fgs-ali">
+          <Link path="/blog" target="_blank" className="fgs-ali caption-medium no-underline">
             Blog
           </Link>
-          <Link path="/news" target="_blank" className="fgs-ali">
-            News
+          <Link path="/news" target="_blank" className="fgs-ali caption-medium no-underline">
+            Newsletter
           </Link>
-          <Link path="/playbook" target="_blank" className="fgs-ali">
+          <Link path="/playbook" target="_blank" className="fgs-ali caption-medium no-underline">
             Playbook
           </Link>
         </div>

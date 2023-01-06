@@ -25,8 +25,18 @@ a {
 
   &:hover {
     color: $primary-lighter-color;
+    svg path {
+      fill: $primary-lighter-color;
+    }
   }
   &.selected {
     color: $primary-default-color;
+  }
+
+  svg {
+    margin-left: 10px;
+  }
+  &.disabled {
+    cursor: not-allowed;
   }
 }

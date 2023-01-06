@@ -12,7 +12,7 @@ const ProductCard = ({ image, header, text, link, positionImageRight, imageStyle
 
       <div className="content fgs-al fgs-ali fgs-al-v  ">
         <div className="title fgs-ali body-large-bold fgs-al-g-16">{header}</div>
-        <p className="text fgs-ali body-regular">{text}</p>
+        <p className="text fgs-ali ">{text}</p>
         <Link
           onClick={(e) => {
             e.preventDefault();

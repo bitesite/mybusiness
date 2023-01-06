@@ -22,6 +22,29 @@
   }
 }
 
+.services-container {
+  padding: 128px 0px;
+  .gap-160 {
+    display: flex;
+    flex-direction: column;
+    gap: 160px;
+  }
+
+  .general-component-card {
+    .how-we-work-button {
+      width: 150px;
+    }
+
+    .contact-us-button {
+      width: 190px;
+    }
+  }
+
+  &.dark-background {
+    background-color: $background;
+  }
+}
+
 .services-component {
   .services-post {
     padding-bottom: 0px;

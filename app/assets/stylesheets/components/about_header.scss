@@ -5,7 +5,7 @@
   justify-content: center;
   text-align: center;
   color: $darkest-gray;
-  padding: 96px 0px;
+  padding-top: 96px;
   .about-page-header {
     color: $darkest-gray;
     .about-image {
@@ -20,7 +20,7 @@
     }
   }
   .about-page-beliefs {
-    padding: 64px 0 0 0;
+    padding: 128px 0;
     .about-belief-title {
       color: $darkest-gray;
       margin: 0;
@@ -55,8 +55,8 @@
     }
   }
 
-  @media only screen and (max-width: 760px) {
-    padding: 0;
+  @media only screen and (max-width: 780px) {
+    padding-top: 0;
     .about-page-header {
       .about-image {
         max-width: 305px;

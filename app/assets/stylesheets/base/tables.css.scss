@@ -1,19 +1,18 @@
 /* Tables */
 .resource-table {
-  border-collapse:collapse;
-  width:100%;
+  border-collapse: collapse;
+  width: 100%;
 
   tr {
     th {
-      font-family: 'Avenir LT Std';
       font-weight: 85;
     }
   }
 
   tr {
-    border-bottom:1px solid #ddd;
+    border-bottom: 1px solid #ddd;
     td {
-      padding:5px;
+      padding: 5px;
     }
   }
 }
