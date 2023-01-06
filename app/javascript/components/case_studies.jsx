@@ -8,7 +8,10 @@ import ISWAImage from '../../assets/images/iswa_case_study.png';
 const CaseStudies = () => (
   <div className="case-studies-page">
     <Frame className="case-studies-component" gap="30" vertical alignItems="center">
-      <Frame className="heading-regular case-studies-title">Project Case Studies</Frame>
+      <Frame vertical alignItems="center" gap={24}>
+        <div className="heading-regular case-studies-title">Project Case Studies</div>
+        <div className="heading-small">Coming Soon...!</div>
+      </Frame>
       <Frame className="case-study-cards" gap="32" justifyContent="center">
         <Frame className="case-study-item" vertical>
           <img src={BradfordImage} className="case-study-image" alt="bradford case study" />
