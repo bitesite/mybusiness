@@ -4,11 +4,11 @@ body {
 }
 
 h1 {
-  margin:40px 0px;
-  font-family: 'Avenir LT Std';
+  margin: 40px 0px;
+
   font-weight: 85;
-  font-size:1.5em;
-  color:#555;
+  font-size: 1.5em;
+  color: #555;
 
   &.section-header {
     position: relative;
@@ -42,21 +42,21 @@ h1 {
 }
 
 h2 {
-  padding:0px;
+  padding: 0px;
   margin: 20px 0;
-  font-family: 'Avenir LT Std';
+
   font-weight: 85;
-  font-size:1.25em;
+  font-size: 1.25em;
 }
 
 h3 {
-  color:#555;
-  font-family: 'Avenir LT Std';
+  color: #555;
+
   font-weight: 85;
 }
 
 p {
-  color:#555;
+  color: #555;
 }
 
 .spaced {
@@ -67,7 +67,149 @@ p {
   text-align: center;
 }
 
-b, strong {
-  font-family: 'Avenir LT Std';
+b,
+strong {
   font-weight: 85;
+}
+
+/* New Design */
+
+.heading-extra-large {
+  font-size: 64px;
+  line-height: 56px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.heading-large {
+  font-size: 48px;
+  line-height: 62.4px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.heading-regular {
+  font-family: "Helvetica Neue";
+  font-size: 36px;
+  line-height: 46.8px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.heading-small {
+  font-size: 24px;
+  line-height: 22px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+
+/* Subheader */
+.medium {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.light {
+  font-size: 20px;
+  line-height: 22px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+}
+
+/* Body */
+.body-large {
+  font-size: 18px;
+  line-height: 27px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+}
+
+.body-large-bold {
+  font-size: 18px;
+  line-height: 27px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  font-weight: 700;
+}
+
+.body-medium {
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.body-regular {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+}
+
+/* Body Small*/
+.body-small-bold {
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
+
+.body-small-bold {
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
+
+.body-small-medium {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.body-small-light {
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 400;
+  letter-spacing: 0.3%;
+}
+
+/* Captions */
+.caption-bold {
+  font-size: 12px;
+  line-height: 14.65px;
+  font-weight: 700;
+  letter-spacing: 0.3%;
+}
+
+.caption-medium {
+  font-size: 12px;
+  line-height: 22px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.caption-light {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.003em;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.links {
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.no-underline {
+  text-decoration: none;
 }

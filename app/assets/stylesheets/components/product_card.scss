@@ -1,0 +1,21 @@
+.product-component-card {
+  .product-card {
+    width: 100%;
+    box-sizing: border-box;
+    &:hover {
+      background-color: $light-white;
+      cursor: pointer;
+    }
+    .content {
+      margin-bottom: 20px;
+    }
+  }
+
+  .image-block {
+    .card-image {
+      height: 80px;
+      width: 80px;
+      object-fit: cover;
+    }
+  }
+}

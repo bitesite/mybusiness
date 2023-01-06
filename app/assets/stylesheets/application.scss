@@ -1,17 +1,20 @@
+@import "figstrap";
+
 @import "font-awesome";
 @import "select2";
 
 @import "base/globals";
-@import "base/general";
 @import "base/colorswatches";
 @import "base/buttons";
 @import "base/forms";
 @import "base/links";
 @import "base/tables";
 @import "base/typography";
-@import 'base/flash';
+@import "base/flash";
 @import "base/fonts";
 @import "base/tags";
+@import "base/general";
+@import "figstrap";
 
 @import "common/*";
 
@@ -19,7 +22,6 @@
 
 @import "views/blog_posts/*";
 @import "views/blog_post_images/*";
-@import "views/pages/*";
 @import "views/careers/*";
 @import "views/contacts/*";
 @import "views/devise/*";
@@ -29,5 +31,6 @@
 @import "views/news_posts/*";
 @import "views/pages/*";
 @import "views/profiles/*";
+
 @import "views/time_off_entries/*";
 @import "views/video_listings/*";

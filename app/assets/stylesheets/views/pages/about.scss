@@ -1,43 +1,32 @@
-#pages-about {
-  h1 {
-    text-align: center;
-  }
+.about-page {
+  width: 100%;
 
-  .about-writeup {
-    line-height: 32px;
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-  }
+  .learn-more-about-us-container {
+    gap: 160px;
+    padding-top: 128px;
+    padding-bottom: 128px;
 
-  h2 {
-    text-align: center;
-    margin-top: 30px;
-  }
+    .general-component-card {
+      background: none;
+      justify-content: end;
 
-  .team-members {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 20px;
-    
-    .team-member {
-      text-align: center;
-      margin: 40px 70px;
-
-      img {
-        height: 120px;
-        width: 120px;
+      .how-we-work-button {
+        width: 150px;
       }
 
-      .name {
-        font-weight: bold;
-        font-size: 1em;
-      }
-
-      .position {
-        font-size: 0.8em;
+      .contact-us-button {
+        width: 190px;
       }
     }
+
+    &.dark-background {
+      background-color: $background;
+    }
+  }
+
+  .learn-more-about-us-post {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
   }
 }

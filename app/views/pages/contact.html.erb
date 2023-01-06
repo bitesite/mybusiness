@@ -1,28 +1,16 @@
+<%= javascript_pack_tag "contact" %>
+
 <div id="pages-contact">
-  <div class="container">
-    
-    <% if @success.nil? %>
-      <h1>Contact us for anything!</h1> 
-      <p>
-        Know exactly what you want? Have no idea at all? Want to just open up a conversation about your options? 
-        Have some technical questions? Whatever it may be, please drop us a line and we'll do
-        our best to answer any questions you may have.
-      </p>
-      <div>
-        <%= render 'pages/contact_form' %>
-      </div>
-    <% else %>
-      <h1><%= @success ? 'Thank you for getting in touch!' : "We're sorry, but something went wrong" %></h1> 
-      <p>
-        <%= @result_message %>
-      </p>
+  <% if @success.nil? %>
+    <div id="contact-component-mount-point"></div>
+  <% else %>
+    <h1><%= @success ? 'Thank you for getting in touch!' : "We're sorry, but something went wrong" %></h1> 
+    <p>
+      <%= @result_message %>
+    </p>
 
-      <% if !@success %>
-        <div>
-          <%= render 'pages/contact_form' %>
-      </div>
-      <% end %>
+    <% if !@success %>
+      <div id="contact-component-mount-point"></div>
     <% end %>
-
-  </div>
+  <% end %>
 </div>

@@ -2,43 +2,55 @@ class FrequentlyAskedQuestionsController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @title = 'FAQ'
-    @meta_description = "Answers to some commonly asked questions when dealing with a custom software company and dealing with BiteSite specifically."
-    @frequently_asked_questions = @frequently_asked_questions.in_order
-  end
+    @questions = Question.all
+    @questions = @questions.by_oldest
 
-  def show
-  end
-
-  def new
-  end
-
-  def edit
-  end
-
-  def create
-    if @frequently_asked_question.save
-      redirect_to frequently_asked_questions_url, notice: 'Frequently asked question was successfully created.'
-    else
-      render :new
+    respond_to do |format|
+      format.json { render :index }
     end
   end
 
-  def update
-    if @frequently_asked_question.update(frequently_asked_question_params)
-      redirect_to frequently_asked_questions_url, notice: 'Frequently asked question was successfully updated.'
+  def show
+    @question = Question.find(params[:id])
+    respond_to do |format|
+      format.json { render :show }
+    end
+  end
+
+  def create
+    @question = Question.new(question_params)
+
+    if @question.save
+      respond_to do |format|
+        format.json { render :index }
+      end
     else
-      render :edit
+      respond_to do |format|
+        format.json { render json: @media_listing.errors, status: :unprocessable_entity }
+      end
     end
   end
 
   def destroy
-    @frequently_asked_question.destroy
-    redirect_to frequently_asked_questions_url, notice: 'Frequently asked question was successfully destroyed.'
+    @question = Question.find(params[:id])
+    @question.destroy
   end
 
-  private
-    def frequently_asked_question_params
-      params.require(:frequently_asked_question).permit(:question, :answer, :position)
+  def update
+    @question = Question.find(params[:id])
+    @question.update_attributes(question_params)
+    if @question.save
+      respond_to do |format|
+        format.json { render :index }
+      end
+    else
+      respond_to do |format|
+        format.json { render json: @question.errors, status: :unprocessable_entity }
+      end
     end
+  end
+end
+
+def question_params
+  params.permit(:title, :content)
 end

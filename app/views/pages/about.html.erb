@@ -1,28 +1,5 @@
+<%= javascript_pack_tag "about" %>
+
 <div id="pages-about">
-  <div class="container">
-    <h1>About</h1>
-
-    <p class='about-writeup'>
-      BiteSite was founded in 2012 in Ottawa, Canada and started as a general service company offering a wide
-      range of services including Web Design and Development, Photography, Graphic Design, Video production
-      and more. Over the years, we've learned a lot and found out what we excel at and what customers gain most
-      from our services. From that, we narrowed our focus to Custom Software - building custom solutions
-      for customers specific needs. While we are capable of many platforms, we specialize in full-stack
-      Web Applications and iOS and Android applications.
-    </p>
-
-    <h2>Our Team</h2>
-
-    <div class="team-members">
-      <% @team_members.each do |team_member| %>
-        <div class='team-member'>
-          <%= image_tag team_member[:image] %>
-          <div>
-            <div class='name'><%= team_member[:name] %></div>
-            <div class='position'><%= team_member[:position] %></div>
-          </div>
-        </div>
-      <% end %>
-    </div>
-  </div>
+  <div id='about-page-component-mount-point' data-team-members='<%= @team_members %>'></div>
 </div>

@@ -1,0 +1,80 @@
+.general-component-card {
+  background: $lightest-gray;
+
+  .content-block {
+    &.mobile-wrap {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .content {
+      max-width: 584px;
+      width: 100%;
+
+      .type-text {
+        font-size: 14px;
+        font-weight: 700;
+        color: $primary-default-color;
+      }
+
+      .title {
+        color: $darkest-gray;
+      }
+
+      .text {
+        color: $darkest-gray;
+      }
+      .button {
+        padding: 12px 20px;
+        width: 255px;
+        height: 50px;
+        color: $light-white;
+      }
+    }
+
+    .mobile-content {
+      max-width: 584px;
+
+      .title {
+        color: $darkest-gray;
+      }
+
+      .text {
+        color: $darkest-gray;
+      }
+      .button {
+        padding: 12px 20px;
+        width: 255px;
+        height: 50px;
+        color: $light-white;
+      }
+    }
+
+    .link {
+      width: fit-content;
+    }
+  }
+
+  .right {
+    order: 1;
+  }
+
+  .image-block {
+    .card-image {
+      max-height: 500px;
+      width: 100%;
+    }
+  }
+
+  .mobile-image-block {
+    order: 0;
+    .card-image {
+      max-height: 500px;
+      width: 100%;
+    }
+  }
+}
+
+.products-image {
+  height: 250px;
+}

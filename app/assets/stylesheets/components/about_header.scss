@@ -1,0 +1,84 @@
+.component-about-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: $darkest-gray;
+  padding-top: 96px;
+  .about-page-header {
+    color: $darkest-gray;
+    .about-image {
+      max-height: 300px;
+      max-width: 450px;
+      object-fit: cover;
+      align-self: center;
+    }
+
+    .about-content {
+      max-width: 780px;
+    }
+  }
+  .about-page-beliefs {
+    padding: 128px 0;
+    .about-belief-title {
+      color: $darkest-gray;
+      margin: 0;
+    }
+    .about-belief-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-gap: 24px;
+      .about-belief-item {
+        display: grid;
+        grid-template-rows: 1fr 4fr;
+        .about-belief-item-title {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          border-left: 3px solid $primary-default-color;
+          text-align: start;
+          line-height: 24px;
+          padding-left: 10px;
+          min-height: 50px;
+          color: $darkest-gray;
+          div {
+            display: inline-block;
+            vertical-align: middle;
+          }
+        }
+        .about-belief-item-content {
+          text-align: start;
+          color: $dark-gray;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 780px) {
+    padding-top: 0;
+    .about-page-header {
+      .about-image {
+        max-width: 305px;
+        height: auto;
+      }
+      .about-content {
+        text-align: left;
+      }
+    }
+    .about-page-beliefs {
+      .about-belief-title {
+        align-self: flex-start;
+      }
+      .about-belief-content {
+        .about-belief-item {
+          display: grid;
+          grid-template-rows: none;
+          .about-belief-item-title {
+            min-height: 40px;
+          }
+        }
+      }
+    }
+  }
+}

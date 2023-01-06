@@ -5,12 +5,11 @@ class ProfilesController < ApplicationController
   end
 
   def edit
-    
   end
 
   def update
     if @profile.update_attributes(profile_params)
-      redirect_to profile_path, notice: 'Profile successfully updated!'
+      redirect_to profile_path, notice: "Profile successfully updated!"
     else
       render :edit
     end
@@ -18,13 +17,13 @@ class ProfilesController < ApplicationController
 
   private
 
-    def profile_params
-      params.require(:profile).permit(:employee_number,
-                                      :job_title,
-                                      :first_name,
-                                      :last_name,
-                                      :start_date,
-                                      :avatar,
-                                      :weekly_billable_hours_target)
-    end
+  def profile_params
+    params.require(:profile).permit(:employee_number,
+                                    :job_title,
+                                    :first_name,
+                                    :last_name,
+                                    :start_date,
+                                    :avatar,
+                                    :weekly_billable_hours_target)
+  end
 end

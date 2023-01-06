@@ -1,11 +1,42 @@
 a {
-  border:none;
+  border: none;
   color: $primary-color;
   transition: $transition;
   text-decoration: none;
   font-style: italic;
-  
+
   &:hover {
-    color:#000;
-  };
+    color: #000;
+  }
+}
+
+// ------------------------------------------New Links ------------------------------------------
+
+a {
+  color: $darkest-gray;
+  transition: $transition;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: underline;
+  font-family: "Helvetica Neue", sans-serif;
+  line-height: 18px;
+  letter-spacing: 0.3px;
+  font-style: normal;
+
+  &:hover {
+    color: $primary-lighter-color;
+    svg path {
+      fill: $primary-lighter-color;
+    }
+  }
+  &.selected {
+    color: $primary-default-color;
+  }
+
+  svg {
+    margin-left: 10px;
+  }
+  &.disabled {
+    cursor: not-allowed;
+  }
 }

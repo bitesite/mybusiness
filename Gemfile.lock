@@ -42,8 +42,8 @@ GEM
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
-    acts-as-taggable-on (6.0.0)
-      activerecord (~> 5.0)
+    acts-as-taggable-on (8.1.0)
+      activerecord (>= 5.0, < 6.2)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
     arel (9.0.0)
@@ -109,6 +109,10 @@ GEM
     faker (1.7.3)
       i18n (~> 0.5)
     ffi (1.11.3)
+    figstrap_rails (0.0.4)
+      rails
+      sass
+      sass-rails
     fog-aws (2.0.1)
       fog-core (~> 1.38)
       fog-json (~> 1.0)
@@ -319,7 +323,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  acts-as-taggable-on
+  acts-as-taggable-on (~> 8.1.0)
   aws-sdk-s3
   cancancan
   carrierwave
@@ -331,6 +335,7 @@ DEPENDENCIES
   exponent-server-sdk
   factory_bot_rails
   faker (= 1.7.3)
+  figstrap_rails
   fog-aws
   font-awesome-rails
   friendly_id

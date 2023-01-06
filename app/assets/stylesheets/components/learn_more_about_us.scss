@@ -1,0 +1,12 @@
+.component-learn-more-about-us {
+  padding: 128px 0;
+  background-color: $background;
+  .learn-more-about-us-container {
+    color: $darkest-gray;
+    .learn-more-about-us-image {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

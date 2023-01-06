@@ -1,0 +1,143 @@
+.footer-container {
+  position: relative;
+  .footer {
+    background: #ffffff;
+    box-shadow: 0px -1px 3px rgba(97, 104, 105, 0.15);
+
+    .container {
+      padding: 48px 120px;
+
+      .company-info {
+        font-family: "Helvetica Neue";
+        font-style: normal;
+        .title {
+          color: $primary-color;
+          text-transform: uppercase;
+        }
+
+        .info {
+          color: $dark-gray;
+        }
+      }
+
+      .links {
+        a {
+          &:hover {
+            color: $primary-lighter-color;
+          }
+          &.selected {
+            color: $primary-default-color;
+          }
+        }
+        a,
+        .company-links {
+          gap: 4px;
+
+          font-family: "Helvetica Neue";
+          font-style: normal;
+
+          /* Shade/Darkest */
+
+          color: $darkest-gray;
+        }
+
+        .resources-links {
+          gap: 4px;
+        }
+
+        .links-title {
+          font-family: "Helvetica Neue";
+          font-style: normal;
+          font-weight: 700;
+          font-size: 12px;
+          line-height: 15px;
+
+          /* Shade/Dark */
+
+          color: $dark-gray;
+          white-space: nowrap;
+        }
+        .social-media-links {
+          .icon {
+            width: 20.14px;
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 650px) {
+    .footer {
+      .container {
+        padding: 40px 16px;
+
+        display: flex;
+        flex-direction: column;
+
+        .company-info {
+          order: 2;
+          margin-top: 25px;
+          .info {
+            display: flex;
+            flex-direction: row;
+            gap: 25px;
+            .company-address {
+              margin-top: -25px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 375px) {
+    .footer {
+      .container {
+        padding: 40px 16px;
+
+        .links {
+          gap: 30px;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 830px) {
+    .footer {
+      .container {
+        padding: 40px 16px;
+
+        .links {
+          gap: 30px;
+        }
+      }
+    }
+    .staff-sign-in {
+      margin-left: -105px;
+    }
+  }
+
+  @media only screen and (min-width: 1400px) {
+    .footer {
+      .container {
+        padding: 40px 16px;
+
+        .links {
+          gap: 30px;
+        }
+      }
+    }
+  }
+
+  .staff-sign-in {
+    position: absolute;
+    left: 7.5rem;
+    bottom: 20px;
+
+    a {
+      color: $light-gray;
+      text-decoration: none;
+      font-size: 12px;
+    }
+  }
+}

@@ -1,5 +1,6 @@
-a.btn, .btn {  
-  display:inline-block;
+a.btn,
+.btn {
+  display: inline-block;
   padding: 10px 60px;
   text-align: center;
   text-decoration: none;
@@ -10,8 +11,8 @@ a.btn, .btn {
 }
 
 .btn-sm {
-  font-size:0.8em;
-  padding:5px 10px;
+  font-size: 0.8em;
+  padding: 5px 10px;
 }
 
 .btn-primary {
@@ -20,8 +21,8 @@ a.btn, .btn {
 
   &:hover {
     background: $light-primary-color-1;
-    color:white;
-  };
+    color: white;
+  }
 }
 
 .btn-ghost {
@@ -39,7 +40,6 @@ a.standard-button {
   font-size: 12px;
   padding: 10px 20px 10px 20px;
 
-
   &:hover {
     background-color: black;
     color: white;
@@ -54,5 +54,81 @@ a.standard-button {
   background-color: #333;
   color: #888;
   text-decoration: none;
+}
 
+// ----------------------------------------------------------------------- New Buttons -----------------------------------------------------------------------
+
+.btn {
+  padding: 12px 20px;
+
+  width: 140px;
+  height: 50px;
+
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  /* identical to box height, or 112% */
+
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.3px;
+
+  color: #ffffff;
+
+  &.primary-default {
+    background: #2a7f89;
+    box-shadow: 0px 8px 14px rgba(97, 104, 105, 0.15);
+    border-radius: 1000px;
+    transition-duration: 0.4s;
+
+    &:hover {
+      background: #58b3b8;
+      box-shadow: 0px 8px 14px rgba(97, 104, 105, 0.15);
+      border-radius: 1000px;
+    }
+
+    &.selected:active {
+      background: #4fa1a6;
+      border-radius: 1000px;
+    }
+
+    &.disabled {
+      background: #2a7f89;
+      opacity: 0.5;
+      border-radius: 1000px;
+      cursor: not-allowed;
+    }
+  }
+
+  &.secondary-default {
+    background: #ffffff;
+    border: 1px solid #888e8e;
+    border-radius: 1000px;
+    color: #394243;
+    transition-duration: 0.4s;
+
+    &:hover {
+      background: #ffffff;
+      border: 1px solid #58b3b8;
+      border-radius: 1000px;
+      color: #58b3b8;
+    }
+
+    &.selected:active {
+      background: #ffffff;
+      border: 1px solid #4fa1a6;
+      border-radius: 1000px;
+      color: #4fa1a6;
+    }
+
+    &.disabled {
+      background: #ffffff;
+      border: 1px solid #888e8e;
+      border-radius: 1000px;
+      color: #888e8e;
+      cursor: not-allowed;
+    }
+  }
 }

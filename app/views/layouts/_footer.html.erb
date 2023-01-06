@@ -1,34 +1,16 @@
-<div id="footer">
-  <div class="container">
-    <div>
-      <b>BiteSite Inc.</b><br />
-      Custom Software<br />
-      info@bitesite.ca<br />
-      204 - 78 George St.<br />
-      Ottawa, ON<br />
-      K1N 5W1<br />
-    </div>
+<%= javascript_pack_tag "footer" %> 
+<div class="footer-container">
 
-    <div>
-      
-    </div>
 
-    <div>
-      <div class='social-links'>
-        <%= link_to fa_icon('linkedin'), 'https://www.linkedin.com/company/2894614/' %>
-        <%= link_to fa_icon('twitter'), 'https://www.twitter.com/bitesite' %>
-        <%= link_to fa_icon('youtube-play'), 'https://www.youtube.com/user/bitesiteca' %>
-      </div>
-
-      <div class="staff-sign-in">
-        <% if user_signed_in? %>
-          <% if staff? %>
-            <%= link_to 'Staff Dashboard', staff_dashboard_path %>
-          <% end %>
-        <% else %>
-          <%= link_to 'Staff Sign in', new_user_session_path %>
+  <div id="footer-component-mount-point"></div>
+  <div class="staff-sign-in">
+      <% if user_signed_in? %>
+        <% if staff? %>
+          <%= link_to "Staff Dashboard", staff_dashboard_path, class: "links" %>
+          <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "links" %>
         <% end %>
-      </div>
-    </div>
+      <% else %>
+        <%= link_to "Staff Sign in", new_user_session_path, class: "links" %>
+      <% end %>
   </div>
 </div>
