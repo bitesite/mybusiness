@@ -6,13 +6,19 @@ import { isMobileScreenSize } from "../src/utilities/general_helpers";
 import { Tag, COLORS, ModalDialog } from "../bitesite-ui";
 import { Frame } from "@bitesite/react-figstrap";
 import { Icon } from "@iconify/react";
-import { getTagList } from "../src/utilities/blog_post_helpers";
+import { tagNameToUpperCase } from "../src/utilities/blog_post_helpers";
 import moment from "moment/moment";
 import BlogCard from "../components/Blog/blog_card";
 import Link from "../components/link";
 import DarkBackgroundGeneralPost from "../components/general/dark_background_general_post";
 import BlogPostSubscribeImage from "../../assets/images/blog_post_subscribe.png";
 import SubscribePopup from "../components/subscribe_popup";
+
+const StyledBlogPostContainer = styled.div`
+  .all-blog-posts-link {
+    margin-bottom: 100px;
+  }
+`;
 
 const StyledBlogPost = styled(Frame)`
   max-width: 786px;
@@ -133,7 +139,7 @@ const BlogPost = ({ blogPostId }) => {
   }, [blogPost]);
 
   return (
-    <div className="blog-post-component-mount-point">
+    <StyledBlogPostContainer className="blog-post-component-mount-point">
       <div className="container">
         <StyledBlogPost
           className="blog-post-component-mount-point"
@@ -159,10 +165,10 @@ const BlogPost = ({ blogPostId }) => {
                 gap={20}
               >
                 <Tags alignItems="center" justifyContent="flex-start" gap={20}>
-                  {blogPost.tags &&
-                    getTagList(blogPost.tags).map((tag, i) => (
+                  {blogPost.tags && blogPost.tags.length > 0 &&
+                    blogPost.tags.map((tag, i) => (
                       <Tag className="body-small-light" key={i} selected>
-                        {tag && tag.title}
+                        {tag && tagNameToUpperCase(tag)}
                       </Tag>
                     ))}
                 </Tags>
@@ -225,7 +231,7 @@ const BlogPost = ({ blogPostId }) => {
                 <BlogCard
                   key={i}
                   blogPost={post}
-                  tags={getTagList(post.tag_list)}
+                  tags={post.tag_list}
                   className="related-post"
                   onClick={() => {
                     window.location.href = `/blog/${blogPost.slug}`;
@@ -238,7 +244,7 @@ const BlogPost = ({ blogPostId }) => {
                 e.preventDefault();
                 window.location.href = "/blog";
               }}
-              className="body-small-bold"
+              className="body-small-bold all-blog-posts-link"
             >
               All BiteSite Blog Posts
             </Link>
@@ -269,7 +275,7 @@ const BlogPost = ({ blogPostId }) => {
         <SubscribePopup onClose={() => setSubscribePopupOpen(false)} />
         </ModalDialog>
       )}
-    </div>
+    </StyledBlogPostContainer>
   );
 };
 

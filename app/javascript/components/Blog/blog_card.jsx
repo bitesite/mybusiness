@@ -2,10 +2,11 @@ import React from 'react';
 import TextTruncate from 'react-text-truncate';
 import PropTypes from 'prop-types';
 import moment from 'moment';
-import styled, { css } from 'styled-components/macro';
+import styled from 'styled-components/macro';
 import { Frame } from '@bitesite/react-figstrap';
 import { Icon } from '@iconify/react';
 import { Card, Tag, COLORS } from '../../bitesite-ui';
+import { tagNameToUpperCase } from '../../src/utilities/blog_post_helpers';
 
 const CardImageContainer = styled.div`
   width: 100%;
@@ -48,7 +49,7 @@ const FooterFrame = styled(Frame)`
 `;
 
 const BlogCard = ({ tags, blogPost, width, onClick, className }) => {
-  const { title, body: text, author, published_at: publishedAt, featured_image: featuredImage } = blogPost;
+  const { title, body: text, author, published_at: publishedAt, featured_image: featuredImage, tag_list: tagList } = blogPost;
 
   return (
     <Card width={width} onClick={onClick} className={className}>
@@ -58,10 +59,11 @@ const BlogCard = ({ tags, blogPost, width, onClick, className }) => {
         </CardImageContainer>
       )}
       <CardTags alignItems="center" justifyContent="flex-start">
-        {tags &&
-          tags.map((tag, i) => (
+        {tagList &&
+          tagList.length > 0 &&
+          tagList.map((tag, i) => (
             <Tag className="body-small-light" key={i}>
-              {tag && tag.title}
+              {tag && tagNameToUpperCase(tag)}
             </Tag>
           ))}
       </CardTags>

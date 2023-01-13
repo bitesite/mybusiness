@@ -5,7 +5,7 @@ class Ability
     user ||= User.new # guest user (not logged in)
 
     can :read, NewsPost
-    can [:read, :paginated_index], BlogPost, published: true
+    can [:read, :paginated_index, :popular_tags, :related_posts], BlogPost, published: true
     can :read, Comment
     can :create, Comment
     can [:new, :create], Contact
