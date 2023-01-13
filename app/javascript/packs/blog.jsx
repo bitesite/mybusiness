@@ -310,9 +310,10 @@ const BlogPage = () => {
           justifyContent="center"
           width="100%"
         >
+          {popularTags && popularTags.length > 0 && (
+            <>
           <div className="blog-tag-title body-medium">Popular Tags:</div>
-          {popularTags &&
-            popularTags.map((tag) => (
+            {popularTags.map((tag) => (
               <TagButton
                 onClick={() => handleTagSelect(tag)}
                 key={tag.name}
@@ -329,6 +330,8 @@ const BlogPage = () => {
                 </Tag>
               </TagButton>
             ))}
+            </>
+          )}
         </BlogTagsFrame>
       )}
       <BlogPostsFrame>
