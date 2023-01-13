@@ -7,6 +7,7 @@ import { isMobileScreenSize } from "../src/utilities/general_helpers";
 import GeneralPost from "../components/general/general_post";
 import DarkBackgroundGeneralPost from "../components/general/dark_background_general_post";
 import LearnMoreAboutUs from "../../assets/images/learn_more_about_us.png";
+import Faq from "../components/faq";
 
 const AboutPage = ({ teamMembers }) => {
   const [isMobileWidth, setIsMobileWidth] = useState(isMobileScreenSize(780));
@@ -116,6 +117,7 @@ const AboutPage = ({ teamMembers }) => {
         buttonHide
         positionImageRight={false}
       />
+      <Faq />
     </div>
   );
 };
