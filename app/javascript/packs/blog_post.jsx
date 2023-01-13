@@ -198,7 +198,7 @@ const BlogPost = ({ blogPostId }) => {
                     )}
                     <div className="caption-light">
                       {moment(blogPost.publishedAt, "YYYY-MM-DD").format(
-                        "MMMM DD, YYYY"
+                        "MMMM D, YYYY"
                       )}
                     </div>
                   </Frame>
