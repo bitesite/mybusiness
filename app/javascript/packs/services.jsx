@@ -9,6 +9,7 @@ import CaseStudies from '../components/case_studies';
 import ToolsWeUse from '../components/tools_we_use';
 import ContactImage from '../../assets/images/contact_image.png';
 import DarkBackgroundGeneralPost from '../components/general/dark_background_general_post';
+import Faq from '../components/faq';
 
 const ServicesPage = () => {
   const header1 = 'Product Management';
@@ -63,6 +64,7 @@ const ServicesPage = () => {
         buttonWidth="190px"
         linkHide
       />
+      <Faq />
     </div>
   );
 };
