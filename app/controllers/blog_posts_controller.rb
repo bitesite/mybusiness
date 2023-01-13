@@ -65,6 +65,13 @@ class BlogPostsController < ApplicationController
     end
   end
 
+  def popular_tags
+    @popular_tags = BlogPost.tag_counts_on(:tags).order("count desc").limit(7)
+    respond_to do |format|
+      format.json { render json: { popular_tags: @popular_tags } }
+    end
+  end
+
   private
 
   def friendly_find

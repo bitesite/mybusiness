@@ -39,6 +39,7 @@ Mybusiness::Application.routes.draw do
   resources :blog_posts, path: "/blog", except: [:destroy] do
     collection do
       get "paginated_index"
+      get "popular_tags"
     end
     member do
       get "related_posts"

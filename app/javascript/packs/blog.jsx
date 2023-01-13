@@ -10,7 +10,7 @@ import Pagination from "../components/pagination";
 import { decodeQueryParams } from "../src/utilities/general_helpers";
 import BlogPostSubscribeImage from "../../assets/images/blog_post_subscribe.png";
 import { Icon } from "@iconify/react";
-import { getTagList, tags } from "../src/utilities/blog_post_helpers";
+import { tagNameToUpperCase } from "../src/utilities/blog_post_helpers";
 import DarkBackgroundGeneralPost from "../components/general/dark_background_general_post";
 import SubscribePopup from "../components/subscribe_popup";
 
@@ -105,6 +105,7 @@ const BlogPage = () => {
   const [pageNumber, setPageNumber] = useState(null);
   const [selectedFilters, setSelectedFilters] = useState(decodeQueryParams());
   const [totalPages, setTotalPages] = useState(null);
+  const [popularTags, setPopularTags] = useState(null);
   const [totalPosts, setTotalPosts] = useState(null);
   const [isMobileWidth, setIsMobileWidth] = useState(isMobileScreenSize(780));
   const [isTagModalOpen, setIsTagModalOpen] = useState(false);
@@ -152,6 +153,12 @@ const BlogPage = () => {
     );
   }
 
+  const getTags = () => {
+    $.getJSON("/blog/popular_tags", (result) => {
+      setPopularTags(result.popular_tags);
+    });
+  };
+
   const clearFilters = () => {
     setSelectedFilters({});
     setIsTagModalOpen(false);
@@ -160,6 +167,7 @@ const BlogPage = () => {
   useEffect(() => {
     setPageNumber(getPageNumberFromSearch());
     setUrlQueryFromFilters();
+    getTags();
   }, []);
 
   useEffect(() => {
@@ -185,15 +193,15 @@ const BlogPage = () => {
     const updatedFilters = { ...selectedFilters };
     if (
       updatedFilters["tag_name"] &&
-      updatedFilters["tag_name"].includes(tag.value)
+      updatedFilters["tag_name"].includes(tag.name)
     ) {
       updatedFilters["tag_name"] = updatedFilters["tag_name"].filter(
-        (t) => t !== tag.value
+        (t) => t !== tag.name
       );
     } else {
       updatedFilters["tag_name"] = updatedFilters["tag_name"]
-        ? [...updatedFilters["tag_name"], tag.value]
-        : [tag.value];
+        ? [...updatedFilters["tag_name"], tag.name]
+        : [tag.name];
     }
     setSelectedFilters(updatedFilters);
   };
@@ -248,21 +256,21 @@ const BlogPage = () => {
                 width="100%"
               />
               <div className="modal-body">
-                {tags &&
-                  tags.map((tag) => (
+                {popularTags &&
+                  popularTags.map((tag) => (
                     <TagButton
                       onClick={() => handleTagSelect(tag)}
-                      key={tag.value}
+                      key={tag.name}
                       className="tag-button"
                     >
                       <Tag
                         className="body-small-light"
                         selected={
                           selectedFilters["tag_name"] &&
-                          selectedFilters["tag_name"].includes(tag.value)
+                          selectedFilters["tag_name"].includes(tag.name)
                         }
                       >
-                        {tag.title}
+                        {tagNameToUpperCase(tag.name)}
                       </Tag>
                     </TagButton>
                   ))}
@@ -303,21 +311,21 @@ const BlogPage = () => {
           width="100%"
         >
           <div className="blog-tag-title body-medium">Popular Tags:</div>
-          {tags &&
-            tags.map((tag) => (
+          {popularTags &&
+            popularTags.map((tag) => (
               <TagButton
                 onClick={() => handleTagSelect(tag)}
-                key={tag.value}
+                key={tag.name}
                 className="tag-button"
               >
                 <Tag
                   className="body-small-light"
                   selected={
                     selectedFilters["tag_name"] &&
-                    selectedFilters["tag_name"].includes(tag.value)
+                    selectedFilters["tag_name"].includes(tag.name)
                   }
                 >
-                  {tag.title}
+                  {tagNameToUpperCase(tag.name)}
                 </Tag>
               </TagButton>
             ))}
@@ -335,7 +343,7 @@ const BlogPage = () => {
                 className="blog-card"
                 key={blogPost.id}
                 blogPost={blogPost}
-                tags={getTagList(blogPost.tag_list)}
+                tags={blogPost.tag_list}
               />
             );
           })}
