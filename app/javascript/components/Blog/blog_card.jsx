@@ -48,7 +48,7 @@ const FooterFrame = styled(Frame)`
   width: fit-content;
 `;
 
-const BlogCard = ({ tags, blogPost, width, onClick, className }) => {
+const BlogCard = ({ blogPost, width, onClick, className }) => {
   const { title, body: text, author, published_at: publishedAt, featured_image: featuredImage, tag_list: tagList } = blogPost;
 
   return (
@@ -73,7 +73,7 @@ const BlogCard = ({ tags, blogPost, width, onClick, className }) => {
       </CardText>
       <Frame alignItems="flex-start" justifyContent="center" gap={8}>
         {author.avatar && author.avatar.url ? (
-          <Avatar src={author.avatar_url} alt="Author Avatar" />
+          <Avatar src={author.avatar.url} alt="Author Avatar" />
         ) : (
           <Icon icon="bi:person-circle" fontSize={30} />
         )}
@@ -83,7 +83,7 @@ const BlogCard = ({ tags, blogPost, width, onClick, className }) => {
               {author.first_name} {author.last_name}
             </div>
           )}
-          <div className="caption-light">{moment(publishedAt).format('MMMM D, YYYY')}</div>
+          <div className="caption-light">{moment(publishedAt, 'YYYY-MM-DD').format('MMMM Do, YYYY')}</div>
         </FooterFrame>
       </Frame>
       {window.is(['staff', 'admin']) && (
@@ -99,7 +99,6 @@ const BlogCard = ({ tags, blogPost, width, onClick, className }) => {
 
 BlogCard.propTypes = {
   url: PropTypes.string,
-  tags: PropTypes.arrayOf(PropTypes.object),
   blogPost: PropTypes.object,
   width: PropTypes.string,
   onClick: PropTypes.func,

@@ -53,7 +53,7 @@ const AboutHeader = ({ isMobileWidth }) => (
           </div>
         </div>
         <div className="about-belief-item fgs-al fgs-al-v fgs-al-g-30  fgs-al-align-items-flex-start fgs-al-p-10">
-          <div className="about-belief-item-title heading-small">Predictability/ Collaborative Progress/ Iterations</div>
+          <div className="about-belief-item-title heading-small">Predictability</div>
 
           <div className="about-belief-item-content body-regular">
             We work best when there is a well structured, defined process that still allows for agile flexibility. We believe that

@@ -184,7 +184,7 @@ const BlogPost = ({ blogPostId }) => {
                 >
                   {blogPost.author.avatar && blogPost.author.avatar.url ? (
                     <Avatar
-                      src={blogPost.author.avatar_url}
+                      src={blogPost.author.avatar.url}
                       alt="Author Avatar"
                     />
                   ) : (
@@ -197,7 +197,9 @@ const BlogPost = ({ blogPostId }) => {
                       </div>
                     )}
                     <div className="caption-light">
-                      {moment(blogPost.publishedAt).format("MMMM D, YYYY")}
+                      {moment(blogPost.publishedAt, "YYYY-MM-DD").format(
+                        "MMMM DD, YYYY"
+                      )}
                     </div>
                   </Frame>
                 </Frame>
