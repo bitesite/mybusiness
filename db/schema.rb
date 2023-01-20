@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_18_174441) do
+ActiveRecord::Schema.define(version: 2023_01_20_180114) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,6 +66,22 @@ ActiveRecord::Schema.define(version: 2022_11_18_174441) do
     t.datetime "updated_at"
     t.string "location"
     t.boolean "archived"
+  end
+
+  create_table "case_studies", force: :cascade do |t|
+    t.string "name"
+    t.string "subtitle"
+    t.text "challenge"
+    t.text "process"
+    t.text "outcome"
+    t.string "site_image"
+    t.string "challenge_image"
+    t.string "process_image"
+    t.string "outcome_image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "logo"
+    t.string "link"
   end
 
   create_table "comments", force: :cascade do |t|

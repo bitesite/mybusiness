@@ -60,6 +60,13 @@ Mybusiness::Application.routes.draw do
   resources :email_blacklistings, except: [:show]
 
   # - CASE STUDIES
+
+  resources :case_studies, path: "/case_studies" do
+    member do
+      get "testimonial"
+    end
+  end
+
   get "/international_safety" => "case_studies#international_safety"
   get "/mydoma" => "case_studies#mydoma"
   get "/filefacets" => "case_studies#filefacets"
@@ -72,7 +79,7 @@ Mybusiness::Application.routes.draw do
   get "/christine_kelly" => "case_studies#christine_kelly"
   get "/d3m" => "case_studies#d3m"
   get "/curtiss_wright" => "case_studies#curtiss_wright"
-  get "/inspechomes" => "case_studies#inspechomes"
+  get "/inspechomes" => "case_studies#inspec_homes"
 
   # - PRIVACY POLICIES
   get "/privacy_policies/cntdwn2" => "privacy_policies#cntdwn2"
