@@ -1,4 +1,16 @@
 class CaseStudiesController < ApplicationController
+  def show
+    @case_study = CaseStudy.find(params[:id])
+
+    respond_to do |format|
+      format.html { render :show }
+      format.json { render :show }
+    end
+  end
+
+  def testimonial
+  end
+
   def international_safety
     @title = "International Safety Website - Case Study"
   end
@@ -42,7 +54,7 @@ class CaseStudiesController < ApplicationController
   def christine_kelly
     @title = "Christine Kelly PHD Web Application"
   end
-  
+
   def filefacets
     @title = "FileFacets How it works Video"
   end

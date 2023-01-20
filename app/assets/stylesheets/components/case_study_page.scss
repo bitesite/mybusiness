@@ -1,0 +1,49 @@
+.case-study-page {
+  .case-study-header-content {
+    height: 1221px;
+    width: fill;
+    background-color: $lightest-gray;
+    text-align: center;
+    padding-top: 120px;
+    .site-link {
+      margin-top: 50px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    .site-image {
+      width: 889px;
+    }
+    .light-title {
+      color: $primary-shade-dark-color;
+    }
+    .logo {
+      width: 90px;
+    }
+    @media screen and (max-width: $medium-device-width) {
+      .site-image {
+        width: 500px;
+      }
+    }
+  }
+  .case-study-info-card {
+    padding: 128px 120px;
+
+    .logo-small {
+      width: 25px;
+    }
+    .case-image {
+      width: 500px;
+      max-height: 355px;
+    }
+    @media screen and (max-width: $medium-device-width) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      .case-image {
+        width: 350px;
+        max-height: 355px;
+      }
+    }
+  }
+}

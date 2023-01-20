@@ -83,3 +83,48 @@ Question.create!([{
   title: "How often do I have to meet with BiteSite during my project?",
   content: "This is something we determine based on the project. Our biggest clients typically have a standing meeting once every week. Our smaller clients typically meet with us on a on-demand basis.",
 }])
+
+CaseStudy.create!([{
+  name: "Bradford Co-Op Online Store",
+  subtitle: "Moving from a brick-and-mortar store to an online shop.",
+  site_image: "/images/bradford_coop.png",
+  challenge: "The pandemic drastically reduced the number of customers who could walk freely into brick-and-mortar stores, and Bradford co-op had to adapt in order to stay competitive.
+  Having run a physical warehouse and store since 1945, the Co-op needed a solution that would -
+  enable the Co-op to seamlessly run its business online
+  be easily adopted by its community of growers
+  reflect their roots and growth with the times",
+  process: "We started by understanding Bradford Co-op’s immediate needs, and listing the requirements by benchmarking against other online stores. This allowed us to narrow in on the main user flows and pages required to get a functional online store up quickly for Bradford Co-op.
+  We checked in with the client regularly, building out the design from sketches, to low-fidelity wireframes, and eventually to a detailed prototype complete with visual design. Constant communication between our design and engineering teams also enabled the most feasible designs to be chosen for quicker implementation.",
+  outcome: "We built an online store where Bradford Co-Op could continue offering customers safe and convenient access to their products through a combined service of buying online and picking up in store.
+  We also integrated the online store’s database with their existing tools, such as Spire and email, to support automated tracking and communication with customers.
+  The store receives a regular stream of online orders and Bradford Co-Op continues to check-in with us occassionally for additions to their online store as needed (such as: adding a promotions option, editing product details, and enhanced functionality to schedule pick-up’s).",
+  challenge_image: "/images/bradford_image_1.png",
+  process_image: "/images/bradford_image_2.png",
+  outcome_image: "/images/bradford_image_3.png",
+  logo: "/images/bradford_logo.png",
+  link: "https://bradfordcoop.ca/",
+}, {
+  name: "Ottawa Derm Center Patient Rewards Portal",
+  subtitle: "Enabling patients to gain rewards while investing in their skin health.",
+  site_image: "/images/odc.png",
+  challenge: "Ottawa Derm Center (ODC) came to BiteSite with an idea to strengthen their patient-provider relationship using custom software. This would differentiate ODC in the skin health market, and empower their community to invest in longer-term skin health journeys.
+  ODC needed to upgrade their existing patients reward system-
+  from one-time payments > to long-term investments with returns
+  from gift card purchases > to top-up campaigns that automatically rewarded patient accounts
+  By incentivizing patients for their commitment to long-term skin health, ODC strove to amalgamate a novel financial reward system with their existing healthcare system, and improve client engagement. 
+  BiteSite’s goal was to successfully bring to life this vision by creating an online portal where patients could deposit payments in return for investment rewards, within an end of year deadline.",
+  process: "ODC needed a Minimum Viable Product (MVP) version of the web portal to test out their idea, and gauge customer responses to the product. Our first task was to engage in Product Management (PM) discussions to decide on the minimum working version of the portal we could implement and get up the fastest to test. 
+  This resulted in pushing back some initial features until our second round of software release, but enabled us to focus on the main priorities for the product-
+  allowing safe and secure exchange of monetary funds 
+  calculating and projecting flexible investment returns accurately 
+  creating a trustworthy UI that maintains brand credibility and ease of use
+  We collaborated with a cross-functional team of lawyers, accountants, bookkeepers, marketers and customer liaisons throughout the process.",
+  outcome: "BiteSite created an MVP version of a web portal that enabled patients and ODC staff to exchange funds and carry out processes that benefit both patient and provider in a secure environment within an 8 months deadline. 
+  The portal was made to be both web and mobile accessible, and an internal tool with additional functionalities was also created for ODC staff members to manage and monitor their customer interactions. 
+  Following the first MVP release, successive releases were implemented to allow ODC staff to set up and promote campaigns offering additional rewards to patients. This will enhance client attraction and engagement, and development work continues to offer patients enhanced skin health care.",
+  challenge_image: "/images/odc_image_1.png",
+  process_image: "/images/odc_image_2.png",
+  outcome_image: "/images/odc_image_3.png",
+  logo: "odc_logo.png",
+  link: "https://healthcoinrewards.ottawadermcentre.com/",
+}])
