@@ -19,6 +19,15 @@
           color: $dark-gray;
         }
       }
+      .staff-session-links-container {
+        .staff-session-link {
+          color: $light-gray;
+          text-decoration: none;
+          &:hover {
+            color: $primary-color;
+          }
+        }
+      }
 
       .links {
         a {
@@ -58,8 +67,10 @@
           white-space: nowrap;
         }
         .social-media-links {
-          .icon {
-            width: 20.14px;
+          svg {
+            margin: 0;
+            height: 25px;
+            width: auto;
           }
         }
       }
