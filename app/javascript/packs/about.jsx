@@ -4,7 +4,6 @@ import AboutHeader from "../components/About/about_header";
 import OurProcess from "../components/About/our_process";
 import OurTeam from "../components/About/our_team";
 import { isMobileScreenSize } from "../src/utilities/general_helpers";
-import GeneralPost from "../components/general/general_post";
 import DarkBackgroundGeneralPost from "../components/general/dark_background_general_post";
 import LearnMoreAboutUs from "../../assets/images/learn_more_about_us.png";
 
@@ -37,7 +36,7 @@ const AboutPage = ({ teamMembers }) => {
           <div className="learn-more-about-us-post">
             <div className="learn-more-about-us-text fgs-al fgs-al-v fgs-al-g-30 fgs-al-align-items-flex-start">
               <div className="body-regular">
-                Take a look at some of the client projects we’ve worked on. Our
+                Take a look at some of the client projects we've worked on. Our
                 experience ranges from one-page designs to full-stack web and
                 mobile applications.
               </div>
