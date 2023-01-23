@@ -125,6 +125,15 @@ CaseStudy.create!([{
   challenge_image: "/images/odc_image_1.png",
   process_image: "/images/odc_image_2.png",
   outcome_image: "/images/odc_image_3.png",
-  logo: "odc_logo.png",
+  logo: "/images/odc_logo.png",
   link: "https://healthcoinrewards.ottawadermcentre.com/",
+}])
+
+Testimonial.create!([{
+  quote: "Collaborating with the Bitesite Team has been a productive, informative, and most valuable experience for us.",
+  body: "From concept, through scope of work, and implementation, we’ve enjoyed a clear roadmap with consistent and professional communication every step of the way.  Both the design and development teams have sought to thoroughly understand our objectives and have immersed themselves into our project.  We’ve naturally forged a collaborative team focused on common goals in execution.  Our MVP is now live and progress continues as we enhance our project together.  There’s a certain integrity-based comfort that we look for in our enterprise partners, and it’s quite clear that our moral compass has pointed us in the right direction, towards a successful relationship with Casey and the Bitesite Team.",
+  name: "Richard Levesque",
+  title: "Managing Director, Ottawa Derm Centre Inc.",
+  logo: "/images/odc_logo_round.png",
+  case_study_id: 2,
 }])
