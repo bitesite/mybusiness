@@ -25,7 +25,7 @@ const CaseStudyPage = ({ id }) => {
       <Frame className="case-study-page" vertical>
         <Frame className="case-study-header-content" justifyContent="center">
           <Frame className="case-study-title-section" vertical gap={32} alignItems="center">
-            <img className="logo" src={caseStudy.logo} alt="logo" />
+            <img className="logo" src={caseStudy.logo_image} alt="logo" />
 
             <Frame vertical gap={16}>
               <div className="body-regular light-title">Web design and development</div>
