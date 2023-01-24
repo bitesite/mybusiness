@@ -105,7 +105,7 @@ CaseStudy.create!([{
   link: "https://bradfordcoop.ca/",
 }, {
   name: "Ottawa Derm Center Patient Rewards Portal",
-  subtitle: "Enabling patients to gain rewards while investing in their skin health.",odc
+  subtitle: "Enabling patients to gain rewards while investing in their skin health.",
   site_image: "/images/odc.png",
   challenge: "Ottawa Derm Center (ODC) came to BiteSite with an idea to strengthen their patient-provider relationship using custom software. This would differentiate ODC in the skin health market, and empower their community to invest in longer-term skin health journeys.
   ODC needed to upgrade their existing patients reward system-
