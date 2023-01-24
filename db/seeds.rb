@@ -101,7 +101,7 @@ CaseStudy.create!([{
   challenge_image: "/images/bradford_image_1.png",
   process_image: "/images/bradford_image_2.png",
   outcome_image: "/images/bradford_image_3.png",
-  logo: "/images/bradford_logo.png",
+  logo_image: "/images/bradford_logo.png",
   link: "https://bradfordcoop.ca/",
 }, {
   name: "Ottawa Derm Center Patient Rewards Portal",
@@ -125,7 +125,7 @@ CaseStudy.create!([{
   challenge_image: "/images/odc_image_1.png",
   process_image: "/images/odc_image_2.png",
   outcome_image: "/images/odc_image_3.png",
-  logo: "/images/odc_logo.png",
+  logo_image: "/images/odc_logo.png",
   link: "https://healthcoinrewards.ottawadermcentre.com/",
 }])
 
