@@ -1,0 +1,29 @@
+.testimonial-section {
+  height: 700px;
+  width: fill;
+  background-color: $lightest-gray;
+  padding: 120px;
+
+  .testimonial-card {
+    background-color: $light-white;
+    width: 788px;
+    height: 444px;
+    padding: 32px;
+
+    .quotations-vector {
+      width: 48px;
+    }
+
+    .company-logo {
+      width: 48px;
+    }
+
+    .testimonial-body {
+      color: $primary-shade-dark-color;
+    }
+
+    .testimonial-date {
+      color: $primary-shade-dark-color;
+    }
+  }
+}

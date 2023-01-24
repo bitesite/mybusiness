@@ -3,17 +3,20 @@ import ReactDOM from 'react-dom';
 import { Frame } from '@bitesite/react-figstrap';
 import { Icon } from '@iconify/react';
 
+import PropTypes from 'prop-types';
 import ChallengeLogo from '../../assets/images/case_studies/challenge_logo.png';
 import ProcessLogo from '../../assets/images/case_studies/services_logo.png';
 import OutcomeLogo from '../../assets/images/case_studies/outcome_logo.png';
-import Link from '../components/link';
+import Testimonial from '../components/testimonial';
 
 const CaseStudyPage = ({ id }) => {
   const [caseStudy, setCaseStudy] = useState();
+  const [testimonial, setTestimonial] = useState();
 
   useEffect(() => {
     $.getJSON(`/case_studies/${id}`, (results) => {
       setCaseStudy(results);
+      setTestimonial(results.testimonial);
     });
   }, [id]);
 
@@ -22,13 +25,13 @@ const CaseStudyPage = ({ id }) => {
       <Frame className="case-study-page" vertical>
         <Frame className="case-study-header-content" justifyContent="center">
           <Frame className="case-study-title-section" vertical gap={32} alignItems="center">
-            <img className="logo" src={caseStudy.logo} />
+            <img className="logo" src={caseStudy.logo} alt="logo" />
 
             <Frame vertical gap={16}>
               <div className="body-regular light-title">Web design and development</div>
               <div className="heading-regular">{caseStudy.name}</div>
               <div className="body-regular">{caseStudy.subtitle}</div>
-              <img className="site-image" src={caseStudy.site_image} />
+              <img className="site-image" src={caseStudy.site_image} alt="website" />
               <a
                 role="link"
                 tabIndex={0}
@@ -48,28 +51,38 @@ const CaseStudyPage = ({ id }) => {
         </Frame>
         <Frame className="case-study-info-card" gap={32}>
           <Frame vertical gap={25}>
-            <img src={ChallengeLogo} className="logo-small" />
+            <img src={ChallengeLogo} className="logo-small" alt="challenge logo" />
             <div className="heading-small">The Challenge</div>
             <div>{caseStudy.challenge}</div>
           </Frame>
-          <img className="case-image" src={caseStudy.challenge_image} />
+          <img className="case-image" src={caseStudy.challenge_image} alt="company challenge" />
         </Frame>
         <Frame className="case-study-info-card" gap={32}>
           <Frame vertical gap={25}>
-            <img src={ProcessLogo} className="logo-small" />
+            <img src={ProcessLogo} className="logo-small" alt="process logo" />
             <div className="heading-small">Our Services/Process</div>
             <div>{caseStudy.process}</div>
           </Frame>
-          <img className="case-image" src={caseStudy.process_image} />
+          <img className="case-image" src={caseStudy.process_image} alt="company process" />
         </Frame>
         <Frame className="case-study-info-card" gap={32}>
           <Frame vertical gap={25}>
-            <img src={OutcomeLogo} className="logo-small" />
+            <img src={OutcomeLogo} className="logo-small" alt="outcome logo" />
             <div className="heading-small">The Outcome</div>
             <div>{caseStudy.process}</div>
           </Frame>
-          <img className="case-image" src={caseStudy.outcome_image} />
+          <img className="case-image" src={caseStudy.outcome_image} alt="company outcome" />
         </Frame>
+        {testimonial && (
+          <Testimonial
+            name={testimonial.name}
+            quote={testimonial.quote}
+            body={testimonial.body}
+            title={testimonial.title}
+            logo={testimonial.logo}
+            date={testimonial.created_at}
+          />
+        )}
       </Frame>
     );
   }
@@ -78,7 +91,9 @@ const CaseStudyPage = ({ id }) => {
 
 export default CaseStudyPage;
 
-CaseStudyPage.propTypes = {};
+CaseStudyPage.propTypes = {
+  id: PropTypes.string,
+};
 
 document.addEventListener('DOMContentLoaded', () => {
   const element = document.getElementById('case-study-page-component-mount-point');

@@ -18,7 +18,7 @@ const CaseStudies = () => (
           <Frame className="case-study-text" vertical gap="8" padding="24">
             <div className="body-small-bold">Bradford Co-Op Online Store</div>
             <div className="body-regular">Moving from a brick-and-mortar store to an online shop.</div>
-            <Link className="case-study-link body-small-bold" path="/case_studies/7">
+            <Link className="case-study-link body-small-bold" path="/case_studies/1">
               Read More <Icon icon="fluent:arrow-right-32-filled" />
             </Link>
           </Frame>
@@ -29,7 +29,7 @@ const CaseStudies = () => (
           <Frame className="case-study-text" vertical gap="8" padding="24">
             <div className="body-small-bold">ODC Health Coin Rewards </div>
             <div className="body-regular">A rewards program management system.</div>
-            <Link className="case-study-link body-small-bold" path="/case_studies/8">
+            <Link className="case-study-link body-small-bold" path="/case_studies/2">
               Read More <Icon icon="fluent:arrow-right-32-filled" />
             </Link>
           </Frame>
