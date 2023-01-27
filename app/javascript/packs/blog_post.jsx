@@ -29,10 +29,13 @@ const BlogPostHeader = styled(Frame)`
   width: 100%;
 `;
 
-const BlogPostBody = styled(Frame)`
+const BlogPostBody = styled.div`
+margin: 0 auto;
   div {
-    width: inherit;
+    width: 786px;
     padding: 0 10px;
+    margin: 0 auto;
+    word-break: break-all;
   }
 `;
 
@@ -49,7 +52,7 @@ const ImageContainer = styled.div`
   img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
   }
 
   @media (max-width: 780px) {
