@@ -37,26 +37,30 @@ margin: 0 auto;
     margin: 0 auto;
     word-break: break-all;
     color: ${COLORS.shadowDarknest};
-    h1{
-      font-weight: 700;
+    h2 {
       font-size: 20px;
-      line-height: 27px;
-    }
-    h2, h3 {
-      font-weight: 500;
-      font-size: 18px;
       line-height: 24px;
-    }
-    a {
       font-weight: 500;
-      font-size: 16px;
-      line-height: 18px;
+      letter-spacing: 0.3px;
     }
-  img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-  }
+    h3 {
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 27px;
+      font-weight: 400;
+      letter-spacing: 0.3px;
+    }
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+    pre {
+      background-color: ${COLORS.background};
+      padding: 16px;
+      border: 1px solid ${COLORS.shadesLight};
+      overflow: auto;
+    }
   }
 `;
 
