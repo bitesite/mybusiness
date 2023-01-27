@@ -43,6 +43,7 @@ const Footer = () => {
                 <Link path="/staff_dashboard" className="caption-light staff-session-link">
                   Staff Dashboard
                 </Link>
+
                 <Link onClick={signOut} className="caption-light staff-session-link">
                   Staff Sign Out
                 </Link>
