@@ -4,6 +4,7 @@ import { Icon } from '@iconify/react';
 import BradfordImage from '../../assets/images/bradford_case_study.png';
 import TartuImage from '../../assets/images/tartu_case_study.png';
 import ISWAImage from '../../assets/images/iswa_case_study.png';
+import FanSavesImage from '../../assets/images/fansaves_case_study_image.png';
 import Link from './link';
 
 const CaseStudies = () => (
@@ -28,7 +29,7 @@ const CaseStudies = () => (
           <img src={TartuImage} className="case-study-image" alt="tartu case study" />
           <Frame className="case-study-text" vertical gap="8" padding="24">
             <div className="body-small-bold">ODC Health Coin Rewards </div>
-            <div className="body-regular">A rewards program management system.</div>
+            <div className="body-regular">Enabling patients to gain rewards while investing in their skin health.</div>
             <Link className="case-study-link body-small-bold" path="/case_studies/2">
               Read More <Icon icon="fluent:arrow-right-32-filled" />
             </Link>
@@ -36,13 +37,13 @@ const CaseStudies = () => (
         </Frame>
 
         <Frame className="case-study-item" vertical>
-          <img src={ISWAImage} className="case-study-image" alt="iswa case study" />
+          <img src={FanSavesImage} className="case-study-image" alt="iswa case study" />
           <Frame className="case-study-text" vertical gap="8" padding="24">
-            <div className="body-small-bold">International Safety E-Commerce</div>
-            <div className="body-regular">Custom E-Commerce to optimize operations and deliver realiability.</div>
-            <a className="case-study-link body-small-bold">
+            <div className="body-small-bold">Fansaves Deal Redemption Portal</div>
+            <div className="body-regular">Connecting fans to rewards and enabling community connections to grow.</div>
+            <Link className="case-study-link body-small-bold" path="/case_studies/3">
               Read More <Icon icon="fluent:arrow-right-32-filled" />
-            </a>
+            </Link>
           </Frame>
         </Frame>
       </Frame>
