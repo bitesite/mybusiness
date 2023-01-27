@@ -29,29 +29,31 @@ const Faq = () => {
     }
   };
   return (
-    <Frame vertical className="faq-section" gap="30" padding="64">
-      <Frame justifyContent="space-between">
-        <Frame className="faq-heading heading-regular">Frequently Asked Questions</Frame>
-        <button
-          type="button"
-          className="btn secondary-default"
-          onClick={(e) => {
-            e.preventDefault;
-            setExpandAll(!expandAll);
-            changeButtonText();
-          }}
-        >
-          {buttonText}
-        </button>
+    <Frame className="faq-component" justifyContent="center">
+      <Frame vertical className="faq-section" gap="30">
+        <Frame justifyContent="space-between">
+          <Frame className="faq-heading heading-regular">Frequently Asked Questions</Frame>
+          <button
+            type="button"
+            className="btn secondary-default"
+            onClick={(e) => {
+              e.preventDefault;
+              setExpandAll(!expandAll);
+              changeButtonText();
+            }}
+          >
+            {buttonText}
+          </button>
+        </Frame>
+
+        {window.is(['staff', 'admin']) && (
+          <Accordian accordianTitle="Add A Frequently Asked Question" accordianContent={content} hideEditButton />
+        )}
+
+        {questions.map((question) => (
+          <Accordian id={question.id} expandAll={expandAll} accordianTitle={question.title} accordianContent={question.content} />
+        ))}
       </Frame>
-
-      {window.is(['staff', 'admin']) && (
-        <Accordian accordianTitle="Add A Frequently Asked Question" accordianContent={content} hideEditButton />
-      )}
-
-      {questions.map((question) => (
-        <Accordian id={question.id} expandAll={expandAll} accordianTitle={question.title} accordianContent={question.content} />
-      ))}
     </Frame>
   );
 };
