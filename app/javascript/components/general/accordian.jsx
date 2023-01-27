@@ -53,13 +53,12 @@ const Accordian = ({ accordianTitle, accordianContent, expandAll, id, hideEditBu
   return (
     <Frame className="accordian" padding="20" vertical>
       <Frame justifyContent="space-between">
-        <Frame className="medium ">{accordianTitle}</Frame>
         <div className="accordian-icon">
           {data.showContent && (
             <div
               role="button"
               tabIndex={0}
-              className="minus-expanded"
+              className="accordian-clickable-area"
               onClick={(e) => {
                 e.preventDefault;
                 setData((prev) => ({ ...prev, showContent: false }));
@@ -69,6 +68,7 @@ const Accordian = ({ accordianTitle, accordianContent, expandAll, id, hideEditBu
                 setData((prev) => ({ ...prev, showContent: false }));
               }}
             >
+              <Frame className="medium ">{accordianTitle}</Frame>
               <Icon icon="dashicons:minus" />
             </div>
           )}
@@ -76,6 +76,7 @@ const Accordian = ({ accordianTitle, accordianContent, expandAll, id, hideEditBu
             <div
               role="button"
               tabIndex={0}
+              className="accordian-clickable-area"
               onClick={(e) => {
                 e.preventDefault;
                 defaultItem.showContent = true;
@@ -86,6 +87,7 @@ const Accordian = ({ accordianTitle, accordianContent, expandAll, id, hideEditBu
                 setData((prev) => ({ ...prev, showContent: false }));
               }}
             >
+              <Frame className="medium ">{accordianTitle}</Frame>
               <Icon icon="material-symbols:add" />
             </div>
           )}

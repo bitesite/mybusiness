@@ -5,15 +5,22 @@
 
   .accordian-content {
     margin-top: 20px;
+    color: $primary-shade-dark-color;
   }
   .accordian-icon {
     font-size: 30px;
-    margin-top: -5px;
+    width: 100%;
     path {
       color: $primary-default-color;
     }
     &:hover {
       cursor: grab;
+    }
+    .accordian-clickable-area {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
     }
   }
   .edit-button {
@@ -34,6 +41,13 @@
   }
 }
 
-.faq-heading {
-  margin-bottom: 30px;
+.faq-component {
+  width: 100%;
+  .faq-section {
+    max-width: 1198px;
+    padding: 128px 20px;
+    .faq-heading {
+      margin-bottom: 30px;
+    }
+  }
 }
