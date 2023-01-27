@@ -52,11 +52,11 @@ margin: 0 auto;
       font-size: 16px;
       line-height: 18px;
     }
-  }
   img {
     width: 100%;
     height: auto;
     object-fit: contain;
+  }
   }
 `;
 
