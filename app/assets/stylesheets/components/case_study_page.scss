@@ -1,10 +1,10 @@
 .case-study-page {
   .case-study-header-content {
-    height: 1221px;
     width: fill;
     background-color: $lightest-gray;
     text-align: center;
-    padding-top: 120px;
+    padding: 120px 20px;
+
     .site-link {
       margin-top: 50px;
       &:hover {
@@ -23,6 +23,11 @@
     @media screen and (max-width: $medium-device-width) {
       .site-image {
         width: 500px;
+      }
+    }
+    @media screen and (max-width: $mobile-device-width) {
+      .site-image {
+        width: 350px;
       }
     }
   }

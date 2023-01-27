@@ -27,11 +27,11 @@ const CaseStudyPage = ({ id }) => {
           <Frame className="case-study-title-section" vertical gap={32} alignItems="center">
             <img className="logo" src={caseStudy.logo_image} alt="logo" />
 
-            <Frame vertical gap={16}>
+            <Frame vertical gap={16} alignItems="center">
               <div className="body-regular light-title">Web design and development</div>
               <div className="heading-regular">{caseStudy.name}</div>
               <div className="body-regular">{caseStudy.subtitle}</div>
-              <img className="site-image" src={caseStudy.site_image} alt="website" />
+              {caseStudy.site_image && <img className="site-image" src={caseStudy.site_image} alt="website" />}
               <a
                 role="link"
                 tabIndex={0}
@@ -49,30 +49,34 @@ const CaseStudyPage = ({ id }) => {
             </Frame>
           </Frame>
         </Frame>
-        <Frame className="case-study-info-card" gap={32}>
-          <Frame vertical gap={25}>
-            <img src={ChallengeLogo} className="logo-small" alt="challenge logo" />
-            <div className="heading-small">The Challenge</div>
-            <div>{caseStudy.challenge}</div>
-          </Frame>
-          <img className="case-image" src={caseStudy.challenge_image} alt="company challenge" />
-        </Frame>
-        <Frame className="case-study-info-card" gap={32}>
-          <Frame vertical gap={25}>
-            <img src={ProcessLogo} className="logo-small" alt="process logo" />
-            <div className="heading-small">Our Services/Process</div>
-            <div>{caseStudy.process}</div>
-          </Frame>
-          <img className="case-image" src={caseStudy.process_image} alt="company process" />
-        </Frame>
-        <Frame className="case-study-info-card" gap={32}>
-          <Frame vertical gap={25}>
-            <img src={OutcomeLogo} className="logo-small" alt="outcome logo" />
-            <div className="heading-small">The Outcome</div>
-            <div>{caseStudy.process}</div>
-          </Frame>
-          <img className="case-image" src={caseStudy.outcome_image} alt="company outcome" />
-        </Frame>
+        {caseStudy.challenge && (
+          <>
+            <Frame className="case-study-info-card" gap={32}>
+              <Frame vertical gap={25}>
+                <img src={ChallengeLogo} className="logo-small" alt="challenge logo" />
+                <div className="heading-small">The Challenge</div>
+                <div>{caseStudy.challenge}</div>
+              </Frame>
+              <img className="case-image" src={caseStudy.challenge_image} alt="company challenge" />
+            </Frame>
+            <Frame className="case-study-info-card" gap={32}>
+              <Frame vertical gap={25}>
+                <img src={ProcessLogo} className="logo-small" alt="process logo" />
+                <div className="heading-small">Our Services/Process</div>
+                <div>{caseStudy.process}</div>
+              </Frame>
+              <img className="case-image" src={caseStudy.process_image} alt="company process" />
+            </Frame>
+            <Frame className="case-study-info-card" gap={32}>
+              <Frame vertical gap={25}>
+                <img src={OutcomeLogo} className="logo-small" alt="outcome logo" />
+                <div className="heading-small">The Outcome</div>
+                <div>{caseStudy.process}</div>
+              </Frame>
+              <img className="case-image" src={caseStudy.outcome_image} alt="company outcome" />
+            </Frame>
+          </>
+        )}
         {testimonial && (
           <Testimonial
             name={testimonial.name}

@@ -127,6 +127,11 @@ CaseStudy.create!([{
   outcome_image: "/images/odc_image_3.png",
   logo_image: "/images/odc_logo.png",
   link: "https://healthcoinrewards.ottawadermcentre.com/",
+}, {
+  name: "FanSaves",
+  subtitle: "Connecting fans to rewards and enabling community connections to grow.",
+  logo_image: "/images/fansaves_logo.png",
+  link: "https://www.fansaves.com/",
 }])
 
 Testimonial.create!([{
@@ -136,4 +141,11 @@ Testimonial.create!([{
   title: "Managing Director, Ottawa Derm Centre Inc.",
   logo: "/images/odc_logo_round.png",
   case_study_id: 2,
+}, {
+  quote: "Over the years, BiteSite has been an integral part of our growth at FanSaves.",
+  body: "Not only do Casey and his team continue to do exceptional work but their processes make it easy for even a non-technical founder like myself to be immersed in each project. Recently, BiteSite completely overhauled the backend dashboard of our platform which included many moving parts, a ton of communication and a brand new way of visualizing our data. Like always, they delivered on time and on budget, giving us exactly what we envisioned and more. It's safe to say we're huge fans of BiteSite!",
+  name: "Shannon Ferguson",
+  title: "Co-Founder & CEO, FanSaves",
+  logo: "/images/fansaves_logo_round.png",
+  case_study_id: 3,
 }])
