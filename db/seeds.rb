@@ -127,6 +127,24 @@ CaseStudy.create!([{
   outcome_image: "/images/odc_image_3.png",
   logo_image: "/images/odc_logo.png",
   link: "https://healthcoinrewards.ottawadermcentre.com/",
+}, {
+  name: "International Safety E-Commerce",
+  subtitle: "Custom E-Commerce to optimize operations and deliver reliably.",
+}, {
+  name: "Tartu College Hospitality Management System",
+  subtitle: "An MVP approach to meeting pandemic deadlines.",
+}, {
+  name: "Inspec Homes Online Process Management Platform",
+  subtitle: "Booking and managing a home inspection process seamlessly from start to finish.",
+}, {
+  name: "Blockhound NFTs",
+  subtitle: "Blockchain development to offer quality artwork to a growing customer base of NFT collectors and traders.",
+}, {
+  name: "O’Doughs Warehouse Management System",
+  subtitle: "Optimizing warehouse processes to enable upscaling of production.",
+}, {
+  name: "MFRC Mobile App for Military Personnel",
+  subtitle: "Connecting off-service military personnel and community members to required resources and networks.",
 }])
 
 Testimonial.create!([{
