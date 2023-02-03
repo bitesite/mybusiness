@@ -1,4 +1,9 @@
 .case-study-page {
+  .horizontal-line {
+    width: 786px;
+    border: 1px solid #c4c6c7;
+    color: $light-gray;
+  }
   .case-study-header-content {
     width: fill;
     background-color: $lightest-gray;
@@ -49,6 +54,12 @@
         width: 350px;
         max-height: 355px;
       }
+    }
+  }
+
+  @media screen and (max-width: $medium-device-width) {
+    .horizontal-line {
+      width: 300px;
     }
   }
 }

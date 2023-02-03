@@ -8,6 +8,7 @@ import ChallengeLogo from '../../assets/images/case_studies/challenge_logo.png';
 import ProcessLogo from '../../assets/images/case_studies/services_logo.png';
 import OutcomeLogo from '../../assets/images/case_studies/outcome_logo.png';
 import Testimonial from '../components/testimonial';
+import CaseStudies from '../components/case_studies';
 
 const CaseStudyPage = ({ id }) => {
   const [caseStudy, setCaseStudy] = useState();
@@ -75,9 +76,10 @@ const CaseStudyPage = ({ id }) => {
               </Frame>
               <img className="case-image" src={caseStudy.outcome_image} alt="company outcome" />
             </Frame>
+            <hr />
           </>
         )}
-        {testimonial && (
+        {testimonial ? (
           <Testimonial
             name={testimonial.name}
             quote={testimonial.quote}
@@ -86,7 +88,10 @@ const CaseStudyPage = ({ id }) => {
             logo={testimonial.logo}
             date={testimonial.created_at}
           />
+        ) : (
+          <hr className="horizontal-line" />
         )}
+        <CaseStudies />
       </Frame>
     );
   }
