@@ -96,22 +96,26 @@
 
     .referral-container {
       flex-wrap: wrap;
+
+      @media screen and (max-width: 1210px) {
+        flex-direction: column;
+      }
     }
   }
+}
 
-  .view-case-studies-link {
-    &:hover {
-      svg {
-        path {
-          fill: $primary-lighter-color;
-        }
+.view-case-studies-link {
+  &:hover {
+    svg {
+      path {
+        fill: $primary-lighter-color;
       }
     }
-    svg {
-      margin-left: 10px;
-      path {
-        transition: $transition;
-      }
+  }
+  svg {
+    margin-left: 10px;
+    path {
+      transition: $transition;
     }
   }
 }

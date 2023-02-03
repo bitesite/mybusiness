@@ -49,7 +49,7 @@ const Footer = () => {
                 </Link>
               </>
             ) : (
-              <Link path="users/sign_in" className="caption-light staff-session-link">
+              <Link path="/users/sign_in" className="caption-light staff-session-link">
                 Staff Sign In
               </Link>
             )}

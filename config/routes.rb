@@ -67,6 +67,8 @@ Mybusiness::Application.routes.draw do
     end
   end
 
+  resources :testimonials, only: [:index]
+
   get "/international_safety" => "case_studies#international_safety"
   get "/mydoma" => "case_studies#mydoma"
   get "/filefacets" => "case_studies#filefacets"

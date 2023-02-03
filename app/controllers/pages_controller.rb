@@ -12,6 +12,8 @@ class PagesController < ApplicationController
     if featured_blog_post_ids.present?
       @latest_blog_posts = BlogPost.where(id: featured_blog_post_ids.value.split(","))
     end
+
+    @featured_testimonial_ids = Setting.find_by(name: "featured_testimonial_ids").try(:value).try(:split, ",")
   end
 
   def services
