@@ -64,7 +64,8 @@ margin: 0 auto;
       overflow: auto;
       color: ${COLORS.shadowDarknest};
     }
-    p {
+
+    span > p {
       font-size: 16px;
       line-height: 24px;
       font-weight: 400;
