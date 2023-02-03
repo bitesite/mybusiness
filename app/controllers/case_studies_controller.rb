@@ -8,6 +8,14 @@ class CaseStudiesController < ApplicationController
     end
   end
 
+  def index
+    @case_studies = CaseStudy.all
+    respond_to do |format|
+      format.html { render :index }
+      format.json { render :index }
+    end
+  end
+
   def testimonial
   end
 

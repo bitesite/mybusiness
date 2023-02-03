@@ -7,7 +7,7 @@
   .testimonial-card {
     background-color: $light-white;
     width: 788px;
-    height: 444px;
+    min-height: 444px;
     padding: 32px;
 
     .quotations-vector {

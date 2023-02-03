@@ -103,6 +103,7 @@ CaseStudy.create!([{
   outcome_image: "/images/bradford_image_3.png",
   logo_image: "/images/bradford_logo.png",
   link: "https://bradfordcoop.ca/",
+  card_image: "/images/bradford_card_image.png",
 }, {
   name: "Ottawa Derm Center Patient Rewards Portal",
   subtitle: "Enabling patients to gain rewards while investing in their skin health.",
@@ -127,24 +128,37 @@ CaseStudy.create!([{
   outcome_image: "/images/odc_image_3.png",
   logo_image: "/images/odc_logo.png",
   link: "https://healthcoinrewards.ottawadermcentre.com/",
+  card_image: "/images/odc_card_image.png",
+}, {
+  name: "FanSaves",
+  subtitle: "Connecting fans to rewards and enabling community connections to grow.",
+  logo_image: "/images/fansaves_logo.png",
+  link: "https://www.fansaves.com/",
+  card_image: "/images/fansaves_card_image.png",
 }, {
   name: "International Safety E-Commerce",
   subtitle: "Custom E-Commerce to optimize operations and deliver reliably.",
+  card_image: "/images/iswa_card_image.png",
 }, {
   name: "Tartu College Hospitality Management System",
   subtitle: "An MVP approach to meeting pandemic deadlines.",
+  card_image: "/images/tartu_card_image.png",
 }, {
   name: "Inspec Homes Online Process Management Platform",
   subtitle: "Booking and managing a home inspection process seamlessly from start to finish.",
+  card_image: "/images/inspec_homes_card_image.png",
 }, {
   name: "Blockhound NFTs",
   subtitle: "Blockchain development to offer quality artwork to a growing customer base of NFT collectors and traders.",
+  card_image: "/images/blockhound_card_image.png",
 }, {
   name: "O’Doughs Warehouse Management System",
   subtitle: "Optimizing warehouse processes to enable upscaling of production.",
+  card_image: "/images/odoughs_card_image.png",
 }, {
   name: "MFRC Mobile App for Military Personnel",
   subtitle: "Connecting off-service military personnel and community members to required resources and networks.",
+  card_image: "/images/mfrc_card_image.png",
 }])
 
 Testimonial.create!([{
@@ -153,5 +167,12 @@ Testimonial.create!([{
   name: "Richard Levesque",
   title: "Managing Director, Ottawa Derm Centre Inc.",
   logo: "/images/odc_logo_round.png",
-  case_study_id: 2,
+  case_study_id: 11,
+}, {
+  quote: "Over the years, BiteSite has been an integral part of our growth at FanSaves.",
+  body: "Not only do Casey and his team continue to do exceptional work but their processes make it easy for even a non-technical founder like myself to be immersed in each project. Recently, BiteSite completely overhauled the backend dashboard of our platform which included many moving parts, a ton of communication and a brand new way of visualizing our data. Like always, they delivered on time and on budget, giving us exactly what we envisioned and more. It's safe to say we're huge fans of BiteSite!",
+  name: "Shannon Ferguson",
+  title: "Co-Founder & CEO, FanSaves",
+  logo: "/images/fansaves_logo_round.png",
+  case_study_id: 12,
 }])
