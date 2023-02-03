@@ -1,16 +1,19 @@
 .component-referral-card {
-  max-width: 760px;
+  max-width: 370px;
   min-height: 300px;
   padding: 32px;
   box-sizing: border-box;
 
   border: 1px solid $light-gray;
   border-radius: 16px;
+
   .referral-card-header {
     color: $primary-shade-darkest-color;
+    line-height: 26px;
   }
   .referral-card-text {
     color: $primary-shade-dark-color;
+    line-height: 150%;
   }
 
   .referral-user-container {
@@ -19,6 +22,7 @@
       max-height: 50px;
       border-radius: 50%;
       object-fit: cover;
+      flex-shrink: 0;
 
       img {
         width: 100%;
@@ -36,6 +40,7 @@
     }
     .date {
       color: $primary-shade-dark-color;
+      font-weight: 400;
     }
   }
 }

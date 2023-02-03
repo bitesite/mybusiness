@@ -124,10 +124,24 @@ const Home = () => (
       </div>
       <div className="fgs-al fgs-al-justify-content-center referral-container fgs-al-g-30 ">
         <ReferralCard
+          header="Collaborating with the Bitesite Team has been a productive, informative, and most valuable experience for us."
+          text="From concept, through scope of work, and implementation, we've enjoyed a clear roadmap with consistent and professional communication every step of the way. Our MVP is now live and progress continues as we enhance our project together."
+          userImage={GusImage}
+          userName="Richard Levesque - Managing Director, Ottawa Derm Centre Inc."
+          date="Jan 11, 2023"
+        />
+        <ReferralCard
+          header="Over the years, BiteSite has been an integral part of our growth at FanSaves."
+          text="Not only do Casey and his team continue to do exceptional work but their processes make it easy for even a non-technical founder like myself to be immersed in each project. Recently, BiteSite completely overhauled the backend dashboard of our platform which included many moving parts, a ton of communication and a brand new way of visualizing our data. Like always, they delivered on time and on budget, giving us exactly what we envisioned and more. It's safe to say we're huge fans of BiteSite!"
+          userImage={GusImage}
+          userName="Shannon Ferguson - Co-Founder & CEO, FanSaves"
+          date="Jul 21, 2021"
+        />
+        <ReferralCard
           header="Thank you BiteSite!"
           text="We have a massive database of products for sale. Our customers can now quickly sort through thousands of products and find exactly what they need in seconds."
           userImage={GusImage}
-          userName="Gus Khouri"
+          userName="Gus Khouri - General Manager, International Safety"
           date="Jul 21, 2021"
         />
       </div>

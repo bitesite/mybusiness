@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 function ReferralCard({ header, text, userImage, userName, date }) {
   return (
-    <div className="component-referral-card fgs-al fgs-al-v fgs-al-justify-content-space-between">
+    <div className="component-referral-card fgs-al fgs-al-v fgs-al-g-20 fgs-al-justify-content-space-between">
       <div className="content fgs-al fgs-al-v fgs-al-g-20">
         <div className="referral-card-quote">
           <svg width="32" height="24" viewBox="0 0 32 24" fill="none" xmlns="http://www.w3.org/2000/svg">
