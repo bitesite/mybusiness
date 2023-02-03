@@ -112,16 +112,16 @@ CaseStudy.create!([{
   ODC needed to upgrade their existing patients reward system-
   from one-time payments > to long-term investments with returns
   from gift card purchases > to top-up campaigns that automatically rewarded patient accounts
-  By incentivizing patients for their commitment to long-term skin health, ODC strove to amalgamate a novel financial reward system with their existing healthcare system, and improve client engagement. 
+  By incentivizing patients for their commitment to long-term skin health, ODC strove to amalgamate a novel financial reward system with their existing healthcare system, and improve client engagement.
   BiteSite’s goal was to successfully bring to life this vision by creating an online portal where patients could deposit payments in return for investment rewards, within an end of year deadline.",
-  process: "ODC needed a Minimum Viable Product (MVP) version of the web portal to test out their idea, and gauge customer responses to the product. Our first task was to engage in Product Management (PM) discussions to decide on the minimum working version of the portal we could implement and get up the fastest to test. 
+  process: "ODC needed a Minimum Viable Product (MVP) version of the web portal to test out their idea, and gauge customer responses to the product. Our first task was to engage in Product Management (PM) discussions to decide on the minimum working version of the portal we could implement and get up the fastest to test.
   This resulted in pushing back some initial features until our second round of software release, but enabled us to focus on the main priorities for the product-
-  allowing safe and secure exchange of monetary funds 
-  calculating and projecting flexible investment returns accurately 
+  allowing safe and secure exchange of monetary funds
+  calculating and projecting flexible investment returns accurately
   creating a trustworthy UI that maintains brand credibility and ease of use
   We collaborated with a cross-functional team of lawyers, accountants, bookkeepers, marketers and customer liaisons throughout the process.",
-  outcome: "BiteSite created an MVP version of a web portal that enabled patients and ODC staff to exchange funds and carry out processes that benefit both patient and provider in a secure environment within an 8 months deadline. 
-  The portal was made to be both web and mobile accessible, and an internal tool with additional functionalities was also created for ODC staff members to manage and monitor their customer interactions. 
+  outcome: "BiteSite created an MVP version of a web portal that enabled patients and ODC staff to exchange funds and carry out processes that benefit both patient and provider in a secure environment within an 8 months deadline.
+  The portal was made to be both web and mobile accessible, and an internal tool with additional functionalities was also created for ODC staff members to manage and monitor their customer interactions.
   Following the first MVP release, successive releases were implemented to allow ODC staff to set up and promote campaigns offering additional rewards to patients. This will enhance client attraction and engagement, and development work continues to offer patients enhanced skin health care.",
   challenge_image: "/images/odc_image_1.png",
   process_image: "/images/odc_image_2.png",
@@ -167,12 +167,12 @@ Testimonial.create!([{
   name: "Richard Levesque",
   title: "Managing Director, Ottawa Derm Centre Inc.",
   logo: "/images/odc_logo_round.png",
-  case_study_id: 2,
+  case_study_id: CaseStudy.find_by_name("Ottawa Derm Center Patient Rewards Portal").id,
 }, {
   quote: "Over the years, BiteSite has been an integral part of our growth at FanSaves.",
   body: "Not only do Casey and his team continue to do exceptional work but their processes make it easy for even a non-technical founder like myself to be immersed in each project. Recently, BiteSite completely overhauled the backend dashboard of our platform which included many moving parts, a ton of communication and a brand new way of visualizing our data. Like always, they delivered on time and on budget, giving us exactly what we envisioned and more. It's safe to say we're huge fans of BiteSite!",
   name: "Shannon Ferguson",
   title: "Co-Founder & CEO, FanSaves",
   logo: "/images/fansaves_logo_round.png",
-  case_study_id: 3,
+  case_study_id: CaseStudy.find_by_name("FanSaves").id,
 }])

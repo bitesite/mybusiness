@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_18_174441) do
+ActiveRecord::Schema.define(version: 2023_02_03_181818) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,6 +66,23 @@ ActiveRecord::Schema.define(version: 2022_11_18_174441) do
     t.datetime "updated_at"
     t.string "location"
     t.boolean "archived"
+  end
+
+  create_table "case_studies", force: :cascade do |t|
+    t.string "name"
+    t.string "subtitle"
+    t.text "challenge"
+    t.text "process"
+    t.text "outcome"
+    t.string "site_image"
+    t.string "challenge_image"
+    t.string "process_image"
+    t.string "outcome_image"
+    t.string "logo_image"
+    t.string "link"
+    t.string "card_image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "comments", force: :cascade do |t|
@@ -255,6 +272,17 @@ ActiveRecord::Schema.define(version: 2022_11_18_174441) do
     t.string "name"
     t.integer "taggings_count", default: 0
     t.index ["name"], name: "index_tags_on_name", unique: true
+  end
+
+  create_table "testimonials", force: :cascade do |t|
+    t.string "quote"
+    t.text "body"
+    t.string "name"
+    t.string "title"
+    t.string "logo"
+    t.integer "case_study_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "time_off_entries", id: :serial, force: :cascade do |t|
