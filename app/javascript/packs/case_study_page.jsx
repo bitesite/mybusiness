@@ -91,7 +91,7 @@ const CaseStudyPage = ({ id }) => {
         ) : (
           <hr className="horizontal-line" />
         )}
-        <CaseStudies />
+        <CaseStudies caseStudyPage />
       </Frame>
     );
   }

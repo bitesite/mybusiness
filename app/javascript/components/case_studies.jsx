@@ -6,25 +6,25 @@ import TartuImage from '../../assets/images/tartu_case_study.png';
 import FanSavesImage from '../../assets/images/fansaves_case_study_image.png';
 import Link from './link';
 
-const CaseStudies = () => {
-  const [onServices, setOnServices] = useState(false);
+const CaseStudies = ({ caseStudyPage }) => {
+  const [onCaseStudyPage, setOnCaseStudyPage] = useState(false);
 
   useEffect(() => {
-    if (window.location.href.includes('services')) {
-      setOnServices(true);
+    if (caseStudyPage) {
+      setOnCaseStudyPage(true);
     }
   }, []);
 
   return (
-    <div className={`case-studies-page ${onServices ? 'dark-background' : 'light-background'}`}>
+    <div className={`case-studies-page ${onCaseStudyPage ? 'light-background' : 'dark-background'}`}>
       <Frame
-        className={`case-studies-component ${onServices ? 'dark-background' : 'light-background'}`}
+        className={`case-studies-component ${onCaseStudyPage ? 'light-background' : 'dark-background'}`}
         gap="30"
         vertical
         alignItems="center"
       >
         <Frame vertical alignItems="center" gap={24}>
-          {onServices ? (
+          {!onCaseStudyPage ? (
             <div className="heading-regular case-studies-title">Project Case Studies</div>
           ) : (
             <div className="heading-regular case-studies-title">More Client Projects</div>
@@ -65,9 +65,16 @@ const CaseStudies = () => {
           </Frame>
         </Frame>
         <Frame>
-          <a className="case-study-link">
+          {!onCaseStudyPage ? (          
+          <Link className="case-study-link" path="case_studies">
             View All Case Studies <Icon icon="fluent:arrow-right-32-filled" />
-          </a>
+          </Link> 
+          ): ( 
+          <Link className="case-study-link" path="/case_studies">
+           <Icon icon="fluent:arrow-left-32-filled" /> Back to All Case Studies 
+          </Link>
+          )}
+
         </Frame>
       </Frame>
     </div>
