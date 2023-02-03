@@ -8,6 +8,7 @@ import ChallengeLogo from '../../assets/images/case_studies/challenge_logo.png';
 import ProcessLogo from '../../assets/images/case_studies/services_logo.png';
 import OutcomeLogo from '../../assets/images/case_studies/outcome_logo.png';
 import Testimonial from '../components/testimonial';
+import CaseStudies from '../components/case_studies';
 
 const CaseStudyPage = ({ id }) => {
   const [caseStudy, setCaseStudy] = useState();
@@ -55,7 +56,7 @@ const CaseStudyPage = ({ id }) => {
               <Frame vertical gap={25}>
                 <img src={ChallengeLogo} className="logo-small" alt="challenge logo" />
                 <div className="heading-small">The Challenge</div>
-                <div>{caseStudy.challenge}</div>
+                <div className="body-regular">{caseStudy.challenge}</div>
               </Frame>
               <img className="case-image" src={caseStudy.challenge_image} alt="company challenge" />
             </Frame>
@@ -63,7 +64,7 @@ const CaseStudyPage = ({ id }) => {
               <Frame vertical gap={25}>
                 <img src={ProcessLogo} className="logo-small" alt="process logo" />
                 <div className="heading-small">Our Services/Process</div>
-                <div>{caseStudy.process}</div>
+                <div className="body-regular">{caseStudy.process}</div>
               </Frame>
               <img className="case-image" src={caseStudy.process_image} alt="company process" />
             </Frame>
@@ -71,13 +72,14 @@ const CaseStudyPage = ({ id }) => {
               <Frame vertical gap={25}>
                 <img src={OutcomeLogo} className="logo-small" alt="outcome logo" />
                 <div className="heading-small">The Outcome</div>
-                <div>{caseStudy.process}</div>
+                <div className="body-regular">{caseStudy.outcome}</div>
               </Frame>
               <img className="case-image" src={caseStudy.outcome_image} alt="company outcome" />
             </Frame>
+            <hr />
           </>
         )}
-        {testimonial && (
+        {testimonial ? (
           <Testimonial
             name={testimonial.name}
             quote={testimonial.quote}
@@ -86,7 +88,10 @@ const CaseStudyPage = ({ id }) => {
             logo={testimonial.logo}
             date={testimonial.created_at}
           />
+        ) : (
+          <hr className="horizontal-line" />
         )}
+        <CaseStudies caseStudyPage />
       </Frame>
     );
   }
