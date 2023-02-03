@@ -55,7 +55,7 @@ const CaseStudyPage = ({ id }) => {
               <Frame vertical gap={25}>
                 <img src={ChallengeLogo} className="logo-small" alt="challenge logo" />
                 <div className="heading-small">The Challenge</div>
-                <div>{caseStudy.challenge}</div>
+                <div className="body-regular">{caseStudy.challenge}</div>
               </Frame>
               <img className="case-image" src={caseStudy.challenge_image} alt="company challenge" />
             </Frame>
@@ -63,7 +63,7 @@ const CaseStudyPage = ({ id }) => {
               <Frame vertical gap={25}>
                 <img src={ProcessLogo} className="logo-small" alt="process logo" />
                 <div className="heading-small">Our Services/Process</div>
-                <div>{caseStudy.process}</div>
+                <div className="body-regular">{caseStudy.process}</div>
               </Frame>
               <img className="case-image" src={caseStudy.process_image} alt="company process" />
             </Frame>
@@ -71,7 +71,7 @@ const CaseStudyPage = ({ id }) => {
               <Frame vertical gap={25}>
                 <img src={OutcomeLogo} className="logo-small" alt="outcome logo" />
                 <div className="heading-small">The Outcome</div>
-                <div>{caseStudy.process}</div>
+                <div className="body-regular">{caseStudy.outcome}</div>
               </Frame>
               <img className="case-image" src={caseStudy.outcome_image} alt="company outcome" />
             </Frame>
