@@ -2,16 +2,16 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 function ReferralCard({ header, text, userImage, userName, date }) {
-  // const [image, setImage] = useState(null);
+  const [image, setImage] = useState(null);
 
-  // useEffect(() => {
-  //   const fetchImage = async () => {
-  //     const response = await import(`../../../assets/images/${userImage}`);
-  //     setImage(response.default);
-  //   };
+  useEffect(() => {
+    const fetchImage = async () => {
+      const response = await import(`../../../assets/images/${userImage}`);
+      setImage(response.default);
+    };
 
-  //   fetchImage();
-  // }, [userImage]);
+    fetchImage();
+  }, [userImage]);
 
   return (
     <div className="component-referral-card-wrapper">
@@ -33,7 +33,9 @@ function ReferralCard({ header, text, userImage, userName, date }) {
         </div>
 
         <div className="referral-user-container fgs-al fgs-al-g-16">
-          <div className="referral-image">{/* <img src={image} alt="user" /> */}</div>
+          <div className="referral-image">
+            <img src={image} alt="user" />
+          </div>
           <div className="referral-user-info-container">
             <div className="user-name body-small-medium">{userName}</div>
             <div className="date caption-medium">{date}</div>

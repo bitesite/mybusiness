@@ -190,8 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const element = document.getElementById('home-mount-point');
 
   if (element) {
-    const { testimonials } = element.dataset;
-    console.log(testimonials)
+    const { testimonials } = element.dataset;    
     ReactDOM.render(<Home testimonialIds={JSON.parse(testimonials)} />, element);
   }
 });
