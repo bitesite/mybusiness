@@ -83,7 +83,7 @@ const BlogCard = ({ blogPost, width, onClick, className }) => {
               {author.first_name} {author.last_name}
             </div>
           )}
-          <div className="caption-light">{moment(publishedAt, 'YYYY-MM-DD').format('MMMM D, YYYY')}</div>
+          <div className="caption-light">{publishedAt && moment(publishedAt, 'YYYY-MM-DD').format('MMMM D, YYYY')}</div>
         </FooterFrame>
       </Frame>
       {window.is(['staff', 'admin']) && (
