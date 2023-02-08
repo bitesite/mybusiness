@@ -34,7 +34,6 @@ const Home = ({ testimonialIds }) => {
       const sortedData = data.sort((a, b) => {
         return testimonialIds.indexOf(`${a.id}`) - testimonialIds.indexOf(`${b.id}`);
       });
-      console.log(data)
       setTestimonials(sortedData);
     });
   };
