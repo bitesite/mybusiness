@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Frame } from '@bitesite/react-figstrap';
 import { Icon } from '@iconify/react';
 import Link from './link';
+import CaseStudyCard from './case_study/case_study_card';
 
 const CaseStudies = ({caseStudyPage}) => {
   const [caseStudies, setCaseStudies] = useState();
@@ -39,18 +40,7 @@ const CaseStudies = ({caseStudyPage}) => {
         <Frame className="case-study-cards" gap="32" justifyContent="center">
           {caseStudies &&
             caseStudies.slice(0, numberOfCaseStudies).map((caseStudy) => (
-              <Frame className="case-study-item" vertical>
-                <img src={caseStudy.card_image} className="case-study-image" alt="bradford case study" />
-                <Frame className="case-study-text" vertical gap="8" padding="24">
-                  <div className="body-small-bold">{caseStudy.name}</div>
-                  <div className="body-regular">{caseStudy.subtitle}</div>
-                  {caseStudy.link && (
-                    <Link className="case-study-link body-small-bold" path={`/case_studies/${caseStudy.id}`}>
-                      Read More <Icon icon="fluent:arrow-right-32-filled" />
-                    </Link>
-                  )}
-                </Frame>
-              </Frame>
+              <CaseStudyCard image={caseStudy.card_image} name={caseStudy.name} subtitle={caseStudy.subtitle} link={caseStudy.link} id={caseStudy.link}/> 
             ))}
         </Frame>
         <Frame>
