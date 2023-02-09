@@ -10,6 +10,9 @@ class CreateCaseStudies < ActiveRecord::Migration[5.2]
       t.string :challenge_image
       t.string :process_image
       t.string :outcome_image
+      t.string :logo_image
+      t.string :link
+      t.string :card_image
 
       t.timestamps
     end

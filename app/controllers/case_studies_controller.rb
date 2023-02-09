@@ -1,10 +1,18 @@
 class CaseStudiesController < ApplicationController
-  def show
-    @case_study = CaseStudy.find(params[:id])
+  load_and_authorize_resource
 
+  def show
     respond_to do |format|
       format.html { render :show }
       format.json { render :show }
+    end
+  end
+
+  def index
+    @case_studies = CaseStudy.all
+    respond_to do |format|
+      format.html { render :index }
+      format.json { render :index }
     end
   end
 

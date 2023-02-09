@@ -190,6 +190,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (element) {
     const { testimonials } = element.dataset;    
-    ReactDOM.render(<Home testimonialIds={JSON.parse(testimonials)} />, element);
+    ReactDOM.render(<Home testimonialIds={testimonials} />, element);
   }
 });
