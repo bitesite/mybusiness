@@ -1,5 +1,7 @@
 .case-studies-component {
-  background-color: $background;
+  .dark-background {
+    background-color: $background;
+  }
   .case-studies-title {
     text-align: center;
   }
@@ -36,5 +38,7 @@
 
 .case-studies-page {
   padding: 100px 16px 100px 16px;
+}
+.dark-background {
   background-color: $background;
 }

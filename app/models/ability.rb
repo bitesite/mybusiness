@@ -12,6 +12,7 @@ class Ability
     can :show, Download
     can [:read], FrequentlyAskedQuestion
     can :read, CaseStudy
+    can [:read], Testimonial
 
     if !user.new_record?
       can :manage, Device, user_id: user.id

@@ -37,18 +37,18 @@ ActiveRecord::Schema.define(version: 2023_02_03_181818) do
   end
 
   create_table "blog_post_images", id: :serial, force: :cascade do |t|
-    t.string "image"
+    t.string "image", limit: 255
     t.integer "blog_post_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "blog_posts", id: :serial, force: :cascade do |t|
-    t.string "title"
+    t.string "title", limit: 255
     t.text "body"
     t.boolean "published"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer "user_id"
     t.string "featured_image"
     t.string "slug"
@@ -59,12 +59,12 @@ ActiveRecord::Schema.define(version: 2023_02_03_181818) do
   end
 
   create_table "careers", id: :serial, force: :cascade do |t|
-    t.string "title"
-    t.string "capacity"
+    t.string "title", limit: 255
+    t.string "capacity", limit: 255
     t.text "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string "location"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "location", limit: 255
     t.boolean "archived"
   end
 
@@ -96,12 +96,12 @@ ActiveRecord::Schema.define(version: 2023_02_03_181818) do
   end
 
   create_table "contact_form_submissions", id: :serial, force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "email_address"
+    t.string "first_name", limit: 255
+    t.string "last_name", limit: 255
+    t.string "email_address", limit: 255
     t.text "message"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "contacts", force: :cascade do |t|
@@ -115,19 +115,19 @@ ActiveRecord::Schema.define(version: 2023_02_03_181818) do
   end
 
   create_table "contestants", id: :serial, force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "email"
+    t.string "first_name", limit: 255
+    t.string "last_name", limit: 255
+    t.string "email", limit: 255
     t.text "notes"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer "contest_id"
   end
 
   create_table "contests", id: :serial, force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string "name", limit: 255
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "devices", force: :cascade do |t|
@@ -160,9 +160,9 @@ ActiveRecord::Schema.define(version: 2023_02_03_181818) do
   end
 
   create_table "email_blacklistings", id: :serial, force: :cascade do |t|
-    t.string "email"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string "email", limit: 255
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "frequently_asked_questions", force: :cascade do |t|
@@ -186,11 +186,11 @@ ActiveRecord::Schema.define(version: 2023_02_03_181818) do
   end
 
   create_table "news_posts", id: :serial, force: :cascade do |t|
-    t.string "title"
+    t.string "title", limit: 255
     t.text "body"
-    t.string "image"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string "image", limit: 255
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.boolean "hidden"
     t.datetime "published_at"
     t.string "visibility"
@@ -206,12 +206,12 @@ ActiveRecord::Schema.define(version: 2023_02_03_181818) do
   end
 
   create_table "profiles", id: :serial, force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
+    t.string "first_name", limit: 255
+    t.string "last_name", limit: 255
     t.datetime "start_date"
     t.integer "employee_number"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer "user_id"
     t.string "avatar"
     t.string "job_title"
@@ -228,11 +228,11 @@ ActiveRecord::Schema.define(version: 2023_02_03_181818) do
   end
 
   create_table "roles", id: :serial, force: :cascade do |t|
-    t.string "name"
-    t.string "resource_type"
+    t.string "name", limit: 255
     t.integer "resource_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string "resource_type", limit: 255
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
     t.index ["name"], name: "index_roles_on_name"
   end
@@ -243,10 +243,10 @@ ActiveRecord::Schema.define(version: 2023_02_03_181818) do
   end
 
   create_table "settings", id: :serial, force: :cascade do |t|
-    t.string "name"
+    t.string "name", limit: 255
     t.text "value"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "taggings", id: :serial, force: :cascade do |t|
@@ -283,32 +283,35 @@ ActiveRecord::Schema.define(version: 2023_02_03_181818) do
     t.integer "case_study_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "case_study_id"
+    t.string "short_quote"
+    t.date "date"
   end
 
   create_table "time_off_entries", id: :serial, force: :cascade do |t|
     t.date "entry_date"
-    t.string "time_off_type"
+    t.string "time_off_type", limit: 255
     t.float "amount"
     t.text "notes"
-    t.string "status"
+    t.string "status", limit: 255
     t.integer "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", id: :serial, force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
+    t.string "email", limit: 255, default: "", null: false
+    t.string "encrypted_password", limit: 255, default: "", null: false
+    t.string "reset_password_token", limit: 255
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.integer "sign_in_count", default: 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string "current_sign_in_ip"
-    t.string "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string "current_sign_in_ip", limit: 255
+    t.string "last_sign_in_ip", limit: 255
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer "supervisor_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
@@ -321,11 +324,11 @@ ActiveRecord::Schema.define(version: 2023_02_03_181818) do
   end
 
   create_table "video_listings", id: :serial, force: :cascade do |t|
-    t.string "name"
-    t.string "link"
-    t.string "image"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string "name", limit: 255
+    t.string "link", limit: 255
+    t.string "image", limit: 255
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "web_listings", force: :cascade do |t|

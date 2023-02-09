@@ -22,7 +22,7 @@ const ServicesPage = () => {
 
   const header3 = 'UX/UI Design';
   const text3 =
-    "Our developers balance strong software engineering principles with our clients needs to deliver stable, powerful, and viable software. Everything from using modern languages and frameworks, to best practices around source control and deployment, we'll build a solution that suits you perfectly.";
+    "Whether it be a 5-minute conversation or full-blown prototypes, taking some time to think about how your users will interact with your app can make a big difference. We'll work with you to design the best user experience for your customers.";
   return (
     <div className="services-component">
       <div className="heading-regular services-header">We work with you to build custom software and web applications.</div>

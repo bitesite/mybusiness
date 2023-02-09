@@ -1,11 +1,13 @@
-import React from 'react';
+/* eslint-disable react/jsx-no-bind */
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faYoutube, faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { Icon } from '@iconify/react';
 import Link from '../components/link';
+import { ModalDialog } from '../bitesite-ui';
+import SubscribePopup from '../components/subscribe_popup';
 
 const Footer = () => {
+  const [subscribePopupOpen, setSubscribePopupOpen] = useState(false);
   function signOut(e) {
     e.preventDefault();
 
@@ -43,12 +45,13 @@ const Footer = () => {
                 <Link path="/staff_dashboard" className="caption-light staff-session-link">
                   Staff Dashboard
                 </Link>
+
                 <Link onClick={signOut} className="caption-light staff-session-link">
                   Staff Sign Out
                 </Link>
               </>
             ) : (
-              <Link path="users/sign_in" className="caption-light staff-session-link">
+              <Link path="/users/sign_in" className="caption-light staff-session-link">
                 Staff Sign In
               </Link>
             )}
@@ -81,15 +84,35 @@ const Footer = () => {
                 <Link path="/blog" target="_blank" className="fgs-ali caption-medium no-underline">
                   Blog
                 </Link>
-                <Link path="/news" target="_blank" className="fgs-ali caption-medium no-underline">
-                  Newsletter
-                </Link>
                 <Link path="/playbook" target="_blank" className="fgs-ali caption-medium no-underline">
                   Playbook
+                </Link>
+                <Link path="/news" target="_blank" className="fgs-ali caption-medium no-underline">
+                  BiteSite News
+                </Link>
+                <Link
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setSubscribePopupOpen(true);
+                  }}
+                  className="fgs-ali caption-medium no-underline"
+                >
+                  Newsletter
                 </Link>
               </div>
             </div>
           </div>
+          {subscribePopupOpen && (
+            <ModalDialog
+              maxWidth="783px"
+              modalDialogClassName="blog-post-subscribe-modal"
+              padding="0 0 0 0"
+              popup
+              marginTop="15%"
+            >
+              <SubscribePopup onClose={() => setSubscribePopupOpen(false)} />
+            </ModalDialog>
+          )}
 
           <div className="social-media-links fgs-ali fgs-al fgs-al-v fgs-al-g-10">
             <span className="links-title fgs-ali">FOLLOW US</span>

@@ -23,6 +23,8 @@
         .staff-session-link {
           color: $light-gray;
           text-decoration: none;
+          margin-right: 5px;
+
           &:hover {
             color: $primary-color;
           }
