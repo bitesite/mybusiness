@@ -78,10 +78,11 @@ ActiveRecord::Schema.define(version: 2023_02_03_181104) do
     t.string "challenge_image"
     t.string "process_image"
     t.string "outcome_image"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "logo_image"
     t.string "link"
+    t.string "card_image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "comments", force: :cascade do |t|

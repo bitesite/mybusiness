@@ -169,7 +169,7 @@ testimonials = [{
   short_quote: "From concept, through scope of work, and implementation, we’ve enjoyed a clear roadmap with consistent and professional communication every step of the way. Our MVP is now live and progress continues as we enhance our project together.",
   name: "Richard Levesque",
   title: "Managing Director, Ottawa Derm Centre Inc.",
-  logo: "/images/odc_logo_round.png",
+  logo: "odc_logo_round.png",
   case_study_id: CaseStudy.find_by_name("Ottawa Derm Center Patient Rewards Portal").id,
 }, {
   quote: "Over the years, BiteSite has been an integral part of our growth at FanSaves.",

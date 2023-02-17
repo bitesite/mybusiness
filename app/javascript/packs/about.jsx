@@ -41,7 +41,8 @@ const AboutPage = ({ teamMembers }) => {
                 mobile applications.
               </div>
               <a
-                className="playbook-link disabled"
+                className="playbook-link"
+                href="/case_studies"
               >
                 View Case Studies
                 <svg
