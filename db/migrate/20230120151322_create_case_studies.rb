@@ -21,7 +21,7 @@ class CreateCaseStudies < ActiveRecord::Migration[5.2]
   end
 
   def down
-    if ActiveRecord::Base.connection.table_exists? "testimonials"
+    if ActiveRecord::Base.connection.table_exists? "case_studies"
       drop_table :case_studies
     end
   end
