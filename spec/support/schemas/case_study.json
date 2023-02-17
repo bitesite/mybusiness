@@ -1,0 +1,47 @@
+{
+  "type": "string",
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "name": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+
+    "process": {
+      "type": "text"
+    },
+    "outcome": {
+      "type": "text"
+    },
+    "site_image": {
+      "type": "string"
+    },
+    "challenge": {
+      "type": "text"
+    },
+
+    "process_image": {
+      "type": "string"
+    },
+    "outcome_image": {
+      "type": "string"
+    },
+    "logo_image": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    },
+    "card_image": {
+      "type": "string"
+    },
+    "challenge_image": {
+      "type": "string"
+    }
+  }
+}
