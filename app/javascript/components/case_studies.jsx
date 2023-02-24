@@ -1,13 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import { Frame } from '@bitesite/react-figstrap';
 import { Icon } from '@iconify/react';
-import BradfordImage from '../../assets/images/bradford_case_study.png';
-import TartuImage from '../../assets/images/tartu_case_study.png';
-import FanSavesImage from '../../assets/images/fansaves_case_study_image.png';
 import Link from './link';
 
-const CaseStudies = ({ caseStudyPage }) => {
+const CaseStudies = ({caseStudyPage}) => {
+  const [caseStudies, setCaseStudies] = useState();
+  const [numberOfCaseStudies, setNumbeOfCaseStudies] = useState(3);
   const [onCaseStudyPage, setOnCaseStudyPage] = useState(false);
+
+  function loadCaseStudies() {
+    $.getJSON(`/case_studies/`, (results) => {
+      setCaseStudies(results);
+    });
+  }
+  useEffect(() => {
+    loadCaseStudies();
+  }, []);
 
   useEffect(() => {
     if (caseStudyPage) {
@@ -17,12 +25,10 @@ const CaseStudies = ({ caseStudyPage }) => {
 
   return (
     <div className={`case-studies-page ${onCaseStudyPage ? 'light-background' : 'dark-background'}`}>
-      <Frame
-        className={`case-studies-component ${onCaseStudyPage ? 'light-background' : 'dark-background'}`}
+      <Frame         className={`case-studies-component ${onCaseStudyPage ? 'light-background' : 'dark-background'}`}
         gap="30"
         vertical
-        alignItems="center"
-      >
+        alignItems="center">
         <Frame vertical alignItems="center" gap={24}>
           {!onCaseStudyPage ? (
             <div className="heading-regular case-studies-title">Project Case Studies</div>
@@ -31,38 +37,21 @@ const CaseStudies = ({ caseStudyPage }) => {
           )}
         </Frame>
         <Frame className="case-study-cards" gap="32" justifyContent="center">
-          <Frame className="case-study-item" vertical>
-            <img src={BradfordImage} className="case-study-image" alt="bradford case study" />
-            <Frame className="case-study-text" vertical gap="8" padding="24">
-              <div className="body-small-bold">Bradford Co-Op Online Store</div>
-              <div className="body-regular">Moving from a brick-and-mortar store to an online shop.</div>
-              <Link className="case-study-link body-small-bold" path="/case_studies/1">
-                Read More <Icon icon="fluent:arrow-right-32-filled" />
-              </Link>
-            </Frame>
-          </Frame>
-
-          <Frame className="case-study-item" vertical>
-            <img src={TartuImage} className="case-study-image" alt="tartu case study" />
-            <Frame className="case-study-text" vertical gap="8" padding="24">
-              <div className="body-small-bold">ODC Health Coin Rewards </div>
-              <div className="body-regular">Enabling patients to gain rewards while investing in their skin health.</div>
-              <Link className="case-study-link body-small-bold" path="/case_studies/2">
-                Read More <Icon icon="fluent:arrow-right-32-filled" />
-              </Link>
-            </Frame>
-          </Frame>
-
-          <Frame className="case-study-item" vertical>
-            <img src={FanSavesImage} className="case-study-image" alt="iswa case study" />
-            <Frame className="case-study-text" vertical gap="8" padding="24">
-              <div className="body-small-bold">Fansaves Deal Redemption Portal</div>
-              <div className="body-regular">Connecting fans to rewards and enabling community connections to grow.</div>
-              <Link className="case-study-link body-small-bold" path="/case_studies/3">
-                Read More <Icon icon="fluent:arrow-right-32-filled" />
-              </Link>
-            </Frame>
-          </Frame>
+          {caseStudies &&
+            caseStudies.slice(0, numberOfCaseStudies).map((caseStudy) => (
+              <Frame className="case-study-item" vertical>
+                <img src={caseStudy.card_image} className="case-study-image" alt="bradford case study" />
+                <Frame className="case-study-text" vertical gap="8" padding="24">
+                  <div className="body-small-bold">{caseStudy.name}</div>
+                  <div className="body-regular">{caseStudy.subtitle}</div>
+                  {caseStudy.link && (
+                    <Link className="case-study-link body-small-bold" path={`/case_studies/${caseStudy.id}`}>
+                      Read More <Icon icon="fluent:arrow-right-32-filled" />
+                    </Link>
+                  )}
+                </Frame>
+              </Frame>
+            ))}
         </Frame>
         <Frame>
           {!onCaseStudyPage ? (          
@@ -74,7 +63,6 @@ const CaseStudies = ({ caseStudyPage }) => {
            <Icon icon="fluent:arrow-left-32-filled" /> Back to All Case Studies 
           </Link>
           )}
-
         </Frame>
       </Frame>
     </div>

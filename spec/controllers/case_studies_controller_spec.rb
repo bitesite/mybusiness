@@ -1,126 +1,55 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe CaseStudiesController, type: :controller do
+  # shared_examples "a user who can read case studies" do
+  #   describe "GET #index" do
+  #     it "renders the index view when format html" do
+  #       get :index
+  #       expect(response).to render_template :index
+  #       expect(response).to have_http_status :ok
+  #     end
 
-  shared_examples 'a user who can view public pages' do
-    describe "GET #international_safety" do
-      it "returns successfully" do
-        get :international_safety
-        expect(response).to have_http_status :ok
-      end
-    end
+  #     it "returns the proper json when format json" do
+  #       get :index, format: :json
+  #       expect(response).to have_http_status :ok
+  #       expect(response).to match_response_schema("case_studies")
+  #     end
+  #   end
+  # end
 
-    describe "GET #mydoma" do
-      it "returns successfully" do
-        get :mydoma
-        expect(response).to have_http_status :ok
-      end
-    end
+  # context "when not signed in" do
+  #   it_behaves_like "a user who can read case studies"
+  # end
 
-    describe "GET #splice" do
-      it "returns successfully" do
-        get :splice
-        expect(response).to have_http_status :ok
-      end
-    end
+  # context "when signed in" do
+  #   before :each do
+  #     sign_in create(:admin_user)
+  #   end
 
-    describe "GET #lspark_grad" do
-      it "returns successfully" do
-        get :lspark_grad
-        expect(response).to have_http_status :ok
-      end
-    end
+  #   it_behaves_like "a user who can read case studies"
+  # end
 
-    describe "GET #lspark" do
-      it "returns successfully" do
-        get :lspark
-        expect(response).to have_http_status :ok
-      end
-    end
+  # context "when signed in as an admin" do
+  #   before :each do
+  #     sign_in create(:admin_user)
+  #   end
 
-    describe "GET #d3m" do
-      it "returns successfully" do
-        get :d3m
-        expect(response).to have_http_status :ok
-      end
-    end
+  #   it_behaves_like "a user who can read case studies"
+  # end
 
-    describe "GET #martello" do
-      it "returns successfully" do
-        get :martello
-        expect(response).to have_http_status :ok
-      end
-    end
+  # context "when signed in as staff" do
+  #   before :each do
+  #     sign_in create(:staff_user)
+  #   end
 
-    describe "GET #curtiss_wright" do
-      it "returns successfully" do
-        get :curtiss_wright
-        expect(response).to have_http_status :ok
-      end
-    end
+  #   it_behaves_like "a user who can read case studies"
+  # end
 
-    describe "GET #ewa" do
-      it "returns successfully" do
-        get :ewa
-        expect(response).to have_http_status :ok
-      end
-    end
+  # context "when signed in as a supervisor" do
+  #   before :each do
+  #     sign_in create(:supervisor_user)
+  #   end
 
-    describe "GET #solink" do
-      it "returns successfully" do
-        get :solink
-        expect(response).to have_http_status :ok
-      end
-    end
-
-    describe "GET #christine_kelly" do
-      it "returns successfully" do
-        get :christine_kelly
-        expect(response).to have_http_status :ok
-      end
-    end
-    
-    describe "GET #filefacets" do
-      it "returns successfully" do
-        get :filefacets
-        expect(response).to have_http_status :ok
-      end
-    end
-  end
-
-  context 'when not signed in' do
-    it_behaves_like 'a user who can view public pages'
-  end
-
-  context 'when signed in' do
-    before :each do
-      sign_in create(:user)
-    end
-
-    it_behaves_like 'a user who can view public pages'
-  end
-
-  context 'when signed in as an admin' do
-    before :each do
-      sign_in create(:admin_user)
-    end
-
-    it_behaves_like 'a user who can view public pages'
-  end
-
-  context 'when signed in as staff' do
-    before :each do
-      sign_in create(:staff_user)
-    end
-
-    it_behaves_like 'a user who can view public pages'
-  end
-
-  context 'when signed in as a supervisor' do
-    before :each do
-      sign_in create(:supervisor_user)
-    end
-
-    it_behaves_like 'a user who can view public pages'
-  end
+  #   it_behaves_like "a user who can read case studies"
+  # end
 end

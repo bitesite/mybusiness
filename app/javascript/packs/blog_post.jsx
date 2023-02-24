@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 import Markdown from "react-remarkable";
 import { isMobileScreenSize } from "../src/utilities/general_helpers";
 import { Tag, COLORS, ModalDialog } from "../bitesite-ui";
@@ -35,13 +35,14 @@ margin: 0 auto;
     width: 786px;
     padding: 0 10px;
     margin: 0 auto;
-    word-break: break-all;
+    word-break: break-word;
     color: ${COLORS.shadowDarknest};
-    h2 {
+   h1, h2 {
       font-size: 20px;
       line-height: 24px;
       font-weight: 500;
       letter-spacing: 0.3px;
+      color: ${COLORS.shadowDarknest};
     }
     h3 {
       font-weight: 700;
@@ -49,6 +50,7 @@ margin: 0 auto;
       line-height: 27px;
       font-weight: 400;
       letter-spacing: 0.3px;
+      color: ${COLORS.shadowDarknest};
     }
     img {
       width: 100%;
@@ -60,6 +62,15 @@ margin: 0 auto;
       padding: 16px;
       border: 1px solid ${COLORS.shadesLight};
       overflow: auto;
+      color: ${COLORS.shadowDarknest};
+    }
+
+    span > p {
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 400;
+      letter-spacing: 0.3px;
+      color: ${COLORS.shadowDarknest};
     }
   }
 `;
@@ -225,7 +236,7 @@ const BlogPost = ({ blogPostId }) => {
                       </div>
                     )}
                     <div className="caption-light">
-                      {moment(blogPost.publishedAt, "YYYY-MM-DD").format(
+                      {blogPost.publishedAt && moment(blogPost.publishedAt, "YYYY-MM-DD").format(
                         "MMMM D, YYYY"
                       )}
                     </div>
@@ -264,7 +275,7 @@ const BlogPost = ({ blogPostId }) => {
                   tags={post.tag_list}
                   className="related-post"
                   onClick={() => {
-                    window.location.href = `/blog/${blogPost.slug}`;
+                    window.location.href = `/blog/${post.slug}`;
                   }}
                 />
               ))}

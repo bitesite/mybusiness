@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import propTypes from 'prop-types';
 import MailchimpSubscribe from 'react-mailchimp-subscribe';
 import styled from 'styled-components/macro';
 import { Icon } from '@iconify/react';
+import { Frame } from '@bitesite/react-figstrap';
 import Mailbox from '../../assets/images/mailbox-large.png';
 import { Button, COLORS, Alert } from '../bitesite-ui';
+import Link from './link';
 
 const SubscribeFormWrapper = styled.div`
   display: flex;
@@ -24,7 +25,7 @@ const SubscribeFormWrapper = styled.div`
     align-items: flex-start;
     padding: 0px;
     gap: 24px;
-    margin-top: 64px;
+    margin: 60px 0;
 
     .input-box {
       border: 1px solid ${COLORS.shadesLight};
@@ -204,6 +205,22 @@ const SubscribeForm = ({ onValidated, status, message }) => {
           Subscribe
         </Button>
       </div>
+      <Frame className="caption-light popup-text-container content__gdprLega" gap={10} vertical>
+        <div>You can unsubscribe at any time by clicking the link in the footer of our emails.</div>
+        <div>
+          We use Mailchimp as our marketing platform. By clicking below to subscribe, you acknowledge that your information will
+          be transferred to Mailchimp for processing.{' '}
+          <Link
+            path="https://mailchimp.com/legal/privacy/"
+            target="_blank"
+            rel="noreferrer"
+            className="caption-light"
+            style={{ color: COLORS.shadesDark }}
+          >
+            Mailchimp's Privacy Policy
+          </Link>
+        </div>
+      </Frame>
     </SubscribeFormWrapper>
   );
 };

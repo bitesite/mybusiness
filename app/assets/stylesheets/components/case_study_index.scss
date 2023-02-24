@@ -1,0 +1,22 @@
+.case-studies {
+  background-color: $lightest-gray;
+  padding: 120px;
+
+  .case-studies-header {
+    max-width: 786px;
+    text-align: center;
+  }
+
+  .case-study-cards {
+    flex-flow: row wrap;
+
+    .case-study-item {
+      width: 378px;
+    }
+  }
+
+  .case-study-text {
+    background-color: $light-white;
+    min-height: 180px;
+  }
+}

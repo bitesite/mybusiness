@@ -39,6 +39,9 @@ class BlogPostsController < ApplicationController
 
   def create
     @blog_post.user = current_user
+    if (params[:blog_post][:published])
+      @blog_post.published_at = Time.now
+    end
     if @blog_post.save
       redirect_to @blog_post, notice: "Blog post was successfully created."
     else
@@ -49,6 +52,12 @@ class BlogPostsController < ApplicationController
   def update
     prepare_blog_post_for_slug_update
     if @blog_post.update_attributes(blog_post_params)
+      if params[:blog_post][:published]
+        @blog_post.update_attributes(published_at: Time.now)
+      else
+        @blog_post.update_attributes(published_at: nil)
+      end
+      @blog_post.published_at = Time.now if params[:blog_post][:published]
       redirect_to @blog_post, notice: "Blog post was successfully updated."
     else
       render action: "edit", layout: "blog"
@@ -82,7 +91,7 @@ class BlogPostsController < ApplicationController
   end
 
   def blog_post_params
-    params.require(:blog_post).permit(:body, :title, :published, :featured_image, :remove_featured_image, :featured_video, :tag_list, :meta_description, :user)
+    params.require(:blog_post).permit(:body, :title, :published, :published_at, :featured_image, :remove_featured_image, :featured_video, :tag_list, :meta_description, :user)
   end
 
   def set_title
