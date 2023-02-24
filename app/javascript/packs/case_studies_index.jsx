@@ -31,7 +31,7 @@ const CaseStudies = () => {
               name={caseStudy.name}
               subtitle={caseStudy.subtitle}
               link={caseStudy.link}
-              id={caseStudy.link}
+              id={caseStudy.id}
             />
           ))}
       </Frame>

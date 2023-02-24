@@ -40,7 +40,7 @@ const CaseStudies = ({caseStudyPage}) => {
         <Frame className="case-study-cards" gap="32" justifyContent="center">
           {caseStudies &&
             caseStudies.slice(0, numberOfCaseStudies).map((caseStudy) => (
-              <CaseStudyCard image={caseStudy.card_image} name={caseStudy.name} subtitle={caseStudy.subtitle} link={caseStudy.link} id={caseStudy.link}/> 
+              <CaseStudyCard image={caseStudy.card_image} name={caseStudy.name} subtitle={caseStudy.subtitle} link={caseStudy.link} id={caseStudy.id}/> 
             ))}
         </Frame>
         <Frame>
