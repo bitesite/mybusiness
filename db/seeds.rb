@@ -135,6 +135,17 @@ case_studies = [{
   logo_image: "/images/fansaves_logo.png",
   link: "https://www.fansaves.com/",
   card_image: "/images/fansaves_card_image.png",
+  site_image: "/images/fansaves_site_image.png",
+  challenge: "Fansaves offers a web and mobile app that allows fans to receive discounts and promotions from their favourite teams, influencers, communities and more. BiteSite was brought on to develop the mobile app, as well as to strengthen FanSaves’ online presence and back-end capabilities.",
+  process: "The app was developed using a cross-platform development framework, which allowed the app to run smoothly on both iOS and Android devices. The team also integrated several third-party APIs, such as Google Firebase, Google Maps and Stripe, to provide richer features.
+  For its website, the team created a comprehensive visual design for its homepage that incorporated the branding and messaging of FanSaves. 
+  As FanSaves grows, BiteSite is involved in expanding their back-end CRM and analytics capabilities, enabling the team to draw valuable insights to make important business decisions.",
+  outcome: "Since the launch of the app, FanSaves has been successful in engaging fans and providing them with discounts and promotions from their favourite teams and sponsors. The app has been successful in getting fans to make purchases through the app, leading to increased sales and revenue for both teams and sponsors. Their website design has also been an asset that draws investors to the business.
+  Overall, FanSaves’ web & mobile app is a great example of BiteSite’s ability to design and develop high-quality custom software that meets the needs of their clients and target audience.",
+  challenge_image: "/images/fansaves_challenge_image.png",
+  process_image: "/images/fansaves_process_image.png",
+  outcome_image: "/images/fansaves_outcome_image.png",
+
 }, {
   name: "International Safety E-Commerce",
   subtitle: "Custom E-Commerce to optimize operations and deliver reliably.",
