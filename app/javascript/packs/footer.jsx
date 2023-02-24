@@ -63,15 +63,15 @@ const Footer = () => {
             <span className="links-title fgs-ali">COMPANY</span>
 
             <div className="company-links caption-medium fgs-ali fgs-al fgs-al-v">
-              <Link path="/services" target="_blank" className="fgs-ali caption-medium no-underline">
+              <Link path="/services" className="fgs-ali caption-medium no-underline">
                 Services
               </Link>
 
-              <Link path="/about" target="_blank" className="fgs-ali caption-medium no-underline">
+              <Link path="/about" className="fgs-ali caption-medium no-underline">
                 About
               </Link>
 
-              <Link path="/contact" target="_blank" className="fgs-ali caption-medium no-underline">
+              <Link path="/contact" className="fgs-ali caption-medium no-underline">
                 Contact
               </Link>
             </div>
@@ -81,7 +81,7 @@ const Footer = () => {
             <div className="caption-medium fgs-ali fgs-al fgs-al-v fgs-al-g-6">
               <span className="links-title fgs-ali">RESOURCES</span>
               <div className="company-links caption-medium fgs-ali fgs-al fgs-al-v">
-                <Link path="/blog" target="_blank" className="fgs-ali caption-medium no-underline">
+                <Link path="/blog" className="fgs-ali caption-medium no-underline">
                   Blog
                 </Link>
                 <Link path="/playbook" target="_blank" className="fgs-ali caption-medium no-underline">
