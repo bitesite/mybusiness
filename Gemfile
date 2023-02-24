@@ -61,6 +61,7 @@ end
 group :test do
   gem "database_cleaner"
   gem "rails-controller-testing"
+  gem "json-schema"
 end
 
 group :production do
