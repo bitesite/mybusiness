@@ -102,7 +102,7 @@ CaseStudy.create!([{
   process_image: "/images/bradford_image_2.png",
   outcome_image: "/images/bradford_image_3.png",
   logo_image: "/images/bradford_logo.png",
-  link: "https://bradfordcoop.ca/",
+  link: "https://shop.bradfordcoop.ca/",
 }, {
   name: "Ottawa Derm Center Patient Rewards Portal",
   subtitle: "Enabling patients to gain rewards while investing in their skin health.",
