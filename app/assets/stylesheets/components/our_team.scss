@@ -1,16 +1,24 @@
 .component-our-team {
   padding-top: 128px;
   padding-bottom: 128px;
+
   .our-team-content {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     width: 100%;
+
     .our-team-member {
-      width: 200px;
+      width: 175px;
       gap: 24px;
       padding: 8px;
+
+      .our-team-member-image {
+        img {
+          width: 150px;
+        }
+      }
 
       .our-team-member-info {
         display: flex;
