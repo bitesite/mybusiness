@@ -8,7 +8,7 @@ const OurTeam = ({ teamMembers, isMobileWidth }) => (
     }`}
   >
     <div className="our-team-title heading-regular">Our Team</div>
-    <div className="our-team-content fgs-al fgs-al-h fgs-al-g-60 fgs-al-align-items-flex-start fgs-al-justify-content-flex-center">
+    <div className="our-team-content fgs-al fgs-al-h fgs-al-g-30 fgs-al-align-items-flex-start fgs-al-justify-content-flex-center">
       {teamMembers &&
         teamMembers.length > 0 &&
         teamMembers.map((teamMember, index) => (
