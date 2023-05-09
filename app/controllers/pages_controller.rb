@@ -114,7 +114,6 @@ class PagesController < ApplicationController
       { image: ActionController::Base.helpers.asset_path("staff/casey.png"), name: "Casey Li", position: "CEO & Founder" },
       { image: ActionController::Base.helpers.asset_path("staff/jack.png"), name: "Jack Wu", position: "Software Developer" },
       { image: ActionController::Base.helpers.asset_path("staff/chris.png"), name: "Chris Francis", position: "Software Developer" },
-      { image: ActionController::Base.helpers.asset_path("staff/tania.png"), name: "Tania Das", position: "Product Designer" },
       { image: ActionController::Base.helpers.asset_path("staff/anna.png"), name: "Anna Baranova", position: "Software Developer" },
     ].to_json
   end
