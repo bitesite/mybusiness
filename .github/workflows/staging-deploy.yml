@@ -13,8 +13,8 @@ jobs:
       - uses: akhileshns/heroku-deploy@v3.12.12
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "bitesitestaging"
-          heroku_email: "jack@thejackwu.com"
+          heroku_app_name: ${{secrets.HEROKU_STAGING_APP_NAME}}
+          heroku_email: ${{secrets.HEROKU_EMAIL}}
       - name: Ensure User is Still Logged in to Heroku
         run: heroku auth:whoami
 
@@ -22,3 +22,8 @@ jobs:
         env:
           HEROKU_API_KEY: ${{secrets.HEROKU_API_KEY}}
         run: heroku run rake db:migrate -a ${{secrets.HEROKU_STAGING_APP_NAME}}
+
+      - name: Restart Heroku Dynos
+        env:
+          HEROKU_API_KEY: ${{secrets.HEROKU_API_KEY}}
+        run: heroku restart -a ${{secrets.HEROKU_STAGING_APP_NAME}}
