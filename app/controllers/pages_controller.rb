@@ -112,9 +112,7 @@ class PagesController < ApplicationController
     @meta_description = "Read about our company and our team members."
     @team_members = [
       { image: ActionController::Base.helpers.asset_path("staff/casey.png"), name: "Casey Li", position: "CEO & Founder" },
-      { image: ActionController::Base.helpers.asset_path("staff/jack.png"), name: "Jack Wu", position: "Software Developer" },
       { image: ActionController::Base.helpers.asset_path("staff/chris.png"), name: "Chris Francis", position: "Software Developer" },
-      { image: ActionController::Base.helpers.asset_path("staff/anna.png"), name: "Anna Baranova", position: "Software Developer" },
     ].to_json
   end
 
