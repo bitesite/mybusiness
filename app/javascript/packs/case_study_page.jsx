@@ -9,6 +9,8 @@ import ProcessLogo from '../../assets/images/case_studies/services_logo.png';
 import OutcomeLogo from '../../assets/images/case_studies/outcome_logo.png';
 import Testimonial from '../components/testimonial';
 import CaseStudies from '../components/case_studies';
+import DarkBackgroundGeneralPost from '../components/general/dark_background_general_post';
+import ContactImage from '../../assets/images/contact_image.png';
 
 const CaseStudyPage = ({ id }) => {
   const [caseStudy, setCaseStudy] = useState();
@@ -92,6 +94,15 @@ const CaseStudyPage = ({ id }) => {
           <hr className="horizontal-line" />
         )}
         <CaseStudies caseStudyPage />
+        <DarkBackgroundGeneralPost
+          image={ContactImage}
+          header="Interested in bringing your project to life?"
+          text={<>We are always excited to work with clients to solve their unique problems.</>}
+          link="/contact"
+          buttonText="Send us a message"
+          buttonType="primary"
+          buttonWidth="190px"
+        />
       </Frame>
     );
   }
